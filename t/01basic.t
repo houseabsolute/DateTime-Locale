@@ -10,18 +10,23 @@ BEGIN
 use strict;
 use Test::More;
 
-use DateTime;
 use DateTime::Locale;
-
-my $dt = DateTime->new( year => 2000, month => 1, day => 1, time_zone => "UTC" );
 
 my @locale_ids   = DateTime::Locale->ids;
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
+eval { require DateTime };
+my $has_dt = $@ ? 0 : 1;
+
+my $dt = DateTime->new( year => 2000, month => 1, day => 1, time_zone => "UTC" )
+    if $has_dt;
+
+my $tests_per_locale = $has_dt ? 16 : 12;
+
 plan tests =>
     3 # starting
-    + ( @locale_ids * 16 ) # test each local
+    + ( @locale_ids * $tests_per_locale ) # test each local
     + 53 # check_en_GB
     + 11 # check_es_ES
     + 5  # check_en_US_POSIX
@@ -74,15 +79,18 @@ sub check_array
 
     is( keys %unique, $count, "'$locale_id': '$array_func' contains $count unique items" );
 
-    for my $i ( 1..$count )
+    if ($has_dt)
     {
-        $dt->set($dt_component => $i);
+        for my $i ( 1..$count )
+        {
+            $dt->set($dt_component => $i);
 
-        delete $unique{ $locale->$item_func($dt) };
+            delete $unique{ $locale->$item_func($dt) };
+        }
+
+        is( keys %unique, 0,
+            "'$locale_id':  Data returned by '$array_func' and '$item_func match' matches" );
     }
-
-    is( keys %unique, 0,
-        "'$locale_id':  Data returned by '$array_func' and '$item_func match' matches" );
 }
 
 # does 2 tests
