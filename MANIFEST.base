@@ -17,4 +17,5 @@ t/01basic.t
 t/02iso639-2.t
 t/03alias.t
 t/04format-length.t
+t/99-pod.t
 tools/generate_from_icu

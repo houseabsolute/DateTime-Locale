@@ -19,6 +19,5 @@ _uu$
 _build.*
 icu-xml.*
 ^Build$
-icu.*
 generator.*
 generated.*
