@@ -8,7 +8,7 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.04;
+$VERSION = 0.05;
 
 BEGIN
 {
@@ -28,60 +28,71 @@ my %LoadCache;
 
 sub register
 {
-    shift;
+    my $class = shift;
 
     %LoadCache = ();
 
-    foreach my $l ( ref $_[0] ? @{ $_[0] } : $_[0] )
+    if ( ref $_[0] )
     {
-        my @p = %$l;
-        my %p = validate( @p, { id               => { type => SCALAR },
-
-                                en_language      => { type => SCALAR },
-                                en_territory     => { type => SCALAR, optional => 1 },
-                                en_variant       => { type => SCALAR, optional => 1 },
-
-                                native_language  => { type => SCALAR, optional => 1 },
-                                native_territory => { type => SCALAR, optional => 1 },
-                                native_variant   => { type => SCALAR, optional => 1 },
-                                # undocumented hack so we don't have
-                                # to generate .pm files for ICU XML
-                                # locales which don't differ from
-                                # their parents in terms of datetime
-                                # data.
-                                real_class       => { type => SCALAR, optional => 1 },
-                                class            => { type => SCALAR, optional => 1 },
-                                replace          => { type => SCALAR, default => 0 },
-                              } );
-
-        my $id = $p{id};
-
-        die "'\@' or '=' are not allowed in locale ids"
-            if $id =~ /[\@=]/;
-        die "You cannot replace an existing locale ('$id') unless you also specify the 'replace' parameter as true\n"
-            if ! delete $l->{replace} && exists $DataForID{$id};
-
-        $l->{native_language} = $l->{en_language}
-            unless exists $l->{native_language};
-
-        my @en_pieces;
-        my @native_pieces;
-        foreach my $p ( qw( language territory variant ) )
-        {
-            push @en_pieces, $l->{"en_$p"} if exists $l->{"en_$p"};
-            push @native_pieces, $l->{"native_$p"} if exists $l->{"native_$p"};
-        }
-
-        $l->{en_complete_name} = join ' ', @en_pieces;
-        $l->{native_complete_name} = join ' ', @native_pieces;
-
-        $DataForID{$id} = $l;
-
-        $NameToID{ $l->{en_complete_name} } = $id;
-        $NativeNameToID{ $l->{native_complete_name} } = $id;
-
-        $Class{$id} = $l->{class} if defined exists $l->{class};
+        $class->_register(%$_) foreach @_;
     }
+    else
+    {
+        $class->_register(@_);
+    }
+}
+
+sub _register
+{
+    my $class = shift;
+
+    my %p = validate( @_,
+                      { id               => { type => SCALAR },
+
+                        en_language      => { type => SCALAR },
+                        en_territory     => { type => SCALAR, optional => 1 },
+                        en_variant       => { type => SCALAR, optional => 1 },
+
+                        native_language  => { type => SCALAR, optional => 1 },
+                        native_territory => { type => SCALAR, optional => 1 },
+                        native_variant   => { type => SCALAR, optional => 1 },
+                        # undocumented hack so we don't have to
+                        # generate .pm files for ICU XML locales which
+                        # don't differ from their parents in terms of
+                        # datetime data.
+                        real_class       => { type => SCALAR, optional => 1 },
+                        class            => { type => SCALAR, optional => 1 },
+                        replace          => { type => SCALAR, default => 0 },
+                      } );
+
+    my $id = $p{id};
+
+    die "'\@' or '=' are not allowed in locale ids"
+        if $id =~ /[\@=]/;
+
+    die "You cannot replace an existing locale ('$id') unless you also specify the 'replace' parameter as true\n"
+        if ! delete $p{replace} && exists $DataForID{$id};
+
+    $p{native_language} = $p{en_language}
+        unless exists $p{native_language};
+
+    my @en_pieces;
+    my @native_pieces;
+    foreach my $p ( qw( language territory variant ) )
+    {
+        push @en_pieces, $p{"en_$p"} if exists $p{"en_$p"};
+        push @native_pieces, $p{"native_$p"} if exists $p{"native_$p"};
+    }
+
+    $p{en_complete_name} = join ' ', @en_pieces;
+    $p{native_complete_name} = join ' ', @native_pieces;
+
+    $DataForID{$id} = \%p;
+
+    $NameToID{ $p{en_complete_name} } = $id;
+    $NativeNameToID{ $p{native_complete_name} } = $id;
+
+    $Class{$id} = $p{class} if defined exists $p{class};
 }
 
 sub registered_id
@@ -140,7 +151,7 @@ sub remove_alias
 
 BEGIN
 {
-    __PACKAGE__->register( \@DateTime::Locale::Locales );
+    __PACKAGE__->register( @DateTime::Locale::Locales );
     __PACKAGE__->add_aliases( \%DateTime::Locale::Aliases );
 }
 
@@ -251,9 +262,12 @@ sub _load_class_from_id
 
     my $real_class = "DateTime::Locale::$subclass";
 
-    eval "require $real_class";
+    unless ( $real_class->can('new') )
+    {
+        eval "require $real_class";
 
-    die $@ if $@;
+        die $@ if $@;
+    }
 
     return $real_class->new( %$data,
                              id => $id,
@@ -403,29 +417,28 @@ actually existed.
 =item * register( { ... }, { ... } )
 
 This method allows you to register custom locales with the module.  A
-locale is specified as a hash reference, and you may register multiple
-locales at once, by passing an array of hash references.
+single locale is specified as a hash, and you may register multiple
+locales at once by passing an array of hash references.
 
 Until registered, custom locales cannot be instantiated via C<load()>
 and will not be returned by querying methods such as C<ids()> or
 C<names()>.
 
- register( { id               => $locale_id,
-             en_language      => ..., # something like 'English' or 'Afar',
+ register( id               => $locale_id,
+           en_language      => ..., # something like 'English' or 'Afar',
 
-             # All other keys are optional.  These are:
-             en_territory => ...,
-             en_variant   => ...,
+           # All other keys are optional.  These are:
+           en_territory => ...,
+           en_variant   => ...,
 
-             native_language  => ...,
-             native_territory => ...,
-             native_variant   => ...,
+           native_language  => ...,
+           native_territory => ...,
+           native_variant   => ...,
 
-             # Optional - defaults to DateTime::Locale::$locale_id
-             class                => $class_name,
+           # Optional - defaults to DateTime::Locale::$locale_id
+           class                => $class_name,
 
-             replace          => $boolean
-           },
+           replace          => $boolean
          )
 
 The locale id and English name are required, and the following formats
@@ -460,33 +473,30 @@ DateTime::Locale subclass.
 Examples:
 
  DateTime::Locale->register
-     ( { id => 'en_GB_RIDAS',
-         en_language  => 'English',
-         en_territory => 'United Kingdom',
-         en_variant   => 'Ridas Custom Locale',
-       },
+     ( id => 'en_GB_RIDAS',
+       en_language  => 'English',
+       en_territory => 'United Kingdom',
+       en_variant   => 'Ridas Custom Locale',
      );
 
  # Returns instance of class DateTime::Locale::en_GB_RIDAS
  my $l = DateTime::Locale->load('en_GB_RIDAS');
 
  DateTime::Locale->register
-     ( { id => 'hu_HU',
-         en_language  => 'Hungarian',
-         en_territory => Hungary',
-         native_language  => 'Magyar',
-         native_territory => 'Magyarország',
-       },
+     ( id => 'hu_HU',
+       en_language  => 'Hungarian',
+       en_territory => Hungary',
+       native_language  => 'Magyar',
+       native_territory => 'Magyarország',
      );
 
  # Returns instance of class DateTime::Locale::hu_HU
  my $l = DateTime::Locale->load('hu_HU');
 
  DateTime::Locale->register
-     ( { id    => 'en_GB_RIDAS',
-         name  => 'English United Kingdom Ridas custom locale',
-         class => 'Ridas::Locales::CustomGB',
-       },
+     ( id    => 'en_GB_RIDAS',
+       name  => 'English United Kingdom Ridas custom locale',
+       class => 'Ridas::Locales::CustomGB',
      );
 
  # Returns instance of class Ridas::Locales::CustomGB
