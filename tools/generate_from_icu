@@ -352,7 +352,7 @@ sub get_formats
             $hash->{date_formats}[ $p->[0] ] = simple2strf( $formats{ $p->[1] } )
         }
 
-        $hash->{default_date_format} = $dates->{default}{type};
+        $hash->{default_date_format_length} = $dates->{default}{type};
     }
 
     if ( my $times = $xml->{dates}{calendars}{calendar}{timeFormats} )
@@ -371,7 +371,7 @@ sub get_formats
             $hash->{time_formats}[ $p->[0] ] = simple2strf( $formats{ $p->[1] } )
         }
 
-        $hash->{default_time_format} = $times->{default}{type};
+        $hash->{default_time_format_length} = $times->{default}{type};
     }
 
     if ( my $order =
@@ -596,8 +596,8 @@ sub generate_locale
     }
 
     foreach my $var
-        ( qw( default_date_format
-              default_time_format
+        ( qw( default_date_format_length
+              default_time_format_length
             ) )
     {
         next unless $hash->{$var};
