@@ -206,6 +206,17 @@ sub load
             if exists $h->{$name};
     }
 
+    if ( my $id = $class->_guess_id($name) )
+    {
+        return $class->_load_from_id($id);
+    }
+}
+
+sub _guess_id
+{
+    my $class = shift;
+    my $name = shift;
+
     # Strip off charset for LC_* ids : en_GB.UTF-8 etc
     $name =~ s/\..*$//;
 
@@ -216,8 +227,8 @@ sub load
                      lc $language
                    )
     {
-        return $class->_load_class_from_id($id)
-            if exists $DataForID{$id};
+        return $id
+            if exists $DataForID{$id} || exists $AliasToID{$id};
     }
 }
 
@@ -228,7 +239,7 @@ sub _load_class_from_id
 
     # We want the first alias for which there is data
     my $data_id = $id;
-    if ( exists $AliasToID{$id} && ! exists $DataForID{$id} )
+    while ( exists $AliasToID{$id} && ! exists $DataForID{$id} )
     {
         $data_id = $AliasToID{$data_id};
     }
