@@ -90,6 +90,7 @@ sub main
 {
     GetOptions( 'dir:s'  => \$opts{dir},
                 'name:s' => \$opts{name},
+                'file:s' => \$opts{file},
                 'quiet'  => \$opts{quiet},
                 'help'   => \$opts{help},
               );
@@ -117,6 +118,11 @@ sub generate_from_ICU_xml
 
     foreach my $f (@files)
     {
+        if ( $opts{file} )
+        {
+            next unless $opts{file} eq basename($f);
+        }
+
         my $id = basename($f)
             or die "Could not get basename for: '$f'";
         $id =~ s/\.xml$//i;
@@ -433,7 +439,7 @@ sub generate_locale
             $vars .= qq|"\Q$val\E",\n|;
         }
 
-        $vars .= "\n);\n\n";
+        $vars .= ");\n\n";
 
         $subs .= sprintf "sub %-30s { \\\@%-30s }\n", $var, $var;
     }
@@ -451,7 +457,7 @@ sub generate_locale
             $vars .= qq|"\Q$k\E" => "\Q$v\E",\n|;
         }
 
-        $vars .= "\n);\n\n";
+        $vars .= ");\n\n";
 
         $subs .= sprintf "sub %-30s { \\%%%-30s }\n", $var, $var;
     }
@@ -464,7 +470,8 @@ sub generate_locale
 	  default_date_format_length => 0,
 	  default_time_format_length => 0,
 	  );
-    while (my ($var, $public) = each %accessors) {
+    while (my ($var, $public) = each %accessors)
+    {
         next unless $hash->{$var};
 
         $vars .= qq|my \$$var = "\Q$hash->{$var}\E";\n|;
@@ -705,13 +712,15 @@ Perl modules.  It also generates the MANIFEST file.
 
 It takes the following arguments:
 
-  --dir   A directory containing ICU XML files.  Required.
+  --dir    A directory containing ICU XML files.  Required.
 
-  --file  Parse just the file with the given name.  For debugging.
+  --file   Parse just the file with the given name.  For debugging.
 
-  --name  Only create the specified locale.  For debugging.
+  --name   Only create the specified locale.  For debugging.
 
-  --help  What you are reading
+  --quiet  Don't display any output while processing files.
+
+  --help   What you are reading
 
 If the --file or --name options are specified, the MANIFEST will not
 be generated.
