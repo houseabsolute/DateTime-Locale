@@ -1,3 +1,10 @@
+0.04   2003-10-03
+
+- The documentation incorrectly showed the DateTime::Locale->register
+method as taking an array, rather than an array of hash references.
+Reported by David Hood.
+
+
 0.03   2003-08-06
 
 - Once a locale is loaded, it is cached in memory, so that locale
