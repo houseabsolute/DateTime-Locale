@@ -2,12 +2,12 @@
 The modules in this directory have been generated from data provided by the
 Common XML Locale Repository project:
 
-  http://www.openi18n.org/subgroups/lade/locale/
+  http://icu.sourceforge.net/
 
 I'm slightly uncertain of the current licensing, but point you
 to the following page:
 
-  http://www.openi18n.org/notice/
+  http://www-306.ibm.com/software/globalization/icu/license.jsp
 
 As the locale data is held on the ICU site, and I have derived these
 modules from ICU .xml files, I make the hopefully reasonable assumption
