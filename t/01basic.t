@@ -94,7 +94,7 @@ sub check_formats
 
     ok( keys %unique >= 1, "'$locale_id': '$array_func' contains at least 1 unique item" );
 
-    for ( qw( full  long  medium  short ) )
+    foreach my $format ( qw( full long medium short ) )
     {
         my $method = "${_}_$item_func";
 
