@@ -45,4 +45,5 @@ Module::Build->new( module_name => 'DateTime::Locale',
                     license     => 'perl',
                     requires    => { 'Params::Validate' => 0,
                                    },
+		    sign        => 1,
                   )->create_build_script;
