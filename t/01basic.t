@@ -25,7 +25,7 @@ my $dt = DateTime->new( year => 2000, month => 1, day => 1, time_zone => "UTC" )
 my $tests_per_locale = $has_dt ? 16 : 12;
 
 plan tests =>
-    3 # starting
+    4    # starting
     + ( @locale_ids * $tests_per_locale ) # test each local
     + 53 # check_en_GB
     + 11 # check_es_ES
@@ -36,6 +36,9 @@ plan tests =>
 ok( @locale_ids >= 240,     "Coverage looks complete" );
 ok( $locale_names{English}, "Locale name 'English' found" );
 ok( $locale_ids{ar_JO},     "Locale id 'ar_JO' found" );
+
+eval { DateTime::Locale->load('Does not exist') };
+like( $@, qr/invalid/i, 'invalid locale name/id to load() causes an error' );
 
 for my $locale_id ( @locale_ids )
 {
