@@ -806,12 +806,12 @@ errors in some locales.
 
 When reporting errors in data, please check the primary data sources
 first, then where necessary report errors directly to the primary
-source:
-
-  Common XML Locale Repository/ICU:  fsg.openi18n.locale.user newsgroup
+source via the ICU project's Jitterbug system at
+http://www.jtcsv.com/cgibin/icu-bugs/
 
 Once these errors have been confirmed, please forward the error
-report, and corrections to DateTime.
+report, and corrections to the DateTime mailing list,
+datetime@perl.org.
 
 Support for this module is provided via the datetime@perl.org email
 list. See http://lists.perl.org/ for more details.
