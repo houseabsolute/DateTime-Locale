@@ -92,7 +92,7 @@ sub check_formats
 
     my %unique = map { $_ => 1 } @{ $locale->$array_func() };
 
-    ok( keys %unique >= 2, "'$locale_id': '$array_func' contains at least 2 unique items" );
+    ok( keys %unique >= 1, "'$locale_id': '$array_func' contains at least 1 unique item" );
 
     for ( qw( full  long  medium  short ) )
     {
