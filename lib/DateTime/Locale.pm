@@ -8,7 +8,7 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.06;
+$VERSION = 0.07;
 
 BEGIN
 {
@@ -217,7 +217,7 @@ sub load
 
     if ( my $id = $class->_guess_id($name) )
     {
-        return $LoadCache{$key} = $class->_load_from_id($id);
+        return $LoadCache{$key} = $class->_load_class_from_id($id);
     }
 
     die "Invalid locale name or id: $name\n";
@@ -233,10 +233,22 @@ sub _guess_id
 
     my ( $language, $territory, $variant ) = split /_/, $name;
 
-    foreach my $id ( "\L$language\U$territory\U$variant",
-                     "\L$language\U$territory",
-                     lc $language
-                   )
+    my @guesses;
+    if ( defined $variant )
+    {
+        push @guesses,
+            join '_', lc $language, uc $territory, uc $variant;
+    }
+
+    if ( defined $territory )
+    {
+        push @guesses,
+            join '_', lc $language, uc $territory;
+    }
+
+    push @guesses, lc $language;
+
+    foreach my $id (@guesses)
     {
         return $id
             if exists $DataForID{$id} || exists $AliasToID{$id};
