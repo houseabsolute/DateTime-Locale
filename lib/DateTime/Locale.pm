@@ -8,7 +8,7 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.01;
+$VERSION = 0.02;
 
 BEGIN
 {
@@ -555,6 +555,7 @@ A completely new custom locale must implement the following methods:
   date_formats
   time_formats
   datetime_format_pattern_order
+  date_parts_order
   _default_date_format_length
   _default_time_format_length
 

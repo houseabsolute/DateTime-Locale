@@ -1,3 +1,9 @@
+0.02   2003-07-25
+
+- Make sure tests pass without requiring DateTime 0.14 to be
+installed.  Reported by Claus Farber.
+
+
 0.01   2003-07-23
 
 - Initial release
