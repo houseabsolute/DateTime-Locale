@@ -239,7 +239,7 @@ sub _load_class_from_id
 
     # We want the first alias for which there is data
     my $data_id = $id;
-    while ( exists $AliasToID{$id} && ! exists $DataForID{$id} )
+    while ( exists $AliasToID{$data_id} && ! exists $DataForID{$data_id} )
     {
         $data_id = $AliasToID{$data_id};
     }
