@@ -496,6 +496,8 @@ Locale", and in the second example the complete English name is
 Magyarország".  The locale will be loadable by these complete names
 (English and native), via the C<load()> method.
 
+=back
+
 =head1 ADDING CUSTOM LOCALES
 
 These are added in one of two ways:
@@ -510,7 +512,7 @@ Subclass an existing locale implementing only the changes you require.
 
 Create a completely new locale.
 
-=back 4
+=back
 
 In either case the locale MUST be registered before use.
 

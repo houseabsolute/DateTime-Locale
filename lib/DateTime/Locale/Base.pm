@@ -182,6 +182,8 @@ This should return a string which is one of "long", "full", "medium",
 or "short".  It indicates the default time format length for the
 locale.
 
+=back
+
 =head1 AUTHORS
 
 Richard Evans <rich@ridas.com>
