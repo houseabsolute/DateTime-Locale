@@ -12,7 +12,7 @@ locale modules yet.
 
 EOF
 
-    my $xml_dir = File::Spec->catdir( File::Spec->curdir, 'icu', 'xml' );
+    my $xml_dir = File::Spec->catdir( File::Spec->curdir, 'icu-xml' );
     if ( -d $xml_dir )
     {
         my $bin = File::Spec->catfile( qw( tools generate_from_icu ) );
@@ -28,8 +28,8 @@ EOF
         warn <<'EOF';
 
 This script needs ICU XML locale data, available from the
-modules/DateTime-Locale/icu directory of the perl-date-time project on
-Sourceforge.
+modules/DateTime-Locale/icu-xml directory of the perl-date-time
+project on Sourceforge.
 
 Once you've run this script you will be able to test and install this
 distribution.
