@@ -441,30 +441,22 @@ EOF
         my %lookup;
 
         $lookup{en_language} = $LanguageLookup{root}{$lang};
-        $lookup{en_complete_name} = $lookup{en_language};
         $lookup{native_language} =
             $LanguageLookup{$lang}{$lang} || $LanguageLookup{root}{$lang};
-        $lookup{native_complete_name} = $lookup{native_language};
 
         if ($territory)
         {
             $lookup{en_territory} = $TerritoryLookup{root}{$territory};;
-            $lookup{en_complete_name} .= ' ' . $lookup{en_territory};
 
             $lookup{native_territory} =
                 ( exists $TerritoryLookup{$lang}{$territory}
                   ? $TerritoryLookup{$lang}{$territory}
                   : $TerritoryLookup{root}{$territory} );
-
-            $lookup{native_complete_name} .= ' ' . $lookup{native_territory};
         }
 
         if ($variant)
         {
             $lookup{en_variant} = ucfirst lc $variant;
-
-            $lookup{en_complete_name} .= ' ' . $lookup{en_variant};
-            $lookup{native_complete_name} .= ' ' . $lookup{en_variant};
         }
         else
         {
@@ -474,8 +466,7 @@ EOF
         $lookup{native_variant} = $lookup{en_variant};
 
         print OUTFILE qq|    { id => "\Q$id\E",\n|;
-        foreach my $k ( qw( en_complete_name native_complete_name
-                            en_language en_territory en_variant
+        foreach my $k ( qw( en_language en_territory en_variant
                             native_language native_territory native_variant
                           )
                       )
@@ -493,7 +484,13 @@ EOF
 
         print OUTFILE "    },\n";
 
-        $locales_in_pod .= sprintf( " %-18s  %s\n", $id, $lookup{en_complete_name} );
+        my @pieces;
+        foreach my $p ( qw( en_language en_territory en_variant ) )
+        {
+            push @pieces, $lookup{$p} if exists $lookup{$p};
+        }
+
+        $locales_in_pod .= sprintf( " %-18s  %s\n", $id, join ' ', @pieces );
     }
 
     print OUTFILE ");\n\n";
