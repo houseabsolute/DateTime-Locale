@@ -4,7 +4,7 @@ use strict;
 
 use DateTime::LocaleCatalog;
 
-use Params::Validate qw( validate );
+use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
@@ -28,32 +28,28 @@ sub register
 {
     shift;
 
-    my $locales;
-
-    if ( my $ref = ref $_[0] )
+    foreach my $l ( ref $_[0] ? @{ $_[0] } : $_[0] )
     {
-        $locales =
-            $ref eq "ARRAY" ? shift : die "Argument of ref type: $ref is invalid";
-    }
-    else
-    {
-        my %args = validate( @_, { id                   => 1,
-                                   en_complete_name     => 1,
-                                   native_complete_name => 0,
-                                   class                => 0,
-                                 } );
+        my @p = %$l;
+        my %p = validate( @p, { id                   => { type => SCALAR },
+                                en_complete_name     => { type => SCALAR },
+                                native_complete_name => { type => SCALAR, optional => 1 },
+                                en_language      => { type => SCALAR, optional => 1 },
+                                native_language  => { type => SCALAR, optional => 1 },
+                                en_territory     => { type => SCALAR, optional => 1 },
+                                native_territory => { type => SCALAR, optional => 1 },
+                                en_variant       => { type => SCALAR, optional => 1 },
+                                native_variant   => { type => SCALAR, optional => 1 },
+                                class            => { type => SCALAR, optional => 1 },
+                                replace          => { type => SCALAR, default => 0 },
+                              } );
 
-        $locales = [ \%args ];
-    }
+        my $id = $p{id};
 
-    foreach my $l (@$locales)
-    {
-        my $id = $l->{id};
-
-        warn "WARNING: Use of reserved characters '\@' or '=' in id may cause compatibility problems with future releases"
+        die "'\@' or '=' are not allowed in locale ids"
             if $id =~ /[\@=]/;
-        warn "WARNING: Existing locale '$id' ($DataForID{$id}->{en_complete_name}) has been replaced during registration\n"
-            if exists $DataForID{$id};
+        die "You cannot replace an existing locale ('$id') unless you also specify the 'replace' parameter as true\n"
+            if ! delete $l->{replace} && exists $DataForID{$id};
 
         $DataForID{$id} = $l;
         $NameToID{ $l->{en_complete_name} } = $id;
@@ -72,7 +68,8 @@ sub register
 
 sub registered_id
 {
-    my (undef, $id) = @_;
+    shift;
+    my ($id) = validate_pos( @_, { type => SCALAR } );
 
     return 1 if $AliasToID{$id};
     return 1 if $DataForID{$id};
@@ -96,7 +93,7 @@ sub add_aliases
 
         # check for overwrite?
 
-        # we don't want aliases to aliases
+        # we don't want aliases to other "pure" (no data) aliases
         while ( ! exists $DataForID{$id} )
         {
             $id = $AliasToID{$id};
@@ -108,57 +105,28 @@ sub add_aliases
 
 sub remove_alias
 {
-    my (undef, $alias) = @_;
+    shift;
+    my ($alias) = validate_pos( @_, { type => SCALAR } );
 
-    die "Missing alias" unless $alias;
-
-    warn "WARNING: Removed locale alias '$alias' was set as the default fallback locale\n"
-        if $alias eq fallback_id();
-
-    return defined delete $AliasToID{$alias};
+    return delete $AliasToID{$alias};
 }
 
+BEGIN
+{
+    __PACKAGE__->register( \@DateTime::Locale::Locales );
+    __PACKAGE__->add_aliases( \%DateTime::Locale::Aliases );
+}
 
-# These are hardcoded for backwards comaptibility with the
-# DateTime::Language code.
-my %OldAliases =
-    ( #'Afar'              => undef, # XXX
-      'Amharic'           => 'am_ET',
-      'Austrian'          => 'de_AT',
-      'Brazilian'         => 'pt_BR',
-      'Czech'             => 'cs_CZ',
-      'Danish'            => 'da_DK',
-      'Dutch'             => 'nl_NL',
-      'English'           => 'en_US',
-      'French'            => 'fr_FR',
-#      'Gedeo'             => undef, # XXX
-      'German'            => 'de_DE',
-      'Italian'           => 'it_IT',
-      'Norwegian'         => 'no_NO',
-      'Oromo'             => 'om_ET', # Maybe om_KE or plain om ?
-      'Portugese'         => 'pt_PT',
-#      'Sidama'            => undef, # XXX
-      'Somali'            => 'so_SO',
-      'Spanish'           => 'es_ES',
-      'Swedish'           => 'sv_SE',
-#      'Tigre'             => undef, # XXX
-      'TigrinyaEthiopian' => 'ti_ET',
-      'TigrinyaEritrean'  => 'ti_ER',
-    );
-
-__PACKAGE__->register( \@DateTime::Locale::Locales );
-__PACKAGE__->add_aliases( \%DateTime::Locale::Aliases );
-
-sub ids              { wantarray ? keys %DataForID       : [ keys %DataForID       ] }
+sub ids              { wantarray ? keys %DataForID       : [ keys %DataForID      ] }
 sub names            { wantarray ? keys %NameToID        : [ keys %NameToID       ] }
 sub native_names     { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToID ] }
 
 {
-    use constant FORMAT_TYPES      => { F => 0,      L => 1,      M => 2,        S => 3       };
-    use constant FORMAT_TYPE_NAMES => { 0 => 'full', 1 => 'long', 2 => 'medium', 3 => 'short' };
+    my %FORMAT_TYPES      = ( F => 0,      L => 1,      M => 2,        S => 3       );
+    my %FORMAT_TYPE_NAMES = ( 0 => 'full', 1 => 'long', 2 => 'medium', 3 => 'short' );
 
-    my $Default_date_format_length = FORMAT_TYPES->{M};
-    my $Default_time_format_length = FORMAT_TYPES->{M};
+    my $Default_date_format_length = $FORMAT_TYPES{M};
+    my $Default_time_format_length = $FORMAT_TYPES{M};
 
     sub default_date_format_length { shift->_default_format_length(\$Default_date_format_length, @_) }
     sub default_time_format_length { shift->_default_format_length(\$Default_time_format_length, @_) }
@@ -172,7 +140,7 @@ sub native_names     { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToI
 
         my ($format) = ( shift =~ /^(.)/ );
 
-        die "Invalid format value" unless defined ($format = FORMAT_TYPES->{uc $format});
+        die "Invalid format value" unless defined ( $format = $FORMAT_TYPES{ uc $format } );
 
         return $$ref = $format;
     }
@@ -182,66 +150,74 @@ sub native_names     { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToI
         shift;
 
         return "" unless @_;
-        return FORMAT_TYPE_NAMES->{shift()} || "";
+        return $FORMAT_TYPE_NAMES{ shift() } || '';
     }
 }
 
+# These are hardcoded for backwards comaptibility with the
+# DateTime::Language code.
+my %OldAliases =
+    ( #'Afar'              => undef, # XXX
+     'Amharic'           => 'am_ET',
+     'Austrian'          => 'de_AT',
+     'Brazilian'         => 'pt_BR',
+     'Czech'             => 'cs_CZ',
+     'Danish'            => 'da_DK',
+         'Dutch'             => 'nl_NL',
+     'English'           => 'en_US',
+     'French'            => 'fr_FR',
+     #      'Gedeo'             => undef, # XXX
+     'German'            => 'de_DE',
+     'Italian'           => 'it_IT',
+     'Norwegian'         => 'no_NO',
+     'Oromo'             => 'om_ET', # Maybe om_KE or plain om ?
+     'Portugese'         => 'pt_PT',
+     #      'Sidama'            => undef, # XXX
+         'Somali'            => 'so_SO',
+     'Spanish'           => 'es_ES',
+     'Swedish'           => 'sv_SE',
+     #      'Tigre'             => undef, # XXX
+     'TigrinyaEthiopian' => 'ti_ET',
+     'TigrinyaEritrean'  => 'ti_ER',
+    );
+
+sub load
 {
-    my %Cached;
-    my $Fallback_id = "";
+    my $class = shift;
+    my $name = shift;
 
-    sub fallback_id
+    # Custom class registered by user
+    if ( $Class{$name} )
     {
-        shift;
-        return $Fallback_id unless @_;
-
-        my $fallback_id = shift || "";
-
-        die "Unregistered locale '$fallback_id' cannot be used as a fallback id"
-            if $fallback_id and not registered_id(undef, $fallback_id);
-
-        $Fallback_id = $fallback_id;
+        return $Class{$name}->new;
     }
 
+    # special case for backwards compatibility with DT::Language
+    $name = $OldAliases{$name} if exists $OldAliases{$name};
 
-    sub load
+    if ( exists $DataForID{$name} || exists $AliasToID{$name} )
     {
-        my $class = shift;
-        my $name = shift;
+        return $class->_load_class_from_id($name);
+    }
 
-        # Custom class registered by user
-        if ( $Class{$name} )
-        {
-            return $Class{$name}->new;
-        }
+    foreach my $h ( \%NameToID, \%NativeNameToID )
+    {
+        return $class->_load_class_from_id( $h->{$name} )
+            if exists $h->{$name};
+    }
 
-        # special case for backwards compatibility with DT::Language
-        $name = $OldAliases{$name} if exists $OldAliases{$name};
+    # Strip off charset for LC_* ids : en_GB.UTF-8 etc
+    $name =~ s/\..*$//;
 
-        if ( exists $DataForID{$name} || exists $AliasToID{$name} )
-        {
-            return $class->_load_class_from_id($name);
-        }
+    my ( $language, $territory, $variant ) = split /_/, $name;
 
-        foreach my $h ( \%NameToID, \%NativeNameToID )
-        {
-            return $class->_load_class_from_id( $h->{$name} )
-                if exists $h->{$name};
-        }
-
-        # Strip off charset for LC_* ids : en_GB.UTF-8 etc
-        $name =~ s/\..*$//;
-
-        my ( $language, $territory, $variant ) = split /_/, $name;
-
-        foreach my $id ( "\L$language\U$territory\U$variant",
-                         "\L$language\U$territory",
-                         lc $language
-                       )
-        {
-            return $class->_load_class_from_id($id)
-                if exists $DataForID{$id};
-        }
+    foreach my $id ( "\L$language\U$territory\U$variant",
+                     "\L$language\U$territory",
+                     lc $language
+                   )
+    {
+        return $class->_load_class_from_id($id)
+            if exists $DataForID{$id};
     }
 }
 
@@ -323,7 +299,7 @@ This module provides the following class methods:
 
 =item * load ( $locale_id | $locale_name | $alias )
 
-=item * load ( $locale_id | $locale_name | $alias, fallback_id => $id )
+=item * load ( $locale_id | $locale_name | $alias )
 
 Returns the locale object for the specified locale id, name, or alias
 - see the C<DateTime::LocaleCatalog> documentation for a list of built
@@ -345,9 +321,7 @@ Eg. For locale C<es_XX_UNKNOWN> the fallback search would be:
   es              # Found - the es locale is returned as the
                   # closest match to the requested id
 
-By default, an exception is thrown when no suitable replacement is
-found.
-
+If no suitable replacement is found, then an exception is thrown.
 
 =item * ids
 
@@ -606,9 +580,9 @@ used wherever possible:
              Basically anything you want, since this is typically the
              component that uniquely identifies a custom locale.
 
-Note: Do not use '@' or '=' in locale ids - these are reserved for
-future use. Underscore '_' is the component separator and should not
-be used for any other purpose.
+You cannot not use '@' or '=' in locale ids - these are reserved for
+future use.  The underscore (_) is the component separator, and should
+not be used for any other purpose.
 
  en_complete_name: language[ territory[ variant]]
 
