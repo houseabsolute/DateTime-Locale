@@ -1,5 +1,3 @@
-# Lots more to do!
-
 BEGIN
 {
     return unless $] >= 5.006;
@@ -27,7 +25,7 @@ my $tests_per_locale = $has_dt ? 16 : 12;
 plan tests =>
     4    # starting
     + ( @locale_ids * $tests_per_locale ) # test each local
-    + 54 # check_en_GB
+    + 55 # check_en_GB
     + 11 # check_es_ES
     + 5  # check_en_US_POSIX
     + 9  # check_DT_Lang
@@ -184,6 +182,8 @@ sub check_en_GB
 
     is( $locale->default_datetime_format, "\%\{day\}\ \%b\ \%\{ce_year\} \%H\:\%M\:\%S",
         'check default datetime format' );
+
+    is( $locale->date_parts_order, 'dmy', 'date_parts_order' );
 }
 
 sub check_es_ES
