@@ -2,8 +2,10 @@
 
 - Once a locale is loaded, it is cached in memory, so that locale
 objects are singletons.  Calling methods that change the locale
-registry, like register() or remove_alias(), clear that cache.  Based
-on a patch from John Siracusa.
+registry, like register() or remove_alias(), clear that cache.  This
+should provide a noticeable speed boost when constructing many
+DateTime objects with the same locale.  Based on a patch from John
+Siracusa.
 
 
 0.02   2003-07-25
