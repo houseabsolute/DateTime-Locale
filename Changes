@@ -1,3 +1,9 @@
+0.08   2004-02-12
+
+- No code changes, just a Makefile.PL update to work with
+Module::Build 0.23.
+
+
 0.07   2003-12-14
 
 - If given an id like 'en_US.UTF-8', DateTime::Locale would die with
