@@ -272,7 +272,6 @@ sub import
             'por_PT_PREEURO'       => 'pt_PT',
             'ron'                  => 'ro',
             'ron_RO'               => 'ro_RO',
-            'root'                 => 'root',
             'rum'                  => 'ro',
             'rum_RO'               => 'ro_RO',
             'rus'                  => 'ru',
@@ -628,7 +627,6 @@ Adds the following ISO 639 2 language locale aliases:
  por_PT_PREEURO      pt_PT
  ron                 ro
  ron_RO              ro_RO
- root                root
  rum                 ro
  rum_RO              ro_RO
  rus                 ru
