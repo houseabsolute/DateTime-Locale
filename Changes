@@ -1,3 +1,21 @@
+0.20
+
+* BACKWARDS INCOMPATIBILITY - The way DateTime::Locale::Base
+subclasses work has changed.  Subclasses should no longer implement
+the date_formats() or time_formats() methods.  Instead, they need to
+provide one method per format length (full_date_format(),
+long_date_format(), etc).
+
+- Uses much newer (August, 2004) data from ICU.  This includes a
+number of new locales.  See DateTime::LocaleCatalog for a list.  This
+new data also adds a new type of differentiator for locales, the
+script (Latin vs Cyrillic, for example).
+
+- Added new methods to get the "narrow" forms of a day or month.
+
+- Implemented per-locale eras.
+
+
 0.10
 
 - Fix a number of doc typos and buglets.  Patch by Jean Forget.

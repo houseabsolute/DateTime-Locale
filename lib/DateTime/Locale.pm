@@ -4,11 +4,15 @@ use strict;
 
 use DateTime::LocaleCatalog;
 
+# Loading this here isn't necessary, but it makes it easier to catch
+# syntax errors when testing.
+use DateTime::Locale::Base;
+
 use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.09;
+$VERSION = 0.20;
 
 BEGIN
 {
@@ -50,10 +54,12 @@ sub _register
                       { id               => { type => SCALAR },
 
                         en_language      => { type => SCALAR },
+                        en_script        => { type => SCALAR, optional => 1 },
                         en_territory     => { type => SCALAR, optional => 1 },
                         en_variant       => { type => SCALAR, optional => 1 },
 
                         native_language  => { type => SCALAR, optional => 1 },
+                        native_script    => { type => SCALAR, optional => 1 },
                         native_territory => { type => SCALAR, optional => 1 },
                         native_variant   => { type => SCALAR, optional => 1 },
                         # undocumented hack so we don't have to
@@ -78,7 +84,7 @@ sub _register
 
     my @en_pieces;
     my @native_pieces;
-    foreach my $p ( qw( language territory variant ) )
+    foreach my $p ( qw( language script territory variant ) )
     {
         push @en_pieces, $p{"en_$p"} if exists $p{"en_$p"};
         push @native_pieces, $p{"native_$p"} if exists $p{"native_$p"};
@@ -162,28 +168,28 @@ sub native_names     { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToI
 # These are hardcoded for backwards comaptibility with the
 # DateTime::Language code.
 my %OldAliases =
-    ( #'Afar'              => undef, # XXX
-     'Amharic'           => 'am_ET',
-     'Austrian'          => 'de_AT',
-     'Brazilian'         => 'pt_BR',
-     'Czech'             => 'cs_CZ',
-     'Danish'            => 'da_DK',
-     'Dutch'             => 'nl_NL',
-     'English'           => 'en_US',
-     'French'            => 'fr_FR',
-     #      'Gedeo'             => undef, # XXX
-     'German'            => 'de_DE',
-     'Italian'           => 'it_IT',
-     'Norwegian'         => 'no_NO',
-     'Oromo'             => 'om_ET', # Maybe om_KE or plain om ?
-     'Portugese'         => 'pt_PT',
-     #      'Sidama'            => undef, # XXX
-     'Somali'            => 'so_SO',
-     'Spanish'           => 'es_ES',
-     'Swedish'           => 'sv_SE',
-     #      'Tigre'             => undef, # XXX
-     'TigrinyaEthiopian' => 'ti_ET',
-     'TigrinyaEritrean'  => 'ti_ER',
+    ( 'Afar'             => 'aa',
+      'Amharic'           => 'am_ET',
+      'Austrian'          => 'de_AT',
+      'Brazilian'         => 'pt_BR',
+      'Czech'             => 'cs_CZ',
+      'Danish'            => 'da_DK',
+      'Dutch'             => 'nl_NL',
+      'English'           => 'en_US',
+      'French'            => 'fr_FR',
+      #      'Gedeo'             => undef, # XXX
+      'German'            => 'de_DE',
+      'Italian'           => 'it_IT',
+      'Norwegian'         => 'no_NO',
+      'Oromo'             => 'om_ET', # Maybe om_KE or plain om ?
+      'Portugese'         => 'pt_PT',
+      'Sidama'            => 'sid',
+      'Somali'            => 'so_SO',
+      'Spanish'           => 'es_ES',
+      'Swedish'           => 'sv_SE',
+      'Tigre'             => 'tig',
+      'TigrinyaEthiopian' => 'ti_ET',
+      'TigrinyaEritrean'  => 'ti_ER',
     );
 
 sub load
@@ -231,9 +237,23 @@ sub _guess_id
     # Strip off charset for LC_* ids : en_GB.UTF-8 etc
     $name =~ s/\..*$//;
 
-    my ( $language, $territory, $variant ) = split /_/, $name;
+    my ($language, $script, $territory, $variant ) =
+        parse_id($name);
 
     my @guesses;
+
+    if ( defined $script )
+    {
+        my $guess = join '_', lc $language, ucfirst lc $script;
+
+        push @guesses, $guess;
+
+        $guess .= '_' . uc $territory if defined $territory;
+
+        # version with script comes first
+        unshift @guesses, $guess;
+    }
+
     if ( defined $variant )
     {
         push @guesses,
@@ -253,6 +273,17 @@ sub _guess_id
         return $id
             if exists $DataForID{$id} || exists $AliasToID{$id};
     }
+}
+
+sub parse_id
+{
+    $_[0] =~ /([a-z]+)               # id
+              (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
+              (?: _([A-Z]+) )?       # territory - ALL CAPS - optional
+              (?: _([A-Z]+) )?       # variant - ALL CAPS - optional
+             /x;
+
+    return $1, $2, $3, $4;
 }
 
 sub _load_class_from_id
@@ -292,7 +323,7 @@ __END__
 
 =head1 NAME
 
-DateTime::Locale - Localization support for DateTime
+DateTime::Locale - Localization support for DateTime.pm
 
 =head1 SYNOPSIS
 
@@ -335,6 +366,8 @@ find a suitable replacement.
 
 The fallback search order is:
 
+  language_script_territory
+  language_script
   language_territory_variant
   language_territory
   language
@@ -342,6 +375,14 @@ The fallback search order is:
 Eg. For locale C<es_XX_UNKNOWN> the fallback search would be:
 
   es_XX_UNKNOWN   # Fails - no such locale
+  es_XX           # Fails - no such locale
+  es              # Found - the es locale is returned as the
+                  # closest match to the requested id
+
+Eg. For locale C<es_Latn_XX> the fallback search would be:
+
+  es_Latn_XX      # Fails - no such locale
+  es_Latn         # Fails - no such locale
   es_XX           # Fails - no such locale
   es              # Found - the es locale is returned as the
                   # closest match to the requested id
@@ -440,10 +481,12 @@ C<names()>.
            en_language      => ..., # something like 'English' or 'Afar',
 
            # All other keys are optional.  These are:
+           en_script    => ...,
            en_territory => ...,
            en_variant   => ...,
 
            native_language  => ...,
+           native_sript     => ...,
            native_territory => ...,
            native_variant   => ...,
 
@@ -456,10 +499,12 @@ C<names()>.
 The locale id and English name are required, and the following formats
 should used wherever possible:
 
- id:   languageId[_territoryId[_variantId]]
+ id:   languageId[_script][_territoryId[_variantId]]
 
- Where:  languageId = Lower case ISO  639 code -
-          Always choose 639-1 over 639-2 where possible.
+ Where:  languageId = Lower case ISO 639 code -
+         Always choose 639-1 over 639-2 where possible.
+
+ script = Title Case ISO 15924 script code
 
  territoryId = Upper case ISO 3166 code -
                Always choose 3166-1 over 3166-2 where possible.
@@ -579,8 +624,15 @@ provide different date/time formats:
     'short'  => '%{hour12}:%M %p',
   };
 
-  sub date_formats { $date_formats }
-  sub time_formats { $time_formats }
+  sub short_date_format  { $date_formats{short} }
+  sub medium_date_format { $date_formats{medium} }
+  sub long_date_format   { $date_formats{long} }
+  sub full_date_format   { $date_formats{full} }
+
+  sub short_time_format  { $time_formats{short} }
+  sub medium_time_format { $time_formats{medium} }
+  sub long_time_format   { $time_formats{long} }
+  sub full_time_format   { $time_formats{full} }
 
   1;
 
@@ -604,8 +656,17 @@ A completely new custom locale must implement the following methods:
   day_abbreviations
   am_pms
   eras
-  date_formats
-  time_formats
+
+  short_date_format
+  medium_date_format
+  long_date_format
+  full_date_format
+
+  short_time_format
+  medium_time_format
+  long_time_format
+  full_time_format
+
   datetime_format_pattern_order
   date_parts_order
   _default_date_format_length
@@ -642,6 +703,10 @@ The complete locale id, something like "en_US".
 
 The language portion of the id, like "en".
 
+=item * script_id
+
+The script portion of the id, like "Hant".
+
 =item * territory_id
 
 The territory portion of the id, like "US".
@@ -659,6 +724,8 @@ English.
 
 =item * language
 
+=item * script
+
 =item * territory
 
 =item * variant
@@ -671,6 +738,8 @@ or "United States".
 The locale's complete name in localized form as a UTF-8 string.
 
 =item * native_language
+
+=item * native_script
 
 =item * native_territory
 
@@ -768,6 +837,12 @@ with January as the first month.
 Returns an array reference containing the abbreviated names of the
 months, with January as the first month.
 
+=item * month_narrows
+
+Returns an array reference containing the narrow names of the months,
+with January as the first month.  Narrow names are the shortest
+possible names, and may not be unique.
+
 =item * day_names
 
 Returns an array reference containing the full names of the days,
@@ -778,10 +853,21 @@ with Monday as the first day.
 Returns an array reference containing the abbreviated names of the
 days, with Monday as the first day.
 
+=item * day_narrows
+
+Returns an array reference containing the narrow names of the days,
+with Monday as the first day.  Narrow names are the shortest possible
+names, and may not be unique.
+
 =item * am_pms
 
 Returns an array reference containing the localized forms of "AM" and
 "PM".
+
+=item * eras
+
+Returns an array reference containing the localized forms of "BCE" and
+"CE".
 
 =item * date_formats
 
@@ -834,16 +920,17 @@ Richard Evans <rich@ridas.com>
 
 Dave Rolsky <autarch@urth.org>
 
-These modules are based on the DateTime::Language modules, which were
-in turn based on the Date::Language modules from Graham Barr's
-TimeDate distribution.
+These modules are loosely based on the DateTime::Language modules,
+which were in turn based on the Date::Language modules from Graham
+Barr's TimeDate distribution.
 
 Thanks to Rick Measham for providing the Java to strftime pattern
 conversion routines used during locale generation.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2003 Richard Evans. All rights reserved.
+Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2005 David
+Rolsky. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

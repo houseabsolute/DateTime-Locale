@@ -9,8 +9,8 @@ use Params::Validate qw( validate_pos );
 BEGIN
 {
     foreach my $field ( qw( id en_complete_name native_complete_name
-                            en_language en_territory en_variant
-                            native_language native_territory native_variant
+                            en_language en_script en_territory en_variant
+                            native_language native_script native_territory native_variant
                           )
                       )
     {
@@ -25,6 +25,8 @@ BEGIN
     }
 }
 
+my @FormatLengths = qw( short medium long full );
+
 sub new
 {
     my $c = shift;
@@ -35,28 +37,48 @@ sub new
                  }, $c;
 }
 
-sub language_id  { ( split /_/, $_[0]->id )[0] }
-sub territory_id { ( split /_/, $_[0]->id )[1] }
-sub variant_id   { ( split /_/, $_[0]->id )[2] }
+sub language_id  { ( DateTime::Locale::parse_id( $_[0]->id ) )[0] }
+sub script_id    { ( DateTime::Locale::parse_id( $_[0]->id ) )[1] }
+sub territory_id { ( DateTime::Locale::parse_id( $_[0]->id ) )[2] }
+sub variant_id   { ( DateTime::Locale::parse_id( $_[0]->id ) )[3] }
 
-sub month_name               { $_[0]->month_names->        [ $_[1]->month_0           ] }
-sub month_abbreviation       { $_[0]->month_abbreviations->[ $_[1]->month_0           ] }
-sub day_name                 { $_[0]->day_names->          [ $_[1]->day_of_week_0     ] }
-sub day_abbreviation         { $_[0]->day_abbreviations->  [ $_[1]->day_of_week_0     ] }
-sub am_pm                    { $_[0]->am_pms->             [ $_[1]->hour < 12 ? 0 : 1 ] }
-sub era;                     # TBD
+sub month_name          { $_[0]->month_names->        [ $_[1]->month_0 ] }
+sub month_abbreviation  { $_[0]->month_abbreviations->[ $_[1]->month_0 ] }
+sub month_narrow        { $_[0]->month_narrows->      [ $_[1]->month_0 ] }
 
-sub    full_date_format      { $_[0]->date_formats->{full} }
-sub    long_date_format      { $_[0]->date_formats->{long} }
-sub  medium_date_format      { $_[0]->date_formats->{medium} }
-sub   short_date_format      { $_[0]->date_formats->{short} }
-sub default_date_format      { $_[0]->date_formats->{ $_[0]->{default_date_format_length} } }
+sub day_name            { $_[0]->day_names->        [ $_[1]->day_of_week_0 ] }
+sub day_abbreviation    { $_[0]->day_abbreviations->[ $_[1]->day_of_week_0 ] }
+sub day_narrow          { $_[0]->day_narrows->      [ $_[1]->day_of_week_0 ] }
 
-sub    full_time_format      { $_[0]->time_formats->{full} }
-sub    long_time_format      { $_[0]->time_formats->{long} }
-sub  medium_time_format      { $_[0]->time_formats->{medium} }
-sub   short_time_format      { $_[0]->time_formats->{short} }
-sub default_time_format      { $_[0]->time_formats->{ $_[0]->{default_time_format_length} } }
+sub am_pm               { $_[0]->am_pms->[ $_[1]->hour < 12 ? 0 : 1 ] }
+
+sub era                 { $_[0]->eras->[ $_[1]->year < 0 ? 0 : 1 ] }
+
+sub default_date_format
+{
+    my $meth = $_[0]->{default_date_format_length} . '_date_format';
+    $_[0]->$meth();
+}
+
+sub date_formats
+{
+    return
+        { map { my $meth = "${_}_date_format";
+                $_ => $_[0]->$meth() } @FormatLengths }
+}
+
+sub default_time_format
+{
+    my $meth = $_[0]->{default_time_format_length} . '_time_format';
+    $_[0]->$meth();
+}
+
+sub time_formats
+{
+    return
+        { map { my $meth = "${_}_time_format";
+                $_ => $_[0]->$meth() } @FormatLengths }
+}
 
 sub _datetime_format_pattern_order { $_[0]->date_before_time ? (0, 1) : (1, 0) }
 
@@ -145,6 +167,12 @@ with January as the first month.
 Returns an array reference containing the abbreviated names of the
 months, with January as the first month.
 
+=item * month_narrows
+
+Returns an array reference containing the narrow names of the months,
+with January as the first month.  Narrow names are the shortest
+possible names, and need not be unique.
+
 =item * day_names
 
 Returns an array reference containing the full names of the days,
@@ -155,22 +183,29 @@ with Monday as the first day.
 Returns an array reference containing the abbreviated names of the
 days, with Monday as the first day.
 
+=item * day_narrows
+
+Returns an array reference containing the narrow names of the days,
+with Monday as the first day.  Narrow names are the shortest possible
+names, and need not be unique.
+
 =item * am_pms
 
 Returns an array reference containing the localized forms of "AM" and
 "PM".
 
-=item * date_formats
+=item * eras
 
-Returns a hash reference containing the date formats used for the
-locale.  The hash must contain the keys "long", "full", "medium", and
-"short".
+Returns an array reference containing the localized forms of "BCE" and
+"CE".
 
-=item * time_formats
+=item * long_date_format, full_date_format, medium_date_format, short_date_format
 
-Returns a hash reference containing the time formats used for the
-locale.  The hash must contain the keys "long", "full", "medium", and
-"short".
+Returns the date format of the appropriate length.
+
+=item * long_time_format, full_time_format, medium_time_format, short_time_format
+
+Returns the date format of the appropriate length.
 
 =item * date_before_time
 
@@ -211,7 +246,8 @@ Dave Rolsky <autarch@urth.org>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2003 Richard Evans. All rights reserved.
+Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2005 David
+Rolsky. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

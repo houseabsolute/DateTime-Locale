@@ -74,7 +74,7 @@ sub import
             'chi_MO'               => 'zh_MO',
             'chi_SG'               => 'zh_SG',
             'chi_TW'               => 'zh_TW',
-            'chi_TW_STROKE'        => 'zh_TW_STROKE',
+            'chi_TW_STROKE'        => 'zh_TW',
             'cor'                  => 'kw',
             'cor_GB'               => 'kw_GB',
             'cze'                  => 'cs',
@@ -355,7 +355,7 @@ sub import
             'zho_MO'               => 'zh_MO',
             'zho_SG'               => 'zh_SG',
             'zho_TW'               => 'zh_TW',
-            'zho_TW_STROKE'        => 'zh_TW_STROKE',
+            'zho_TW_STROKE'        => 'zh_TW',
           }
         );
 }
@@ -433,7 +433,7 @@ Adds the following ISO 639 2 language locale aliases:
  chi_MO              zh_MO
  chi_SG              zh_SG
  chi_TW              zh_TW
- chi_TW_STROKE       zh_TW_STROKE
+ chi_TW_STROKE       zh_TW
  cor                 kw
  cor_GB              kw_GB
  cze                 cs
@@ -705,7 +705,7 @@ Adds the following ISO 639 2 language locale aliases:
  zho_MO              zh_MO
  zho_SG              zh_SG
  zho_TW              zh_TW
- zho_TW_STROKE       zh_TW_STROKE
+ zho_TW_STROKE       zh_TW
 
 To enable this support, simply add:
 

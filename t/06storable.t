@@ -2,7 +2,21 @@
 
 use strict;
 
-use Test::More tests => 2;
+use Test::More;
+
+BEGIN
+{
+    eval { require Storable };
+
+    if ($@)
+    {
+        plan skip_all => 'These tests require the Storable mdoule';
+    }
+    else
+    {
+        plan tests => 2;
+    }
+}
 
 use DateTime::Locale;
 

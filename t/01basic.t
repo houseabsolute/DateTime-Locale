@@ -68,8 +68,10 @@ for my $locale_id ( @locale_ids )
 
     check_array($locale_id, $locale, "month_names",         "month_name",         "month", 12);
     check_array($locale_id, $locale, "month_abbreviations", "month_abbreviation", "month", 12);
+
     check_array($locale_id, $locale, "day_names",           "day_name",           "day",   7 );
     check_array($locale_id, $locale, "day_abbreviations",   "day_abbreviation",   "day",   7 );
+
     check_formats($locale_id, $locale, "date_formats",        "date_format");
     check_formats($locale_id, $locale, "time_formats",        "time_format");
 }
@@ -115,7 +117,16 @@ sub check_formats
     {
         my $method = "${format}_$item_func";
 
-        delete $unique { $locale->$method() };
+        my $val = $locale->$method();
+
+        if ( defined $val )
+        {
+            delete $unique{$val};
+        }
+        else
+        {
+            Test::More::diag( "$locale_id returned undef for $method()" );
+        }
     }
 
     is( keys %unique, 0,
@@ -227,13 +238,14 @@ sub check_en_US_POSIX
 sub check_DT_Lang
 {
     foreach my $old ( qw ( Austrian TigrinyaEthiopian TigrinyaEritrean
-                           Brazilian Portuguese ) )
+                           Brazilian Portuguese
+                           Afar Sidama Tigre ) )
     {
         ok( DateTime::Locale->load($old), "backwards compatibility for $old" );
     }
 
 
-    foreach my $old ( qw ( Afar Gedeo Sidama Tigre ) )
+    foreach my $old ( qw ( Gedeo ) )
     {
       SKIP:
         {

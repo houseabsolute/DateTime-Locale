@@ -1,26 +1,5 @@
 #!/usr/bin/perl -w
 
-#############################################################################
-# Source: Ridas::Locale::ICU::Language
-#         Ridas::Locale::ICU::Territory
-
-#############################################################################
-# Source: Ridas::Locale::ICU::Cache
-#         Ridas::Locale::ICU::Calendar
-#         Ridas::Locale::ICU::Common
-#         Ridas::Locale::ICU::JavaPatterns
-
-#############################################################################
-# Source: Ridas::Locale::ICU::JavaPatterns
-
-#############################################################################
-# Source: Ridas::Locale::ICU::ICUtoPOSIXConverter
-#
-# Code provided by Rick Measham (cheers mate!)
-
-#############################################################################
-# Source: Ridas::Locale::ICU::makeDateTimeLocale.pl
-
 use strict;
 
 use 5.006;
@@ -32,9 +11,10 @@ use File::Spec;
 use Getopt::Long;
 use XML::Simple;
 
-my $VERSION = "0.01";
+my $VERSION = "0.02";
 
-my ( %LocalesWithoutData, %XML, %LanguageLookup, %TerritoryLookup );
+my ( %LocalesWithoutData, %XML, %Parents,
+     %LanguageLookup, %TerritoryLookup, %ScriptLookup );
 
 my $ScriptName = basename($0);
 
@@ -46,6 +26,10 @@ my %Aliases =
      # one point.
      'iw'            => 'he',
      'iw_IL'         => 'he_IL',
+     # ICU got rid of no
+     'no'            => 'nn',
+     'no_NO'         => 'nn_NO',
+     'no_NO_NY'      => 'nn_NO',
     );
 
 # it's an array because the order in which the regexes are checked is
@@ -82,17 +66,20 @@ my @JavaPatterns =
       qr/z/     => '{time_zone_long_name}',
     );
 
+my @FormatLengths = qw( full long medium short  );
+
 my %opts;
 
 main();
 
 sub main
 {
-    GetOptions( 'dir:s'  => \$opts{dir},
-                'name:s' => \$opts{name},
-                'file:s' => \$opts{file},
-                'quiet'  => \$opts{quiet},
-                'help'   => \$opts{help},
+    GetOptions( 'dir:s'   => \$opts{dir},
+                'name:s'  => \$opts{name},
+                'file:s'  => \$opts{file},
+                'quiet'   => \$opts{quiet},
+                'verbose' => \$opts{verbose},
+                'help'    => \$opts{help},
               );
 
     $opts{help} = 1
@@ -106,6 +93,9 @@ sub main
         open MAN, ">>MANIFEST" or die "Cannot write to MANIFEST: $!";
     }
 
+    binmode STDOUT, ':utf8' if $opts{verbose};
+    $| = 1;
+
     generate_from_ICU_xml();
 }
 
@@ -113,7 +103,7 @@ sub generate_from_ICU_xml
 {
     my @files = glob File::Spec->catfile( $opts{dir}, '*.xml' );
 
-    print "Reading ICU files from: '$opts{dir}'...\n\n"
+    print "Reading ICU files from: '$opts{dir}'...\n"
         unless $opts{quiet};
 
     foreach my $f (@files)
@@ -127,6 +117,8 @@ sub generate_from_ICU_xml
             or die "Could not get basename for: '$f'";
         $id =~ s/\.xml$//i;
 
+        next if $id eq 'supplementalData';
+
         if ( $id =~ /^iw/ )
         {
             print "  skipping $id - iw/he Hebrew duplication, prefer 'he'\n"
@@ -138,9 +130,33 @@ sub generate_from_ICU_xml
 
         die "Found a file matching an alias: $id\n" if $Aliases{$id};
 
+        # This is the fastest one from my testing
+        local $XML::Simple::PREFERRED_PARSER = 'XML::LibXML::SAX';
+
+        my %key_attr = ( calendar => 'type',
+                         monthContext => 'type',
+                         dayContext   => 'type',
+                         monthWidth => 'type',
+                         dayWidth   => 'type',
+                         month => 'type',
+                         day   => 'type',
+                         era   => 'type',
+                         timeFormatLength => 'type',
+                         dateFormatLength => 'type',
+                       );
         my $xml =
-            XMLin($f)
+            XMLin( $f,
+                   KeyAttr   => \%key_attr,
+                   GroupTags => { eras    => 'eraAbbr',
+                                  eraAbbr => 'era',
+                                },
+                   Forcearray => [ keys %key_attr ],
+                   ForceContent => 1,
+                 )
                 or die "Missing XML for locale: '$id'";
+
+        delete $xml->{numbers};
+        delete $xml->{posix};
 
         $XML{$id} = { xml         => $xml,
                       source_file => basename($f),
@@ -148,34 +164,44 @@ sub generate_from_ICU_xml
 
         build_language_and_territory($id, $xml);
 
+        $Parents{$id} = $xml->{alias}{source}
+            if $xml->{alias};
+
         print "\n" unless $opts{quiet};
     }
+
+    print "\nGenerating PM files\n" if $opts{verbose};
 
     foreach my $id ( sort keys %XML )
     {
         my $xml = $XML{$id}{xml};
 
-        unless ( has_data($xml) )
-        {
-            my $parent = parent_id($id);
-            $LocalesWithoutData{$id} = $parent;
-
-            print "  $id has no data\n" unless $opts{quiet};
-            next;
-        }
+        my $cal = $xml->{dates}{calendars}{calendar}{gregorian};
 
         my $hash;
         $hash->{id}        = $id;
         $hash->{parent_id} = parent_id($id);
 
+        print "\n  $id\n" if $opts{verbose};
+        print "    parent_id: $hash->{parent_id}\n" if $opts{verbose};
+
         get_version( $hash, $xml );
         get_generation_date( $hash, $xml );
-        get_days( $hash, $xml );
-        get_months( $hash, $xml );
-        get_formats( $hash, $xml );
-        get_am_pm_eras( $hash, $xml );
+        get_days( $hash, $cal );
+        get_months( $hash, $cal );
+        get_formats( $hash, $cal );
+        get_am_pm_eras( $hash, $cal );
 
         user_supplied_changes($hash);
+
+        unless ( has_data($hash) )
+        {
+            my $parent = parent_id($id);
+            $LocalesWithoutData{$id} = $parent;
+
+            print "\n  $id has no data\n" unless $opts{quiet};
+            next;
+        }
 
         generate_locale($hash);
     }
@@ -187,53 +213,48 @@ sub generate_from_ICU_xml
 
 sub build_language_and_territory
 {
-    my ($id, $xml) = @_;
+    my ( $id, $xml ) = @_;
 
     _build_lookup
         ( \%LanguageLookup,  $id, $xml->{localeDisplayNames}{languages}{language} );
 
     _build_lookup
         ( \%TerritoryLookup, $id, $xml->{localeDisplayNames}{territories}{territory} );
+
+    _build_lookup
+        ( \%ScriptLookup,    $id, $xml->{localeDisplayNames}{scripts}{script} );
 }
 
 sub _build_lookup
 {
-    my ($lookup, $id, $xml) = @_;
+    my ( $lookup, $id, $xml ) = @_;
 
     return unless $xml;
 
-    ($id) = split /_/, $id;          # Interested in language only
+    my ($lang) = split /_/, $id;          # Interested in language only
 
     if ( ref $xml eq "HASH" )
     {
-        $lookup->{$id}{ $xml->{type} } = $xml->{content};
+        $lookup->{$lang}{ $xml->{type} } = $xml->{content};
     }
     else
     {
-        $lookup->{$id}{ $_->{type} } = $_->{content} for @$xml;
+        $lookup->{$lang}{ $_->{type} } = $_->{content} for grep { ! $_->{alt} } @$xml;
     }
 }
 
 sub has_data
 {
-    my $cal = shift()->{dates}{calendars}{calendar};
+    my $hash = shift;
 
-    return
-        ( $cal->{dayNames}{day}                ||
-          $cal->{dayAbbr}{day}                 ||
-          $cal->{monthNames}{month}            ||
-          $cal->{monthAbbr}{month}             ||
-          $cal->{am}                           ||
-          $cal->{eras}{eraAbbr}{era}           ||
-          $cal->{dateFormats}{dateFormatLength} ||
-          $cal->{timeFormats}{timeFormatLength} ||
-          $cal->{dateTimeFormat}{pattern}
-        );
+    return keys %$hash > 2;
 }
 
 sub parent_id
 {
     my $id = shift;
+
+    return $Parents{$id} if exists $Parents{$id};
 
     my ($language, $territory, $variant) = split /_/, $id;
 
@@ -262,6 +283,8 @@ sub get_version
     my ( $hash, $xml ) = @_;
 
     $hash->{version} = $xml->{identity}{version}{number};
+
+    print "    version: $hash->{version}\n" if $opts{verbose};
 }
 
 sub get_generation_date
@@ -269,111 +292,170 @@ sub get_generation_date
     my ( $hash, $xml ) = @_;
 
     $hash->{generation_date} = $xml->{identity}{generation}{date};
+    print "    generation date: $hash->{generation_date}\n" if $opts{verbose};
 }
 
 sub get_days
 {
-    my ($hash, $xml) = @_;
+    my ( $hash, $cal ) = @_;
 
-    _get_days($hash, $xml, 'dayNames', 'day_names'        );
-    _get_days($hash, $xml, 'dayAbbr',  'day_abbreviations');
+    _get_days($hash, $cal, 'wide',         'day_names'         );
+    _get_days($hash, $cal, 'abbreviated',  'day_abbreviations' );
+    _get_days($hash, $cal, 'narrow',       'day_narrows'       );
 }
 
 sub _get_days
 {
-    my ($hash, $xml, $element, $key) = @_;
+    my ( $hash, $cal, $length, $key ) = @_;
 
-    return unless my $days = $xml->{dates}{calendars}{calendar}{$element}{day};
+    my $days =
+        $cal->{days}{dayContext}{format}{dayWidth}{$length}{day};
 
-    $hash->{$key}[6]      = $days->[ 0]{content};
-    $hash->{$key}[$_ - 1] = $days->[$_]{content} for 1..6;
+    return unless $days;
+
+    my @keys = qw( mon tue wed thu fri sat sun );
+
+    return if grep { ! exists $days->{$_} } @keys;
+
+    @{ $hash->{$key} } = map { $days->{$_}{content} } @keys;
+
+    print "    $key: @{ $hash->{$key} }\n" if $opts{verbose};
 }
 
 sub get_months
 {
-    my ($hash, $xml) = @_;
+    my ( $hash, $cal ) = @_;
 
-    _get_months($hash, $xml, 'monthNames', 'month_names'        );
-    _get_months($hash, $xml, 'monthAbbr',  'month_abbreviations');
+    _get_months($hash, $cal, 'wide',         'month_names'         );
+    _get_months($hash, $cal, 'abbreviated',  'month_abbreviations' );
+    _get_months($hash, $cal, 'narrow',       'month_narrows'       );
 }
 
 sub _get_months
 {
-    my ($hash, $xml, $element, $key) = @_;
+    my ($hash, $cal, $length, $key) = @_;
 
-    return unless my $months = $xml->{dates}{calendars}{calendar}{$element}{month};
+    my $months =
+        $cal->{months}{monthContext}{format}{monthWidth}{$length}{month};
 
-    $hash->{$key}[$_] = $months->[$_]{content} for 0..11;
-}
+    return unless $months;
+    return if grep { ! exists $months->{$_} } 1..12;
 
-sub get_am_pm_eras
-{
-    my ($hash, $xml) = @_;
+    @{ $hash->{$key} } = map { $months->{$_}{content} } 1..12;
 
-    my $cal = $xml->{dates}{calendars}{calendar};
-
-    $hash->{am_pms} = [ $cal->{am}, $cal->{pm} ] if $cal->{am};
-
-    $hash->{eras} =
-        [ $cal->{eras}{eraAbbr}{era}[0]{content},
-          $cal->{eras}{eraAbbr}{era}[1]{content} ]
-            if $cal->{eras}{eraAbbr}{era};
+    print "    $key: @{ $hash->{$key} }\n" if $opts{verbose};
 }
 
 sub get_formats
 {
-    my ($hash, $xml) = @_;
+    my ( $hash, $cal ) = @_;
 
-    if ( my $dates = $xml->{dates}{calendars}{calendar}{dateFormats} )
+    if ( my $dates = $cal->{dateFormats} )
     {
-        my %formats =
-            ( map { $_->{type} => $_->{dateFormat}{pattern} }
-              @{ $xml->{dates}{calendars}{calendar}{dateFormats}{dateFormatLength} }
-            );
-
-        foreach my $length ( qw( full long medium short ) )
+        my %original;
+        foreach my $length (@FormatLengths)
         {
-            $hash->{date_formats}{$length} = simple2strf( $formats{$length} )
+            my $pattern = $dates->{dateFormatLength}{$length}{dateFormat}{pattern};
+            next unless $pattern;
+
+            my $value;
+            if ( ref $pattern eq 'ARRAY' )
+            {
+                my @non_alt = grep { ! $_->{alt} } @$pattern;
+
+                die "Multiple primary patterns!\n" if @non_alt > 1;
+
+                $value = $non_alt[0]->{content};
+            }
+            else
+            {
+                $value = $pattern->{content};
+            }
+
+            next unless defined $value;
+
+            $original{$length} = $value;
+
+            $hash->{date_formats}{$length} = simple2strf($value);
+
+            print "    date_formats{$length}: $hash->{date_formats}{$length}\n"
+                if $opts{verbose};
         }
 
-        $hash->{default_date_format_length} = $dates->{default}{type};
+        if ( $dates->{default}{type} )
+        {
+            $hash->{default_date_format_length} = $dates->{default}{type};
 
-	# Work out the order of the date parts (ymd, dmy, or mdy)
-	my $p = $formats{short};
-	$p =~ tr{dmyDMY}{}cd;
-	$p =~ tr{dmyDMY}{dmydmy}s;
-	$hash->{date_parts_order} = $p;
+            print "    default_date_format_length: $hash->{default_date_format_length}\n"
+                if $opts{verbose};
+        }
+
+        if ( my $short = $original{short} )
+        {
+            # Work out the order of the date parts (ymd, dmy, or mdy)
+            $short =~ tr{dmyDMY}{}cd;
+            $short =~ tr{dmyDMY}{dmydmy}s;
+
+            $hash->{date_parts_order} = $short;
+
+            print "    date_parts_order: $hash->{date_parts_order}\n" if $opts{verbose};
+        }
     }
 
-    if ( my $times = $xml->{dates}{calendars}{calendar}{timeFormats} )
+    if ( my $times = $cal->{timeFormats} )
     {
-        my %formats =
-            ( map { $_->{type} => $_->{timeFormat}{pattern} }
-              @{ $xml->{dates}{calendars}{calendar}{timeFormats}{timeFormatLength} }
-            );
-
-        foreach my $length ( qw( full long medium short ) )
+        foreach my $length (@FormatLengths)
         {
-            $hash->{time_formats}{$length} = simple2strf( $formats{$length} )
+            my $pattern = $times->{timeFormatLength}{$length}{timeFormat}{pattern};
+            next unless $pattern;
+
+            my $value;
+            if ( ref $pattern eq 'ARRAY' )
+            {
+                my @non_alt = grep { ! $_->{alt} } @$pattern;
+
+                die "Multiple primary patterns!\n" if @non_alt > 1;
+
+                $value = $non_alt[0]->{content};
+            }
+            else
+            {
+                $value = $pattern->{content};
+            }
+
+            next unless defined $value;
+
+            $hash->{time_formats}{$length} = simple2strf($value);
+
+            print "    time_formats{$length}: $hash->{time_formats}{$length}\n"
+                if $opts{verbose};
         }
 
-        $hash->{default_time_format_length} = $times->{default}{type};
+        if ( $times->{default}{type} )
+        {
+            $hash->{default_time_format_length} = $times->{default}{type};
+
+            print "    default_time_format_length: $hash->{default_time_format_length}\n"
+                if $opts{verbose};
+        }
     }
 
     if ( my $order =
-         $xml->{dates}{calendars}{calendar}{dateTimeFormats}
-               {dateTimeFormatLength}{dateTimeFormat}{pattern} )
+         $cal->{dateTimeFormats}{dateTimeFormatLength}{dateTimeFormat}{pattern}{content} )
     {
         $hash->{date_before_time} = $order eq "{1} {0}" ? 1 : 0;
+
+        print "    date_before_time: $hash->{date_before_time}\n" if $opts{verbose};
     }
 }
 
 sub simple2strf
 {
     my $simple = shift;
+
     $simple =~
         s/(G+|y+|u+|M+|d+|h+|H+|m+|s+|S+|E+|D+|F+|w+|W+|a+|k+|K+|z+)|'((?:[^']|'')*)'/
-          ($2) ? _stringify($2) : ($1) ? _convert($1) : "'"/eg;
+          $2 ? _stringify($2) : $1 ? _convert($1) : "'"/eg;
 
     return $simple;
 }
@@ -400,17 +482,42 @@ sub _stringify
     return $string;
 }
 
+# used to hardcode corrections that aren't yet in ICU
 sub user_supplied_changes
 {
     my $hash = shift;
 
-    if ( $hash->{id} eq 'nl' )
+    if ( $hash->{id} eq 'az' )
     {
-        # Eugene Van Der Pijll <pijll@gmx.net>
-        # Thursday 01 May 2003 10:14:35 pm
-        # datetime@perl.org
+        # The az.xml file appears to have a mistake in the wide day names
+        $hash->{day_names}[4] =~ s/ \w+$//;
+    }
+}
 
-        $hash->{eras} = ["v.Chr.", "n.Chr."];
+sub get_am_pm_eras
+{
+    my ( $hash, $cal ) = @_;
+
+    if ( $cal->{am} )
+    {
+        $hash->{am_pms} = [ $cal->{am}{content}, $cal->{pm}{content} ];
+
+        print "    am_pms: [@{ $hash->{am_pms} }]\n" if $opts{verbose};
+    }
+
+    if ( $cal->{eras} )
+    {
+        my $eras = $cal->{eras}{eraAbbr} ? $cal->{eras}{eraAbbr} : $cal->{eras};
+
+        # At least one local (Lao) only defines one era (missing CE)
+        if ( $cal->{eras}{0} && $cal->{eras}{1} )
+        {
+            $hash->{eras} =
+                [ $eras->{0}{content},
+                  $eras->{1}{content} ];
+
+            print "    eras: [@{ $hash->{eras} }]\n" if $opts{verbose};
+        }
     }
 }
 
@@ -424,8 +531,12 @@ sub generate_locale
     foreach my $var
         ( qw( day_names
               day_abbreviations
+              day_narrows
+
               month_names
               month_abbreviations
+              month_narrows
+
               am_pms
               eras
             ) )
@@ -441,7 +552,7 @@ sub generate_locale
 
         $vars .= ");\n\n";
 
-        $subs .= sprintf "sub %-30s { \\\@%-30s }\n", $var, $var;
+        $subs .= sprintf "sub %-30s { \\\@%s }\n", $var, $var;
     }
 
     foreach my $var ( qw( date_formats
@@ -450,19 +561,19 @@ sub generate_locale
     {
         next unless $hash->{$var};
 
-        $vars .= "my %$var = (\n";
-
-        while ( my ( $k, $v ) = each %{ $hash->{$var} } )
+        for my $length (@FormatLengths)
         {
-            $vars .= qq|"\Q$k\E" => "\Q$v\E",\n|;
+            next unless $hash->{$var}{$length};
+
+            my $sub_name = join '_', $length, $var;
+            $sub_name =~ s/s$//;
+
+            $subs .=
+                sprintf "sub %-30s { %s }\n", $sub_name, qq|"\Q$hash->{$var}{$length}\E"|;
         }
-
-        $vars .= ");\n\n";
-
-        $subs .= sprintf "sub %-30s { \\%%%-30s }\n", $var, $var;
     }
 
-    # The accessor subs and whether they should be public (1) or 
+    # The accessor subs and whether they should be public (1) or
     # private (0).  Private subs are prefixed with _.
     my %accessors =
 	( date_before_time           => 1,
@@ -470,7 +581,8 @@ sub generate_locale
 	  default_date_format_length => 0,
 	  default_time_format_length => 0,
 	  );
-    while (my ($var, $public) = each %accessors)
+
+    while ( my ( $var, $public ) = each %accessors )
     {
         next unless $hash->{$var};
 
@@ -478,7 +590,7 @@ sub generate_locale
 
         my $sub_name = $public ? $var : "_$var";
 
-        $subs .= sprintf "sub %-30s { \$%-31s }\n", $sub_name, $var;
+        $subs .= sprintf "sub %-30s { \$%s }\n", $sub_name, $var;
     }
 
     my $class         = $hash->{id};
@@ -538,6 +650,7 @@ $vars
 
 $subs
 
+
 1;
 
 EOF
@@ -580,11 +693,16 @@ EOF
     print OUTFILE "\@DateTime::Locale::Locales = (\n";
 
     my $locale_with_full_names =
-        length $LanguageLookup{root}{en} > 3 ? 'root' : 'en';
+        $LanguageLookup{root}{en} && length $LanguageLookup{root}{en} > 3 ? 'root' : 'en';
 
     for my $id ( sort keys %XML )
     {
-        my ($lang, $territory, $variant) = split /_/, $id;
+        my ($lang, $script, $territory, $variant ) =
+            $id =~ /([a-z]+)               # id
+                    (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
+                    (?: _([A-Z]+) )?       # territory - ALL CAPS - optional
+                    (?: _([A-Z]+) )?       # variant - ALL CAPS - optional
+                   /x;
 
         my %lookup;
 
@@ -592,9 +710,19 @@ EOF
         $lookup{native_language} =
             $LanguageLookup{$lang}{$lang} || $LanguageLookup{$locale_with_full_names}{$lang};
 
+        if ($script)
+        {
+            $lookup{en_script} = $ScriptLookup{$locale_with_full_names}{$script};
+
+            $lookup{native_script} =
+                ( exists $ScriptLookup{$lang}{$script}
+                  ? $ScriptLookup{$lang}{$script}
+                  : $ScriptLookup{$locale_with_full_names}{$script} );
+        }
+
         if ($territory)
         {
-            $lookup{en_territory} = $TerritoryLookup{$locale_with_full_names}{$territory};;
+            $lookup{en_territory} = $TerritoryLookup{$locale_with_full_names}{$territory};
 
             $lookup{native_territory} =
                 ( exists $TerritoryLookup{$lang}{$territory}
@@ -614,8 +742,8 @@ EOF
         $lookup{native_variant} = $lookup{en_variant};
 
         print OUTFILE qq|    { id => "\Q$id\E",\n|;
-        foreach my $k ( qw( en_language en_territory en_variant
-                            native_language native_territory native_variant
+        foreach my $k ( qw( en_language en_script en_territory en_variant
+                            native_language native_script native_territory native_variant
                           )
                       )
         {
@@ -637,6 +765,8 @@ EOF
         {
             push @pieces, $lookup{$p} if defined $lookup{$p};
         }
+
+        push @pieces, "($lookup{en_script})" if defined $lookup{en_script};
 
         $locales_in_pod .= sprintf( " %-18s  %s\n", $id, join ' ', @pieces );
     }
@@ -715,15 +845,17 @@ Perl modules.  It also generates the MANIFEST file.
 
 It takes the following arguments:
 
-  --dir    A directory containing ICU XML files.  Required.
+  --dir      A directory containing ICU XML files.  Required.
 
-  --file   Parse just the file with the given name.  For debugging.
+  --file     Parse just the file with the given name.  For debugging.
 
-  --name   Only create the specified locale.  For debugging.
+  --name     Only create the specified locale.  For debugging.
 
-  --quiet  Don't display any output while processing files.
+  --quiet    Don't display any output while processing files.
 
-  --help   What you are reading
+  --verbose  Spew lots of output while processing.
+
+  --help     What you are reading
 
 If the --file or --name options are specified, the MANIFEST will not
 be generated.

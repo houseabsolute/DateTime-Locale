@@ -18,5 +18,6 @@ t/03alias.t
 t/04format-length.t
 t/05register.t
 t/06storable.t
+t/07script.
 t/99-pod.t
 tools/generate_from_icu
