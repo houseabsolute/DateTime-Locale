@@ -102,6 +102,18 @@ DateTime::Locale::Base - Base class for individual locale objects
 Support for this module is provided via the datetime@perl.org email
 list. See http://lists.perl.org/ for more details.
 
+=head1 DEFAULT FORMATS
+
+Each locale has a set of four default date and time formats.  They are
+distinguished by length, and are called "full", "long", "medium", and
+"short".  Each locale may have a different default length which it
+uses when its C<default_date_format()>, C<default_time_format()>, or
+C<default_datetime_format()> methods are called.
+
+This can be changed by calling the C<set_default_date_format()> or
+C<set_default_time_format()> methods.  These methods accept a string
+which must be one of "full", "long", "medium", or "short".
+
 =head1 SUBCLASSING
 
 If you are writing a subclass of this class, then you must provide the
