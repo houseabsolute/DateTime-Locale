@@ -1,7 +1,16 @@
+0.07   2003-12-14
+
+- If given an id like 'en_US.UTF-8', DateTime::Locale would die with
+the message 'Can't locate object method "_load_from_id" via package
+"DateTime::Locale" at /usr/share/perl5/DateTime/Locale.pm line 220'.
+Reported by Sylvain Daubert.
+
+
 0.06   2003-12-08
 
 - The DateTime::Locale docs now includes docs for all the methods that
 a locale object has.
+
 
 0.05   2003-10-03
 
