@@ -364,16 +364,16 @@ L</AVAILABLE LOCALES>, an exception is thrown.
 
 You can also pass a hash reference to this method.
 
- DateTime::Locale->add_alias( { Default     => 'en_GB',
-                                Alternative => 'en_US',
-                                LastResort  => 'es_ES' } );
+ DateTime::Locale->add_aliases( { Default     => 'en_GB',
+                                  Alternative => 'en_US',
+                                  LastResort  => 'es_ES' } );
 
 =item * remove_alias( $alias )
 
 Removes a locale id alias, and returns true if the specified alias
 actually existed.
 
- DateTime::Locale->add_alias( LastResort => 'es_ES' );
+ DateTime::Locale->add_aliases( LastResort => 'es_ES' );
 
  # Equivalent to DateTime::Locale->load('es_ES');
  DateTime::Locale->load('LastResort');
