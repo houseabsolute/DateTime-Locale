@@ -6,21 +6,6 @@ use DateTime::Locale;
 
 use Params::Validate qw( validate_pos );
 
-###########################################################################
-# Subclasses must implement the following methods:
-
-sub month_names;
-sub month_abbreviations;
-sub day_names;
-sub day_abbreviations;
-sub am_pms;
-sub eras;
-sub date_formats;
-sub time_formats;
-sub date_time_format_pattern_order;
-
-###########################################################################
-
 BEGIN
 {
     foreach my $field ( qw( id en_complete_name native_complete_name
