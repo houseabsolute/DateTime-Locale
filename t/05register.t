@@ -60,7 +60,7 @@ DateTime::Locale->register
     ok( $l, 'was able to load en_FOO_BAR' );
     is( $l->variant, 'Foo Bar', 'variant is set properly' );
 
-    my $l = DateTime::Locale->load('en_BAZ_BUZ');
+    $l = DateTime::Locale->load('en_BAZ_BUZ');
     ok( $l, 'was able to load en_BAZ_BUZ' );
     is( $l->variant, 'Baz Buz', 'variant is set properly' );
 }

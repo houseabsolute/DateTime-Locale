@@ -1,3 +1,5 @@
+#!/usr/bin/perl -w
+
 BEGIN
 {
     return unless $] >= 5.006;
