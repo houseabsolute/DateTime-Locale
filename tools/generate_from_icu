@@ -579,24 +579,27 @@ EOF
 
     print OUTFILE "\@DateTime::Locale::Locales = (\n";
 
+    my $locale_with_full_names =
+        length $LanguageLookup{root}{en} > 3 ? 'root' : 'en';
+
     for my $id ( sort keys %XML )
     {
         my ($lang, $territory, $variant) = split /_/, $id;
 
         my %lookup;
 
-        $lookup{en_language} = $LanguageLookup{root}{$lang};
+        $lookup{en_language} = $LanguageLookup{$locale_with_full_names}{$lang};
         $lookup{native_language} =
-            $LanguageLookup{$lang}{$lang} || $LanguageLookup{root}{$lang};
+            $LanguageLookup{$lang}{$lang} || $LanguageLookup{$locale_with_full_names}{$lang};
 
         if ($territory)
         {
-            $lookup{en_territory} = $TerritoryLookup{root}{$territory};;
+            $lookup{en_territory} = $TerritoryLookup{$locale_with_full_names}{$territory};;
 
             $lookup{native_territory} =
                 ( exists $TerritoryLookup{$lang}{$territory}
                   ? $TerritoryLookup{$lang}{$territory}
-                  : $TerritoryLookup{root}{$territory} );
+                  : $TerritoryLookup{$locale_with_full_names}{$territory} );
         }
 
         if ($variant)
