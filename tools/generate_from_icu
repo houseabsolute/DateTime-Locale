@@ -34,39 +34,18 @@ use XML::Simple;
 
 my $VERSION = "0.01";
 
-my ( %XML, %XMLCache, %LanguageLookup, %TerritoryLookup );
+my ( %LocalesWithoutData, %XML, %LanguageLookup, %TerritoryLookup );
 
 my $ScriptName = basename($0);
 
 my %Aliases =
     (
      'C'             => 'en_US_POSIX',
+     'POSIX'         => 'en_US_POSIX',
+     # Apparently the Hebrew locale code was changed from iw to he at
+     # one point.
      'iw'            => 'he',
      'iw_IL'         => 'he_IL',
-     'POSIX'         => 'en_US_POSIX',
-
-     # Alias some of the less useful ICU locale ids
-     'ca_ES_PREEURO' => 'ca_ES',
-     'de_AT_PREEURO' => 'de_AT',
-     'de_DE_PREEURO' => 'de_DE',
-     'de_LU_PREEURO' => 'de_LU',
-     'el_GR_PREEURO' => 'el_GR',
-     'en_BE_PREEURO' => 'en_BE',
-     'en_GB_EURO'    => 'en_GB',
-     'en_IE_PREEURO' => 'en_IE',
-     'es_ES_PREEURO' => 'es_ES',
-     'eu_ES_PREEURO' => 'eu_ES',
-     'fi_FI_PREEURO' => 'fi_FI',
-     'fr_BE_PREEURO' => 'fr_BE',
-     'fr_FR_PREEURO' => 'fr_FR',
-     'fr_LU_PREEURO' => 'fr_LU',
-     'ga_IE_PREEURO' => 'ga_IE',
-     'gl_ES_PREEURO' => 'gl_ES',
-     'it_IT_PREEURO' => 'it_IT',
-     'nl_BE_PREEURO' => 'nl_BE',
-     'nl_NL_PREEURO' => 'nl_NL',
-     'pt_PT_PREEURO' => 'pt_PT',
-     'no_NO_NY'      => 'no_NO',
     );
 
 # it's an array because the order in which the regexes are checked is
@@ -142,13 +121,16 @@ sub generate_from_ICU_xml
             or die "Could not get basename for: '$f'";
         $id =~ s/\.xml$//i;
 
-        print "  $id" unless $opts{quiet};
-
-        if ( $Aliases{$id} )
+        if ( $id =~ /^iw/ )
         {
-            print " - is an alias, skipping\n" unless $opts{quiet};
+            print "  skipping $id - iw/he Hebrew duplication, prefer 'he'\n"
+                unless $opts{quiet};
             next;
         }
+
+        print "  $id" unless $opts{quiet};
+
+        die "Found a file matching an alias: $id\n" if $Aliases{$id};
 
         my $xml =
             XMLin($f)
@@ -170,9 +152,9 @@ sub generate_from_ICU_xml
         unless ( has_data($xml) )
         {
             my $parent = parent_id($id);
-            $Aliases{$id} = $parent;
-            print "  $id has no data - making it an alias for $parent\n"
-                unless $opts{quiet};
+            $LocalesWithoutData{$id} = $parent;
+
+            print "  $id has no data\n" unless $opts{quiet};
             next;
         }
 
@@ -261,7 +243,7 @@ sub parent_id
         $parent_id = $language =~ /^root$/i ? 'Base' : 'root';
     }
 
-    if ( $Aliases{$parent_id} )
+    if ( $LocalesWithoutData{$parent_id} )
     {
         return parent_id($parent_id);
     }
@@ -502,6 +484,11 @@ EOF
 
             my $val = qq|"\Q$lookup{$k}\E"|;
             print OUTFILE "      $k => $val,\n";
+        }
+
+        if ( $LocalesWithoutData{$id} )
+        {
+            print OUTFILE qq|      real_class => "\Q$LocalesWithoutData{$id}\E",\n|;
         }
 
         print OUTFILE "    },\n";
