@@ -139,39 +139,6 @@ sub ids              { wantarray ? keys %DataForID       : [ keys %DataForID    
 sub names            { wantarray ? keys %NameToID        : [ keys %NameToID       ] }
 sub native_names     { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToID ] }
 
-{
-    my %FORMAT_TYPES      = ( F => 0,      L => 1,      M => 2,        S => 3       );
-    my %FORMAT_TYPE_NAMES = ( 0 => 'full', 1 => 'long', 2 => 'medium', 3 => 'short' );
-
-    my $Default_date_format_length = $FORMAT_TYPES{M};
-    my $Default_time_format_length = $FORMAT_TYPES{M};
-
-    sub default_date_format_length { shift->_default_format_length(\$Default_date_format_length, @_) }
-    sub default_time_format_length { shift->_default_format_length(\$Default_time_format_length, @_) }
-
-    sub _default_format_length
-    {
-        shift;
-        my $ref = shift;
-
-        return $$ref unless @_;
-
-        my ($format) = ( shift =~ /^(.)/ );
-
-        die "Invalid format value" unless defined ( $format = $FORMAT_TYPES{ uc $format } );
-
-        return $$ref = $format;
-    }
-
-    sub format_type
-    {
-        shift;
-
-        return "" unless @_;
-        return $FORMAT_TYPE_NAMES{ shift() } || '';
-    }
-}
-
 # These are hardcoded for backwards comaptibility with the
 # DateTime::Language code.
 my %OldAliases =
@@ -588,9 +555,11 @@ A completely new custom locale must implement the following methods:
   date_formats
   time_formats
   date_time_format_pattern_order
+  _default_date_format_length
+  _default_time_format_length
 
 See C<DateTime::Locale::Base> for a description of each method, and
-take a look at DateTime/Locale/root.pm for an example of a complete
+take a look at F<DateTime/Locale/root.pm> for an example of a complete
 implementation.
 
 You are, of course, free to subclass C<DateTime::Locale::Base> if you
@@ -603,17 +572,16 @@ and simply load it before using it.
 
 =head1 SUPPORT
 
-Please be aware that all locale data has been generated from either
-the Common XML Locale Repository project locales (originally ICU
-locale data) or the Yeha project.  The data B<is> currently
-incomplete, and B<will> contain errors in some locales.
+Please be aware that all locale data has been generated from the
+Common XML Locale Repository project locales (originally ICU locale
+data).  The data B<is> currently incomplete, and B<will> contain
+errors in some locales.
 
 When reporting errors in data, please check the primary data sources
 first, then where necessary report errors directly to the primary
 source:
 
-  Common XML Locale Repository/ICU : fsg.openi18n.locale.user    newsgroup
-  Yeha                             : http://yeha.sourceforge.net
+  Common XML Locale Repository/ICU:  fsg.openi18n.locale.user newsgroup
 
 Once these errors have been confirmed, please forward the error
 report, and corrections to DateTime.
