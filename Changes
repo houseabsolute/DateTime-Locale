@@ -1,3 +1,7 @@
+0.09   2004-03-09
+
+- Added Storable freeze & thaw hooks.
+
 0.08   2004-02-12
 
 - No code changes, just a Makefile.PL update to work with

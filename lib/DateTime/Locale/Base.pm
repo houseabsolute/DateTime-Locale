@@ -85,6 +85,25 @@ sub set_default_time_format_length
     $self->{default_time_format_length} = lc $l;
 }
 
+sub STORABLE_freeze
+{
+    my $self = shift;
+
+    return $self->id;
+}
+
+sub STORABLE_thaw
+{
+    my $self = shift;
+    my $cloning = shift;
+    my $serialized = shift;
+
+    my $obj = DateTime::Locale->load( $serialized );
+
+    %$self = %$obj;
+}
+
+
 1;
 
 __END__
