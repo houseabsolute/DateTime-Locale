@@ -32,10 +32,8 @@ sub register
     {
         my @p = %$l;
         my %p = validate( @p, { id                   => { type => SCALAR },
-                                en_complete_name     => { type => SCALAR },
-                                native_complete_name => { type => SCALAR, optional => 1 },
 
-                                en_language      => { type => SCALAR, optional => 1 },
+                                en_language      => { type => SCALAR },
                                 en_territory     => { type => SCALAR, optional => 1 },
                                 en_variant       => { type => SCALAR, optional => 1 },
 
@@ -59,16 +57,24 @@ sub register
         die "You cannot replace an existing locale ('$id') unless you also specify the 'replace' parameter as true\n"
             if ! delete $l->{replace} && exists $DataForID{$id};
 
+        $l->{native_language} = $l->{en_language}
+            unless exists $l->{native_language};
+
+        my @en_pieces;
+        my @native_pieces;
+        foreach my $p ( qw( language territory variant ) )
+        {
+            push @en_pieces, $l->{"en_$p"} if exists $l->{"en_$p"};
+            push @native_pieces, $l->{"native_$p"} if exists $l->{"native_$p"};
+        }
+
+        $l->{en_complete_name} = join ' ', @en_pieces;
+        $l->{native_complete_name} = join ' ', @native_pieces;
+
         $DataForID{$id} = $l;
+
         $NameToID{ $l->{en_complete_name} } = $id;
-
-        my $native_complete_name =
-            ( exists $l->{native_complete_name}
-              ? $l->{native_complete_name}
-              : $l->{en_complete_name}
-            );
-
-        $NativeNameToID{$native_complete_name} = $id;
+        $NativeNameToID{ $l->{native_complete_name} } = $id;
 
         $Class{$id} = $l->{class} if defined exists $l->{class};
     }
@@ -175,7 +181,7 @@ my %OldAliases =
      'Brazilian'         => 'pt_BR',
      'Czech'             => 'cs_CZ',
      'Danish'            => 'da_DK',
-         'Dutch'             => 'nl_NL',
+     'Dutch'             => 'nl_NL',
      'English'           => 'en_US',
      'French'            => 'fr_FR',
      #      'Gedeo'             => undef, # XXX
@@ -223,7 +229,7 @@ sub load
         return $class->_load_from_id($id);
     }
 
-    return;
+    die "Invalid locale name or id: $name\n";
 }
 
 sub _guess_id
@@ -380,7 +386,7 @@ locale names may still contain some English.
 =item * add_aliases ( $alias1 => $id1, $alias2 => $id2, ... )
 
 Adds an alias to an existing locale id. This allows a locale to be
-load()ed by its alias rather than id or name. Multiple aliases are
+C<load()>ed by its alias rather than id or name. Multiple aliases are
 allowed.
 
 If the passed locale id is neither registered nor listed in
@@ -409,7 +415,7 @@ actually existed.
 
  DateTime::Locale->remove_alias('LastResort');
 
- # Throws exception, 'LastResort' no longer exists
+ # Throws an exception, 'LastResort' no longer exists
  DateTime::Locale->load('LastResort');
 
 =item * register( ... )
@@ -418,20 +424,9 @@ Until registered, custom locales cannot be instantiated via load() and
 will not be list by querying methods such as ids() or names().
 
  register( id               => $locale_id,
+           en_language      => ..., # something like 'English' or 'Afar',
 
-           # something like 'Language Territory Variant'
-           en_complete_name     => $locale_name,
-
-           # Optional - same as en_complete_name if omitted
-           native_complete_name => $utf8_native_complete_name,
-
-           # Optional - defaults to DateTime::Locale::$locale_id
-           class                => $class_name,
-
-           # Other optional keys include:
-
-           # Just the singular components
-           en_language => ...,
+           # All other keys are optional.  These are:
            en_territory => ...,
            en_variant   => ...,
 
@@ -439,11 +434,14 @@ will not be list by querying methods such as ids() or names().
            native_territory => ...,
            native_variant   => ...,
 
+           # Optional - defaults to DateTime::Locale::$locale_id
+           class                => $class_name,
+
            replace          => $boolean
          )
 
-The locale id and name are required, and the following formats should
-used wherever possible:
+The locale id and English name are required, and the following formats
+should used wherever possible:
 
  id:   languageId[_territoryId[_variantId]]
 
@@ -461,22 +459,11 @@ You cannot not use '@' or '=' in locale ids - these are reserved for
 future use.  The underscore (_) is the component separator, and should
 not be used for any other purpose.
 
- en_complete_name: language[ territory[ variant]]
+If the "native_*" components are supplied, they must be utf8 encoded
+and follow:
 
-  Where:    language = Mixed case language name in English.
-           territory = Mixed case territory name in English.
-             variant = Mixed case string describing the variant id in English.
-
-If native_name is supplied, it must be utf8 encoded and follow:
-
- native_complete_name: language[ territory[ variant]]
-
-  Where:    language = Mixed case language name in native language.
-           territory = Mixed case territory name in native language.
-             variant = Mixed case string describing the variant id in native language.
-
-If omitted, the complete native name is assumed to be identical to the
-English name.
+If omitted, the native name is assumed to be identical to the English
+name.
 
 If class is supplied, it must be the full module name of your custom
 locale. If omitted, the locale module is assumed to be a
@@ -486,19 +473,23 @@ Examples:
 
  DateTime::Locale->register
      ( id => 'en_GB_RIDAS',
-       en_complete_name => 'English United Kingdom Ridas custom locale' );
+       en_language  => 'English',
+       en_territory => 'United Kingdom',
+       en_variant   => 'Ridas Custom Locale',
+     );
 
  # Returns instance of class DateTime::Locale::en_GB_RIDAS
  my $l = DateTime::Locale->load('en_GB_RIDAS');
 
  DateTime::Locale->register
      ( id => 'hu_HU',
-       en_complete_name     => 'Hungarian Hungary',
-       native_complete_name => 'magyar Magyarország' );
+       en_language  => 'Hungarian',
+       en_territory => Hungary',
+       native_language  => 'Magyar',
+       native_territory => 'Magyarország' );
 
  # Returns instance of class DateTime::Locale::hu_HU
  my $l = DateTime::Locale->load('hu_HU');
-
 
  DateTime::Locale->register
      ( id    => 'en_GB_RIDAS',
@@ -511,6 +502,17 @@ Examples:
 
 If you a locale for that id already exists, you must specify the
 "replace" parameter as true, or an exception will be thrown.
+
+The complete name for a registered locale is generated by joining
+together the language, territory, and variant components with a single
+space.
+
+This means that in the first example, the complete English and native
+names for the locale would be "English United Kingdom Ridas Custom
+Locale", and in the second example the complete English name is
+"Hungarian Hungary", while the complete native name is "Magyar
+Magyarország".  The locale will be loadable by these complete names
+(English and native), via the C<load()> method.
 
 =head1 ADDING CUSTOM LOCALES
 
@@ -568,8 +570,10 @@ provide different date/time formats:
 Now register it:
 
  DateTime::Locale->register
-     ( id    => 'en_GB_RIDAS1',
-       name  => 'English United Kingdom Ridas custom locale 1',
+     ( id       => 'en_GB_RIDAS1',
+
+       # name, territory, and variant as described in register() documentation
+
        class => 'Ridas::Locale::en_GB_RIDAS1' );
 
 =head2 Creating a completely new locale
