@@ -221,11 +221,16 @@ sub check_DT_Lang
         ok( DateTime::Locale->load($old), "backwards compatibility for $old" );
     }
 
- TODO:
+
     foreach my $old ( qw ( Afar Gedeo Sidama Tigre ) )
     {
-        local $TODO = 'No ICU XML data for some African languages included in DT::Language';
-        ok( DateTime::Locale->load($old), "backwards compatibility for $old" );
+      SKIP:
+        {
+            skip 'No ICU XML data for some African languages included in DT::Language', 1
+                unless $locale_names{$old};
+
+            ok( DateTime::Locale->load($old), "backwards compatibility for $old" );
+        }
     }
 }
 
