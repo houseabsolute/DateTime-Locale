@@ -530,6 +530,7 @@ sub generate_name_lookup
         open OUTFILE, '>:utf8', File::Spec->catfile( 'lib', 'DateTime', 'LocaleCatalog.pm' )
             or die "$!";
     }
+    else
     {
         open OUTFILE, '>' . File::Spec->catfile( 'lib', 'DateTime', 'LocaleCatalog.pm' )
             or die "$!";
