@@ -93,10 +93,14 @@ sub add_aliases
 
         # check for overwrite?
 
-        # we don't want aliases to other "pure" (no data) aliases
-        while ( ! exists $DataForID{$id} )
+        my %seen = ( $alias => 1, $id => 1 );
+        my $copy = $id;
+        while ( $copy = $AliasToID{$copy} )
         {
-            $id = $AliasToID{$id};
+            die "Creating an alias from $alias to $id would create a loop.\n"
+                if $seen{$copy};
+
+            $seen{$copy} = 1;
         }
 
         $AliasToID{$alias} = $id;
@@ -237,7 +241,8 @@ sub _load_class_from_id
     my $class = shift;
     my $id = shift;
 
-    # We want the first alias for which there is data
+    # We want the first alias for which there is data, even if it has
+    # no corresponding .pm file
     my $data_id = $id;
     while ( exists $AliasToID{$data_id} && ! exists $DataForID{$data_id} )
     {
