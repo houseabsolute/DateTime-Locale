@@ -91,6 +91,9 @@ sub add_aliases
         die "Unregistered locale '$id' cannot be used as an alias target for $alias"
             unless __PACKAGE__->registered_id($id);
 
+        die "Can't alias an id to itself"
+            if $alias eq $id;
+
         # check for overwrite?
 
         # we don't want aliases to aliases
