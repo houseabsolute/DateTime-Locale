@@ -18,3 +18,4 @@ _uu$
 \.cvsignore
 _build.*
 icu-xml.*
+^Build$
