@@ -35,7 +35,7 @@ sub register
     foreach my $l ( ref $_[0] ? @{ $_[0] } : $_[0] )
     {
         my @p = %$l;
-        my %p = validate( @p, { id                   => { type => SCALAR },
+        my %p = validate( @p, { id               => { type => SCALAR },
 
                                 en_language      => { type => SCALAR },
                                 en_territory     => { type => SCALAR, optional => 1 },
