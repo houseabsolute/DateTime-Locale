@@ -157,14 +157,15 @@ sub native_names     { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToI
     use constant FORMAT_TYPES      => { F => 0,      L => 1,      M => 2,        S => 3       };
     use constant FORMAT_TYPE_NAMES => { 0 => 'full', 1 => 'long', 2 => 'medium', 3 => 'short' };
 
-    my $Default_date_format = FORMAT_TYPES->{S};
-    my $Default_time_format = FORMAT_TYPES->{S};
+    my $Default_date_format_length = FORMAT_TYPES->{M};
+    my $Default_time_format_length = FORMAT_TYPES->{M};
 
-    sub default_date_format { shift; _default_format(\$Default_date_format, @_) }
-    sub default_time_format { shift; _default_format(\$Default_time_format, @_) }
+    sub default_date_format_length { shift->_default_format_length(\$Default_date_format_length, @_) }
+    sub default_time_format_length { shift->_default_format_length(\$Default_time_format_length, @_) }
 
-    sub _default_format
+    sub _default_format_length
     {
+        shift;
         my $ref = shift;
 
         return $$ref unless @_;
