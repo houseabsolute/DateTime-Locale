@@ -284,8 +284,6 @@ sub _load_class_from_id
 
 __END__
 
-=pod
-
 =head1 NAME
 
 DateTime::Locale - Localization support for DateTime
