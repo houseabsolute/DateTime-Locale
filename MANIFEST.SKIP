@@ -16,4 +16,5 @@ CVS/.*
 \.zip$
 _uu$
 \.cvsignore
-MANIFEST\.SKIP
+_build.*
+icu-xml.*
