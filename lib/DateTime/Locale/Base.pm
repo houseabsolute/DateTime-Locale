@@ -87,7 +87,7 @@ sub default_time_format_length { $_[0]->{default_time_format_length} }
 sub set_default_date_format_length
 {
     my $self = shift;
-    my ($l) = validate_pos( @_, { regex => qr/full|long|medium|short/i } );
+    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
 
     $self->{default_date_format_length} = lc $l;
 }
@@ -95,7 +95,7 @@ sub set_default_date_format_length
 sub set_default_time_format_length
 {
     my $self = shift;
-    my ($l) = validate_pos( @_, { regex => qr/full|long|medium|short/i } );
+    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
 
     $self->{default_time_format_length} = lc $l;
 }
