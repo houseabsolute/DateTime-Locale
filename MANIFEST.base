@@ -1,6 +1,5 @@
 Build.PL
 Changes
-CHANGES.icu
 lib/DateTime/Locale.pm
 lib/DateTime/Locale/Alias/ISO639_2.pm
 lib/DateTime/Locale/Base.pm
