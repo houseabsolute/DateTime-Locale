@@ -1,7 +1,6 @@
 use strict;
 use Test::More tests => 5;
 
-use DateTime;
 use DateTime::Locale;
 use DateTime::Locale::Alias::ISO639_2;
 
