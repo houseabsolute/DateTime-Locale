@@ -182,7 +182,7 @@ sub check_en_GB
     is( $locale->territory_id, 'GB', 'territory_id()' );
     is( $locale->variant_id, undef, 'variant_id()' );
 
-    is( $locale->default_date_time_format, "\%\{day\}\ \%b\ \%\{ce_year\} \%H\:\%M\:\%S",
+    is( $locale->default_datetime_format, "\%\{day\}\ \%b\ \%\{ce_year\} \%H\:\%M\:\%S",
         'check default datetime format' );
 }
 

@@ -262,7 +262,7 @@ DateTime::Locale - Localization support for DateTime
   my $loc = DateTime::Locale->load('en_GB');
 
   print $loc->native_locale_name,    "\n",
-	$loc->long_date_time_format, "\n";
+	$loc->long_datetime_format, "\n";
 
   # but mostly just things like ...
 
@@ -554,7 +554,7 @@ A completely new custom locale must implement the following methods:
   eras
   date_formats
   time_formats
-  date_time_format_pattern_order
+  datetime_format_pattern_order
   _default_date_format_length
   _default_time_format_length
 

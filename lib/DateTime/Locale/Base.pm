@@ -73,13 +73,13 @@ sub  medium_time_format      { $_[0]->time_formats->{medium} }
 sub   short_time_format      { $_[0]->time_formats->{short} }
 sub default_time_format      { $_[0]->time_formats->{ $_[0]->{default_time_format_length} } }
 
-sub date_time_format_pattern_order { $_[0]->date_before_time ? (0, 1) : (1, 0) }
+sub datetime_format_pattern_order { $_[0]->date_before_time ? (0, 1) : (1, 0) }
 
-sub    full_datetime_format { join ' ', ( $_[0]->full_date_format, $_[0]->full_time_format )[ $_[0]->date_time_format_pattern_order ] }
-sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_time_format )[ $_[0]->date_time_format_pattern_order ] }
-sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[ $_[0]->date_time_format_pattern_order ] }
-sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[ $_[0]->date_time_format_pattern_order ] }
-sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[ $_[0]->date_time_format_pattern_order ] }
+sub    full_datetime_format { join ' ', ( $_[0]->full_date_format, $_[0]->full_time_format )[ $_[0]->datetime_format_pattern_order ] }
+sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_time_format )[ $_[0]->datetime_format_pattern_order ] }
+sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[ $_[0]->datetime_format_pattern_order ] }
+sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[ $_[0]->datetime_format_pattern_order ] }
+sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[ $_[0]->datetime_format_pattern_order ] }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 sub default_time_format_length { $_[0]->{default_time_format_length} }
