@@ -643,9 +643,13 @@ Copyright (c) 2003 Richard Evans. All rights reserved.
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
+The full text of the license can be found in the LICENSE file included
+with this module.
+
 The locale modules in directory C<DateTime/Locale/> have been
 generated from data provided by the Common XML Locale Repository
-project, see C<DateTime/Locale/LICENSE.icu> for licensing details.
+project, see C<DateTime/Locale/LICENSE.icu> for details on the ICU
+data's license.
 
 =head1 SEE ALSO
 
