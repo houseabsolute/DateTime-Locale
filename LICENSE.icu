@@ -1,4 +1,4 @@
-==============================================================================
+------------------------------------------------------------------------------
 The modules in this directory have been generated from data provided by the
 Common XML Locale Repository project:
 
@@ -12,6 +12,7 @@ to the following page:
 As the locale data is held on the ICU site, and I have derived these
 modules from ICU .xml files, I make the hopefully reasonable assumption
 that derived data is covered by the ICU license.
+------------------------------------------------------------------------------
 
 ICU License - ICU 1.8.1 and later
 
@@ -45,7 +46,7 @@ shall not be used in advertising or otherwise to promote the sale, use
 or other dealings in this Software without prior written authorization
 of the copyright holder.
 
------------------------------------------------------------------
+-----------------------------------------------------------------------
 All trademarks and registered trademarks mentioned herein are the
 property of their respective owners.
-==============================================================================
+-----------------------------------------------------------------------
