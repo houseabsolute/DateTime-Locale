@@ -152,6 +152,12 @@ This returns a boolean value indicating whether or not the date comes
 before the time when formatting a complete date and time for
 presentation.
 
+=item * date_parts_order
+
+This returns a string indicating the order of the parts of a date that
+is in the form XX/YY/ZZ.  The possible values are "dmy", "mdy", "ydm"
+and "ymd".
+
 =item * _default_date_format_length
 
 This should return a string which is one of "long", "full", "medium",

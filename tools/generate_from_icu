@@ -331,6 +331,12 @@ sub get_formats
         }
 
         $hash->{default_date_format_length} = $dates->{default}{type};
+
+	# Work out the order of the date parts (ymd, dmy, or mdy)
+	my $p = $formats{short};
+	$p =~ tr{dmyDMY}{}cd;
+	$p =~ tr{dmyDMY}{dmydmy}s;
+	$hash->{date_parts_order} = $p;
     }
 
     if ( my $times = $xml->{dates}{calendars}{calendar}{timeFormats} )
@@ -450,17 +456,20 @@ sub generate_locale
         $subs .= sprintf "sub %-30s { \\%%%-30s }\n", $var, $var;
     }
 
-    foreach my $var
-        ( qw( date_before_time
-              default_date_format_length
-              default_time_format_length
-            ) )
-    {
+    # The accessor subs and whether they should be public (1) or 
+    # private (0).  Private subs are prefixed with _.
+    my %accessors =
+	( date_before_time           => 1,
+	  date_parts_order           => 1,
+	  default_date_format_length => 0,
+	  default_time_format_length => 0,
+	  );
+    while (my ($var, $public) = each %accessors) {
         next unless $hash->{$var};
 
         $vars .= qq|my \$$var = "\Q$hash->{$var}\E";\n|;
 
-        my $sub_name = $var eq 'date_before_time' ? $var : "_$var";
+        my $sub_name = $public ? $var : "_$var";
 
         $subs .= sprintf "sub %-30s { \$%-31s }\n", $sub_name, $var;
     }
