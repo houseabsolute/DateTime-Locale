@@ -45,7 +45,7 @@ sub register
                                 native_territory => { type => SCALAR, optional => 1 },
                                 native_variant   => { type => SCALAR, optional => 1 },
                                 # undocumented hack so we don't have
-                                # to generate .pm files the ICU XML
+                                # to generate .pm files for ICU XML
                                 # locales which don't differ from
                                 # their parents in terms of datetime
                                 # data.
@@ -400,26 +400,32 @@ actually existed.
  # Throws an exception, 'LastResort' no longer exists
  DateTime::Locale->load('LastResort');
 
-=item * register( ... )
+=item * register( { ... }, { ... } )
 
-Until registered, custom locales cannot be instantiated via load() and
-will not be list by querying methods such as ids() or names().
+This method allows you to register custom locales with the module.  A
+locale is specified as a hash reference, and you may register multiple
+locales at once, by passing an array of hash references.
 
- register( id               => $locale_id,
-           en_language      => ..., # something like 'English' or 'Afar',
+Until registered, custom locales cannot be instantiated via C<load()>
+and will not be returned by querying methods such as C<ids()> or
+C<names()>.
 
-           # All other keys are optional.  These are:
-           en_territory => ...,
-           en_variant   => ...,
+ register( { id               => $locale_id,
+             en_language      => ..., # something like 'English' or 'Afar',
 
-           native_language  => ...,
-           native_territory => ...,
-           native_variant   => ...,
+             # All other keys are optional.  These are:
+             en_territory => ...,
+             en_variant   => ...,
 
-           # Optional - defaults to DateTime::Locale::$locale_id
-           class                => $class_name,
+             native_language  => ...,
+             native_territory => ...,
+             native_variant   => ...,
 
-           replace          => $boolean
+             # Optional - defaults to DateTime::Locale::$locale_id
+             class                => $class_name,
+
+             replace          => $boolean
+           },
          )
 
 The locale id and English name are required, and the following formats
@@ -454,29 +460,34 @@ DateTime::Locale subclass.
 Examples:
 
  DateTime::Locale->register
-     ( id => 'en_GB_RIDAS',
-       en_language  => 'English',
-       en_territory => 'United Kingdom',
-       en_variant   => 'Ridas Custom Locale',
+     ( { id => 'en_GB_RIDAS',
+         en_language  => 'English',
+         en_territory => 'United Kingdom',
+         en_variant   => 'Ridas Custom Locale',
+       },
      );
 
  # Returns instance of class DateTime::Locale::en_GB_RIDAS
  my $l = DateTime::Locale->load('en_GB_RIDAS');
 
  DateTime::Locale->register
-     ( id => 'hu_HU',
-       en_language  => 'Hungarian',
-       en_territory => Hungary',
-       native_language  => 'Magyar',
-       native_territory => 'Magyarország' );
+     ( { id => 'hu_HU',
+         en_language  => 'Hungarian',
+         en_territory => Hungary',
+         native_language  => 'Magyar',
+         native_territory => 'Magyarország',
+       },
+     );
 
  # Returns instance of class DateTime::Locale::hu_HU
  my $l = DateTime::Locale->load('hu_HU');
 
  DateTime::Locale->register
-     ( id    => 'en_GB_RIDAS',
-       name  => 'English United Kingdom Ridas custom locale',
-       class => 'Ridas::Locales::CustomGB' );
+     ( { id    => 'en_GB_RIDAS',
+         name  => 'English United Kingdom Ridas custom locale',
+         class => 'Ridas::Locales::CustomGB',
+       },
+     );
 
  # Returns instance of class Ridas::Locales::CustomGB
  # NOT Ridas::Locales::Custom::en_GB_RIDAS !
