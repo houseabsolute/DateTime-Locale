@@ -448,7 +448,7 @@ used wherever possible:
  id:   languageId[_territoryId[_variantId]]
 
  Where:  languageId = Lower case ISO  639 code -
-          Always choose  639-1 over  639-2 where possible.
+          Always choose 639-1 over 639-2 where possible.
 
  territoryId = Upper case ISO 3166 code -
                Always choose 3166-1 over 3166-2 where possible.
