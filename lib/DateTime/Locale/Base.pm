@@ -1,7 +1,10 @@
 package DateTime::Locale::Base;
 
 use strict;
+
 use DateTime::Locale;
+
+use Params::Validate qw( validate_pos );
 
 ###########################################################################
 # Subclasses must implement the following methods:
@@ -37,7 +40,15 @@ BEGIN
     }
 }
 
-sub new { my $c = shift; bless { @_ }, $c }
+sub new
+{
+    my $c = shift;
+
+    return bless { @_,
+                   default_date_format_length => $c->_default_date_format_length,
+                   default_time_format_length => $c->_default_time_format_length,
+                 }, $c;
+}
 
 sub language_id  { ( split /_/, $_[0]->id )[0] }
 sub territory_id { ( split /_/, $_[0]->id )[1] }
@@ -50,23 +61,44 @@ sub day_abbreviation         { $_[0]->day_abbreviations->  [ $_[1]->day_of_week_
 sub am_pm                    { $_[0]->am_pms->             [ $_[1]->hour < 12 ? 0 : 1 ] }
 sub era;                     # TBD
 
-sub    full_date_format      { $_[0]->date_formats->[0] }
-sub    long_date_format      { $_[0]->date_formats->[1] }
-sub  medium_date_format      { $_[0]->date_formats->[2] }
-sub   short_date_format      { $_[0]->date_formats->[3] }
-sub default_date_format      { $_[0]->date_formats->[ DateTime::Locale->default_date_format_length ] }
+sub    full_date_format      { $_[0]->date_formats->{full} }
+sub    long_date_format      { $_[0]->date_formats->{long} }
+sub  medium_date_format      { $_[0]->date_formats->{medium} }
+sub   short_date_format      { $_[0]->date_formats->{short} }
+sub default_date_format      { $_[0]->date_formats->{ $_[0]->{default_date_format_length} } }
 
-sub    full_time_format      { $_[0]->time_formats->[0] }
-sub    long_time_format      { $_[0]->time_formats->[1] }
-sub  medium_time_format      { $_[0]->time_formats->[2] }
-sub   short_time_format      { $_[0]->time_formats->[3] }
-sub default_time_format      { $_[0]->time_formats->[ DateTime::Locale->default_time_format_length ] }
+sub    full_time_format      { $_[0]->time_formats->{full} }
+sub    long_time_format      { $_[0]->time_formats->{long} }
+sub  medium_time_format      { $_[0]->time_formats->{medium} }
+sub   short_time_format      { $_[0]->time_formats->{short} }
+sub default_time_format      { $_[0]->time_formats->{ $_[0]->{default_time_format_length} } }
 
-sub    full_datetime_format { join ' ', ( $_[0]->full_date_format, $_[0]->full_time_format )[@{$_[0]->date_time_format_pattern_order}] }
-sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_time_format )[@{$_[0]->date_time_format_pattern_order}] }
-sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[@{$_[0]->date_time_format_pattern_order}] }
-sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[@{$_[0]->date_time_format_pattern_order}] }
-sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[@{$_[0]->date_time_format_pattern_order}] }
+sub date_time_format_pattern_order { $_[0]->date_before_time ? (0, 1) : (1, 0) }
+
+sub    full_datetime_format { join ' ', ( $_[0]->full_date_format, $_[0]->full_time_format )[ $_[0]->date_time_format_pattern_order ] }
+sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_time_format )[ $_[0]->date_time_format_pattern_order ] }
+sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[ $_[0]->date_time_format_pattern_order ] }
+sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[ $_[0]->date_time_format_pattern_order ] }
+sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[ $_[0]->date_time_format_pattern_order ] }
+
+sub default_date_format_length { $_[0]->{default_date_format_length} }
+sub default_time_format_length { $_[0]->{default_time_format_length} }
+
+sub set_default_date_format_length
+{
+    my $self = shift;
+    my ($l) = validate_pos( @_, { regex => qr/full|long|medium|short/i } );
+
+    $self->{default_date_format_length} = lc $l;
+}
+
+sub set_default_time_format_length
+{
+    my $self = shift;
+    my ($l) = validate_pos( @_, { regex => qr/full|long|medium|short/i } );
+
+    $self->{default_time_format_length} = lc $l;
+}
 
 1;
 
@@ -84,6 +116,68 @@ DateTime::Locale::Base - Base class for individual locale objects
 
 Support for this module is provided via the datetime@perl.org email
 list. See http://lists.perl.org/ for more details.
+
+=head1 SUBCLASSING
+
+If you are writing a subclass of this class, then you must provide the
+following methods:
+
+=over 4
+
+=item * month_names
+
+Returns an array reference containing the full names of the months,
+with January as the first month.
+
+=item * month_abbreviations
+
+Returns an array reference containing the abbreviated names of the
+months, with January as the first month.
+
+=item * day_names
+
+Returns an array reference containing the full names of the days,
+with Monday as the first day.
+
+=item * day_abbreviations
+
+Returns an array reference containing the abbreviated names of the
+days, with Monday as the first day.
+
+=item * am_pms
+
+Returns an array reference containing the localized forms of "AM" and
+"PM".
+
+=item * date_formats
+
+Returns a hash reference containing the date formats used for the
+locale.  The hash must contain the keys "long", "full", "medium", and
+"short".
+
+=item * time_formats
+
+Returns a hash reference containing the time formats used for the
+locale.  The hash must contain the keys "long", "full", "medium", and
+"short".
+
+=item * date_before_time
+
+This returns a boolean value indicating whether or not the date comes
+before the time when formatting a complete date and time for
+presentation.
+
+=item * _default_date_format_length
+
+This should return a string which is one of "long", "full", "medium",
+or "short".  It indicates the default date format length for the
+locale.
+
+=item * _default_time_format_length
+
+This should return a string which is one of "long", "full", "medium",
+or "short".  It indicates the default time format length for the
+locale.
 
 =head1 AUTHORS
 
