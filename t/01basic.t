@@ -74,9 +74,9 @@ sub check_array
 
     is( keys %unique, $count, "'$locale_id': '$array_func' contains $count unique items" );
 
-    for ( 1..$count )
+    for my $i ( 1..$count )
     {
-        $dt->set($dt_component => $_);
+        $dt->set($dt_component => $i);
 
         delete $unique{ $locale->$item_func($dt) };
     }
@@ -96,7 +96,7 @@ sub check_formats
 
     foreach my $format ( qw( full long medium short ) )
     {
-        my $method = "${_}_$item_func";
+        my $method = "${format}_$item_func";
 
         delete $unique { $locale->$method() };
     }
