@@ -8,7 +8,7 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.05;
+$VERSION = 0.06;
 
 BEGIN
 {
@@ -610,6 +610,191 @@ Once created, remember to register it!
 
 Of course, you can always do the registration in the module itself,
 and simply load it before using it.
+
+=head1 LOCALE OBJECT METHODS
+
+All objects that inherit from C<DateTime::Locale::Base> will offer
+certain methods.
+
+The following methods can be used to get information about the
+locale's id and name.
+
+=over 4
+
+=item * id
+
+The complete locale id, something like "en_US".
+
+=item * language_id
+
+The language portion of the id, like "en".
+
+=item * territory_id
+
+The territory portion of the id, like "US".
+
+=item * variant_id
+
+The variant portion of the id, like "PREEURO".
+
+=item * name
+
+The locale's complete name, which always includes at least a language
+component, plus optional territory and variant components.  Something
+like "English United States".  The value returned will always be in
+English.
+
+=item * language
+
+=item * territory
+
+=item * variant
+
+The relevant component from the locale's complete name, like "English"
+or "United States".
+
+=item * native_name
+
+The locale's complete name in localized form as a UTF-8 string.
+
+=item * native_language
+
+=item * native_territory
+
+=item * native_variant
+
+The relevant component from the locale's complete native name as a
+UTF-8 string.
+
+=back
+
+The following methods all accept a C<DateTime.pm> object and return
+a localized name.
+
+=over 4
+
+=item * month_name ($dt)
+
+=item * month_abbreviation ($dt)
+
+=item * day_name ($dt)
+
+=item * day_abbreviation ($dt)
+
+=item * am_pm ($dt)
+
+=back
+
+The following methods return strings appropriate for the
+C<DateTime.pm> C<strftime()> method:
+
+=over 4
+
+=item * full_date_format
+
+=item * long_date_format
+
+=item * medium_date_format
+
+=item * short_date_format
+
+=item * full_time_format
+
+=item * long_time_format
+
+=item * medium_time_format
+
+=item * short_time_format
+
+=item * full_datetime_format
+
+=item * long_datetime_format
+
+=item * medium_datetime_format
+
+=item * short_datetime_format
+
+=back
+
+The following methods deal with the default format lengths:
+
+=over 4
+
+=item default_date_format_length
+
+=item default_time_format_length
+
+These methods return one of "full", "long", "medium", or "short",
+indicating the current default format length.
+
+The default when an object is created is determined by the ICU locale
+data.
+
+=item set_default_date_format_length ($length)
+
+=item set_default_time_format_length ($length)
+
+These methods return one of "full", "long", "medium", or "short",
+indicating the current default format length.
+
+=back
+
+The following methods can be used to get the object's raw localization
+data.  If a method returns a reference, altering it will alter the
+object, so make a copy if you need to do so.
+
+=over 4
+
+=item * month_names
+
+Returns an array reference containing the full names of the months,
+with January as the first month.
+
+=item * month_abbreviations
+
+Returns an array reference containing the abbreviated names of the
+months, with January as the first month.
+
+=item * day_names
+
+Returns an array reference containing the full names of the days,
+with Monday as the first day.
+
+=item * day_abbreviations
+
+Returns an array reference containing the abbreviated names of the
+days, with Monday as the first day.
+
+=item * am_pms
+
+Returns an array reference containing the localized forms of "AM" and
+"PM".
+
+=item * date_formats
+
+Returns a hash reference containing the date formats used for the
+locale.  The hash contains the keys "long", "full", "medium", and
+"short".
+
+=item * time_formats
+
+Returns a hash reference containing the time formats used for the
+locale.  The hash contains the keys "long", "full", "medium", and
+"short".
+
+=item * date_before_time
+
+This returns a boolean value indicating whether or not the date comes
+before the time when formatting a complete date and time for
+presentation.
+
+=item * date_parts_order
+
+This returns a string indicating the order of the parts of a date that
+is in the form XX/YY/ZZ.  The possible values are "dmy", "mdy", "ydm"
+and "ymd".
+
+=back
 
 =head1 SUPPORT
 
