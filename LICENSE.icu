@@ -11,8 +11,7 @@ to the following page:
 
 As the locale data is held on the ICU site, and I have derived these
 modules from ICU .xml files, I make the hopefully reasonable assumption
-that derived data is covered by the ICU license. I'll clarify this as
-soon as possible:
+that derived data is covered by the ICU license.
 
 ICU License - ICU 1.8.1 and later
 
