@@ -214,6 +214,8 @@ sub load
     {
         return $class->_load_from_id($id);
     }
+
+    return;
 }
 
 sub _guess_id
