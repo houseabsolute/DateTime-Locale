@@ -3,6 +3,9 @@
 - Make sure tests pass without requiring DateTime 0.14 to be
 installed.  Reported by Claus Farber.
 
+- Document default formats and format lengths in
+DateTime::Locale::Base.
+
 
 0.01   2003-07-23
 
