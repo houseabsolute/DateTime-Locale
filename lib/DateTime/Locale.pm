@@ -40,6 +40,12 @@ sub register
                                 native_territory => { type => SCALAR, optional => 1 },
                                 en_variant       => { type => SCALAR, optional => 1 },
                                 native_variant   => { type => SCALAR, optional => 1 },
+                                # undocumented hack so we don't have
+                                # to generate .pm files the ICU XML
+                                # locales which don't differ from
+                                # their parents in terms of datetime
+                                # data.
+                                real_class       => { type => SCALAR, optional => 1 },
                                 class            => { type => SCALAR, optional => 1 },
                                 replace          => { type => SCALAR, default => 0 },
                               } );
@@ -244,29 +250,24 @@ sub _load_class_from_id
     my $id = shift;
 
     # We want the first alias for which there is data, even if it has
-    # no corresponding .pm file
+    # no corresponding .pm file.  There may be multiple levels of
+    # alias to go through.
     my $data_id = $id;
     while ( exists $AliasToID{$data_id} && ! exists $DataForID{$data_id} )
     {
         $data_id = $AliasToID{$data_id};
     }
 
-    my $real_id = $id;
+    my $data = $DataForID{$data_id};
+    my $subclass = $data->{real_class} ? $data->{real_class} : $data_id;
 
-    # This is the real class, which may be nested under several
-    # aliases
-    while ( exists $AliasToID{$real_id} )
-    {
-        $real_id = $AliasToID{$real_id};
-    }
-
-    my $real_class = "DateTime::Locale::$real_id";
+    my $real_class = "DateTime::Locale::$subclass";
 
     eval "require $real_class";
 
     die $@ if $@;
 
-    return $real_class->new( %{ $DataForID{$data_id} },
+    return $real_class->new( %$data,
                              id => $id,
                            );
 }
@@ -285,14 +286,9 @@ DateTime::Locale - Localization support for DateTime
 
   use DateTime::Locale;
 
-  DateTime::Locale->default_date_format('full');
-  DateTime::Locale->default_time_format('medium');
-
   my $loc = DateTime::Locale->load('en_GB');
 
   print $loc->native_locale_name,    "\n",
-        $loc->default_date_format,   "\n",
-        $loc->default_time_format,   "\n",
 	$loc->long_date_time_format, "\n";
 
   # but mostly just things like ...
@@ -321,7 +317,8 @@ This module provides the following class methods:
 
 Returns the locale object for the specified locale id, name, or alias
 - see the C<DateTime::LocaleCatalog> documentation for a list of built
-in names and ids.
+in names and ids.  The name provided may be either the English or
+native name.
 
 If the requested locale is not found, a fallback search takes place to
 find a suitable replacement.
@@ -341,181 +338,44 @@ Eg. For locale C<es_XX_UNKNOWN> the fallback search would be:
 
 If no suitable replacement is found, then an exception is thrown.
 
+Please note that if you provide an B<id> to this method, then the
+returned locale object's C<id()> method will B<always> return the
+value you gave, even if that value was an alias to some other id.
+
+This is done for forwards compatibility, in case something that is
+currently an alias becomes a unique locale in the future.
+
+This means that the value of C<id()> and the object's class may not
+match.
+
 =item * ids
-
-Returns an unsorted list of the available locale ids, or an
-array reference if called in a scalar context.
-
-Examples:
 
   my @ids = DateTime::Locale->ids;
   my $ids = DateTime::Locale->ids;
 
-=item * id ( $locale_name )
-
-Returns the locale id for the given locale name, or undef if no
-matching locale id is found.
-
-Example:
-
-  my $id = DateTime::Locale->id("Uzbek_Uzbekistan");  # Returns "uz_UZ"
+Returns an unsorted list of the available locale ids, or an array
+reference if called in a scalar context.  This list does not include
+aliases.
 
 =item * names
-
-Returns an unsorted list of the available locale names in English, or
-an array reference if called in a scalar context.
-
-Examples:
 
   my @names = DateTime::Locale->names;
   my $names = DateTime::Locale->names;
 
-=item * name ( $locale_id | $locale )
-
-Returns the locale name for the given locale id or object in English,
-or undef if no matching locale name is found.
-
-Locale names may consist of language, territory, and variant
-components.  Use the C<language()>, C<territory()>, and C<variant()>
-methods to access each component separately.
-
-Example:
-
-  my $name = DateTime::Locale->name("es_CO");  # Returns "Spanish Colombia"
-
-  or:
-
-  my $locale = DateTime::Locale->load("es_CO");
-  my $name   = DateTime::Locale->name($locale);
-
-=item * language  ( $locale_id | $locale )
-
-=item * territory ( $locale_id | $locale )
-
-=item * variant   ( $locale_id | $locale )
-
-Returns the language, territory, and variant respectively of the given
-locale id or object in English, or undef if that component does not
-exist.
-
-Example:
-
-  DateTime::Locale->language("is_IS");        # Returns "Icelandic"
-
-  DateTime::Locale->territory("ar_AE");       # Returns "United Arab Emirates"
-
-  DateTime::Locale->variant("en_US_POSIX");   # Returns "POSIX"
+Returns an unsorted list of the available locale names in English, or
+an array reference if called in a scalar context.
 
 =item * native_names
+
+  my @names = DateTime::Locale->native_names;
+  my $names = DateTime::Locale->native_names;
 
 Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All
 native names are utf8 encoded.
 
 B<NB>: Many locales are only partially translated, so some native
-locale names may still be in English.
-
-Examples:
-
-  my @names = DateTime::Locale->native_names;
-  my $names = DateTime::Locale->native_names;
-
-=item * native_name ( $locale_id | $locale )
-
-Returns the locale name in its native language for the given locale id
-or object, or undef if no matching locale name is found.  All native
-names are utf8 encoded.
-
-Native names may consist of language, territory, and variant
-components.  Use the L<native_language>, L<native_territory> and
-L<native_variant> methods to access each component separately.
-
-B<NB> Many locales are only partially translated, so the native locale
-name may still be in English.
-
-Example:
-
-  my $name = DateTime::Locale->native_name("pl_PL");  # Returns "polski_Polska"
-
-  or:
-
-  my $locale = DateTime::Locale->load("pl_PL");
-  my $name   = DateTime::Locale->native_name($locale);
-
-=item * native_language  ( $locale_id | $locale )
-
-=item * native_territory ( $locale_id | $locale )
-
-=item * native_variant   ( $locale_id | $locale )
-
-Returns the language, territory, and variant respectively of the given
-locale id or object in its utf8 encoded native language, or undef if
-that component does not exist.
-
-B<NB> Many locales are only partially translated, so the returned components
-may still be in English.
-
-  # Returns "íslenska"
-  DateTime::Locale->native_language("is_IS");
-
-  # Returns "Magyarország"
-  DateTime::Locale->native_territory("hu_HU");
-
-At the moment, the value of C<native_variant()> and C<variant()> are
-always the same.
-
-=item * default_date_format ( $format_type )
-
-Sets the default date format pattern used for outputting localized
-dates and datetime combinations.
-
-C<$format_type> must be one of: C<'full'>, C<'long'>, C<'medium'>, or
-C<'short'>.
-
-If no argument is supplied, the value returned is an index for the
-array returned by the locale C<date_formats> method. See
-L<DateTime::Locale::Base> for details of C<date_formats>.
-
-See also: L<format_type>
-
-Examples:
-
-  DateTime::Locale->default_date_format('Long');
-
-  my $format = $locale->date_formats->[ DateTime::Locale->default_date_format ];   # Returns the long date format pattern.
-
-  DateTime::Locale->format_type( DateTime::Locale->default_date_format );          # Returns "Long".
-
-=item * default_time_format ( $format_type )
-
-Sets the default time format pattern used for outputting localized time
-and datetime combinations.
-
-C<$format_type> must be one of: C<'full'>, C<'long'>, C<'medium'>, or
-C<'short'>.
-
-If no argument is supplied, the value returned is an index for the
-array returned by the locale C<time_formats> method. See
-L<DateTime::Locale::Base> for details of C<time_formats>.
-
-Examples:
-
-  DateTime::Locale->default_time_format('medium');
-
-  # Returns the medium time format pattern.
-  my $format =
-      $locale->time_formats->[ DateTime::Locale->default_time_format ];
-
-  # Returns "medium".
-  DateTime::Locale->format_type( DateTime::Locale->default_time_format );
-
-=item * format_type ( $format_type_array_index )
-
-Returns a string describing the passed format type array index as
-returned by L<default_date_format> and L<default_time_format>.
-
-The returned string is one of: C<'full'>, C<'long'>, C<'medium'>,
-C<'short'>, or undef if the passed index was invalid.
+locale names may still contain some English.
 
 =item * add_aliases ( $alias1 => $id1, $alias2 => $id2, ... )
 
@@ -526,8 +386,6 @@ allowed.
 If the passed locale id is neither registered nor listed in
 L</AVAILABLE LOCALES>, an exception is thrown.
 
-Example:
-
  DateTime::Locale->add_aliases( LastResort => 'es_ES' );
 
  # Equivalent to DateTime::Locale->load('es_ES');
@@ -535,15 +393,14 @@ Example:
 
 You can also pass a hash reference to this method.
 
-Example:
-
  DateTime::Locale->add_alias( { Default     => 'en_GB',
                                 Alternative => 'en_US',
                                 LastResort  => 'es_ES' } );
 
 =item * remove_alias ( $alias )
 
-Removes a locale id alias.  Non-existent aliases are silently ignored.
+Removes a locale id alias, and returns true if the specified alias
+actually existed.
 
  DateTime::Locale->add_alias(LastResort => 'es_ES');
 
