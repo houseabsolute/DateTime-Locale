@@ -325,13 +325,9 @@ sub get_formats
               @{ $xml->{dates}{calendars}{calendar}{dateFormats}{dateFormatLength} }
             );
 
-        foreach my $p ( [ 0 => 'full' ],
-                        [ 1 => 'long' ],
-                        [ 2 => 'medium' ],
-                        [ 3 => 'short' ],
-                      )
+        foreach my $length ( qw( full long medium short ) )
         {
-            $hash->{date_formats}[ $p->[0] ] = simple2strf( $formats{ $p->[1] } )
+            $hash->{date_formats}{$length} = simple2strf( $formats{$length} )
         }
 
         $hash->{default_date_format_length} = $dates->{default}{type};
@@ -344,13 +340,9 @@ sub get_formats
               @{ $xml->{dates}{calendars}{calendar}{timeFormats}{timeFormatLength} }
             );
 
-        foreach my $p ( [ 0 => 'full' ],
-                        [ 1 => 'long' ],
-                        [ 2 => 'medium' ],
-                        [ 3 => 'short' ],
-                      )
+        foreach my $length ( qw( full long medium short ) )
         {
-            $hash->{time_formats}[ $p->[0] ] = simple2strf( $formats{ $p->[1] } )
+            $hash->{time_formats}{$length} = simple2strf( $formats{$length} )
         }
 
         $hash->{default_time_format_length} = $times->{default}{type};
@@ -360,8 +352,7 @@ sub get_formats
          $xml->{dates}{calendars}{calendar}{dateTimeFormats}
                {dateTimeFormatLength}{dateTimeFormat}{pattern} )
     {
-        $hash->{date_time_format_pattern_order} =
-            $order eq "{1} {0}" ? [1, 0] : [0, 1];
+        $hash->{date_before_time} = $order eq "{1} {0}" ? 1 : 0;
     }
 }
 
@@ -419,15 +410,12 @@ sub generate_locale
     my $subs = "";
 
     foreach my $var
-        ( qw( date_time_format_pattern_order
-              day_names
+        ( qw( day_names
               day_abbreviations
               month_names
               month_abbreviations
               am_pms
               eras
-              date_formats
-              time_formats
             ) )
     {
         next unless $hash->{$var};
@@ -444,8 +432,27 @@ sub generate_locale
         $subs .= sprintf "sub %-30s { \\\@%-30s }\n", $var, $var;
     }
 
+    foreach my $var ( qw( date_formats
+                          time_formats
+                        ) )
+    {
+        next unless $hash->{$var};
+
+        $vars .= "my %$var = (\n";
+
+        while ( my ( $k, $v ) = each %{ $hash->{$var} } )
+        {
+            $vars .= qq|"\Q$k\E" => "\Q$v\E",\n|;
+        }
+
+        $vars .= "\n);\n\n";
+
+        $subs .= sprintf "sub %-30s { \\%%%-30s }\n", $var, $var;
+    }
+
     foreach my $var
-        ( qw( default_date_format_length
+        ( qw( date_before_time
+              default_date_format_length
               default_time_format_length
             ) )
     {
@@ -453,7 +460,9 @@ sub generate_locale
 
         $vars .= qq|my \$$var = "\Q$hash->{$var}\E";\n|;
 
-        $subs .= sprintf "sub %-30s { \$%-31s }\n", $var, $var;
+        my $sub_name = $var eq 'date_before_time' ? $var : "_$var";
+
+        $subs .= sprintf "sub %-30s { \$%-31s }\n", $sub_name, $var;
     }
 
     my $class         = $hash->{id};
