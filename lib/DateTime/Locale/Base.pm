@@ -48,7 +48,7 @@ sub month_abbreviation       { $_[0]->month_abbreviations->[ $_[1]->month_0     
 sub day_name                 { $_[0]->day_names->          [ $_[1]->day_of_week_0     ] }
 sub day_abbreviation         { $_[0]->day_abbreviations->  [ $_[1]->day_of_week_0     ] }
 sub am_pm                    { $_[0]->am_pms->             [ $_[1]->hour < 12 ? 0 : 1 ] }
-sub era;                     # TBA
+sub era;                     # TBD
 
 sub    full_date_format      { $_[0]->date_formats->[0] }
 sub    long_date_format      { $_[0]->date_formats->[1] }
@@ -70,3 +70,35 @@ sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->def
 
 1;
 
+__END__
+
+=head1 NAME
+
+DateTime::Locale::Base - Base class for individual locale objects
+
+=head1 SYNOPSIS
+
+  use base 'DateTime::Locale::Base';
+
+=head1 SUPPORT
+
+Support for this module is provided via the datetime@perl.org email
+list. See http://lists.perl.org/ for more details.
+
+=head1 AUTHORS
+
+Richard Evans <rich@ridas.com>
+
+Dave Rolsky <autarch@urth.org>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2003 Richard Evans. All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+The full text of the license can be found in the LICENSE file included
+with this module.
+
+=cut
