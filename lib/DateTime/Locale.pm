@@ -8,7 +8,7 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.02;
+$VERSION = 0.03;
 
 BEGIN
 {
@@ -24,9 +24,13 @@ my %NativeNameToID;
 my %AliasToID;
 my %IDToExtra;
 
+my %LoadCache;
+
 sub register
 {
     shift;
+
+    %LoadCache = ();
 
     foreach my $l ( ref $_[0] ? @{ $_[0] } : $_[0] )
     {
@@ -95,6 +99,8 @@ sub add_aliases
 {
     shift;
 
+    %LoadCache = ();
+
     my $aliases = ref $_[0] ? $_[0] : {@_};
 
     while ( my ( $alias, $id ) = each %$aliases )
@@ -124,6 +130,9 @@ sub add_aliases
 sub remove_alias
 {
     shift;
+
+    %LoadCache = ();
+
     my ($alias) = validate_pos( @_, { type => SCALAR } );
 
     return delete $AliasToID{$alias};
@@ -158,7 +167,7 @@ my %OldAliases =
      'Oromo'             => 'om_ET', # Maybe om_KE or plain om ?
      'Portugese'         => 'pt_PT',
      #      'Sidama'            => undef, # XXX
-         'Somali'            => 'so_SO',
+     'Somali'            => 'so_SO',
      'Spanish'           => 'es_ES',
      'Swedish'           => 'sv_SE',
      #      'Tigre'             => undef, # XXX
@@ -171,10 +180,14 @@ sub load
     my $class = shift;
     my $name = shift;
 
+    my $key = $name;
+
+    return $LoadCache{$key} if exists $LoadCache{$key};
+
     # Custom class registered by user
     if ( $Class{$name} )
     {
-        return $Class{$name}->new;
+        return $LoadCache{$key} = $Class{$name}->new;
     }
 
     # special case for backwards compatibility with DT::Language
@@ -182,18 +195,18 @@ sub load
 
     if ( exists $DataForID{$name} || exists $AliasToID{$name} )
     {
-        return $class->_load_class_from_id($name);
+        return $LoadCache{$key} = $class->_load_class_from_id($name);
     }
 
     foreach my $h ( \%NameToID, \%NativeNameToID )
     {
-        return $class->_load_class_from_id( $h->{$name} )
+        return $LoadCache{$key} = $class->_load_class_from_id( $h->{$name} )
             if exists $h->{$name};
     }
 
     if ( my $id = $class->_guess_id($name) )
     {
-        return $class->_load_from_id($id);
+        return $LoadCache{$key} = $class->_load_from_id($id);
     }
 
     die "Invalid locale name or id: $name\n";
@@ -318,6 +331,10 @@ currently an alias becomes a unique locale in the future.
 
 This means that the value of C<id()> and the object's class may not
 match.
+
+The loaded locale is cached, so that B<locale objects may be
+singletons>.  Calling C<register()>, C<add_aliases()>,
+or C<remove_alias()> clears the cache.
 
 =item * ids
 
