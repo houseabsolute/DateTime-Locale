@@ -54,19 +54,19 @@ sub    full_date_format      { $_[0]->date_formats->[0] }
 sub    long_date_format      { $_[0]->date_formats->[1] }
 sub  medium_date_format      { $_[0]->date_formats->[2] }
 sub   short_date_format      { $_[0]->date_formats->[3] }
-sub default_date_format      { $_[0]->date_formats->[ DateTime::Locale->default_date_format ] }
+sub default_date_format      { $_[0]->date_formats->[ DateTime::Locale->default_date_format_length ] }
 
 sub    full_time_format      { $_[0]->time_formats->[0] }
 sub    long_time_format      { $_[0]->time_formats->[1] }
 sub  medium_time_format      { $_[0]->time_formats->[2] }
 sub   short_time_format      { $_[0]->time_formats->[3] }
-sub default_time_format      { $_[0]->time_formats->[ DateTime::Locale->default_time_format ] }
+sub default_time_format      { $_[0]->time_formats->[ DateTime::Locale->default_time_format_length ] }
 
-sub    full_date_time_format { join(" ", (   full_date_format(@_),    full_time_format(@_)) [@{$_[0]->date_time_format_pattern_order}]) }
-sub    long_date_time_format { join(" ", (   long_date_format(@_),    long_time_format(@_)) [@{$_[0]->date_time_format_pattern_order}]) }
-sub  medium_date_time_format { join(" ", ( medium_date_format(@_),  medium_time_format(@_)) [@{$_[0]->date_time_format_pattern_order}]) }
-sub   short_date_time_format { join(" ", (  short_date_format(@_),   short_time_format(@_)) [@{$_[0]->date_time_format_pattern_order}]) }
-sub default_date_time_format { join(" ", (default_date_format(@_), default_time_format(@_)) [@{$_[0]->date_time_format_pattern_order}]) }
+sub    full_datetime_format { join ' ', ( $_[0]->full_date_format, $_[0]->full_time_format )[@{$_[0]->date_time_format_pattern_order}] }
+sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_time_format )[@{$_[0]->date_time_format_pattern_order}] }
+sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[@{$_[0]->date_time_format_pattern_order}] }
+sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[@{$_[0]->date_time_format_pattern_order}] }
+sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[@{$_[0]->date_time_format_pattern_order}] }
 
 1;
 
