@@ -25,7 +25,7 @@ my $dt = DateTime->new( year => 2000, month => 1, day => 1, time_zone => "UTC" )
 my $tests_per_locale = $has_dt ? 16 : 12;
 
 plan tests =>
-    4    # starting
+    5    # starting
     + ( @locale_ids * $tests_per_locale ) # test each local
     + 55 # check_en_GB
     + 11 # check_es_ES
@@ -39,6 +39,12 @@ ok( $locale_ids{ar_JO},     "Locale id 'ar_JO' found" );
 
 eval { DateTime::Locale->load('Does not exist') };
 like( $@, qr/invalid/i, 'invalid locale name/id to load() causes an error' );
+
+{
+    # this type of locale id should work
+    my $l = DateTime::Locale->load('en_US.LATIN-1');
+    is( $l->id, 'en_US', 'id is en_US' );
+}
 
 for my $locale_id ( @locale_ids )
 {
