@@ -34,11 +34,13 @@ sub register
         my %p = validate( @p, { id                   => { type => SCALAR },
                                 en_complete_name     => { type => SCALAR },
                                 native_complete_name => { type => SCALAR, optional => 1 },
+
                                 en_language      => { type => SCALAR, optional => 1 },
-                                native_language  => { type => SCALAR, optional => 1 },
                                 en_territory     => { type => SCALAR, optional => 1 },
-                                native_territory => { type => SCALAR, optional => 1 },
                                 en_variant       => { type => SCALAR, optional => 1 },
+
+                                native_language  => { type => SCALAR, optional => 1 },
+                                native_territory => { type => SCALAR, optional => 1 },
                                 native_variant   => { type => SCALAR, optional => 1 },
                                 # undocumented hack so we don't have
                                 # to generate .pm files the ICU XML
@@ -311,9 +313,7 @@ This module provides the following class methods:
 
 =over 4
 
-=item * load ( $locale_id | $locale_name | $alias )
-
-=item * load ( $locale_id | $locale_name | $alias )
+=item * load( $locale_id | $locale_name | $alias )
 
 Returns the locale object for the specified locale id, name, or alias
 - see the C<DateTime::LocaleCatalog> documentation for a list of built
@@ -397,12 +397,12 @@ You can also pass a hash reference to this method.
                                 Alternative => 'en_US',
                                 LastResort  => 'es_ES' } );
 
-=item * remove_alias ( $alias )
+=item * remove_alias( $alias )
 
 Removes a locale id alias, and returns true if the specified alias
 actually existed.
 
- DateTime::Locale->add_alias(LastResort => 'es_ES');
+ DateTime::Locale->add_alias( LastResort => 'es_ES' );
 
  # Equivalent to DateTime::Locale->load('es_ES');
  DateTime::Locale->load('LastResort');
@@ -438,6 +438,8 @@ will not be list by querying methods such as ids() or names().
            native_language  => ...,
            native_territory => ...,
            native_variant   => ...,
+
+           replace          => $boolean
          )
 
 The locale id and name are required, and the following formats should
@@ -507,6 +509,9 @@ Examples:
  # NOT Ridas::Locales::Custom::en_GB_RIDAS !
  my $l = DateTime::Locale->load('en_GB_RIDAS');
 
+If you a locale for that id already exists, you must specify the
+"replace" parameter as true, or an exception will be thrown.
+
 =head1 ADDING CUSTOM LOCALES
 
 These are added in one of two ways:
@@ -555,7 +560,6 @@ provide different date/time formats:
     "%{hour12}:%M %p",
   ];
 
-  sub id           { $locale_id    }
   sub date_formats { $date_formats }
   sub time_formats { $time_formats }
 
@@ -570,8 +574,7 @@ Now register it:
 
 =head2 Creating a completely new locale
 
-Inherit directly from DateTime::Locale::Base, and implement the
-following methods:
+A completely new custom locale must implement the following methods:
 
   id
   month_names
@@ -587,6 +590,9 @@ following methods:
 See C<DateTime::Locale::Base> for a description of each method, and
 take a look at DateTime/Locale/root.pm for an example of a complete
 implementation.
+
+You are, of course, free to subclass C<DateTime::Locale::Base> if you
+want to, though this is not required.
 
 Once created, remember to register it!
 
