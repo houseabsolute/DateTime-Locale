@@ -97,11 +97,6 @@ DateTime::Locale::Base - Base class for individual locale objects
 
   use base 'DateTime::Locale::Base';
 
-=head1 SUPPORT
-
-Support for this module is provided via the datetime@perl.org email
-list. See http://lists.perl.org/ for more details.
-
 =head1 DEFAULT FORMATS
 
 Each locale has a set of four default date and time formats.  They are
@@ -183,6 +178,11 @@ or "short".  It indicates the default time format length for the
 locale.
 
 =back
+
+=head1 SUPPORT
+
+Support for this module is provided via the datetime@perl.org email
+list. See http://lists.perl.org/ for more details.
 
 =head1 AUTHORS
 
