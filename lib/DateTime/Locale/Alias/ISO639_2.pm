@@ -139,7 +139,6 @@ sub import
             'fao'                  => 'fo',
             'fao_FO'               => 'fo_FO',
             'fas'                  => 'fa',
-            'fas_IN'               => 'fa_IN',
             'fas_IR'               => 'fa_IR',
             'fin'                  => 'fi',
             'fin_FI'               => 'fi_FI',
@@ -264,7 +263,6 @@ sub import
             'pan'                  => 'pa',
             'pan_IN'               => 'pa_IN',
             'per'                  => 'fa',
-            'per_IN'               => 'fa_IN',
             'per_IR'               => 'fa_IR',
             'pol'                  => 'pl',
             'pol_PL'               => 'pl_PL',
@@ -499,7 +497,6 @@ Adds the following ISO 639 2 language locale aliases:
  fao                 fo
  fao_FO              fo_FO
  fas                 fa
- fas_IN              fa_IN
  fas_IR              fa_IR
  fin                 fi
  fin_FI              fi_FI
@@ -622,7 +619,6 @@ Adds the following ISO 639 2 language locale aliases:
  pan                 pa
  pan_IN              pa_IN
  per                 fa
- per_IN              fa_IN
  per_IR              fa_IR
  pol                 pl
  pol_PL              pl_PL
