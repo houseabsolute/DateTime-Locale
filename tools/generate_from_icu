@@ -498,7 +498,9 @@ EOF
                           )
                       )
         {
-            my $val = defined $lookup{$k} ? qq|"\Q$lookup{$k}\E"| : 'undef';
+            next unless defined $lookup{$k};
+
+            my $val = qq|"\Q$lookup{$k}\E"|;
             print OUTFILE "      $k => $val,\n";
         }
 
