@@ -614,7 +614,8 @@ and simply load it before using it.
 =head1 LOCALE OBJECT METHODS
 
 All objects that inherit from C<DateTime::Locale::Base> will offer
-certain methods.
+certain methods.  All the included locales are
+C<DateTime::Locale::Base> subclasses.
 
 The following methods can be used to get information about the
 locale's id and name.
