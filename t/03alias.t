@@ -16,5 +16,5 @@ is( $l->id, 'baz', 'id is baz' );
 
 ok( DateTime::Locale->remove_alias('baz'), 'remove_alias should return true' );
 
-my $l = DateTime::Locale->load('baz');
-is( $l, undef, 'removed alias should be gone' );
+eval { DateTime::Locale->load('baz') };
+like( $@, qr/invalid/i, 'removed alias should be gone' );
