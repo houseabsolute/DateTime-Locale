@@ -27,7 +27,7 @@ my $tests_per_locale = $has_dt ? 16 : 12;
 plan tests =>
     4    # starting
     + ( @locale_ids * $tests_per_locale ) # test each local
-    + 53 # check_en_GB
+    + 54 # check_en_GB
     + 11 # check_es_ES
     + 5  # check_en_US_POSIX
     + 9  # check_DT_Lang
@@ -99,11 +99,11 @@ sub check_array
 # does 2 tests
 sub check_formats
 {
-    my ($locale_id, $locale, $array_func, $item_func) = @_;
+    my ($locale_id, $locale, $hash_func, $item_func) = @_;
 
-    my %unique = map { $_ => 1 } @{ $locale->$array_func() };
+    my %unique = map { $_ => 1 } values %{ $locale->$hash_func() };
 
-    ok( keys %unique >= 1, "'$locale_id': '$array_func' contains at least 1 unique item" );
+    ok( keys %unique >= 1, "'$locale_id': '$hash_func' contains at least 1 unique item" );
 
     foreach my $format ( qw( full long medium short ) )
     {
@@ -113,7 +113,7 @@ sub check_formats
     }
 
     is( keys %unique, 0,
-        "'$locale_id':  Data returned by '$array_func' and '$item_func patterns' matches" );
+        "'$locale_id':  Data returned by '$hash_func' and '$item_func patterns' matches" );
 }
 
 # does 46 tests
@@ -181,6 +181,9 @@ sub check_en_GB
     is( $locale->language_id, 'en', 'language_id()' );
     is( $locale->territory_id, 'GB', 'territory_id()' );
     is( $locale->variant_id, undef, 'variant_id()' );
+
+    is( $locale->default_date_time_format, "\%\{day\}\ \%b\ \%\{ce_year\} \%H\:\%M\:\%S",
+        'check default datetime format' );
 }
 
 sub check_es_ES
