@@ -1,3 +1,13 @@
+0.05   2003-10-03
+
+- Really make the documentation and code match!  This time there are
+even tests for this.  Reported by David Hood (again).
+
+- DateTime::Locale won't try to load a class if it already has a new()
+method.  This is so you can define multiple locale subclasses in one
+file and load that file yourself before calling the load() method.
+
+
 0.04   2003-10-03
 
 - The documentation incorrectly showed the DateTime::Locale->register
