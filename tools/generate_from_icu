@@ -237,8 +237,8 @@ sub has_data
           $cal->{monthAbbr}{month}             ||
           $cal->{am}                           ||
           $cal->{eras}{eraAbbr}{era}           ||
-          $cal->{dateFormats}{dateFormatStyle} ||
-          $cal->{timeFormats}{timeFormat}      ||
+          $cal->{dateFormats}{dateFormatLength} ||
+          $cal->{timeFormats}{timeFormatLength} ||
           $cal->{dateTimeFormat}{pattern}
         );
 }
@@ -336,19 +336,47 @@ sub get_formats
 {
     my ($hash, $xml) = @_;
 
-    if ( my $dates = $xml->{dates}{calendars}{calendar}{dateFormats}{dateFormatStyle} )
+    if ( my $dates = $xml->{dates}{calendars}{calendar}{dateFormats} )
     {
-        $hash->{date_formats}[$_] = simple2strf( $dates->[$_]{dateFormat}{pattern} )
-            for ( 0..3 );
+        my %formats =
+            ( map { $_->{type} => $_->{dateFormat}{pattern} }
+              @{ $xml->{dates}{calendars}{calendar}{dateFormats}{dateFormatLength} }
+            );
+
+        foreach my $p ( [ 0 => 'full' ],
+                        [ 1 => 'long' ],
+                        [ 2 => 'medium' ],
+                        [ 3 => 'short' ],
+                      )
+        {
+            $hash->{date_formats}[ $p->[0] ] = simple2strf( $formats{ $p->[1] } )
+        }
+
+        $hash->{default_date_format} = $dates->{default}{type};
     }
 
-    if ( my $times = $xml->{dates}{calendars}{calendar}{timeFormats}{timeFormat} )
+    if ( my $times = $xml->{dates}{calendars}{calendar}{timeFormats} )
     {
-        $hash->{time_formats}[$_] = simple2strf( $times->[$_]{pattern} )
-            for ( 0..3 );
+        my %formats =
+            ( map { $_->{type} => $_->{timeFormat}{pattern} }
+              @{ $xml->{dates}{calendars}{calendar}{timeFormats}{timeFormatLength} }
+            );
+
+        foreach my $p ( [ 0 => 'full' ],
+                        [ 1 => 'long' ],
+                        [ 2 => 'medium' ],
+                        [ 3 => 'short' ],
+                      )
+        {
+            $hash->{time_formats}[ $p->[0] ] = simple2strf( $formats{ $p->[1] } )
+        }
+
+        $hash->{default_time_format} = $times->{default}{type};
     }
 
-    if ( my $order = $xml->{dates}{calendars}{calendar}{dateTimeFormat}{pattern} )
+    if ( my $order =
+         $xml->{dates}{calendars}{calendar}{dateTimeFormats}
+               {dateTimeFormatLength}{dateTimeFormat}{pattern} )
     {
         $hash->{date_time_format_pattern_order} =
             $order eq "{1} {0}" ? [1, 0] : [0, 1];
@@ -509,6 +537,14 @@ This module contains a list of all known locales.
 
 =head1 LOCALES
 
+Any method taking locale id or name arguments should use one of the
+values listed below.  Ids and names are case sensitive.
+
+Always select the closest matching locale - for example, French
+Canadians would choose fr_CA over fr - and B<always> use locale ids in
+preference to names; locale ids offer greater compatibility when using
+localized third party modules.
+
 Many of the available locales are the same as other, more generic
 locales for datetime information.  In that case, we simply load the
 more generic class.  However, the various methods related to name,
@@ -533,7 +569,8 @@ sub generate_locale
     my $vars = "";
     my $subs = "";
 
-    for ( qw( date_time_format_pattern_order
+    foreach my $var
+        ( qw( date_time_format_pattern_order
               day_names
               day_abbreviations
               month_names
@@ -541,12 +578,33 @@ sub generate_locale
               am_pms
               eras
               date_formats
-              time_formats ) )
+              time_formats
+            ) )
     {
-        next unless $hash->{$_};
+        next unless $hash->{$var};
 
-        $vars .= "my \$$_ = [\n" . join("", map { s/\'/\\\'/g; "  '$_',\n" } @{$hash->{$_}}) . "];\n\n";
-        $subs .= sprintf "sub %-30s { \$%-30s }\n", $_, $_;
+        $vars .= "my \@$var = (\n";
+
+        foreach my $val ( @{ $hash->{$var} } )
+        {
+            $vars .= qq|"\Q$val\E",\n|;
+        }
+
+        $vars .= "\n);\n\n";
+
+        $subs .= sprintf "sub %-30s { \\\@%-30s }\n", $var, $var;
+    }
+
+    foreach my $var
+        ( qw( default_date_format
+              default_time_format
+            ) )
+    {
+        next unless $hash->{$var};
+
+        $vars .= qq|my \$$var = "\Q$hash->{$var}\E";\n|;
+
+        $subs .= sprintf "sub %-30s { \$%-31s }\n", $var, $var;
     }
 
     my $class         = $hash->{id};
