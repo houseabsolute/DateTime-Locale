@@ -498,10 +498,14 @@ EOF
 
     print OUTFILE ");\n\n";
 
+    my $aliases_in_pod = '';
+
     print OUTFILE "%DateTime::Locale::Aliases = (\n";
     foreach my $id ( sort keys %Aliases )
     {
         print OUTFILE "    $id => '$Aliases{$id}',\n";
+
+        $aliases_in_pod .= sprintf( " %-18s  %s\n", $id, $Aliases{$id} );
     }
     print OUTFILE ");";
 
@@ -544,6 +548,12 @@ The available locales are:
  Locale id           Locale name
  ==================================================
 $locales_in_pod
+
+There are also some hard-coded aliases available, these are:
+
+ Locale id           Is an alias for
+ ==================================================
+$aliases_in_pod
 
 =cut
 EOF
