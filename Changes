@@ -1,4 +1,4 @@
-0.20
+0.20   2005-02-26
 
 * BACKWARDS INCOMPATIBILITY - The way DateTime::Locale::Base
 subclasses work has changed.  Subclasses should no longer implement
@@ -14,9 +14,6 @@ script (Latin vs Cyrillic, for example).
 - Added new methods to get the "narrow" forms of a day or month.
 
 - Implemented per-locale eras.
-
-
-0.10
 
 - Fix a number of doc typos and buglets.  Patch by Jean Forget.
 
