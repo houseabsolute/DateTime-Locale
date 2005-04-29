@@ -123,6 +123,8 @@ sub STORABLE_thaw
     my $obj = DateTime::Locale->load( $serialized );
 
     %$self = %$obj;
+
+    return $self;
 }
 
 
