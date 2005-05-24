@@ -197,6 +197,9 @@ sub load
     my $class = shift;
     my $name = shift;
 
+    # Support RFC 3066 language tags, which use '-' instead of '_'.
+    $name =~ tr/-/_/;
+
     my $key = $name;
 
     return $LoadCache{$key} if exists $LoadCache{$key};
