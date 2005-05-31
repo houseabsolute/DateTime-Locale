@@ -3,6 +3,9 @@
 - Fix bugs when a custom locale was registered and a "class" parameter
 was passed to register().  Patch from Yann Kerherv.
 
+- Switched to a "traditional" Makefile.PL file at Perrin Harkins'
+request.
+
 
 0.21   2005-02-28
 
