@@ -4,7 +4,7 @@
 order to support RFC 3066 locale names, which use dashes.
 
 - Fix bugs when a custom locale was registered and a "class" parameter
-was passed to register().  Patch from Yann Kerherv.
+was passed to register().  Patch from Yann Kerhervé.
 
 - Switched to a "traditional" Makefile.PL file at Perrin Harkins'
 request.
