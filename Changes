@@ -1,7 +1,7 @@
 0.22   2005-05-31
 
 - Allow id names passed to load() to contain dashes or underscores, in
-order to support RFC 3066 locale names, which use dashes.  Suggested by
+order to support RFC 3066 locale names, which use dashes.
 
 - Fix bugs when a custom locale was registered and a "class" parameter
 was passed to register().  Patch from Yann Kerherv.
