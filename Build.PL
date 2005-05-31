@@ -9,5 +9,5 @@ Module::Build->new( module_name => 'DateTime::Locale',
                     requires    => { 'Params::Validate' => 0,
                                    },
 		    sign        => 1,
-                    create_makefile_pl => 'passthrough',
+                    create_makefile_pl => 'traditional',
                   )->create_build_script;
