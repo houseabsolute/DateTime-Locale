@@ -1,3 +1,9 @@
+0.22   2005-05-31
+
+- Fix bugs when a custom locale was registered and a "class" parameter
+was passed to register().  Patch from Yann Kerherv.
+
+
 0.21   2005-02-28
 
 - Fix era() method for year 0.

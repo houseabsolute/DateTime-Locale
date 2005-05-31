@@ -207,7 +207,7 @@ sub load
     # Custom class registered by user
     if ( $Class{$name} )
     {
-        return $LoadCache{$key} = $Class{$name}->new;
+        return $LoadCache{$key} = $class->_load_class_from_id( $name, $Class{$name} )
     }
 
     # special case for backwards compatibility with DT::Language
@@ -293,6 +293,7 @@ sub _load_class_from_id
 {
     my $class = shift;
     my $id = shift;
+    my $real_class = shift;
 
     # We want the first alias for which there is data, even if it has
     # no corresponding .pm file.  There may be multiple levels of
@@ -306,7 +307,7 @@ sub _load_class_from_id
     my $data = $DataForID{$data_id};
     my $subclass = $data->{real_class} ? $data->{real_class} : $data_id;
 
-    my $real_class = "DateTime::Locale::$subclass";
+    $real_class ||= "DateTime::Locale::$subclass";
 
     unless ( $real_class->can('new') )
     {
