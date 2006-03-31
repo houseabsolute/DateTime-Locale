@@ -19,6 +19,8 @@
 
 package DateTime::Locale::Alias::ISO639_2;
 
+use strict;
+
 use DateTime::Locale;
 
 sub import
