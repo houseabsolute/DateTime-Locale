@@ -25,7 +25,7 @@ my $dt = DateTime->new( year => 2000, month => 1, day => 1, time_zone => 'UTC' )
 my $tests_per_locale = $has_dt ? 23 : 19;
 
 plan tests =>
-    5    # starting
+    7    # starting
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
     + 13 # check_root
@@ -46,6 +46,14 @@ like( $@, qr/invalid/i, 'invalid locale name/id to load() causes an error' );
     # this type of locale id should work
     my $l = DateTime::Locale->load('en_US.LATIN-1');
     is( $l->id, 'en_US', 'id is en_US' );
+}
+
+{
+    my $file = File::Spec->catfile( 'lib/DateTime/Locale/zu_ZA.pm' );
+    ok( ! -f $file, 'zu_ZA.pm does not exist' );
+
+    my $locale = eval { DateTime::Locale->load('zu_ZA') };
+    isa_ok( $locale, 'DateTime::Locale::Base', 'can load zu_ZA locale anyway' );
 }
 
 for my $locale_id (@locale_ids)

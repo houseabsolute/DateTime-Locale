@@ -239,7 +239,7 @@ sub generate_from_CLDR_xml
             my $parent = parent_id($id);
             $LocalesWithoutData{$id} = $parent;
 
-            print "\n  $id has no data\n" unless $opts{quiet};
+            print "  $id has no data\n" unless $opts{quiet};
             next;
         }
 
@@ -287,7 +287,9 @@ sub has_data
 {
     my $hash = shift;
 
-    return keys %$hash > 2;
+    # There are 4 items every locale has (id, parent id, version, gen
+    # date).
+    return keys %$hash > 4;
 }
 
 sub parent_id
@@ -866,7 +868,13 @@ EOF
 
         if ( $LocalesWithoutData{$id} )
         {
-            print $fh qq|      real_class => "\Q$LocalesWithoutData{$id}\E",\n|;
+            my $real_id = $LocalesWithoutData{$id};
+            while ( $LocalesWithoutData{$real_id} )
+            {
+                $real_id = $LocalesWithoutData{$real_id};
+            }
+
+            print $fh qq|      real_class => "\Q$real_id\E",\n|;
         }
 
         print $fh "    },\n";
