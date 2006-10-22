@@ -29,7 +29,7 @@ plan tests =>
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
     + 9 # check_root
-    + 20 # check_en_GB
+    + 21 # check_en_GB
     + 11 # check_es_ES
     + 5  # check_en_US_POSIX
     + 9  # check_DT_Lang
@@ -185,7 +185,7 @@ sub check_root
     }
 }
 
-# does 20 tests
+# does 21 tests
 sub check_en_GB
 {
     my $locale = DateTime::Locale->load('en_GB');
@@ -203,6 +203,9 @@ sub check_en_GB
 
           month_abbreviations =>
           [ qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec ) ],
+
+          eras =>
+          [ qw( BC AD ) ],
 
           era_abbreviations =>
           [ qw( BC AD ) ],
