@@ -20,7 +20,7 @@ use DateTime::Locale;
 my $loc = DateTime::Locale->load('zh_Hans_SG');
 
 is( $loc->script, 'Simplified Han', 'check script' );
-is( $loc->native_script, "\x{7C21}\x{9AD4}\x{6F22}\x{8A9E}", 'check native_script' );
+is( $loc->native_script, "\x{7C21}\x{9AD4}\x{4E2D}\x{6587}", 'check native_script' );
 is( $loc->script_id, 'Hans', 'check script_id' );
 
 is( $loc->territory_id, 'SG', 'check territory_id' );

@@ -37,7 +37,7 @@ sub import
             'ara_BH'               => 'ar_BH',
             'ara_DZ'               => 'ar_DZ',
             'ara_EG'               => 'ar_EG',
-            'ara_IN'               => 'ar_IN',
+#            'ara_IN'               => 'ar_IN',
             'ara_IQ'               => 'ar_IQ',
             'ara_JO'               => 'ar_JO',
             'ara_KW'               => 'ar_KW',
@@ -140,8 +140,8 @@ sub import
             'eus_ES_PREEURO'       => 'eu_ES',
             'fao'                  => 'fo',
             'fao_FO'               => 'fo_FO',
-            'fas'                  => 'fa',
-            'fas_IR'               => 'fa_IR',
+#            'fas'                  => 'fa',
+#            'fas_IR'               => 'fa_IR',
             'fin'                  => 'fi',
             'fin_FI'               => 'fi_FI',
             'fin_FI_PREEURO'       => 'fi_FI',
@@ -223,8 +223,8 @@ sub import
             'kat_GE'               => 'ka_GE',
             'kaz'                  => 'kk',
             'kaz_KZ'               => 'kk_KZ',
-            'kir'                  => 'ky',
-            'kir_KG'               => 'ky_KG',
+#            'kir'                  => 'ky',
+#            'kir_KG'               => 'ky_KG',
             'kor'                  => 'ko',
             'kor_KR'               => 'ko_KR',
             'lav'                  => 'lv',
@@ -264,8 +264,8 @@ sub import
             'orm_KE'               => 'om_KE',
             'pan'                  => 'pa',
             'pan_IN'               => 'pa_IN',
-            'per'                  => 'fa',
-            'per_IR'               => 'fa_IR',
+#            'per'                  => 'fa',
+#            'per_IR'               => 'fa_IR',
             'pol'                  => 'pl',
             'pol_PL'               => 'pl_PL',
             'por'                  => 'pt',
@@ -279,8 +279,8 @@ sub import
             'rus'                  => 'ru',
             'rus_RU'               => 'ru_RU',
             'rus_UA'               => 'ru_UA',
-            'san'                  => 'sa',
-            'san_IN'               => 'sa_IN',
+#            'san'                  => 'sa',
+#            'san_IN'               => 'sa_IN',
             'scc'                  => 'sr',
             'scc_YU'               => 'sr_YU',
             'scr'                  => 'hr',
@@ -332,8 +332,8 @@ sub import
             'swe_SE'               => 'sv_SE',
             'tam'                  => 'ta',
             'tam_IN'               => 'ta_IN',
-            'tat'                  => 'tt',
-            'tat_RU'               => 'tt_RU',
+#            'tat'                  => 'tt',
+#            'tat_RU'               => 'tt_RU',
             'tel'                  => 'te',
             'tel_IN'               => 'te_IN',
             'tha'                  => 'th',
@@ -345,8 +345,8 @@ sub import
             'tur_TR'               => 'tr_TR',
             'ukr'                  => 'uk',
             'ukr_UA'               => 'uk_UA',
-            'urd'                  => 'ur',
-            'urd_PK'               => 'ur_PK',
+#            'urd'                  => 'ur',
+#            'urd_PK'               => 'ur_PK',
             'uzb'                  => 'uz',
             'uzb_UZ'               => 'uz_UZ',
             'vie'                  => 'vi',
@@ -497,8 +497,6 @@ Adds the following ISO 639 2 language locale aliases:
  eus_ES_PREEURO      eu_ES
  fao                 fo
  fao_FO              fo_FO
- fas                 fa
- fas_IR              fa_IR
  fin                 fi
  fin_FI              fi_FI
  fin_FI_PREEURO      fi_FI
@@ -578,8 +576,6 @@ Adds the following ISO 639 2 language locale aliases:
  kat_GE              ka_GE
  kaz                 kk
  kaz_KZ              kk_KZ
- kir                 ky
- kir_KG              ky_KG
  kor                 ko
  kor_KR              ko_KR
  lav                 lv
@@ -619,8 +615,6 @@ Adds the following ISO 639 2 language locale aliases:
  orm_KE              om_KE
  pan                 pa
  pan_IN              pa_IN
- per                 fa
- per_IR              fa_IR
  pol                 pl
  pol_PL              pl_PL
  por                 pt
@@ -634,8 +628,6 @@ Adds the following ISO 639 2 language locale aliases:
  rus                 ru
  rus_RU              ru_RU
  rus_UA              ru_UA
- san                 sa
- san_IN              sa_IN
  scc                 sr
  scc_YU              sr_YU
  scr                 hr
@@ -685,8 +677,6 @@ Adds the following ISO 639 2 language locale aliases:
  swe_SE              sv_SE
  tam                 ta
  tam_IN              ta_IN
- tat                 tt
- tat_RU              tt_RU
  tel                 te
  tel_IN              te_IN
  tha                 th
@@ -695,8 +685,6 @@ Adds the following ISO 639 2 language locale aliases:
  tur_TR              tr_TR
  ukr                 uk
  ukr_UA              uk_UA
- urd                 ur
- urd_PK              ur_PK
  uzb                 uz
  uzb_UZ              uz_UZ
  vie                 vi
