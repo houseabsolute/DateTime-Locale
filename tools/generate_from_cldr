@@ -165,6 +165,9 @@ sub generate_from_CLDR_xml
                          month            => 'type',
                          day              => 'type',
                          era              => 'type',
+                         quarterContext   => 'type',
+                         quarterWidth     => 'type',
+                         quarter          => 'type',
                          timeFormatLength => 'type',
                          dateFormatLength => 'type',
                        );
@@ -194,7 +197,7 @@ sub generate_from_CLDR_xml
                       date        => $gen_date,
                       source_file => basename($f),
                     };
-#        use Data::Dumper;print Dumper $XML{$id}{cal};exit;
+
         build_language_and_territory( $id, $XML{$id}{locale} );
 
         $Parents{$id} = $xml->{alias}{source}
@@ -227,7 +230,9 @@ sub generate_from_CLDR_xml
         get_days( $hash, $cal );
         get_months( $hash, $cal );
         get_formats( $hash, $cal );
-        get_am_pm_eras( $hash, $cal );
+        get_quarters( $hash, $cal );
+        get_am_pm( $hash, $cal );
+        get_eras( $hash, $cal );
 
         unless ( has_data($hash) )
         {
@@ -329,6 +334,9 @@ sub _get_days
     my $days =
         $cal->{days}{dayContext}{format}{dayWidth}{$length}{day};
 
+    $days ||=
+        $cal->{days}{dayContext}{'stand-alone'}{dayWidth}{$length}{day};
+
     return unless $days;
 
     my @keys = qw( mon tue wed thu fri sat sun );
@@ -356,7 +364,11 @@ sub _get_months
     my $months =
         $cal->{months}{monthContext}{format}{monthWidth}{$length}{month};
 
+    $months ||=
+        $cal->{months}{monthContext}{'stand-alone'}{monthWidth}{$length}{month};
+
     return unless $months;
+
     return if grep { ! exists $months->{$_} } 1..12;
 
     @{ $hash->{$key} } = map { $months->{$_}{content} } 1..12;
@@ -532,29 +544,62 @@ sub user_supplied_changes
             $cal->{months}{monthContext}{format}{monthWidth}{wide}
                 unless $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{1};
 
+        $cal->{months}{monthContext}{format}{monthWidth}{narrow} =
+            $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}
+                unless $cal->{months}{monthContext}{format}{monthWidth}{narrow}{month}{1};
+
         $cal->{eras}{eraNames} = $cal->{eras}{eraAbbr}
             unless $cal->{eras}{eraNames}{0};
     }
 }
 
-sub get_am_pm_eras
+sub get_quarters
 {
     my ( $hash, $cal ) = @_;
 
-    if ( $cal->{am} )
+    my $quarters = $cal->{quarters}{quarterContext}{format}{quarterWidth};
+
+    return unless $quarters;
+
+    if ( $quarters->{abbreviated} )
     {
-        my $am = eval { @{ $cal->{am} } }
-                 ? first { !$_->{alt}{content} } @{ $cal->{am} }
-                 : $cal->{am}{content};
+        $hash->{quarter_abbreviations} =
+            [ map { $quarters->{abbreviated}{quarter}{$_}{content} } 1 .. 4 ];
 
-        my $pm = eval { @{ $cal->{pm} } }
-                 ? first { !$_->{alt}{content} } @{ $cal->{pm} }
-                 : $cal->{pm}{content};
-
-        $hash->{am_pms} = [ $am, $pm ];
-
-        print "    am_pms: [@{ $hash->{am_pms} }]\n" if $opts{verbose};
+        print "    quarter abbr: [@{ $hash->{quarter_abbreviations} }]\n" if $opts{verbose};
     }
+
+    if ( $quarters->{wide} )
+    {
+        $hash->{quarter_names} =
+            [ map { $quarters->{wide}{quarter}{$_}{content} } 1 .. 4 ];
+
+        print "    quarter names: [@{ $hash->{quarter_names} }]\n" if $opts{verbose};
+    }
+}
+
+sub get_am_pm
+{
+    my ( $hash, $cal ) = @_;
+
+    return unless $cal->{am};
+
+    my $am = eval { @{ $cal->{am} } }
+             ? first { !$_->{alt}{content} } @{ $cal->{am} }
+             : $cal->{am}{content};
+
+    my $pm = eval { @{ $cal->{pm} } }
+             ? first { !$_->{alt}{content} } @{ $cal->{pm} }
+             : $cal->{pm}{content};
+
+    $hash->{am_pms} = [ $am, $pm ];
+
+    print "    am_pms: [@{ $hash->{am_pms} }]\n" if $opts{verbose};
+}
+
+sub get_eras
+{
+    my ( $hash, $cal ) = @_;
 
     # At least one locale, se_NO, has only the first era, not the second
     if ( $cal->{eras}{eraAbbr}
@@ -601,6 +646,9 @@ sub generate_locale
               month_names
               month_abbreviations
               month_narrows
+
+              quarter_names
+              quarter_abbreviations
 
               am_pms
               era_names

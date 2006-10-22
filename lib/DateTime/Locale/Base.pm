@@ -50,6 +50,9 @@ sub day_name            { $_[0]->day_names->        [ $_[1]->day_of_week_0 ] }
 sub day_abbreviation    { $_[0]->day_abbreviations->[ $_[1]->day_of_week_0 ] }
 sub day_narrow          { $_[0]->day_narrows->      [ $_[1]->day_of_week_0 ] }
 
+sub quarter_name         { $_[0]->quarter_names->        [ $_[1]->quarter - 1 ] }
+sub quarter_abbreviation { $_[0]->quarter_abbreviations->[ $_[1]->quarter - 1 ] }
+
 sub am_pm               { $_[0]->am_pms->[ $_[1]->hour < 12 ? 0 : 1 ] }
 
 sub era                 { $_[0]->era_abbreviations->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
