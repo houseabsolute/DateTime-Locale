@@ -26,7 +26,7 @@ my $tz1 = DateTime::Locale->load( 'en_US' );
 my $frozen = Storable::nfreeze($tz1);
 
 ok( length $frozen < 2000,
-    'the serialized tz object should not be immense' );
+    'the serialized locale object should not be immense' );
 
 my $tz2 = Storable::thaw($frozen);
 
