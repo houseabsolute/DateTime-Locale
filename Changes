@@ -1,4 +1,4 @@
-0.30
+0.30   2006-10-22
 
 - Now using the CLDR data instead of ICU. This isn't a big change,
   since the ICU data was derived from the CLDR data anyway.
