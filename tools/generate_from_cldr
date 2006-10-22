@@ -9,9 +9,10 @@ use File::Basename;
 use File::Copy;
 use File::Spec;
 use Getopt::Long;
+use List::Util qw( first );
 use XML::Simple;
 
-my $VERSION = "0.02";
+my $VERSION = "0.03";
 
 my ( %LocalesWithoutData, %XML, %Parents,
      %LanguageLookup, %TerritoryLookup, %ScriptLookup );
@@ -96,14 +97,14 @@ sub main
     binmode STDOUT, ':utf8' if $opts{verbose};
     $| = 1;
 
-    generate_from_ICU_xml();
+    generate_from_CLDR_xml();
 }
 
-sub generate_from_ICU_xml
+sub generate_from_CLDR_xml
 {
     my @files = glob File::Spec->catfile( $opts{dir}, '*.xml' );
 
-    print "Reading ICU files from: '$opts{dir}'...\n"
+    print "Reading CLDR files from: '$opts{dir}'...\n"
         unless $opts{quiet};
 
     foreach my $f (@files)
@@ -119,12 +120,17 @@ sub generate_from_ICU_xml
 
         next if $id eq 'supplementalData';
 
-        if ( $id =~ /^iw/ )
-        {
-            print "  skipping $id - iw/he Hebrew duplication, prefer 'he'\n"
-                unless $opts{quiet};
-            next;
-        }
+        # As of CLDR 1.4, the following languages are incomplete:
+        next if $id =~ /^dv/; # Divehi
+        next if $id =~ /^fa/; # Persian (Farsi)
+        next if $id =~ /^ku/; # Kurdish
+        next if $id =~ /^ky/; # Kirghiz
+        next if $id =~ /^or/; # Oriya
+        next if $id =~ /^ps/; # Pashto
+        next if $id =~ /^sa/; # Sanskrit
+        next if $id =~ /^se/; # Sami
+        next if $id =~ /^tt/; # Tatar
+        next if $id =~ /^ur/; # Urdu
 
         print "  $id" unless $opts{quiet};
 
@@ -133,17 +139,18 @@ sub generate_from_ICU_xml
         # This is the fastest one from my testing
         local $XML::Simple::PREFERRED_PARSER = 'XML::LibXML::SAX';
 
-        my %key_attr = ( calendar => 'type',
-                         monthContext => 'type',
-                         dayContext   => 'type',
-                         monthWidth => 'type',
-                         dayWidth   => 'type',
-                         month => 'type',
-                         day   => 'type',
-                         era   => 'type',
+        my %key_attr = ( calendar         => 'type',
+                         monthContext     => 'type',
+                         dayContext       => 'type',
+                         monthWidth       => 'type',
+                         dayWidth         => 'type',
+                         month            => 'type',
+                         day              => 'type',
+                         era              => 'type',
                          timeFormatLength => 'type',
                          dateFormatLength => 'type',
                        );
+
         my $xml =
             XMLin( $f,
                    KeyAttr   => \%key_attr,
@@ -155,14 +162,22 @@ sub generate_from_ICU_xml
                  )
                 or die "Missing XML for locale: '$id'";
 
-        delete $xml->{numbers};
-        delete $xml->{posix};
+        my $gen_date = $xml->{identity}{generation}{date};
+        $gen_date =~ s/^\$Date:\s+//;
+        $gen_date =~ s/\s+\$$//;
 
-        $XML{$id} = { xml         => $xml,
+        my $version = $xml->{identity}{version}{number};
+        $version =~ s/^\$Revision:\s+//;
+        $version =~ s/\s+\$$//;
+
+        $XML{$id} = { locale      => $xml->{localeDisplayNames},
+                      cal         => $xml->{dates}{calendars}{calendar}{gregorian},
+                      version     => $version,
+                      date        => $gen_date,
                       source_file => basename($f),
                     };
 
-        build_language_and_territory($id, $xml);
+        build_language_and_territory( $id, $XML{$id}{locale} );
 
         $Parents{$id} = $xml->{alias}{source}
             if $xml->{alias};
@@ -174,9 +189,9 @@ sub generate_from_ICU_xml
 
     foreach my $id ( sort keys %XML )
     {
-        my $xml = $XML{$id}{xml};
+        my $cal = $XML{$id}{cal};
 
-        my $cal = $xml->{dates}{calendars}{calendar}{gregorian};
+        user_supplied_changes( $id, $cal );
 
         my $hash;
         $hash->{id}        = $id;
@@ -185,14 +200,16 @@ sub generate_from_ICU_xml
         print "\n  $id\n" if $opts{verbose};
         print "    parent_id: $hash->{parent_id}\n" if $opts{verbose};
 
-        get_version( $hash, $xml );
-        get_generation_date( $hash, $xml );
+        $hash->{version} = $XML{$id}{version};
+        print "    version: $hash->{version}\n" if $opts{verbose};
+
+        $hash->{generation_date} = $XML{$id}{date};
+        print "    generation date: $hash->{generation_date}\n" if $opts{verbose};
+
         get_days( $hash, $cal );
         get_months( $hash, $cal );
         get_formats( $hash, $cal );
         get_am_pm_eras( $hash, $cal );
-
-        user_supplied_changes($hash);
 
         unless ( has_data($hash) )
         {
@@ -216,13 +233,13 @@ sub build_language_and_territory
     my ( $id, $xml ) = @_;
 
     _build_lookup
-        ( \%LanguageLookup,  $id, $xml->{localeDisplayNames}{languages}{language} );
+        ( \%LanguageLookup,  $id, $xml->{languages}{language} );
 
     _build_lookup
-        ( \%TerritoryLookup, $id, $xml->{localeDisplayNames}{territories}{territory} );
+        ( \%TerritoryLookup, $id, $xml->{territories}{territory} );
 
     _build_lookup
-        ( \%ScriptLookup,    $id, $xml->{localeDisplayNames}{scripts}{script} );
+        ( \%ScriptLookup,    $id, $xml->{scripts}{script} );
 }
 
 sub _build_lookup
@@ -276,23 +293,6 @@ sub parent_id
     }
 
     return $parent_id;
-}
-
-sub get_version
-{
-    my ( $hash, $xml ) = @_;
-
-    $hash->{version} = $xml->{identity}{version}{number};
-
-    print "    version: $hash->{version}\n" if $opts{verbose};
-}
-
-sub get_generation_date
-{
-    my ( $hash, $xml ) = @_;
-
-    $hash->{generation_date} = $xml->{identity}{generation}{date};
-    print "    generation date: $hash->{generation_date}\n" if $opts{verbose};
 }
 
 sub get_days
@@ -382,9 +382,9 @@ sub get_formats
                 if $opts{verbose};
         }
 
-        if ( $dates->{default}{type} )
+        if ( $dates->{default}{choice} )
         {
-            $hash->{default_date_format_length} = $dates->{default}{type};
+            $hash->{default_date_format_length} = $dates->{default}{choice};
 
             print "    default_date_format_length: $hash->{default_date_format_length}\n"
                 if $opts{verbose};
@@ -431,9 +431,9 @@ sub get_formats
                 if $opts{verbose};
         }
 
-        if ( $times->{default}{type} )
+        if ( $times->{default}{choice} )
         {
-            $hash->{default_time_format_length} = $times->{default}{type};
+            $hash->{default_time_format_length} = $times->{default}{choice};
 
             print "    default_time_format_length: $hash->{default_time_format_length}\n"
                 if $opts{verbose};
@@ -482,15 +482,29 @@ sub _stringify
     return $string;
 }
 
-# used to hardcode corrections that aren't yet in ICU
+# used to hardcode corrections that aren't yet in CLDR
 sub user_supplied_changes
 {
-    my $hash = shift;
+    my $id = shift;
+    my $cal = shift;
 
-    if ( $hash->{id} eq 'az' )
+    if ( $id eq 'az' )
     {
-        # The az.xml file appears to have a mistake in the wide day names
-        $hash->{day_names}[4] =~ s/ \w+$//;
+        # The az.xml file appears to have a mistake in the wide day
+        # names, thursday and friday are the same for this locale
+        $cal->{days}{dayContext}{format}{dayWidth}{wide}{day}{thu}{content} =~ s/ \w+$//;
+    }
+    elsif ( $id eq 'gaa' )
+    {
+        # I am completely making this up, but the data is marked as
+        # uncomfimed in the locale file and it's preferable to having
+        # two days with the same abbreviation
+        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{sun}{content} = 'Hog';
+    }
+    elsif ( $id eq 've' )
+    {
+        # Again, making stuff up to avoid non-unique abbreviations
+        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{3}{content} = 'Thf';
     }
 }
 
@@ -500,24 +514,32 @@ sub get_am_pm_eras
 
     if ( $cal->{am} )
     {
-        $hash->{am_pms} = [ $cal->{am}{content}, $cal->{pm}{content} ];
+        my $am = eval { @{ $cal->{am} } }
+                 ? first { !$_->{alt}{content} } @{ $cal->{am} }
+                 : $cal->{am}{content};
+
+        my $pm = eval { @{ $cal->{pm} } }
+                 ? first { !$_->{alt}{content} } @{ $cal->{pm} }
+                 : $cal->{pm}{content};
+
+        $hash->{am_pms} = [ $am, $pm ];
 
         print "    am_pms: [@{ $hash->{am_pms} }]\n" if $opts{verbose};
     }
 
-    if ( $cal->{eras} )
+    # At least one locale, se_NO, has only the first era, not the second
+    if ( $cal->{eras}{eraAbbr}
+         && $cal->{eras}{eraAbbr}{0}
+         && $cal->{eras}{eraAbbr}{1}
+       )
     {
-        my $eras = $cal->{eras}{eraAbbr} ? $cal->{eras}{eraAbbr} : $cal->{eras};
+        my $eras = $cal->{eras}{eraAbbr};
 
-        # At least one local (Lao) only defines one era (missing CE)
-        if ( $cal->{eras}{0} && $cal->{eras}{1} )
-        {
-            $hash->{eras} =
-                [ $eras->{0}{content},
-                  $eras->{1}{content} ];
+        $hash->{eras} =
+            [ $eras->{0}{content},
+              $eras->{1}{content} ];
 
-            print "    eras: [@{ $hash->{eras} }]\n" if $opts{verbose};
-        }
+        print "    eras: [@{ $hash->{eras} }]\n" if $opts{verbose};
     }
 }
 
@@ -593,8 +615,8 @@ sub generate_locale
         $subs .= sprintf "sub %-30s { \$%s }\n", $sub_name, $var;
     }
 
-    my $class         = $hash->{id};
-    my $parent        = $hash->{parent_id};
+    my $class  = $hash->{id};
+    my $parent = $hash->{parent_id};
 
     my $id = $hash->{id};
 
@@ -619,8 +641,8 @@ sub generate_locale
 # DateTime::Locale distribution in the tools/ directory, and is called
 # $ScriptName.
 #
-# This file as generated from the ICU XML locale data.  See the
-# LICENSE.icu file included in this distribution for license details.
+# This file as generated from the CLDR XML locale data.  See the
+# LICENSE.cldr file included in this distribution for license details.
 #
 # This file was generated from the source file $XML{$id}{source_file}.
 # The source file version number was $hash->{version}, generated on
@@ -840,12 +862,12 @@ sub usage
 {
     print <<'EOF';
 
-This script parses the ICU locale files and turns them into a set of
+This script parses the CLDR locale files and turns them into a set of
 Perl modules.  It also generates the MANIFEST file.
 
 It takes the following arguments:
 
-  --dir      A directory containing ICU XML files.  Required.
+  --dir      A directory containing CLDR XML files.  Required.
 
   --file     Parse just the file with the given name.  For debugging.
 

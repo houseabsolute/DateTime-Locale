@@ -12,7 +12,7 @@ use Test::More;
 
 use DateTime::Locale;
 
-my @locale_ids   = DateTime::Locale->ids;
+my @locale_ids   = sort DateTime::Locale->ids;
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
@@ -26,7 +26,8 @@ my $tests_per_locale = $has_dt ? 16 : 12;
 
 plan tests =>
     5    # starting
-    + ( @locale_ids * $tests_per_locale ) # test each local
+    + 1  # load test for root locale
+    + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
     + 55 # check_en_GB
     + 11 # check_es_ES
     + 5  # check_en_US_POSIX
@@ -46,7 +47,7 @@ like( $@, qr/invalid/i, 'invalid locale name/id to load() causes an error' );
     is( $l->id, 'en_US', 'id is en_US' );
 }
 
-for my $locale_id ( @locale_ids )
+for my $locale_id (@locale_ids)
 {
     my $locale;
 
@@ -55,13 +56,17 @@ for my $locale_id ( @locale_ids )
         $locale = DateTime::Locale->load($locale_id);
     };
 
+    if ($@)
+    {
+        diag( "$@\nSkipping tests for failed locale: '$locale_id'" );
+        fail() for 1..$tests_per_locale;
+    }
+
     isa_ok( $locale, "DateTime::Locale::Base" );
 
-    $@ and warn("$@\nSkipping tests for failed locale: '$locale_id'"), next;
+    next if $locale_id eq 'root';
 
     ok( $locale_ids{ $locale->id },  "'$locale_id':  Has a valid locale id" );
-
-    $locale_id = $locale_id . "(" . $locale->id . ")";
 
     ok( length $locale->name,        "'$locale_id':  Has a locale name"        );
     ok( length $locale->native_name, "'$locale_id':  Has a native locale name" );
@@ -249,7 +254,7 @@ sub check_DT_Lang
     {
       SKIP:
         {
-            skip 'No ICU XML data for some African languages included in DT::Language', 1
+            skip 'No CLDR XML data for some African languages included in DT::Language', 1
                 unless $locale_names{$old};
 
             ok( DateTime::Locale->load($old), "backwards compatibility for $old" );
