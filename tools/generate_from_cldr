@@ -7,6 +7,7 @@ use 5.006;
 use DateTime;
 use File::Basename;
 use File::Copy;
+use File::Find::Rule;
 use File::Spec;
 use Getopt::Long;
 use List::Util qw( first );
@@ -27,7 +28,7 @@ my %Aliases =
      # one point.
      'iw'            => 'he',
      'iw_IL'         => 'he_IL',
-     # ICU got rid of no
+     # CLDR got rid of no
      'no'            => 'nn',
      'no_NO'         => 'nn_NO',
      'no_NO_NY'      => 'nn_NO',
@@ -73,11 +74,13 @@ my %opts;
 
 main();
 
+my $man;
 sub main
 {
     GetOptions( 'dir:s'   => \$opts{dir},
                 'name:s'  => \$opts{name},
                 'file:s'  => \$opts{file},
+                'clean'   => \$opts{clean},
                 'quiet'   => \$opts{quiet},
                 'verbose' => \$opts{verbose},
                 'help'    => \$opts{help},
@@ -88,16 +91,31 @@ sub main
 
     usage() if $opts{help};
 
+    clean() if $opts{clean};
+
     unless ( $opts{name} )
     {
         copy( 'MANIFEST.base', 'MANIFEST' );
-        open MAN, ">>MANIFEST" or die "Cannot write to MANIFEST: $!";
+        open $man, ">>MANIFEST" or die "Cannot write to MANIFEST: $!";
     }
 
     binmode STDOUT, ':utf8' if $opts{verbose};
     $| = 1;
 
     generate_from_CLDR_xml();
+}
+
+sub clean
+{
+    for my $f ( File::Find::Rule
+                ->file
+                ->name('*.pm')
+                ->grep('This file is auto-generated' )
+                ->in('lib')
+              )
+    {
+        unlink $f or die "Cannot unlink $f: $!";
+    }
 }
 
 sub generate_from_CLDR_xml
@@ -153,11 +171,11 @@ sub generate_from_CLDR_xml
 
         my $xml =
             XMLin( $f,
-                   KeyAttr   => \%key_attr,
-                   GroupTags => { eras    => 'eraAbbr',
-                                  eraAbbr => 'era',
-                                },
-                   Forcearray => [ keys %key_attr ],
+                   KeyAttr      => \%key_attr,
+                   GroupTags    => { eraAbbr  => 'era',
+                                     eraNames => 'era',
+                                   },
+                   Forcearray   => [ keys %key_attr ],
                    ForceContent => 1,
                  )
                 or die "Missing XML for locale: '$id'";
@@ -176,7 +194,7 @@ sub generate_from_CLDR_xml
                       date        => $gen_date,
                       source_file => basename($f),
                     };
-
+#        use Data::Dumper;print Dumper $XML{$id}{cal};exit;
         build_language_and_territory( $id, $XML{$id}{locale} );
 
         $Parents{$id} = $xml->{alias}{source}
@@ -223,7 +241,7 @@ sub generate_from_CLDR_xml
         generate_locale($hash);
     }
 
-    generate_name_lookup();
+    generate_catalog();
 
     print "\nAll done\n" unless $opts{quiet};
 }
@@ -506,6 +524,17 @@ sub user_supplied_changes
         # Again, making stuff up to avoid non-unique abbreviations
         $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{3}{content} = 'Thf';
     }
+    elsif ( $id eq 'root' )
+    {
+        # The root locale uses <alias source="../xpath/thing"> to
+        # refer to other tags.
+        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated} =
+            $cal->{months}{monthContext}{format}{monthWidth}{wide}
+                unless $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{1};
+
+        $cal->{eras}{eraNames} = $cal->{eras}{eraAbbr}
+            unless $cal->{eras}{eraNames}{0};
+    }
 }
 
 sub get_am_pm_eras
@@ -535,11 +564,25 @@ sub get_am_pm_eras
     {
         my $eras = $cal->{eras}{eraAbbr};
 
-        $hash->{eras} =
+        $hash->{era_abbreviations} =
             [ $eras->{0}{content},
               $eras->{1}{content} ];
 
-        print "    eras: [@{ $hash->{eras} }]\n" if $opts{verbose};
+        print "    era abbr: [@{ $hash->{era_abbreviations} }]\n" if $opts{verbose};
+    }
+
+    if ( $cal->{eras}{eraNames}
+         && $cal->{eras}{eraNames}{0}
+         && $cal->{eras}{eraNames}{1}
+       )
+    {
+        my $eras = $cal->{eras}{eraNames};
+
+        $hash->{era_names} =
+            [ $eras->{0}{content},
+              $eras->{1}{content} ];
+
+        print "    era names: [@{ $hash->{era_names} }]\n" if $opts{verbose};
     }
 }
 
@@ -560,7 +603,8 @@ sub generate_locale
               month_narrows
 
               am_pms
-              eras
+              era_names
+              era_abbreviations
             ) )
     {
         next unless $hash->{$var};
@@ -622,18 +666,9 @@ sub generate_locale
 
     my $file = File::Spec->catfile( 'lib', 'DateTime', 'Locale', "$class.pm");
 
-    local *OUTFILE;
+    open my $fh, ">:utf8", $file or die $!;
 
-    if ( $] >= 5.008 )
-    {
-        open OUTFILE, ">:utf8", $file or die $!;
-    }
-    else
-    {
-        open OUTFILE, ">$file" or die $!;
-    }
-
-    print OUTFILE <<"EOF" or die "print failed: $!";
+    print $fh <<"EOF" or die "print failed: $!";
 ###########################################################################
 #
 # This file is auto-generated by the Perl DateTime Suite time locale
@@ -677,42 +712,48 @@ $subs
 
 EOF
 
-    close OUTFILE or warn $!;
+    close $fh or warn $!;
 
-    print MAN "$file\n";
+    print $man "$file\n";
 }
 
-sub generate_name_lookup
+sub generate_catalog
 {
-    local *OUTFILE;
-    if ( $] >= 5.008 )
-    {
-        open OUTFILE, '>:utf8', File::Spec->catfile( 'lib', 'DateTime', 'LocaleCatalog.pm' )
-            or die "$!";
-    }
-    else
-    {
-        open OUTFILE, '>' . File::Spec->catfile( 'lib', 'DateTime', 'LocaleCatalog.pm' )
-            or die "$!";
-    }
+    open my $fh, '>:utf8', File::Spec->catfile( 'lib', 'DateTime', 'LocaleCatalog.pm' )
+        or die "$!";
 
-    print OUTFILE <<'EOF';
+    print $fh <<"EOF";
+###########################################################################
+#
+# This file is auto-generated by the Perl DateTime Suite time locale
+# generator ($VERSION).  This code generator comes with the
+# DateTime::Locale distribution in the tools/ directory, and is called
+# $ScriptName.
+#
+# This file as generated from the CLDR XML locale data.  See the
+# LICENSE.cldr file included in this distribution for license details.
+#
+# Do not edit this file directly.
+#
+###########################################################################
+
 package DateTime::LocaleCatalog;
 
 use strict;
 
 BEGIN
 {
-    return unless $] >= 5.006;
-
-    require utf8; import utf8;
+    if (\$] >= 5.006)
+    {
+        require utf8; import utf8;
+    }
 }
 
 EOF
 
     my $locales_in_pod = '';
 
-    print OUTFILE "\@DateTime::Locale::Locales = (\n";
+    print $fh "\@DateTime::Locale::Locales = (\n";
 
     my $locale_with_full_names =
         $LanguageLookup{root}{en} && length $LanguageLookup{root}{en} > 3 ? 'root' : 'en';
@@ -763,7 +804,7 @@ EOF
 
         $lookup{native_variant} = $lookup{en_variant};
 
-        print OUTFILE qq|    { id => "\Q$id\E",\n|;
+        print $fh qq|    { id => "\Q$id\E",\n|;
         foreach my $k ( qw( en_language en_script en_territory en_variant
                             native_language native_script native_territory native_variant
                           )
@@ -772,15 +813,15 @@ EOF
             next unless defined $lookup{$k};
 
             my $val = qq|"\Q$lookup{$k}\E"|;
-            print OUTFILE "      $k => $val,\n";
+            print $fh "      $k => $val,\n";
         }
 
         if ( $LocalesWithoutData{$id} )
         {
-            print OUTFILE qq|      real_class => "\Q$LocalesWithoutData{$id}\E",\n|;
+            print $fh qq|      real_class => "\Q$LocalesWithoutData{$id}\E",\n|;
         }
 
-        print OUTFILE "    },\n";
+        print $fh "    },\n";
 
         my @pieces;
         foreach my $p ( qw( en_language en_territory en_variant ) )
@@ -793,20 +834,23 @@ EOF
         $locales_in_pod .= sprintf( " %-18s  %s\n", $id, join ' ', @pieces );
     }
 
-    print OUTFILE ");\n\n";
+    print $fh ");\n\n";
 
     my $aliases_in_pod = '';
+    %Aliases = ( %Aliases,
+                 valid_iso639_2_aliases(),
+               );
 
-    print OUTFILE "%DateTime::Locale::Aliases = (\n";
+    print $fh "%DateTime::Locale::Aliases = (\n";
     foreach my $id ( sort keys %Aliases )
     {
-        print OUTFILE "    $id => '$Aliases{$id}',\n";
+        print $fh "    $id => '$Aliases{$id}',\n";
 
         $aliases_in_pod .= sprintf( " %-18s  %s\n", $id, $Aliases{$id} );
     }
-    print OUTFILE ");";
+    print $fh ");";
 
-    print OUTFILE <<"EOF";
+    print $fh <<"EOF";
 
 
 1;
@@ -846,7 +890,8 @@ The available locales are:
  ==================================================
 $locales_in_pod
 
-There are also some hard-coded aliases available, these are:
+There are also many aliases available, mostly for three-letter
+language codes, these are:
 
  Locale id           Is an alias for
  ==================================================
@@ -855,7 +900,20 @@ $aliases_in_pod
 =cut
 EOF
 
-    close OUTFILE or warn $!;
+    close $fh or warn $!;
+}
+
+sub valid_iso639_2_aliases
+{
+    my %aliases = iso639_2_aliases();
+
+    for my $k ( keys %aliases )
+    {
+        delete $aliases{$k}
+            unless $XML{ $aliases{$k} };
+    }
+
+    return %aliases;
 }
 
 sub usage
@@ -873,6 +931,9 @@ It takes the following arguments:
 
   --name     Only create the specified locale.  For debugging.
 
+  --clean    Remove old generated modules (which may not be valid with
+             the latest CLDR data)
+
   --quiet    Don't display any output while processing files.
 
   --verbose  Spew lots of output while processing.
@@ -885,4 +946,334 @@ be generated.
 EOF
 
     exit;
+}
+
+sub iso639_2_aliases
+{
+    return ( 'afr'                  => 'af',
+             'afr_ZA'               => 'af_ZA',
+             'alb'                  => 'sq',
+             'alb_AL'               => 'sq_AL',
+             'amh'                  => 'am',
+             'amh_ET'               => 'am_ET',
+             'ara'                  => 'ar',
+             'ara_AE'               => 'ar_AE',
+             'ara_BH'               => 'ar_BH',
+             'ara_DZ'               => 'ar_DZ',
+             'ara_EG'               => 'ar_EG',
+             'ara_IN'               => 'ar_IN',
+             'ara_IQ'               => 'ar_IQ',
+             'ara_JO'               => 'ar_JO',
+             'ara_KW'               => 'ar_KW',
+             'ara_LB'               => 'ar_LB',
+             'ara_LY'               => 'ar_LY',
+             'ara_MA'               => 'ar_MA',
+             'ara_OM'               => 'ar_OM',
+             'ara_QA'               => 'ar_QA',
+             'ara_SA'               => 'ar_SA',
+             'ara_SD'               => 'ar_SD',
+             'ara_SY'               => 'ar_SY',
+             'ara_TN'               => 'ar_TN',
+             'ara_YE'               => 'ar_YE',
+             'arm'                  => 'hy',
+             'arm_AM'               => 'hy_AM',
+             'arm_AM_REVISED'       => 'hy_AM_REVISED',
+             'aze'                  => 'az',
+             'aze_AZ'               => 'az_AZ',
+             'baq'                  => 'eu',
+             'baq_ES'               => 'eu_ES',
+             'baq_ES_PREEURO'       => 'eu_ES',
+             'bel'                  => 'be',
+             'bel_BY'               => 'be_BY',
+             'ben'                  => 'bn',
+             'ben_IN'               => 'bn_IN',
+             'bul'                  => 'bg',
+             'bul_BG'               => 'bg_BG',
+             'cat'                  => 'ca',
+             'cat_ES'               => 'ca_ES',
+             'cat_ES_PREEURO'       => 'ca_ES',
+             'ces'                  => 'cs',
+             'ces_CZ'               => 'cs_CZ',
+             'chi'                  => 'zh',
+             'chi_CN'               => 'zh_CN',
+             'chi_HK'               => 'zh_HK',
+             'chi_MO'               => 'zh_MO',
+             'chi_SG'               => 'zh_SG',
+             'chi_TW'               => 'zh_TW',
+             'chi_TW_STROKE'        => 'zh_TW',
+             'cor'                  => 'kw',
+             'cor_GB'               => 'kw_GB',
+             'cze'                  => 'cs',
+             'cze_CZ'               => 'cs_CZ',
+             'dan'                  => 'da',
+             'dan_DK'               => 'da_DK',
+             'deu'                  => 'de',
+             'deu_AT'               => 'de_AT',
+             'deu_AT_PREEURO'       => 'de_AT',
+             'deu_BE'               => 'de_BE',
+             'deu_CH'               => 'de_CH',
+             'deu_DE'               => 'de_DE',
+             'deu_DE_PREEURO'       => 'de_DE',
+             'deu_LI'               => 'de_LI',
+             'deu_LU'               => 'de_LU',
+             'deu_LU_PREEURO'       => 'de_LU',
+             'dut'                  => 'nl',
+             'dut_BE'               => 'nl_BE',
+             'dut_BE_PREEURO'       => 'nl_BE',
+             'dut_NL'               => 'nl_NL',
+             'dut_NL_PREEURO'       => 'nl_NL',
+             'ell'                  => 'el',
+             'ell_GR'               => 'el_GR',
+             'ell_GR_PREEURO'       => 'el_GR',
+             'eng'                  => 'en',
+             'eng_AS'               => 'en_AS',
+             'eng_AU'               => 'en_AU',
+             'eng_BE'               => 'en_BE',
+             'eng_BE_PREEURO'       => 'en_BE',
+             'eng_BW'               => 'en_BW',
+             'eng_BZ'               => 'en_BZ',
+             'eng_CA'               => 'en_CA',
+             'eng_GB'               => 'en_GB',
+             'eng_GB_EURO'          => 'en_GB',
+             'eng_GU'               => 'en_GU',
+             'eng_HK'               => 'en_HK',
+             'eng_IE'               => 'en_IE',
+             'eng_IE_PREEURO'       => 'en_IE',
+             'eng_IN'               => 'en_IN',
+             'eng_JM'               => 'en_JM',
+             'eng_MH'               => 'en_MH',
+             'eng_MP'               => 'en_MP',
+             'eng_MT'               => 'en_MT',
+             'eng_NZ'               => 'en_NZ',
+             'eng_PH'               => 'en_PH',
+             'eng_SG'               => 'en_SG',
+             'eng_TT'               => 'en_TT',
+             'eng_UM'               => 'en_UM',
+             'eng_US'               => 'en_US',
+             'eng_US_POSIX'         => 'en_US_POSIX',
+             'eng_VI'               => 'en_VI',
+             'eng_ZA'               => 'en_ZA',
+             'eng_ZW'               => 'en_ZW',
+             'epo'                  => 'eo',
+             'est'                  => 'et',
+             'est_EE'               => 'et_EE',
+             'eus'                  => 'eu',
+             'eus_ES'               => 'eu_ES',
+             'eus_ES_PREEURO'       => 'eu_ES',
+             'fao'                  => 'fo',
+             'fao_FO'               => 'fo_FO',
+             'fas'                  => 'fa',
+             'fas_IR'               => 'fa_IR',
+             'fin'                  => 'fi',
+             'fin_FI'               => 'fi_FI',
+             'fin_FI_PREEURO'       => 'fi_FI',
+             'fra'                  => 'fr',
+             'fra_BE'               => 'fr_BE',
+             'fra_BE_PREEURO'       => 'fr_BE',
+             'fra_CA'               => 'fr_CA',
+             'fra_CH'               => 'fr_CH',
+             'fra_FR'               => 'fr_FR',
+             'fra_FR_PREEURO'       => 'fr_FR',
+             'fra_LU'               => 'fr_LU',
+             'fra_LU_PREEURO'       => 'fr_LU',
+             'fra_MC'               => 'fr_MC',
+             'fre'                  => 'fr',
+             'fre_BE'               => 'fr_BE',
+             'fre_BE_PREEURO'       => 'fr_BE',
+             'fre_CA'               => 'fr_CA',
+             'fre_CH'               => 'fr_CH',
+             'fre_FR'               => 'fr_FR',
+             'fre_FR_PREEURO'       => 'fr_FR',
+             'fre_LU'               => 'fr_LU',
+             'fre_LU_PREEURO'       => 'fr_LU',
+             'fre_MC'               => 'fr_MC',
+             'geo'                  => 'ka',
+             'geo_GE'               => 'ka_GE',
+             'ger'                  => 'de',
+             'ger_AT'               => 'de_AT',
+             'ger_AT_PREEURO'       => 'de_AT',
+             'ger_BE'               => 'de_BE',
+             'ger_CH'               => 'de_CH',
+             'ger_DE'               => 'de_DE',
+             'ger_DE_PREEURO'       => 'de_DE',
+             'ger_LI'               => 'de_LI',
+             'ger_LU'               => 'de_LU',
+             'ger_LU_PREEURO'       => 'de_LU',
+             'gle'                  => 'ga',
+             'gle_IE'               => 'ga_IE',
+             'gle_IE_PREEURO'       => 'ga_IE',
+             'glg'                  => 'gl',
+             'glg_ES'               => 'gl_ES',
+             'glg_ES_PREEURO'       => 'gl_ES',
+             'glv'                  => 'gv',
+             'glv_GB'               => 'gv_GB',
+             'gre'                  => 'el',
+             'gre_GR'               => 'el_GR',
+             'gre_GR_PREEURO'       => 'el_GR',
+             'guj'                  => 'gu',
+             'guj_IN'               => 'gu_IN',
+             'heb'                  => 'he',
+             'heb_IL'               => 'he_IL',
+             'hin'                  => 'hi',
+             'hin_IN'               => 'hi_IN',
+             'hrv'                  => 'hr',
+             'hrv_HR'               => 'hr_HR',
+             'hun'                  => 'hu',
+             'hun_HU'               => 'hu_HU',
+             'hye'                  => 'hy',
+             'hye_AM'               => 'hy_AM',
+             'hye_AM_REVISED'       => 'hy_AM_REVISED',
+             'ice'                  => 'is',
+             'ice_IS'               => 'is_IS',
+             'ind'                  => 'id',
+             'ind_ID'               => 'id_ID',
+             'isl'                  => 'is',
+             'isl_IS'               => 'is_IS',
+             'ita'                  => 'it',
+             'ita_CH'               => 'it_CH',
+             'ita_IT'               => 'it_IT',
+             'ita_IT_PREEURO'       => 'it_IT',
+             'iw'                   => 'iw',
+             'iw_IL'                => 'iw_IL',
+             'jpn'                  => 'ja',
+             'jpn_JP'               => 'ja_JP',
+             'kal'                  => 'kl',
+             'kal_GL'               => 'kl_GL',
+             'kan'                  => 'kn',
+             'kan_IN'               => 'kn_IN',
+             'kat'                  => 'ka',
+             'kat_GE'               => 'ka_GE',
+             'kaz'                  => 'kk',
+             'kaz_KZ'               => 'kk_KZ',
+             'kir'                  => 'ky',
+             'kir_KG'               => 'ky_KG',
+             'kor'                  => 'ko',
+             'kor_KR'               => 'ko_KR',
+             'lav'                  => 'lv',
+             'lav_LV'               => 'lv_LV',
+             'lit'                  => 'lt',
+             'lit_LT'               => 'lt_LT',
+             'mac'                  => 'mk',
+             'mac_MK'               => 'mk_MK',
+             'mar'                  => 'mr',
+             'mar_IN'               => 'mr_IN',
+             'may'                  => 'ms',
+             'may_BN'               => 'ms_BN',
+             'may_MY'               => 'ms_MY',
+             'mkd'                  => 'mk',
+             'mkd_MK'               => 'mk_MK',
+             'mlt'                  => 'mt',
+             'mlt_MT'               => 'mt_MT',
+             'mon'                  => 'mn',
+             'mon_MN'               => 'mn_MN',
+             'msa'                  => 'ms',
+             'msa_BN'               => 'ms_BN',
+             'msa_MY'               => 'ms_MY',
+             'nld'                  => 'nl',
+             'nld_BE'               => 'nl_BE',
+             'nld_BE_PREEURO'       => 'nl_BE',
+             'nld_NL'               => 'nl_NL',
+             'nld_NL_PREEURO'       => 'nl_NL',
+             'nno'                  => 'nn',
+             'nno_NO'               => 'nn_NO',
+             'nob'                  => 'nb',
+             'nob_NO'               => 'nb_NO',
+             'nor'                  => 'no',
+             'nor_NO'               => 'no_NO',
+             'nor_NO_NY'            => 'no_NO_NY',
+             'orm'                  => 'om',
+             'orm_ET'               => 'om_ET',
+             'orm_KE'               => 'om_KE',
+             'pan'                  => 'pa',
+             'pan_IN'               => 'pa_IN',
+             'per'                  => 'fa',
+             'per_IR'               => 'fa_IR',
+             'pol'                  => 'pl',
+             'pol_PL'               => 'pl_PL',
+             'por'                  => 'pt',
+             'por_BR'               => 'pt_BR',
+             'por_PT'               => 'pt_PT',
+             'por_PT_PREEURO'       => 'pt_PT',
+             'ron'                  => 'ro',
+             'ron_RO'               => 'ro_RO',
+             'rum'                  => 'ro',
+             'rum_RO'               => 'ro_RO',
+             'rus'                  => 'ru',
+             'rus_RU'               => 'ru_RU',
+             'rus_UA'               => 'ru_UA',
+             'san'                  => 'sa',
+             'san_IN'               => 'sa_IN',
+             'scc'                  => 'sr',
+             'scc_YU'               => 'sr_YU',
+             'scr'                  => 'hr',
+             'scr_HR'               => 'hr_HR',
+             'slk'                  => 'sk',
+             'slk_SK'               => 'sk_SK',
+             'slo'                  => 'sk',
+             'slo_SK'               => 'sk_SK',
+             'slv'                  => 'sl',
+             'slv_SI'               => 'sl_SI',
+             'som'                  => 'so',
+             'som_DJ'               => 'so_DJ',
+             'som_ET'               => 'so_ET',
+             'som_KE'               => 'so_KE',
+             'som_SO'               => 'so_SO',
+             'spa'                  => 'es',
+             'spa_AR'               => 'es_AR',
+             'spa_BO'               => 'es_BO',
+             'spa_CL'               => 'es_CL',
+             'spa_CO'               => 'es_CO',
+             'spa_CR'               => 'es_CR',
+             'spa_DO'               => 'es_DO',
+             'spa_EC'               => 'es_EC',
+             'spa_ES'               => 'es_ES',
+             'spa_ES_PREEURO'       => 'es_ES',
+             'spa_GT'               => 'es_GT',
+             'spa_HN'               => 'es_HN',
+             'spa_MX'               => 'es_MX',
+             'spa_NI'               => 'es_NI',
+             'spa_PA'               => 'es_PA',
+             'spa_PE'               => 'es_PE',
+             'spa_PR'               => 'es_PR',
+             'spa_PY'               => 'es_PY',
+             'spa_SV'               => 'es_SV',
+             'spa_US'               => 'es_US',
+             'spa_UY'               => 'es_UY',
+             'spa_VE'               => 'es_VE',
+             'sqi'                  => 'sq',
+             'sqi_AL'               => 'sq_AL',
+             'srp'                  => 'sr',
+             'srp_YU'               => 'sr_YU',
+             'swa'                  => 'sw',
+             'swa_KE'               => 'sw_KE',
+             'swa_TZ'               => 'sw_TZ',
+             'swe'                  => 'sv',
+             'swe_FI'               => 'sv_FI',
+             'swe_SE'               => 'sv_SE',
+             'tam'                  => 'ta',
+             'tam_IN'               => 'ta_IN',
+             'tat'                  => 'tt',
+             'tat_RU'               => 'tt_RU',
+             'tel'                  => 'te',
+             'tel_IN'               => 'te_IN',
+             'tha'                  => 'th',
+             'tha_TH'               => 'th_TH',
+             'tur'                  => 'tr',
+             'tur_TR'               => 'tr_TR',
+             'ukr'                  => 'uk',
+             'ukr_UA'               => 'uk_UA',
+             'urd'                  => 'ur',
+             'urd_PK'               => 'ur_PK',
+             'uzb'                  => 'uz',
+             'uzb_UZ'               => 'uz_UZ',
+             'vie'                  => 'vi',
+             'vie_VN'               => 'vi_VN',
+             'zho'                  => 'zh',
+             'zho_CN'               => 'zh_CN',
+             'zho_HK'               => 'zh_HK',
+             'zho_MO'               => 'zh_MO',
+             'zho_SG'               => 'zh_SG',
+             'zho_TW'               => 'zh_TW',
+             'zho_TW_STROKE'        => 'zh_TW',
+           );
 }

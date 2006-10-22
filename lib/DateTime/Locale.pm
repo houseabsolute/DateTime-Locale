@@ -12,13 +12,14 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.22;
+$VERSION = 0.30;
 
 BEGIN
 {
-    return unless $] >= 5.006;
-
-    require utf8; import utf8;
+    if ( $] >= 5.006 )
+    {
+        require utf8; import utf8;
+    }
 }
 
 my %Class;
@@ -63,7 +64,7 @@ sub _register
                         native_territory => { type => SCALAR, optional => 1 },
                         native_variant   => { type => SCALAR, optional => 1 },
                         # undocumented hack so we don't have to
-                        # generate .pm files for ICU XML locales which
+                        # generate .pm files for CLDR XML locales which
                         # don't differ from their parents in terms of
                         # datetime data.
                         real_class       => { type => SCALAR, optional => 1 },
@@ -813,7 +814,7 @@ The following methods deal with the default format lengths:
 These methods return one of "full", "long", "medium", or "short",
 indicating the current default format length.
 
-The default when an object is created is determined by the ICU locale
+The default when an object is created is determined by the CLDR locale
 data.
 
 =item set_default_date_format_length ($length)
@@ -901,19 +902,17 @@ and "ymd".
 
 =head1 SUPPORT
 
-Please be aware that all locale data has been generated from the
-Common XML Locale Repository project locales (originally ICU locale
-data).  The data B<is> currently incomplete, and B<will> contain
-errors in some locales.
+Please be aware that all locale data has been generated from the CLDR
+(Common Locale Data Repository) project locales data).  The data B<is>
+currently incomplete, and B<will> contain errors in some locales.
 
 When reporting errors in data, please check the primary data sources
 first, then where necessary report errors directly to the primary
-source via the ICU project's Jitterbug system at
-http://www.jtcsv.com/cgibin/icu-bugs/
+source via the CLDR bug report system. See
+http://unicode.org/cldr/filing_bug_reports.html for details.
 
-Once these errors have been confirmed, please forward the error
-report, and corrections to the DateTime mailing list,
-datetime@perl.org.
+Once these errors have been confirmed, please forward the error report
+and corrections to the DateTime mailing list, datetime@perl.org.
 
 Support for this module is provided via the datetime@perl.org email
 list. See http://lists.perl.org/ for more details.
@@ -933,7 +932,7 @@ conversion routines used during locale generation.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2005 David
+Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2006 David
 Rolsky. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
@@ -943,9 +942,9 @@ The full text of the license can be found in the F<LICENSE> file included
 with this module.
 
 The locale modules in directory C<DateTime/Locale/> have been
-generated from data provided by the Common XML Locale Repository
-project, see C<DateTime/Locale/LICENSE.icu> for details on the ICU
-data's license.
+generated from data provided by the CLDR project, see
+C<DateTime/Locale/LICENSE.cldr> for details on the CLDR data's
+license.
 
 =head1 SEE ALSO
 

@@ -52,7 +52,7 @@ sub day_narrow          { $_[0]->day_narrows->      [ $_[1]->day_of_week_0 ] }
 
 sub am_pm               { $_[0]->am_pms->[ $_[1]->hour < 12 ? 0 : 1 ] }
 
-sub era                 { $_[0]->eras->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era                 { $_[0]->era_abbreviations->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
 
 sub default_date_format
 {
@@ -106,6 +106,9 @@ sub set_default_time_format_length
 
     $self->{default_time_format_length} = lc $l;
 }
+
+# Backwards compatibility
+sub eras                { $_[0]->era_abbreviations }
 
 sub STORABLE_freeze
 {
@@ -196,10 +199,15 @@ names, and need not be unique.
 Returns an array reference containing the localized forms of "AM" and
 "PM".
 
-=item * eras
+=item * era_abbreviations
 
-Returns an array reference containing the localized forms of "BCE" and
-"CE".
+Returns an array reference containing the localized forms of the
+abbreviation for the eras, such as "BCE" and "CE".
+
+=item * era_names
+
+Returns an array reference containing the localized forms the name of
+the eras, such as "Before Common Era" and "Common Era".
 
 =item * long_date_format, full_date_format, medium_date_format, short_date_format
 
