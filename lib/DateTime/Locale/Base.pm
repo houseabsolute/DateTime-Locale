@@ -55,7 +55,10 @@ sub quarter_abbreviation { $_[0]->quarter_abbreviations->[ $_[1]->quarter - 1 ] 
 
 sub am_pm               { $_[0]->am_pms->[ $_[1]->hour < 12 ? 0 : 1 ] }
 
-sub era                 { $_[0]->era_abbreviations->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_name         { $_[0]->era_names->        [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_abbreviation { $_[0]->era_abbreviations->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+# backwards compat
+*era = \&era_abbreviation;
 
 sub default_date_format
 {
