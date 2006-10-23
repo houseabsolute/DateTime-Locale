@@ -151,7 +151,7 @@ sub check_array
     is( keys %unique, $test{count}, "'$locale_id': '$locale_method' contains $test{count} unique items" );
 
     my $datetime_method = $test{datetime_method};
-    return unless $datetime_method;
+    return unless $datetime_method && $has_dt;
 
     for my $i ( 1..$test{count} )
     {
