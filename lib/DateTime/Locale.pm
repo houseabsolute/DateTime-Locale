@@ -12,7 +12,7 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 use vars qw($VERSION);
 
-$VERSION = 0.31;
+$VERSION = 0.3101;
 
 BEGIN
 {
