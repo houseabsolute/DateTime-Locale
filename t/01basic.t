@@ -8,6 +8,7 @@ BEGIN
 }
 
 use strict;
+use File::Spec;
 use Test::More;
 
 use DateTime::Locale;
