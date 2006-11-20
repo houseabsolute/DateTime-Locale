@@ -1,3 +1,13 @@
+0.32   2006-11-20
+
+- A bug in the STORABLE_freeze method in this class caused major test
+  failures for DT::Calendar::Chinese, which is used by
+  DT::Calendar::Japanese.
+
+- Do better checking of locale names passed to DT::Locale->load(), so
+  we catch undef early before it causes a bunch of warnings.
+
+
 0.3101 2006-10-23
 
 - Fixed a test failure when DateTime::Locale is installed on a system
