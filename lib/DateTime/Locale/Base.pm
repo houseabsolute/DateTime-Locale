@@ -119,10 +119,12 @@ sub eras                { $_[0]->era_abbreviations }
 sub STORABLE_freeze
 {
     my $self = shift;
+    my $cloning = shift;
+
+    return if $cloning;
 
     return $self->id;
 }
-
 
 sub STORABLE_attach
 {
