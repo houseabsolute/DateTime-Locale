@@ -14,7 +14,7 @@ BEGIN
     }
     else
     {
-        plan tests => 2;
+        plan tests => 3;
     }
 }
 
@@ -31,3 +31,7 @@ ok( length $frozen < 2000,
 my $loc2 = Storable::thaw($frozen);
 
 is( $loc2->id, 'en_US', 'thaw frozen locale object' );
+
+my $loc3 = Storable::dclone($loc1);
+
+is( $loc3->id, 'en_US', 'dclone object' );
