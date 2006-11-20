@@ -196,7 +196,7 @@ my %OldAliases =
 sub load
 {
     my $class = shift;
-    my $name = shift;
+    my ($name) = validate_pos( @_, { type => SCALAR } );
 
     # Support RFC 3066 language tags, which use '-' instead of '_'.
     $name =~ tr/-/_/;
