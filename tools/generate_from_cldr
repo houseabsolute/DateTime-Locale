@@ -587,11 +587,11 @@ sub get_am_pm
     return unless $cal->{am};
 
     my $am = eval { @{ $cal->{am} } }
-             ? first { !$_->{alt}{content} } @{ $cal->{am} }
+             ? ( first { ! $_->{alt} } @{ $cal->{am} } )->{content}
              : $cal->{am}{content};
 
     my $pm = eval { @{ $cal->{pm} } }
-             ? first { !$_->{alt}{content} } @{ $cal->{pm} }
+             ? ( first { ! $_->{alt} } @{ $cal->{pm} } )->{content}
              : $cal->{pm}{content};
 
     $hash->{am_pms} = [ $am, $pm ];
