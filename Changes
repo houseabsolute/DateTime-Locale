@@ -1,3 +1,11 @@
+0.34   2007-03-05
+
+- Removed the use of STORABLE_attach from this module entirely, since
+  it seemed to have a buggy interaction with DateTime.pm. See
+  http://www.mail-archive.com/datetime@perl.org/msg05633.html for some
+  discussion of this.
+
+
 0.33   2007-01-06
 
 - Based on CLDR 1.4.1.

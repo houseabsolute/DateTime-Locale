@@ -126,15 +126,6 @@ sub STORABLE_freeze
     return $self->id;
 }
 
-sub STORABLE_attach
-{
-    my $class = shift;
-    my $cloning = shift;
-    my $serialized = shift;
-
-    return DateTime::Locale->load( $serialized );
-}
-
 sub STORABLE_thaw
 {
     my $self = shift;
