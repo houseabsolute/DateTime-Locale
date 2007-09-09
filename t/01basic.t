@@ -102,7 +102,10 @@ for my $locale_id (@locale_ids)
                    { locale_method    => 'day_abbreviations',
                      datetime_method  => 'day_abbreviation',
                      datetime_set_key => 'day',
-                     count            => 7,
+                     count            => { default => 7,
+                                           ii      => 6,
+                                           ii_CN   => 6,
+                                         },
                    },
                    { locale_method    => 'quarter_names',
                      count            => 4,
@@ -148,12 +151,25 @@ sub check_array
 
     my $locale_id = $test{locale}->id();
 
-    is( keys %unique, $test{count}, "'$locale_id': '$locale_method' contains $test{count} unique items" );
+    my $default_count;
+    my $unique_count;
+
+    if ( ref $test{count} )
+    {
+        $default_count = $test{count}{default};
+        $unique_count = $test{count}{$locale_id} || $default_count;
+    }
+    else
+    {
+        $default_count = $unique_count = $test{count};
+    }
+
+    is( keys %unique, $unique_count, "'$locale_id': '$locale_method' contains $unique_count unique items" );
 
     my $datetime_method = $test{datetime_method};
     return unless $datetime_method && $has_dt;
 
-    for my $i ( 1..$test{count} )
+    for my $i ( 1..$default_count )
     {
         $dt->set( $test{datetime_set_key} => $i );
 
