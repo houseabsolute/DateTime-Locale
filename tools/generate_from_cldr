@@ -764,7 +764,10 @@ EOF
 
     close $fh or warn $!;
 
-    print $man "$file\n";
+    unless ( $opts{name} )
+    {
+        print $man "$file\n";
+    }
 }
 
 sub generate_catalog
