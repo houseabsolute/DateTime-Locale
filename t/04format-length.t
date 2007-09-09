@@ -19,5 +19,5 @@ $loc->set_default_time_format_length('short');
 is( $loc->default_date_format_length, 'short', 'default date format length is short' );
 is( $loc->default_time_format_length, 'short', 'default time format length is short' );
 
-is( $loc->default_date_format, "\%y\/\%m\/\%d", 'check default date format' );
+is( $loc->default_date_format, "\%{ce_year}\-\%m\-\%d", 'check default date format' );
 is( $loc->default_time_format, "\%H\:\%M", 'check default date format' );
