@@ -440,22 +440,7 @@ sub get_formats
     {
         foreach my $length (@FormatLengths)
         {
-            my $pattern = $times->{timeFormatLength}{$length}{timeFormat}{pattern};
-            next unless $pattern;
-
-            my $value;
-            if ( ref $pattern eq 'ARRAY' )
-            {
-                my @non_alt = grep { ! $_->{alt} } @$pattern;
-
-                die "Multiple primary patterns!\n" if @non_alt > 1;
-
-                $value = $non_alt[0]->{content};
-            }
-            else
-            {
-                $value = $pattern->{content};
-            }
+            my $value = _non_alt_content( $times->{timeFormatLength}{$length}{timeFormat}{pattern} );
 
             next unless defined $value;
 
@@ -474,12 +459,43 @@ sub get_formats
         }
     }
 
-    if ( my $order =
-         $cal->{dateTimeFormats}{dateTimeFormatLength}{dateTimeFormat}{pattern}{content} )
+    return unless $cal->{dateTimeFormats}{dateTimeFormatLength};
+
+    my $format;
+    if ( ref $cal->{dateTimeFormats}{dateTimeFormatLength} eq 'ARRAY' )
     {
-        $hash->{date_before_time} = $order eq "{1} {0}" ? 1 : 0;
+        $format = $cal->{dateTimeFormats}{dateTimeFormatLength}[0]{dateTimeFormat};
+    }
+    else
+    {
+        $format = $cal->{dateTimeFormats}{dateTimeFormatLength}{dateTimeFormat}{pattern};
+    }
+
+    if ( my $value = _non_alt_content($format) )
+    {
+        $hash->{date_before_time} = $value eq "{1} {0}" ? 1 : 0;
 
         print "    date_before_time: $hash->{date_before_time}\n" if $opts{verbose};
+    }
+}
+
+sub _non_alt_content
+{
+    my $frag = shift;
+
+    return unless defined $frag;
+
+    if ( ref $frag eq 'ARRAY' )
+    {
+        my @non_alt = grep { ! $_->{alt} } @$frag;
+
+        die "Multiple primary patterns!\n" if @non_alt > 1;
+
+        return $non_alt[0]->{content};
+    }
+    else
+    {
+        return $frag->{content};
     }
 }
 
@@ -551,6 +567,10 @@ sub user_supplied_changes
         $cal->{months}{monthContext}{format}{monthWidth}{narrow} =
             $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}
                 unless $cal->{months}{monthContext}{format}{monthWidth}{narrow}{month}{1};
+
+        $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated} =
+            $cal->{quarters}{quarterContext}{format}{quarterWidth}{wide}
+                unless $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated}{1};
 
         $cal->{eras}{eraNames} = $cal->{eras}{eraAbbr}
             unless $cal->{eras}{eraNames}{0};
