@@ -138,17 +138,9 @@ sub generate_from_CLDR_xml
 
         next if $id eq 'supplementalData';
 
-        # As of CLDR 1.4, the following languages are incomplete:
-        next if $id =~ /^dv/; # Divehi
-        next if $id =~ /^fa/; # Persian (Farsi)
-        next if $id =~ /^ku/; # Kurdish
-        next if $id =~ /^ky/; # Kirghiz
-        next if $id =~ /^or/; # Oriya
-        next if $id =~ /^ps/; # Pashto
-        next if $id =~ /^sa/; # Sanskrit
-        next if $id =~ /^se/; # Sami
-        next if $id =~ /^tt/; # Tatar
-        next if $id =~ /^ur/; # Urdu
+        # As of CLDR 1.5, the following languages are incomplete:
+
+        next if $id eq 'ssy';
 
         print "  $id" unless $opts{quiet};
 
@@ -567,6 +559,14 @@ sub user_supplied_changes
         $cal->{months}{monthContext}{format}{monthWidth}{narrow} =
             $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}
                 unless $cal->{months}{monthContext}{format}{monthWidth}{narrow}{month}{1};
+
+        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated} =
+            $cal->{days}{dayContext}{format}{dayWidth}{wide}
+                unless $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{1};
+
+        $cal->{days}{dayContext}{format}{dayWidth}{narrow} =
+            $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}
+                unless $cal->{days}{dayContext}{format}{dayWidth}{narrow}{day}{1};
 
         $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated} =
             $cal->{quarters}{quarterContext}{format}{quarterWidth}{wide}
