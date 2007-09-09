@@ -210,6 +210,8 @@ sub generate_from_CLDR_xml
 
     foreach my $id ( sort keys %XML )
     {
+        next if $opts{name} && $opts{name} ne $id;
+
         my $cal = $XML{$id}{cal};
 
         user_supplied_changes( $id, $cal );
