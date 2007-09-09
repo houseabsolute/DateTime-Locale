@@ -136,12 +136,6 @@ sub generate_from_CLDR_xml
             or die "Could not get basename for: '$f'";
         $id =~ s/\.xml$//i;
 
-        next if $id eq 'supplementalData';
-
-        # As of CLDR 1.5, the following languages are incomplete:
-
-        next if $id eq 'ssy';
-
         print "  $id" unless $opts{quiet};
 
         die "Found a file matching an alias: $id\n" if $Aliases{$id};
@@ -182,6 +176,9 @@ sub generate_from_CLDR_xml
         my $version = $xml->{identity}{version}{number};
         $version =~ s/^\$Revision:\s+//;
         $version =~ s/\s+\$$//;
+
+        # As of CLDR 1.5, the following languages are incomplete:
+        next if $id eq 'ssy' && $version eq '1.1';
 
         $XML{$id} = { locale      => $xml->{localeDisplayNames},
                       cal         => $xml->{dates}{calendars}{calendar}{gregorian},
