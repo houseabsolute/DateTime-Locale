@@ -164,7 +164,7 @@ sub generate_from_CLDR_xml
                    GroupTags    => { eraAbbr  => 'era',
                                      eraNames => 'era',
                                    },
-                   Forcearray   => [ keys %key_attr ],
+                   ForceArray   => [ keys %key_attr ],
                    ForceContent => 1,
                  )
                 or die "Missing XML for locale: '$id'";
