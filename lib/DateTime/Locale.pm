@@ -342,7 +342,7 @@ DateTime::Locale - Localization support for DateTime.pm
   # but mostly just things like ...
 
   my $dt = DateTime->now( locale => 'fr' );
-  print "Aujourd'hui le mois est " . $dt->month_name, "\n":
+  print "Aujourd'hui le mois est " . $dt->month_name, "\n";
 
 =head1 DESCRIPTION
 
