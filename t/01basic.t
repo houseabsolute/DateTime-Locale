@@ -23,8 +23,8 @@ plan tests =>
     7    # starting
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
-    + 13 # check_root
-    + 25 # check_en_GB
+    + 26 # check_root
+    + 50 # check_en_GB
     + 11 # check_es_ES
     + 2  # check_af
     + 5  # check_en_US_POSIX
@@ -246,18 +246,24 @@ sub check_root
           date_parts_order        => 'ymd',
         );
 
-    for my $k ( sort keys %tests )
-    {
-        my $desc = "$k for " . $locale->id();
-        if ( ref $tests{$k} )
-        {
-            is_deeply( $locale->$k(), $tests{$k}, $desc );
-        }
-        else
-        {
-            is( $locale->$k(), $tests{$k}, $desc );
-        }
-    }
+    test_data( $locale, %tests );
+
+    my %formats =
+        ( Ed     => "\%a\ \%\{day\}",
+          H      => "\%\{hour\}",
+          HHmm   => "\%H\:\%M",
+          HHmmss => "\%H\:\%M\:\%S",
+          MMMEd  => "\%a\ \%b\ \%\{day\}",
+          MMMMd  => "\%B\ \%\{day\}",
+          Md     => "\%\{month\}\-\%\{day\}",
+          mmss   => "\%M\:\%S",
+          yyMM   => "\%y\-\%m",
+          yyMMM  => "\%y\ \%b",
+          yyQ    => "\%y\ Q",
+          yyyy   => "\%\{ce_year\}",
+        );
+
+    test_formats( $locale, %formats );
 }
 
 sub check_en_GB
@@ -319,6 +325,47 @@ sub check_en_GB
           date_parts_order        => 'dmy',
         );
 
+    test_data( $locale, %tests );
+
+    my %formats =
+        ( MMMEd    => "\%a\ \%\{day\}\ \%b",
+          MMMMd    => "\%\{day\}\ \%B",
+          MMdd     => "\%d\/\%m",
+          Md       => "\%\{day\}\/\%\{month\}",
+          yyMMM    => "\%b\ \%y",
+          yyyyMM   => "\%m\/\%\{ce_year\}",
+          yyyyMMMM => "\%B\ \%\{ce_year\}",
+
+          # from en
+          HHmm    => "\%H\:\%M",
+          HHmmss  => "\%H\:\%M\:\%S",
+          MMMMdd  => "\%d\ \%B",
+          MMMd    => "\%\{day\}\-\%b",
+          MMMdd   => "\%d\ \%b",
+          MMd     => "\%\{day\}\/\%m",
+          hhmm    => "\%l\:\%M\ \%p",
+          hhmmss  => "\%l\:\%M\:\%S\ \%p",
+          mmss    => "\%M\:\%S",
+          yyMM    => "\%m\/\%y",
+          yyQ     => "Q\ \%y",
+          yyQQQQ  => "QQQQ\ \%y",
+          yyyyM   => "\%\{month\}\/\%\{ce_year\}",
+          yyyyMMM => "\%b\ \%\{ce_year\}",
+
+          # from root
+          Ed     => "\%a\ \%\{day\}",
+          H      => "\%\{hour\}",
+          yyyy   => "\%\{ce_year\}",
+        );
+
+    test_formats( $locale, %formats );
+}
+
+sub test_data
+{
+    my $locale = shift;
+    my %tests = @_;
+
     for my $k ( sort keys %tests )
     {
         my $desc = "$k for " . $locale->id();
@@ -331,6 +378,22 @@ sub check_en_GB
             is( $locale->$k(), $tests{$k}, $desc );
         }
     }
+}
+
+sub test_formats
+{
+    my $locale  = shift;
+    my %formats = @_;
+
+    for my $name ( keys %formats )
+    {
+        is( $locale->format_for($name), $formats{$name},
+            "Format for $name with " . $locale->id() );
+    }
+
+    is_deeply( [ $locale->available_formats() ],
+               [ sort keys %formats ],
+               "Format keys for " . $locale->id() . " match what is expected" );
 }
 
 sub check_es_ES

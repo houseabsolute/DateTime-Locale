@@ -804,6 +804,8 @@ sub generate_locale
             sprintf "sub %-30s { %s }\n", $sub_name, qq|"\Q$hash->{datetime_formats}{$id}\E"|;
     }
 
+    $subs .= sprintf "sub %-30s { qw( %s ) }\n", '_format_keys', ( join ' ', keys %{ $hash->{datetime_formats} || {} } );
+
     # The accessor subs and whether they should be public (1) or
     # private (0).  Private subs are prefixed with _.
     my %accessors =
