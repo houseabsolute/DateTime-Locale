@@ -102,7 +102,7 @@ sub format_for
     my $self = shift;
     my $for  = shift;
 
-    my $meth = '_datetime_format_' . $meth;
+    my $meth = '_datetime_format_' . $for;
 
     return unless $self->can($meth);
 
