@@ -435,80 +435,99 @@ sub get_formats
 {
     my ( $hash, $cal ) = @_;
 
-    if ( my $dates = $cal->{dateFormats} )
+    _get_date_formats( $hash, $cal );
+    _get_time_formats( $hash, $cal );
+    _get_datetime_format_length( $hash, $cal );
+}
+
+sub _get_date_formats
+{
+    my ( $hash, $cal ) = @_;
+
+    my $formats = $cal->{dateFormats}
+        or return;
+
+    my %original;
+    foreach my $length (@FormatLengths)
     {
-        my %original;
-        foreach my $length (@FormatLengths)
+        my $pattern = $formats->{dateFormatLength}{$length}{dateFormat}{pattern};
+        next unless $pattern;
+
+        my $value;
+        if ( ref $pattern eq 'ARRAY' )
         {
-            my $pattern = $dates->{dateFormatLength}{$length}{dateFormat}{pattern};
-            next unless $pattern;
+            my @non_alt = grep { ! $_->{alt} } @$pattern;
 
-            my $value;
-            if ( ref $pattern eq 'ARRAY' )
-            {
-                my @non_alt = grep { ! $_->{alt} } @$pattern;
+            die "Multiple primary patterns!\n" if @non_alt > 1;
 
-                die "Multiple primary patterns!\n" if @non_alt > 1;
-
-                $value = $non_alt[0]->{content};
-            }
-            else
-            {
-                $value = $pattern->{content};
-            }
-
-            next unless defined $value;
-
-            $original{$length} = $value;
-
-            $hash->{date_formats}{$length} = simple2strf($value);
-
-            print "    date_formats{$length}: $hash->{date_formats}{$length}\n"
-                if $opts{verbose};
+            $value = $non_alt[0]->{content};
+        }
+        else
+        {
+            $value = $pattern->{content};
         }
 
-        if ( $dates->{default}{choice} )
-        {
-            $hash->{default_date_format_length} = $dates->{default}{choice};
+        next unless defined $value;
 
-            print "    default_date_format_length: $hash->{default_date_format_length}\n"
-                if $opts{verbose};
-        }
+        $original{$length} = $value;
 
-        if ( my $short = $original{short} )
-        {
-            # Work out the order of the date parts (ymd, dmy, or mdy)
-            $short =~ tr{dmyDMY}{}cd;
-            $short =~ tr{dmyDMY}{dmydmy}s;
+        $hash->{date_formats}{$length} = simple2strf($value);
 
-            $hash->{date_parts_order} = $short;
-
-            print "    date_parts_order: $hash->{date_parts_order}\n" if $opts{verbose};
-        }
+        print "    date_formats{$length}: $hash->{date_formats}{$length}\n"
+            if $opts{verbose};
     }
 
-    if ( my $times = $cal->{timeFormats} )
+    if ( $formats->{default}{choice} )
     {
-        foreach my $length (@FormatLengths)
-        {
-            my $value = _non_alt_content( $times->{timeFormatLength}{$length}{timeFormat}{pattern} );
+        $hash->{default_date_format_length} = $formats->{default}{choice};
 
-            next unless defined $value;
-
-            $hash->{time_formats}{$length} = simple2strf($value);
-
-            print "    time_formats{$length}: $hash->{time_formats}{$length}\n"
-                if $opts{verbose};
-        }
-
-        if ( $times->{default}{choice} )
-        {
-            $hash->{default_time_format_length} = $times->{default}{choice};
-
-            print "    default_time_format_length: $hash->{default_time_format_length}\n"
-                if $opts{verbose};
-        }
+        print "    default_date_format_length: $hash->{default_date_format_length}\n"
+            if $opts{verbose};
     }
+
+    if ( my $short = $original{short} )
+    {
+        # Work out the order of the date parts (ymd, dmy, or mdy)
+        $short =~ tr{dmyDMY}{}cd;
+        $short =~ tr{dmyDMY}{dmydmy}s;
+
+        $hash->{date_parts_order} = $short;
+
+        print "    date_parts_order: $hash->{date_parts_order}\n" if $opts{verbose};
+    }
+}
+
+sub _get_time_formats
+{
+    my ( $hash, $cal ) = @_;
+
+    my $formats = $cal->{timeFormats}
+        or return;
+
+    foreach my $length (@FormatLengths)
+    {
+        my $value = _non_alt_content( $formats->{timeFormatLength}{$length}{timeFormat}{pattern} );
+
+        next unless defined $value;
+
+        $hash->{time_formats}{$length} = simple2strf($value);
+
+        print "    time_formats{$length}: $hash->{time_formats}{$length}\n"
+            if $opts{verbose};
+    }
+
+    if ( $formats->{default}{choice} )
+    {
+        $hash->{default_time_format_length} = $formats->{default}{choice};
+
+        print "    default_time_format_length: $hash->{default_time_format_length}\n"
+            if $opts{verbose};
+    }
+}
+
+sub _get_datetime_format_length
+{
+    my ( $hash, $cal ) = @_;
 
     return unless $cal->{dateTimeFormats}{dateTimeFormatLength};
 
