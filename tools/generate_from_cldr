@@ -120,6 +120,14 @@ sub clean
 
 sub generate_from_CLDR_xml
 {
+    read_all_files();
+    generate_pm_files();
+
+    print "\nAll done\n" unless $opts{quiet};
+}
+
+sub read_all_files
+{
     my @files = glob File::Spec->catfile( $opts{dir}, '*.xml' );
 
     print "Reading CLDR files from: '$opts{dir}'...\n"
@@ -194,7 +202,10 @@ sub generate_from_CLDR_xml
 
         print "\n" unless $opts{quiet};
     }
+}
 
+sub generate_pm_files
+{
     print "\nGenerating PM files\n" if $opts{verbose};
 
     foreach my $id ( sort keys %XML )
@@ -238,8 +249,6 @@ sub generate_from_CLDR_xml
     }
 
     generate_catalog();
-
-    print "\nAll done\n" unless $opts{quiet};
 }
 
 sub build_language_and_territory
