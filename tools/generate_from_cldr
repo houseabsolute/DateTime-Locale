@@ -4,6 +4,7 @@ use strict;
 
 use 5.006;
 
+use Data::Dumper;
 use DateTime;
 use File::Basename;
 use File::Copy;
@@ -156,12 +157,8 @@ sub read_all_files
                          dayContext       => 'type',
                          monthWidth       => 'type',
                          dayWidth         => 'type',
-                         month            => 'type',
-                         day              => 'type',
-                         era              => 'type',
                          quarterContext   => 'type',
                          quarterWidth     => 'type',
-                         quarter          => 'type',
                          timeFormatLength => 'type',
                          dateFormatLength => 'type',
                        );
@@ -172,7 +169,8 @@ sub read_all_files
                    GroupTags    => { eraAbbr  => 'era',
                                      eraNames => 'era',
                                    },
-                   ForceArray   => [ keys %key_attr ],
+                   ForceArray   => [ keys %key_attr,
+                                     qw( month day quarter era ) ],
                    ForceContent => 1,
                  )
                 or die "Missing XML for locale: '$id'";
@@ -330,19 +328,19 @@ sub user_supplied_changes
     {
         # The az.xml file appears to have a mistake in the wide day
         # names, thursday and friday are the same for this locale
-        $cal->{days}{dayContext}{format}{dayWidth}{wide}{day}{thu}{content} =~ s/ \w+$//;
+        $cal->{days}{dayContext}{format}{dayWidth}{wide}{day}[4]{content} =~ s/ \w+$//;
     }
     elsif ( $id eq 'gaa' )
     {
         # I am completely making this up, but the data is marked as
         # uncomfimed in the locale file and it's preferable to having
         # two days with the same abbreviation
-        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{sun}{content} = 'Hog';
+        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}[0]{content} = 'Hog';
     }
     elsif ( $id eq 've' )
     {
         # Again, making stuff up to avoid non-unique abbreviations
-        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{3}{content} = 'Thf';
+        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}[2]{content} = 'Thf';
     }
     elsif ( $id eq 'root' )
     {
@@ -350,26 +348,26 @@ sub user_supplied_changes
         # refer to other tags.
         $cal->{months}{monthContext}{format}{monthWidth}{abbreviated} =
             $cal->{months}{monthContext}{format}{monthWidth}{wide}
-                unless $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{1};
+                if $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{alias};
 
         $cal->{months}{monthContext}{format}{monthWidth}{narrow} =
             $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}
-                unless $cal->{months}{monthContext}{format}{monthWidth}{narrow}{month}{1};
+                if $cal->{months}{monthContext}{format}{monthWidth}{narrow}{alias};
 
         $cal->{days}{dayContext}{format}{dayWidth}{abbreviated} =
             $cal->{days}{dayContext}{format}{dayWidth}{wide}
-                unless $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{1};
+                if $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{alias};
 
         $cal->{days}{dayContext}{format}{dayWidth}{narrow} =
             $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}
-                unless $cal->{days}{dayContext}{format}{dayWidth}{narrow}{day}{1};
+                if $cal->{days}{dayContext}{format}{dayWidth}{narrow}{alias};
 
         $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated} =
             $cal->{quarters}{quarterContext}{format}{quarterWidth}{wide}
-                unless $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated}{1};
+                if $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated}{alias};
 
         $cal->{eras}{eraNames} = $cal->{eras}{eraAbbr}
-            unless $cal->{eras}{eraNames}{0};
+            if $cal->{eras}{eraNames}{alias};
     }
 }
 
@@ -394,11 +392,12 @@ sub _get_days
 
     return unless $days;
 
-    my @keys = qw( mon tue wed thu fri sat sun );
+    my @DayOrder = qw( mon tue wed thu fri sat sun );
+    $days = _find_preferred_versions( $days, 'type', \@DayOrder );
 
-    return if grep { ! exists $days->{$_} } @keys;
+    return unless @{ $days } == 7;
 
-    @{ $hash->{$key} } = map { $days->{$_}{content} } @keys;
+    $hash->{$key} = [ map { $_->{content} } @{ $days } ];
 
     print "    $key: @{ $hash->{$key} }\n" if $opts{verbose};
 }
@@ -424,11 +423,55 @@ sub _get_months
 
     return unless $months;
 
-    return if grep { ! exists $months->{$_} } 1..12;
+    $months = _find_preferred_versions( $months, 'type', [ 1..12 ] );
 
-    @{ $hash->{$key} } = map { $months->{$_}{content} } 1..12;
+    return unless @{ $months } == 12;
+
+    $hash->{$key} = [ map { $_->{content} } @{ $months } ];
 
     print "    $key: @{ $hash->{$key} }\n" if $opts{verbose};
+}
+
+# In some cases there will be multiple versions of each month, day,
+# etc. In those cases we find the most preferred version, which is the
+# one not marked as a draft (if such an item exists). Then we return
+# all the preferred items in sorted order.
+sub _find_preferred_versions
+{
+    my $data  = shift;
+    my $key   = shift;
+    my $order = shift;
+
+    return [] unless defined $data;
+
+    my @preferred;
+    for my $idx ( @{ $order } )
+    {
+        my @matches = grep { $_->{$key} eq $idx } @{ $data };
+
+        my $preferred = _find_preferred_item(@matches);
+
+        next unless $preferred;
+
+        push @preferred, $preferred;
+    }
+
+    return \@preferred;
+}
+
+sub _find_preferred_item
+{
+    my @matches = @_;
+
+    return unless @matches;
+
+    return $matches[0] if @matches == 1;
+
+    my $non_draft = first { ! $_->{draft} } @matches;
+
+    return $non_draft if $non_draft;
+
+    return $matches[0];
 }
 
 sub get_formats
@@ -610,20 +653,20 @@ sub get_quarters
 
     return unless $quarters;
 
-    if ( $quarters->{abbreviated} )
+    my $abbr = _find_preferred_versions( $quarters->{abbreviated}{quarter}, 'type', [ 1..4 ] );
+    if ( @{ $abbr } == 4 )
     {
-        $hash->{quarter_abbreviations} =
-            [ map { $quarters->{abbreviated}{quarter}{$_}{content} } 1 .. 4 ];
+        $hash->{quarter_abbreviations} = [ map { $_->{content} } @{ $abbr } ];
 
         print "    quarter abbr: [@{ $hash->{quarter_abbreviations} }]\n" if $opts{verbose};
     }
 
-    if ( $quarters->{wide} )
+    my $wide = _find_preferred_versions( $quarters->{wide}{quarter}, 'type', [ 1..4 ] );
+    if ( @{ $wide } == 4 )
     {
-        $hash->{quarter_names} =
-            [ map { $quarters->{wide}{quarter}{$_}{content} } 1 .. 4 ];
+        $hash->{quarter_names} = [ map { $_->{content} } @{ $wide } ];
 
-        print "    quarter names: [@{ $hash->{quarter_names} }]\n" if $opts{verbose};
+        print "    quarter wide: [@{ $hash->{quarter_names} }]\n" if $opts{verbose};
     }
 }
 
@@ -650,31 +693,18 @@ sub get_eras
 {
     my ( $hash, $cal ) = @_;
 
-    # At least one locale, se_NO, has only the first era, not the second
-    if ( $cal->{eras}{eraAbbr}
-         && $cal->{eras}{eraAbbr}{0}
-         && $cal->{eras}{eraAbbr}{1}
-       )
+    my $abbr = _find_preferred_versions( $cal->{eras}{eraAbbr}, 'type', [ 0..1 ] );
+    if ( @{ $abbr } == 2 )
     {
-        my $eras = $cal->{eras}{eraAbbr};
-
-        $hash->{era_abbreviations} =
-            [ $eras->{0}{content},
-              $eras->{1}{content} ];
+        $hash->{era_abbreviations} = [ map { $_->{content} } @{ $abbr } ];
 
         print "    era abbr: [@{ $hash->{era_abbreviations} }]\n" if $opts{verbose};
     }
 
-    if ( $cal->{eras}{eraNames}
-         && $cal->{eras}{eraNames}{0}
-         && $cal->{eras}{eraNames}{1}
-       )
+    my $full = _find_preferred_versions( $cal->{eras}{eraNames}, 'type', [ 0..1 ] );
+    if ( @{ $full } == 2 )
     {
-        my $eras = $cal->{eras}{eraNames};
-
-        $hash->{era_names} =
-            [ $eras->{0}{content},
-              $eras->{1}{content} ];
+        $hash->{era_names} = [ map { $_->{content} } @{ $full } ];
 
         print "    era names: [@{ $hash->{era_names} }]\n" if $opts{verbose};
     }
