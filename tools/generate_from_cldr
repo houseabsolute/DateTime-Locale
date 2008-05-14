@@ -170,7 +170,7 @@ sub read_all_files
                                      eraNames => 'era',
                                    },
                    ForceArray   => [ keys %key_attr,
-                                     qw( month day quarter era ) ],
+                                     qw( month day quarter era dateFormatItem ) ],
                    ForceContent => 1,
                  )
                 or die "Missing XML for locale: '$id'";
@@ -480,6 +480,7 @@ sub get_formats
 
     _get_date_formats( $hash, $cal );
     _get_time_formats( $hash, $cal );
+    _get_datetime_formats( $hash, $cal );
     _get_datetime_format_length( $hash, $cal );
 }
 
@@ -565,6 +566,35 @@ sub _get_time_formats
 
         print "    default_time_format_length: $hash->{default_time_format_length}\n"
             if $opts{verbose};
+    }
+}
+
+sub _get_datetime_formats
+{
+    my ( $hash, $cal ) = @_;
+
+    my $formats = $cal->{dateTimeFormats}{availableFormats}{dateFormatItem}
+        or return;
+
+    my %formats_by_id;
+    for my $id ( map { $_->{id} } @{ $formats } )
+    {
+        my @matches = grep { $_->{id} eq $id } @{ $formats };
+        my $preferred = _find_preferred_item(@matches);
+
+        next unless $preferred;
+
+        $formats_by_id{$id} = simple2strf( $preferred->{content} );
+    }
+
+    $hash->{datetime_formats} = \%formats_by_id;
+
+    return unless $opts{verbose};
+
+    print "    datetime_formats:\n";
+    for my $id ( sort keys %formats_by_id )
+    {
+        print "        $id = $formats_by_id{$id}\n";
     }
 }
 
@@ -764,6 +794,14 @@ sub generate_locale
             $subs .=
                 sprintf "sub %-30s { %s }\n", $sub_name, qq|"\Q$hash->{$var}{$length}\E"|;
         }
+    }
+
+    for my $id ( keys %{ $hash->{datetime_formats} || {} } )
+    {
+        my $sub_name = '_datetime_format_' . $id;
+
+        $subs .=
+            sprintf "sub %-30s { %s }\n", $sub_name, qq|"\Q$hash->{datetime_formats}{$id}\E"|;
     }
 
     # The accessor subs and whether they should be public (1) or
