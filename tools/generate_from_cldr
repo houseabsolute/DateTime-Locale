@@ -311,13 +311,66 @@ sub parent_id
     return $parent_id;
 }
 
+# used to hardcode corrections that aren't yet in CLDR
+sub user_supplied_changes
+{
+    my $id = shift;
+    my $cal = shift;
+
+    if ( $id eq 'az' )
+    {
+        # The az.xml file appears to have a mistake in the wide day
+        # names, thursday and friday are the same for this locale
+        $cal->{days}{dayContext}{format}{dayWidth}{wide}{day}{thu}{content} =~ s/ \w+$//;
+    }
+    elsif ( $id eq 'gaa' )
+    {
+        # I am completely making this up, but the data is marked as
+        # uncomfimed in the locale file and it's preferable to having
+        # two days with the same abbreviation
+        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{sun}{content} = 'Hog';
+    }
+    elsif ( $id eq 've' )
+    {
+        # Again, making stuff up to avoid non-unique abbreviations
+        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{3}{content} = 'Thf';
+    }
+    elsif ( $id eq 'root' )
+    {
+        # The root locale uses <alias source="../xpath/thing"> to
+        # refer to other tags.
+        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated} =
+            $cal->{months}{monthContext}{format}{monthWidth}{wide}
+                unless $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{1};
+
+        $cal->{months}{monthContext}{format}{monthWidth}{narrow} =
+            $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}
+                unless $cal->{months}{monthContext}{format}{monthWidth}{narrow}{month}{1};
+
+        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated} =
+            $cal->{days}{dayContext}{format}{dayWidth}{wide}
+                unless $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{1};
+
+        $cal->{days}{dayContext}{format}{dayWidth}{narrow} =
+            $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}
+                unless $cal->{days}{dayContext}{format}{dayWidth}{narrow}{day}{1};
+
+        $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated} =
+            $cal->{quarters}{quarterContext}{format}{quarterWidth}{wide}
+                unless $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated}{1};
+
+        $cal->{eras}{eraNames} = $cal->{eras}{eraAbbr}
+            unless $cal->{eras}{eraNames}{0};
+    }
+}
+
 sub get_days
 {
     my ( $hash, $cal ) = @_;
 
-    _get_days($hash, $cal, 'wide',         'day_names'         );
-    _get_days($hash, $cal, 'abbreviated',  'day_abbreviations' );
-    _get_days($hash, $cal, 'narrow',       'day_narrows'       );
+    _get_days( $hash, $cal, 'wide',        'day_names' );
+    _get_days( $hash, $cal, 'abbreviated', 'day_abbreviations' );
+    _get_days( $hash, $cal, 'narrow',      'day_narrows' );
 }
 
 sub _get_days
@@ -345,9 +398,9 @@ sub get_months
 {
     my ( $hash, $cal ) = @_;
 
-    _get_months($hash, $cal, 'wide',         'month_names'         );
-    _get_months($hash, $cal, 'abbreviated',  'month_abbreviations' );
-    _get_months($hash, $cal, 'narrow',       'month_narrows'       );
+    _get_months( $hash, $cal, 'wide',        'month_names' );
+    _get_months( $hash, $cal, 'abbreviated', 'month_abbreviations' );
+    _get_months( $hash, $cal, 'narrow',      'month_narrows' );
 }
 
 sub _get_months
@@ -519,59 +572,6 @@ sub _stringify
     $string =~ s/\'\'/\'/g;
 
     return $string;
-}
-
-# used to hardcode corrections that aren't yet in CLDR
-sub user_supplied_changes
-{
-    my $id = shift;
-    my $cal = shift;
-
-    if ( $id eq 'az' )
-    {
-        # The az.xml file appears to have a mistake in the wide day
-        # names, thursday and friday are the same for this locale
-        $cal->{days}{dayContext}{format}{dayWidth}{wide}{day}{thu}{content} =~ s/ \w+$//;
-    }
-    elsif ( $id eq 'gaa' )
-    {
-        # I am completely making this up, but the data is marked as
-        # uncomfimed in the locale file and it's preferable to having
-        # two days with the same abbreviation
-        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{sun}{content} = 'Hog';
-    }
-    elsif ( $id eq 've' )
-    {
-        # Again, making stuff up to avoid non-unique abbreviations
-        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{3}{content} = 'Thf';
-    }
-    elsif ( $id eq 'root' )
-    {
-        # The root locale uses <alias source="../xpath/thing"> to
-        # refer to other tags.
-        $cal->{months}{monthContext}{format}{monthWidth}{abbreviated} =
-            $cal->{months}{monthContext}{format}{monthWidth}{wide}
-                unless $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}{1};
-
-        $cal->{months}{monthContext}{format}{monthWidth}{narrow} =
-            $cal->{months}{monthContext}{format}{monthWidth}{abbreviated}
-                unless $cal->{months}{monthContext}{format}{monthWidth}{narrow}{month}{1};
-
-        $cal->{days}{dayContext}{format}{dayWidth}{abbreviated} =
-            $cal->{days}{dayContext}{format}{dayWidth}{wide}
-                unless $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}{1};
-
-        $cal->{days}{dayContext}{format}{dayWidth}{narrow} =
-            $cal->{days}{dayContext}{format}{dayWidth}{abbreviated}
-                unless $cal->{days}{dayContext}{format}{dayWidth}{narrow}{day}{1};
-
-        $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated} =
-            $cal->{quarters}{quarterContext}{format}{quarterWidth}{wide}
-                unless $cal->{quarters}{quarterContext}{format}{quarterWidth}{abbreviated}{1};
-
-        $cal->{eras}{eraNames} = $cal->{eras}{eraAbbr}
-            unless $cal->{eras}{eraNames}{0};
-    }
 }
 
 sub get_quarters
