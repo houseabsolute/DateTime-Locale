@@ -203,6 +203,15 @@ Returns an array reference containing the narrow names of the days,
 with Monday as the first day.  Narrow names are the shortest possible
 names, and need not be unique.
 
+=item * quarter_names
+
+Returns an array reference containing the full names of the quarters.
+
+=item * quarter_abbreviations
+
+Returns an array reference containing the abbreviated names of the
+quarters.
+
 =item * am_pms
 
 Returns an array reference containing the localized forms of "AM" and
