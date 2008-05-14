@@ -318,6 +318,10 @@ sub _load_class_from_id
 
 __END__
 
+=pod
+
+=encoding utf8
+
 =head1 NAME
 
 DateTime::Locale - Localization support for DateTime.pm
@@ -651,8 +655,11 @@ A completely new custom locale must implement the following methods:
   month_abbreviations
   day_names
   day_abbreviations
+  quarter_names
+  quarter_abbreviations
   am_pms
-  eras
+  era_names
+  era_abbreviations
 
   short_date_format
   medium_date_format
@@ -692,55 +699,55 @@ locale's id and name.
 
 =over 4
 
-=item * id
+=item * $locale->id()
 
 The complete locale id, something like "en_US".
 
-=item * language_id
+=item * $locale->language_id()
 
 The language portion of the id, like "en".
 
-=item * script_id
+=item * $locale->script_id()
 
 The script portion of the id, like "Hant".
 
-=item * territory_id
+=item * $locale->territory_id()
 
 The territory portion of the id, like "US".
 
-=item * variant_id
+=item * $locale->variant_id()
 
 The variant portion of the id, like "PREEURO".
 
-=item * name
+=item * $locale->name()
 
 The locale's complete name, which always includes at least a language
 component, plus optional territory and variant components.  Something
 like "English United States".  The value returned will always be in
 English.
 
-=item * language
+=item * $locale->language()
 
-=item * script
+=item * $locale->script()
 
-=item * territory
+=item * $locale->territory()
 
-=item * variant
+=item * $locale->variant()
 
 The relevant component from the locale's complete name, like "English"
 or "United States".
 
-=item * native_name
+=item * $locale->native_name()
 
 The locale's complete name in localized form as a UTF-8 string.
 
-=item * native_language
+=item * $locale->native_language()
 
-=item * native_script
+=item * $locale->native_script()
 
-=item * native_territory
+=item * $locale->native_territory()
 
-=item * native_variant
+=item * $locale->native_variant()
 
 The relevant component from the locale's complete native name as a
 UTF-8 string.
@@ -752,15 +759,15 @@ a localized name.
 
 =over 4
 
-=item * month_name ($dt)
+=item * $locale->month_name($dt)
 
-=item * month_abbreviation ($dt)
+=item * $locale->month_abbreviation($dt)
 
-=item * day_name ($dt)
+=item * $locale->day_name($dt)
 
-=item * day_abbreviation ($dt)
+=item * $locale->day_abbreviation($dt)
 
-=item * am_pm ($dt)
+=item * $locale->am_pm($dt)
 
 =back
 
@@ -769,29 +776,57 @@ C<DateTime.pm> C<strftime()> method:
 
 =over 4
 
-=item * full_date_format
+=item * $locale->full_date_format()
 
-=item * long_date_format
+=item * $locale->long_date_format
 
-=item * medium_date_format
+=item * $locale->medium_date_format()
 
-=item * short_date_format
+=item * $locale->short_date_format()
 
-=item * full_time_format
+=item * $locale->full_time_format()
 
-=item * long_time_format
+=item * $locale->long_time_format()
 
-=item * medium_time_format
+=item * $locale->medium_time_format()
 
-=item * short_time_format
+=item * $locale->short_time_format()
 
-=item * full_datetime_format
+=item * $locale->full_datetime_format()
 
-=item * long_datetime_format
+=item * $locale->long_datetime_format()
 
-=item * medium_datetime_format
+=item * $locale->medium_datetime_format()
 
-=item * short_datetime_format
+=item * $locale->short_datetime_format()
+
+=back
+
+A locale may also offer one or more formats for displaying part of a
+datetime, such as the year and month, or hour and minute.
+
+=over 4
+
+=item * $locale->format_for($name)
+
+These are accessed by passing a name to C<< $locale->format_for(...)
+>>, where the name is a Java-style format specifier.
+
+The return value is a string suitable for passing to C<<
+$dt->strftime() >>, so you can do something like this:
+
+  print $dt->strftime( $dt->locale()->format_for('MMMdd')
+
+which for the "en" locale would print out something like "08 Jul".
+
+The formats available for a specific locale are in the docs for each
+locale, along with examples of what they will print.
+
+Note that the localization goes beyond just directly translating the
+Java-style string to a strftime-style string. It may also include
+additional text specific to the locale. For example, the "MMMMd"
+format for the "zh" locale includes the Chinese characters for "day"
+(日) and month (月), so you get something like "8月23日".
 
 =back
 
@@ -799,9 +834,9 @@ The following methods deal with the default format lengths:
 
 =over 4
 
-=item default_date_format_length
+=item * $locale->default_date_format_length()
 
-=item default_time_format_length
+=item * $locale->default_time_format_length()
 
 These methods return one of "full", "long", "medium", or "short",
 indicating the current default format length.
@@ -809,9 +844,9 @@ indicating the current default format length.
 The default when an object is created is determined by the CLDR locale
 data.
 
-=item set_default_date_format_length ($length)
+=item * $locale->set_default_date_format_length($length)
 
-=item set_default_time_format_length ($length)
+=item * $locale->set_default_time_format_length($length)
 
 These methods accept one of "full", "long", "medium", or "short",
 indicating the new default format length.
@@ -824,67 +859,72 @@ object, so make a copy if you need to do so.
 
 =over 4
 
-=item * month_names
+=item * $locale->month_names()
 
 Returns an array reference containing the full names of the months,
 with January as the first month.
 
-=item * month_abbreviations
+=item * $locale->month_abbreviations()
 
 Returns an array reference containing the abbreviated names of the
 months, with January as the first month.
 
-=item * month_narrows
+=item * $locale->month_narrows()
 
 Returns an array reference containing the narrow names of the months,
 with January as the first month.  Narrow names are the shortest
 possible names, and may not be unique.
 
-=item * day_names
+=item * $locale->day_names()
 
 Returns an array reference containing the full names of the days,
 with Monday as the first day.
 
-=item * day_abbreviations
+=item * $locale->day_abbreviations()
 
 Returns an array reference containing the abbreviated names of the
 days, with Monday as the first day.
 
-=item * day_narrows
+=item * $locale->day_narrows()
 
 Returns an array reference containing the narrow names of the days,
 with Monday as the first day.  Narrow names are the shortest possible
 names, and may not be unique.
 
-=item * am_pms
+=item * $locale->am_pms()
 
 Returns an array reference containing the localized forms of "AM" and
 "PM".
 
-=item * eras
+=item * $locale->era_names()
 
 Returns an array reference containing the localized forms of "BCE" and
-"CE".
+"CE", in their long form.
 
-=item * date_formats
+=item * $locale->era_abbreviations()
+
+Returns an array reference containing the localized forms of "BCE" and
+"CE", in their abbreviation forms.
+
+=item * $locale->date_formats()
 
 Returns a hash reference containing the date formats used for the
 locale.  The hash contains the keys "long", "full", "medium", and
 "short".
 
-=item * time_formats
+=item * $locale->time_formats()
 
 Returns a hash reference containing the time formats used for the
 locale.  The hash contains the keys "long", "full", "medium", and
 "short".
 
-=item * date_before_time
+=item * $locale->date_before_time()
 
 This returns a boolean value indicating whether or not the date comes
 before the time when formatting a complete date and time for
 presentation.
 
-=item * date_parts_order
+=item * $locale->date_parts_order()
 
 This returns a string indicating the order of the parts of a date that
 is in the form XX/YY/ZZ.  The possible values are "dmy", "mdy", "ydm"
@@ -924,7 +964,7 @@ conversion routines used during locale generation.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2006 David
+Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2008 David
 Rolsky. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify

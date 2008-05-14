@@ -197,89 +197,112 @@ following methods:
 
 =over 4
 
-=item * month_names
+=item * $locale->month_names()
 
 Returns an array reference containing the full names of the months,
 with January as the first month.
 
-=item * month_abbreviations
+=item * $locale->month_abbreviations()
 
 Returns an array reference containing the abbreviated names of the
 months, with January as the first month.
 
-=item * month_narrows
+=item * $locale->month_narrows()
 
 Returns an array reference containing the narrow names of the months,
 with January as the first month.  Narrow names are the shortest
 possible names, and need not be unique.
 
-=item * day_names
+=item * $locale->day_names()
 
 Returns an array reference containing the full names of the days,
 with Monday as the first day.
 
-=item * day_abbreviations
+=item * $locale->day_abbreviations()
 
 Returns an array reference containing the abbreviated names of the
 days, with Monday as the first day.
 
-=item * day_narrows
+=item * $locale->day_narrows()
 
 Returns an array reference containing the narrow names of the days,
 with Monday as the first day.  Narrow names are the shortest possible
 names, and need not be unique.
 
-=item * quarter_names
+=item * $locale->quarter_names()
 
 Returns an array reference containing the full names of the quarters.
 
-=item * quarter_abbreviations
+=item * $locale->quarter_abbreviations()
 
 Returns an array reference containing the abbreviated names of the
 quarters.
 
-=item * am_pms
+=item * $locale->am_pms()
 
 Returns an array reference containing the localized forms of "AM" and
 "PM".
 
-=item * era_abbreviations
+=item * $locale->era_abbreviations()
 
 Returns an array reference containing the localized forms of the
 abbreviation for the eras, such as "BCE" and "CE".
 
-=item * era_names
+=item * $locale->era_names()
 
 Returns an array reference containing the localized forms the name of
 the eras, such as "Before Common Era" and "Common Era".
 
-=item * long_date_format, full_date_format, medium_date_format, short_date_format
+=item * $locale->long_date_format()
+
+=item * $locale->full_date_format()
+
+=item * $locale->medium_date_format()
+
+=item * $locale->short_date_format()
 
 Returns the date format of the appropriate length.
 
-=item * long_time_format, full_time_format, medium_time_format, short_time_format
+=item * $locale->long_time_format()
+
+=item * $locale->full_time_format()
+
+=item * $locale->medium_time_format()
+
+=item * $locale->short_time_format()
 
 Returns the date format of the appropriate length.
 
-=item * date_before_time
+=item * $locale->date_before_time()
 
 This returns a boolean value indicating whether or not the date comes
 before the time when formatting a complete date and time for
 presentation.
 
-=item * date_parts_order
+=item * $locale->date_parts_order()
 
 This returns a string indicating the order of the parts of a date that
 is in the form XX/YY/ZZ.  The possible values are "dmy", "mdy", "ydm"
 and "ymd".
 
-=item * _default_date_format_length
+=item * $locale->_format_keys()
+
+A list of format key names, like "MMdd" or "yyyyMM". This should be
+the list directly supported by the subclass, not its parents.
+
+=item * $locale->_datetime_format_XXXX()
+
+Each method of this form should return a strftime-style format for the
+named ("XXXX") format. The format names are the Java-style patterns
+like "yyyyMM".
+
+=item * $locale->_default_date_format_length()
 
 This should return a string which is one of "long", "full", "medium",
 or "short".  It indicates the default date format length for the
 locale.
 
-=item * _default_time_format_length
+=item * $locale->_default_time_format_length()
 
 This should return a string which is one of "long", "full", "medium",
 or "short".  It indicates the default time format length for the
