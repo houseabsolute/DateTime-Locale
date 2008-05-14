@@ -796,7 +796,7 @@ sub generate_locale
         }
     }
 
-    for my $id ( keys %{ $hash->{datetime_formats} || {} } )
+    for my $id ( sort keys %{ $hash->{datetime_formats} || {} } )
     {
         my $sub_name = '_datetime_format_' . $id;
 
