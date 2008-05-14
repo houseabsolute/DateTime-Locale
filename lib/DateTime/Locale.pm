@@ -1,26 +1,18 @@
 package DateTime::Locale;
 
 use strict;
+use warnings;
 
-use DateTime::LocaleCatalog;
+use 5.006;
 
 # Loading this here isn't necessary, but it makes it easier to catch
 # syntax errors when testing.
 use DateTime::Locale::Base;
-
+use DateTime::LocaleCatalog;
 use Params::Validate qw( validate validate_pos SCALAR );
 
-use vars qw($VERSION);
+our $VERSION = 0.36;
 
-$VERSION = 0.35;
-
-BEGIN
-{
-    if ( $] >= 5.006 )
-    {
-        require utf8; import utf8;
-    }
-}
 
 my %Class;
 my %DataForID;

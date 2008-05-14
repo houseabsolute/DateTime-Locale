@@ -1,13 +1,7 @@
-#!/usr/bin/perl -w
-
-BEGIN
-{
-    return unless $] >= 5.006;
-
-    require utf8; import utf8;
-}
-
 use strict;
+use warnings;
+use utf8;
+
 use File::Spec;
 use Test::More;
 
@@ -32,6 +26,7 @@ plan tests =>
     + 13 # check_root
     + 25 # check_en_GB
     + 11 # check_es_ES
+    + 2  # check_af
     + 5  # check_en_US_POSIX
     + 9  # check_DT_Lang
     ;
@@ -139,6 +134,7 @@ check_root();
 check_en_GB();
 check_es_ES();
 check_en_US_POSIX();
+check_af();
 check_DT_Lang();
 
 sub check_array
@@ -365,6 +361,19 @@ sub check_en_US_POSIX
     is( $locale->language_id, 'en', 'language_id()' );
     is( $locale->territory_id, 'US', 'territory_id()' );
     is( $locale->variant_id, 'POSIX', 'variant_id()' );
+}
+
+sub check_af
+{
+    my $locale = DateTime::Locale->load('af');
+
+    is_deeply( $locale->month_abbreviations(),
+               [ qw( Jan Feb Mar Apr Mei Jun Jul Aug Sep Okt Nov Des ) ],
+               'month abbreviations for af use non-draft form' );
+
+    is_deeply( $locale->month_narrows(),
+               [ 1..12 ],
+               'month narrows for af use draft form because that is the only form available' );
 }
 
 sub check_DT_Lang

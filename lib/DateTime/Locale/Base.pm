@@ -1,9 +1,9 @@
 package DateTime::Locale::Base;
 
 use strict;
+use warnings;
 
 use DateTime::Locale;
-
 use Params::Validate qw( validate_pos );
 
 BEGIN
@@ -96,6 +96,18 @@ sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->def
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 sub default_time_format_length { $_[0]->{default_time_format_length} }
+
+sub format_for
+{
+    my $self = shift;
+    my $for  = shift;
+
+    my $meth = '_datetime_format_' . $meth;
+
+    return unless $self->can($meth);
+
+    return $self->$meth();
+}
 
 sub set_default_date_format_length
 {
