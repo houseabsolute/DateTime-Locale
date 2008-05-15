@@ -240,6 +240,18 @@ has 'am_pm' =>
       lazy_build => 1,
     );
 
+has 'datetime_format' =>
+    ( is         => 'ro',
+      isa        => 'Str',
+      lazy_build => 1,
+    );
+
+has 'available_formats' =>
+    ( is         => 'ro',
+      isa        => 'HashRef[Str]',
+      lazy_build => 1,
+    );
+
 sub new_from_file
 {
     my $class = shift;
@@ -497,7 +509,38 @@ sub _build_am_pm
     return [ $am, $pm ];
 }
 
+sub _build_datetime_format
+{
+    my $self = shift;
 
+    return
+        $self->_find_one_node_text( 'dateTimeFormats/dateTimeFormatLength/dateTimeFormat/pattern',
+                                    $self->_calendar_node() );
+}
+
+sub _build_available_formats
+{
+    my $self = shift;
+
+    my @nodes = $self->_calendar_node()->findnodes('dateTimeFormats/availableFormats/dateFormatItem');
+
+    my %index;
+    for my $node (@nodes)
+    {
+        push @{ $index{ $node->getAttribute('id') } }, $node;
+    }
+
+    my %formats;
+    for my $id ( keys %index )
+    {
+        my $preferred = $self->_find_preferred_node( @{ $index{$id} } )
+            or next;
+
+        $formats{$id} = join '', map { $_->data() } $preferred->childNodes();
+    }
+
+    return \%formats;
+}
 
 sub _find_preferred_values
 {
@@ -522,9 +565,8 @@ sub _find_preferred_values
     {
         my @matches = @{ $index{$attr} };
 
-        my $preferred = $self->_find_preferred_node(@matches);
-
-        next unless $preferred;
+        my $preferred = $self->_find_preferred_node(@matches)
+            or next;
 
         push @preferred, join '', map { $_->data() } $preferred->childNodes();
     }
@@ -585,7 +627,7 @@ sub _find_one_node_maybe
     my $path    = shift;
     my $context = shift || $self->document()->documentElement();
 
-    my @nodes = $context->findnodes($path);
+    my @nodes = $self->_find_preferred_node( $context->findnodes($path) );
 
     if ( @nodes > 1 )
     {

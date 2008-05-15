@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Data::Dumper;
-use Test::More tests => 55;
+use Test::More tests => 57;
 
 use LDML;
 
@@ -40,14 +40,15 @@ use LDML;
 {
     my $ldml = LDML->new_from_file( 't/test-data/root.xml' );
 
-    is( $ldml->id(), 'root', 'id' );
-    is( $ldml->version(), '1.124', 'version' );
-    is( $ldml->generation_date(), '2007/11/16 18:12:39', 'generation_date' );
     ok( $ldml->is_complete(), 'ldml is complete' );
-    is( $ldml->parent_id(), 'Base', 'parent_id' );
 
-    my %data =
-        ( day_format_narrow           => [ 2..7, 1 ],
+    my @data =
+        ( id              => 'root',
+          version         => '1.124',
+          generation_date => '2007/11/16 18:12:39',
+          parent_id       => 'Base',
+
+          day_format_narrow           => [ 2..7, 1 ],
           day_format_abbreviated      => [ 2..7, 1 ],
           day_format_wide             => [ 2..7, 1 ],
           day_stand_alone_narrow      => [ 2..7, 1 ],
@@ -83,40 +84,60 @@ use LDML;
           time_format_long   => 'HH:mm:ss z',
           time_format_medium => 'HH:mm:ss',
           time_format_short  => 'HH:mm',
+
+          datetime_format => '{1} {0}',
+
+          available_formats => { Ed         => 'E d',
+                                 H      => 'H',
+                                 HHmm   => 'HH:mm',
+                                 HHmmss => 'HH:mm:ss',
+                                 MMMEd  => 'E MMM d',
+                                 MMMMd  => 'MMMM d',
+                                 Md     => 'M-d',
+                                 mmss   => 'mm:ss',
+                                 yyMM   => 'yy-MM',
+                                 yyMMM  => 'yy MMM',
+                                 yyQ    => 'yy Q',
+                                 yyyy   => 'yyyy',
+                               },
         );
 
-    for my $meth ( sort keys %data )
-    {
-        is_deeply( $ldml->$meth(),
-                   $data{$meth},
-                   "data for $meth" );
-    }
+    test_data( $ldml, 'root', \@data );
 }
 
 {
     my $ldml = LDML->new_from_file( 't/test-data/ssy.xml' );
 
-    is( $ldml->id(), 'ssy', 'id' );
-    is( $ldml->version(), '1.1', 'version' );
-    is( $ldml->generation_date(), '2007/07/19 20:48:11', 'generation_date' );
     ok( ! $ldml->is_complete(), 'ldml is not complete' );
 
-    is( $ldml->language(), 'ssy', 'language' );
-    is( $ldml->script(), undef, 'variant' );
-    is( $ldml->territory(), undef, 'territory' );
-    is( $ldml->variant(), undef, 'variant' );
-    is( $ldml->parent_id(), 'root', 'parent_id' );
+    my @data =
+        ( id              => 'ssy',
+          version         => '1.1',
+          generation_date => '2007/07/19 20:48:11',
+
+          language  => 'ssy',
+          script    => undef,
+          territory => undef,
+          variant   => undef,
+          parent_id => 'root',
+        );
+
+    test_data( $ldml, 'ssy', \@data );
 }
 
 {
     my $ldml = LDML->new_from_file( 't/test-data/en_GB.xml' );
 
-    is( $ldml->id(), 'en_GB', 'id' );
-    is( $ldml->language(), 'en', 'language' );
-    is( $ldml->script(), undef, 'variant' );
-    is( $ldml->territory(), 'GB', 'territory' );
-    is( $ldml->variant(), undef, 'variant' );
-    is( $ldml->parent_id(), 'en', 'parent_id' );
+    my @data =
+        ( id        => 'en_GB',
+          language  => 'en',
+          script    => undef,
+          territory => 'GB',
+          variant   => undef,
+          parent_id => 'en',
+        );
+
+    test_data( $ldml, 'en_GB', \@data );
 }
 
 {
@@ -133,4 +154,20 @@ use LDML;
             '>',
             2,
             'ti alias to am for territories was resolved properly' );
+}
+
+sub test_data
+{
+    my $ldml = shift;
+    my $id   = shift;
+    my $data = shift;
+
+    for ( my $i = 0; $i < @{ $data }; $i += 2 )
+    {
+        my $meth = $data->[$i];
+
+        is_deeply( $ldml->$meth(),
+                   $data->[ $i + 1 ],
+                   "$meth in $id" );
+    }
 }
