@@ -3,7 +3,7 @@ use warnings;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 58;
+use Test::More tests => 60;
 
 use LDML;
 
@@ -89,6 +89,9 @@ use LDML;
           time_format_long   => 'HH:mm:ss z',
           time_format_medium => 'HH:mm:ss',
           time_format_short  => 'HH:mm',
+
+          default_date_format_length => 'medium',
+          default_time_format_length => 'medium',
 
           datetime_format => '{1} {0}',
 

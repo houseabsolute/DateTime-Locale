@@ -243,6 +243,26 @@ for my $type ( qw( date time ) )
     }
 }
 
+has 'default_date_format_length' =>
+    ( is      => 'ro',
+      isa     => 'Str|Undef',
+      lazy    => 1,
+      default => sub { $_[0]->_find_one_node_attribute( 'dateFormats/default',
+                                                        $_[0]->_calendar_node(),
+                                                        'choice' )
+                     },
+    );
+
+has 'default_time_format_length' =>
+    ( is      => 'ro',
+      isa     => 'Str|Undef',
+      lazy    => 1,
+      default => sub { $_[0]->_find_one_node_attribute( 'timeFormats/default',
+                                                        $_[0]->_calendar_node(),
+                                                        'choice' )
+                     },
+    );
+
 has 'am_pm' =>
     ( is         => 'ro',
       isa        => 'ArrayRef',
