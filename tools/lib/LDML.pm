@@ -617,7 +617,9 @@ sub _find_preferred_values
     my @preferred;
     for my $attr ( @{ $order } )
     {
-        my @matches = @{ $index{$attr} };
+        # There may be nothing in the index for incomplete sets (of
+        # days, months, etc)
+        my @matches = @{ $index{$attr} || [] };
 
         my $preferred = $self->_find_preferred_node(@matches)
             or next;
