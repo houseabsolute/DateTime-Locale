@@ -12,6 +12,7 @@ use Path::Class;
 use XML::LibXML;
 
 use Moose;
+use Moose::Util::TypeConstraints;
 use MooseX::ClassAttribute;
 
 has 'id' =>
@@ -108,11 +109,19 @@ has 'parent_id' =>
       lazy_build => 1,
     );
 
+class_type 'XML::LibXML::Node';
 has '_calendar_node' =>
     ( is      => 'ro',
-      isa     => 'XML::LibXML::Node',
+      isa     => 'XML::LibXML::Node|Undef',
       lazy    => 1,
       default => sub { $_[0]->_find_one_node( q{dates/calendars/calendar[@type='gregorian']} ) },
+    );
+
+has 'has_calendar_data' =>
+    ( is      => 'ro',
+      isa     => 'Bool',
+      lazy    => 1,
+      default => sub { $_[0]->_calendar_node() ? 1 : 0 },
     );
 
 for my $thing ( { name   => 'day',
@@ -676,5 +685,6 @@ sub _find_one_node
 
 __PACKAGE__->meta()->make_immutable();
 no Moose;
+no Moose::Util::TypeConstraints;
 
 1;

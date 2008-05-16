@@ -3,7 +3,7 @@ use warnings;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 58;
+use Test::More tests => 60;
 
 use LDML;
 
@@ -45,6 +45,7 @@ use LDML;
     my $ldml = LDML->new_from_file( 't/test-data/root.xml' );
 
     ok( $ldml->is_complete(), 'ldml is complete' );
+    ok( $ldml->has_calendar_data(), 'has calendar data' );
 
     my @data =
         ( id              => 'root',
@@ -149,6 +150,7 @@ use LDML;
     my $ldml = LDML->new_from_file( 't/test-data/zh_MO.xml' );
 
     is( $ldml->parent_id(), 'zh_Hant_MO', 'parent_id for zh_MO' );
+    ok( ! $ldml->has_calendar_data(), 'has no calendar data' );
 }
 
 {
