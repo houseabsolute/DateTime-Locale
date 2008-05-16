@@ -69,12 +69,6 @@ has 'generation_date' =>
       lazy_build => 1,
     );
 
-has 'is_complete' =>
-    ( is         => 'ro',
-      isa        => 'Bool',
-      lazy_build => 1,
-    );
-
 has 'language' =>
     ( is      => 'ro',
       isa     => 'Str',
@@ -496,16 +490,6 @@ sub _build_generation_date
     $date =~ s/\s+\$$//;
 
     return $date;
-}
-
-sub _build_is_complete
-{
-    my $self = shift;
-
-    # As of CLDR 1.5, ssy is incomplete to the point of uselessness
-    # for our purposes
-    return 0 if $self->id() eq 'ssy' && $self->version() eq '1.1';
-    return 1;
 }
 
 sub _parse_id
