@@ -20,6 +20,12 @@ has 'id' =>
       required => 1,
     );
 
+has 'source_file' =>
+    ( is       => 'ro',
+      isa      => 'Path::Class::File',
+      required => 1,
+    );
+
 has 'document' =>
     ( is       => 'ro',
       isa      => 'XML::LibXML::Document',
@@ -242,7 +248,7 @@ has 'am_pm' =>
 
 has 'datetime_format' =>
     ( is         => 'ro',
-      isa        => 'Str',
+      isa        => 'Str|Undef',
       lazy_build => 1,
     );
 
@@ -268,25 +274,28 @@ has 'available_formats' =>
 
         my $doc = $class->_resolve_document_aliases($file);
 
-        $Cache{$id} = $class->new( id       => $id,
-                                   document => $doc,
-                                 );
-
-        return $Cache{$id};
+        return
+            $Cache{$id} = $class->new( id          => $id,
+                                       source_file => $file,
+                                       document    => $doc,
+                                     );
     }
 }
 
-sub _resolve_document_aliases
+
 {
-    my $class = shift;
-    my $file  = shift;
+    my $Parser = XML::LibXML->new();
+    sub _resolve_document_aliases
+    {
+        my $class = shift;
+        my $file  = shift;
 
-    my $parser = XML::LibXML->new();
-    my $doc = $parser->parse_file( $file->stringify() );
+        my $doc = $Parser->parse_file( $file->stringify() );
 
-    $class->_resolve_aliases_in_node( $doc->documentElement(), $file );
+        $class->_resolve_aliases_in_node( $doc->documentElement(), $file );
 
-    return $doc;
+        return $doc;
+    }
 }
 
 sub _resolve_aliases_in_node
@@ -295,11 +304,34 @@ sub _resolve_aliases_in_node
     my $node  = shift;
     my $file  = shift;
 
+ ALIAS:
     for my $node ( $node->getElementsByTagName('alias') )
     {
-        # We skip the case where the entire locale is an alias to some
+        # Replacing all the aliases is slow, and we really don't care
+        # about most of the data in the file, just the
+        # localeDisplayNames and the gregorian calendar.
+        #
+        # We also end up skipping the case where the entire locale is an alias to some
         # other locale. This is handled in the generated Perl code.
-        next if $node->parentNode()->parentNode()->nodeName() eq '#document';
+        for ( my $p = $node->parentNode(); $p; $p = $p->parentNode() )
+        {
+            if ( $p->nodeName() eq 'calendar' )
+            {
+                if ( $p->getAttribute('type') eq 'gregorian' )
+                {
+                    last;
+                }
+                else
+                {
+                    next ALIAS;
+                }
+            }
+
+            last if $p->nodeName() eq 'localeDisplayNames';
+
+            next ALIAS if $p->nodeName() eq 'ldml';
+            next ALIAS if $p->nodeName() eq '#document';
+        }
 
         $class->_resolve_alias( $node, $file );
     }
@@ -369,29 +401,6 @@ sub _replace_alias_with_path
     my $path    = shift;
     my $context = shift;
     my $file    = shift;
-
-    # Replacing all the aliases is slow, and we really don't care
-    # about most of the data in the file, just the localeDisplayNames
-    # and the gregorian calendar.
-    for ( my $p = $node->parentNode(); $p; $p = $p->parentNode() )
-    {
-        if ( $p->nodeName() eq 'calendar' )
-        {
-            if ( $p->getAttribute('type') eq 'gregorian' )
-            {
-                last;
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        last if $p->nodeName() eq 'localeDisplayNames';
-
-        return if $p->nodeName() eq 'ldml';
-        return if $p->nodeName() eq '#document';
-    }
 
     my @targets = $context->findnodes($path);
 
@@ -506,7 +515,7 @@ sub _build_parent_id
 {
     my $self = shift;
 
-    my $source = eval { $self->_find_one_node_attribute( 'alias', 'source' ) };
+    my $source = $self->_find_one_node_attribute( 'alias', 'source' );
     return $source if defined $source;
 
     my @parts =
@@ -533,8 +542,8 @@ sub _build_am_pm
 {
     my $self = shift;
 
-    my $am = eval { $self->_find_one_node_text( 'am', $self->_calendar_node() ) };
-    my $pm = eval { $self->_find_one_node_text( 'pm', $self->_calendar_node() ) };
+    my $am = $self->_find_one_node_text( 'am', $self->_calendar_node() );
+    my $pm = $self->_find_one_node_text( 'pm', $self->_calendar_node() );
 
     return [] unless defined $am && defined $pm;
 
@@ -628,6 +637,8 @@ sub _find_one_node_text
 
     my $node = $self->_find_one_node(@_);
 
+    return unless $node;
+
     return join '', map { $_->data() } $node->childNodes();
 }
 
@@ -640,20 +651,12 @@ sub _find_one_node_attribute
 
     my $node = $self->_find_one_node(@_);
 
+    return unless $node;
+
     return $node->getAttribute($attr);
 }
 
 sub _find_one_node
-{
-    my $self = shift;
-
-    my $node = $self->_find_one_node_maybe(@_)
-        or die "Cannot find a node for $_[0]";
-
-    return $node;
-}
-
-sub _find_one_node_maybe
 {
     my $self    = shift;
     my $path    = shift;
