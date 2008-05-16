@@ -2,14 +2,16 @@ use strict;
 use warnings;
 
 use Data::Dumper;
-use Test::More tests => 57;
+use Path::Class;
+use Test::More tests => 58;
 
 use LDML;
 
 
 {
-    my $ldml = LDML->new( id       => 'cop_Arab_EG',
-                          document => XML::LibXML::Document->new(),
+    my $ldml = LDML->new( id          => 'cop_Arab_EG',
+                          source_file => file($0),
+                          document    => XML::LibXML::Document->new(),
                         );
     is_deeply( [ $ldml->_parse_id() ],
                [ 'cop', 'Arab', 'EG', undef ],
@@ -18,8 +20,9 @@ use LDML;
 }
 
 {
-    my $ldml = LDML->new( id       => 'hy_AM_REVISED',
-                          document => XML::LibXML::Document->new(),
+    my $ldml = LDML->new( id          => 'hy_AM_REVISED',
+                          source_file => file($0),
+                          document    => XML::LibXML::Document->new(),
                         );
     is_deeply( [ $ldml->_parse_id() ],
                [ 'hy', undef, 'AM', 'REVISED' ],
@@ -29,8 +32,9 @@ use LDML;
 {
     # There are no ids with all four parts as of CLDR 1.5.1 but just
     # in case it ever happens ...
-    my $ldml = LDML->new( id       => 'wo_Latn_SN_REVISED',
-                          document => XML::LibXML::Document->new(),
+    my $ldml = LDML->new( id          => 'wo_Latn_SN_REVISED',
+                          source_file => file($0),
+                          document    => XML::LibXML::Document->new(),
                         );
     is_deeply( [ $ldml->_parse_id() ],
                [ 'wo', 'Latn', 'SN', 'REVISED' ],
@@ -47,6 +51,7 @@ use LDML;
           version         => '1.124',
           generation_date => '2007/11/16 18:12:39',
           parent_id       => 'Base',
+          source_file     => file('t/test-data/root.xml'),
 
           day_format_narrow           => [ 2..7, 1 ],
           day_format_abbreviated      => [ 2..7, 1 ],
