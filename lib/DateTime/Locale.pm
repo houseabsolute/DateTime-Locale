@@ -55,11 +55,7 @@ sub _register
                         native_script    => { type => SCALAR, optional => 1 },
                         native_territory => { type => SCALAR, optional => 1 },
                         native_variant   => { type => SCALAR, optional => 1 },
-                        # undocumented hack so we don't have to
-                        # generate .pm files for CLDR XML locales which
-                        # don't differ from their parents in terms of
-                        # datetime data.
-                        real_class       => { type => SCALAR, optional => 1 },
+
                         class            => { type => SCALAR, optional => 1 },
                         replace          => { type => SCALAR, default => 0 },
                       } );
@@ -284,8 +280,8 @@ sub parse_id
 
 sub _load_class_from_id
 {
-    my $class = shift;
-    my $id = shift;
+    my $class      = shift;
+    my $id         = shift;
     my $real_class = shift;
 
     # We want the first alias for which there is data, even if it has
@@ -297,10 +293,7 @@ sub _load_class_from_id
         $data_id = $AliasToID{$data_id};
     }
 
-    my $data = $DataForID{$data_id};
-    my $subclass = $data->{real_class} ? $data->{real_class} : $data_id;
-
-    $real_class ||= "DateTime::Locale::$subclass";
+    $real_class ||= "DateTime::Locale::$data_id";
 
     unless ( $real_class->can('new') )
     {
@@ -309,7 +302,7 @@ sub _load_class_from_id
         die $@ if $@;
     }
 
-    return $real_class->new( %$data,
+    return $real_class->new( %{ $DataForID{$data_id} },
                              id => $id,
                            );
 }
