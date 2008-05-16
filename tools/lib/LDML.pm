@@ -252,19 +252,28 @@ has 'available_formats' =>
       lazy_build => 1,
     );
 
-sub new_from_file
+
 {
-    my $class = shift;
-    my $file  = file( shift );
+    my %Cache;
+    sub new_from_file
+    {
+        my $class = shift;
+        my $file  = file( shift );
 
-    my $doc = $class->_resolve_document_aliases($file);
+        my $id = $file->basename();
+        $id =~ s/\.xml$//i;
 
-    my $id = $file->basename();
-    $id =~ s/\.xml$//i;
+        return $Cache{$id}
+            if $Cache{$id};
 
-    return $class->new( id       => $id,
-                        document => $doc,
-                      );
+        my $doc = $class->_resolve_document_aliases($file);
+
+        $Cache{$id} = $class->new( id       => $id,
+                                   document => $doc,
+                                 );
+
+        return $Cache{$id};
+    }
 }
 
 sub _resolve_document_aliases
@@ -360,6 +369,29 @@ sub _replace_alias_with_path
     my $path    = shift;
     my $context = shift;
     my $file    = shift;
+
+    # Replacing all the aliases is slow, and we really don't care
+    # about most of the data in the file, just the localeDisplayNames
+    # and the gregorian calendar.
+    for ( my $p = $node->parentNode(); $p; $p = $p->parentNode() )
+    {
+        if ( $p->nodeName() eq 'calendar' )
+        {
+            if ( $p->getAttribute('type') eq 'gregorian' )
+            {
+                last;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        last if $p->nodeName() eq 'localeDisplayNames';
+
+        return if $p->nodeName() eq 'ldml';
+        return if $p->nodeName() eq '#document';
+    }
 
     my @targets = $context->findnodes($path);
 
