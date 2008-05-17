@@ -264,6 +264,8 @@ for my $length ( qw( full long medium short ) )
 
               my $dt_format = $self->datetime_format();
 
+              return unless defined $dt_format;
+
               $dt_format =~ s/\{0\}/$time_format/;
               $dt_format =~ s/\{1\}/$date_format/;
 
