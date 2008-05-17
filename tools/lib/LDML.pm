@@ -311,6 +311,80 @@ has 'available_formats' =>
       lazy_build => 1,
     );
 
+for my $thing ( qw( language script territory variant ) )
+{
+    {
+        my $en_attr = q{en_} . $thing;
+
+        has $en_attr =>
+            ( is         => 'ro',
+              isa        => 'Str|Undef',
+              lazy_build => 1,
+            );
+
+        my $en_ldml;
+        my $builder =
+            sub { my $self = shift;
+
+                  my $val_from_id = $self->$thing();
+                  return unless defined $val_from_id;
+
+                  $en_ldml ||= (ref $self)->new_from_file( $self->source_file()->dir()->file('en.xml') );
+
+                  my $path =
+                      'localeDisplayNames/' . PL_N( $thing ) . q{/} . $thing . q{[@type='} . $self->$thing() . q{']};
+
+                  return $en_ldml->_find_one_node_text($path);
+              };
+
+        __PACKAGE__->meta()->add_method( '_build_' . $en_attr => $builder );
+    }
+
+    {
+        my $native_attr = q{native_} . $thing;
+
+        has $native_attr =>
+            ( is         => 'ro',
+              isa        => 'Str|Undef',
+              lazy_build => 1,
+            );
+
+        my $builder =
+            sub { my $self = shift;
+
+                  my $val_from_id = $self->$thing();
+                  return unless defined $val_from_id;
+
+                  my $path =
+                      'localeDisplayNames/' . PL_N( $thing ) . q{/} . $thing . q{[@type='} . $self->$thing() . q{']};
+
+                  for ( my $ldml = $self; $ldml; $ldml = $ldml->_load_parent() )
+                  {
+                      my $native_val = $ldml->_find_one_node_text($path);
+
+                      return $native_val if defined $native_val;
+                  }
+
+                  return;
+              };
+
+        __PACKAGE__->meta()->add_method( '_build_' . $native_attr => $builder );
+    }
+}
+
+sub _load_parent
+{
+    my $self = shift;
+
+    my $parent_id = $self->parent_id();
+    return unless defined $parent_id;
+
+    my $file = $self->source_file()->dir()->file( $parent_id . '.xml' );
+
+    return unless -f $file;
+
+    return (ref $self)->new_from_file($file);
+}
 
 {
     my %Cache;

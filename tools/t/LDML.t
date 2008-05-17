@@ -1,9 +1,10 @@
 use strict;
 use warnings;
+use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 64;
+use Test::More tests => 90;
 
 use LDML;
 
@@ -52,6 +53,16 @@ use LDML;
           generation_date => '2007/11/16 18:12:39',
           parent_id       => 'Base',
           source_file     => file('t/test-data/root.xml'),
+
+          en_language  => 'Root',
+          en_script    => undef,
+          en_territory => undef,
+          en_variant   => undef,
+
+          native_language  => undef,
+          native_script    => undef,
+          native_territory => undef,
+          native_variant   => undef,
 
           day_format_narrow           => [ 2..7, 1 ],
           day_format_abbreviated      => [ 2..7, 1 ],
@@ -166,6 +177,46 @@ use LDML;
             '>',
             2,
             'ti alias to am for territories was resolved properly' );
+}
+
+{
+    my $ldml = LDML->new_from_file( 't/test-data/zh_TW.xml' );
+
+    my @data =
+        ( id => 'zh_TW',
+
+          en_language  => 'Chinese',
+          en_script    => undef,
+          en_territory => 'Taiwan',
+          en_variant   => undef,
+
+          native_language  => '中文',
+          native_script    => undef,
+          native_territory => '臺灣',
+          native_variant   => undef,
+        );
+
+    test_data( $ldml, 'zh_TW', \@data );
+}
+
+{
+    my $ldml = LDML->new_from_file( 't/test-data/zh_Hant_TW.xml' );
+
+    my @data =
+        ( id => 'zh_Hant_TW',
+
+          en_language  => 'Chinese',
+          en_script    => 'Traditional Han',
+          en_territory => 'Taiwan',
+          en_variant   => undef,
+
+          native_language  => '中文',
+          native_script    => '繁體中文',
+          native_territory => '臺灣',
+          native_variant   => undef,
+        );
+
+    test_data( $ldml, 'zh_Hant_TW', \@data );
 }
 
 sub test_data
