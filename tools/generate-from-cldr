@@ -211,7 +211,7 @@ sub write_pm_subs
                        LDML->meta()->compute_all_applicable_attributes() )
     {
         next unless $attr->name() =~
-            /^(?:day_|month_|quarter_|am_pm|era_|date_|time_|datetime_|default_)/;
+            /^(?:day_|month_|quarter_|am_pm|era_|date_|time_|datetime_|default_|first_day_)/;
 
         my $type = $attr->type_constraint();
 

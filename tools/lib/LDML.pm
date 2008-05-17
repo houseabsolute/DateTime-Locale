@@ -313,6 +313,19 @@ has 'available_formats' =>
       lazy_build => 1,
     );
 
+# This is really only built once for all objects
+has '_first_day_of_week_index' =>
+    ( is         => 'ro',
+      isa        => 'HashRef',
+      lazy_build => 1,
+    );
+
+has 'first_day_of_week' =>
+    ( is         => 'ro',
+      isa        => 'Int',
+      lazy_build => 1,
+    );
+
 for my $thing ( qw( language script territory variant ) )
 {
     {
@@ -702,6 +715,18 @@ sub _build_available_formats
     return \%formats;
 }
 
+sub _build_first_day_of_week
+{
+    my $self = shift;
+
+    my $terr = $self->territory();
+    return 1 unless defined $terr;
+
+    my $index = $self->_first_day_of_week_index();
+
+    return $index->{$terr} || 1;
+}
+
 sub _find_preferred_values
 {
     my $self  = shift;
@@ -793,6 +818,48 @@ sub _find_one_node
     }
 
     return $nodes[0];
+}
+
+{
+    my %days = do { my $x = 1; map { $_ => $x++ } qw( mon tue wed thu fri sat sun ) };
+
+    my %index;
+
+    my $file_name = 'supplementalData.xml';
+
+    sub _build__first_day_of_week_index
+    {
+        return \%index
+            if keys %index;
+
+        my $self = shift;
+
+        my $file;
+        for my $dir ( $self->source_file()->dir(),
+                      $self->source_file()->dir()->parent()->subdir('supplemental'),
+                    )
+        {
+            $file = $dir->file($file_name);
+
+            last if -f $file;
+        }
+
+        die "Cannot find $file_name"
+            unless -f $file;
+
+        my $doc = XML::LibXML->new()->parse_file( $file->stringify() );
+
+        my @nodes = $doc->findnodes('supplementalData/weekData/firstDay');
+
+        for my $node (@nodes)
+        {
+            my $day_num = $days{ $node->getAttribute('day') };
+
+            $index{$_} = $day_num for split /\s+/, $node->getAttribute('territories');
+        }
+
+        return \%index;
+    }
 }
 
 __PACKAGE__->meta()->make_immutable();

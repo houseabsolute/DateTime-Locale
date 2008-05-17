@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 90;
+use Test::More tests => 92;
 
 use LDML;
 
@@ -124,6 +124,8 @@ use LDML;
                                  yyQ    => 'yy Q',
                                  yyyy   => 'yyyy',
                                },
+
+          first_day_of_week => 1,
         );
 
     test_data( $ldml, 'root', \@data );
@@ -157,6 +159,8 @@ use LDML;
           territory => 'GB',
           variant   => undef,
           parent_id => 'en',
+
+          first_day_of_week => 7,
         );
 
     test_data( $ldml, 'en_GB', \@data );
