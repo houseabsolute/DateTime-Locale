@@ -296,7 +296,7 @@ sub hashref_sub
 
     my $val = ( join ",\n",
                 map { q{          '} . quotemeta($_) . q{' => '} . quotemeta( $hash->{$_} ). q{'} }
-                keys %{ $hash }
+                sort keys %{ $hash }
               );
 
     return <<"EOF";
