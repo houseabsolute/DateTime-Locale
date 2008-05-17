@@ -768,7 +768,7 @@ and Thursday).
 =back
 
 The following methods return strings appropriate for the
-C<DateTime.pm> C<strftime()> method:
+C<< DateTime->format_cldr() >> method:
 
 =over 4
 
