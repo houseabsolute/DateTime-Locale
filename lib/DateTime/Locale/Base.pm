@@ -54,11 +54,13 @@ sub day_narrow          { $_[0]->day_narrows->      [ $_[1]->day_of_week_0 ] }
 
 sub quarter_name         { $_[0]->quarter_names->        [ $_[1]->quarter - 1 ] }
 sub quarter_abbreviation { $_[0]->quarter_abbreviations->[ $_[1]->quarter - 1 ] }
+sub quarter_narrow       { $_[0]->quarter_narrows->      [ $_[1]->quarter - 1 ] }
 
 sub am_pm               { $_[0]->am_pms->[ $_[1]->hour < 12 ? 0 : 1 ] }
 
 sub era_name         { $_[0]->era_names->        [ $_[1]->ce_year < 0 ? 0 : 1 ] }
 sub era_abbreviation { $_[0]->era_abbreviations->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_narrow       { $_[0]->era_narrows->      [ $_[1]->ce_year < 0 ? 0 : 1 ] }
 # backwards compat
 *era = \&era_abbreviation;
 
@@ -95,6 +97,98 @@ sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_t
 sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[ $_[0]->_datetime_format_pattern_order ] }
 sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[ $_[0]->_datetime_format_pattern_order ] }
 sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[ $_[0]->_datetime_format_pattern_order ] }
+
+# This is backwards compatibility hack. Older versions of DateTime.pm
+# will not pass in the $cldr_ok flag, so we will give them the
+# converted-to-strftime pattern (bugs and all).
+sub _maybe_convert_to_strftime
+{
+    my $self    = shift;
+    my $pattern = shift;
+    my $cldr_ok = shift;
+
+    return $pattern if $cldr_ok;
+
+    return $self->{_converted_patterns}{$pattern}
+        if exists $self->{_converted_patterns}{$pattern};
+
+    return $self->{_converted_patterns}{$pattern} = $self->_convert_to_strftime($pattern);
+}
+
+{
+    my @JavaPatterns =
+        ( qr/G/     => '{era}',
+          qr/yyyy/  => '{ce_year}',
+          qr/y/     => 'y',
+          qr/u/     => 'Y',
+          qr/MMMM/  => 'B',
+          qr/MMM/   => 'b',
+          qr/MM/    => 'm',
+          qr/M/     => '{month}',
+          qr/dd/    => 'd',
+          qr/d/     => '{day}',
+          qr/hh/    => 'l',
+          qr/h/     => '{hour_12}',
+          qr/HH/    => 'H',
+          qr/H/     => '{hour}',
+          qr/mm/    => 'M',
+          qr/m/     => '{minute}',
+          qr/ss/    => 'S',
+          qr/s/     => '{second}',
+          qr/S/     => 'N',
+          qr/EEEE/  => 'A',
+          qr/E/     => 'a',
+          qr/D/     => 'j',
+          qr/F/     => '{weekday_of_month}',
+          qr/w/     => 'V',
+          qr/W/     => '{week_month}',
+          qr/a/     => 'p',
+          qr/k/     => '{hour_1}',
+          qr/K/     => '{hour_12_0}',
+          qr/z/     => '{time_zone_long_name}',
+        );
+
+    sub _convert_to_strftime
+    {
+        my $self    = shift;
+        my $pattern = shift;
+
+        _simple2strf($pattern);
+    }
+
+    sub _simple2strf
+    {
+        my $simple = shift;
+
+        $simple =~
+            s/(G+|y+|u+|M+|d+|h+|H+|m+|s+|S+|E+|D+|F+|w+|W+|a+|k+|K+|z+)|'((?:[^']|'')*)'/
+                $2 ? _stringify($2) : $1 ? _convert($1) : "'"/eg;
+
+        return $simple;
+    }
+
+    sub _convert
+    {
+        my $simple = shift;
+
+        for ( my $x = 0; $x < @JavaPatterns; $x += 2 )
+        {
+            return '%' . $JavaPatterns[ $x + 1 ] if $simple =~ /$JavaPatterns[$x]/;
+        }
+
+        die "**Dont know $simple***";
+    }
+
+    sub _stringify
+    {
+        my $string = shift;
+
+        $string =~ s/%(?:[^%])/%%/g;
+        $string =~ s/\'\'/\'/g;
+
+        return $string;
+    }
+}
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 sub default_time_format_length { $_[0]->{default_time_format_length} }
