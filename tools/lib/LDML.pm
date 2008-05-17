@@ -243,38 +243,6 @@ for my $type ( qw( date time ) )
     }
 }
 
-for my $length ( qw( full long medium short ) )
-{
-    my $attr = 'datetime_format_' . $length;
-
-    has $attr =>
-        ( is         => 'ro',
-          isa        => 'Str|Undef',
-          lazy_build => 1,
-        );
-
-    my $date_meth = 'date_format_' . $length;
-    my $time_meth = 'time_format_' . $length;
-
-    my $builder =
-        sub { my $self = shift;
-
-              my $date_format = $self->$date_meth();
-              my $time_format = $self->$time_meth();
-
-              my $dt_format = $self->datetime_format();
-
-              return unless defined $dt_format;
-
-              $dt_format =~ s/\{0\}/$time_format/;
-              $dt_format =~ s/\{1\}/$date_format/;
-
-              return $dt_format;
-            };
-
-    __PACKAGE__->meta()->add_method( '_build_' . $attr => $builder );
-}
-
 has 'default_date_format_length' =>
     ( is      => 'ro',
       isa     => 'Str|Undef',
