@@ -227,6 +227,10 @@ sub write_pm_subs
         {
             write_string_sub( $fh, $ldml, $attr->name() );
         }
+        elsif ( $type->is_a_type_of('Int') )
+        {
+            write_int_sub( $fh, $ldml, $attr->name() );
+        }
         else
         {
             die "Cannot handle type: " . $type->name();
@@ -322,6 +326,33 @@ sub string_sub
     return <<"EOF";
 {
     my \$$name = '$val';
+    sub $name { return \$$name }
+}
+
+EOF
+}
+
+sub write_int_sub
+{
+    my $fh   = shift;
+    my $ldml = shift;
+    my $name = shift;
+
+    my $int = $ldml->$name();
+
+    return unless defined $int;
+
+    print {$fh} int_sub( $name, $int );
+}
+
+sub int_sub
+{
+    my $name = shift;
+    my $int  = shift;
+
+    return <<"EOF";
+{
+    my \$$name = $int;
     sub $name { return \$$name }
 }
 
