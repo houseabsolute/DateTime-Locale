@@ -273,7 +273,7 @@ sub arrayref_sub
     my $name = shift;
     my $arr  = shift;
 
-    my $val = join ', ', map { q{'} . quotemeta($_) . q{'} } @{ $arr };
+    my $val = join ', ', map { q{"} . quotemeta($_) . q{"} } @{ $arr };
 
     return <<"EOF";
 {
@@ -302,7 +302,7 @@ sub hashref_sub
     my $hash = shift;
 
     my $val = ( join ",\n",
-                map { q{          '} . quotemeta($_) . q{' => '} . quotemeta( $hash->{$_} ). q{'} }
+                map { q{          "} . quotemeta($_) . q{" => "} . quotemeta( $hash->{$_} ). q{"} }
                 sort keys %{ $hash }
               );
 
@@ -340,7 +340,7 @@ sub string_sub
 
     return <<"EOF";
 {
-    my \$$name = '$val';
+    my \$$name = "$val";
     sub $name { return \$$name }
 }
 
@@ -390,7 +390,7 @@ sub write_available_format_subs
         print {$fh} string_sub( $sub_name, $formats->{$format} );
     }
 
-    my $avail = join ', ', map { q{'} . quotemeta($_) . q{'} } keys %{ $formats };
+    my $avail = join ', ', map { q{"} . quotemeta($_) . q{"} } keys %{ $formats };
 
     print {$fh} hashref_sub( '_available_formats', $formats );
 }
@@ -491,9 +491,9 @@ sub catalog_data_for_locale
         my $val = $ldml->$k();
         next unless defined $val;
 
-        $data .= sprintf ( q{      %-16s => '}, $k );
+        $data .= sprintf ( q{      %-16s => "}, $k );
         $data .= quotemeta($val);
-        $data .= q{',} . "\n";
+        $data .= q{",} . "\n";
     }
 
     $data .= qq[    },\n];
@@ -511,7 +511,7 @@ sub catalog_data_for_aliases
 
     for my $id ( sort keys %aliases )
     {
-        $code .= qq{    $id => '} . quotemeta( $aliases{$id} ) . qq{',\n};
+        $code .= qq{    $id => "} . quotemeta( $aliases{$id} ) . qq{",\n};
     }
 
     $code .= ");\n";
