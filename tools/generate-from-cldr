@@ -107,7 +107,14 @@ sub read_all_files
         next if $opts{file} && $opts{file} ne $file->basename();
 
         print "Reading $file\n" if $opts{verbose};
-        push @ldml, LDML->new_from_file($file);
+
+        my $ldml = LDML->new_from_file($file);
+
+        # Any locale without this cannot be registered by
+        # DateTime::Locale.
+        next unless defined $ldml->en_language();
+
+        push @ldml, $ldml;
     }
 
     return sort { $a->id() cmp $b->id() } @ldml;
