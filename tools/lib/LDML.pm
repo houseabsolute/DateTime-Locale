@@ -539,8 +539,8 @@ sub BUILD
     my $meth = q{_} . $self->id() . q{_hack};
 
     # This gives us a chance to apply bug fixes to the data as needed.
-#    $self->$meth($data)
-#        if $self->can($meth);
+    $self->$meth()
+        if $self->can($meth);
 
     return $self;
 }
@@ -552,7 +552,17 @@ sub _az_hack
 
     # The az.xml file appears to have a mistake in the wide day names,
     # thursday and friday are the same for this locale
-    $data->{days}{dayContext}{format}{dayWidth}{wide}{day}[4] =~ s/ \w+$//;
+
+    my $thu = $self->_find_one_node_text( q{days/dayContext[@type='format']/dayWidth[@type='wide']/day[@type='thu']},
+                                          $self->_calendar_node() );
+
+    my $fri = $self->_find_one_node( q{days/dayContext[@type='format']/dayWidth[@type='wide']/day[@type='fri']},
+                                     $self->_calendar_node() );
+
+    $fri->removeChildNodes();
+
+    $thu =~ s/ \w+$//;
+    $fri->appendChild( $self->document()->createTextNode($thu) );
 }
 
 sub _gaa_hack
@@ -560,11 +570,20 @@ sub _gaa_hack
     my $self = shift;
     my $data = shift;
 
+    my $path = q{days/dayContext[@type='format']/dayWidth[@type='abbreviated']/day[@type='sun']};
+
+    my $day_text = $self->_find_one_node_text( $path, $self->_calendar_node() );
+
+    return unless $day_text eq 'Ho';
+
     # I am completely making this up, but the data is marked as
-    # uncomfimed in the locale file and it's preferable to having two
-    # days with the same abbreviation
-    $data->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}[0] = 'Hog'
-        if $data->{days}{dayContext}{format}{dayWidth}{abbreviated}{day}[0] eq 'Ho';
+    # unconfirmed in the locale file and making something up is
+    # preferable to having two days with the same abbreviation
+
+    my $day = $self->_find_one_node( $path, $self->_calendar_node() );
+
+    $day->removeChildNodes();
+    $day->appendChild( $self->document()->createTextNode('Hog') );
 }
 
 sub _ve_hack
@@ -572,9 +591,18 @@ sub _ve_hack
     my $self = shift;
     my $data = shift;
 
+    my $path = q{months/monthContext[@type='format']/monthWidth[@type='abbreviated']/month[@type='3']};
+
+    my $day_text = $self->_find_one_node_text( $path, $self->_calendar_node() );
+
+    return unless $day_text eq 'Ṱha';
+
     # Again, making stuff up to avoid non-unique abbreviations
-    $data->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}[2] = 'Ṱhf'
-        if $data->{months}{monthContext}{format}{monthWidth}{abbreviated}{month}[2] eq 'Ṱha';
+
+    my $day = $self->_find_one_node( $path, $self->_calendar_node() );
+
+    $day->removeChildNodes();
+    $day->appendChild( $self->document()->createTextNode('Ṱhf') );
 }
 
 sub _build_version

@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 88;
+use Test::More tests => 94;
 
 use LDML;
 
@@ -159,6 +159,47 @@ use LDML;
         );
 
     test_data( $ldml, 'en_GB', \@data );
+}
+
+{
+    my $ldml = LDML->new_from_file( 't/test-data/az.xml' );
+
+    my @data =
+        ( id => 'az',
+
+          day_format_wide =>
+          [ 'bazar ertəsi', 'çərşənbə axşam',
+            'çərşənbə', 'cümə axşamı', 'cümə', 'şənbə',
+            'bazar' ],
+        );
+
+    test_data( $ldml, 'az', \@data );
+}
+
+{
+    my $ldml = LDML->new_from_file( 't/test-data/gaa.xml' );
+
+    my @data =
+        ( id => 'gaa',
+
+          day_format_abbreviated =>
+          [ qw( Dzu Dzf Sho Soo Soh Ho Hog ) ],
+        );
+
+    test_data( $ldml, 'gaa', \@data );
+}
+
+{
+    my $ldml = LDML->new_from_file( 't/test-data/ve.xml' );
+
+    my @data =
+        ( id => 've',
+
+          month_format_abbreviated =>
+          [ qw( Pha Luh Ṱhf Lam Shu Lwi Lwa Ṱha Khu Tsh Ḽar Nye ) ],
+        );
+
+    test_data( $ldml, 've', \@data );
 }
 
 {
