@@ -18,3 +18,4 @@ _uu$
 _build.*
 ^Build$
 \.svn
+\.shipit
