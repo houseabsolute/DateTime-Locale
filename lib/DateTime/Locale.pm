@@ -413,7 +413,7 @@ aliases.
 Returns an unsorted list of the available locale names in English, or
 an array reference if called in a scalar context.
 
-=head DateTime::Locale->native_names()
+=head2 DateTime::Locale->native_names()
 
   my @names = DateTime::Locale->native_names();
   my $names = DateTime::Locale->native_names();
