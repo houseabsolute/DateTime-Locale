@@ -20,7 +20,7 @@
 
 - Many of the new features in this release will only be available with
   DateTime.pm 0.43+, since it requires a version of DateTime.pm which
-  can handle the native CLDR date pattern language.
+  can handle the CLDR date pattern language.
 
 - All locale files now include POD with examples of the data they
   include.
