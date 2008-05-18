@@ -220,20 +220,7 @@ sub write_pm_subs
         next unless $attr->name() =~
             /^(?:day_|month_|quarter_|am_pm|era_|date_|time_|datetime_|first_day_)/;
 
-        if ( $attr->name() =~ /stand_alone/ )
-        {
-            my $name = $attr->name();
-            my $val = $ldml->$name();
-
-            unless ( @{ $val } )
-            {
-                ( my $format = $name ) =~ s/stand_alone/format/;
-
-                write_alias_sub( $fh, $name, $format );
-
-                next;
-            }
-        }
+        next if make_alias( $fh, $ldml, $attr->name() );
 
         my $type = $attr->type_constraint();
 
@@ -268,6 +255,85 @@ sub write_pm_subs
     }
 
     write_available_format_subs( $fh, $ldml );
+}
+
+sub make_alias
+{
+    my $fh   = shift;
+    my $ldml = shift;
+    my $name = shift;
+
+    if ( $name =~ /stand_alone/ )
+    {
+        return make_stand_alone_alias( $fh, $ldml, $name );
+    }
+    elsif ( $name =~ /(?:abbreviated|narrow)/ )
+    {
+        return make_length_alias( $fh, $ldml, $name );
+    }
+
+}
+
+sub make_stand_alone_alias
+{
+    my $fh   = shift;
+    my $ldml = shift;
+    my $name = shift;
+
+    ( my $format = $name ) =~ s/stand_alone/format/;
+
+    return maybe_make_alias( $fh, $ldml, $name, $format );
+}
+
+sub make_length_alias
+{
+    my $fh   = shift;
+    my $ldml = shift;
+    my $name = shift;
+
+    # This isn't well documented (or really documented at all) in the
+    # LDML spec, but the example seem to suggest that for the narrow
+    # form, the format type should "inherit" from the stand-alone
+    # type if possible, rather than the abbreviated type.
+    #
+    # See
+    # http://www.unicode.org/cldr/data/charts/by_type/calendar-gregorian.day.html
+    # for examples of the expected output. Note that the format narrow
+    # days for English are inherited from its stand-alone narrow form,
+    # not the root locale.
+    if ( $name =~ /format_narrow/ )
+    {
+        ( my $to_name = $name ) =~ s/format/stand_alone/;
+
+        return 1
+            if maybe_make_alias( $fh, $ldml, $name, $to_name );
+    }
+
+    ( my $to_name = $name );
+    $to_name =~ s/abbreviated/wide/;
+    $to_name =~ s/narrow/abbreviated/;
+
+    return maybe_make_alias( $fh, $ldml, $name, $to_name );
+}
+
+sub maybe_make_alias
+{
+    my $fh   = shift;
+    my $ldml = shift;
+    my $from = shift;
+    my $to   = shift;
+
+    my $val = $ldml->$from();
+
+    return if @{ $val };
+
+    my $to_val = $ldml->$to();
+
+    return unless @{ $to_val };
+
+    write_alias_sub( $fh, $from, $to );
+
+    return 1;
 }
 
 sub write_alias_sub
