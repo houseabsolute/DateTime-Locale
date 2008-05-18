@@ -697,7 +697,7 @@ sub _build_available_formats
 {
     my $self = shift;
 
-    return [] unless $self->has_calendar_data();
+    return {} unless $self->has_calendar_data();
 
     my @nodes = $self->_calendar_node()->findnodes('dateTimeFormats/availableFormats/dateFormatItem');
 
