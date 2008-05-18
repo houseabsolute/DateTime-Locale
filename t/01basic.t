@@ -23,7 +23,7 @@ plan tests =>
     5    # starting
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
-    + 40 # check_root
+    + 41 # check_root
     + 23 # check_en
     + 59 # check_en_GB
     + 11 # check_es_ES
@@ -251,15 +251,17 @@ sub check_root
           era_narrow =>
           [ qw( BCE CE ) ],
 
-          am_pm =>
+          am_pm_abbreviated =>
           [ qw( AM PM ) ],
-
-          default_datetime_format => 'yyyy MMM d HH:mm:ss',
 
           datetime_format_full    => 'EEEE, yyyy MMMM dd HH:mm:ss v',
           datetime_format_long    => 'yyyy MMMM d HH:mm:ss z',
           datetime_format_medium  => 'yyyy MMM d HH:mm:ss',
           datetime_format_short   => 'yyyy-MM-dd HH:mm',
+
+          datetime_format_default => 'yyyy MMM d HH:mm:ss',
+
+          prefers_24_hour_time    => 1,
         );
 
     test_data( $locale, %tests );
@@ -315,7 +317,7 @@ sub check_en_GB
           territory_id     => 'GB',
           variant_id       => undef,
 
-          default_datetime_format => 'd MMM yyyy HH:mm:ss',
+          datetime_format_default => 'd MMM yyyy HH:mm:ss',
         );
 
     test_data( $locale, %tests );

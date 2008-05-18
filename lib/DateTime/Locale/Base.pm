@@ -163,6 +163,17 @@ sub _make_datetime_format
     return $dt_format;
 }
 
+sub prefers_24_hour_time
+{
+    my $self = shift;
+
+    return $self->{prefers_24_hour_time}
+        if exists $self->{prefers_24_hour_time};
+
+    $self->{prefers_24_hour_time} =
+        $self->time_format_short() =~ /h|K/ ? 0 : 1;
+}
+
 # Backwards compat for DateTime.pm version <= 0.42
 sub month_name          { $_[0]->month_format_wide()->       [ $_[1]->month_0 ] }
 sub month_abbreviation  { $_[0]->month_format_abbreviated()->[ $_[1]->month_0 ] }
