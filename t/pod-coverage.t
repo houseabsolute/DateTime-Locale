@@ -3,12 +3,31 @@ use warnings;
 
 use Test::More;
 
+BEGIN
+{
+    plan skip_all => 'This test is only run for the module author'
+        unless -d '.svn' || $ENV{IS_MAINTAINER};
+}
 
-plan skip_all => 'This test is only run for the module author'
-    unless -d '.svn' || $ENV{IS_MAINTAINER};
+use File::Find::Rule;
+use Test::Pod::Coverage 1.04;
 
-eval "use Test::Pod::Coverage 1.04";
-plan skip_all => "Test::Pod::Coverage 1.04 required for testing POD coverage"
-    if $@;
 
-all_pod_coverage_ok();
+my $dir = -d 'blib' ? 'blib' : 'lib';
+
+my @files = sort
+            File::Find::Rule
+                ->file
+                ->name('*.pm')
+                ->not( File::Find::Rule->grep('This file is auto-generated' ) )
+                ->in($dir);
+
+plan tests => scalar @files;
+
+for my $file (@files)
+{
+    $file =~ s/^.+(DateTime.+)\.pm$/$1/;
+    $file =~ s{/}{::}g;
+
+    pod_coverage_ok($file);
+}
