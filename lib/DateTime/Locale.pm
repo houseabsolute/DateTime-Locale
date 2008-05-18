@@ -757,7 +757,7 @@ and Thursday).
 
 =item * $locale->quarter_stand_alone_narrow($dt)
 
-=item * $locale->am_pm()
+=item * $locale->am_pm_abbreviated()
 
 =item * $locale->era_wide()
 
