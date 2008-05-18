@@ -327,6 +327,8 @@ sub maybe_make_alias
 
     return if @{ $val };
 
+    return unless $ldml->can($to);
+
     my $to_val = $ldml->$to();
 
     return unless @{ $to_val };
