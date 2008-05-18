@@ -1,6 +1,7 @@
 Build.PL
 Changes
 lib/DateTime/Locale.pm
+lib/DateTime/LocaleCatalog.pm
 lib/DateTime/Locale/Base.pm
 LICENSE
 LICENSE.cldr
