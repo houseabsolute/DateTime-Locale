@@ -263,7 +263,7 @@ has 'default_time_format_length' =>
                      },
     );
 
-has 'am_pm' =>
+has 'am_pm_abbreviated' =>
     ( is         => 'ro',
       isa        => 'ArrayRef',
       lazy_build => 1,
@@ -666,7 +666,7 @@ sub _build_parent_id
     }
 }
 
-sub _build_am_pm
+sub _build_am_pm_abbreviated
 {
     my $self = shift;
 

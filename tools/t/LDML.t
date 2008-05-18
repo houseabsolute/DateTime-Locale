@@ -85,7 +85,7 @@ use LDML;
           quarter_stand_alone_abbreviated => [ map { 'Q' . $_ } 1..4 ],
           quarter_stand_alone_wide        => [ map { 'Q' . $_ } 1..4 ],
 
-          am_pm => [ qw( AM PM ) ],
+          am_pm_abbreviated => [ qw( AM PM ) ],
 
           era_wide        => [ qw( BCE CE ) ],
           era_abbreviated => [ qw( BCE CE ) ],
