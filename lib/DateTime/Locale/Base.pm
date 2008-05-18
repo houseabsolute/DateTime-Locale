@@ -164,36 +164,72 @@ sub _make_datetime_format
 }
 
 # Backwards compat for DateTime.pm version <= 0.42
-sub month_name          { $_[0]->month_format_wide->       [ $_[1]->month_0 ] }
-sub month_abbreviation  { $_[0]->month_format_abbreviated->[ $_[1]->month_0 ] }
-sub month_narrow        { $_[0]->month_format_narrow->      [ $_[1]->month_0 ] }
+sub month_name          { $_[0]->month_format_wide()->       [ $_[1]->month_0 ] }
+sub month_abbreviation  { $_[0]->month_format_abbreviated()->[ $_[1]->month_0 ] }
+sub month_narrow        { $_[0]->month_format_narrow()->     [ $_[1]->month_0 ] }
 
-sub day_name            { $_[0]->day_format_wide->       [ $_[1]->day_of_week_0 ] }
-sub day_abbreviation    { $_[0]->day_format_abbreviated->[ $_[1]->day_of_week_0 ] }
-sub day_narrow          { $_[0]->day_format_narrow->     [ $_[1]->day_of_week_0 ] }
+sub month_names         { $_[0]->month_format_wide() }
+sub month_abbreviations { $_[0]->month_format_abbreviated() }
+sub month_narrows       { $_[0]->month_format_narrow() }
 
-sub quarter_name         { $_[0]->quarter_format_name->       [ $_[1]->quarter - 1 ] }
-sub quarter_abbreviation { $_[0]->quarter_format_abbreviated->[ $_[1]->quarter - 1 ] }
-sub quarter_narrow       { $_[0]->quarter_format_narrow->     [ $_[1]->quarter - 1 ] }
+sub day_name            { $_[0]->day_format_wide()->       [ $_[1]->day_of_week_0 ] }
+sub day_abbreviation    { $_[0]->day_format_abbreviated()->[ $_[1]->day_of_week_0 ] }
+sub day_narrow          { $_[0]->day_format_narrow()->     [ $_[1]->day_of_week_0 ] }
 
-sub am_pm { $_[0]->am_pm->[ $_[1]->hour < 12 ? 0 : 1 ] }
+sub day_names           { $_[0]->day_format_wide() }
+sub day_abbreviations   { $_[0]->day_format_abbreviated() }
+sub day_narrows         { $_[0]->day_format_narrow() }
 
-sub era_name         { $_[0]->era_wide->       [ $_[1]->ce_year < 0 ? 0 : 1 ] }
-sub era_abbreviation { $_[0]->era_abbreviated->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
-sub era_narrow       { $_[0]->era_narrow->     [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub quarter_name         { $_[0]->quarter_format_wide()->       [ $_[1]->quarter - 1 ] }
+sub quarter_abbreviation { $_[0]->quarter_format_abbreviated()->[ $_[1]->quarter - 1 ] }
+sub quarter_narrow       { $_[0]->quarter_format_narrow()->     [ $_[1]->quarter - 1 ] }
+
+sub quarter_names         { $_[0]->quarter_format_wide() }
+sub quarter_abbreviations { $_[0]->quarter_format_abbreviated() }
+
+sub am_pm { $_[0]->am_pm_abbreviated()->[ $_[1]->hour < 12 ? 0 : 1 ] }
+sub am_pms { $_[0]->am_pm_abbreviated() }
+
+sub era_name         { $_[0]->era_wide()->       [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_abbreviation { $_[0]->era_abbreviated()->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_narrow       { $_[0]->era_narrow()->     [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+
+sub era_names         { $_[0]->era_wide() }
+sub era_abbreviations { $_[0]->era_abbreviated() }
 
 # ancient backwards compat
 sub era  { $_[0]->era_abbreviation }
 sub eras { $_[0]->era_abbreviations }
 
-sub full_datetime_format   { shift->datetime_format_full(@_) }
-sub long_datetime_format   { shift->datetime_format_long(@_) }
-sub medium_datetime_format { shift->datetime_format_medium(@_) }
-sub short_datetime_format  { shift->datetime_format_short(@_) }
+sub date_before_time
+{
+    my $self = shift;
+
+    my $dt_format = $self->datetime_format();
+
+    return $dt_format =~ /\{1\}.*\{0\}/ ? 1 : 0;
+}
+
+sub date_parts_order
+{
+    my $self = shift;
+
+    my $short = $self->date_format_short();
+
+    $short =~ tr{dmyDMY}{}cd;
+    $short =~ tr{dmyDMY}{dmydmy}s;
+
+    return $short;
+}
+
+sub full_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->_format_full() ) }
+sub long_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->_format_long() ) }
+sub medium_datetime_format { $_[0]->_convert_to_strftime( $_[0]->_format_medium() ) }
+sub short_datetime_format  { $_[0]->_convert_to_strftime( $_[0]->_format_short() ) }
 
 # Older versions of DateTime.pm will not pass in the $cldr_ok flag, so
 # we will give them the converted-to-strftime pattern (bugs and all).
-sub _maybe_convert_to_strftime
+sub _convert_to_strftime
 {
     my $self    = shift;
     my $pattern = shift;
@@ -204,7 +240,7 @@ sub _maybe_convert_to_strftime
     return $self->{_converted_patterns}{$pattern}
         if exists $self->{_converted_patterns}{$pattern};
 
-    return $self->{_converted_patterns}{$pattern} = $self->_convert_to_strftime($pattern);
+    return $self->{_converted_patterns}{$pattern} = $self->_cldr_to_strftime($pattern);
 }
 
 {
@@ -240,16 +276,9 @@ sub _maybe_convert_to_strftime
           qr/z/     => '{time_zone_long_name}',
         );
 
-    sub _convert_to_strftime
+    sub _cldr_to_strftime
     {
-        my $self    = shift;
-        my $pattern = shift;
-
-        _simple2strf($pattern);
-    }
-
-    sub _simple2strf
-    {
+        shift;
         my $simple = shift;
 
         $simple =~
