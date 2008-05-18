@@ -1,5 +1,7 @@
 0.40
 
+* Dropped support for Perl 5.005.
+
 - Based on CLDR 1.5.1
 
 - Massive reworking of the locale generation code. We now extract much
