@@ -309,6 +309,16 @@ sub make_length_alias
             if maybe_make_alias( $fh, $ldml, $name, $to_name );
     }
 
+    # It seems like the quarters should just inherit up the (Perl)
+    # inheritance chain, rather than from the next biggest size. See
+    # http://www.unicode.org/cldr/data/charts/by_type/calendar-gregorian.quarter.html
+    # for an example. Note that the English format narrow quarter is
+    # "1", not "Q1".
+    if ( $name =~ /quarter_(\w+)_narrow/ )
+    {
+        return;
+    }
+
     ( my $to_name = $name );
     $to_name =~ s/abbreviated/wide/;
     $to_name =~ s/narrow/abbreviated/;
