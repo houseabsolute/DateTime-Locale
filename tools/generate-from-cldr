@@ -1100,8 +1100,6 @@ sub write_pm_file_pod_header
 
     print {$fh} <<"EOF";
 
-__END__
-
 =pod
 
 =encoding utf8
