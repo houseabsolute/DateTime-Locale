@@ -29,5 +29,5 @@ for my $file (@files)
     $file =~ s/^.+(DateTime.+)\.pm$/$1/;
     $file =~ s{/}{::}g;
 
-    pod_coverage_ok($file);
+    pod_coverage_ok( $file, { trustme => [ qr/^STORABLE_/ ] } );
 }
