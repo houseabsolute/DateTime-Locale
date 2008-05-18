@@ -213,8 +213,6 @@ sub write_pm_subs
     my $fh   = shift;
     my $ldml = shift;
 
-    return unless $ldml->has_calendar_data();
-
     foreach my $attr ( sort { $a->name() cmp $b->name() }
                        LDML->meta()->compute_all_applicable_attributes() )
     {

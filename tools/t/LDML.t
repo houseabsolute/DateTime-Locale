@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 94;
+use Test::More tests => 96;
 
 use LDML;
 
@@ -159,6 +159,18 @@ use LDML;
         );
 
     test_data( $ldml, 'en_GB', \@data );
+}
+
+{
+    my $ldml = LDML->new_from_file( 't/test-data/en_US.xml' );
+
+    my @data =
+        ( id        => 'en_US',
+
+          first_day_of_week => 7,
+        );
+
+    test_data( $ldml, 'en_US', \@data );
 }
 
 {

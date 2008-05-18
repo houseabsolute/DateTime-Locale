@@ -159,6 +159,8 @@ for my $thing ( { name   => 'day',
             my $builder =
                 sub { my $self = shift;
 
+                      return [] unless $self->has_calendar_data();
+
                       my @vals =
                           $self->_find_preferred_values
                               ( ( scalar $self->_calendar_node()->findnodes($path) ),
@@ -198,6 +200,8 @@ for my $size ( [ wide => 'Names' ], [ abbreviated => 'Abbr' ], [ narrow => 'Narr
     my $builder =
         sub { my $self = shift;
 
+              return [] unless $self->has_calendar_data();
+
               my @vals =
                   $self->_find_preferred_values
                       ( ( scalar $self->_calendar_node()->findnodes($path) ),
@@ -236,7 +240,9 @@ for my $type ( qw( date time ) )
         my $builder =
             sub { my $self = shift;
 
-                  return eval { $self->_find_one_node_text( $path, $self->_calendar_node() ) };
+                  return unless $self->has_calendar_data();
+
+                  return $self->_find_one_node_text( $path, $self->_calendar_node() );
               };
 
         __PACKAGE__->meta()->add_method( '_build_' . $attr => $builder );
@@ -690,6 +696,8 @@ sub _build_datetime_format
 sub _build_available_formats
 {
     my $self = shift;
+
+    return [] unless $self->has_calendar_data();
 
     my @nodes = $self->_calendar_node()->findnodes('dateTimeFormats/availableFormats/dateFormatItem');
 
