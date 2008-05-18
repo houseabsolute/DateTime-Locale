@@ -1084,6 +1084,7 @@ sub generate_pm_file_pod
     print {$fh} pod_for_quarters( $locale );
     print {$fh} pod_for_eras( $locale );
     print {$fh} pod_for_formats( $locale );
+    print {$fh} pod_for_misc( $locale );
     print {$fh} pod_footer( $locale );
 }
 
@@ -1243,6 +1244,15 @@ sub pod_for_formats
                        ),
         );
 
+    return pod_for_standard_formats( $locale, \@dts )
+           . pod_for_available_formats( $locale, \@dts )
+}
+
+sub pod_for_standard_formats
+{
+    my $locale = shift;
+    my $dts    = shift;
+
     my $pod = '';
 
     for my $type ( qw( date time datetime ) )
@@ -1255,7 +1265,7 @@ sub pod_for_formats
 
             my $meth = $type . q{_} . 'format' . q{_} . $length;
 
-            for my $dt (@dts)
+            for my $dt ( @{ $dts } )
             {
                 $pod .=
                     sprintf( '  %20s = %s',
@@ -1268,6 +1278,57 @@ sub pod_for_formats
             $pod .= "\n";
         }
     }
+
+    return $pod;
+}
+
+sub pod_for_available_formats
+{
+    my $locale = shift;
+    my $dts    = shift;
+
+    my $pod = '';
+
+    $pod .= "=head2 Available Formats\n\n";
+
+    for my $format ( $locale->available_formats() )
+    {
+        my $cldr = $locale->format_for($format);
+
+        $pod .= "=head3 $format ($cldr)\n\n";
+
+        for my $dt ( @{ $dts } )
+        {
+            $pod .=
+                sprintf( '  %20s = %s',
+                         $dt->iso8601(),
+                         $dt->format_cldr($cldr),
+                       );
+
+            $pod .= "\n";
+        }
+
+        $pod .= "\n";
+    }
+
+    return $pod;
+}
+
+sub pod_for_misc
+{
+    my $locale = shift;
+
+    my $pod = "=head2 Miscellaneous\n\n";
+
+    $pod .= "=head3 Prefers 24 hour time?\n\n";
+
+    $pod .= $locale->prefers_24_hour_time() ? 'Yes' : 'No';
+    $pod .= "\n\n";
+
+    $pod .= "=head3 Local first day of the week\n\n";
+
+    $pod .= $locale->day_format_wide()->[ $locale->first_day_of_week() - 1 ];
+    $pod .= "\n\n";
 
     return $pod;
 }
