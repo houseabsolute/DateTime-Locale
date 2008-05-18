@@ -27,16 +27,16 @@ BEGIN
     }
 }
 
-my @FormatLengths = qw( short medium long full );
-
 sub new
 {
-    my $c = shift;
+    my $class = shift;
 
+    # By making the default format lengths part of the object's hash
+    # key, it allows them to be settable.
     return bless { @_,
-                   default_date_format_length => $c->_default_date_format_length,
-                   default_time_format_length => $c->_default_time_format_length,
-                 }, $c;
+                   default_date_format_length => $class->_default_date_format_length(),
+                   default_time_format_length => $class->_default_time_format_length(),
+                 }, $class;
 }
 
 sub language_id  { ( DateTime::Locale::parse_id( $_[0]->id ) )[0] }
@@ -44,63 +44,155 @@ sub script_id    { ( DateTime::Locale::parse_id( $_[0]->id ) )[1] }
 sub territory_id { ( DateTime::Locale::parse_id( $_[0]->id ) )[2] }
 sub variant_id   { ( DateTime::Locale::parse_id( $_[0]->id ) )[3] }
 
-sub month_name          { $_[0]->month_names->        [ $_[1]->month_0 ] }
-sub month_abbreviation  { $_[0]->month_abbreviations->[ $_[1]->month_0 ] }
-sub month_narrow        { $_[0]->month_narrows->      [ $_[1]->month_0 ] }
-
-sub day_name            { $_[0]->day_names->        [ $_[1]->day_of_week_0 ] }
-sub day_abbreviation    { $_[0]->day_abbreviations->[ $_[1]->day_of_week_0 ] }
-sub day_narrow          { $_[0]->day_narrows->      [ $_[1]->day_of_week_0 ] }
-
-sub quarter_name         { $_[0]->quarter_names->        [ $_[1]->quarter - 1 ] }
-sub quarter_abbreviation { $_[0]->quarter_abbreviations->[ $_[1]->quarter - 1 ] }
-sub quarter_narrow       { $_[0]->quarter_narrows->      [ $_[1]->quarter - 1 ] }
-
-sub am_pm               { $_[0]->am_pms->[ $_[1]->hour < 12 ? 0 : 1 ] }
-
-sub era_name         { $_[0]->era_names->        [ $_[1]->ce_year < 0 ? 0 : 1 ] }
-sub era_abbreviation { $_[0]->era_abbreviations->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
-sub era_narrow       { $_[0]->era_narrows->      [ $_[1]->ce_year < 0 ? 0 : 1 ] }
-# backwards compat
-*era = \&era_abbreviation;
+my @FormatLengths = qw( short medium long full );
 
 sub default_date_format
 {
-    my $meth = $_[0]->{default_date_format_length} . '_date_format';
+    my $meth = 'date_format_' . $_[0]->default_date_format_length();
     $_[0]->$meth();
 }
 
 sub date_formats
 {
     return
-        { map { my $meth = "${_}_date_format";
+        { map { my $meth = 'date_format_' . $_;
                 $_ => $_[0]->$meth() } @FormatLengths }
 }
 
 sub default_time_format
 {
-    my $meth = $_[0]->{default_time_format_length} . '_time_format';
+    my $meth = 'time_format_' . $_[0]->default_time_format_length();
     $_[0]->$meth();
 }
 
 sub time_formats
 {
     return
-        { map { my $meth = "${_}_time_format";
+        { map { my $meth = 'time_format_' . $_;
                 $_ => $_[0]->$meth() } @FormatLengths }
 }
 
-sub _datetime_format_pattern_order { $_[0]->date_before_time ? (0, 1) : (1, 0) }
+sub format_for
+{
+    my $self = shift;
+    my $for  = shift;
 
-sub    full_datetime_format { join ' ', ( $_[0]->full_date_format, $_[0]->full_time_format )[ $_[0]->_datetime_format_pattern_order ] }
-sub    long_datetime_format { join ' ', ( $_[0]->long_date_format, $_[0]->long_time_format )[ $_[0]->_datetime_format_pattern_order ] }
-sub  medium_datetime_format { join ' ', ( $_[0]->medium_date_format, $_[0]->medium_time_format )[ $_[0]->_datetime_format_pattern_order ] }
-sub   short_datetime_format { join ' ', ( $_[0]->short_date_format, $_[0]->short_time_format )[ $_[0]->_datetime_format_pattern_order ] }
-sub default_datetime_format { join ' ', ( $_[0]->default_date_format, $_[0]->default_time_format )[ $_[0]->_datetime_format_pattern_order ] }
+    my $meth = '_format_for_' . $for;
 
-# This is backwards compatibility hack. Older versions of DateTime.pm
-# will not pass in the $cldr_ok flag, so we will give them the
-# converted-to-strftime pattern (bugs and all).
+    return unless $self->can($meth);
+
+    return $self->$meth();
+}
+
+sub available_formats
+{
+    my $self = shift;
+
+    # The various parens seem to be necessary to force uniq() to see
+    # the caller's list context. Go figure.
+    return sort( uniq( map { keys %{ $_->_available_formats() || {} } }
+                       Class::ISA::self_and_super_path( ref $self ) ) );
+}
+
+# Just needed for the above method.
+sub _available_formats { }
+
+sub default_date_format_length { $_[0]->{default_date_format_length} }
+
+sub set_default_date_format_length
+{
+    my $self = shift;
+    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
+
+    $self->{default_date_format_length} = lc $l;
+}
+
+sub default_time_format_length { $_[0]->{default_time_format_length} }
+
+sub set_default_time_format_length
+{
+    my $self = shift;
+    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
+
+    $self->{default_time_format_length} = lc $l;
+}
+
+for my $length ( qw( full long medium short ) )
+{
+    my $key = 'datetime_format_' . $length;
+
+    my $sub =
+        sub { my $self = shift;
+
+              return $self->{$key} if exists $self->{$key};
+
+              my $date_meth = 'date_format_' . $length;
+              my $time_meth = 'time_format_' . $length;
+
+              return $self->{$key} = $self->_make_datetime_format( $date_meth, $time_meth );
+            };
+
+    no strict 'refs';
+    *{$key} = $sub;
+}
+
+sub default_datetime_format
+{
+    my $self = shift;
+
+    my $date_meth = 'date_format_' . $self->default_date_format_length();
+    my $time_meth = 'time_format_' . $self->default_time_format_length();
+
+    return $self->_make_datetime_format( $date_meth, $time_meth );
+}
+
+sub _make_datetime_format
+{
+    my $self      = shift;
+    my $date_meth = shift;
+    my $time_meth = shift;
+
+    my $dt_format = $self->datetime_format();
+
+    my $time = $self->$time_meth();
+    my $date = $self->$date_meth();
+
+    $dt_format =~ s/\{0\}/$time/g;
+    $dt_format =~ s/\{1\}/$date/g;
+
+    return $dt_format;
+}
+
+# Backwards compat for DateTime.pm version <= 0.42
+sub month_name          { $_[0]->month_format_wide->       [ $_[1]->month_0 ] }
+sub month_abbreviation  { $_[0]->month_format_abbreviated->[ $_[1]->month_0 ] }
+sub month_narrow        { $_[0]->month_format_narrow->      [ $_[1]->month_0 ] }
+
+sub day_name            { $_[0]->day_format_wide->       [ $_[1]->day_of_week_0 ] }
+sub day_abbreviation    { $_[0]->day_format_abbreviated->[ $_[1]->day_of_week_0 ] }
+sub day_narrow          { $_[0]->day_format_narrow->     [ $_[1]->day_of_week_0 ] }
+
+sub quarter_name         { $_[0]->quarter_format_name->       [ $_[1]->quarter - 1 ] }
+sub quarter_abbreviation { $_[0]->quarter_format_abbreviated->[ $_[1]->quarter - 1 ] }
+sub quarter_narrow       { $_[0]->quarter_format_narrow->     [ $_[1]->quarter - 1 ] }
+
+sub am_pm { $_[0]->am_pm->[ $_[1]->hour < 12 ? 0 : 1 ] }
+
+sub era_name         { $_[0]->era_wide->       [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_abbreviation { $_[0]->era_abbreviated->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_narrow       { $_[0]->era_narrow->     [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+
+# ancient backwards compat
+sub era  { $_[0]->era_abbreviation }
+sub eras { $_[0]->era_abbreviations }
+
+sub full_datetime_format   { shift->datetime_format_full(@_) }
+sub long_datetime_format   { shift->datetime_format_long(@_) }
+sub medium_datetime_format { shift->datetime_format_medium(@_) }
+sub short_datetime_format  { shift->datetime_format_short(@_) }
+
+# Older versions of DateTime.pm will not pass in the $cldr_ok flag, so
+# we will give them the converted-to-strftime pattern (bugs and all).
 sub _maybe_convert_to_strftime
 {
     my $self    = shift;
@@ -190,51 +282,7 @@ sub _maybe_convert_to_strftime
     }
 }
 
-sub default_date_format_length { $_[0]->{default_date_format_length} }
-sub default_time_format_length { $_[0]->{default_time_format_length} }
-
-sub format_for
-{
-    my $self = shift;
-    my $for  = shift;
-
-    my $meth = '_datetime_format_' . $for;
-
-    return unless $self->can($meth);
-
-    return $self->$meth();
-}
-
-sub available_formats
-{
-    my $self = shift;
-
-    # The various parens seem to be necessary to force uniq() to see
-    # the caller's list context. Go figure.
-    return sort( uniq( map { $_->_format_keys() } Class::ISA::self_and_super_path( ref $self ) ) );
-}
-
-# Just needed for the above method.
-sub _format_keys { () }
-
-sub set_default_date_format_length
-{
-    my $self = shift;
-    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
-
-    $self->{default_date_format_length} = lc $l;
-}
-
-sub set_default_time_format_length
-{
-    my $self = shift;
-    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
-
-    $self->{default_time_format_length} = lc $l;
-}
-
-# Backwards compatibility
-sub eras                { $_[0]->era_abbreviations }
+# end backwards compat
 
 sub STORABLE_freeze
 {
@@ -243,7 +291,7 @@ sub STORABLE_freeze
 
     return if $cloning;
 
-    return $self->id;
+    return $self->id();
 }
 
 sub STORABLE_thaw
