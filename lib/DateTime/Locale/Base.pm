@@ -507,8 +507,7 @@ locale.
 
 =head1 SUPPORT
 
-Support for this module is provided via the datetime@perl.org email
-list. See http://lists.perl.org/ for more details.
+See L<DateTime::Locale>.
 
 =head1 AUTHORS
 
@@ -519,7 +518,8 @@ Dave Rolsky <autarch@urth.org>
 =head1 COPYRIGHT
 
 Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2005 David
-Rolsky. All rights reserved.
+Rolsky. All rights reserved. This program is free software; you can
+redistribute it and/or modify it under the same terms as Perl itself.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
