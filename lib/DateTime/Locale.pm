@@ -90,7 +90,7 @@ sub _register
     $Class{$id} = $p{class} if defined exists $p{class};
 }
 
-sub registered_id
+sub _registered_id
 {
     shift;
     my ($id) = validate_pos( @_, { type => SCALAR } );
@@ -112,7 +112,7 @@ sub add_aliases
     while ( my ( $alias, $id ) = each %$aliases )
     {
         die "Unregistered locale '$id' cannot be used as an alias target for $alias"
-            unless __PACKAGE__->registered_id($id);
+            unless __PACKAGE__->_registered_id($id);
 
         die "Can't alias an id to itself"
             if $alias eq $id;
@@ -230,7 +230,7 @@ sub _guess_id
     $name =~ s/\..*$//;
 
     my ($language, $script, $territory, $variant ) =
-        parse_id($name);
+        _parse_id($name);
 
     my @guesses;
 
@@ -267,7 +267,7 @@ sub _guess_id
     }
 }
 
-sub parse_id
+sub _parse_id
 {
     $_[0] =~ /([a-z]+)               # id
               (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
