@@ -1171,25 +1171,38 @@ sub pod_for_variations
     my $pl = PL_N( $thing );
     $pod .= "=head2 \u$pl\n\n";
 
-    for my $size ( qw( names abbreviations narrows ) )
+    my @forms = $thing eq 'era' ? ('') : ( 'format', 'stand_alone' );
+
+    for my $form (@forms)
     {
-        my $meth = $thing . q{_} . $size;
-        next unless $locale->can($meth);
-
-        $pod .= "=head3 \u$size\n\n";
-
-        for my $val ( @{ $locale->$meth() } )
+        for my $size ( qw( wide abbreviated narrow ) )
         {
-            $pod .= "  $val\n";
-        }
+            my $meth = $form ? $thing . q{_} . $form . q{_} . $size : $thing . q{_} . $size;
 
-        $pod .= "\n";
+            next unless $locale->can($meth);
+
+            my $head = ucfirst $size;
+
+            if ($form)
+            {
+                ( my $f = $form ) =~ s/_/-/;
+                $head .= " ($f)";
+            }
+
+            $pod .= "=head3 $head\n\n";
+
+            for my $val ( @{ $locale->$meth() } )
+            {
+                $pod .= "  $val\n";
+            }
+
+            $pod .= "\n";
+        }
     }
 
     return $pod;
 }
 
-use lib '../DateTime.pm/lib';
 sub pod_for_formats
 {
     my $locale = shift;
@@ -1236,7 +1249,7 @@ sub pod_for_formats
     {
         $pod .= "=head2 \u$type Formats\n\n";
 
-        for my $length ( qw( full long medium short ) )
+        for my $length ( qw( full long medium short default ) )
         {
             $pod .= "=head3 \u$length\n\n";
 
