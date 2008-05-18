@@ -23,9 +23,10 @@ plan tests =>
     5    # starting
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
-    + 41 # check_root
-    + 23 # check_en
-    + 59 # check_en_GB
+    + 42 # check_root
+    + 24 # check_en
+    + 60 # check_en_GB
+    + 25 # check_en_US
     + 11 # check_es_ES
     + 2  # check_af
     + 5  # check_en_US_POSIX
@@ -117,6 +118,7 @@ plan tests =>
 check_root();
 check_en();
 check_en_GB();
+check_en_US();
 check_es_ES();
 check_en_US_POSIX();
 check_af();
@@ -261,6 +263,8 @@ sub check_root
 
           datetime_format_default => 'yyyy MMM d HH:mm:ss',
 
+          first_day_of_week => 1,
+
           prefers_24_hour_time    => 1,
         );
 
@@ -303,6 +307,8 @@ sub check_en_GB
 
     my %tests =
         ( en_data(),
+
+          first_day_of_week => 7,
 
           name             => 'English United Kingdom',
           native_name      => 'English United Kingdom',
@@ -354,6 +360,19 @@ sub check_en_GB
         );
 
     test_formats( $locale, %formats );
+}
+
+sub check_en_US
+{
+    my $locale = DateTime::Locale->load('en_US');
+
+    my %tests =
+        ( en_data(),
+
+          first_day_of_week => 7,
+        );
+
+    test_data( $locale, %tests );
 }
 
 sub en_data
@@ -426,6 +445,8 @@ sub en_data
 
           am_pm_abbreviated =>
           [ qw( AM PM ) ],
+
+          first_day_of_week => 1,
         );
 }
 
