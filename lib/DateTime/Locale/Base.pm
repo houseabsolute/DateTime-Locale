@@ -46,7 +46,7 @@ sub variant_id   { ( DateTime::Locale::parse_id( $_[0]->id ) )[3] }
 
 my @FormatLengths = qw( short medium long full );
 
-sub default_date_format
+sub date_format_default
 {
     my $meth = 'date_format_' . $_[0]->default_date_format_length();
     $_[0]->$meth();
@@ -59,7 +59,7 @@ sub date_formats
                 $_ => $_[0]->$meth() } @FormatLengths }
 }
 
-sub default_time_format
+sub time_format_default
 {
     my $meth = 'time_format_' . $_[0]->default_time_format_length();
     $_[0]->$meth();
@@ -136,7 +136,7 @@ for my $length ( qw( full long medium short ) )
     *{$key} = $sub;
 }
 
-sub default_datetime_format
+sub datetime_format_default
 {
     my $self = shift;
 
@@ -222,10 +222,23 @@ sub date_parts_order
     return $short;
 }
 
-sub full_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->_format_full() ) }
-sub long_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->_format_long() ) }
-sub medium_datetime_format { $_[0]->_convert_to_strftime( $_[0]->_format_medium() ) }
-sub short_datetime_format  { $_[0]->_convert_to_strftime( $_[0]->_format_short() ) }
+sub full_date_format   { $_[0]->_convert_to_strftime( $_[0]->date_format_full() ) }
+sub long_date_format   { $_[0]->_convert_to_strftime( $_[0]->date_format_long() ) }
+sub medium_date_format { $_[0]->_convert_to_strftime( $_[0]->date_format_medium() ) }
+sub short_date_format  { $_[0]->_convert_to_strftime( $_[0]->date_format_short() ) }
+sub default_date_format { $_[0]->_convert_to_strftime( $_[0]->date_format_default() ) }
+
+sub full_time_format   { $_[0]->_convert_to_strftime( $_[0]->time_format_full() ) }
+sub long_time_format   { $_[0]->_convert_to_strftime( $_[0]->time_format_long() ) }
+sub medium_time_format { $_[0]->_convert_to_strftime( $_[0]->time_format_medium() ) }
+sub short_time_format  { $_[0]->_convert_to_strftime( $_[0]->time_format_short() ) }
+sub default_time_format { $_[0]->_convert_to_strftime( $_[0]->time_format_default() ) }
+
+sub full_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->datetime_format_full() ) }
+sub long_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->datetime_format_long() ) }
+sub medium_datetime_format { $_[0]->_convert_to_strftime( $_[0]->datetime_format_medium() ) }
+sub short_datetime_format  { $_[0]->_convert_to_strftime( $_[0]->datetime_format_short() ) }
+sub default_datetime_format { $_[0]->_convert_to_strftime( $_[0]->datetime_format_default() ) }
 
 # Older versions of DateTime.pm will not pass in the $cldr_ok flag, so
 # we will give them the converted-to-strftime pattern (bugs and all).
