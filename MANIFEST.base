@@ -2,6 +2,7 @@ Build.PL
 Changes
 lib/DateTime/Locale.pm
 lib/DateTime/Locale/Base.pm
+lib/DateTime/Locale/Catalog.pm
 lib/DateTime/LocaleCatalog.pm
 LICENSE
 LICENSE.cldr
@@ -28,6 +29,7 @@ tools/t/test-data/am.xml
 tools/t/test-data/az.xml
 tools/t/test-data/en.xml
 tools/t/test-data/en_GB.xml
+tools/t/test-data/en_US.xml
 tools/t/test-data/gaa.xml
 tools/t/test-data/root.xml
 tools/t/test-data/ssy.xml
