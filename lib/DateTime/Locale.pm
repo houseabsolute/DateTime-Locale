@@ -780,6 +780,8 @@ C<< DateTime->format_cldr() >> method:
 
 =item * $locale->date_format_short()
 
+=item * $locale->date_format_default()
+
 =item * $locale->time_format_full()
 
 =item * $locale->time_format_long()
@@ -788,6 +790,8 @@ C<< DateTime->format_cldr() >> method:
 
 =item * $locale->time_format_short()
 
+=item * $locale->time_format_default()
+
 =item * $locale->datetime_format_full()
 
 =item * $locale->datetime_format_long()
@@ -795,6 +799,8 @@ C<< DateTime->format_cldr() >> method:
 =item * $locale->datetime_format_medium()
 
 =item * $locale->datetime_format_short()
+
+=item * $locale->datetime_format_default()
 
 =back
 
