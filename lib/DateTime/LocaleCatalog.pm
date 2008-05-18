@@ -8,4 +8,4 @@ DateTime::LocaleCatalog - renamed to DateTime::Locale::Catalog
 
 This module has been renamed to L<DateTime::Locale::Catalog>
 
-=end
+=cut
