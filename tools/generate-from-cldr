@@ -12,6 +12,7 @@ use File::Copy qw( copy );
 use File::Find::Rule;
 use Getopt::Long;
 use LDML;
+use Lingua::EN::Inflect qw( PL_N );
 use Path::Class;
 
 my $VERSION = '0.05';
@@ -1053,9 +1054,219 @@ sub generate_pm_file_pod
 
     my $pm_file = file( qw( lib DateTime Locale ), $ldml->id() . q{.pm} );
 
-    #open my $fh, '>>:utf8', $pm_file
-     #   or die "Cannot append to $pm_file: $!";
+    require DateTime::Locale;
 
+    my $locale = DateTime::Locale->load( $ldml->id() );
+
+    open my $fh, '>>:utf8', $pm_file
+        or die "Cannot append to $pm_file: $!";
+
+    write_pm_file_pod_header( $fh, $locale, $ldml );
+
+    print {$fh} pod_for_days( $locale );
+    print {$fh} pod_for_months( $locale );
+    print {$fh} pod_for_quarters( $locale );
+    print {$fh} pod_for_eras( $locale );
+    print {$fh} pod_for_formats( $locale );
+    print {$fh} pod_footer( $locale );
+}
+
+sub write_pm_file_pod_header
+{
+    my $fh     = shift;
+    my $locale = shift;
+    my $ldml   = shift;
+
+    my $class = ref $locale;
+    my $id    = $locale->id();
+    my $name  = $locale->name();
+
+    print {$fh} <<"EOF";
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+$class
+
+=head1 SYNOPSIS
+
+  use DateTime;
+
+  my \$dt = DateTime->now( locale => '$id' );
+  print \$dt->month_name();
+
+=head1 DESCRIPTION
+
+This is the DateTime locale package for $name.
+
+=head1 DATA
+
+EOF
+
+    if ( $id ne 'root' )
+    {
+        print {$fh}
+            'This locale inherits from the L<DateTime::Locale::' . $ldml->parent_id() . "> locale.\n\n";
+    }
+
+    print {$fh} "It contains the following data.\n\n";
+}
+
+sub pod_for_days
+{
+    my $locale = shift;
+
+    return pod_for_variations( $locale, 'day' );
+}
+
+sub pod_for_months
+{
+    my $locale = shift;
+
+    return pod_for_variations( $locale, 'month' );
+}
+
+sub pod_for_quarters
+{
+    my $locale = shift;
+
+    return pod_for_variations( $locale, 'quarter' );
+}
+
+sub pod_for_eras
+{
+    my $locale = shift;
+
+    return pod_for_variations( $locale, 'era' );
+}
+
+sub pod_for_variations
+{
+    my $locale = shift;
+    my $thing  = shift;
+
+    my $pod = '';
+
+    my $pl = PL_N( $thing );
+    $pod .= "=head2 \u$pl\n\n";
+
+    for my $size ( qw( names abbreviations narrows ) )
+    {
+        my $meth = $thing . q{_} . $size;
+        next unless $locale->can($meth);
+
+        $pod .= "=head3 \u$size\n\n";
+
+        for my $val ( @{ $locale->$meth() } )
+        {
+            $pod .= "  $val\n";
+        }
+
+        $pod .= "\n";
+    }
+
+    return $pod;
+}
+
+use lib '../DateTime.pm/lib';
+sub pod_for_formats
+{
+    my $locale = shift;
+
+    unless ( DateTime->can('new') )
+    {
+        eval "use DateTime 0.43";
+        die $@ if $@;
+    }
+
+    my @dts =
+        ( DateTime->new( year      => 2008,
+                         month     => 2,
+                         day       => 5,
+                         hour      => 12,
+                         minute    => 30,
+                         second    => 30,
+                         locale    => $locale,
+                         time_zone => 'UTC',
+                       ),
+          DateTime->new( year      => 1995,
+                         month     => 12,
+                         day       => 22,
+                         hour      => 9,
+                         minute    => 5,
+                         second    => 2,
+                         locale    => $locale,
+                         time_zone => 'UTC',
+                       ),
+          DateTime->new( year      => -10,
+                         month     => 12,
+                         day       => 22,
+                         hour      => 23,
+                         minute    => 5,
+                         second    => 2,
+                         locale    => $locale,
+                         time_zone => 'UTC',
+                       ),
+        );
+
+    my $pod = '';
+
+    for my $type ( qw( date time datetime ) )
+    {
+        $pod .= "=head2 \u$type Formats\n\n";
+
+        for my $length ( qw( full long medium short ) )
+        {
+            $pod .= "=head3 \u$length\n\n";
+
+            my $meth = $type . q{_} . 'format' . q{_} . $length;
+
+            for my $dt (@dts)
+            {
+                $pod .=
+                    sprintf( '  %20s = %s',
+                             $dt->iso8601(),
+                             $dt->format_cldr( $locale->$meth() ),
+                           );
+                $pod .= "\n";
+            }
+
+            $pod .= "\n";
+        }
+    }
+
+    return $pod;
+}
+
+sub pod_footer
+{
+    return <<'EOF';
+
+=head1 SUPPORT
+
+See L<DateTime::Locale>.
+
+=head1 AUTHOR
+
+Dave Rolsky <autarch@urth.org>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2008 David Rolsky. All rights reserved. This program is
+free software; you can redistribute it and/or modify it under the same
+terms as Perl itself.
+
+This module was generated from data provided by the CLDR project, see
+the LICENSE.cldr in this distribution for details on the CLDR data's
+license.
+
+=cut
+EOF
 }
 
 sub write_to_manifest
@@ -1083,182 +1294,3 @@ sub write_to_manifest
 }
 
 main();
-
-
-# sub generate_pod_for_locale
-# {
-#     my $hash = shift;
-
-#     my $locale = DateTime::Locale->load( $hash->{id} );
-
-#     my $pod = sprintf( <<'EOF', ref $locale, $locale->id(), $locale->name() );
-# __END__
-
-# =pod
-
-# =encoding utf8
-
-# =head1 NAME
-
-# %s
-
-# =head1 SYNOPSIS
-
-#   use DateTime;
-
-#   my $dt = DateTime->now( locale => '%s' );
-#   print $dt->month_name();
-
-# =head1 DESCRIPTION
-
-# This is the DateTime locale package for %s.
-
-# =head1 DATA
-
-# EOF
-
-#     if ( $hash->{id} ne 'root' )
-#     {
-#         $pod .= "This locale inherits from the L<DateTime::Locale::$hash->{parent_id}> locale.\n\n"
-#     }
-
-#     $pod .= "It contains the following data.\n\n";
-
-#     $pod .= _pod_for_days( $locale );
-#     $pod .= _pod_for_months( $locale );
-#     $pod .= _pod_for_quarters( $locale );
-#     $pod .= _pod_for_eras( $locale );
-#     $pod .= _pod_for_formats( $locale );
-
-#     $pod .= "\n=cut\n";
-
-#     my $file = File::Spec->catfile( 'lib', 'DateTime', 'Locale', $hash->{id} . q{.pm} );
-
-#     open my $fh, '>>:utf8', $file
-#         or die "Cannot append to $file: $!";
-
-#     print {$fh} $pod
-#         or die "Cannot append to $file: $!";
-
-#     close $fh
-#         or die "Cannot append to $file: $!";
-# }
-
-# sub _pod_for_days
-# {
-#     my $locale = shift;
-
-#     return _pod_for_variations( $locale, 'day' );
-# }
-
-# sub _pod_for_months
-# {
-#     my $locale = shift;
-
-#     return _pod_for_variations( $locale, 'month' );
-# }
-
-# sub _pod_for_quarters
-# {
-#     my $locale = shift;
-
-#     return _pod_for_variations( $locale, 'quarter' );
-# }
-
-# sub _pod_for_eras
-# {
-#     my $locale = shift;
-
-#     return _pod_for_variations( $locale, 'era' );
-# }
-
-# sub _pod_for_variations
-# {
-#     my $locale = shift;
-#     my $thing  = shift;
-
-#     my $pod = '';
-
-#     my $pl = PL_N( $thing );
-#     $pod .= "=head2 \u$pl\n\n";
-
-#     for my $size ( qw( names abbreviations narrows ) )
-#     {
-#         my $meth = $thing . q{_} . $size;
-#         next unless $locale->can($meth);
-
-#         $pod .= "=head3 \u$size\n\n";
-
-#         for my $val ( @{ $locale->$meth() } )
-#         {
-#             $pod .= "  $val\n";
-#         }
-
-#         $pod .= "\n";
-#     }
-
-#     return $pod;
-# }
-
-# sub _pod_for_formats
-# {
-#     my $locale = shift;
-
-#     my @dts =
-#         ( DateTime->new( year      => 2008,
-#                          month     => 2,
-#                          day       => 5,
-#                          hour      => 12,
-#                          minute    => 30,
-#                          second    => 30,
-#                          locale    => $locale,
-#                          time_zone => 'UTC',
-#                        ),
-#           DateTime->new( year      => 1995,
-#                          month     => 12,
-#                          day       => 22,
-#                          hour      => 9,
-#                          minute    => 5,
-#                          second    => 2,
-#                          locale    => $locale,
-#                          time_zone => 'UTC',
-#                        ),
-#           DateTime->new( year      => -10,
-#                          month     => 12,
-#                          day       => 22,
-#                          hour      => 23,
-#                          minute    => 5,
-#                          second    => 2,
-#                          locale    => $locale,
-#                          time_zone => 'UTC',
-#                        ),
-#         );
-
-#     my $pod = '';
-
-#     for my $type ( qw( date time datetime ) )
-#     {
-#         $pod .= "=head2 \u$type Formats\n\n";
-
-#         for my $length ( qw( full long medium short ) )
-#         {
-#             $pod .= "=head3 \u$length\n\n";
-
-#             my $meth = $length . q{_} . $type . q{_} . 'format';
-
-#             for my $dt (@dts)
-#             {
-#                 $pod .=
-#                     sprintf( '  %20s = %s',
-#                              $dt->iso8601(),
-#                              $dt->strftime( $locale->$meth() ),
-#                            );
-#                 $pod .= "\n";
-#             }
-
-#             $pod .= "\n";
-#         }
-#     }
-
-#     return $pod;
-# }
