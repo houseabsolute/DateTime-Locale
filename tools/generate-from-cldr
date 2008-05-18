@@ -220,6 +220,21 @@ sub write_pm_subs
         next unless $attr->name() =~
             /^(?:day_|month_|quarter_|am_pm|era_|date_|time_|datetime_|first_day_)/;
 
+        if ( $attr->name() =~ /stand_alone/ )
+        {
+            my $name = $attr->name();
+            my $val = $ldml->$name();
+
+            unless ( @{ $val } )
+            {
+                ( my $format = $name ) =~ s/stand_alone/format/;
+
+                write_alias_sub( $fh, $name, $format );
+
+                next;
+            }
+        }
+
         my $type = $attr->type_constraint();
 
         if ( $type->is_a_type_of('ArrayRef') )
@@ -253,6 +268,19 @@ sub write_pm_subs
     }
 
     write_available_format_subs( $fh, $ldml );
+}
+
+sub write_alias_sub
+{
+    my $fh   = shift;
+    my $from = shift;
+    my $to   = shift;
+
+    print {$fh} <<"EOF";
+
+sub $from { \$_[0]->$to() }
+
+EOF
 }
 
 sub write_arrayref_sub
