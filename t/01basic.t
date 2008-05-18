@@ -26,7 +26,7 @@ plan tests =>
     + 42 # check_root
     + 24 # check_en
     + 60 # check_en_GB
-    + 25 # check_en_US
+    + 23 # check_en_US
     + 11 # check_es_ES
     + 2  # check_af
     + 5  # check_en_US_POSIX
