@@ -39,10 +39,10 @@ sub new
                  }, $class;
 }
 
-sub language_id  { ( DateTime::Locale::parse_id( $_[0]->id ) )[0] }
-sub script_id    { ( DateTime::Locale::parse_id( $_[0]->id ) )[1] }
-sub territory_id { ( DateTime::Locale::parse_id( $_[0]->id ) )[2] }
-sub variant_id   { ( DateTime::Locale::parse_id( $_[0]->id ) )[3] }
+sub language_id  { ( DateTime::Locale::_parse_id( $_[0]->id ) )[0] }
+sub script_id    { ( DateTime::Locale::_parse_id( $_[0]->id ) )[1] }
+sub territory_id { ( DateTime::Locale::_parse_id( $_[0]->id ) )[2] }
+sub variant_id   { ( DateTime::Locale::_parse_id( $_[0]->id ) )[3] }
 
 my @FormatLengths = qw( short medium long full );
 
@@ -377,131 +377,294 @@ DateTime::Locale::Base - Base class for individual locale objects
 
 Each locale has a set of four default date and time formats.  They are
 distinguished by length, and are called "full", "long", "medium", and
-"short".  Each locale may have a different default length which it
-uses when its C<default_date_format()>, C<default_time_format()>, or
-C<default_datetime_format()> methods are called.
+"short". Each locale may have a different default length which it uses
+when its C<< $locale->date_format_default() >>, C<<
+$locale->time_format_default() >>, or C<<
+$locale->datetime_format_default() >> methods are called.
 
-This can be changed by calling the C<set_default_date_format()> or
-C<set_default_time_format()> methods.  These methods accept a string
-which must be one of "full", "long", "medium", or "short".
+This can be changed by calling the C<<
+$locale->set_default_date_format() >> or C<<
+$locale->set_default_time_format() >> methods.  These methods accept a
+string which must be one of "full", "long", "medium", or "short".
 
-=head1 SUBCLASSING
+=head1 NAME FORMS
 
-If you are writing a subclass of this class, then you must provide the
-following methods:
+Most names come in a number of variations. First, they may vary based
+on length, with wide, abbreviated, and narrow forms. The wide form is
+typically the full name, while the narrow form is often a single
+character. The narrow forms may not be unique. For example, "T" may be
+used for Tuesday and Thursday in the English narrow forms.
+
+Many names also distinguish between "format" and "stand-alone" forms
+of a pattern. The format pattern is used when the thing in question is
+being placed into a larger string. The stand-alone form is used when
+displaying that item by itself, for example in a calendar.
+
+=head1 METHODS
+
+All locales provide the following methods:
 
 =over 4
 
-=item * $locale->month_names()
+=item * $locale->id()
 
-Returns an array reference containing the full names of the months,
-with January as the first month.
+The locale's id.
 
-=item * $locale->month_abbreviations()
+=item * $locale->language_id()
 
-Returns an array reference containing the abbreviated names of the
+The language portion of the id.
+
+=item * $locale->script_id()
+
+The script portion of the id, if any.
+
+=item * $locale->territory_id()
+
+The territory portion of the id, if any.
+
+=item * $locale->variant_id()
+
+The variant portion of the id, if any.
+
+=item * $locale->name()
+
+The full name for the locale in English.
+
+=item * $locale->language()
+
+The language name for the locale in English.
+
+=item * $locale->script()
+
+The script name for the locale in English, if any.
+
+=item * $locale->territory()
+
+The territory name for the locale in English, if any.
+
+=item * $locale->variant()
+
+The variant name for the locale in English, if any.
+
+=item * $locale->native_name()
+
+The full name for the locale in its native language, if any.
+
+=item * $locale->native_language()
+
+The language name for the locale in its native language, if any.
+
+=item * $locale->native_script()
+
+The script name for the locale in its native language, if any.
+
+=item * $locale->native_territory()
+
+The territory name for the locale in its native language, if any.
+
+=item * $locale->native_variant()
+
+The variant name for the locale in its native language, if any.
+
+=item * $locale->month_format_wide()
+
+Returns an array reference containing the wide format names of the
 months, with January as the first month.
 
-=item * $locale->month_narrows()
+=item * $locale->month_format_abbreviated()
 
-Returns an array reference containing the narrow names of the months,
-with January as the first month.  Narrow names are the shortest
-possible names, and need not be unique.
+Returns an array reference containing the abbreviated format names of
+the months, with January as the first month.
 
-=item * $locale->day_names()
+=item * $locale->month_format_narrow()
 
-Returns an array reference containing the full names of the days,
-with Monday as the first day.
+Returns an array reference containing the narrow format names of the
+months, with January as the first month.
 
-=item * $locale->day_abbreviations()
+=item * $locale->month_stand_alone_wide()
 
-Returns an array reference containing the abbreviated names of the
+Returns an array reference containing the wide stand-alone names of
+the months, with January as the first month.
+
+=item * $locale->month_stand_alone_abbreviated()
+
+Returns an array reference containing the abbreviated stand-alone
+names of the months, with January as the first month.
+
+=item * $locale->month_stand_alone_narrow()
+
+Returns an array reference containing the narrow stand-alone names of the
+months, with January as the first month.
+
+=item * $locale->day_format_wide()
+
+Returns an array reference containing the wide format names of the
 days, with Monday as the first day.
 
-=item * $locale->day_narrows()
+=item * $locale->day_format_abbreviated()
 
-Returns an array reference containing the narrow names of the days,
-with Monday as the first day.  Narrow names are the shortest possible
-names, and need not be unique.
+Returns an array reference containing the abbreviated format names of
+the days, with Monday as the first day.
 
-=item * $locale->quarter_names()
+=item * $locale->day_format_narrow()
 
-Returns an array reference containing the full names of the quarters.
+Returns an array reference containing the narrow format names of the
+days, with Monday as the first day.
 
-=item * $locale->quarter_abbreviations()
+=item * $locale->day_stand_alone_wide()
 
-Returns an array reference containing the abbreviated names of the
+Returns an array reference containing the wide stand-alone names of
+the days, with Monday as the first day.
+
+=item * $locale->day_stand_alone_abbreviated()
+
+Returns an array reference containing the abbreviated stand-alone
+names of the days, with Monday as the first day.
+
+=item * $locale->day_stand_alone_narrow()
+
+Returns an array reference containing the narrow stand-alone names of
+the days, with Monday as the first day.
+
+=item * $locale->quarter_format_wide()
+
+Returns an array reference containing the wide format names of the
 quarters.
 
-=item * $locale->am_pms()
+=item * $locale->quarter_format_abbreviated()
 
-Returns an array reference containing the localized forms of "AM" and
-"PM".
+Returns an array reference containing the abbreviated format names of
+the quarters.
 
-=item * $locale->era_abbreviations()
+=item * $locale->quarter_format_narrow()
 
-Returns an array reference containing the localized forms of the
-abbreviation for the eras, such as "BCE" and "CE".
+Returns an array reference containing the narrow format names of the
+quarters.
 
-=item * $locale->era_names()
+=item * $locale->quarter_stand_alone_wide()
 
-Returns an array reference containing the localized forms the name of
-the eras, such as "Before Common Era" and "Common Era".
+Returns an array reference containing the wide stand-alone names of
+the quarters.
 
-=item * $locale->long_date_format()
+=item * $locale->quarter_stand_alone_abbreviated()
 
-=item * $locale->full_date_format()
+Returns an array reference containing the abbreviated stand-alone
+names of the quarters.
 
-=item * $locale->medium_date_format()
+=item * $locale->quarter_stand_alone_narrow()
 
-=item * $locale->short_date_format()
+Returns an array reference containing the narrow stand-alone names of the
+quarters.
 
-Returns the date format of the appropriate length.
+=item * $locale->era_wide()
 
-=item * $locale->long_time_format()
+Returns an array reference containing the wide names of the eras, with
+"BCE" first.
 
-=item * $locale->full_time_format()
+=item * $locale->era_abbreviated()
 
-=item * $locale->medium_time_format()
+Returns an array reference containing the abbreviated names of the
+eras, with "BCE" first.
 
-=item * $locale->short_time_format()
+=item * $locale->era_narrow()
 
-Returns the date format of the appropriate length.
+Returns an array reference containing the abbreviated names of the
+eras, with "BCE" first. However, most locales do not differ between
+the narrow and abbreviated length of the era.
 
-=item * $locale->date_before_time()
+=item * $locale->am_pm_abbreviated()
 
-This returns a boolean value indicating whether or not the date comes
-before the time when formatting a complete date and time for
-presentation.
+Returns an array reference containing the abbreviated names of "AM"
+and "PM".
 
-=item * $locale->date_parts_order()
+=item * $locale->date_format_long()
 
-This returns a string indicating the order of the parts of a date that
-is in the form XX/YY/ZZ.  The possible values are "dmy", "mdy", "ydm"
-and "ymd".
+=item * $locale->date_format_full()
 
-=item * $locale->_format_keys()
+=item * $locale->date_format_medium()
 
-A list of format key names, like "MMdd" or "yyyyMM". This should be
-the list directly supported by the subclass, not its parents.
+=item * $locale->date_format_short()
 
-=item * $locale->_datetime_format_XXXX()
+Returns the CLDR date pattern of the appropriate length.
 
-Each method of this form should return a strftime-style format for the
-named ("XXXX") format. The format names are the Java-style patterns
-like "yyyyMM".
+=item * $locale->date_formats()
 
-=item * $locale->_default_date_format_length()
+Returns a hash reference of CLDR date patterns for the date formats,
+where the keys are "full", "long", "medium", and "short".
 
-This should return a string which is one of "long", "full", "medium",
-or "short".  It indicates the default date format length for the
+=item * $locale->time_format_long()
+
+=item * $locale->time_format_full()
+
+=item * $locale->time_format_medium()
+
+=item * $locale->time_format_short()
+
+Returns the CLDR date pattern of the appropriate length.
+
+=item * $locale->time_formats()
+
+Returns a hash reference of CLDR date patterns for the time formats,
+where the keys are "full", "long", "medium", and "short".
+
+=item * $locale->datetime_format_long()
+
+=item * $locale->datetime_format_full()
+
+=item * $locale->datetime_format_medium()
+
+=item * $locale->datetime_format_short()
+
+Returns the CLDR date pattern of the appropriate length.
+
+=item * $locale->datetime_formats()
+
+Returns a hash reference of CLDR date patterns for the datetime
+formats, where the keys are "full", "long", "medium", and "short".
+
+=item * $locale->date_format_default()
+
+=item * $locale->time_format_default()
+
+=item * $locale->datetime_format_default()
+
+Returns the default CLDR date pattern. The length of this format is
+based on the value of C<< $locale->default_date_format_length() >>
+and/or C<< $locale->default_time_format_length() >>.
+
+=item * $locale->default_date_format_length()
+
+=item * $locale->default_time_format_length()
+
+Returns the default length for the format, one of "full", "long",
+"medium", or "short".
+
+=item * $locale->set_default_date_format_length()
+
+=item * $locale->set_default_time_format_length()
+
+Sets the default length for the format. This must be one of "full",
+"long", "medium", or "short".
+
+=item * $locale->prefers_24_hour_time()
+
+Returns a boolean indicating the preferred hour format for this
 locale.
 
-=item * $locale->_default_time_format_length()
+=item * $locale->first_day_of_week()
 
-This should return a string which is one of "long", "full", "medium",
-or "short".  It indicates the default time format length for the
-locale.
+Returns a number from 1 to 7 indicating the I<local> first day of the
+week. For example, for a US locale this returns 7.
+
+=item * $locale->available_formats()
+
+A list of format names, like "MMdd" or "yyyyMM". This should be the
+list directly supported by the subclass, not its parents.
+
+=item * $locale->format_for($key)
+
+Given a valid name, returns the CLDR date pattern for that thing, if
+one exists.
 
 =back
 
