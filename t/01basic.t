@@ -89,7 +89,7 @@ plan tests =>
                        { locale_method    => 'quarter_format_abbreviated',
                          count            => 4,
                        },
-                       { locale_method    => 'am_pm',
+                       { locale_method    => 'am_pm_abbreviated',
                          count            => 2,
                        },
                        { locale_method    => 'era_wide',
@@ -422,7 +422,7 @@ sub en_data
           era_narrow =>
           [ qw( BC AD ) ],
 
-          am_pm =>
+          am_pm_abbreviated =>
           [ qw( AM PM ) ],
         );
 }
