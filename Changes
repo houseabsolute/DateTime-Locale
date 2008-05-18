@@ -9,16 +9,16 @@
   DateTime::Locale::Base documentation for details on what is
   available.
 
-- One notable change is the inclusion of $locale->format_for(...) and
-  $locale->available_formats(). This gives you access to formatting
-  for various arbitrary patterns like "year and month" or "month and
-  day". Requested by Brian Hirt.
+- One of the more notable change is the inclusion of
+  $locale->format_for(...) and $locale->available_formats(). This
+  gives you access to formatting for various arbitrary patterns like
+  "year and month" or "month and day". Requested by Brian Hirt.
 
 - Lots of bug fixes in the data. The old generation code was often
   extracting the draft form of a piece of data as opposed to the
   current final form. Also many other data fixes.
 
-- Much of the new features in this release will only be available with
+- Many of the new features in this release will only be available with
   DateTime.pm 0.43+, since it requires a version of DateTime.pm which
   can handle the native CLDR date pattern language.
 
