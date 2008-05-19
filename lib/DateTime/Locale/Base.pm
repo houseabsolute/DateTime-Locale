@@ -90,8 +90,11 @@ sub available_formats
 
     # The various parens seem to be necessary to force uniq() to see
     # the caller's list context. Go figure.
-    return sort( List::MoreUtils::uniq( map { keys %{ $_->_available_formats() || {} } }
-                                        Class::ISA::self_and_super_path( ref $self ) ) );
+    my @uniq = List::MoreUtils::uniq( map { keys %{ $_->_available_formats() || {} } }
+                                      Class::ISA::self_and_super_path( ref $self ) );
+
+    # Doing the sort in the same expression doesn't work under 5.6.x.
+    return sort @uniq;
 }
 
 # Just needed for the above method.

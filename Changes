@@ -1,3 +1,8 @@
+0.4001 2008-05-19
+
+- Minor changes to get test passing under 5.6.x.
+
+
 0.40   2008-05-18
 
 * Dropped support for Perl 5.005.
