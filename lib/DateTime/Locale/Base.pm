@@ -5,7 +5,7 @@ use warnings;
 
 use Class::ISA;
 use DateTime::Locale;
-use List::MoreUtils qw( uniq );
+use List::MoreUtils ();
 use Params::Validate qw( validate_pos );
 
 BEGIN
@@ -90,8 +90,8 @@ sub available_formats
 
     # The various parens seem to be necessary to force uniq() to see
     # the caller's list context. Go figure.
-    return sort( uniq( map { keys %{ $_->_available_formats() || {} } }
-                       Class::ISA::self_and_super_path( ref $self ) ) );
+    return sort( List::MoreUtils::uniq( map { keys %{ $_->_available_formats() || {} } }
+                                        Class::ISA::self_and_super_path( ref $self ) ) );
 }
 
 # Just needed for the above method.
