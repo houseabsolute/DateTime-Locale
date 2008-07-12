@@ -1,3 +1,12 @@
+0.41
+
+- Based on CLDR 1.6
+
+- Added the CLDR version to the catalog and generated files. In the
+  future, if you load a locale from an older CLDR version than the
+  catalog's version, you will get a warning.
+
+
 0.4001 2008-05-19
 
 - Minor changes to get test passing under 5.6.x.
