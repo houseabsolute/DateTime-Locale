@@ -19,21 +19,29 @@ my $VERSION = '0.05';
 
 my $ScriptName = file($0)->basename();
 
+{
+    no warnings 'once';
+    $DateTime::Locale::InGenerator = 1;
+}
+
 my %opts;
 sub main
 {
-    GetOptions( 'dir:s'   => \$opts{dir},
-                'file:s'  => \$opts{file},
-                'clean'   => \$opts{clean},
-                'quiet'   => \$opts{quiet},
-                'verbose' => \$opts{verbose},
-                'help'    => \$opts{help},
+    GetOptions( 'dir:s'     => \$opts{dir},
+                'file:s'    => \$opts{file},
+                'version:s' => \$opts{version},
+                'clean'     => \$opts{clean},
+                'quiet'     => \$opts{quiet},
+                'verbose'   => \$opts{verbose},
+                'help'      => \$opts{help},
               );
 
     $opts{help} = 1
         unless defined $opts{dir} && -d $opts{dir};
 
     usage() if $opts{help};
+
+    require_version();
 
     clean() if $opts{clean};
 
@@ -56,6 +64,8 @@ It takes the following arguments:
 
   --file     Parse just the file with the given name.  For debugging.
 
+  --version  The CLDR version. Required when not debugging a single file.
+
   --clean    Remove old generated modules (which may not be valid with
              the latest CLDR data).
 
@@ -67,6 +77,19 @@ It takes the following arguments:
 
 If the --file or --name options are specified, the MANIFEST will not
 be generated.
+
+EOF
+
+    exit;
+}
+
+sub require_version
+{
+    return if $opts{version};
+
+    warn <<'EOF';
+
+You must supply a CLDR version.
 
 EOF
 
@@ -156,6 +179,7 @@ sub generate_pm_file
 
     write_pm_header( $fh, $ldml );
     write_pm_inheritance( $fh, $ldml );
+    write_pm_cldr_version( $fh );
     write_pm_subs( $fh, $ldml );
     write_pm_footer( $fh, $ldml );
 }
@@ -206,6 +230,15 @@ sub write_pm_inheritance
     my $parent = $ldml->parent_id();
 
     print {$fh} "use base 'DateTime::Locale::$parent';\n\n";
+}
+
+sub write_pm_cldr_version
+{
+    my $fh   = shift;
+
+    my $cldr_version = q{"} . quotemeta( $opts{version} ) . q{"};
+
+    print {$fh} "sub cldr_version { return $cldr_version }\n\n";
 }
 
 sub write_pm_subs
@@ -531,6 +564,8 @@ sub generate_catalog_code
     my $fh   = shift;
     my $ldml = shift;
 
+    my $cldr_version = q{"} . quotemeta( $opts{version} ) . q{"};
+
     print {$fh} <<"EOF";
 ###########################################################################
 #
@@ -551,6 +586,8 @@ package DateTime::Locale::Catalog;
 use strict;
 use warnings;
 use utf8;
+
+sub CLDRVersion { return $cldr_version }
 
 my \@Locales;
 sub Locales { return \@Locales }
@@ -1222,21 +1259,22 @@ sub pod_for_formats
                          locale    => $locale,
                          time_zone => 'UTC',
                        ),
-          DateTime->new( year      => 1995,
-                         month     => 12,
-                         day       => 22,
-                         hour      => 9,
-                         minute    => 5,
-                         second    => 2,
-                         locale    => $locale,
-                         time_zone => 'UTC',
+          DateTime->new( year       => 1995,
+                         month      => 12,
+                         day        => 22,
+                         hour       => 9,
+                         minute     => 5,
+                         second     => 2,
+                         nanosecond => 505_196,
+                         locale     => $locale,
+                         time_zone  => 'UTC',
                        ),
           DateTime->new( year      => -10,
-                         month     => 12,
-                         day       => 22,
-                         hour      => 23,
-                         minute    => 5,
-                         second    => 2,
+                         month     => 9,
+                         day       => 15,
+                         hour      => 4,
+                         minute    => 44,
+                         second    => 23,
                          locale    => $locale,
                          time_zone => 'UTC',
                        ),

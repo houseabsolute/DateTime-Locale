@@ -302,9 +302,26 @@ sub _load_class_from_id
         die $@ if $@;
     }
 
-    return $real_class->new( %{ $DataForID{$data_id} },
-                             id => $id,
-                           );
+    my $locale = $real_class->new( %{ $DataForID{$data_id} },
+                                   id => $id,
+                                 );
+
+    return $locale if $DateTime::Locale::InGenerator;
+
+    if ( $locale->can('cldr_version') )
+    {
+        my $object_version = $locale->cldr_version();
+        my $catalog_version = DateTime::Locale::Catalog->CLDRVersion();
+
+        if ( $object_version ne $catalog_version )
+        {
+            warn "Loaded $real_class, which is from an older version ($object_version)"
+                 . "of the CLDR database than this installation of"
+                 . "DateTime::Locale ($catalog_version).\n";
+        }
+    }
+
+    return $locale;
 }
 
 1;
