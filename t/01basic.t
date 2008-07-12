@@ -23,9 +23,9 @@ plan tests =>
     5    # starting
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
-    + 42 # check_root
+    + 49 # check_root
     + 24 # check_en
-    + 60 # check_en_GB
+    + 61 # check_en_GB
     + 23 # check_en_US
     + 11 # check_es_ES
     + 2  # check_af
@@ -271,18 +271,25 @@ sub check_root
     test_data( $locale, %tests );
 
     my %formats =
-        ( 'yyMMM'  => 'yy MMM',
-          'yyMM'   => 'yy-MM',
-          'HHmmss' => 'HH:mm:ss',
-          'mmss'   => 'mm:ss',
-          'HHmm'   => 'HH:mm',
-          'MMMMd'  => 'MMMM d',
-          'H'      => 'H',
-          'Ed'     => 'E d',
+        ( 'Hm'     => 'H:mm',
+          'M'      => 'L',
+          'MEd'    => 'E, M-d',
+          'MMM'    => 'LLL',
           'MMMEd'  => 'E MMM d',
-          'yyQ'    => 'yy Q',
+          'MMMMEd' => 'E MMMM d',
+          'MMMMd'  => 'MMMM d',
+          'MMMd'   => 'MMM d',
           'Md'     => 'M-d',
-          'yyyy'   => 'yyyy'
+          'd'      => 'd',
+          'ms'     => 'mm:ss',
+          'y'      => 'yyyy',
+          'yM'     => 'yyyy-M',
+          'yMEd'   => 'EEE, yyyy-M-d',
+          'yMMM'   => 'yyyy MMM',
+          'yMMMEd' => 'EEE, yyyy MMM d',
+          'yMMMM'  => 'yyyy MMMM',
+          'yQ'     => 'yyyy Q',
+          'yQQQ'   => 'yyyy QQQ',
         );
 
     test_formats( $locale, %formats );
@@ -329,34 +336,34 @@ sub check_en_GB
     test_data( $locale, %tests );
 
     my %formats =
-        ( 'MMMEd'    => 'E d MMM',
-          'MMMMd'    => 'd MMMM',
-          'MMdd'     => 'dd/MM',
-          'Md'       => 'd/M',
-          'yyMMM'    => 'MMM yy',
-          'yyyyMM'   => 'MM/yyyy',
+        ( # from en_GB
+          'MEd' => 'E, d/M',
+          'MMMEd' => 'E d MMM',
+          'MMMMd' => 'd MMMM',
+          'MMdd' => 'dd/MM',
+          'Md' => 'd/M',
+          'yMEd' => 'EEE, d/M/yyyy',
+          'yyMMM' => 'MMM yy',
+          'yyyyMM' => 'MM/yyyy',
           'yyyyMMMM' => 'MMMM yyyy',
 
           # from en
-          'HHmm'    => 'HH:mm',
-          'HHmmss'  => 'HH:mm:ss',
-          'MMMMdd'  => 'dd MMMM',
-          'MMMd'    => 'd-MMM',
-          'MMMdd'   => 'dd MMM',
-          'MMd'     => 'd/MM',
-          'hhmm'    => 'hh:mm a',
-          'hhmmss'  => 'hh:mm:ss a',
-          'mmss'    => 'mm:ss',
-          'yyMM'    => 'MM/yy',
-          'yyQ'     => 'Q yy',
-          'yyQQQQ'  => 'QQQQ yy',
-          'yyyyM'   => 'M/yyyy',
-          'yyyyMMM' => 'MMM yyyy',
-
-          # from root
-          'Ed'   => 'E d',
-          'H'    => 'H',
-          'yyyy' => 'yyyy',
+          'Hm' => 'HH:mm',
+          'Hms' => 'HH:mm:ss',
+          'M' => 'L',
+          'MMM' => 'LLL',
+          'MMMMEd' => 'E, MMMM d',
+          'MMMd' => 'MMM d',
+          'd' => 'd',
+          'hm' => 'h:mm a',
+          'ms' => 'mm:ss',
+          'y' => 'yyyy',
+          'yM' => 'M/yyyy',
+          'yMMM' => 'MMM yyyy',
+          'yMMMEd' => 'EEE, MMM d, yyyy',
+          'yMMMM' => 'MMMM yyyy',
+          'yQ' => 'Q yyyy',
+          'yQQQ' => 'QQQ yyyy',
         );
 
     test_formats( $locale, %formats );
@@ -441,7 +448,7 @@ sub en_data
           [ qw( BC AD ) ],
 
           era_narrow =>
-          [ qw( BC AD ) ],
+          [ qw( B A ) ],
 
           am_pm_abbreviated =>
           [ qw( AM PM ) ],
@@ -482,7 +489,7 @@ sub test_formats
 
     is_deeply( [ $locale->available_formats() ],
                [ sort keys %formats ],
-               "Format keys for " . $locale->id() . " match what is expected" );
+               "Available formats for " . $locale->id() . " match what is expected" );
 }
 
 sub check_es_ES
