@@ -401,6 +401,7 @@ sub _load_parent
 
 {
     my $Parser = XML::LibXML->new();
+    $Parser->load_catalog( '/etc/xml/catalog.xml' );
     sub _resolve_document_aliases
     {
         my $class = shift;
