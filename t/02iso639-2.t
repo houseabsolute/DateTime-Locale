@@ -1,10 +1,20 @@
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More;
 
 use DateTime::Locale;
 
+
+my @aliases = qw( C POSIX chi per khm );
+
+plan tests => 5 + scalar @aliases;
+
+
+for my $alias (@aliases)
+{
+    ok( DateTime::Locale->load($alias), "alias mapping for $alias exists" );
+}
 
 my $locale = DateTime::Locale->load('eng_US');
 
