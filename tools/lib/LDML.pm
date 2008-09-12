@@ -390,67 +390,21 @@ sub _load_parent
         return $Cache{$id}
             if $Cache{$id};
 
-        my $ldml = $class->_load_from_cache($file);
+        my $doc = $class->_resolve_document_aliases($file);
 
-        unless ($ldml)
-        {
-            my $doc = $class->_resolve_document_aliases($file);
-
-            $ldml = $class->new( id          => $id,
-                                 source_file => $file,
-                                 document    => $doc,
-                               );
-        }
-
-        return $Cache{$id} = $ldml;
+        return $Cache{$id} =
+            $class->new( id          => $id,
+                         source_file => $file,
+                         document    => $doc,
+                       );
     }
-}
-
-sub _load_from_cache
-{
-    my $class = shift;
-    my $file  = shift;
-
-    my $cache_file = file( $file . '.cache' );
-
-    return unless -f $cache_file;
-
-    return if $cache_file->stat()->mtime() <= $file->stat()->mtime();
-
-    my $fh = $cache_file->openr()
-        or die "Cannot read $cache_file: $!";
-
-    return fd_retrieve($fh);
-}
-
-sub save_to_cache
-{
-    my $self = shift;
-
-    my $cache_file = file( $self->source_file() . '.cache' );
-
-    my $fh = $cache_file->openw()
-        or die "Cannot write to $cache_file: $!";
-
-    for my $attr ( grep { $_->is_lazy() }
-                   map { $_->get_attribute($_) }
-                   $self->meta()->get_attribute_list() )
-    {
-        my $reader = $attr->reader();
-        $self->$reader();
-    }
-
-    # XML::LibXML objects don't serialize correctly, but presumably
-    # this is only called after we've gotten everything out of the
-    # document which we needed.
-    $self->_clear_document();
-
-    nstore_fd( $self, $fh );
 }
 
 {
     my $Parser = XML::LibXML->new();
     $Parser->load_catalog( '/etc/xml/catalog.xml' );
+    $Parser->load_ext_dtd(0);
+
     sub _resolve_document_aliases
     {
         my $class = shift;
