@@ -1,3 +1,18 @@
+0.42
+
+- Based on CLDR 1.6.1, but this has no changes in the data we use. I
+  just used 1.6.1 so people wouldn't ask me why I don't use 1.6.1 ;)
+
+- In the switch to CLDR, I accidentally dropped a number of hard-coded
+  aliases, notably for 'C'. These aliases have been restored. Reported
+  by Adam Kennedy. RT #39208.
+
+- Generation of aliases based on the 3-letter ISO code for countries
+  is now dynamic, rather than being based on a hard-coded list. This
+  should mean that the aliases are more correct, and will keep up with
+  new locales that might be added to CLDR in the future.
+
+
 0.41   2008-07-12
 
 - Based on CLDR 1.6
