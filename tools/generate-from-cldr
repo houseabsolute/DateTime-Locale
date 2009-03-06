@@ -963,7 +963,7 @@ sub pod_for_formats
         ( DateTime->new( year      => 2008,
                          month     => 2,
                          day       => 5,
-                         hour      => 12,
+                         hour      => 18,
                          minute    => 30,
                          second    => 30,
                          locale    => $locale,
