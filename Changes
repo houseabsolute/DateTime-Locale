@@ -1,3 +1,9 @@
+0.43   2009-06-30
+
+- Based on CLDR 1.7.1, which includes support for several new
+  languages, as well as lots of changes.
+
+
 0.42   2008-09-12
 
 - Based on CLDR 1.6.1, but this has no changes in the data we use. I
