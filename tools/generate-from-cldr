@@ -248,7 +248,7 @@ sub write_pm_subs
     my $ldml = shift;
 
     foreach my $attr ( sort { $a->name() cmp $b->name() }
-                       LDML->meta()->compute_all_applicable_attributes() )
+                       LDML->meta()->get_all_attributes() )
     {
         next unless $attr->name() =~
             /^(?:day_|month_|quarter_|am_pm|era_|date_|time_|datetime_|first_day_)/;
