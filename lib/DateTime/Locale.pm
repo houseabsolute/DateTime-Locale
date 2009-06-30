@@ -11,7 +11,7 @@ use DateTime::Locale::Base;
 use DateTime::Locale::Catalog;
 use Params::Validate qw( validate validate_pos SCALAR );
 
-our $VERSION = '0.42';
+our $VERSION = '0.43';
 
 
 my %Class;
