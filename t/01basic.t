@@ -23,9 +23,9 @@ plan tests =>
     5    # starting
     + 1  # load test for root locale
     + ( (@locale_ids - 1) * $tests_per_locale ) # test each local
-    + 49 # check_root
+    + 53 # check_root
     + 24 # check_en
-    + 61 # check_en_GB
+    + 63 # check_en_GB
     + 23 # check_en_US
     + 11 # check_es_ES
     + 2  # check_af
@@ -256,12 +256,12 @@ sub check_root
           am_pm_abbreviated =>
           [ qw( AM PM ) ],
 
-          datetime_format_full    => 'EEEE, yyyy MMMM dd HH:mm:ss v',
-          datetime_format_long    => 'yyyy MMMM d HH:mm:ss z',
-          datetime_format_medium  => 'yyyy MMM d HH:mm:ss',
+          datetime_format_full    => 'EEEE, y MMMM dd HH:mm:ss zzzz',
+          datetime_format_long    => 'y MMMM d HH:mm:ss z',
+          datetime_format_medium  => 'y MMM d HH:mm:ss',
           datetime_format_short   => 'yyyy-MM-dd HH:mm',
 
-          datetime_format_default => 'yyyy MMM d HH:mm:ss',
+          datetime_format_default => 'y MMM d HH:mm:ss',
 
           first_day_of_week => 1,
 
@@ -271,25 +271,29 @@ sub check_root
     test_data( $locale, %tests );
 
     my %formats =
-        ( 'Hm'     => 'H:mm',
-          'M'      => 'L',
-          'MEd'    => 'E, M-d',
-          'MMM'    => 'LLL',
-          'MMMEd'  => 'E MMM d',
-          'MMMMEd' => 'E MMMM d',
-          'MMMMd'  => 'MMMM d',
-          'MMMd'   => 'MMM d',
-          'Md'     => 'M-d',
-          'd'      => 'd',
-          'ms'     => 'mm:ss',
-          'y'      => 'yyyy',
-          'yM'     => 'yyyy-M',
-          'yMEd'   => 'EEE, yyyy-M-d',
-          'yMMM'   => 'yyyy MMM',
-          'yMMMEd' => 'EEE, yyyy MMM d',
-          'yMMMM'  => 'yyyy MMMM',
-          'yQ'     => 'yyyy Q',
-          'yQQQ'   => 'yyyy QQQ',
+        ( d      => 'd',
+          EEEd   => 'd EEE',
+          hm     => 'h:mm a',
+          Hm     => 'H:mm',
+          hms    => 'h:mm:ss a',
+          Hms    => 'H:mm:ss',
+          M      => 'L',
+          Md     => 'M-d',
+          MEd    => 'E, M-d',
+          MMM    => 'LLL',
+          MMMd   => 'MMM d',
+          MMMEd  => 'E MMM d',
+          MMMMd  => 'MMMM d',
+          MMMMEd => 'E MMMM d',
+          ms     => 'mm:ss',
+          y      => 'y',
+          yM     => 'y-M',
+          yMEd   => 'EEE, y-M-d',
+          yMMM   => 'y MMM',
+          yMMMEd => 'EEE, y MMM d',
+          yMMMM  => 'y MMMM',
+          yQ     => 'y Q',
+          yQQQ   => 'y QQQ',
         );
 
     test_formats( $locale, %formats );
@@ -330,40 +334,43 @@ sub check_en_GB
           territory_id     => 'GB',
           variant_id       => undef,
 
-          datetime_format_default => 'd MMM yyyy HH:mm:ss',
+          datetime_format_default => 'd MMM y HH:mm:ss',
         );
 
     test_data( $locale, %tests );
 
     my %formats =
-        ( # from en_GB
-          'MEd' => 'E, d/M',
-          'MMMEd' => 'E d MMM',
-          'MMMMd' => 'd MMMM',
-          'MMdd' => 'dd/MM',
-          'Md' => 'd/M',
-          'yMEd' => 'EEE, d/M/yyyy',
-          'yyMMM' => 'MMM yy',
-          'yyyyMM' => 'MM/yyyy',
-          'yyyyMMMM' => 'MMMM yyyy',
+        ( Md       => 'd/M',
+          MEd      => 'E, d/M',
+          MMdd     => 'dd/MM',
+          MMMEd    => 'E d MMM',
+          MMMMd    => 'd MMMM',
+          yMEd     => 'EEE, d/M/yyyy',
+          yyMMM    => 'MMM yy',
+          yyyyMM   => 'MM/yyyy',
+          yyyyMMMM => 'MMMM y',
 
           # from en
-          'Hm' => 'HH:mm',
-          'Hms' => 'HH:mm:ss',
-          'M' => 'L',
-          'MMM' => 'LLL',
-          'MMMMEd' => 'E, MMMM d',
-          'MMMd' => 'MMM d',
-          'd' => 'd',
-          'hm' => 'h:mm a',
-          'ms' => 'mm:ss',
-          'y' => 'yyyy',
-          'yM' => 'M/yyyy',
-          'yMMM' => 'MMM yyyy',
-          'yMMMEd' => 'EEE, MMM d, yyyy',
-          'yMMMM' => 'MMMM yyyy',
-          'yQ' => 'Q yyyy',
-          'yQQQ' => 'QQQ yyyy',
+          d      => 'd',
+          EEEd   => 'd EEE',
+          hm     => 'h:mm a',
+          Hm     => 'H:mm',
+          Hms    => 'H:mm:ss',
+          M      => 'L',
+          MMM    => 'LLL',
+          MMMd   => 'MMM d',
+          MMMMEd => 'E, MMMM d',
+          ms     => 'mm:ss',
+          y      => 'y',
+          yM     => 'M/yyyy',
+          yMMM   => 'MMM y',
+          yMMMEd => 'EEE, MMM d, y',
+          yMMMM  => 'MMMM y',
+          yQ     => 'Q yyyy',
+          yQQQ   => 'QQQ y',
+
+          # from root
+          hms    => 'h:mm:ss a',
         );
 
     test_formats( $locale, %formats );
