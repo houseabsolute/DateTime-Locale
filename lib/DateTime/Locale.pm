@@ -832,17 +832,16 @@ These are accessed by passing a name to C<< $locale->format_for(...)
 >>, where the name is a Java-style format specifier.
 
 The return value is a string suitable for passing to C<<
-$dt->strftime() >>, so you can do something like this:
+$dt->format_cldr() >>, so you can do something like this:
 
-  print $dt->strftime( $dt->locale()->format_for('MMMdd')
+  print $dt->format_cldr( $dt->locale()->format_for('MMMdd') )
 
 which for the "en" locale would print out something like "08 Jul".
 
-Note that the localization goes beyond just directly translating the
-Java-style string to a strftime-style string. It may also include
-additional text specific to the locale. For example, the "MMMMd"
-format for the "zh" locale includes the Chinese characters for "day"
-(日) and month (月), so you get something like "8月23日".
+Note that the localization may also include additional text specific to the
+locale. For example, the "MMMMd" format for the "zh" locale includes the
+Chinese characters for "day" (日) and month (月), so you get something like "8
+月23日".
 
 =item * $locale->_available_format()
 
@@ -921,9 +920,6 @@ Dave Rolsky <autarch@urth.org>
 These modules are loosely based on the DateTime::Language modules,
 which were in turn based on the Date::Language modules from Graham
 Barr's TimeDate distribution.
-
-Thanks to Rick Measham for providing the Java to strftime pattern
-conversion routines used during locale generation.
 
 =head1 COPYRIGHT
 
