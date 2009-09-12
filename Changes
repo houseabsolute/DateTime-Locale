@@ -20,6 +20,13 @@
 - All of these deprecated methods will eventually be removed. If you are using
   them directly, please change your code.
 
+- Converted data files in tools/t/test-data to Unix line endings. This works
+  around a bug in Module::Signature. Reported by Zefram. RT #49085.
+
+- Require Params::Validate 0.91, since 0.89 caused test failures for
+  someone. Reported by Jeremy Hetzler. RT #41365.
+
+
 0.43   2009-06-30
 
 - Based on CLDR 1.7.1, which includes support for several new
