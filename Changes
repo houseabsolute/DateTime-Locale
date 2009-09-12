@@ -1,4 +1,4 @@
-0.44
+0.44   2009-09-12
 
 - All methods which return strftime-style patterns are officially deprecated
   (and have been a little broken for some time, regardless). This includes all
