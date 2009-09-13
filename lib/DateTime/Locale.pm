@@ -375,11 +375,11 @@ find a suitable replacement.
 
 The fallback search order is:
 
-  language_script_territory
-  language_script
-  language_territory_variant
-  language_territory
-  language
+  {language}_{script}_{territory}
+  {language}_{script}
+  {language}_{territory}_{variant}
+  {language}_{territory}
+  {language}
 
 Eg. For locale C<es_XX_UNKNOWN> the fallback search would be:
 
@@ -439,8 +439,8 @@ Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All
 native names are utf8 encoded.
 
-B<NB>: Many locales are only partially translated, so some native
-locale names may still contain some English.
+B<NB>: Some locales are only partially translated, so their native locale
+names may still contain some English.
 
 =head2 DateTime::Locale->add_aliases ( $alias1 => $id1, $alias2 => $id2, ... )
 
@@ -566,7 +566,6 @@ Examples:
      );
 
  # Returns instance of class Ridas::Locales::CustomGB
- # NOT Ridas::Locales::Custom::en_GB_RIDAS !
  my $l = DateTime::Locale->load('en_GB_RIDAS');
 
 If you register a locale for an id that is already registered, the
@@ -595,7 +594,7 @@ Subclass an existing locale implementing only the changes you require.
 
 =item 2.
 
-Create a completely new locale.
+Create a completely new locale as a new class.
 
 =back
 
@@ -603,8 +602,8 @@ In either case the locale MUST be registered before use.
 
 =head2 Subclassing an existing locale
 
-The following example sublasses the United Kingdom English locale to
-provide different date/time formats:
+The following example sublasses the United Kingdom English locale to change
+some the full date and time formats.
 
   package Ridas::Locale::en_GB_RIDAS1;
 
@@ -613,40 +612,16 @@ provide different date/time formats:
 
   use base 'DateTime::Locale::en_GB';
 
-  my $locale_id = 'en_GB_RIDAS1';
+  sub date_format_full   { 'EEEE d MMMM y' }
 
-  my $date_formats =
-  {
-    'full'   => '%A %{day} %B %{ce_year}',
-    'long'   => '%{day} %B %{ce_year}',
-    'medium' => '%{day} %b %{ce_year}',
-    'short'  => '%{day}/%m/%y',
-  };
-
-  my $time_formats =
-  {
-    'full'   => '%H h  %{minute} %{time_zone_short_name}',
-    'long'   => '%{hour12}:%M:%S %p',
-    'medium' => '%{hour12}:%M:%S %p',
-    'short'  => '%{hour12}:%M %p',
-  };
-
-  sub date_format_full   { $date_formats{full} }
-  sub date_format_long   { $date_formats{long} }
-  sub date_format_medium { $date_formats{medium} }
-  sub date_format_short  { $date_formats{short} }
-
-  sub time_format_full   { $time_formats{full} }
-  sub time_format_long   { $time_formats{long} }
-  sub time_format_medium { $time_formats{medium} }
-  sub time_format_short  { $time_formats{short} }
+  sub time_format_full   { 'HH mm zzzz' }
 
   1;
 
 Now register it:
 
  DateTime::Locale->register
-     ( id       => 'en_GB_RIDAS1',
+     ( id    => 'en_GB_RIDAS1',
 
        # name, territory, and variant as described in register() documentation
 
@@ -734,6 +709,9 @@ part of a string, like "the month of July". The stand alone values are for
 use in things like calendars, and the narrow form may not be unique (for
 example, in day column heading for a calendar it's okay to have "T" for both
 Tuesday and Thursday).
+
+The wide name should always be the full name of thing in question. The narrow
+name should be just one or two characters.
 
 =over 4
 
@@ -827,11 +805,11 @@ datetime, such as the year and month, or hour and minute.
 
 =item * $locale->format_for($name)
 
-These are accessed by passing a name to C<< $locale->format_for(...)
->>, where the name is a Java-style format specifier.
+These are accessed by passing a name to C<< $locale->format_for(...)  >>,
+where the name is a CLDR-style format specifier.
 
-The return value is a string suitable for passing to C<<
-$dt->format_cldr() >>, so you can do something like this:
+The return value is a string suitable for passing to C<< $dt->format_cldr()
+>>, so you can do something like this:
 
   print $dt->format_cldr( $dt->locale()->format_for('MMMdd') )
 
@@ -839,8 +817,8 @@ which for the "en" locale would print out something like "08 Jul".
 
 Note that the localization may also include additional text specific to the
 locale. For example, the "MMMMd" format for the "zh" locale includes the
-Chinese characters for "day" (日) and month (月), so you get something like "8
-月23日".
+Chinese characters for "day" (日) and month (月), so you get something like
+"8月23日".
 
 =item * $locale->available_formats()
 
@@ -872,11 +850,26 @@ indicating the new default format length.
 
 =back
 
+There are also some miscellaneous methods locales should support:
+
+=over 4
+
+=item * $locale->prefers_24_hour_time()
+
+Returns a boolean indicating whether or not the locale prefers 24-hour time.
+
+=item * $locale->first_day_of_week()
+
+Returns a number from 1 to 7 indicating the I<local> first day of the
+week, with Monday being 1 and Sunday being 7.
+
+=back
+
 =head1 SUPPORT
 
-Please be aware that all locale data has been generated from the CLDR
-(Common Locale Data Repository) project locales data). The data B<is>
-currently incomplete, and B<will> contain errors in some locales.
+Please be aware that all locale data has been generated from the CLDR (Common
+Locale Data Repository) project locales data). The data is incomplete, and
+will contain errors in some locales.
 
 When reporting errors in data, please check the primary data sources
 first, then where necessary report errors directly to the primary
@@ -922,7 +915,7 @@ Barr's TimeDate distribution.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2008 David
+Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2009 David
 Rolsky. All rights reserved. This program is free software; you can
 redistribute it and/or modify it under the same terms as Perl itself.
 
