@@ -655,7 +655,7 @@ Now register it:
 
 =head2 Creating a completely new locale
 
-You are, of course, free to subclass C<DateTime::Locale::Base> if you
+You are, of course, free to subclass L<DateTime::Locale::Base> if you
 want to, though this is not required.
 
 Remember to register your custom locale!
@@ -933,9 +933,9 @@ it under the same terms as Perl itself.
 The full text of the license can be found in the F<LICENSE> file included
 with this module.
 
-The locale modules in directory C<DateTime/Locale/> have been
+The locale modules in directory F<DateTime/Locale/> have been
 generated from data provided by the CLDR project, see
-C<DateTime/Locale/LICENSE.cldr> for details on the CLDR data's
+F<DateTime/Locale/LICENSE.cldr> for details on the CLDR data's
 license.
 
 =head1 SEE ALSO
