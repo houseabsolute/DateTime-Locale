@@ -729,58 +729,57 @@ UTF-8 string.
 The following methods all return an array reference containing the
 specified data.
 
-The format methods return strings that might be used a part of a
-string, like "the month of July", and should always return a set of
-unique values. The stand alone values are for use in things like
-calendars, and the narrow form may not be unique (for example, in day
-column heading for a calendar it's okay to have "T" for both Tuesday
-and Thursday).
+The methods with "format" in the name should return strings that can be used a
+part of a string, like "the month of July". The stand alone values are for
+use in things like calendars, and the narrow form may not be unique (for
+example, in day column heading for a calendar it's okay to have "T" for both
+Tuesday and Thursday).
 
 =over 4
 
 =item * $locale->month_format_wide()
 
-=item * $locale->month_format_abbreviated($dt)
+=item * $locale->month_format_abbreviated()
 
-=item * $locale->month_format_narrow($dt)
+=item * $locale->month_format_narrow()
 
 =item * $locale->month_stand_alone_wide()
 
-=item * $locale->month_stand_alone_abbreviated($dt)
+=item * $locale->month_stand_alone_abbreviated()
 
-=item * $locale->month_stand_alone_narrow($dt)
+=item * $locale->month_stand_alone_narrow()
 
 =item * $locale->day_format_wide()
 
-=item * $locale->day_format_abbreviated($dt)
+=item * $locale->day_format_abbreviated()
 
-=item * $locale->day_format_narrow($dt)
+=item * $locale->day_format_narrow()
 
 =item * $locale->day_stand_alone_wide()
 
-=item * $locale->day_stand_alone_abbreviated($dt)
+=item * $locale->day_stand_alone_abbreviated()
 
-=item * $locale->day_stand_alone_narrow($dt)
+=item * $locale->day_stand_alone_narrow()
 
 =item * $locale->quarter_format_wide()
 
-=item * $locale->quarter_format_abbreviated($dt)
+=item * $locale->quarter_format_abbreviated()
 
-=item * $locale->quarter_format_narrow($dt)
+=item * $locale->quarter_format_narrow()
 
 =item * $locale->quarter_stand_alone_wide()
 
-=item * $locale->quarter_stand_alone_abbreviated($dt)
+=item * $locale->quarter_stand_alone_abbreviated()
 
-=item * $locale->quarter_stand_alone_narrow($dt)
+=item * $locale->quarter_stand_alone_narrow()
 
 =item * $locale->am_pm_abbreviated()
 
 =item * $locale->era_wide()
 
-=item * $locale->era_abbreviated($dt)
+=item * $locale->era_abbreviated()
 
-=item * $locale->era_narrow($dt)
+=item * $locale->era_narrow()
 
 =back
 
@@ -843,7 +842,7 @@ locale. For example, the "MMMMd" format for the "zh" locale includes the
 Chinese characters for "day" (日) and month (月), so you get something like "8
 月23日".
 
-=item * $locale->_available_format()
+=item * $locale->available_formats()
 
 This should return a list of all the format names that could be passed
 to C<< $locale->format_for() >>.
