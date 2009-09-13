@@ -656,8 +656,9 @@ locale.
 
 =item * $locale->first_day_of_week()
 
-Returns a number from 1 to 7 indicating the I<local> first day of the
-week. For example, for a US locale this returns 7.
+Returns a number from 1 to 7 indicating the I<local> first day of the week,
+with Monday being 1 and Sunday being 7. For example, for a US locale this
+returns 7.
 
 =item * $locale->available_formats()
 
