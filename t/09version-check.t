@@ -4,14 +4,14 @@ use warnings;
 use Test::More;
 
 eval { require Test::Output };
-if ($@)
-{
+if ($@) {
     plan skip_all => 'These tests require Test::Output.';
 }
 
 plan tests => 1;
 
 {
+
     package DateTime::Locale::fake;
 
     use strict;
@@ -21,22 +21,23 @@ plan tests => 1;
 
     use base 'DateTime::Locale::root';
 
-    sub cldr_version { '0.1' }
+    sub cldr_version {'0.1'}
 
-    sub _default_date_format_length { 'medium' }
+    sub _default_date_format_length {'medium'}
 
-    sub _default_time_format_length { 'medium' }
+    sub _default_time_format_length {'medium'}
 
-    DateTime::Locale->register( id          => 'fake',
-                                en_language => 'Fake',
-                              );
+    DateTime::Locale->register(
+        id          => 'fake',
+        en_language => 'Fake',
+    );
 }
 
 {
-    Test::Output::stderr_like
-        ( sub { DateTime::Locale->load('fake') },
-          qr/\Qfrom an older version (0.1)/,
-          'loading timezone where olson version is older than current'
-        );
+    Test::Output::stderr_like(
+        sub { DateTime::Locale->load('fake') },
+        qr/\Qfrom an older version (0.1)/,
+        'loading timezone where olson version is older than current'
+    );
 }
 

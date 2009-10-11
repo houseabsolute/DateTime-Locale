@@ -3,16 +3,13 @@ use warnings;
 
 use Test::More;
 
-BEGIN
-{
+BEGIN {
     eval { require Storable };
 
-    if ($@)
-    {
+    if ($@) {
         plan skip_all => 'These tests require the Storable mdoule';
     }
-    else
-    {
+    else {
         plan tests => 3;
     }
 }
@@ -21,11 +18,13 @@ use DateTime::Locale;
 
 use Storable;
 
-my $loc1 = DateTime::Locale->load( 'en_US' );
+my $loc1   = DateTime::Locale->load('en_US');
 my $frozen = Storable::nfreeze($loc1);
 
-ok( length $frozen < 2000,
-    'the serialized locale object should not be immense' );
+ok(
+    length $frozen < 2000,
+    'the serialized locale object should not be immense'
+);
 
 my $loc2 = Storable::thaw($frozen);
 

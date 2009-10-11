@@ -13,7 +13,6 @@ use Params::Validate qw( validate validate_pos SCALAR );
 
 our $VERSION = '0.44';
 
-
 my %Class;
 my %DataForID;
 my %NameToID;
@@ -23,75 +22,73 @@ my %IDToExtra;
 
 my %LoadCache;
 
-sub register
-{
+sub register {
     my $class = shift;
 
     %LoadCache = ();
 
-    if ( ref $_[0] )
-    {
+    if ( ref $_[0] ) {
         $class->_register(%$_) foreach @_;
     }
-    else
-    {
+    else {
         $class->_register(@_);
     }
 }
 
-sub _register
-{
+sub _register {
     my $class = shift;
 
-    my %p = validate( @_,
-                      { id               => { type => SCALAR },
+    my %p = validate(
+        @_,
+        {
+            id => { type => SCALAR },
 
-                        en_language      => { type => SCALAR },
-                        en_script        => { type => SCALAR, optional => 1 },
-                        en_territory     => { type => SCALAR, optional => 1 },
-                        en_variant       => { type => SCALAR, optional => 1 },
+            en_language  => { type => SCALAR },
+            en_script    => { type => SCALAR, optional => 1 },
+            en_territory => { type => SCALAR, optional => 1 },
+            en_variant   => { type => SCALAR, optional => 1 },
 
-                        native_language  => { type => SCALAR, optional => 1 },
-                        native_script    => { type => SCALAR, optional => 1 },
-                        native_territory => { type => SCALAR, optional => 1 },
-                        native_variant   => { type => SCALAR, optional => 1 },
+            native_language  => { type => SCALAR, optional => 1 },
+            native_script    => { type => SCALAR, optional => 1 },
+            native_territory => { type => SCALAR, optional => 1 },
+            native_variant   => { type => SCALAR, optional => 1 },
 
-                        class            => { type => SCALAR, optional => 1 },
-                        replace          => { type => SCALAR, default => 0 },
-                      } );
+            class   => { type => SCALAR, optional => 1 },
+            replace => { type => SCALAR, default  => 0 },
+        }
+    );
 
     my $id = $p{id};
 
     die "'\@' or '=' are not allowed in locale ids"
         if $id =~ /[\@=]/;
 
-    die "You cannot replace an existing locale ('$id') unless you also specify the 'replace' parameter as true\n"
-        if ! delete $p{replace} && exists $DataForID{$id};
+    die
+        "You cannot replace an existing locale ('$id') unless you also specify the 'replace' parameter as true\n"
+        if !delete $p{replace} && exists $DataForID{$id};
 
     $p{native_language} = $p{en_language}
         unless exists $p{native_language};
 
     my @en_pieces;
     my @native_pieces;
-    foreach my $p ( qw( language script territory variant ) )
-    {
-        push @en_pieces, $p{"en_$p"} if exists $p{"en_$p"};
+    foreach my $p (qw( language script territory variant )) {
+        push @en_pieces,     $p{"en_$p"}     if exists $p{"en_$p"};
         push @native_pieces, $p{"native_$p"} if exists $p{"native_$p"};
     }
 
-    $p{en_complete_name} = join ' ', @en_pieces;
+    $p{en_complete_name}     = join ' ', @en_pieces;
     $p{native_complete_name} = join ' ', @native_pieces;
 
     $DataForID{$id} = \%p;
 
-    $NameToID{ $p{en_complete_name} } = $id;
+    $NameToID{ $p{en_complete_name} }           = $id;
     $NativeNameToID{ $p{native_complete_name} } = $id;
 
     $Class{$id} = $p{class} if defined exists $p{class};
 }
 
-sub _registered_id
-{
+sub _registered_id {
     shift;
     my ($id) = validate_pos( @_, { type => SCALAR } );
 
@@ -101,17 +98,16 @@ sub _registered_id
     return 0;
 }
 
-sub add_aliases
-{
+sub add_aliases {
     shift;
 
     %LoadCache = ();
 
     my $aliases = ref $_[0] ? $_[0] : {@_};
 
-    while ( my ( $alias, $id ) = each %$aliases )
-    {
-        die "Unregistered locale '$id' cannot be used as an alias target for $alias"
+    while ( my ( $alias, $id ) = each %$aliases ) {
+        die
+            "Unregistered locale '$id' cannot be used as an alias target for $alias"
             unless __PACKAGE__->_registered_id($id);
 
         die "Can't alias an id to itself"
@@ -121,8 +117,7 @@ sub add_aliases
 
         my %seen = ( $alias => 1, $id => 1 );
         my $copy = $id;
-        while ( $copy = $AliasToID{$copy} )
-        {
+        while ( $copy = $AliasToID{$copy} ) {
             die "Creating an alias from $alias to $id would create a loop.\n"
                 if $seen{$copy};
 
@@ -133,8 +128,7 @@ sub add_aliases
     }
 }
 
-sub remove_alias
-{
+sub remove_alias {
     shift;
 
     %LoadCache = ();
@@ -144,45 +138,47 @@ sub remove_alias
     return delete $AliasToID{$alias};
 }
 
-BEGIN
-{
+BEGIN {
     __PACKAGE__->register( DateTime::Locale::Catalog->Locales() );
     __PACKAGE__->add_aliases( DateTime::Locale::Catalog->Aliases() );
 }
 
-sub ids          { wantarray ? keys %DataForID       : [ keys %DataForID      ] }
-sub names        { wantarray ? keys %NameToID        : [ keys %NameToID       ] }
-sub native_names { wantarray ? keys %NativeNameToID  : [ keys %NativeNameToID ] }
+sub ids   { wantarray ? keys %DataForID : [ keys %DataForID ] }
+sub names { wantarray ? keys %NameToID  : [ keys %NameToID ] }
+
+sub native_names {
+    wantarray ? keys %NativeNameToID : [ keys %NativeNameToID ];
+}
 
 # These are hardcoded for backwards comaptibility with the
 # DateTime::Language code.
-my %OldAliases =
-    ( 'Afar'             => 'aa',
-      'Amharic'           => 'am_ET',
-      'Austrian'          => 'de_AT',
-      'Brazilian'         => 'pt_BR',
-      'Czech'             => 'cs_CZ',
-      'Danish'            => 'da_DK',
-      'Dutch'             => 'nl_NL',
-      'English'           => 'en_US',
-      'French'            => 'fr_FR',
-      #      'Gedeo'             => undef, # XXX
-      'German'            => 'de_DE',
-      'Italian'           => 'it_IT',
-      'Norwegian'         => 'no_NO',
-      'Oromo'             => 'om_ET', # Maybe om_KE or plain om ?
-      'Portugese'         => 'pt_PT',
-      'Sidama'            => 'sid',
-      'Somali'            => 'so_SO',
-      'Spanish'           => 'es_ES',
-      'Swedish'           => 'sv_SE',
-      'Tigre'             => 'tig',
-      'TigrinyaEthiopian' => 'ti_ET',
-      'TigrinyaEritrean'  => 'ti_ER',
-    );
+my %OldAliases = (
+    'Afar'      => 'aa',
+    'Amharic'   => 'am_ET',
+    'Austrian'  => 'de_AT',
+    'Brazilian' => 'pt_BR',
+    'Czech'     => 'cs_CZ',
+    'Danish'    => 'da_DK',
+    'Dutch'     => 'nl_NL',
+    'English'   => 'en_US',
+    'French'    => 'fr_FR',
 
-sub load
-{
+    #      'Gedeo'             => undef, # XXX
+    'German'            => 'de_DE',
+    'Italian'           => 'it_IT',
+    'Norwegian'         => 'no_NO',
+    'Oromo'             => 'om_ET',    # Maybe om_KE or plain om ?
+    'Portugese'         => 'pt_PT',
+    'Sidama'            => 'sid',
+    'Somali'            => 'so_SO',
+    'Spanish'           => 'es_ES',
+    'Swedish'           => 'sv_SE',
+    'Tigre'             => 'tig',
+    'TigrinyaEthiopian' => 'ti_ET',
+    'TigrinyaEritrean'  => 'ti_ER',
+);
+
+sub load {
     my $class = shift;
     my ($name) = validate_pos( @_, { type => SCALAR } );
 
@@ -194,48 +190,42 @@ sub load
     return $LoadCache{$key} if exists $LoadCache{$key};
 
     # Custom class registered by user
-    if ( $Class{$name} )
-    {
-        return $LoadCache{$key} = $class->_load_class_from_id( $name, $Class{$name} )
+    if ( $Class{$name} ) {
+        return $LoadCache{$key}
+            = $class->_load_class_from_id( $name, $Class{$name} );
     }
 
     # special case for backwards compatibility with DT::Language
     $name = $OldAliases{$name} if exists $OldAliases{$name};
 
-    if ( exists $DataForID{$name} || exists $AliasToID{$name} )
-    {
+    if ( exists $DataForID{$name} || exists $AliasToID{$name} ) {
         return $LoadCache{$key} = $class->_load_class_from_id($name);
     }
 
-    foreach my $h ( \%NameToID, \%NativeNameToID )
-    {
+    foreach my $h ( \%NameToID, \%NativeNameToID ) {
         return $LoadCache{$key} = $class->_load_class_from_id( $h->{$name} )
             if exists $h->{$name};
     }
 
-    if ( my $id = $class->_guess_id($name) )
-    {
+    if ( my $id = $class->_guess_id($name) ) {
         return $LoadCache{$key} = $class->_load_class_from_id($id);
     }
 
     die "Invalid locale name or id: $name\n";
 }
 
-sub _guess_id
-{
+sub _guess_id {
     my $class = shift;
-    my $name = shift;
+    my $name  = shift;
 
     # Strip off charset for LC_* ids : en_GB.UTF-8 etc
     $name =~ s/\..*$//;
 
-    my ($language, $script, $territory, $variant ) =
-        _parse_id($name);
+    my ( $language, $script, $territory, $variant ) = _parse_id($name);
 
     my @guesses;
 
-    if ( defined $script )
-    {
+    if ( defined $script ) {
         my $guess = join '_', lc $language, ucfirst lc $script;
 
         push @guesses, $guess;
@@ -246,29 +236,23 @@ sub _guess_id
         unshift @guesses, $guess;
     }
 
-    if ( defined $variant )
-    {
-        push @guesses,
-            join '_', lc $language, uc $territory, uc $variant;
+    if ( defined $variant ) {
+        push @guesses, join '_', lc $language, uc $territory, uc $variant;
     }
 
-    if ( defined $territory )
-    {
-        push @guesses,
-            join '_', lc $language, uc $territory;
+    if ( defined $territory ) {
+        push @guesses, join '_', lc $language, uc $territory;
     }
 
     push @guesses, lc $language;
 
-    foreach my $id (@guesses)
-    {
+    foreach my $id (@guesses) {
         return $id
             if exists $DataForID{$id} || exists $AliasToID{$id};
     }
 }
 
-sub _parse_id
-{
+sub _parse_id {
     $_[0] =~ /([a-z]+)               # id
               (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
               (?: _([A-Z]+) )?       # territory - ALL CAPS - optional
@@ -278,8 +262,7 @@ sub _parse_id
     return $1, $2, $3, $4;
 }
 
-sub _load_class_from_id
-{
+sub _load_class_from_id {
     my $class      = shift;
     my $id         = shift;
     my $real_class = shift;
@@ -288,36 +271,34 @@ sub _load_class_from_id
     # no corresponding .pm file.  There may be multiple levels of
     # alias to go through.
     my $data_id = $id;
-    while ( exists $AliasToID{$data_id} && ! exists $DataForID{$data_id} )
-    {
+    while ( exists $AliasToID{$data_id} && !exists $DataForID{$data_id} ) {
         $data_id = $AliasToID{$data_id};
     }
 
     $real_class ||= "DateTime::Locale::$data_id";
 
-    unless ( $real_class->can('new') )
-    {
+    unless ( $real_class->can('new') ) {
         eval "require $real_class";
 
         die $@ if $@;
     }
 
-    my $locale = $real_class->new( %{ $DataForID{$data_id} },
-                                   id => $id,
-                                 );
+    my $locale = $real_class->new(
+        %{ $DataForID{$data_id} },
+        id => $id,
+    );
 
     return $locale if $DateTime::Locale::InGenerator;
 
-    if ( $locale->can('cldr_version') )
-    {
-        my $object_version = $locale->cldr_version();
+    if ( $locale->can('cldr_version') ) {
+        my $object_version  = $locale->cldr_version();
         my $catalog_version = DateTime::Locale::Catalog->CLDRVersion();
 
-        if ( $object_version ne $catalog_version )
-        {
-            warn "Loaded $real_class, which is from an older version ($object_version)"
-                 . "of the CLDR database than this installation of"
-                 . "DateTime::Locale ($catalog_version).\n";
+        if ( $object_version ne $catalog_version ) {
+            warn
+                "Loaded $real_class, which is from an older version ($object_version)"
+                . "of the CLDR database than this installation of"
+                . "DateTime::Locale ($catalog_version).\n";
         }
     }
 
