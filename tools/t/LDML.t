@@ -49,8 +49,8 @@ use LDML;
 
     my @data =
         ( id              => 'root',
-          version         => '1.124',
-          generation_date => '2007/11/16 18:12:39',
+          version         => '1.192',
+          generation_date => '2009/06/15 21:39:59',
           parent_id       => 'Base',
           source_file     => file('t/test-data/root.xml'),
 
@@ -91,12 +91,12 @@ use LDML;
           era_abbreviated => [ qw( BCE CE ) ],
           era_narrow      => [ qw( BCE CE ) ],
 
-          date_format_full   => 'EEEE, yyyy MMMM dd',
-          date_format_long   => 'yyyy MMMM d',
-          date_format_medium => 'yyyy MMM d',
+          date_format_full   => 'EEEE, y MMMM dd',
+          date_format_long   => 'y MMMM d',
+          date_format_medium => 'y MMM d',
           date_format_short  => 'yyyy-MM-dd',
 
-          time_format_full   => 'HH:mm:ss v',
+          time_format_full   => 'HH:mm:ss zzzz',
           time_format_long   => 'HH:mm:ss z',
           time_format_medium => 'HH:mm:ss',
           time_format_short  => 'HH:mm',
@@ -106,18 +106,29 @@ use LDML;
           default_date_format_length => 'medium',
           default_time_format_length => 'medium',
 
-          available_formats => { Ed         => 'E d',
-                                 H      => 'H',
-                                 HHmm   => 'HH:mm',
-                                 HHmmss => 'HH:mm:ss',
+          available_formats => { d      => 'd',
+                                 EEEd   => 'd EEE',
+                                 hm     => 'h:mm a',
+                                 Hm     => 'H:mm',
+                                 hms    => 'h:mm:ss a',
+                                 Hms    => 'H:mm:ss',
+                                 M      => 'L',
+                                 Md     => 'M-d',
+                                 MEd    => 'E, M-d',
+                                 MMM    => 'LLL',
+                                 MMMd   => 'MMM d',
                                  MMMEd  => 'E MMM d',
                                  MMMMd  => 'MMMM d',
-                                 Md     => 'M-d',
-                                 mmss   => 'mm:ss',
-                                 yyMM   => 'yy-MM',
-                                 yyMMM  => 'yy MMM',
-                                 yyQ    => 'yy Q',
-                                 yyyy   => 'yyyy',
+                                 MMMMEd => 'E MMMM d',
+                                 ms     => 'mm:ss',
+                                 y      => 'y',
+                                 yM     => 'y-M',
+                                 yMEd   => 'EEE, y-M-d',
+                                 yMMM   => 'y MMM',
+                                 yMMMEd => 'EEE, y MMM d',
+                                 yMMMM  => 'y MMMM',
+                                 yQ     => 'y Q',
+                                 yQQQ   => 'y QQQ',
                                },
 
           first_day_of_week => 1,
@@ -180,7 +191,7 @@ use LDML;
         ( id => 'az',
 
           day_format_wide =>
-          [ 'bazar ertəsi', 'çərşənbə axşam',
+          [ 'bazar ertəsi', 'çərşənbə axşamı',
             'çərşənbə', 'cümə axşamı', 'cümə', 'şənbə',
             'bazar' ],
         );
@@ -244,7 +255,7 @@ use LDML;
 
           native_language  => '中文',
           native_script    => undef,
-          native_territory => '臺灣',
+          native_territory => '台灣',
           native_variant   => undef,
         );
 
@@ -264,7 +275,7 @@ use LDML;
 
           native_language  => '中文',
           native_script    => '繁體中文',
-          native_territory => '臺灣',
+          native_territory => '台灣',
           native_variant   => undef,
         );
 
