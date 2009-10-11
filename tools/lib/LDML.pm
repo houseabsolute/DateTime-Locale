@@ -80,21 +80,21 @@ has 'language' =>
 
 has 'script' =>
     ( is      => 'ro',
-      isa     => 'Str|Undef',
+      isa     => 'Maybe[Str]',
       lazy    => 1,
       default => sub { ( $_[0]->_parse_id() )[1] },
     );
 
 has 'territory' =>
     ( is      => 'ro',
-      isa     => 'Str|Undef',
+      isa     => 'Maybe[Str]',
       lazy    => 1,
       default => sub { ( $_[0]->_parse_id() )[2] },
     );
 
 has 'variant' =>
     ( is      => 'ro',
-      isa     => 'Str|Undef',
+      isa     => 'Maybe[Str]',
       lazy    => 1,
       default => sub { ( $_[0]->_parse_id() )[3] },
     );
@@ -108,7 +108,7 @@ has 'parent_id' =>
 class_type 'XML::LibXML::Node';
 has '_calendar_node' =>
     ( is      => 'ro',
-      isa     => 'XML::LibXML::Node|Undef',
+      isa     => 'Maybe[XML::LibXML::Node]',
       lazy    => 1,
       default => sub { $_[0]->_find_one_node( q{dates/calendars/calendar[@type='gregorian']} ) },
     );
@@ -227,7 +227,7 @@ for my $type ( qw( date time ) )
 
         has $attr =>
             ( is         => 'ro',
-              isa        => 'Str|Undef',
+              isa        => 'Maybe[Str]',
               lazy_build => 1,
             );
 
@@ -253,7 +253,7 @@ for my $type ( qw( date time ) )
 
 has 'default_date_format_length' =>
     ( is      => 'ro',
-      isa     => 'Str|Undef',
+      isa     => 'Maybe[Str]',
       lazy    => 1,
       default => sub { $_[0]->_find_one_node_attribute( 'dateFormats/default',
                                                         $_[0]->_calendar_node(),
@@ -263,7 +263,7 @@ has 'default_date_format_length' =>
 
 has 'default_time_format_length' =>
     ( is      => 'ro',
-      isa     => 'Str|Undef',
+      isa     => 'Maybe[Str]',
       lazy    => 1,
       default => sub { $_[0]->_find_one_node_attribute( 'timeFormats/default',
                                                         $_[0]->_calendar_node(),
@@ -279,13 +279,25 @@ has 'am_pm_abbreviated' =>
 
 has 'datetime_format' =>
     ( is         => 'ro',
-      isa        => 'Str|Undef',
+      isa        => 'Maybe[Str]',
       lazy_build => 1,
     );
 
 has 'available_formats' =>
     ( is         => 'ro',
       isa        => 'HashRef[Str]',
+      lazy_build => 1,
+    );
+
+has 'default_interval_format' =>
+    ( is         => 'ro',
+      isa        => 'Maybe[Str]',
+      lazy_build => 1,
+    );
+
+has 'interval_formats' =>
+    ( is         => 'ro',
+      isa        => 'HashRef[HashRef[Str]]',
       lazy_build => 1,
     );
 
@@ -309,7 +321,7 @@ for my $thing ( qw( language script territory variant ) )
 
         has $en_attr =>
             ( is         => 'ro',
-              isa        => 'Str|Undef',
+              isa        => 'Maybe[Str]',
               lazy_build => 1,
             );
 
@@ -336,7 +348,7 @@ for my $thing ( qw( language script territory variant ) )
 
         has $native_attr =>
             ( is         => 'ro',
-              isa        => 'Str|Undef',
+              isa        => 'Maybe[Str]',
               lazy_build => 1,
             );
 
@@ -718,6 +730,48 @@ sub _build_available_formats
             or next;
 
         $formats{$id} = join '', map { $_->data() } $preferred->childNodes();
+    }
+
+    return \%formats;
+}
+
+sub _build_default_interval_format
+{
+    my $self = shift;
+
+    return
+        $self->_find_one_node_text
+            ( 'dateTimeFormats/intervalFormats/intervalFormatFallback',
+              $self->_calendar_node() );
+}
+
+sub _build_interval_formats
+{
+    my $self = shift;
+
+    return {} unless $self->has_calendar_data();
+
+    my @ifi_nodes = $self->_calendar_node()->findnodes('dateTimeFormats/intervalFormats/intervalFormatItem');
+
+    my %index;
+    for my $ifi_node (@ifi_nodes)
+    {
+        for my $gd_node ( $ifi_node->findnodes('greatestDifference') )
+        {
+            push @{ $index{ $ifi_node->getAttribute('id') }{ $gd_node->getAttribute('id') } }, $gd_node;
+        }
+    }
+
+    my %formats;
+    for my $ifi_id ( keys %index )
+    {
+        for my $gd_id ( keys %{ $index{$ifi_id} } )
+        {
+            my $preferred = $self->_find_preferred_node( @{ $index{$ifi_id}{$gd_id} } )
+                or next;
+
+            $formats{$ifi_id}{$gd_id} = join '', map { $_->data() } $preferred->childNodes();
+        }
     }
 
     return \%formats;

@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 96;
+use Test::More tests => 98;
 
 use LDML;
 
@@ -130,6 +130,82 @@ use LDML;
                                  yQ     => 'y Q',
                                  yQQQ   => 'y QQQ',
                                },
+
+          default_interval_format => "{0} \x{2013} {1}",
+
+          interval_formats => {
+              'yMMMd' => {
+                  'y' => "yyyy-MM-dd \x{2013} yyyy-MM-dd",
+                  'M' => "yyyy-MM-dd \x{2013} MM-d",
+                  'd' => "yyyy-MM-d \x{2013} d"
+              },
+              'd'      => { 'd' => 'd-d' },
+              'yMMMEd' => {
+                  'y' => "E, yyyy-MM-dd \x{2013} E, yyyy-MM-dd",
+                  'M' => "E, yyyy-MM-dd \x{2013} E, yyyy-MM-dd",
+                  'd' => "E, yyyy-MM-dd \x{2013} E, yyyy-MM-dd"
+              },
+              'y'  => { 'y' => 'y-y' },
+              'hv' => {
+                  'a' => 'HH-HH v',
+                  'h' => 'HH-HH v'
+              },
+              'yMMMM' => {
+                  'y' => "yyyy-MM \x{2013} yyyy-MM",
+                  'M' => "yyyy-MM \x{2013} MM"
+              },
+              'h' => {
+                  'a' => 'HH-HH',
+                  'h' => 'HH-HH'
+              },
+              'M'   => { 'M' => 'M-M' },
+              'yMd' => {
+                  'y' => "yyyy-MM-dd \x{2013} yyyy-MM-dd",
+                  'M' => "yyyy-MM-dd \x{2013} MM-dd",
+                  'd' => "yyyy-MM-dd \x{2013} dd"
+              },
+              'MMM' => { 'M' => 'LLL-LLL' },
+              'MEd' => {
+                  'M' => "E, MM-dd \x{2013} E, MM-dd",
+                  'd' => "E, MM-dd \x{2013} E, MM-dd"
+              },
+              'yM' => {
+                  'y' => "yyyy-MM \x{2013} yyyy-MM",
+                  'M' => "yyyy-MM \x{2013} MM"
+              },
+              'Md' => {
+                  'M' => "MM-dd \x{2013} MM-dd",
+                  'd' => "MM-dd \x{2013} dd"
+              },
+              'yMEd' => {
+                  'y' => "E, yyyy-MM-dd \x{2013} E, yyyy-MM-dd",
+                  'M' => "E, yyyy-MM-dd \x{2013} E, yyyy-MM-dd",
+                  'd' => "E, yyyy-MM-dd \x{2013} E, yyyy-MM-dd"
+              },
+              'hm' => {
+                  'a' => 'HH:mm-HH:mm',
+                  'h' => 'HH:mm-HH:mm',
+                  'm' => 'HH:mm-HH:mm'
+              },
+              'hmv' => {
+                  'a' => 'HH:mm-HH:mm v',
+                  'h' => 'HH:mm-HH:mm v',
+                  'm' => 'HH:mm-HH:mm v'
+              },
+              'MMMEd' => {
+                  'M' => "E, MM-d \x{2013} E, MM-d",
+                  'd' => "E, MM-d \x{2013} E, MM-d"
+              },
+              'MMMM' => { 'M' => 'LLLL-LLLL' },
+              'MMMd' => {
+                  'M' => "MM-d \x{2013} MM-d",
+                  'd' => "MM-d \x{2013} d"
+              },
+              'yMMM' => {
+                  'y' => "yyyy-MM \x{2013} yyyy-MM",
+                  'M' => "yyyy-MM \x{2013} MM"
+              },
+              },
 
           first_day_of_week => 1,
         );
