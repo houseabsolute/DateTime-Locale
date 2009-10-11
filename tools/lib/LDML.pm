@@ -312,6 +312,12 @@ has 'interval_formats' => (
     lazy_build => 1,
 );
 
+has 'field_names' => (
+    is         => 'ro',
+    isa        => 'HashRef[HashRef[Str]]',
+    lazy_build => 1,
+);
+
 # This is really only built once for all objects
 has '_first_day_of_week_index' => (
     is         => 'ro',
@@ -777,6 +783,33 @@ sub _build_interval_formats {
     }
 
     return \%formats;
+}
+
+sub _build_field_names {
+    my $self = shift;
+
+    return {} unless $self->has_calendar_data();
+
+    my @fields = $self->_calendar_node()->findnodes('fields/field');
+
+    my %names;
+    for my $field (@fields) {
+        my $key = $field->getAttribute('type');
+
+        if ( my $text = $self->_find_one_node_text( 'displayName', $field ) )
+        {
+            $names{$key}{name} = $text;
+        }
+
+        for my $node ( $field->findnodes('relative') ) {
+            next if $node->getAttribute('draft');
+
+            $names{$key}{ $node->getAttribute('type') } = join '',
+                map { $_->data() } $node->childNodes();
+        }
+    }
+
+    return \%names;
 }
 
 sub _build_first_day_of_week {

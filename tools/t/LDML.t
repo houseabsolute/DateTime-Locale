@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 98;
+use Test::More tests => 99;
 
 use LDML;
 
@@ -215,6 +215,25 @@ use LDML;
                 'y' => "yyyy-MM \x{2013} yyyy-MM",
                 'M' => "yyyy-MM \x{2013} MM"
             },
+        },
+
+        field_names => {
+            era   => { name => 'Era' },
+            year  => { name => 'Year' },
+            month => { name => 'Month' },
+            week  => { name => 'Week' },
+            day   => {
+                name => 'Day',
+                '-1' => 'Yesterday',
+                '0'  => 'Today',
+                '1'  => 'Tomorrow',
+            },
+            weekday   => { name => 'Day of the Week' },
+            dayperiod => { name => 'Dayperiod' },
+            hour      => { name => 'Hour' },
+            minute    => { name => 'Minute' },
+            second    => { name => 'Second' },
+            zone      => { name => 'Zone' },
         },
 
         first_day_of_week => 1,
