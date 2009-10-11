@@ -88,6 +88,9 @@ sub format_for {
 sub available_formats {
     my $self = shift;
 
+    return @{ $self->{merged_available_formats} }
+        if $self->{merged_available_formats};
+
     # The various parens seem to be necessary to force uniq() to see
     # the caller's list context. Go figure.
     my @uniq
@@ -96,11 +99,44 @@ sub available_formats {
             Class::ISA::self_and_super_path( ref $self ) );
 
     # Doing the sort in the same expression doesn't work under 5.6.x.
-    return sort @uniq;
+    $self->{merged_available_formats} = [ sort @uniq ];
+
+    return @{ $self->{merged_available_formats} };
 }
 
 # Just needed for the above method.
 sub _available_formats { }
+
+sub _merged_interval_formats {
+    my $self = shift;
+
+    return $self->{merged_interval_formats}
+        if $self->{merged_interval_formats};
+
+    my %merged;
+    for my $class ( Class::ISA::self_and_super_path( ref $self ) ) {
+        my $formats = $_->_interval_formats()
+            or next;
+
+        for my $ifi_id ( keys %{$formats} ) {
+            if ( $merged{$ifi_id} ) {
+                for my $gd_id ( keys %{ $formats->{$ifi_id} } ) {
+                    next if exists $merged{$ifi_id}{$gd_id};
+
+                    $merged{$ifi_id}{$gd_id} = $formats->{$ifi_id}{$gd_id};
+                }
+            }
+            else {
+                $merged{$ifi_id} = $formats->{$ifi_id};
+            }
+        }
+    }
+
+    return $self->{merged_interval_formats} = \%merged;
+}
+
+# Just needed for the above method.
+sub _interval_formats { }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
