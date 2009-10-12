@@ -808,8 +808,8 @@ $locale->format_for() >>, including formats supported by the parent.
 
 =back
 
-The locale can define names for fields ("what is a day or year called in this
-locale").
+The locale can define names for fields. This answers questions like "what is a
+day (or year or ..) called in this locale?").
 
 =over 4
 
