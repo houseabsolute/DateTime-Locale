@@ -261,6 +261,8 @@ sub write_pm_subs {
         }
     }
 
+    write_hashref_sub( $fh, $ldml, 'merged_available_formats', '_available_formats' );
+
     for my $attr (qw( default_date_format_length default_time_format_length ))
     {
         my $def = $ldml->$attr();
@@ -269,7 +271,6 @@ sub write_pm_subs {
         print {$fh} string_sub( q{_} . $attr,, $def );
     }
 
-    write_available_format_subs( $fh, $ldml );
 }
 
 sub make_alias {
@@ -394,15 +395,16 @@ EOF
 }
 
 sub write_hashref_sub {
-    my $fh   = shift;
-    my $ldml = shift;
-    my $name = shift;
+    my $fh       = shift;
+    my $ldml     = shift;
+    my $name     = shift;
+    my $sub_name = shift || $name;
 
     my $hash = $ldml->$name();
 
     return unless keys %{$hash};
 
-    print {$fh} hashref_sub( $name, $hash );
+    print {$fh} hashref_sub( $sub_name, $hash );
 }
 
 sub hashref_sub {
@@ -482,20 +484,6 @@ sub int_sub {
 }
 
 EOF
-}
-
-sub write_available_format_subs {
-    my $fh   = shift;
-    my $ldml = shift;
-
-    my $formats = $ldml->merged_available_formats();
-
-    return unless keys %{$formats};
-
-    my $avail = join ', ',
-        map { q{"} . quotemeta($_) . q{"} } keys %{$formats};
-
-    print {$fh} hashref_sub( '_available_formats', $formats );
 }
 
 sub write_pm_footer {
