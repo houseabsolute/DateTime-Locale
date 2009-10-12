@@ -318,7 +318,13 @@ has 'interval_formats' => (
     lazy_build => 1,
 );
 
-has 'field_names' => (
+has '_field_names' => (
+    is         => 'ro',
+    isa        => 'HashRef[HashRef[Str]]',
+    lazy_build => 1,
+);
+
+has 'merged_field_names' => (
     is         => 'ro',
     isa        => 'HashRef[HashRef[Str]]',
     lazy_build => 1,
@@ -782,7 +788,7 @@ sub _build_interval_formats {
     return \%formats;
 }
 
-sub _build_field_names {
+sub _build__field_names {
     my $self = shift;
 
     return {} unless $self->has_calendar_data();
@@ -807,6 +813,25 @@ sub _build_field_names {
     }
 
     return \%names;
+}
+
+sub _build_merged_field_names {
+    my $self = shift;
+
+    my %merged_names;
+
+    for ( my $ldml = $self; $ldml; $ldml = $ldml->_load_parent() ) {
+        my $names = $ldml->_field_names();
+
+        for my $field ( keys %{$names} ) {
+            %{ $merged_names{$field} } = (
+                %{ $names->{$field} },
+                %{ $merged_names{$field} || {} },
+            );
+        }
+    }
+
+    return \%merged_names;
 }
 
 sub _build_first_day_of_week {

@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 100;
+use Test::More tests => 101;
 
 use LDML;
 
@@ -217,7 +217,7 @@ use LDML;
             },
         },
 
-        field_names => {
+        merged_field_names => {
             era   => { name => 'Era' },
             year  => { name => 'Year' },
             month => { name => 'Month' },
@@ -425,6 +425,29 @@ use LDML;
         native_script    => '繁體中文',
         native_territory => '台灣',
         native_variant   => undef,
+
+        merged_field_names => {
+            era   => { name => '年代' },
+            year  => { name => '年' },
+            month => { name => '月' },
+            week  => { name => '週' },
+            day   => {
+                name => '日',
+                '-3' => '大前天',
+                '-2' => '前天',
+                '-1' => '昨天',
+                '0'  => '今天',
+                '1'  => '明天',
+                '2'  => '後天',
+                '3'  => '大後天',
+            },
+            weekday   => { name => '週天' },
+            dayperiod => { name => '上午/下午' },
+            hour      => { name => '小時' },
+            minute    => { name => '分鐘' },
+            second    => { name => '秒' },
+            zone      => { name => '區域' },
+        },
     );
 
     test_data( $ldml, 'zh_Hant_TW', \@data );
