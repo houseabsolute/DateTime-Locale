@@ -587,29 +587,6 @@ sub BUILD {
     return $self;
 }
 
-sub _az_hack {
-    my $self = shift;
-    my $data = shift;
-
-    # The az.xml file appears to have a mistake in the wide day names,
-    # thursday and friday are the same for this locale
-
-    my $thu = $self->_find_one_node_text(
-        q{days/dayContext[@type='format']/dayWidth[@type='wide']/day[@type='thu']},
-        $self->_calendar_node()
-    );
-
-    my $fri = $self->_find_one_node(
-        q{days/dayContext[@type='format']/dayWidth[@type='wide']/day[@type='fri']},
-        $self->_calendar_node()
-    );
-
-    $fri->removeChildNodes();
-
-    $thu =~ s/ \w+$//;
-    $fri->appendChild( $self->document()->createTextNode($thu) );
-}
-
 sub _gaa_hack {
     my $self = shift;
     my $data = shift;
