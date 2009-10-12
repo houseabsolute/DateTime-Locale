@@ -296,11 +296,15 @@ use LDML;
         id => 'az',
 
         day_format_wide => [
-            'bazar ertəsi', 'çərşənbə axşamı',
-            'çərşənbə', 'cümə axşamı', 'cümə', 'şənbə',
+            'bazar ertəsi',
+            'çərşənbə axşamı',
+            'çərşənbə',
+            'cümə axşamı',
+            'cümə',
+            'şənbə',
             'bazar'
-        ],
-    );
+            ],
+        );
 
     test_data( $ldml, 'az', \@data );
 }
