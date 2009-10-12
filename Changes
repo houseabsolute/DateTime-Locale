@@ -1,5 +1,10 @@
 0.45
 
+- Added support for field names and relative field names. Field names are
+  localized names for categories like "day" or "week". Relative field names
+  give you localized names for "tomorrow" or "today". See the
+  DateTime::Locale::Base docs for more details.
+
 - Lots of documentation fixes, particularly in relation to creating custom
   locale subclasses.
 
