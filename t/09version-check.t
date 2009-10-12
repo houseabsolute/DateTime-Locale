@@ -3,7 +3,7 @@ use warnings;
 
 use Test::More;
 
-eval { require Test::Output };
+eval "use Test::Output";
 if ($@) {
     plan skip_all => 'These tests require Test::Output.';
 }
@@ -34,7 +34,7 @@ plan tests => 1;
 }
 
 {
-    Test::Output::stderr_like(
+    stderr_like(
         sub { DateTime::Locale->load('fake') },
         qr/\Qfrom an older version (0.1)/,
         'loading timezone where olson version is older than current'
