@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 99;
+use Test::More tests => 100;
 
 use LDML;
 
@@ -115,7 +115,7 @@ use LDML;
         default_date_format_length => 'medium',
         default_time_format_length => 'medium',
 
-        available_formats => {
+        merged_available_formats => {
             d      => 'd',
             EEEd   => 'd EEE',
             hm     => 'h:mm a',
@@ -270,6 +270,40 @@ use LDML;
         territory => 'GB',
         variant   => undef,
         parent_id => 'en',
+
+        merged_available_formats => {
+            Md       => 'd/M',
+            MEd      => 'E, d/M',
+            MMdd     => 'dd/MM',
+            MMMEd    => 'E d MMM',
+            MMMMd    => 'd MMMM',
+            yMEd     => 'EEE, d/M/yyyy',
+            yyMMM    => 'MMM yy',
+            yyyyMM   => 'MM/yyyy',
+            yyyyMMMM => 'MMMM y',
+
+            # from en
+            d      => 'd',
+            EEEd   => 'd EEE',
+            hm     => 'h:mm a',
+            Hm     => 'H:mm',
+            Hms    => 'H:mm:ss',
+            M      => 'L',
+            MMM    => 'LLL',
+            MMMd   => 'MMM d',
+            MMMMEd => 'E, MMMM d',
+            ms     => 'mm:ss',
+            y      => 'y',
+            yM     => 'M/yyyy',
+            yMMM   => 'MMM y',
+            yMMMEd => 'EEE, MMM d, y',
+            yMMMM  => 'MMMM y',
+            yQ     => 'Q yyyy',
+            yQQQ   => 'QQQ y',
+
+            # from root
+            hms => 'h:mm:ss a',
+        },
 
         first_day_of_week => 7,
     );

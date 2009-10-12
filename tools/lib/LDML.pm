@@ -294,7 +294,13 @@ has 'datetime_format' => (
     lazy_build => 1,
 );
 
-has 'available_formats' => (
+has '_available_formats' => (
+    is         => 'ro',
+    isa        => 'HashRef[Str]',
+    lazy_build => 1,
+);
+
+has 'merged_available_formats' => (
     is         => 'ro',
     isa        => 'HashRef[Str]',
     lazy_build => 1,
@@ -721,7 +727,7 @@ sub _build_datetime_format {
     );
 }
 
-sub _build_available_formats {
+sub _build__available_formats {
     my $self = shift;
 
     return {} unless $self->has_calendar_data();
@@ -743,6 +749,20 @@ sub _build_available_formats {
     }
 
     return \%formats;
+}
+
+sub _build_merged_available_formats {
+    my $self = shift;
+
+    my $formats = {};
+    for ( my $ldml = $self; $ldml; $ldml = $ldml->_load_parent ) {
+        $formats = {
+            %{ $ldml->_available_formats() },
+            %{$formats},
+        };
+    }
+
+    return $formats;
 }
 
 sub _build_default_interval_format {
