@@ -303,8 +303,8 @@ use LDML;
             'cümə',
             'şənbə',
             'bazar'
-            ],
-        );
+        ],
+    );
 
     test_data( $ldml, 'az', \@data );
 }
