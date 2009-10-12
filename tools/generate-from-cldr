@@ -488,15 +488,9 @@ sub write_available_format_subs {
     my $fh   = shift;
     my $ldml = shift;
 
-    my $formats = $ldml->available_formats();
+    my $formats = $ldml->merged_available_formats();
 
     return unless keys %{$formats};
-
-    for my $format ( sort keys %{$formats} ) {
-        my $sub_name = '_format_for_' . $format;
-
-        print {$fh} string_sub( $sub_name, $formats->{$format} );
-    }
 
     my $avail = join ', ',
         map { q{"} . quotemeta($_) . q{"} } keys %{$formats};
@@ -518,6 +512,8 @@ EOF
 
 sub generate_catalog {
     my @ldml = @_;
+
+    print "\nGenerating catalog\n" if $opts{verbose};
 
     my $file = file(qw( lib DateTime Locale Catalog.pm ));
 
@@ -775,11 +771,14 @@ EOF
 sub generate_pm_file_pod {
     my $ldml = shift;
 
-    my $pm_file = file( qw( lib DateTime Locale ), $ldml->id() . q{.pm} );
+    my $id = $ldml->id();
+    print "Generating POD for $id\n" if $opts{verbose};
+
+    my $pm_file = file( qw( lib DateTime Locale ), $id . q{.pm} );
 
     require DateTime::Locale;
 
-    my $locale = DateTime::Locale->load( $ldml->id() );
+    my $locale = DateTime::Locale->load( $id );
 
     open my $fh, '>>:utf8', $pm_file
         or die "Cannot append to $pm_file: $!";

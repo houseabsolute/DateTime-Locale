@@ -471,7 +471,7 @@ sub test_formats {
     }
 
     is_deeply(
-        [ $locale->available_formats() ],
+        [ sort $locale->available_formats() ],
         [ sort keys %formats ],
         "Available formats for " . $locale->id() . " match what is expected"
     );

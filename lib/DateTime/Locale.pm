@@ -803,8 +803,8 @@ Chinese characters for "day" (日) and month (月), so you get something like
 
 =item * $locale->available_formats()
 
-This should return a list of all the format names that could be passed
-to C<< $locale->format_for() >>.
+This should return a list of all the format names that could be passed to C<<
+$locale->format_for() >>, including formats supported by the parent.
 
 =back
 

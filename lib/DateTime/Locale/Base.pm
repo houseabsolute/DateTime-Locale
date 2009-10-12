@@ -78,65 +78,20 @@ sub format_for {
     my $self = shift;
     my $for  = shift;
 
-    my $meth = '_format_for_' . $for;
+    my $formats = $self->_available_formats();
 
-    return unless $self->can($meth);
+    return unless exists $formats->{$for};
 
-    return $self->$meth();
+    return $formats->{$for};
 }
 
 sub available_formats {
     my $self = shift;
 
-    return @{ $self->{merged_available_formats} }
-        if $self->{merged_available_formats};
-
-    # The various parens seem to be necessary to force uniq() to see
-    # the caller's list context. Go figure.
-    my @uniq
-        = List::MoreUtils::uniq(
-        map { keys %{ $_->_available_formats() || {} } }
-            Class::ISA::self_and_super_path( ref $self ) );
-
-    # Doing the sort in the same expression doesn't work under 5.6.x.
-    $self->{merged_available_formats} = [ sort @uniq ];
-
-    return @{ $self->{merged_available_formats} };
+    return keys %{ $self->_available_formats() };
 }
 
-# Just needed for the above method.
-sub _available_formats { }
-
-sub _merged_interval_formats {
-    my $self = shift;
-
-    return $self->{merged_interval_formats}
-        if $self->{merged_interval_formats};
-
-    my %merged;
-    for my $class ( Class::ISA::self_and_super_path( ref $self ) ) {
-        my $formats = $_->_interval_formats()
-            or next;
-
-        for my $ifi_id ( keys %{$formats} ) {
-            if ( $merged{$ifi_id} ) {
-                for my $gd_id ( keys %{ $formats->{$ifi_id} } ) {
-                    next if exists $merged{$ifi_id}{$gd_id};
-
-                    $merged{$ifi_id}{$gd_id} = $formats->{$ifi_id}{$gd_id};
-                }
-            }
-            else {
-                $merged{$ifi_id} = $formats->{$ifi_id};
-            }
-        }
-    }
-
-    return $self->{merged_interval_formats} = \%merged;
-}
-
-# Just needed for the above method.
-sub _interval_formats { }
+sub _available_formats { {} }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
@@ -743,8 +698,8 @@ returns 7.
 
 =item * $locale->available_formats()
 
-A list of format names, like "MMdd" or "yyyyMM". This should be the
-list directly supported by the subclass, not its parents.
+A list of format names, like "MMdd" or "yyyyMM". This list includes all
+formats supported by parent locales.
 
 =item * $locale->format_for($key)
 
