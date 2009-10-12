@@ -3,7 +3,7 @@ package DateTime::Locale::Base;
 use strict;
 use warnings;
 
-use Class::ISA;
+use Carp qw( carp );
 use DateTime::Locale;
 use List::MoreUtils ();
 use Params::Validate qw( validate_pos );
@@ -193,132 +193,156 @@ sub prefers_24_hour_time {
 }
 
 # Backwards compat for DateTime.pm version <= 0.42
-sub month_name { $_[0]->month_format_wide()->[ $_[1]->month_0 ] }
+{
+    my %subs = (
+        month_name => sub { $_[0]->month_format_wide()->[ $_[1]->month_0 ] },
 
-sub month_abbreviation {
-    $_[0]->month_format_abbreviated()->[ $_[1]->month_0 ];
-}
-sub month_narrow { $_[0]->month_format_narrow()->[ $_[1]->month_0 ] }
+        month_abbreviation => sub {
+            $_[0]->month_format_abbreviated()->[ $_[1]->month_0 ];
+        },
+        month_narrow =>
+            sub { $_[0]->month_format_narrow()->[ $_[1]->month_0 ]; },
 
-sub month_names         { $_[0]->month_format_wide() }
-sub month_abbreviations { $_[0]->month_format_abbreviated() }
-sub month_narrows       { $_[0]->month_format_narrow() }
+        month_names         => sub { $_[0]->month_format_wide() },
+        month_abbreviations => sub { $_[0]->month_format_abbreviated() },
+        month_narrows       => sub { $_[0]->month_format_narrow() },
 
-sub day_name { $_[0]->day_format_wide()->[ $_[1]->day_of_week_0 ] }
+        day_name =>
+            sub { $_[0]->day_format_wide()->[ $_[1]->day_of_week_0 ] },
 
-sub day_abbreviation {
-    $_[0]->day_format_abbreviated()->[ $_[1]->day_of_week_0 ];
-}
-sub day_narrow { $_[0]->day_format_narrow()->[ $_[1]->day_of_week_0 ] }
+        day_abbreviation => sub {
+            $_[0]->day_format_abbreviated()->[ $_[1]->day_of_week_0 ];
+        },
+        day_narrow =>
+            sub { $_[0]->day_format_narrow()->[ $_[1]->day_of_week_0 ]; },
 
-sub day_names         { $_[0]->day_format_wide() }
-sub day_abbreviations { $_[0]->day_format_abbreviated() }
-sub day_narrows       { $_[0]->day_format_narrow() }
+        day_names         => sub { $_[0]->day_format_wide() },
+        day_abbreviations => sub { $_[0]->day_format_abbreviated() },
+        day_narrows       => sub { $_[0]->day_format_narrow() },
 
-sub quarter_name { $_[0]->quarter_format_wide()->[ $_[1]->quarter - 1 ] }
+        quarter_name =>
+            sub { $_[0]->quarter_format_wide()->[ $_[1]->quarter - 1 ] },
 
-sub quarter_abbreviation {
-    $_[0]->quarter_format_abbreviated()->[ $_[1]->quarter - 1 ];
-}
-sub quarter_narrow { $_[0]->quarter_format_narrow()->[ $_[1]->quarter - 1 ] }
+        quarter_abbreviation => sub {
+            $_[0]->quarter_format_abbreviated()->[ $_[1]->quarter - 1 ];
+        },
+        quarter_narrow =>
+            sub { $_[0]->quarter_format_narrow()->[ $_[1]->quarter - 1 ] },
 
-sub quarter_names         { $_[0]->quarter_format_wide() }
-sub quarter_abbreviations { $_[0]->quarter_format_abbreviated() }
+        quarter_names         => sub { $_[0]->quarter_format_wide() },
+        quarter_abbreviations => sub { $_[0]->quarter_format_abbreviated() },
 
-sub am_pm { $_[0]->am_pm_abbreviated()->[ $_[1]->hour < 12 ? 0 : 1 ] }
-sub am_pms { $_[0]->am_pm_abbreviated() }
+        am_pm =>
+            sub { $_[0]->am_pm_abbreviated()->[ $_[1]->hour < 12 ? 0 : 1 ] },
+        am_pms => sub { $_[0]->am_pm_abbreviated() },
 
-sub era_name { $_[0]->era_wide()->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+        era_name => sub { $_[0]->era_wide()->[ $_[1]->ce_year < 0 ? 0 : 1 ] },
 
-sub era_abbreviation {
-    $_[0]->era_abbreviated()->[ $_[1]->ce_year < 0 ? 0 : 1 ];
-}
-sub era_narrow { $_[0]->era_narrow()->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+        era_abbreviation => sub {
+            $_[0]->era_abbreviated()->[ $_[1]->ce_year < 0 ? 0 : 1 ];
+        },
+        era_narrow =>
+            sub { $_[0]->era_narrow()->[ $_[1]->ce_year < 0 ? 0 : 1 ] },
 
-sub era_names         { $_[0]->era_wide() }
-sub era_abbreviations { $_[0]->era_abbreviated() }
+        era_names         => sub { $_[0]->era_wide() },
+        era_abbreviations => sub { $_[0]->era_abbreviated() },
 
-# ancient backwards compat
-sub era  { $_[0]->era_abbreviation }
-sub eras { $_[0]->era_abbreviations }
+        # ancient backwards compat
+        era  => sub { $_[0]->era_abbreviation },
+        eras => sub { $_[0]->era_abbreviations },
 
-sub date_before_time {
-    my $self = shift;
+        date_before_time => sub {
+            my $self = shift;
 
-    my $dt_format = $self->datetime_format();
+            my $dt_format = $self->datetime_format();
 
-    return $dt_format =~ /\{1\}.*\{0\}/ ? 1 : 0;
-}
+            return $dt_format =~ /\{1\}.*\{0\}/ ? 1 : 0;
+        },
 
-sub date_parts_order {
-    my $self = shift;
+        date_parts_order => sub {
+            my $self = shift;
 
-    my $short = $self->date_format_short();
+            my $short = $self->date_format_short();
 
-    $short =~ tr{dmyDMY}{}cd;
-    $short =~ tr{dmyDMY}{dmydmy}s;
+            $short =~ tr{dmyDMY}{}cd;
+            $short =~ tr{dmyDMY}{dmydmy}s;
 
-    return $short;
-}
+            return $short;
+        },
 
-sub full_date_format {
-    $_[0]->_convert_to_strftime( $_[0]->date_format_full() );
-}
+        full_date_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->date_format_full() );
+        },
 
-sub long_date_format {
-    $_[0]->_convert_to_strftime( $_[0]->date_format_long() );
-}
+        long_date_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->date_format_long() );
+        },
 
-sub medium_date_format {
-    $_[0]->_convert_to_strftime( $_[0]->date_format_medium() );
-}
+        medium_date_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->date_format_medium() );
+        },
 
-sub short_date_format {
-    $_[0]->_convert_to_strftime( $_[0]->date_format_short() );
-}
+        short_date_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->date_format_short() );
+        },
 
-sub default_date_format {
-    $_[0]->_convert_to_strftime( $_[0]->date_format_default() );
-}
+        default_date_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->date_format_default() );
+        },
 
-sub full_time_format {
-    $_[0]->_convert_to_strftime( $_[0]->time_format_full() );
-}
+        full_time_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->time_format_full() );
+        },
 
-sub long_time_format {
-    $_[0]->_convert_to_strftime( $_[0]->time_format_long() );
-}
+        long_time_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->time_format_long() );
+        },
 
-sub medium_time_format {
-    $_[0]->_convert_to_strftime( $_[0]->time_format_medium() );
-}
+        medium_time_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->time_format_medium() );
+        },
 
-sub short_time_format {
-    $_[0]->_convert_to_strftime( $_[0]->time_format_short() );
-}
+        short_time_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->time_format_short() );
+        },
 
-sub default_time_format {
-    $_[0]->_convert_to_strftime( $_[0]->time_format_default() );
-}
+        default_time_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->time_format_default() );
+        },
 
-sub full_datetime_format {
-    $_[0]->_convert_to_strftime( $_[0]->datetime_format_full() );
-}
+        full_datetime_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->datetime_format_full() );
+        },
 
-sub long_datetime_format {
-    $_[0]->_convert_to_strftime( $_[0]->datetime_format_long() );
-}
+        long_datetime_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->datetime_format_long() );
+        },
 
-sub medium_datetime_format {
-    $_[0]->_convert_to_strftime( $_[0]->datetime_format_medium() );
-}
+        medium_datetime_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->datetime_format_medium() );
+        },
 
-sub short_datetime_format {
-    $_[0]->_convert_to_strftime( $_[0]->datetime_format_short() );
-}
+        short_datetime_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->datetime_format_short() );
+        },
 
-sub default_datetime_format {
-    $_[0]->_convert_to_strftime( $_[0]->datetime_format_default() );
+        default_datetime_format => sub {
+            $_[0]->_convert_to_strftime( $_[0]->datetime_format_default() );
+        },
+    );
+
+    for my $name ( keys %subs ) {
+        my $real_sub = $subs{$name};
+
+        my $sub = sub {
+            carp
+                "The $name method in DateTime::Locale::Base has been deprecated";
+            return shift->$real_sub(@_);
+        };
+
+        no strict 'refs';
+        *{$name} = $sub;
+    }
 }
 
 # Older versions of DateTime.pm will not pass in the $cldr_ok flag, so

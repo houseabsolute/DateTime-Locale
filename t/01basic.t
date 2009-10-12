@@ -11,27 +11,18 @@ my @locale_ids   = sort DateTime::Locale->ids();
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
-eval { require DateTime };
-my $has_dt = $@ ? 0 : 1;
-
-my $dt
-    = DateTime->new( year => 2000, month => 1, day => 1, time_zone => 'UTC' )
-    if $has_dt;
-
-my $tests_per_locale = $has_dt ? 25 : 21;
-
 plan tests => 5    # starting
     + 1            # load test for root locale
-    + ( ( @locale_ids - 1 ) * $tests_per_locale )    # test each local
-    + 67                                             # check_root
-    + 24                                             # check_en
-    + 64                                             # check_en_GB
-    + 23                                             # check_en_US
-    + 11                                             # check_es_ES
-    + 5                                              # check_en_US_POSIX
-    + 2                                              # check_af
-    + 18                                             # check_zh_TW
-    + 9                                              # check_DT_Lang
+    + ( ( @locale_ids - 1 ) * 21 )    # test each local
+    + 67                              # check_root
+    + 24                              # check_en
+    + 64                              # check_en_GB
+    + 23                              # check_en_US
+    + 11                              # check_es_ES
+    + 5                               # check_en_US_POSIX
+    + 2                               # check_af
+    + 18                              # check_zh_TW
+    + 9                               # check_DT_Lang
     ;
 
 {
@@ -66,31 +57,21 @@ plan tests => 5    # starting
             "'$locale_id':  Has a native locale name"
         );
 
-        # Each iteration runs one test if DateTime.pm is not available or
-        # there is no matching DateTime.pm method, otherwise it runs two.
         for my $test (
             {
                 locale_method    => 'month_format_wide',
-                datetime_method  => 'month_name',
-                datetime_set_key => 'month',
                 count            => 12,
             },
             {
                 locale_method    => 'month_format_abbreviated',
-                datetime_method  => 'month_abbreviation',
-                datetime_set_key => 'month',
                 count            => 12,
             },
             {
                 locale_method    => 'day_format_wide',
-                datetime_method  => 'day_name',
-                datetime_set_key => 'day',
                 count            => 7,
             },
             {
                 locale_method    => 'day_format_abbreviated',
-                datetime_method  => 'day_abbreviation',
-                datetime_set_key => 'day',
                 count            => 7,
             },
             {
@@ -163,20 +144,6 @@ TODO:
             qq{'$locale_id': '$locale_method' contains $test{count} unique items}
         );
     }
-
-    my $datetime_method = $test{datetime_method};
-    return unless $datetime_method && $has_dt;
-
-    for my $i ( 1 .. $test{count} ) {
-        $dt->set( $test{datetime_set_key} => $i );
-
-        delete $unique{ $test{locale}->$datetime_method($dt) };
-    }
-
-    is(
-        ( scalar keys %unique ), 0,
-        "'$locale_id':  Data returned by '$locale_method' and '$datetime_method' matches"
-    );
 }
 
 sub check_formats {
