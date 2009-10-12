@@ -5,6 +5,9 @@
   give you localized names for "tomorrow" or "today". See the
   DateTime::Locale::Base docs for more details.
 
+- All of the methods deprecated in 0.44 now warn that they are deprecated when
+  called.
+
 - Lots of documentation fixes, particularly in relation to creating custom
   locale subclasses.
 
