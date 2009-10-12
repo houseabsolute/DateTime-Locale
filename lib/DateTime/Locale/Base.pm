@@ -736,45 +736,23 @@ Valid field name keys (with their names in English) are:
 
 =over 8
 
-=item * era
+=item * era = Era
 
-Era
+=item * year = Year
 
-=item * year
+=item * month = Month
 
-Year
+=item * day = Day
 
-=item * month
+=item * weekday = Day of the Week
 
-Month
+=item * dayperiod = AM/PM
 
-=item * day
+=item * hour = Hour
 
-Day
+=item * minute = Minute
 
-=item * weekday
-
-Day of the Week
-
-=item * dayperiod
-
-AM/PM
-
-=item * hour
-
-Hour
-
-=item * minute
-
-Minute
-
-=item * second
-
-Second
-
-=item * zone
-
-Zone
+=item * zone = Zone
 
 =back
 
@@ -791,17 +769,11 @@ Examples in English:
 
 =over 8
 
-=item * day, -1
+=item * -1 = Yesterday
 
-Yesterday
+=item * 0 = Today
 
-=item * day, 0
-
-Today
-
-=item * day, 1
-
-Tomorrow
+=item * 1 = Tomorrow
 
 =back
 
