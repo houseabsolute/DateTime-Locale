@@ -336,7 +336,7 @@ sub prefers_24_hour_time {
 
         my $sub = sub {
             carp
-                "The $name method in DateTime::Locale::Base has been deprecated";
+                "The $name method in DateTime::Locale::Base has been deprecated. Please see the DateTime::Locale distribution's Changes file for details";
             return shift->$real_sub(@_);
         };
 
