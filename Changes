@@ -3,6 +3,10 @@
 - Lots of documentation fixes, particularly in relation to creating custom
   locale subclasses.
 
+- The available_formats method for a locale now returns all formats supported
+  by parent locales as well as the locale itself. Previously, this list was
+  sorted (though this was not documented), but it no longer is.
+
 
 0.44   2009-09-12
 
