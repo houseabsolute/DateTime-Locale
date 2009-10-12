@@ -808,6 +808,25 @@ $locale->format_for() >>, including formats supported by the parent.
 
 =back
 
+The locale can define names for fields ("what is a day or year called in this
+locale").
+
+=over 4
+
+=item * $locale->field_name($field)
+
+This should return a localized name for the field. See
+L<DateTime::Locale::Base> for a list of valid field names.
+
+=item * $locale->relative_field_name( $field, $offset )
+
+Given a field name and a numeric offset, this returns the name for that field
+with the offset. For example, in English the "day" field at an offset of 0 is
+"Today". With an offset of -1 it's "Yesterday", and an offset of 1 is
+"Tomorrow".
+
+=back
+
 The following methods deal with the default format lengths:
 
 =over 4
