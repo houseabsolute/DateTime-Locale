@@ -23,13 +23,14 @@ my $tests_per_locale = $has_dt ? 25 : 21;
 plan tests => 5    # starting
     + 1            # load test for root locale
     + ( ( @locale_ids - 1 ) * $tests_per_locale )    # test each local
-    + 53                                             # check_root
+    + 67                                             # check_root
     + 24                                             # check_en
-    + 63                                             # check_en_GB
+    + 64                                             # check_en_GB
     + 23                                             # check_en_US
     + 11                                             # check_es_ES
-    + 2                                              # check_af
     + 5                                              # check_en_US_POSIX
+    + 2                                              # check_af
+    + 18                                             # check_zh_TW
     + 9                                              # check_DT_Lang
     ;
 
@@ -138,6 +139,7 @@ check_en_US();
 check_es_ES();
 check_en_US_POSIX();
 check_af();
+check_zh_TW();
 check_DT_Lang();
 
 sub check_array {
@@ -157,7 +159,7 @@ TODO:
                 && $locale_method eq 'day_format_abbreviated';
 
         is(
-            keys %unique, $test{count},
+            ( scalar keys %unique ), $test{count},
             qq{'$locale_id': '$locale_method' contains $test{count} unique items}
         );
     }
@@ -172,7 +174,7 @@ TODO:
     }
 
     is(
-        keys %unique, 0,
+        ( scalar keys %unique ), 0,
         "'$locale_id':  Data returned by '$locale_method' and '$datetime_method' matches"
     );
 }
@@ -199,7 +201,7 @@ sub check_formats {
     }
 
     is(
-        keys %unique, 0,
+        ( scalar keys %unique ), 0,
         "'$locale_id':  Data returned by '$hash_func' and '$item_func patterns' matches"
     );
 }
@@ -293,6 +295,30 @@ sub check_root {
     );
 
     test_formats( $locale, %formats );
+
+    my %field_names = (
+        era       => 'Era',
+        year      => 'Year',
+        month     => 'Month',
+        week      => 'Week',
+        weekday   => 'Day of the Week',
+        day       => 'Day',
+        dayperiod => 'Dayperiod',
+        hour      => 'Hour',
+        minute    => 'Minute',
+        second    => 'Second',
+        zone      => 'Zone',
+    );
+
+    test_field_names( $locale, %field_names );
+
+    my @relative_field_names = (
+        [ 'day', -1, 'Yesterday' ],
+        [ 'day', 0,  'Today' ],
+        [ 'day', 1,  'Tomorrow' ],
+    );
+
+    test_relative_field_names( $locale, @relative_field_names );
 }
 
 sub check_en {
@@ -368,6 +394,8 @@ sub check_en_GB {
     );
 
     test_formats( $locale, %formats );
+
+    test_field_names( $locale, ( dayperiod => 'AM/PM' ) );
 }
 
 sub check_en_US {
@@ -463,7 +491,7 @@ sub test_formats {
     my $locale  = shift;
     my %formats = @_;
 
-    for my $name ( keys %formats ) {
+    for my $name ( sort keys %formats ) {
         is(
             $locale->format_for($name), $formats{$name},
             "Format for $name with " . $locale->id()
@@ -475,6 +503,33 @@ sub test_formats {
         [ sort keys %formats ],
         "Available formats for " . $locale->id() . " match what is expected"
     );
+}
+
+sub test_field_names {
+    my $locale      = shift;
+    my %field_names = @_;
+
+    for my $field ( sort keys %field_names ) {
+        is(
+            $locale->field_name($field), $field_names{$field},
+            "Field name for $field with " . $locale->id()
+        );
+    }
+}
+
+sub test_relative_field_names {
+    my $locale  = shift;
+    my @relative_field_names = @_;
+
+    for my $rel ( @relative_field_names ) {
+        my $field  = $rel->[0];
+        my $offset = $rel->[1];
+
+        is(
+            $locale->relative_field_name( $field, $offset ), $rel->[2],
+            "Relative field name for $field($offset) with " . $locale->id()
+        );
+    }
 }
 
 sub check_es_ES {
@@ -519,6 +574,38 @@ sub check_en_US_POSIX {
     is( $locale->language_id(),  'en',    'language_id()' );
     is( $locale->territory_id(), 'US',    'territory_id()' );
     is( $locale->variant_id(),   'POSIX', 'variant_id()' );
+}
+
+sub check_zh_TW {
+    my $locale = DateTime::Locale->load('zh_TW');
+
+    my %field_names = (
+        day       => "日",
+        dayperiod => "上午\/下午",
+        era       => "年代",
+        hour      => "小時",
+        minute    => "分鐘",
+        month     => "月",
+        second    => "秒",
+        week      => "週",
+        weekday   => "週天",
+        year      => "年",
+        zone      => "區域",
+    );
+
+    test_field_names( $locale, %field_names );
+
+    my @relative_field_names = (
+        [ 'day', -1, "昨天" ],
+        [ 'day', -2, "前天" ],
+        [ 'day', -3, "大前天" ],
+        [ 'day', 0,  "今天" ],
+        [ 'day', 1,  "明天" ],
+        [ 'day', 2,  "後天" ],
+        [ 'day', 3,  "大後天" ],
+    );
+
+    test_relative_field_names( $locale, @relative_field_names );
 }
 
 sub check_DT_Lang {
