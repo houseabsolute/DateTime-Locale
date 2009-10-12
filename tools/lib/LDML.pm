@@ -661,10 +661,10 @@ sub _parse_id {
     my $self = shift;
 
     return $self->id() =~ /([a-z]+)               # language
-                        (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
-                        (?: _([A-Z]+) )?       # territory - ALL CAPS - optional
-                        (?: _([A-Z]+) )?       # variant - ALL CAPS - optional
-                       /x;
+                           (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
+                           (?: _([A-Z]+) )?       # territory - ALL CAPS - optional
+                           (?: _([A-Z]+) )?       # variant - ALL CAPS - optional
+                          /x;
 }
 
 sub _build_parent_id {
