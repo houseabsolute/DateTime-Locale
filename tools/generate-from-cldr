@@ -108,7 +108,7 @@ sub clean {
 sub generate_from_cldr_xml {
     my @ldml = read_all_files();
     generate_pm_files(@ldml);
-    generate_catalog(@ldml);
+    generate_catalog(@ldml) unless $opts{file};
     generate_pm_file_pod($_) for @ldml;
 
     print "\nAll done\n" unless $opts{quiet};
@@ -271,6 +271,7 @@ sub write_pm_subs {
         print {$fh} string_sub( q{_} . $attr,, $def );
     }
 
+    write_field_names_sub( $fh, $ldml );
 }
 
 sub make_alias {
@@ -483,6 +484,39 @@ sub int_sub {
     sub $name { return \$$name }
 }
 
+EOF
+}
+
+sub write_field_names_sub {
+    my $fh   = shift;
+    my $ldml = shift;
+
+    my $val = qq[{\n];
+
+    my $fields = $ldml->merged_field_names();
+
+    for my $field ( sort keys %{$fields} ) {
+        $val .= q{        "} . quotemeta($field) . q[" => {] . "\n";
+
+        $val .= join ",\n", map {
+                  q{            "}
+                . quotemeta($_)
+                . q{" => "}
+                . quotemeta( $fields->{$field}{$_} ) . q{"}
+            }
+            sort keys %{ $fields->{$field} };
+
+        $val .= ",\n";
+        $val .= q[        },] . "\n";
+    }
+
+    $val .= q[    }];
+
+    print {$fh} <<"EOF";
+{
+    my \$field_names = $val;
+    sub _field_names { return \$field_names }
+}
 EOF
 }
 
@@ -778,6 +812,8 @@ sub generate_pm_file_pod {
     print {$fh} pod_for_quarters($locale);
     print {$fh} pod_for_eras($locale);
     print {$fh} pod_for_formats($locale);
+    print {$fh} pod_for_field_names($locale);
+    print {$fh} pod_for_relative_field_names($locale);
     print {$fh} pod_for_misc($locale);
     print {$fh} pod_footer($locale);
 }
@@ -969,9 +1005,7 @@ sub pod_for_available_formats {
     my $locale = shift;
     my $dts    = shift;
 
-    my $pod = '';
-
-    $pod .= "=head2 Available Formats\n\n";
+    my $pod = "=head2 Available Formats\n\n";
 
     for my $format ( $locale->available_formats() ) {
         my $cldr = $locale->format_for($format);
@@ -992,6 +1026,65 @@ sub pod_for_available_formats {
     }
 
     return $pod;
+}
+
+{
+    my @fields = qw( era year month day weekday dayperiod hour minute zone );
+
+    sub pod_for_field_names {
+        my $locale = shift;
+
+        my $pod = "=head2 Field Names\n\n";
+
+        $pod .= "=over 4\n\n";
+
+        for my $field (@fields) {
+            $pod .= "=item * $field = ";
+
+            $pod .= $locale->field_name($field) . "\n\n";
+        }
+
+        $pod .= "=back\n\n";
+
+        return $pod;
+    }
+
+    sub pod_for_relative_field_names {
+        my $locale = shift;
+
+        my $pod = q{};
+
+        for my $field (@fields) {
+            my %rel_names;
+
+            for my $rel ( -3 .. 3 ) {
+                my $rel_name = $locale->relative_field_name( $field, $rel );
+                next unless defined $rel_name;
+
+                $rel_names{$rel} = $rel_name;
+            }
+
+            next unless keys %rel_names;
+
+            $pod .= "=head3 $field\n\n";
+
+            $pod .= "=over 4\n\n";
+
+            for my $rel ( sort { $a <=> $b } keys %rel_names ) {
+                $pod .= "=item * $rel = $rel_names{$rel}\n\n";
+            }
+
+            $pod .= "=back\n\n";
+
+            $pod .= "\n";
+        }
+
+        return unless length $pod;
+
+        $pod = "=head2 Relative Field Names\n\n" . $pod;
+
+        return $pod;
+    }
 }
 
 sub pod_for_misc {

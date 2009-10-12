@@ -93,6 +93,31 @@ sub available_formats {
 
 sub _available_formats { {} }
 
+sub field_name {
+    my $self  = shift;
+    my $field = shift;
+
+    return $self->_field_name( $field, 'name' );
+}
+
+sub relative_field_name {
+    my $self = shift;
+
+    return $self->_field_name(@_);
+}
+
+sub _field_name {
+    my $self   = shift;
+    my $field  = shift;
+    my $subkey = shift;
+
+    my $names = $self->_field_names();
+
+    return unless exists $names->{$field}{$subkey};
+
+    return $names->{$field}{$subkey};
+}
+
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
 sub set_default_date_format_length {
@@ -700,6 +725,85 @@ returns 7.
 
 A list of format names, like "MMdd" or "yyyyMM". This list includes all
 formats supported by parent locales.
+
+=item * $locale->field_name($key)
+
+Given a field name key, returns the localized name for that field. A field
+name is the name for the I<category> of things, like "Year" or "Day of the
+Week". These are intended to be used as labels.
+
+Valid field name keys (with their names in English) are:
+
+=over 8
+
+=item * era
+
+Era
+
+=item * year
+
+Year
+
+=item * month
+
+Month
+
+=item * day
+
+Day
+
+=item * weekday
+
+Day of the Week
+
+=item * dayperiod
+
+AM/PM
+
+=item * hour
+
+Hour
+
+=item * minute
+
+Minute
+
+=item * second
+
+Second
+
+=item * zone
+
+Zone
+
+=back
+
+=item * $locale->relative_field_name( $key, $offset )
+
+This returns the relative field name for a field. Currently, the only field
+key supported is "day". The offset is a number representing the distance from
+the current value of the field.
+
+For days, 0 is today, -1 is yesterday, and 1 is tomorrow. Some locales support
+values up to -3 and 3.
+
+Examples in English:
+
+=over 8
+
+=item * day, -1
+
+Yesterday
+
+=item * day, 0
+
+Today
+
+=item * day, 1
+
+Tomorrow
+
+=back
 
 =item * $locale->format_for($key)
 
