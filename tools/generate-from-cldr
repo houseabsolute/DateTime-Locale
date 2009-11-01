@@ -1007,7 +1007,9 @@ sub pod_for_available_formats {
 
     my $pod = "=head2 Available Formats\n\n";
 
-    for my $format ( $locale->available_formats() ) {
+    for my $format ( sort { lc $a cmp lc $b or $a cmp $b }
+        $locale->available_formats() ) {
+
         my $cldr = $locale->format_for($format);
 
         $pod .= "=head3 $format ($cldr)\n\n";
