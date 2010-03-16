@@ -26,6 +26,8 @@
 - Require Params::Validate 0.91, since 0.89 caused test failures for
   someone. Reported by Jeremy Hetzler. RT #41365.
 
+- Moved code to my hg repo at http://hg.urth.org/hg/DateTime-Locale.
+
 
 0.43   2009-06-30
 
