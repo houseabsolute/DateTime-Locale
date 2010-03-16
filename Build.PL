@@ -18,4 +18,12 @@ Module::Build->new(
     build_requires     => { 'Module::Build' => 0 },
     sign               => 1,
     create_makefile_pl => 'traditional',
+    meta_merge         => {
+        resources => {
+            homepage => 'http://datetime.perl.org/',
+            bugtracker =>
+                'http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTime-Locale',
+            repository => 'http://hg.urth.org/hg/DateTime-Locale',
+        },
+    },
 )->create_build_script;
