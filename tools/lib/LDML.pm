@@ -437,8 +437,13 @@ sub _self_and_ancestors {
 
 sub _all_parents {
     my $self = shift;
+    my $seen = shift || {};
 
-    return map { $_, $_->_all_parents() } $self->_parents();
+    my @parents = grep { ! $seen->{ $_->id() } } $self->_parents();
+
+    $seen->{ $_->id() } = 1 for $self, @parents;
+
+    return map { $_, $_->_all_parents($seen) } @parents;
 }
 
 sub _parents {

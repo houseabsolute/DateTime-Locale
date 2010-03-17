@@ -147,7 +147,7 @@ sub generate_pm_files {
 
         if ( $opts{verbose} ) {
             print sprintf(
-                <<"EOF", $ldml->id(), $ldml->parent_id(), $ldml->version(), $ldml->generation_date() );
+                <<"EOF", $ldml->id(), ( join ' ', $ldml->parent_ids() ), $ldml->version(), $ldml->generation_date() );
   %s
     parent_ids:      %s
     version:         %s
@@ -859,9 +859,8 @@ This is the DateTime locale package for $name.
 EOF
 
     if ( $id ne 'root' ) {
-        print {$fh} 'This locale inherits from the L<DateTime::Locale::'
-            . $ldml->parent_id()
-            . "> locale.\n\n";
+        print {$fh} 'This locale may include data from the following other locales: ';
+        print {$fh} join ' - ', $ldml->parent_ids();
     }
 
     print {$fh} "It contains the following data.\n\n";

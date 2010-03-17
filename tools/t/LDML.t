@@ -469,6 +469,22 @@ use LDML;
     test_data( $ldml, \@data );
 }
 
+{
+    my $ldml = LDML->new_from_file('t/test-data/nn.xml');
+    local $::D = 1;
+    is_deeply(
+        [ $ldml->parent_ids() ],
+        [qw( nb da sv en root )],
+        'parent_ids for nn'
+    );
+
+    is_deeply(
+        [ map { $_->id() } $ldml->_self_and_ancestors() ],
+        [qw( nn nb da sv en root )],
+        'ancestors for nn does not cause endless recursion'
+    );
+}
+
 done_testing();
 
 sub test_data {
