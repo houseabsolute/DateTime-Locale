@@ -27,7 +27,7 @@ my $ScriptName = file($0)->basename();
     $DateTime::Locale::InGenerator = 1;
 }
 
-my %opts;
+my %opts = ( pod => 1 );
 
 sub main {
     GetOptions(
@@ -37,6 +37,7 @@ sub main {
         'clean'     => \$opts{clean},
         'quiet'     => \$opts{quiet},
         'verbose'   => \$opts{verbose},
+        'pod!'      => \$opts{pod},
         'help'      => \$opts{help},
     );
 
@@ -109,7 +110,9 @@ sub generate_from_cldr_xml {
     my @ldml = read_all_files();
     generate_pm_files(@ldml);
     generate_catalog(@ldml) unless $opts{file};
-    generate_pm_file_pod($_) for @ldml;
+    if ( $opts{pod} ) {
+        generate_pm_file_pod($_) for @ldml;
+    }
 
     print "\nAll done\n" unless $opts{quiet};
 }
