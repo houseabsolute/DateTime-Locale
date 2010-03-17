@@ -120,7 +120,7 @@ sub read_all_files {
     my @ldml;
     while ( my $file = $dir->next() ) {
         next unless -f $file;
-        next unless $file->basename() =~ /\.xml$/;
+        next unless $file =~ /\.xml$/;
         next if $opts{file} && $opts{file} ne $file->basename();
 
         print "Reading $file\n" if $opts{verbose};
