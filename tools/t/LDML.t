@@ -471,7 +471,7 @@ use LDML;
 
 {
     my $ldml = LDML->new_from_file('t/test-data/nn.xml');
-    local $::D = 1;
+
     is_deeply(
         [ $ldml->parent_ids() ],
         [qw( nb da sv en root )],
