@@ -35,7 +35,6 @@ use LDML;
 }
 
 {
-
     # There are no ids with all four parts as of CLDR 1.5.1 but just
     # in case it ever happens ...
     my $ldml = LDML->new(
@@ -499,6 +498,17 @@ use LDML;
         [qw( 2 3 4 5 6 7 1 )],
         'day_format_narrow for is does not cause endless recursion'
     );
+}
+
+{
+    my $ldml = LDML->new_from_file('t/test-data/zh_Hans_SG.xml');
+
+    my @data = (
+        day_format_abbreviated =>
+            [qw( 周一 周二 周三 周四 周五 周六 周日 )],
+    );
+
+    test_data( $ldml, \@data );
 }
 
 done_testing();

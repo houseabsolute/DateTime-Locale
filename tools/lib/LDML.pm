@@ -165,9 +165,13 @@ for my $thing (
 
                 unless ( @{$vals} == $thing->{length}
                     && all {defined} @{$vals} ) {
+
+                    my $p = join ' - ',
+                        map { $_->id() } $self->_all_parents();
                     warn
                         "Could not fill in all values for $attr from parents for "
-                        . $self->id() . "\n";
+                        . $self->id()
+                        . ": $p\n";
                 }
 
                 return $vals;
@@ -1022,7 +1026,7 @@ sub _find_one_node {
                 $vals->[$i] //= $parent_vals->[$i];
             }
 
-            return if @{$vals} == $length;
+            return if ( grep { defined } @{$vals} ) == $length;
         }
     }
 }
