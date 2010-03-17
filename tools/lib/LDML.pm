@@ -97,15 +97,10 @@ has '_calendar_node' => (
     isa     => 'Maybe[XML::LibXML::Node]',
     lazy    => 1,
     default => sub {
-        $_[0]->_find_one_node(q{dates/calendars/calendar[@type='gregorian']});
+        $_[0]->_find_one_node(q{dates/calendars/calendar[@type='gregorian']})
+        # just making an empty node so we have something to search
+        || $_[0]->document()->createElement('calendar')
     },
-);
-
-has 'has_calendar_data' => (
-    is      => 'ro',
-    isa     => 'Bool',
-    lazy    => 1,
-    default => sub { $_[0]->_calendar_node() ? 1 : 0 },
 );
 
 for my $thing (
@@ -149,8 +144,6 @@ for my $thing (
 
             my $builder = sub {
                 my $self = shift;
-
-                return [] unless $self->has_calendar_data();
 
                 my $vals
                     = $self->_find_preferred_values(
@@ -207,8 +200,6 @@ for my $size (
     my $builder = sub {
         my $self = shift;
 
-        return [] unless $self->has_calendar_data();
-
         my $vals = $self->_find_preferred_values(
             ( scalar $self->_calendar_node()->findnodes($path) ),
             'type',
@@ -249,8 +240,6 @@ for my $type (qw( date time )) {
 
         my $builder = sub {
             my $self = shift;
-
-            return unless $self->has_calendar_data();
 
             return $self->_find_one_node_text(
                 $path,
@@ -775,8 +764,6 @@ sub _build_datetime_format {
 sub _build__available_formats {
     my $self = shift;
 
-    return {} unless $self->has_calendar_data();
-
     my @nodes = $self->_calendar_node()
         ->findnodes('dateTimeFormats/availableFormats/dateFormatItem');
 
@@ -823,8 +810,6 @@ sub _build_default_interval_format {
 sub _build_interval_formats {
     my $self = shift;
 
-    return {} unless $self->has_calendar_data();
-
     my @ifi_nodes = $self->_calendar_node()
         ->findnodes('dateTimeFormats/intervalFormats/intervalFormatItem');
 
@@ -853,8 +838,6 @@ sub _build_interval_formats {
 
 sub _build__field_names {
     my $self = shift;
-
-    return {} unless $self->has_calendar_data();
 
     my @fields = $self->_calendar_node()->findnodes('fields/field');
 

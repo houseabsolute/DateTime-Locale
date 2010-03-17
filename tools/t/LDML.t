@@ -58,8 +58,6 @@ use LDML;
 {
     my $ldml = LDML->new_from_file('t/test-data/root.xml');
 
-    ok( $ldml->has_calendar_data(), 'has calendar data' );
-
     my @data = (
         id              => 'root',
         version         => '1.192',
