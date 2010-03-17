@@ -94,7 +94,7 @@ has '_parent_ids' => (
 class_type 'XML::LibXML::Node';
 has '_calendar_node' => (
     is      => 'ro',
-    isa     => 'Maybe[XML::LibXML::Node]',
+    isa     => 'XML::LibXML::Node',
     lazy    => 1,
     default => sub {
         $_[0]->_find_one_node(q{dates/calendars/calendar[@type='gregorian']})
