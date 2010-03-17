@@ -4,7 +4,7 @@ use utf8;
 
 use Data::Dumper;
 use Path::Class;
-use Test::More tests => 101;
+use Test::More;
 
 use LDML;
 
@@ -19,7 +19,6 @@ use LDML;
         [ 'cop', 'Arab', 'EG', undef ],
         '_parse_id for cop_Arab_EG'
     );
-
 }
 
 {
@@ -52,6 +51,12 @@ use LDML;
 }
 
 {
+    my $ldml = LDML->new_from_file('t/test-data/zh_MO.xml');
+
+    is( $ldml->alias_to(), 'zh_Hant_MO', 'zh_MO is an alias to zh_Hant_MO' );
+}
+
+{
     my $ldml = LDML->new_from_file('t/test-data/root.xml');
 
     ok( $ldml->has_calendar_data(), 'has calendar data' );
@@ -60,7 +65,7 @@ use LDML;
         id              => 'root',
         version         => '1.192',
         generation_date => '2009/06/15 21:39:59',
-        parent_id       => 'Base',
+        _parent_ids     => [],
         source_file     => file('t/test-data/root.xml'),
 
         en_language  => 'Root',
@@ -239,7 +244,7 @@ use LDML;
         first_day_of_week => 1,
     );
 
-    test_data( $ldml, 'root', \@data );
+    test_data( $ldml, \@data );
 }
 
 {
@@ -250,26 +255,26 @@ use LDML;
         version         => '1.1',
         generation_date => '2007/07/19 20:48:11',
 
-        language  => 'ssy',
-        script    => undef,
-        territory => undef,
-        variant   => undef,
-        parent_id => 'root',
+        language    => 'ssy',
+        script      => undef,
+        territory   => undef,
+        variant     => undef,
+        _parent_ids => ['root'],
     );
 
-    test_data( $ldml, 'ssy', \@data );
+    test_data( $ldml, \@data );
 }
 
 {
     my $ldml = LDML->new_from_file('t/test-data/en_GB.xml');
 
     my @data = (
-        id        => 'en_GB',
-        language  => 'en',
-        script    => undef,
-        territory => 'GB',
-        variant   => undef,
-        parent_id => 'en',
+        id          => 'en_GB',
+        language    => 'en',
+        script      => undef,
+        territory   => 'GB',
+        variant     => undef,
+        _parent_ids => ['en'],
 
         merged_available_formats => {
             Md       => 'd/M',
@@ -308,7 +313,7 @@ use LDML;
         first_day_of_week => 7,
     );
 
-    test_data( $ldml, 'en_GB', \@data );
+    test_data( $ldml, \@data );
 }
 
 {
@@ -320,7 +325,7 @@ use LDML;
         first_day_of_week => 7,
     );
 
-    test_data( $ldml, 'en_US', \@data );
+    test_data( $ldml, \@data );
 }
 
 {
@@ -340,7 +345,7 @@ use LDML;
         ],
     );
 
-    test_data( $ldml, 'az', \@data );
+    test_data( $ldml, \@data );
 }
 
 {
@@ -352,7 +357,7 @@ use LDML;
         day_format_abbreviated => [qw( Dzu Dzf Sho Soo Soh Ho Hog )],
     );
 
-    test_data( $ldml, 'gaa', \@data );
+    test_data( $ldml, \@data );
 }
 
 {
@@ -365,14 +370,7 @@ use LDML;
             [qw( Pha Luh Ṱhf Lam Shu Lwi Lwa Ṱha Khu Tsh Ḽar Nye )],
     );
 
-    test_data( $ldml, 've', \@data );
-}
-
-{
-    my $ldml = LDML->new_from_file('t/test-data/zh_MO.xml');
-
-    is( $ldml->parent_id(), 'zh_Hant_MO', 'parent_id for zh_MO' );
-    ok( !$ldml->has_calendar_data(), 'has no calendar data' );
+    test_data( $ldml, \@data );
 }
 
 {
@@ -388,26 +386,6 @@ use LDML;
         '>', 2,
         'ti alias to am for territories was resolved properly'
     );
-}
-
-{
-    my $ldml = LDML->new_from_file('t/test-data/zh_TW.xml');
-
-    my @data = (
-        id => 'zh_TW',
-
-        en_language  => 'Chinese',
-        en_script    => undef,
-        en_territory => 'Taiwan',
-        en_variant   => undef,
-
-        native_language  => '中文',
-        native_script    => undef,
-        native_territory => '台灣',
-        native_variant   => undef,
-    );
-
-    test_data( $ldml, 'zh_TW', \@data );
 }
 
 {
@@ -450,13 +428,42 @@ use LDML;
         },
     );
 
-    test_data( $ldml, 'zh_Hant_TW', \@data );
+    test_data( $ldml, \@data );
 }
+
+{
+    my $ldml = LDML->new_from_file('t/test-data/de_AT.xml');
+
+    my @data = (
+        id => 'de_AT',
+
+        month_format_wide => [
+            qw( Jänner
+                Februar
+                März
+                April
+                Mai
+                Juni
+                Juli
+                August
+                September
+                Oktober
+                November
+                Dezember
+                )
+        ],
+    );
+
+    test_data( $ldml, \@data );
+}
+
+done_testing();
 
 sub test_data {
     my $ldml = shift;
-    my $id   = shift;
     my $data = shift;
+
+    local $Test::Builder::Level = $Test::Builder::Level + 1;
 
     for ( my $i = 0; $i < @{$data}; $i += 2 ) {
         my $meth = $data->[$i];
@@ -464,7 +471,7 @@ sub test_data {
         is_deeply(
             $ldml->$meth(),
             $data->[ $i + 1 ],
-            "$meth in $id"
+            "$meth in " . $ldml->id()
         );
     }
 }

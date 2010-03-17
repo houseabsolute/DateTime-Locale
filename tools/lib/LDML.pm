@@ -1,13 +1,16 @@
 package    # don't want this indexed by PAUSE
     LDML;
 
+use 5.010;
+
 use strict;
 use warnings;
 use utf8;
 
+use Carp ();
 use Data::Dumper;
 use Lingua::EN::Inflect qw( PL_N );
-use List::Util qw( first );
+use List::AllUtils qw( all first );
 use Path::Class;
 use Storable qw( nstore_fd fd_retrieve );
 use XML::LibXML;
@@ -32,36 +35,6 @@ has 'document' => (
     is       => 'ro',
     isa      => 'XML::LibXML::Document',
     required => 1,
-    clearer  => '_clear_document',
-);
-
-class_has 'Aliases' => (
-    is      => 'ro',
-    isa     => 'HashRef',
-    lazy    => 1,
-    default => sub {
-        return {
-            'C'     => 'en_US_POSIX',
-            'POSIX' => 'en_US_POSIX',
-
-            # Apparently the Hebrew locale code was changed from iw to he at
-            # one point.
-            'iw'    => 'he',
-            'iw_IL' => 'he_IL',
-
-            # CLDR got rid of no
-            'no'       => 'nn',
-            'no_NO'    => 'nn_NO',
-            'no_NO_NY' => 'nn_NO',
-        };
-    },
-);
-
-class_has 'FormatLengths' => (
-    is      => 'ro',
-    isa     => 'ArrayRef',
-    lazy    => 1,
-    default => sub { return [qw( full long medium short )] },
 );
 
 has 'version' => (
@@ -104,10 +77,18 @@ has 'variant' => (
     default => sub { ( $_[0]->_parse_id() )[3] },
 );
 
-has 'parent_id' => (
-    is         => 'ro',
-    isa        => 'Str',
-    lazy_build => 1,
+has 'alias_to' => (
+    is      => 'ro',
+    isa     => 'Maybe[Str]',
+    lazy    => 1,
+    builder => '_build_alias_to',
+);
+
+has '_parent_ids' => (
+    is      => 'ro',
+    isa     => 'ArrayRef[Str]',
+    lazy    => 1,
+    builder => '_build_parent_ids',
 );
 
 class_type 'XML::LibXML::Node';
@@ -171,15 +152,25 @@ for my $thing (
 
                 return [] unless $self->has_calendar_data();
 
-                my @vals = $self->_find_preferred_values(
+                my $vals
+                    = $self->_find_preferred_values(
                     ( scalar $self->_calendar_node()->findnodes($path) ),
                     'type',
                     $thing->{order},
-                );
+                    );
 
-                return [] unless @vals == $thing->{length};
+                $self->_fill_from_parent( $attr, $vals, $thing->{length} )
+                    unless @{$vals} == $thing->{length}
+                        && all {defined} @{$vals};
 
-                return \@vals;
+                unless ( @{$vals} == $thing->{length}
+                    && all {defined} @{$vals} ) {
+                    warn
+                        "Could not fill in all values for $attr from parents for "
+                        . $self->id() . "\n";
+                }
+
+                return $vals;
             };
 
             __PACKAGE__->meta()->add_method( '_build_' . $attr => $builder );
@@ -189,8 +180,11 @@ for my $thing (
 
 # eras have a different name scheme for sizes than other data
 # elements, go figure.
-for my $size ( [ wide => 'Names' ], [ abbreviated => 'Abbr' ],
-    [ narrow => 'Narrow' ] ) {
+for my $size (
+    [ wide        => 'Names' ],
+    [ abbreviated => 'Abbr' ],
+    [ narrow      => 'Narrow' ]
+    ) {
     my $attr = 'era_' . $size->[0];
 
     has $attr => (
@@ -211,15 +205,22 @@ for my $size ( [ wide => 'Names' ], [ abbreviated => 'Abbr' ],
 
         return [] unless $self->has_calendar_data();
 
-        my @vals = $self->_find_preferred_values(
+        my $vals = $self->_find_preferred_values(
             ( scalar $self->_calendar_node()->findnodes($path) ),
             'type',
             [ 0, 1 ],
         );
 
-        return [] unless @vals == 2;
+        return [] unless @{$vals};
 
-        return \@vals;
+        if ( @{$vals} != 2 ) {
+            warn "Less than 2 items in $path ", $self->id,
+                "\n";
+            use Data::Dumper::Concise;
+            warn Dumper $vals;
+        }
+
+        return $vals;
     };
 
     __PACKAGE__->meta()->add_method( '_build_' . $attr => $builder );
@@ -248,8 +249,10 @@ for my $type (qw( date time )) {
 
             return unless $self->has_calendar_data();
 
-            return $self->_find_one_node_text( $path,
-                $self->_calendar_node() );
+            return $self->_find_one_node_text(
+                $path,
+                $self->_calendar_node(),
+            );
         };
 
         __PACKAGE__->meta()->add_method( '_build_' . $attr => $builder );
@@ -400,7 +403,7 @@ for my $thing (qw( language script territory variant )) {
                 . q{[@type='}
                 . $self->$thing() . q{']};
 
-            for ( my $ldml = $self; $ldml; $ldml = $ldml->_load_parent() ) {
+            for my $ldml ( $self->_self_and_ancestors() ) {
                 my $native_val = $ldml->_find_one_node_text($path);
 
                 return $native_val if defined $native_val;
@@ -414,17 +417,87 @@ for my $thing (qw( language script territory variant )) {
     }
 }
 
-sub _load_parent {
+sub _build_alias_to {
     my $self = shift;
 
-    my $parent_id = $self->parent_id();
-    return unless defined $parent_id;
+    my $source = $self->_find_one_node_attribute( 'alias', 'source' );
+    return $source if defined $source;
 
-    my $file = $self->source_file()->dir()->file( $parent_id . '.xml' );
+    return;
+}
+
+sub parent_ids {
+    @{ $_[0]->_parent_ids() };
+}
+
+sub _self_and_ancestors {
+    my $self = shift;
+
+    return $self, $self->_all_parents();
+}
+
+sub _all_parents {
+    my $self = shift;
+
+    return map { $_, $_->_all_parents() } $self->_parents();
+}
+
+sub _parents {
+    my $self = shift;
+
+    return map { $self->_maybe_load($_) } @{ $self->_parent_ids() };
+}
+
+sub _maybe_load {
+    my $self = shift;
+    my $id   = shift;
+
+    my $file = $self->source_file()->dir()->file( $id . '.xml' );
 
     return unless -f $file;
 
     return ( ref $self )->new_from_file($file);
+}
+
+sub _build_parent_ids {
+    my $self = shift;
+
+    my @fallback;
+    if ( my $fb = $self->_find_one_node_text('fallback') ) {
+        @fallback = split /\s+/, $fb;
+    }
+
+    # This is always one id, but if it doesn't exist we want an empty list
+    # rather than undef.
+    my @implicit = $self->_implicit_parent_id();
+
+    if ( @implicit && $implicit[0] eq 'root' ) {
+        return [ @fallback, @implicit ];
+    }
+    else {
+        return [ @implicit, @fallback ];
+    }
+}
+
+sub _implicit_parent_id {
+    my $self = shift;
+
+    my @parts = (
+        grep {defined} $self->language(),
+        $self->script(),
+        $self->territory(),
+        $self->variant(),
+    );
+
+    pop @parts;
+
+    if (@parts) {
+        return join '_', @parts;
+    }
+    else {
+        return if $self->id() eq 'root';
+        return 'root';
+    }
 }
 
 {
@@ -455,15 +528,18 @@ sub _load_parent {
     $Parser->load_catalog('/etc/xml/catalog.xml');
     $Parser->load_ext_dtd(0);
 
+    my %Cache;
     sub _resolve_document_aliases {
         my $class = shift;
         my $file  = shift;
+
+        return $Cache{$file} if exists $Cache{$file};
 
         my $doc = $Parser->parse_file( $file->stringify() );
 
         $class->_resolve_aliases_in_node( $doc->documentElement(), $file );
 
-        return $doc;
+        return $Cache{$file} = $doc;
     }
 }
 
@@ -472,15 +548,15 @@ sub _resolve_aliases_in_node {
     my $node  = shift;
     my $file  = shift;
 
-ALIAS:
+ ALIAS:
     for my $node ( $node->getElementsByTagName('alias') ) {
 
-# Replacing all the aliases is slow, and we really don't care
-# about most of the data in the file, just the
-# localeDisplayNames and the gregorian calendar.
-#
-# We also end up skipping the case where the entire locale is an alias to some
-# other locale. This is handled in the generated Perl code.
+        # Replacing all the aliases is slow, and we really don't care about
+        # most of the data in the file, just the localeDisplayNames and the
+        # gregorian calendar.
+        #
+        # We also end up skipping the case where the entire locale is an alias
+        # to some other locale. This is handled in the generated Perl code.
         for ( my $p = $node->parentNode(); $p; $p = $p->parentNode() ) {
             if ( $p->nodeName() eq 'calendar' ) {
                 if ( $p->getAttribute('type') eq 'gregorian' ) {
@@ -667,29 +743,6 @@ sub _parse_id {
                           /x;
 }
 
-sub _build_parent_id {
-    my $self = shift;
-
-    my $source = $self->_find_one_node_attribute( 'alias', 'source' );
-    return $source if defined $source;
-
-    my @parts = (
-        grep {defined} $self->language(),
-        $self->script(),
-        $self->territory(),
-        $self->variant(),
-    );
-
-    pop @parts;
-
-    if (@parts) {
-        return join '_', @parts;
-    }
-    else {
-        return $self->id() eq 'root' ? 'Base' : 'root';
-    }
-}
-
 sub _build_am_pm_abbreviated {
     my $self = shift;
 
@@ -737,15 +790,16 @@ sub _build__available_formats {
 sub _build_merged_available_formats {
     my $self = shift;
 
-    my $formats = {};
-    for ( my $ldml = $self; $ldml; $ldml = $ldml->_load_parent ) {
-        $formats = {
+    my %merged_formats;
+
+    for my $ldml ( $self->_self_and_ancestors ) {
+        %merged_formats = (
             %{ $ldml->_available_formats() },
-            %{$formats},
-        };
+            %merged_formats,
+        );
     }
 
-    return $formats;
+    return \%merged_formats;
 }
 
 sub _build_default_interval_format {
@@ -820,7 +874,7 @@ sub _build_merged_field_names {
 
     my %merged_names;
 
-    for ( my $ldml = $self; $ldml; $ldml = $ldml->_load_parent() ) {
+    for my $ldml ( $self->_self_and_ancestors ) {
         my $names = $ldml->_field_names();
 
         for my $field ( keys %{$names} ) {
@@ -862,7 +916,9 @@ sub _find_preferred_values {
     }
 
     my @preferred;
-    for my $attr ( @{$order} ) {
+    for my $i ( 0 .. $#{$order} ) {
+
+        my $attr = $order->[$i];
 
         # There may be nothing in the index for incomplete sets (of
         # days, months, etc)
@@ -871,10 +927,10 @@ sub _find_preferred_values {
         my $preferred = $self->_find_preferred_node(@matches)
             or next;
 
-        push @preferred, join '', map { $_->data() } $preferred->childNodes();
+        $preferred[$i] = join '', map { $_->data() } $preferred->childNodes();
     }
 
-    return @preferred;
+    return \@preferred;
 }
 
 sub _find_preferred_node {
@@ -918,7 +974,14 @@ sub _find_one_node_attribute {
 sub _find_one_node {
     my $self    = shift;
     my $path    = shift;
-    my $context = shift || $self->document()->documentElement();
+    my $context = shift;
+
+    unless ($context) {
+        $context = $self->document()->documentElement()
+            or Carp::confess("No document element!");
+    }
+
+    return unless $context;
 
     my @nodes = $self->_find_preferred_node( $context->findnodes($path) );
 
@@ -929,6 +992,23 @@ sub _find_one_node {
     }
 
     return $nodes[0];
+}
+
+sub _fill_from_parent {
+    my $self   = shift;
+    my $attr   = shift;
+    my $vals   = shift;
+    my $length = shift;
+
+    for my $parent ( $self->_all_parents() ) {
+        my $parent_vals = $parent->$attr();
+
+        for my $i ( 0 .. $length - 1 ) {
+            $vals->[$i] //= $parent_vals->[$i];
+        }
+
+        return if @{$vals} == $length;
+    }
 }
 
 {

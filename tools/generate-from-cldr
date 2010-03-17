@@ -108,8 +108,8 @@ sub clean {
 sub generate_from_cldr_xml {
     my @ldml = read_all_files();
     generate_pm_files(@ldml);
-    generate_catalog(@ldml) unless $opts{file};
-    generate_pm_file_pod($_) for @ldml;
+#    generate_catalog(@ldml) unless $opts{file};
+#    generate_pm_file_pod($_) for @ldml;
 
     print "\nAll done\n" unless $opts{quiet};
 }
@@ -143,11 +143,13 @@ sub generate_pm_files {
     print "\nGenerating PM files\n" if $opts{verbose};
 
     for my $ldml ( sort @ldml ) {
+        next if $ldml->alias_to();
+
         if ( $opts{verbose} ) {
             print sprintf(
                 <<"EOF", $ldml->id(), $ldml->parent_id(), $ldml->version(), $ldml->generation_date() );
   %s
-    parent_id:       %s
+    parent_ids:      %s
     version:         %s
     generation date: %s
 
@@ -168,7 +170,6 @@ sub generate_pm_file {
         or die "Cannot write to $pm_file: $!";
 
     write_pm_header( $fh, $ldml );
-    write_pm_inheritance( $fh, $ldml );
     write_pm_cldr_version($fh);
     write_pm_subs( $fh, $ldml );
     write_pm_footer( $fh, $ldml );
@@ -209,15 +210,6 @@ use warnings;
 use utf8;
 
 EOF
-}
-
-sub write_pm_inheritance {
-    my $fh   = shift;
-    my $ldml = shift;
-
-    my $parent = $ldml->parent_id();
-
-    print {$fh} "use base 'DateTime::Locale::$parent';\n\n";
 }
 
 sub write_pm_cldr_version {
@@ -731,6 +723,15 @@ EOF
 {
     my %aliases;
 
+    my %explicit = (
+        'C'     => 'en_US_POSIX',
+        'POSIX' => 'en_US_POSIX',
+
+        # Apparently the Hebrew locale code was changed from iw to he at one
+        # point.
+        'iw_IL' => 'he_IL',
+    );
+
     sub valid_aliases {
         return %aliases if keys %aliases;
 
@@ -739,6 +740,11 @@ EOF
         my %ids = map { $_->id() => 1 } @{$ldml};
 
         for my $ldml ( @{$ldml} ) {
+            if ( $ldml->alias_to() ) {
+                $aliases{ $ldml->id() } = $ldml->alias_to();
+                next;
+            }
+
             my $three = iso639_2_to_3( $ldml->language() );
 
             next unless defined $three;
@@ -755,7 +761,7 @@ EOF
             $aliases{$three_id} = $ldml->id();
         }
 
-        %aliases = ( %aliases, %{ LDML->Aliases() } );
+        %aliases = ( %aliases, %explicit );
 
         return %aliases;
     }
