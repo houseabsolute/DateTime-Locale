@@ -485,6 +485,22 @@ use LDML;
     );
 }
 
+{
+    my $ldml = LDML->new_from_file('t/test-data/is.xml');
+
+    is_deeply(
+        [ $ldml->parent_ids() ],
+        [qw( nn sv nb da en root )],
+        'parent_ids for is'
+    );
+
+    is_deeply(
+        $ldml->day_format_narrow(),
+        [qw( 2 3 4 5 6 7 1 )],
+        'day_format_narrow for is does not cause endless recursion'
+    );
+}
+
 done_testing();
 
 sub test_data {

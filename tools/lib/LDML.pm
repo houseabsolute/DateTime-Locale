@@ -448,8 +448,9 @@ sub _all_parents {
 
 sub _parents {
     my $self = shift;
+    my $seen = shift;
 
-    return map { $self->_maybe_load($_) } @{ $self->_parent_ids() };
+    return map { $self->_maybe_load($_) } grep { ! $seen->{$_} } @{ $self->_parent_ids() };
 }
 
 sub _maybe_load {
@@ -998,20 +999,31 @@ sub _find_one_node {
     return $nodes[0];
 }
 
-sub _fill_from_parent {
-    my $self   = shift;
-    my $attr   = shift;
-    my $vals   = shift;
-    my $length = shift;
+{
+    our $check_recursion;
 
-    for my $parent ( $self->_all_parents() ) {
-        my $parent_vals = $parent->$attr();
+    sub _fill_from_parent {
+        my $self   = shift;
+        my $attr   = shift;
+        my $vals   = shift;
+        my $length = shift;
 
-        for my $i ( 0 .. $length - 1 ) {
-            $vals->[$i] //= $parent_vals->[$i];
+        local $check_recursion = {}
+            unless $check_recursion;
+
+        $check_recursion->{ $self->id() } = 1;
+
+        for my $parent ( $self->_all_parents() ) {
+            next if $check_recursion->{ $parent->id() };
+
+            my $parent_vals = $parent->$attr();
+
+            for my $i ( 0 .. $length - 1 ) {
+                $vals->[$i] //= $parent_vals->[$i];
+            }
+
+            return if @{$vals} == $length;
         }
-
-        return if @{$vals} == $length;
     }
 }
 
