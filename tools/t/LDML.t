@@ -321,7 +321,8 @@ use LDML;
     my @data = (
         id => 'en_US',
 
-        first_day_of_week => 7,
+        first_day_of_week      => 7,
+        day_format_abbreviated => [qw( Mon Tue Wed Thu Fri Sat Sun )],
     );
 
     test_data( $ldml, \@data );
