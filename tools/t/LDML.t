@@ -457,6 +457,18 @@ use LDML;
     test_data( $ldml, \@data );
 }
 
+{
+    my $ldml = LDML->new_from_file('t/test-data/bg.xml');
+
+    my @data = (
+        id => 'bg',
+
+        era_narrow => [ 'BCE', 'сл.н.е.' ],
+    );
+
+    test_data( $ldml, \@data );
+}
+
 done_testing();
 
 sub test_data {

@@ -211,13 +211,12 @@ for my $size (
             [ 0, 1 ],
         );
 
-        return [] unless @{$vals};
+        $self->_fill_from_parent( $attr, $vals, 2 )
+            unless @{$vals} == 2 && all {defined} @{$vals};
 
-        if ( @{$vals} != 2 ) {
-            warn "Less than 2 items in $path ", $self->id,
-                "\n";
-            use Data::Dumper::Concise;
-            warn Dumper $vals;
+        unless ( @{$vals} == 2 && all {defined} @{$vals} ) {
+            warn "Could not fill in all values for $attr from parents for "
+                . $self->id() . "\n";
         }
 
         return $vals;
