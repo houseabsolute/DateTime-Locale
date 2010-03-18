@@ -10,9 +10,11 @@ use lib './lib', 'tools/lib';
 use Data::Dumper;
 use File::Copy qw( copy );
 use File::Find::Rule;
+use File::Slurp qw( read_file );
 use Getopt::Long;
 use LDML;
 use Lingua::EN::Inflect qw( PL_N );
+use List::AllUtils qw( first );
 use Locale::Country
     qw( country_code2code LOCALE_CODE_ALPHA_2 LOCALE_CODE_ALPHA_3 );
 use Path::Class;
@@ -27,6 +29,7 @@ my $ScriptName = file($0)->basename();
 }
 
 my %opts;
+my $glibc_dir;
 
 sub main {
     GetOptions(
@@ -50,6 +53,9 @@ sub main {
 
     binmode STDOUT, ':utf8' if $opts{verbose};
     $| = 1;
+
+    ( $glibc_dir = $opts{dir} ) =~ s{cldr/.+}{};
+    $glibc_dir .= 'glibc';
 
     generate_from_cldr_xml();
 }
@@ -107,8 +113,8 @@ sub clean {
 sub generate_from_cldr_xml {
     my @ldml = read_all_files();
     generate_pm_files(@ldml);
-    generate_catalog(@ldml);
-    generate_pm_file_pod($_) for @ldml;
+#    generate_catalog(@ldml);
+#    generate_pm_file_pod($_) for @ldml;
 
     print "\nAll done\n" unless $opts{quiet};
 }
@@ -170,6 +176,7 @@ sub generate_pm_file {
     write_pm_inheritance( $fh, $ldml );
     write_pm_cldr_version($fh);
     write_pm_subs( $fh, $ldml );
+    write_pm_glibc_subs( $fh, $ldml );
     write_pm_footer( $fh, $ldml );
 }
 
@@ -267,6 +274,63 @@ sub write_pm_subs {
     }
 
     write_available_format_subs( $fh, $ldml );
+}
+
+sub write_pm_glibc_subs {
+    my $fh   = shift;
+    my $ldml = shift;
+
+    my $file = _glibc_file_for_ldml($ldml);
+    return unless -f $file;
+
+    my %formats = _read_glibc_data($file);
+
+    for my $key ( grep { defined $formats{$_} } sort keys %formats ) {
+        print {$fh} string_sub( 'glibc_' . $key . '_format', $formats{$key} );
+    }
+}
+
+sub _glibc_file_for_ldml
+{
+    my $ldml = shift;
+
+    my $glibc_id = join '_', grep { defined } $ldml->language(), $ldml->territory();
+    if ( my $script = $ldml->en_script() ) {
+        $glibc_id .= '@' . lc $script;
+    }
+
+    # This ensures some sort of sanish fallback
+    $glibc_id = 'POSIX' if $ldml->id() eq 'root';
+
+    return "$glibc_dir/$glibc_id";
+}
+
+sub _read_glibc_data {
+    my $file = shift;
+
+    my $glibc = read_file($file);
+
+    return (
+        datetime => _extract_glibc_value( 'd_t_fmt',    $glibc ),
+        date     => _extract_glibc_value( 'd_fmt',      $glibc ),
+        time     => _extract_glibc_value( 't_fmt',      $glibc ),
+        time_12  => _extract_glibc_value( 't_fmt_ampm', $glibc ),
+        date_1   => _extract_glibc_value( 'date_fmt',   $glibc ),
+    );
+}
+
+sub _extract_glibc_value {
+    my $key = shift;
+    my $data = shift;
+
+    my ($val) = $data =~ /^\Q$key\E\s+"([^"]+?)"/m
+        or return undef;
+
+    $val =~ s/[\\\/]\n//g;
+
+    $val =~ s/\<U([A-F\d]+)\>/chr(hex($1))/eg;
+
+    return $val;
 }
 
 sub make_alias {
