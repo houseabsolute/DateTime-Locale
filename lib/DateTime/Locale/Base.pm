@@ -8,16 +8,16 @@ use DateTime::Locale;
 use List::MoreUtils ();
 use Params::Validate qw( validate_pos );
 
-BEGIN
-{
-    foreach my $field ( qw( id en_complete_name native_complete_name
-                            en_language en_script en_territory en_variant
-                            native_language native_script native_territory native_variant
-                          )
-                      )
-    {
+BEGIN {
+    foreach my $field (
+        qw( id en_complete_name native_complete_name
+        en_language en_script en_territory en_variant
+        native_language native_script native_territory native_variant
+        )
+        ) {
+
         # remove leading 'en_' for method name
-        (my $meth_name = $field) =~ s/^en_//;
+        ( my $meth_name = $field ) =~ s/^en_//;
 
         # also remove 'complete_'
         $meth_name =~ s/complete_//;
@@ -27,16 +27,16 @@ BEGIN
     }
 }
 
-sub new
-{
+sub new {
     my $class = shift;
 
     # By making the default format lengths part of the object's hash
     # key, it allows them to be settable.
-    return bless { @_,
-                   default_date_format_length => $class->_default_date_format_length(),
-                   default_time_format_length => $class->_default_time_format_length(),
-                 }, $class;
+    return bless {
+        @_,
+        default_date_format_length => $class->_default_date_format_length(),
+        default_time_format_length => $class->_default_time_format_length(),
+    }, $class;
 }
 
 sub language_id  { ( DateTime::Locale::_parse_id( $_[0]->id ) )[0] }
@@ -46,34 +46,35 @@ sub variant_id   { ( DateTime::Locale::_parse_id( $_[0]->id ) )[3] }
 
 my @FormatLengths = qw( short medium long full );
 
-sub date_format_default
-{
+sub date_format_default {
     my $meth = 'date_format_' . $_[0]->default_date_format_length();
     $_[0]->$meth();
 }
 
-sub date_formats
-{
-    return
-        { map { my $meth = 'date_format_' . $_;
-                $_ => $_[0]->$meth() } @FormatLengths }
+sub date_formats {
+    return {
+        map {
+            my $meth = 'date_format_' . $_;
+            $_ => $_[0]->$meth()
+            } @FormatLengths
+    };
 }
 
-sub time_format_default
-{
+sub time_format_default {
     my $meth = 'time_format_' . $_[0]->default_time_format_length();
     $_[0]->$meth();
 }
 
-sub time_formats
-{
-    return
-        { map { my $meth = 'time_format_' . $_;
-                $_ => $_[0]->$meth() } @FormatLengths }
+sub time_formats {
+    return {
+        map {
+            my $meth = 'time_format_' . $_;
+            $_ => $_[0]->$meth()
+            } @FormatLengths
+    };
 }
 
-sub format_for
-{
+sub format_for {
     my $self = shift;
     my $for  = shift;
 
@@ -84,14 +85,15 @@ sub format_for
     return $self->$meth();
 }
 
-sub available_formats
-{
+sub available_formats {
     my $self = shift;
 
     # The various parens seem to be necessary to force uniq() to see
     # the caller's list context. Go figure.
-    my @uniq = List::MoreUtils::uniq( map { keys %{ $_->_available_formats() || {} } }
-                                      Class::ISA::self_and_super_path( ref $self ) );
+    my @uniq
+        = List::MoreUtils::uniq(
+        map { keys %{ $_->_available_formats() || {} } }
+            Class::ISA::self_and_super_path( ref $self ) );
 
     # Doing the sort in the same expression doesn't work under 5.6.x.
     return sort @uniq;
@@ -102,45 +104,44 @@ sub _available_formats { }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
-sub set_default_date_format_length
-{
+sub set_default_date_format_length {
     my $self = shift;
-    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
+    my ($l)
+        = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
 
     $self->{default_date_format_length} = lc $l;
 }
 
 sub default_time_format_length { $_[0]->{default_time_format_length} }
 
-sub set_default_time_format_length
-{
+sub set_default_time_format_length {
     my $self = shift;
-    my ($l) = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
+    my ($l)
+        = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
 
     $self->{default_time_format_length} = lc $l;
 }
 
-for my $length ( qw( full long medium short ) )
-{
+for my $length (qw( full long medium short )) {
     my $key = 'datetime_format_' . $length;
 
-    my $sub =
-        sub { my $self = shift;
+    my $sub = sub {
+        my $self = shift;
 
-              return $self->{$key} if exists $self->{$key};
+        return $self->{$key} if exists $self->{$key};
 
-              my $date_meth = 'date_format_' . $length;
-              my $time_meth = 'time_format_' . $length;
+        my $date_meth = 'date_format_' . $length;
+        my $time_meth = 'time_format_' . $length;
 
-              return $self->{$key} = $self->_make_datetime_format( $date_meth, $time_meth );
-            };
+        return $self->{$key}
+            = $self->_make_datetime_format( $date_meth, $time_meth );
+    };
 
     no strict 'refs';
     *{$key} = $sub;
 }
 
-sub datetime_format_default
-{
+sub datetime_format_default {
     my $self = shift;
 
     my $date_meth = 'date_format_' . $self->default_date_format_length();
@@ -149,8 +150,7 @@ sub datetime_format_default
     return $self->_make_datetime_format( $date_meth, $time_meth );
 }
 
-sub _make_datetime_format
-{
+sub _make_datetime_format {
     my $self      = shift;
     my $date_meth = shift;
     my $time_meth = shift;
@@ -166,37 +166,45 @@ sub _make_datetime_format
     return $dt_format;
 }
 
-sub prefers_24_hour_time
-{
+sub prefers_24_hour_time {
     my $self = shift;
 
     return $self->{prefers_24_hour_time}
         if exists $self->{prefers_24_hour_time};
 
-    $self->{prefers_24_hour_time} =
-        $self->time_format_short() =~ /h|K/ ? 0 : 1;
+    $self->{prefers_24_hour_time}
+        = $self->time_format_short() =~ /h|K/ ? 0 : 1;
 }
 
 # Backwards compat for DateTime.pm version <= 0.42
-sub month_name          { $_[0]->month_format_wide()->       [ $_[1]->month_0 ] }
-sub month_abbreviation  { $_[0]->month_format_abbreviated()->[ $_[1]->month_0 ] }
-sub month_narrow        { $_[0]->month_format_narrow()->     [ $_[1]->month_0 ] }
+sub month_name { $_[0]->month_format_wide()->[ $_[1]->month_0 ] }
+
+sub month_abbreviation {
+    $_[0]->month_format_abbreviated()->[ $_[1]->month_0 ];
+}
+sub month_narrow { $_[0]->month_format_narrow()->[ $_[1]->month_0 ] }
 
 sub month_names         { $_[0]->month_format_wide() }
 sub month_abbreviations { $_[0]->month_format_abbreviated() }
 sub month_narrows       { $_[0]->month_format_narrow() }
 
-sub day_name            { $_[0]->day_format_wide()->       [ $_[1]->day_of_week_0 ] }
-sub day_abbreviation    { $_[0]->day_format_abbreviated()->[ $_[1]->day_of_week_0 ] }
-sub day_narrow          { $_[0]->day_format_narrow()->     [ $_[1]->day_of_week_0 ] }
+sub day_name { $_[0]->day_format_wide()->[ $_[1]->day_of_week_0 ] }
 
-sub day_names           { $_[0]->day_format_wide() }
-sub day_abbreviations   { $_[0]->day_format_abbreviated() }
-sub day_narrows         { $_[0]->day_format_narrow() }
+sub day_abbreviation {
+    $_[0]->day_format_abbreviated()->[ $_[1]->day_of_week_0 ];
+}
+sub day_narrow { $_[0]->day_format_narrow()->[ $_[1]->day_of_week_0 ] }
 
-sub quarter_name         { $_[0]->quarter_format_wide()->       [ $_[1]->quarter - 1 ] }
-sub quarter_abbreviation { $_[0]->quarter_format_abbreviated()->[ $_[1]->quarter - 1 ] }
-sub quarter_narrow       { $_[0]->quarter_format_narrow()->     [ $_[1]->quarter - 1 ] }
+sub day_names         { $_[0]->day_format_wide() }
+sub day_abbreviations { $_[0]->day_format_abbreviated() }
+sub day_narrows       { $_[0]->day_format_narrow() }
+
+sub quarter_name { $_[0]->quarter_format_wide()->[ $_[1]->quarter - 1 ] }
+
+sub quarter_abbreviation {
+    $_[0]->quarter_format_abbreviated()->[ $_[1]->quarter - 1 ];
+}
+sub quarter_narrow { $_[0]->quarter_format_narrow()->[ $_[1]->quarter - 1 ] }
 
 sub quarter_names         { $_[0]->quarter_format_wide() }
 sub quarter_abbreviations { $_[0]->quarter_format_abbreviated() }
@@ -204,9 +212,12 @@ sub quarter_abbreviations { $_[0]->quarter_format_abbreviated() }
 sub am_pm { $_[0]->am_pm_abbreviated()->[ $_[1]->hour < 12 ? 0 : 1 ] }
 sub am_pms { $_[0]->am_pm_abbreviated() }
 
-sub era_name         { $_[0]->era_wide()->       [ $_[1]->ce_year < 0 ? 0 : 1 ] }
-sub era_abbreviation { $_[0]->era_abbreviated()->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
-sub era_narrow       { $_[0]->era_narrow()->     [ $_[1]->ce_year < 0 ? 0 : 1 ] }
+sub era_name { $_[0]->era_wide()->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
+
+sub era_abbreviation {
+    $_[0]->era_abbreviated()->[ $_[1]->ce_year < 0 ? 0 : 1 ];
+}
+sub era_narrow { $_[0]->era_narrow()->[ $_[1]->ce_year < 0 ? 0 : 1 ] }
 
 sub era_names         { $_[0]->era_wide() }
 sub era_abbreviations { $_[0]->era_abbreviated() }
@@ -215,8 +226,7 @@ sub era_abbreviations { $_[0]->era_abbreviated() }
 sub era  { $_[0]->era_abbreviation }
 sub eras { $_[0]->era_abbreviations }
 
-sub date_before_time
-{
+sub date_before_time {
     my $self = shift;
 
     my $dt_format = $self->datetime_format();
@@ -224,8 +234,7 @@ sub date_before_time
     return $dt_format =~ /\{1\}.*\{0\}/ ? 1 : 0;
 }
 
-sub date_parts_order
-{
+sub date_parts_order {
     my $self = shift;
 
     my $short = $self->date_format_short();
@@ -236,28 +245,69 @@ sub date_parts_order
     return $short;
 }
 
-sub full_date_format   { $_[0]->_convert_to_strftime( $_[0]->date_format_full() ) }
-sub long_date_format   { $_[0]->_convert_to_strftime( $_[0]->date_format_long() ) }
-sub medium_date_format { $_[0]->_convert_to_strftime( $_[0]->date_format_medium() ) }
-sub short_date_format  { $_[0]->_convert_to_strftime( $_[0]->date_format_short() ) }
-sub default_date_format { $_[0]->_convert_to_strftime( $_[0]->date_format_default() ) }
+sub full_date_format {
+    $_[0]->_convert_to_strftime( $_[0]->date_format_full() );
+}
 
-sub full_time_format   { $_[0]->_convert_to_strftime( $_[0]->time_format_full() ) }
-sub long_time_format   { $_[0]->_convert_to_strftime( $_[0]->time_format_long() ) }
-sub medium_time_format { $_[0]->_convert_to_strftime( $_[0]->time_format_medium() ) }
-sub short_time_format  { $_[0]->_convert_to_strftime( $_[0]->time_format_short() ) }
-sub default_time_format { $_[0]->_convert_to_strftime( $_[0]->time_format_default() ) }
+sub long_date_format {
+    $_[0]->_convert_to_strftime( $_[0]->date_format_long() );
+}
 
-sub full_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->datetime_format_full() ) }
-sub long_datetime_format   { $_[0]->_convert_to_strftime( $_[0]->datetime_format_long() ) }
-sub medium_datetime_format { $_[0]->_convert_to_strftime( $_[0]->datetime_format_medium() ) }
-sub short_datetime_format  { $_[0]->_convert_to_strftime( $_[0]->datetime_format_short() ) }
-sub default_datetime_format { $_[0]->_convert_to_strftime( $_[0]->datetime_format_default() ) }
+sub medium_date_format {
+    $_[0]->_convert_to_strftime( $_[0]->date_format_medium() );
+}
+
+sub short_date_format {
+    $_[0]->_convert_to_strftime( $_[0]->date_format_short() );
+}
+
+sub default_date_format {
+    $_[0]->_convert_to_strftime( $_[0]->date_format_default() );
+}
+
+sub full_time_format {
+    $_[0]->_convert_to_strftime( $_[0]->time_format_full() );
+}
+
+sub long_time_format {
+    $_[0]->_convert_to_strftime( $_[0]->time_format_long() );
+}
+
+sub medium_time_format {
+    $_[0]->_convert_to_strftime( $_[0]->time_format_medium() );
+}
+
+sub short_time_format {
+    $_[0]->_convert_to_strftime( $_[0]->time_format_short() );
+}
+
+sub default_time_format {
+    $_[0]->_convert_to_strftime( $_[0]->time_format_default() );
+}
+
+sub full_datetime_format {
+    $_[0]->_convert_to_strftime( $_[0]->datetime_format_full() );
+}
+
+sub long_datetime_format {
+    $_[0]->_convert_to_strftime( $_[0]->datetime_format_long() );
+}
+
+sub medium_datetime_format {
+    $_[0]->_convert_to_strftime( $_[0]->datetime_format_medium() );
+}
+
+sub short_datetime_format {
+    $_[0]->_convert_to_strftime( $_[0]->datetime_format_short() );
+}
+
+sub default_datetime_format {
+    $_[0]->_convert_to_strftime( $_[0]->datetime_format_default() );
+}
 
 # Older versions of DateTime.pm will not pass in the $cldr_ok flag, so
 # we will give them the converted-to-strftime pattern (bugs and all).
-sub _convert_to_strftime
-{
+sub _convert_to_strftime {
     my $self    = shift;
     my $pattern = shift;
     my $cldr_ok = shift;
@@ -267,68 +317,66 @@ sub _convert_to_strftime
     return $self->{_converted_patterns}{$pattern}
         if exists $self->{_converted_patterns}{$pattern};
 
-    return $self->{_converted_patterns}{$pattern} = $self->_cldr_to_strftime($pattern);
+    return $self->{_converted_patterns}{$pattern}
+        = $self->_cldr_to_strftime($pattern);
 }
 
 {
-    my @JavaPatterns =
-        ( qr/G/     => '{era}',
-          qr/yyyy/  => '{ce_year}',
-          qr/y/     => 'y',
-          qr/u/     => 'Y',
-          qr/MMMM/  => 'B',
-          qr/MMM/   => 'b',
-          qr/MM/    => 'm',
-          qr/M/     => '{month}',
-          qr/dd/    => 'd',
-          qr/d/     => '{day}',
-          qr/hh/    => 'l',
-          qr/h/     => '{hour_12}',
-          qr/HH/    => 'H',
-          qr/H/     => '{hour}',
-          qr/mm/    => 'M',
-          qr/m/     => '{minute}',
-          qr/ss/    => 'S',
-          qr/s/     => '{second}',
-          qr/S/     => 'N',
-          qr/EEEE/  => 'A',
-          qr/E/     => 'a',
-          qr/D/     => 'j',
-          qr/F/     => '{weekday_of_month}',
-          qr/w/     => 'V',
-          qr/W/     => '{week_month}',
-          qr/a/     => 'p',
-          qr/k/     => '{hour_1}',
-          qr/K/     => '{hour_12_0}',
-          qr/z/     => '{time_zone_long_name}',
-        );
+    my @JavaPatterns = (
+        qr/G/    => '{era}',
+        qr/yyyy/ => '{ce_year}',
+        qr/y/    => 'y',
+        qr/u/    => 'Y',
+        qr/MMMM/ => 'B',
+        qr/MMM/  => 'b',
+        qr/MM/   => 'm',
+        qr/M/    => '{month}',
+        qr/dd/   => 'd',
+        qr/d/    => '{day}',
+        qr/hh/   => 'l',
+        qr/h/    => '{hour_12}',
+        qr/HH/   => 'H',
+        qr/H/    => '{hour}',
+        qr/mm/   => 'M',
+        qr/m/    => '{minute}',
+        qr/ss/   => 'S',
+        qr/s/    => '{second}',
+        qr/S/    => 'N',
+        qr/EEEE/ => 'A',
+        qr/E/    => 'a',
+        qr/D/    => 'j',
+        qr/F/    => '{weekday_of_month}',
+        qr/w/    => 'V',
+        qr/W/    => '{week_month}',
+        qr/a/    => 'p',
+        qr/k/    => '{hour_1}',
+        qr/K/    => '{hour_12_0}',
+        qr/z/    => '{time_zone_long_name}',
+    );
 
-    sub _cldr_to_strftime
-    {
+    sub _cldr_to_strftime {
         shift;
         my $simple = shift;
 
-        $simple =~
-            s/(G+|y+|u+|M+|d+|h+|H+|m+|s+|S+|E+|D+|F+|w+|W+|a+|k+|K+|z+)|'((?:[^']|'')*)'/
+        $simple
+            =~ s/(G+|y+|u+|M+|d+|h+|H+|m+|s+|S+|E+|D+|F+|w+|W+|a+|k+|K+|z+)|'((?:[^']|'')*)'/
                 $2 ? _stringify($2) : $1 ? _convert($1) : "'"/eg;
 
         return $simple;
     }
 
-    sub _convert
-    {
+    sub _convert {
         my $simple = shift;
 
-        for ( my $x = 0; $x < @JavaPatterns; $x += 2 )
-        {
-            return '%' . $JavaPatterns[ $x + 1 ] if $simple =~ /$JavaPatterns[$x]/;
+        for ( my $x = 0; $x < @JavaPatterns; $x += 2 ) {
+            return '%' . $JavaPatterns[ $x + 1 ]
+                if $simple =~ /$JavaPatterns[$x]/;
         }
 
         die "**Dont know $simple***";
     }
 
-    sub _stringify
-    {
+    sub _stringify {
         my $string = shift;
 
         $string =~ s/%(?:[^%])/%%/g;
@@ -340,9 +388,8 @@ sub _convert_to_strftime
 
 # end backwards compat
 
-sub STORABLE_freeze
-{
-    my $self = shift;
+sub STORABLE_freeze {
+    my $self    = shift;
     my $cloning = shift;
 
     return if $cloning;
@@ -350,19 +397,17 @@ sub STORABLE_freeze
     return $self->id();
 }
 
-sub STORABLE_thaw
-{
-    my $self = shift;
-    my $cloning = shift;
+sub STORABLE_thaw {
+    my $self       = shift;
+    my $cloning    = shift;
     my $serialized = shift;
 
-    my $obj = DateTime::Locale->load( $serialized );
+    my $obj = DateTime::Locale->load($serialized);
 
     %$self = %$obj;
 
     return $self;
 }
-
 
 1;
 
