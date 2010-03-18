@@ -219,9 +219,9 @@ sub check_root {
 
         datetime_format_default => 'y MMM d HH:mm:ss',
 
-        glibc_datetime_format => '%a %d %b %Y %T %Z',
-        glibc_date_format     => '%d/%m/%y',
-        glibc_time_format     => '%T',
+        glibc_datetime_format => '%a %b %e %H:%M:%S %Y',
+        glibc_date_format     => '%m/%d/%y',
+        glibc_time_format     => '%H:%M:%S',
 
         first_day_of_week => 1,
 
