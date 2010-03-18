@@ -5,7 +5,7 @@ use Test::More;
 
 BEGIN {
     plan skip_all => 'This test is only run for the module author'
-        unless -d '.svn' || $ENV{IS_MAINTAINER};
+        unless -d '.hg' || $ENV{IS_MAINTAINER};
 }
 
 use File::Find::Rule;
