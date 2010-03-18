@@ -14,7 +14,7 @@ my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 plan tests => 5    # starting
     + 1            # load test for root locale
     + ( ( @locale_ids - 1 ) * 21 )    # test each local
-    + 67                              # check_root
+    + 70                              # check_root
     + 24                              # check_en
     + 64                              # check_en_GB
     + 23                              # check_en_US
@@ -218,6 +218,10 @@ sub check_root {
         datetime_format_short  => 'yyyy-MM-dd HH:mm',
 
         datetime_format_default => 'y MMM d HH:mm:ss',
+
+        glibc_datetime_format => '%a %d %b %Y %T %Z',
+        glibc_date_format     => '%d/%m/%y',
+        glibc_time_format     => '%T',
 
         first_day_of_week => 1,
 
