@@ -10,7 +10,6 @@ Module::Build->new(
     dist_author => 'Dave Rolsky <autarch@urth.org>',
     license     => 'perl',
     requires    => {
-        'Class::ISA'       => 0,
         'List::MoreUtils'  => 0,
         'Params::Validate' => '0.91',
         perl               => 5.006,

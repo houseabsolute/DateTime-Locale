@@ -93,10 +93,46 @@ sub available_formats {
     my @uniq
         = List::MoreUtils::uniq(
         map { keys %{ $_->_available_formats() || {} } }
-            Class::ISA::self_and_super_path( ref $self ) );
+            _self_and_super_path( ref $self ) );
 
     # Doing the sort in the same expression doesn't work under 5.6.x.
     return sort @uniq;
+}
+
+# Copied wholesale from Class::ISA, because said module warns as deprecated
+# with perl 5.11.0+, which is kind of annoying.
+sub _self_and_super_path {
+  # Assumption: searching is depth-first.
+  # Assumption: '' (empty string) can't be a class package name.
+  # Note: 'UNIVERSAL' is not given any special treatment.
+  return () unless @_;
+
+  my @out = ();
+
+  my @in_stack = ($_[0]);
+  my %seen = ($_[0] => 1);
+
+  my $current;
+  while(@in_stack) {
+    next unless defined($current = shift @in_stack) && length($current);
+    push @out, $current;
+    no strict 'refs';
+    unshift @in_stack,
+      map
+        { my $c = $_; # copy, to avoid being destructive
+          substr($c,0,2) = "main::" if substr($c,0,2) eq '::';
+           # Canonize the :: -> main::, ::foo -> main::foo thing.
+           # Should I ever canonize the Foo'Bar = Foo::Bar thing? 
+          $seen{$c}++ ? () : $c;
+        }
+        @{"$current\::ISA"}
+    ;
+    # I.e., if this class has any parents (at least, ones I've never seen
+    # before), push them, in order, onto the stack of classes I need to
+    # explore.
+  }
+
+  return @out;
 }
 
 # Just needed for the above method.
