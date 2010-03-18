@@ -1,3 +1,15 @@
+0.45
+
+- This is an interim release still based on CLDR 1.7.1 pending the release of
+  Locale::CLDR, which will happen real soon now, for some definition of soon.
+
+- Removed dependency on Class::ISA and just copied what we need from said
+  module directly. Class::ISA warns as deprecated if used with Perl 5.11.0,
+  even though it works just fine (doh). RT #53940.
+
+- All methods deprecated in the last release now warn when called.
+
+
 0.44   2009-09-12
 
 - All methods which return strftime-style patterns are officially deprecated
