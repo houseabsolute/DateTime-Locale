@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use autodie qw( :all );
+
+use Cwd qw( abs_path );
+use File::chdir;
+use File::Copy qw( move );
+use File::Find::Rule;
+use File::Temp qw( tempdir );
+use LWP::Simple qw( getstore );
+
+my $target_dir = abs_path('cldr-data');
+-d $target_dir or die 'Cannot find target dir';
+
+my $tempdir = tempdir( CLEANUP => 1 );
+
+my $file = "$tempdir/core.zip";
+
+my $uri = 'http://unicode.org/Public/cldr/latest/core.zip';
+#my $uri = 'file:///home/autarch/projects/DateTime-Locale/core.zip';
+
+my $rc = getstore( $uri, $file );
+
+die 'Could not get latest core.zip' unless $rc == 0 || $rc == 200;
+
+{
+    local $CWD = $tempdir;
+    system( 'unzip', '-qq', $file );
+}
+
+for my $file ( File::Find::Rule->name('*.xml')->in($target_dir) ) {
+    unlink $file;
+}
+
+for my $file ( File::Find::Rule->name('*.xml')->in("$tempdir/common/main") ) {
+    move( $file => $target_dir );
+}
+
+move( "$tempdir/supplemental/supplementalData.xml" => $target_dir );
+
+my $mode = 0644;
+chmod $mode, $_ for File::Find::Rule->file()->in($target_dir);
