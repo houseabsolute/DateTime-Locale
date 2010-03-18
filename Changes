@@ -9,6 +9,10 @@
 
 - All methods deprecated in the last release now warn when called.
 
+- Added methods to return per-locale strftime formats from the glibc
+  data. These methods are not yet documented. They are just there for now to
+  allow me to update DateTime::Format::Strptime.
+
 
 0.44   2009-09-12
 
