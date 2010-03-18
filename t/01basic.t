@@ -23,7 +23,7 @@ plan tests => 5    # starting
     + 2                               # check_af
     + 18                              # check_zh_TW
     + 9                               # check_DT_Lang
-     ;
+    ;
 
 {
     ok( @locale_ids >= 240,     'Coverage looks complete' );
@@ -57,21 +57,19 @@ plan tests => 5    # starting
             "'$locale_id':  Has a native locale name"
         );
 
-        # Each iteration runs one test if DateTime.pm is not available or
-        # there is no matching DateTime.pm method, otherwise it runs two.
         for my $test (
             {
-                locale_method    => 'month_format_wide',
-                count            => 12,
+                locale_method => 'month_format_wide',
+                count         => 12,
             }, {
-                locale_method    => 'month_format_abbreviated',
-                count            => 12,
+                locale_method => 'month_format_abbreviated',
+                count         => 12,
             }, {
-                locale_method    => 'day_format_wide',
-                count            => 7,
+                locale_method => 'day_format_wide',
+                count         => 7,
             }, {
-                locale_method    => 'day_format_abbreviated',
-                count            => 7,
+                locale_method => 'day_format_abbreviated',
+                count         => 7,
             }, {
                 locale_method => 'quarter_format_wide',
                 count         => 4,
