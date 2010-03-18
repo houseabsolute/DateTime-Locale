@@ -16,7 +16,7 @@ plan tests => 5    # starting
     + ( ( @locale_ids - 1 ) * 21 )    # test each local
     + 70                              # check_root
     + 24                              # check_en
-    + 64                              # check_en_GB
+    + 67                              # check_en_GB
     + 23                              # check_en_US
     + 11                              # check_es_ES
     + 5                               # check_en_US_POSIX
@@ -291,6 +291,10 @@ sub check_en_GB {
         language_id  => 'en',
         territory_id => 'GB',
         variant_id   => undef,
+
+        glibc_datetime_format => '%a %d %b %Y %T %Z',
+        glibc_date_format     => '%d/%m/%y',
+        glibc_time_format     => '%T',
 
         datetime_format_default => 'd MMM y HH:mm:ss',
     );
