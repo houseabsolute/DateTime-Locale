@@ -11,17 +11,17 @@ my @locale_ids   = sort DateTime::Locale->ids();
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
-plan tests => 5    # starting
-    + 1            # load test for root locale
-    + ( ( @locale_ids - 1 ) * 21 )    # test each local
-    + 70                              # check_root
+plan tests =>
+      5                               # starting
+    + 1                               # one test for root locale
+    + ( ( @locale_ids - 1 ) * 21 )    # tests for each other local
+    + 56                              # check_root
     + 24                              # check_en
-    + 67                              # check_en_GB
+    + 66                              # check_en_GB
     + 23                              # check_en_US
     + 11                              # check_es_ES
     + 5                               # check_en_US_POSIX
     + 2                               # check_af
-    + 18                              # check_zh_TW
     + 9                               # check_DT_Lang
     ;
 
