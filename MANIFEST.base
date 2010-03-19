@@ -21,6 +21,7 @@ t/06storable.t
 t/07script.t
 t/08dash-in-name.t
 t/09version-check.t
+t/10deprecated.t
 t/pod-coverage.t
 t/pod.t
 tools/generate-from-cldr
