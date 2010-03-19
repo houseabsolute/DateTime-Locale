@@ -1,4 +1,8 @@
-0.45
+0.45   2010-03-19
+
+- Installing this release will cause older versions of
+  DateTime::Format::Strptime to warn like crazy. Please update
+  DateTime::Format::Strptime if you install this release.
 
 - This is an interim release still based on CLDR 1.7.1 pending the release of
   Locale::CLDR, which will happen real soon now, for some definition of soon.
