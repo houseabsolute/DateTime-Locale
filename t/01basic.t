@@ -11,20 +11,6 @@ my @locale_ids   = sort DateTime::Locale->ids();
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
-plan tests => 5    # starting
-    + 1            # load test for root locale
-    + ( ( @locale_ids - 1 ) * 21 )    # test each local
-    + 67                              # check_root
-    + 24                              # check_en
-    + 64                              # check_en_GB
-    + 23                              # check_en_US
-    + 11                              # check_es_ES
-    + 5                               # check_en_US_POSIX
-    + 2                               # check_af
-    + 18                              # check_zh_TW
-    + 9                               # check_DT_Lang
-    ;
-
 {
     ok( @locale_ids >= 240,     'Coverage looks complete' );
     ok( $locale_names{English}, "Locale name 'English' found" );
@@ -110,6 +96,7 @@ plan tests => 5    # starting
 
         check_formats( $locale_id, $locale, 'date_formats', 'date_format' );
         check_formats( $locale_id, $locale, 'time_formats', 'time_format' );
+        check_formats( $locale_id, $locale, 'datetime_formats', 'datetime_format' );
     }
 }
 
@@ -122,6 +109,8 @@ check_en_US_POSIX();
 check_af();
 check_zh_TW();
 check_DT_Lang();
+
+done_testing();
 
 sub check_array {
     my %test = @_;

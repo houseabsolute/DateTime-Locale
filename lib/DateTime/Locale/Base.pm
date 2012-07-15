@@ -74,6 +74,15 @@ sub time_formats {
     };
 }
 
+sub datetime_formats {
+    return {
+        map {
+            my $meth = 'datetime_format_' . $_;
+            $_ => $_[0]->$meth()
+            } @FormatLengths
+    };
+}
+
 sub format_for {
     my $self = shift;
     my $for  = shift;
