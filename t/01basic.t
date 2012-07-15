@@ -7,6 +7,11 @@ use Test::More;
 
 use DateTime::Locale;
 
+if ( -d '.git' ) {
+    BAIL_OUT('Looks like you need to generate the Locale files')
+        unless -f 'lib/DateTime/Local/root.pm';
+}
+
 my @locale_ids   = sort DateTime::Locale->ids();
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
