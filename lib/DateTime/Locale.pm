@@ -150,7 +150,7 @@ sub native_names {
     wantarray ? keys %NativeNameToID : [ keys %NativeNameToID ];
 }
 
-# These are hardcoded for backwards comaptibility with the
+# These are hardcoded for backwards compatibility with the
 # DateTime::Language code.
 my %OldAliases = (
     'Afar'      => 'aa',
@@ -583,7 +583,7 @@ In either case the locale MUST be registered before use.
 
 =head2 Subclassing an existing locale
 
-The following example sublasses the United Kingdom English locale to change
+The following example subclasses the United Kingdom English locale to change
 some the full date and time formats.
 
   package Ridas::Locale::en_GB_RIDAS1;
