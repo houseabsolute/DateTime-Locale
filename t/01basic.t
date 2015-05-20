@@ -9,7 +9,7 @@ use DateTime::Locale;
 
 if ( -d '.git' ) {
     BAIL_OUT('Looks like you need to generate the Locale files')
-        unless -f 'lib/DateTime/Local/root.pm';
+        unless -f 'lib/DateTime/Locale/root.pm';
 }
 
 my @locale_ids   = sort DateTime::Locale->ids();
