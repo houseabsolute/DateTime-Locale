@@ -3,6 +3,8 @@ package DateTime::Locale::Base;
 use strict;
 use warnings;
 
+our $VERSION = '0.46';
+
 use Carp qw( carp );
 use DateTime::Locale;
 use List::MoreUtils ();
@@ -122,7 +124,7 @@ sub _self_and_super_path {
         { my $c = $_; # copy, to avoid being destructive
           substr($c,0,2) = "main::" if substr($c,0,2) eq '::';
            # Canonize the :: -> main::, ::foo -> main::foo thing.
-           # Should I ever canonize the Foo'Bar = Foo::Bar thing? 
+           # Should I ever canonize the Foo'Bar = Foo::Bar thing?
           $seen{$c}++ ? () : $c;
         }
         @{"$current\::ISA"}
@@ -471,11 +473,9 @@ sub STORABLE_thaw {
 
 1;
 
+# ABSTRACT: Base class for individual locale objects
+
 __END__
-
-=head1 NAME
-
-DateTime::Locale::Base - Base class for individual locale objects
 
 =head1 SYNOPSIS
 
@@ -780,23 +780,5 @@ one exists.
 =head1 SUPPORT
 
 See L<DateTime::Locale>.
-
-=head1 AUTHORS
-
-Richard Evans <rich@ridas.com>
-
-Dave Rolsky <autarch@urth.org>
-
-=head1 COPYRIGHT
-
-Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2005 David
-Rolsky. All rights reserved. This program is free software; you can
-redistribute it and/or modify it under the same terms as Perl itself.
-
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-The full text of the license can be found in the LICENSE file included
-with this module.
 
 =cut

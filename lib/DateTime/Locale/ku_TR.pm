@@ -20,6 +20,9 @@ package DateTime::Locale::ku_TR;
 
 use strict;
 use warnings;
+
+our $VERSION = '0.46';
+
 use utf8;
 
 use base 'DateTime::Locale::ku_Latn_TR';
@@ -552,19 +555,5 @@ duşem
 =head1 SUPPORT
 
 See L<DateTime::Locale>.
-
-=head1 AUTHOR
-
-Dave Rolsky <autarch@urth.org>
-
-=head1 COPYRIGHT
-
-Copyright (c) 2008 David Rolsky. All rights reserved. This program is
-free software; you can redistribute it and/or modify it under the same
-terms as Perl itself.
-
-This module was generated from data provided by the CLDR project, see
-the LICENSE.cldr in this distribution for details on the CLDR data's
-license.
 
 =cut

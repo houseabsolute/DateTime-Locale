@@ -3,6 +3,9 @@ package DateTime::Locale;
 use strict;
 use warnings;
 
+our $VERSION = '0.46';
+
+
 use 5.006;
 
 # Loading this here isn't necessary, but it makes it easier to catch
@@ -10,8 +13,6 @@ use 5.006;
 use DateTime::Locale::Base;
 use DateTime::Locale::Catalog;
 use Params::Validate qw( validate validate_pos SCALAR );
-
-our $VERSION = '0.45';
 
 my %Class;
 my %DataForID;
@@ -306,15 +307,13 @@ sub _load_class_from_id {
 
 1;
 
+# ABSTRACT: Localization support for DateTime.pm
+
 __END__
 
 =pod
 
 =encoding utf8
-
-=head1 NAME
-
-DateTime::Locale - Localization support for DateTime.pm
 
 =head1 SYNOPSIS
 
@@ -882,33 +881,6 @@ best.
 To donate, log into PayPal and send money to autarch@urth.org or use
 the button on this page:
 L<http://www.urth.org/~autarch/fs-donation.html>
-
-=head1 AUTHORS
-
-Richard Evans <rich@ridas.com>
-
-Dave Rolsky <autarch@urth.org>
-
-These modules are loosely based on the DateTime::Language modules,
-which were in turn based on the Date::Language modules from Graham
-Barr's TimeDate distribution.
-
-=head1 COPYRIGHT
-
-Copyright (c) 2003 Richard Evans. Copyright (c) 2004-2009 David
-Rolsky. All rights reserved. This program is free software; you can
-redistribute it and/or modify it under the same terms as Perl itself.
-
-This program is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-The full text of the license can be found in the F<LICENSE> file included
-with this module.
-
-The locale modules in directory F<DateTime/Locale/> have been
-generated from data provided by the CLDR project, see
-F<DateTime/Locale/LICENSE.cldr> for details on the CLDR data's
-license.
 
 =head1 SEE ALSO
 
