@@ -244,7 +244,9 @@ sub _guess_id {
         push @guesses, join '_', lc $language, uc $territory;
     }
 
-    push @guesses, lc $language if $language;
+    if ($language) {
+        push @guesses, $language eq 'C' ? $language : lc $language;
+    }
 
     foreach my $id (@guesses) {
         return $id
@@ -253,7 +255,7 @@ sub _guess_id {
 }
 
 sub _parse_id {
-    $_[0] =~ /([a-z]+)               # id
+    $_[0] =~ /([a-z]+|C)             # id
               (?: _([A-Z][a-z]+) )?  # script - Title Case - optional
               (?: _([A-Z]+) )?       # territory - ALL CAPS - optional
               (?: _([A-Z]+) )?       # variant - ALL CAPS - optional

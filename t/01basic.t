@@ -22,6 +22,7 @@ plan tests =>
     + 11                              # check_es_ES
     + 5                               # check_en_US_POSIX
     + 2                               # check_af
+    + 3                               # check_C_locales
     + 9                               # check_DT_Lang
     ;
 
@@ -112,6 +113,7 @@ check_en_US();
 check_es_ES();
 check_en_US_POSIX();
 check_af();
+check_C_locales();
 check_DT_Lang();
 
 sub check_array {
@@ -487,6 +489,13 @@ sub check_en_US_POSIX {
     is( $locale->language_id(),  'en',    'language_id()' );
     is( $locale->territory_id(), 'US',    'territory_id()' );
     is( $locale->variant_id(),   'POSIX', 'variant_id()' );
+}
+
+sub check_C_locales {
+    for my $id (qw( C C.ISO-8859-1 C.UTF-8 )) {
+        my $locale = DateTime::Locale->load($id);
+        is( $locale->id(), 'C', "$id is accepted as a locale id" );
+    }
 }
 
 sub check_DT_Lang {
