@@ -244,7 +244,7 @@ sub _guess_id {
         push @guesses, join '_', lc $language, uc $territory;
     }
 
-    push @guesses, lc $language;
+    push @guesses, lc $language if $language;
 
     foreach my $id (@guesses) {
         return $id
