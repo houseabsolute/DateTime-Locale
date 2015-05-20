@@ -74,58 +74,69 @@ sub time_formats {
     };
 }
 
-sub datetime_formats {
-    return {
-        map {
-            my $meth = 'datetime_format_' . $_;
-            $_ => $_[0]->$meth()
-            } @FormatLengths
-    };
-}
-
 sub format_for {
     my $self = shift;
     my $for  = shift;
 
-    my $formats = $self->_available_formats();
+    my $meth = '_format_for_' . $for;
 
-    return unless exists $formats->{$for};
+    return unless $self->can($meth);
 
-    return $formats->{$for};
+    return $self->$meth();
 }
 
 sub available_formats {
     my $self = shift;
 
-    return keys %{ $self->_available_formats() };
+    # The various parens seem to be necessary to force uniq() to see
+    # the caller's list context. Go figure.
+    my @uniq
+        = List::MoreUtils::uniq(
+        map { keys %{ $_->_available_formats() || {} } }
+            _self_and_super_path( ref $self ) );
+
+    # Doing the sort in the same expression doesn't work under 5.6.x.
+    return sort @uniq;
 }
 
-sub _available_formats { {} }
+# Copied wholesale from Class::ISA, because said module warns as deprecated
+# with perl 5.11.0+, which is kind of annoying.
+sub _self_and_super_path {
+  # Assumption: searching is depth-first.
+  # Assumption: '' (empty string) can't be a class package name.
+  # Note: 'UNIVERSAL' is not given any special treatment.
+  return () unless @_;
 
-sub field_name {
-    my $self  = shift;
-    my $field = shift;
+  my @out = ();
 
-    return $self->_field_name( $field, 'name' );
+  my @in_stack = ($_[0]);
+  my %seen = ($_[0] => 1);
+
+  my $current;
+  while(@in_stack) {
+    next unless defined($current = shift @in_stack) && length($current);
+    push @out, $current;
+    no strict 'refs';
+    unshift @in_stack,
+      map
+        { my $c = $_; # copy, to avoid being destructive
+          substr($c,0,2) = "main::" if substr($c,0,2) eq '::';
+           # Canonize the :: -> main::, ::foo -> main::foo thing.
+           # Should I ever canonize the Foo'Bar = Foo::Bar thing? 
+          $seen{$c}++ ? () : $c;
+        }
+        @{"$current\::ISA"}
+    ;
+    # I.e., if this class has any parents (at least, ones I've never seen
+    # before), push them, in order, onto the stack of classes I need to
+    # explore.
+  }
+
+  return @out;
 }
 
-sub relative_field_name {
-    my $self = shift;
-
-    return $self->_field_name(@_);
-}
-
-sub _field_name {
-    my $self   = shift;
-    my $field  = shift;
-    my $subkey = shift;
-
-    my $names = $self->_field_names();
-
-    return unless exists $names->{$field}{$subkey};
-
-    return $names->{$field}{$subkey};
-}
+# Just needed for the above method.
+sub _available_formats { }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
@@ -756,59 +767,8 @@ returns 7.
 
 =item * $locale->available_formats()
 
-A list of format names, like "MMdd" or "yyyyMM". This list includes all
-formats supported by parent locales.
-
-=item * $locale->field_name($key)
-
-Given a field name key, returns the localized name for that field. A field
-name is the name for the I<category> of things, like "Year" or "Day of the
-Week". These are intended to be used as labels.
-
-Valid field name keys (with their names in English) are:
-
-=over 8
-
-=item * era = Era
-
-=item * year = Year
-
-=item * month = Month
-
-=item * day = Day
-
-=item * weekday = Day of the Week
-
-=item * dayperiod = AM/PM
-
-=item * hour = Hour
-
-=item * minute = Minute
-
-=item * zone = Zone
-
-=back
-
-=item * $locale->relative_field_name( $key, $offset )
-
-This returns the relative field name for a field. Currently, the only field
-key supported is "day". The offset is a number representing the distance from
-the current value of the field.
-
-For days, 0 is today, -1 is yesterday, and 1 is tomorrow. Some locales support
-values up to -3 and 3.
-
-Examples in English:
-
-=over 8
-
-=item * -1 = Yesterday
-
-=item * 0 = Today
-
-=item * 1 = Tomorrow
-
-=back
+A list of format names, like "MMdd" or "yyyyMM". This should be the
+list directly supported by the subclass, not its parents.
 
 =item * $locale->format_for($key)
 

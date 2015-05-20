@@ -65,8 +65,7 @@ DateTime::Locale->register(
         en_language  => 'English',
         en_territory => 'United Kingdom',
         en_variant   => 'Foo Bar',
-    },
-    {
+    }, {
         id           => 'en_BAZ_BUZ',
         en_language  => 'English',
         en_territory => 'United Kingdom',

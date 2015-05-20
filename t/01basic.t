@@ -7,14 +7,23 @@ use Test::More;
 
 use DateTime::Locale;
 
-if ( -d '.git' ) {
-    BAIL_OUT('Looks like you need to generate the Locale files')
-        unless -f 'lib/DateTime/Locale/root.pm';
-}
-
 my @locale_ids   = sort DateTime::Locale->ids();
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
+
+plan tests =>
+      5                               # starting
+    + 1                               # one test for root locale
+    + ( ( @locale_ids - 1 ) * 21 )    # tests for each other local
+    + 56                              # check_root
+    + 24                              # check_en
+    + 66                              # check_en_GB
+    + 23                              # check_en_US
+    + 11                              # check_es_ES
+    + 5                               # check_en_US_POSIX
+    + 2                               # check_af
+    + 9                               # check_DT_Lang
+    ;
 
 {
     ok( @locale_ids >= 240,     'Coverage looks complete' );
@@ -50,38 +59,30 @@ my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
         for my $test (
             {
-                locale_method    => 'month_format_wide',
-                count            => 12,
-            },
-            {
-                locale_method    => 'month_format_abbreviated',
-                count            => 12,
-            },
-            {
-                locale_method    => 'day_format_wide',
-                count            => 7,
-            },
-            {
-                locale_method    => 'day_format_abbreviated',
-                count            => 7,
-            },
-            {
+                locale_method => 'month_format_wide',
+                count         => 12,
+            }, {
+                locale_method => 'month_format_abbreviated',
+                count         => 12,
+            }, {
+                locale_method => 'day_format_wide',
+                count         => 7,
+            }, {
+                locale_method => 'day_format_abbreviated',
+                count         => 7,
+            }, {
                 locale_method => 'quarter_format_wide',
                 count         => 4,
-            },
-            {
+            }, {
                 locale_method => 'quarter_format_abbreviated',
                 count         => 4,
-            },
-            {
+            }, {
                 locale_method => 'am_pm_abbreviated',
                 count         => 2,
-            },
-            {
+            }, {
                 locale_method => 'era_wide',
                 count         => 2,
-            },
-            {
+            }, {
                 locale_method => 'era_abbreviated',
                 count         => 2,
             },
@@ -101,7 +102,6 @@ my %locale_ids   = map { $_ => 1 } DateTime::Locale->ids;
 
         check_formats( $locale_id, $locale, 'date_formats', 'date_format' );
         check_formats( $locale_id, $locale, 'time_formats', 'time_format' );
-        check_formats( $locale_id, $locale, 'datetime_formats', 'datetime_format' );
     }
 }
 
@@ -112,10 +112,7 @@ check_en_US();
 check_es_ES();
 check_en_US_POSIX();
 check_af();
-check_zh_TW();
 check_DT_Lang();
-
-done_testing();
 
 sub check_array {
     my %test = @_;
@@ -134,7 +131,7 @@ TODO:
                 && $locale_method eq 'day_format_abbreviated';
 
         is(
-            ( scalar keys %unique ), $test{count},
+            keys %unique, $test{count},
             qq{'$locale_id': '$locale_method' contains $test{count} unique items}
         );
     }
@@ -162,7 +159,7 @@ sub check_formats {
     }
 
     is(
-        ( scalar keys %unique ), 0,
+        keys %unique, 0,
         "'$locale_id':  Data returned by '$hash_func' and '$item_func patterns' matches"
     );
 }
@@ -222,6 +219,10 @@ sub check_root {
 
         datetime_format_default => 'y MMM d HH:mm:ss',
 
+        glibc_datetime_format => '%a %b %e %H:%M:%S %Y',
+        glibc_date_format     => '%m/%d/%y',
+        glibc_time_format     => '%H:%M:%S',
+
         first_day_of_week => 1,
 
         prefers_24_hour_time => 1,
@@ -256,30 +257,6 @@ sub check_root {
     );
 
     test_formats( $locale, %formats );
-
-    my %field_names = (
-        era       => 'Era',
-        year      => 'Year',
-        month     => 'Month',
-        week      => 'Week',
-        weekday   => 'Day of the Week',
-        day       => 'Day',
-        dayperiod => 'Dayperiod',
-        hour      => 'Hour',
-        minute    => 'Minute',
-        second    => 'Second',
-        zone      => 'Zone',
-    );
-
-    test_field_names( $locale, %field_names );
-
-    my @relative_field_names = (
-        [ 'day', -1, 'Yesterday' ],
-        [ 'day', 0,  'Today' ],
-        [ 'day', 1,  'Tomorrow' ],
-    );
-
-    test_relative_field_names( $locale, @relative_field_names );
 }
 
 sub check_en {
@@ -314,6 +291,10 @@ sub check_en_GB {
         language_id  => 'en',
         territory_id => 'GB',
         variant_id   => undef,
+
+        glibc_datetime_format => '%a %d %b %Y %T %Z',
+        glibc_date_format     => '%d/%m/%y',
+        glibc_time_format     => '%T',
 
         datetime_format_default => 'd MMM y HH:mm:ss',
     );
@@ -355,8 +336,6 @@ sub check_en_GB {
     );
 
     test_formats( $locale, %formats );
-
-    test_field_names( $locale, ( dayperiod => 'AM/PM' ) );
 }
 
 sub check_en_US {
@@ -452,7 +431,7 @@ sub test_formats {
     my $locale  = shift;
     my %formats = @_;
 
-    for my $name ( sort keys %formats ) {
+    for my $name ( keys %formats ) {
         is(
             $locale->format_for($name), $formats{$name},
             "Format for $name with " . $locale->id()
@@ -460,37 +439,10 @@ sub test_formats {
     }
 
     is_deeply(
-        [ sort $locale->available_formats() ],
+        [ $locale->available_formats() ],
         [ sort keys %formats ],
         "Available formats for " . $locale->id() . " match what is expected"
     );
-}
-
-sub test_field_names {
-    my $locale      = shift;
-    my %field_names = @_;
-
-    for my $field ( sort keys %field_names ) {
-        is(
-            $locale->field_name($field), $field_names{$field},
-            "Field name for $field with " . $locale->id()
-        );
-    }
-}
-
-sub test_relative_field_names {
-    my $locale  = shift;
-    my @relative_field_names = @_;
-
-    for my $rel ( @relative_field_names ) {
-        my $field  = $rel->[0];
-        my $offset = $rel->[1];
-
-        is(
-            $locale->relative_field_name( $field, $offset ), $rel->[2],
-            "Relative field name for $field($offset) with " . $locale->id()
-        );
-    }
 }
 
 sub check_es_ES {
@@ -535,38 +487,6 @@ sub check_en_US_POSIX {
     is( $locale->language_id(),  'en',    'language_id()' );
     is( $locale->territory_id(), 'US',    'territory_id()' );
     is( $locale->variant_id(),   'POSIX', 'variant_id()' );
-}
-
-sub check_zh_TW {
-    my $locale = DateTime::Locale->load('zh_TW');
-
-    my %field_names = (
-        day       => "日",
-        dayperiod => "上午\/下午",
-        era       => "年代",
-        hour      => "小時",
-        minute    => "分鐘",
-        month     => "月",
-        second    => "秒",
-        week      => "週",
-        weekday   => "週天",
-        year      => "年",
-        zone      => "區域",
-    );
-
-    test_field_names( $locale, %field_names );
-
-    my @relative_field_names = (
-        [ 'day', -1, "昨天" ],
-        [ 'day', -2, "前天" ],
-        [ 'day', -3, "大前天" ],
-        [ 'day', 0,  "今天" ],
-        [ 'day', 1,  "明天" ],
-        [ 'day', 2,  "後天" ],
-        [ 'day', 3,  "大後天" ],
-    );
-
-    test_relative_field_names( $locale, @relative_field_names );
 }
 
 sub check_DT_Lang {

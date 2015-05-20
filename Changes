@@ -1,21 +1,21 @@
-0.45
+0.45   2010-03-19
 
-- Added support for field names and relative field names. Field names are
-  localized names for categories like "day" or "week". Relative field names
-  give you localized names for "tomorrow" or "today". See the
-  DateTime::Locale::Base docs for more details.
+- Installing this release will cause older versions of
+  DateTime::Format::Strptime to warn like crazy. Please update
+  DateTime::Format::Strptime if you install this release.
 
-- All of the methods deprecated in 0.44 now warn that they are deprecated when
-  called.
+- This is an interim release still based on CLDR 1.7.1 pending the release of
+  Locale::CLDR, which will happen real soon now, for some definition of soon.
 
-- Lots of documentation fixes, particularly in relation to creating custom
-  locale subclasses.
+- Removed dependency on Class::ISA and just copied what we need from said
+  module directly. Class::ISA warns as deprecated if used with Perl 5.11.0,
+  even though it works just fine (doh). RT #53940.
 
-- The available_formats method for a locale now returns all formats supported
-  by parent locales as well as the locale itself. Previously, this list was
-  sorted (though this was not documented), but it no longer is.
+- All methods deprecated in the last release now warn when called.
 
-- Moved code to my hg repo at http://hg.urth.org/hg/DateTime-Locale.
+- Added methods to return per-locale strftime formats from the glibc
+  data. These methods are not yet documented. They are just there for now to
+  allow me to update DateTime::Format::Strptime.
 
 
 0.44   2009-09-12
@@ -45,6 +45,8 @@
 
 - Require Params::Validate 0.91, since 0.89 caused test failures for
   someone. Reported by Jeremy Hetzler. RT #41365.
+
+- Moved code to my hg repo at http://hg.urth.org/hg/DateTime-Locale.
 
 
 0.43   2009-06-30

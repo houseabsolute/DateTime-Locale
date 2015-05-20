@@ -39,8 +39,7 @@ sub _register {
     my $class = shift;
 
     my %p = validate(
-        @_,
-        {
+        @_, {
             id => { type => SCALAR },
 
             en_language  => { type => SCALAR },
@@ -150,7 +149,7 @@ sub native_names {
     wantarray ? keys %NativeNameToID : [ keys %NativeNameToID ];
 }
 
-# These are hardcoded for backwards compatibility with the
+# These are hardcoded for backwards comaptibility with the
 # DateTime::Language code.
 my %OldAliases = (
     'Afar'      => 'aa',
@@ -583,7 +582,7 @@ In either case the locale MUST be registered before use.
 
 =head2 Subclassing an existing locale
 
-The following example subclasses the United Kingdom English locale to change
+The following example sublasses the United Kingdom English locale to change
 some the full date and time formats.
 
   package Ridas::Locale::en_GB_RIDAS1;
@@ -803,27 +802,8 @@ Chinese characters for "day" (日) and month (月), so you get something like
 
 =item * $locale->available_formats()
 
-This should return a list of all the format names that could be passed to C<<
-$locale->format_for() >>, including formats supported by the parent.
-
-=back
-
-The locale can define names for fields. This answers questions like "what is a
-day (or year or ..) called in this locale?").
-
-=over 4
-
-=item * $locale->field_name($field)
-
-This should return a localized name for the field. See
-L<DateTime::Locale::Base> for a list of valid field names.
-
-=item * $locale->relative_field_name( $field, $offset )
-
-Given a field name and a numeric offset, this returns the name for that field
-with the offset. For example, in English the "day" field at an offset of 0 is
-"Today". With an offset of -1 it's "Yesterday", and an offset of 1 is
-"Tomorrow".
+This should return a list of all the format names that could be passed
+to C<< $locale->format_for() >>.
 
 =back
 
@@ -939,4 +919,3 @@ datetime@perl.org mailing list
 http://datetime.perl.org/
 
 =cut
-
