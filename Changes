@@ -3,7 +3,7 @@
 0.46     2015-05-21
 
 - Fixed handling of C locales like "C.UTF-8". Passing these to
-  DateTime::Locale->load would cause a warning followed by an exception, ubt
+  DateTime::Locale->load would cause a warning followed by an exception, but
   all "C" locales should be special-cased as an alias of en-US-POSIX. Reported
   by David Wheeler. RT #104574.
 
