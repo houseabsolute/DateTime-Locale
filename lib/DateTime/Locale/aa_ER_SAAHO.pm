@@ -21,7 +21,7 @@ package DateTime::Locale::aa_ER_SAAHO;
 use strict;
 use warnings;
 
-our $VERSION = '0.46';
+our $VERSION = '0.47';
 
 use utf8;
 

@@ -21,7 +21,7 @@ package DateTime::Locale::az_Cyrl_AZ;
 use strict;
 use warnings;
 
-our $VERSION = '0.46';
+our $VERSION = '0.47';
 
 use utf8;
 
