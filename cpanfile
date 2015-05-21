@@ -36,5 +36,4 @@ on 'develop' => sub {
   requires "Test::NoTabs" => "0";
   requires "Test::Pod" => "1.41";
   requires "Test::Spelling" => "0.12";
-  requires "Test::Version" => "1";
 };
