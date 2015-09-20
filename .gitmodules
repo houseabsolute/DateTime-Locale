@@ -1,0 +1,6 @@
+[submodule "source-data/cldr-dates-modern"]
+	path = source-data/cldr-dates-modern
+	url = git@github.com:unicode-cldr/cldr-dates-modern.git
+[submodule "source-data/cldr-core"]
+	path = source-data/cldr-core
+	url = git@github.com:unicode-cldr/cldr-core.git
