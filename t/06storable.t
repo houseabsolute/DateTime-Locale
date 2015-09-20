@@ -1,24 +1,16 @@
 use strict;
 use warnings;
 
+use Test::Requires {
+    Storable => '0',
+};
+
 use Test::More;
 
-BEGIN {
-    eval { require Storable };
-
-    if ($@) {
-        plan skip_all => 'These tests require the Storable mdoule';
-    }
-    else {
-        plan tests => 3;
-    }
-}
-
 use DateTime::Locale;
-
 use Storable;
 
-my $loc1   = DateTime::Locale->load('en_US');
+my $loc1   = DateTime::Locale->load('en-US');
 my $frozen = Storable::nfreeze($loc1);
 
 ok(
@@ -28,8 +20,10 @@ ok(
 
 my $loc2 = Storable::thaw($frozen);
 
-is( $loc2->id, 'en_US', 'thaw frozen locale object' );
+is( $loc2->id, 'en-US', 'thaw frozen locale object' );
 
 my $loc3 = Storable::dclone($loc1);
 
-is( $loc3->id, 'en_US', 'dclone object' );
+is( $loc3->id, 'en-US', 'dclone object' );
+
+done_testing();

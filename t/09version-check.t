@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 use Test::More;
-
-eval "use Test::Output";
-if ($@) {
-    plan skip_all => 'These tests require Test::Output.';
-}
-
-plan tests => 1;
+use Test::Warnings qw( warnings );
 
 {
 
@@ -19,13 +13,9 @@ plan tests => 1;
 
     use DateTime::Locale;
 
-    use base 'DateTime::Locale::root';
+    use base 'DateTime::Locale::Base';
 
-    sub cldr_version {'0.1'}
-
-    sub _default_date_format_length {'medium'}
-
-    sub _default_time_format_length {'medium'}
+    sub cldr_version {0}
 
     DateTime::Locale->register(
         id          => 'fake',
@@ -33,11 +23,12 @@ plan tests => 1;
     );
 }
 
-{
-    stderr_like(
-        sub { DateTime::Locale->load('fake') },
-        qr/\Qfrom an older version (0.1)/,
-        'loading timezone where olson version is older than current'
-    );
-}
+my @warnings = warnings { DateTime::Locale->load('fake') };
+is( scalar @warnings, 1, 'got one warning from loading old locale' );
+like(
+    $warnings[0],
+    qr/\Qfrom an older version (0)/,
+    'loading locale from an older CLDR version warns'
+);
 
+done_testing()

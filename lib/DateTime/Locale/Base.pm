@@ -36,8 +36,8 @@ sub new {
     # key, it allows them to be settable.
     return bless {
         @_,
-        default_date_format_length => $class->_default_date_format_length(),
-        default_time_format_length => $class->_default_time_format_length(),
+        default_date_format_length => 'long',
+        default_time_format_length => 'long',
     }, $class;
 }
 
@@ -58,7 +58,7 @@ sub date_formats {
         map {
             my $meth = 'date_format_' . $_;
             $_ => $_[0]->$meth()
-            } @FormatLengths
+        } @FormatLengths
     };
 }
 
@@ -72,7 +72,7 @@ sub time_formats {
         map {
             my $meth = 'time_format_' . $_;
             $_ => $_[0]->$meth()
-            } @FormatLengths
+        } @FormatLengths
     };
 }
 
@@ -104,37 +104,37 @@ sub available_formats {
 # Copied wholesale from Class::ISA, because said module warns as deprecated
 # with perl 5.11.0+, which is kind of annoying.
 sub _self_and_super_path {
-  # Assumption: searching is depth-first.
-  # Assumption: '' (empty string) can't be a class package name.
-  # Note: 'UNIVERSAL' is not given any special treatment.
-  return () unless @_;
 
-  my @out = ();
+    # Assumption: searching is depth-first.
+    # Assumption: '' (empty string) can't be a class package name.
+    # Note: 'UNIVERSAL' is not given any special treatment.
+    return () unless @_;
 
-  my @in_stack = ($_[0]);
-  my %seen = ($_[0] => 1);
+    my @out = ();
 
-  my $current;
-  while(@in_stack) {
-    next unless defined($current = shift @in_stack) && length($current);
-    push @out, $current;
-    no strict 'refs';
-    unshift @in_stack,
-      map
-        { my $c = $_; # copy, to avoid being destructive
-          substr($c,0,2) = "main::" if substr($c,0,2) eq '::';
-           # Canonize the :: -> main::, ::foo -> main::foo thing.
-           # Should I ever canonize the Foo'Bar = Foo::Bar thing?
-          $seen{$c}++ ? () : $c;
-        }
-        @{"$current\::ISA"}
-    ;
-    # I.e., if this class has any parents (at least, ones I've never seen
-    # before), push them, in order, onto the stack of classes I need to
-    # explore.
-  }
+    my @in_stack = ( $_[0] );
+    my %seen = ( $_[0] => 1 );
 
-  return @out;
+    my $current;
+    while (@in_stack) {
+        next unless defined( $current = shift @in_stack ) && length($current);
+        push @out, $current;
+        no strict 'refs';
+        unshift @in_stack, map {
+            my $c = $_;    # copy, to avoid being destructive
+            substr( $c, 0, 2 ) = "main::" if substr( $c, 0, 2 ) eq '::';
+
+            # Canonize the :: -> main::, ::foo -> main::foo thing.
+            # Should I ever canonize the Foo'Bar = Foo::Bar thing?
+            $seen{$c}++ ? () : $c;
+        } @{"$current\::ISA"};
+
+        # I.e., if this class has any parents (at least, ones I've never seen
+        # before), push them, in order, onto the stack of classes I need to
+        # explore.
+    }
+
+    return @out;
 }
 
 # Just needed for the above method.

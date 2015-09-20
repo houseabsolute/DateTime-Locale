@@ -1,5 +1,71 @@
 {{$NEXT}}
 
+[ENHANCEMENTS]
+
+- Updated based on version 28 of the CLDR data. The last update was based on
+  the CLDR 1.7.1 release from 2009, so this is a big change. Many things have
+  changed in terms of locale data.
+
+- Some locales are no longer available because they are not in the CLDR data.
+
+- The CLDR data no longer includes default date and time format lengths. This
+  is now "medium" for every locale, simply to provide some level of backwards
+  compatibility.
+
+- The old API deprecated since 0.40 has been removed (almost) entirely.
+
+- Loading DateTime::Locale itself is now quite a bit faster. The whole locale
+  registration system has been removed entirely, except for custom
+  locales. This fixes RT #78794. Requested by Michael Conrad.
+
+- A long-standing issue with the Austrian locale not using the Austrian name
+  for January has been fixed. RT #52337. Reported by Thomas Klausner.
+
+[BACKWARDS INCOMPATIBILITIES]
+
+* This is a big new release, and includes a number of backwards-incompatible
+  changes. However, most users should be unaffected by this change. If you
+  only use this module via DateTime.pm, you are unlikely to notice any changes
+  other than changes to the locale data.
+
+* We now refer to things as "code" in the docs and method names where we used
+  to call them ids. This includes locale, language, script, territory, and
+  variant codes. This is more in line with the various ISO standards and the
+  CLDR packages.
+
+* All the $locale->*_id methods (including $locale->id) are deprecated. Use
+  the relevant $locale->*_code method instead.
+
+* The canonical form of the locale codes now uses dashes (-) instead of
+  underscores (_). Loading a locale with an underscore in the name
+  (e.g. en_US) still works.
+
+* The way that locale data is packaged has changed quite a bit. We no longer
+  package each locale in its own class. Instead, all locale data is in a
+  single module (mostly in a __DATA__ section) and loaded into memory as
+  needed. If you have any code that checks $locale->isa, that code may
+  break.
+
+* Locales are no longer subclasses of DateTime::Locale::Base. However, this
+  module is still included in the distribution in case someone has a custom
+  locale that inherits from this module. However, this module will go away in
+  a future release.
+
+* The "ii-*" aliases for the "he-*" locales have been removed.
+
+* The "no-*" aliases for the "nn-*" locales have been removed.
+
+* The value of $locale->code no longer reflects the value passed to
+  DateTime::Locale->load. This only affects aliases and non-canonical forms of
+  the code. For example, if you load "en_US" then $locale->code returns
+  "en-US". If you load "C" or "POSIX" the code is "en-US-POSIX".
+
+* All of the documentation related to creating aliases and registering custom
+  locales has been removed. All of these methods still work, but I don't think
+  this system got much use, so I don't want to emphasize it in the docs (but
+  let me know if you are using this and want to see these docs restored).
+
+
 0.46     2015-05-21
 
 - Fixed handling of C locales like "C.UTF-8". Passing these to
