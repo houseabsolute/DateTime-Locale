@@ -1,15 +1,12 @@
-[submodule "source-data/cldr-dates-modern"]
-	path = source-data/cldr-dates-modern
-	url = git@github.com:unicode-cldr/cldr-dates-modern.git
 [submodule "source-data/cldr-core"]
 	path = source-data/cldr-core
-	url = git@github.com:unicode-cldr/cldr-core.git
+	url = git://github.com/unicode-cldr/cldr-core.git
 [submodule "source-data/cldr-localenames-modern"]
 	path = source-data/cldr-localenames-modern
-	url = git@github.com:unicode-cldr/cldr-localenames-modern.git
+	url = git://github.com/unicode-cldr/cldr-localenames-modern.git
 [submodule "source-data/cldr-dates-full"]
 	path = source-data/cldr-dates-full
-	url = git@github.com:unicode-cldr/cldr-dates-full.git
+	url = git://github.com/unicode-cldr/cldr-dates-full.git
 [submodule "source-data/cldr-localenames-full"]
 	path = source-data/cldr-localenames-full
-	url = git@github.com:unicode-cldr/cldr-localenames-full.git
+	url = git://github.com/unicode-cldr/cldr-localenames-full.git
