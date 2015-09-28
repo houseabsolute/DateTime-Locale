@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.92     2015-09-27
+
 - I accidentally released 0.90 as a non-trial release. This release is the
   same as 0.46, so that the newest non-trial release does not break the
   DateTime.pm tests.
