@@ -21,7 +21,7 @@ package DateTime::Locale::ny_MW;
 use strict;
 use warnings;
 
-our $VERSION = '0.47';
+our $VERSION = '0.92';
 
 use utf8;
 

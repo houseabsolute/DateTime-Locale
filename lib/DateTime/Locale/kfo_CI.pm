@@ -21,7 +21,7 @@ package DateTime::Locale::kfo_CI;
 use strict;
 use warnings;
 
-our $VERSION = '0.47';
+our $VERSION = '0.92';
 
 use utf8;
 

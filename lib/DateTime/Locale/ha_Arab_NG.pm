@@ -21,7 +21,7 @@ package DateTime::Locale::ha_Arab_NG;
 use strict;
 use warnings;
 
-our $VERSION = '0.47';
+our $VERSION = '0.92';
 
 use utf8;
 

@@ -21,7 +21,7 @@ package DateTime::Locale::fur_IT;
 use strict;
 use warnings;
 
-our $VERSION = '0.47';
+our $VERSION = '0.92';
 
 use utf8;
 
