@@ -481,6 +481,12 @@ __END__
 
   use base 'DateTime::Locale::Base';
 
+=head1 DESCRIPTION
+
+B<This module is no longer used by the code in the distribution.> It is still
+included for the sake of any code out in the wild that may subclass this
+class. This class will be removed in a future release.
+
 =head1 DEFAULT FORMATS
 
 Each locale has a set of four default date and time formats.  They are
