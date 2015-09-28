@@ -21,7 +21,7 @@ package DateTime::Locale::uz_Arab_AF;
 use strict;
 use warnings;
 
-our $VERSION = '0.92';
+our $VERSION = '0.93';
 
 use utf8;
 

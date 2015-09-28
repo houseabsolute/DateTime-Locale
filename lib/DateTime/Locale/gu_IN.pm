@@ -21,7 +21,7 @@ package DateTime::Locale::gu_IN;
 use strict;
 use warnings;
 
-our $VERSION = '0.92';
+our $VERSION = '0.93';
 
 use utf8;
 

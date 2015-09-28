@@ -21,7 +21,7 @@ package DateTime::Locale::sr_Cyrl_RS;
 use strict;
 use warnings;
 
-our $VERSION = '0.92';
+our $VERSION = '0.93';
 
 use utf8;
 

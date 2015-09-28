@@ -21,7 +21,7 @@ package DateTime::Locale::pl_PL;
 use strict;
 use warnings;
 
-our $VERSION = '0.92';
+our $VERSION = '0.93';
 
 use utf8;
 
