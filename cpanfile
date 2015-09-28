@@ -44,5 +44,4 @@ on 'develop' => sub {
   requires "Test::Output" => "0";
   requires "Test::Pod" => "1.41";
   requires "Test::Spelling" => "0.12";
-  requires "Test::Version" => "1";
 };
