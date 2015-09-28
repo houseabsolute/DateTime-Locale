@@ -17,7 +17,7 @@ package DateTime::Locale::Data;
 use strict;
 use warnings;
 
-our $VERSION = '0.90';
+our $VERSION = '0.91';
 
 #<<<
 ### :start CLDRVersion:
