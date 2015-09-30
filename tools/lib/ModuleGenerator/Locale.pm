@@ -1,4 +1,5 @@
-package ModuleGenerator::Locale;
+package    # hide from PAUSE
+    ModuleGenerator::Locale;
 
 use v5.22;
 
