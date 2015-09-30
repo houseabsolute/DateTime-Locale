@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.94     2015-09-30 (TRIAL RELEASE)
+
 - Restored the datetime_format method to individual locale objects for
   backwards compatibility.
 
