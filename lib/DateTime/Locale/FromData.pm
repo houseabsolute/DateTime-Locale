@@ -110,6 +110,10 @@ sub time_format_default {
     return $_[0]->time_format_medium;
 }
 
+sub datetime_format {
+    return $_[0]->{datetime_format_medium};
+}
+
 sub datetime_format_default {
     return $_[0]->datetime_format_medium;
 }
