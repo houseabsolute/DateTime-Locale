@@ -200,8 +200,9 @@ sub _build_data_hash ($self) {
 
     for my $thing (qw( date time dateTime )) {
         for my $length (qw( full long medium short )) {
+            my $val = $cal_root->{ $thing . 'Formats' }{$length};
             $data{ lc $thing . q{_format_} . $length }
-                = $cal_root->{ $thing . 'Formats' }{$length};
+                = ref $val ? $val->{_value} : $val;
         }
     }
 
