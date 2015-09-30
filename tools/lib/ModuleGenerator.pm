@@ -7,6 +7,7 @@ use strict;
 use warnings;
 use feature qw( postderef signatures );
 use namespace::autoclean;
+use autodie;
 
 use Data::Dumper::Concise qw( Dumper );
 use JSON::MaybeXS qw( decode_json );
@@ -17,6 +18,7 @@ use Locale::Language
 use Parse::PMFile;
 use Path::Class qw( file );
 use Scalar::Util qw( reftype );
+use Text::Template;
 
 use Moose;
 use MooseX::Types::Moose qw( ArrayRef Bool Num Str );
@@ -29,12 +31,6 @@ no warnings qw( experimental::postderef experimental::signatures );
 with 'MooseX::Getopt::Dashes';
 
 our $VERSION = '0.10';
-
-has verbose => (
-    is      => 'ro',
-    isa     => Bool,
-    default => 0,
-);
 
 has _autogen_warning => (
     is      => 'ro',
@@ -73,8 +69,8 @@ has _locales => (
 
 sub run ($self) {
     $self->_locales;
-    $self->_write_data_pm;
-    $self->_write_catalog_pm;
+#    $self->_write_data_pm;
+#    $self->_write_catalog_pm;
     $self->_write_pod_files;
 
     return 0;
@@ -88,12 +84,11 @@ sub _build_locales ($self) {
             source_data_root => $self->_source_data_root,
         );
 
-        if ( $self->verbose ) {
-            ## no critic (InputOutput::RequireCheckedSyscalls)
-            say $locale->code;
-            say $_ for $locale->source_files;
-            print "\n";
-        }
+        ## no critic (InputOutput::RequireCheckedSyscalls)
+        say $locale->code;
+        say $_ for $locale->source_files;
+        print "\n";
+        ## use critic
 
         push @locales, $locale;
     }
@@ -230,6 +225,71 @@ sub _write_catalog_pm ($self) {
 }
 
 sub _write_pod_files ($self) {
+    my $template = Text::Template->new(
+        TYPE   => 'FILE',
+        SOURCE => file(qw( tools templates locale.pod ))->stringify,
+    ) or die $Text::Template::ERROR;
+
+    use lib 'lib';
+    require DateTime;
+    require DateTime::Locale;
+
+    my @example_dts = (
+        DateTime->new(
+            year      => 2008,
+            month     => 2,
+            day       => 5,
+            hour      => 18,
+            minute    => 30,
+            second    => 30,
+            time_zone => 'UTC',
+        ),
+        DateTime->new(
+            year      => 1995,
+            month     => 12,
+            day       => 22,
+            hour      => 9,
+            minute    => 5,
+            second    => 2,
+            time_zone => 'UTC',
+        ),
+        DateTime->new(
+            year      => -10,
+            month     => 9,
+            day       => 15,
+            hour      => 4,
+            minute    => 44,
+            second    => 23,
+            time_zone => 'UTC',
+        ),
+    );
+
+    for my $code ( DateTime::Locale->codes ) {
+        my $underscore = $code =~ s/-/_/gr;
+
+        my $pod_file
+            = file( qw( lib DateTime Locale ), $underscore . '.pod' );
+        ## no critic (InputOutput::RequireCheckedSyscalls)
+        say "Generating $pod_file";
+        ## use critic
+
+        my $locale = DateTime::Locale->load($code)
+            or die "Cannot load $code";
+
+        my $filled = $template->fill_in(
+            HASH => {
+                name => 'DateTime::Locale::' . $underscore,
+                description =>
+                    "Locale data examples for the $code locale.",
+                example_dts => \@example_dts,
+                locale      => \$locale,
+            },
+        ) or die $Text::Template::ERROR;
+
+        $pod_file->spew( iomode => '>:encoding(UTF-8)', $filled );
+    }
+
+    return;
 }
 
 sub _insert_var_in_code($self, $name, $value, $public, $code) {
