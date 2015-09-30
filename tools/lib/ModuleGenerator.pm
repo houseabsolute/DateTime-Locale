@@ -69,8 +69,8 @@ has _locales => (
 
 sub run ($self) {
     $self->_locales;
-#    $self->_write_data_pm;
-#    $self->_write_catalog_pm;
+    $self->_write_data_pm;
+    $self->_write_catalog_pm;
     $self->_write_pod_files;
 
     return 0;
@@ -278,9 +278,8 @@ sub _write_pod_files ($self) {
 
         my $filled = $template->fill_in(
             HASH => {
-                name => 'DateTime::Locale::' . $underscore,
-                description =>
-                    "Locale data examples for the $code locale.",
+                name        => 'DateTime::Locale::' . $underscore,
+                description => "Locale data examples for the $code locale.",
                 example_dts => \@example_dts,
                 locale      => \$locale,
             },
