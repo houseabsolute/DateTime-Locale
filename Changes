@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Added .pod files for each locale that document the data for that locale.
+
+
 0.94     2015-09-30 (TRIAL RELEASE)
 
 - Restored the datetime_format method to individual locale objects for
