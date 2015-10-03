@@ -224,73 +224,6 @@ sub _write_catalog_pm ($self) {
     $catalog_pm_file->spew( iomode => '>:encoding(UTF-8)', $catalog_pm );
 }
 
-sub _write_pod_files ($self) {
-    my $template = Text::Template->new(
-        TYPE   => 'FILE',
-        SOURCE => file(qw( tools templates locale.pod ))->stringify,
-    ) or die $Text::Template::ERROR;
-
-    use lib 'lib';
-    require DateTime;
-    require DateTime::Locale;
-
-    my @example_dts = (
-        DateTime->new(
-            year      => 2008,
-            month     => 2,
-            day       => 5,
-            hour      => 18,
-            minute    => 30,
-            second    => 30,
-            time_zone => 'UTC',
-        ),
-        DateTime->new(
-            year      => 1995,
-            month     => 12,
-            day       => 22,
-            hour      => 9,
-            minute    => 5,
-            second    => 2,
-            time_zone => 'UTC',
-        ),
-        DateTime->new(
-            year      => -10,
-            month     => 9,
-            day       => 15,
-            hour      => 4,
-            minute    => 44,
-            second    => 23,
-            time_zone => 'UTC',
-        ),
-    );
-
-    for my $code ( DateTime::Locale->codes ) {
-        my $underscore = $code =~ s/-/_/gr;
-
-        my $pod_file
-            = file( qw( lib DateTime Locale ), $underscore . '.pod' );
-        ## no critic (InputOutput::RequireCheckedSyscalls)
-        say "Generating $pod_file";
-        ## use critic
-
-        my $locale = DateTime::Locale->load($code)
-            or die "Cannot load $code";
-
-        my $filled = $template->fill_in(
-            HASH => {
-                name        => 'DateTime::Locale::' . $underscore,
-                description => "Locale data examples for the $code locale.",
-                example_dts => \@example_dts,
-                locale      => \$locale,
-            },
-        ) or die $Text::Template::ERROR;
-
-        $pod_file->spew( iomode => '>:encoding(UTF-8)', $filled );
-    }
-
-    return;
-}
-
 sub _insert_var_in_code($self, $name, $value, $public, $code) {
     my $sigil
         = !ref $value              ? '$'
@@ -345,6 +278,74 @@ sub _build_autogen_warning ($self) {
 ###########################################################################
 
 EOF
+}
+
+sub _write_pod_files ($self) {
+    my $template = Text::Template->new(
+        TYPE   => 'FILE',
+        SOURCE => file(qw( tools templates locale.pod ))->stringify,
+    ) or die $Text::Template::ERROR;
+
+    use lib 'lib';
+    require DateTime;
+    require DateTime::Locale;
+
+    my @example_dts = (
+        DateTime->new(
+            year      => 2008,
+            month     => 2,
+            day       => 5,
+            hour      => 18,
+            minute    => 30,
+            second    => 30,
+            time_zone => 'UTC',
+        ),
+        DateTime->new(
+            year      => 1995,
+            month     => 12,
+            day       => 22,
+            hour      => 9,
+            minute    => 5,
+            second    => 2,
+            time_zone => 'UTC',
+        ),
+        DateTime->new(
+            year      => -10,
+            month     => 9,
+            day       => 15,
+            hour      => 4,
+            minute    => 44,
+            second    => 23,
+            time_zone => 'UTC',
+        ),
+    );
+
+    for my $code ( DateTime::Locale->codes ) {
+        my $underscore = $code =~ s/-/_/gr;
+
+        my $pod_file
+            = file( qw( lib DateTime Locale ), $underscore . '.pod' );
+        ## no critic (InputOutput::RequireCheckedSyscalls)
+        say "Generating $pod_file";
+        ## use critic
+
+        my $locale = DateTime::Locale->load($code)
+            or die "Cannot load $code";
+
+        my $filled = $template->fill_in(
+            HASH => {
+                autogen_warning => $self->_autogen_warning,
+                name            => 'DateTime::Locale::' . $underscore,
+                description => "Locale data examples for the $code locale.",
+                example_dts => \@example_dts,
+                locale      => \$locale,
+            },
+        ) or die $Text::Template::ERROR;
+
+        $pod_file->spew( iomode => '>:encoding(UTF-8)', $filled );
+    }
+
+    return;
 }
 
 sub _build_script {

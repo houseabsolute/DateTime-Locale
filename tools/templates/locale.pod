@@ -1,3 +1,4 @@
+{$autogen_warning}
 =pod
 
 =encoding UTF-8
