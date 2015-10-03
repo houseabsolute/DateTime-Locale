@@ -484,6 +484,11 @@ on free software full time, which seems unlikely at best.
 To donate, log into PayPal and send money to autarch@urth.org or use the
 button on this page: L<http://www.urth.org/~autarch/fs-donation.html>
 
+=head1 AUTHOR EMERITUS
+
+Richard Evans wrote the first version of DateTime::Locale, including the tools
+to extract the CLDR data.
+
 =head1 SEE ALSO
 
 L<DateTime::Locale::Base>
