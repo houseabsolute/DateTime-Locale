@@ -147,7 +147,7 @@ sub _write_data_pm ($self) {
 
         my $start_pos = $pos;
 
-        my $dumped = Dumper( $raw_locales{$code} );
+        my $dumped = $self->_dump_with_unicode( $raw_locales{$code} );
         $data_section .= $dumped;
         $pos += length $dumped;
 
@@ -232,7 +232,7 @@ sub _insert_var_in_code($self, $name, $value, $public, $code) {
 
     my $safe;
     if ( ref $value ) {
-        $safe = Dumper($value);
+        $safe = $self->_dump_with_unicode($value);
         $safe =~ s/^[\{\[]/(/;
         $safe =~ s/[\}\]]\n$/)/;
     }
@@ -251,6 +251,19 @@ sub _insert_var_in_code($self, $name, $value, $public, $code) {
         or die "inserting $name failed";
 
     return;
+}
+
+sub _dump_with_unicode ($self, $val) {
+    my $dumped = Dumper($val);
+    $dumped
+        =~ s/\\x\{([^}]+)\}/$self->_unicode_char_for($1)/eg;
+    return $dumped;
+}
+
+sub _unicode_char_for ($, $hex) {
+    my $num = eval '0x' . $hex;
+    die $@ if $@;
+    return '\N{U+' . sprintf( '%04x', $num ) . '}';
 }
 
 sub _insert_autogen_warning ($self, $code) {

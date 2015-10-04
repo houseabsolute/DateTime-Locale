@@ -1,5 +1,9 @@
 {{$NEXT}}
 
+- Locale data with characters in the 0x80-0xFF range was not marked as UTF-8
+  by Perl. This could cause all sorts of weirdness and was generally bad.
+
+
 0.95     2015-09-30 (TRIAL RELEASE)
 
 - Added .pod files for each locale that document the data for that locale.
