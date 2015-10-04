@@ -6,7 +6,6 @@ use Test::Fatal;
 use Test::More 0.96;
 
 use DateTime::Locale;
-use Devel::Confess;
 
 my @locale_codes = sort DateTime::Locale->codes;
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
