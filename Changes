@@ -1,5 +1,10 @@
 {{$NEXT}}
 
+- The DateTime::Locale::FromData class now lies and says that it ->isa
+  DateTime::Locale::Base and DateTime::Locale::root. This helps preserve some
+  backwards compatibility. This hack will go away in the future.
+
+
 0.96     2015-10-04 (TRIAL RELEASE)
 
 - Locale data with characters in the 0x80-0xFF range was not marked as UTF-8
