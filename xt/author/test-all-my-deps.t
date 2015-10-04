@@ -12,12 +12,15 @@ BEGIN {
 
 use Test::DependentModules qw( test_all_dependents );
 
+## no critic (Variables::RequireLocalizedPunctuationVars)
 $ENV{PERL_TEST_DM_LOG_DIR} = abs_path('.');
+## use critic
 
 test_all_dependents(
     'DateTime::Locale',
     {
         filter => sub {
+
             # hangs installing prereqs (probably SOAP::Lite)
             return 0 if $_[0] =~ /WSRF-Lite/;
             return 1;

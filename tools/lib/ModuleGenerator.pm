@@ -255,12 +255,12 @@ sub _insert_var_in_code($self, $name, $value, $public, $code) {
 
 sub _dump_with_unicode ($self, $val) {
     my $dumped = Dumper($val);
-    $dumped
-        =~ s/\\x\{([^}]+)\}/$self->_unicode_char_for($1)/eg;
+    $dumped =~ s/\\x\{([^}]+)\}/$self->_unicode_char_for($1)/eg;
     return $dumped;
 }
 
 sub _unicode_char_for ($, $hex) {
+    ## no critic (BuiltinFunctions::ProhibitStringyEval)
     my $num = eval '0x' . $hex;
     die $@ if $@;
     return '\N{U+' . sprintf( '%04x', $num ) . '}';
