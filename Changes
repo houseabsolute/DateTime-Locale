@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+0.96     2015-10-04 (TRIAL RELEASE)
+
 - Locale data with characters in the 0x80-0xFF range was not marked as UTF-8
   by Perl. This could cause all sorts of weirdness and was generally bad.
 
