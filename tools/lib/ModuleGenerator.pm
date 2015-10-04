@@ -253,6 +253,11 @@ sub _insert_var_in_code($self, $name, $value, $public, $code) {
     return;
 }
 
+# Data::Dumper dumps all Unicode characters using Perl's \x{feedad0g}
+# syntax. If the character is in the 0x80-0xFF range, then Perl will not treat
+# this as a UTF-8 char when it sees it (either at compile or eval time). We
+# force it to use UTF-8 by replacing \x{feedad0g} with \N{U+feedad0g}, which
+# is always interpreted as UTF-8.
 sub _dump_with_unicode ($self, $val) {
     my $dumped = Dumper($val);
     $dumped =~ s/\\x\{([^}]+)\}/$self->_unicode_char_for($1)/eg;
