@@ -2,6 +2,7 @@
 .\#*
 /.build
 /.tidyall.d
+/test-mydeps-*
 Build
 DateTime-Locale-*
 Debian_CPANTS.txt
