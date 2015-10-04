@@ -21,6 +21,9 @@ test_all_dependents(
     {
         filter => sub {
 
+            # Fails tests for reasons unrelated to DateTime-Locale
+            return 0 if $_[0] =~ /Jifty/;
+
             # Is having issues with installing its Pg schema
             return 0 if $_[0] =~ /Silki/;
 
