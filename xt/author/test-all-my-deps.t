@@ -21,7 +21,11 @@ test_all_dependents(
     {
         filter => sub {
 
-            # hangs installing prereqs (probably SOAP::Lite)
+            # Is having issues with installing its Pg schema
+            return 0 if $_[0] =~ /Silki/;
+
+            # hangs installing prereqs (probably SOAP::Lite for both)
+            return 0 if $_[0] =~ /Plagger/;
             return 0 if $_[0] =~ /WSRF-Lite/;
             return 1;
         },
