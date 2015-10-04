@@ -238,17 +238,6 @@ sub variant_id {
     $_[0]->variant_code;
 }
 
-sub isa {
-    my $self  = shift;
-    my $class = shift;
-
-    return 1
-        if $class
-        && ( $class eq 'DateTime::Locale::Base'
-        || $class eq 'DateTime::Locale::root' );
-    return $self->SUPER::isa($class);
-}
-
 sub STORABLE_freeze {
     my $self    = shift;
     my $cloning = shift;
@@ -488,13 +477,3 @@ week, with Monday being 1 and Sunday being 7.
 The CLDR version from which this locale was generated.
 
 =back
-
-=head1 OVERRIDING ISA
-
-This class overrides C<< UNIVERSAL->isa >> and returns true if asked if it is
-a C<DateTime::Locale::Base> or C<DateTime::Locale::root> object. This helps
-provide some backwards compatibility for code that checks the class of an
-object returned by C<< DateTime::Locale->load >>. This override will go away
-in a future release.
-
-=cut
