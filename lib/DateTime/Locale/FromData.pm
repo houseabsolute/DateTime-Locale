@@ -6,7 +6,7 @@ use warnings;
 use DateTime::Locale::Util qw( parse_locale_code );
 use Params::Validate qw( validate_pos );
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 my @FormatLengths;
 
