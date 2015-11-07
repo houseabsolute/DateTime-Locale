@@ -1,5 +1,9 @@
 {{$NEXT}}
 
+- Prevent CPAN from indexing the tools directory, which is just for the
+  author's use.
+
+
 1.00     2015-11-07
 
 * All of these changes were originally released in previous trial releases,
