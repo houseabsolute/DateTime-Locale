@@ -164,6 +164,8 @@ has data_hash => (
     }
 }
 
+## no critic (ValuesAndExpressions::ProhibitFiletest_f)
+
 sub source_files ($self) {
     return grep {-f} $self->_json_file, $self->_glibc_file;
 }
