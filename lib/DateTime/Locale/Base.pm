@@ -3,7 +3,7 @@ package DateTime::Locale::Base;
 use strict;
 use warnings;
 
-our $VERSION = '0.97';
+our $VERSION = '1.00';
 
 use Carp qw( carp );
 use DateTime::Locale;

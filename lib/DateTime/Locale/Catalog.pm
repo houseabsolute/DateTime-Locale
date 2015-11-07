@@ -3,7 +3,7 @@ package DateTime::Locale::Catalog;
 use strict;
 use warnings;
 
-our $VERSION = '0.97';
+our $VERSION = '1.00';
 
 1;
 
