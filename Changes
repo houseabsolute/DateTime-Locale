@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.02     2015-12-09
+
 - Make the DateTime::Locale->load method accept a locale in any non-canonical
   casing, such as "en-us". Reported by Shawn Moore. RT #110244.
 
