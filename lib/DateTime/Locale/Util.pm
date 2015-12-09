@@ -10,15 +10,40 @@ our $VERSION = '1.02';
 our @EXPORT_OK = 'parse_locale_code';
 
 sub parse_locale_code {
-    ## no critic (RegularExpressions::ProhibitCaptureWithoutTest)
-    $_[0] =~ /
-        ([a-z]+)                 # language
-        (?: -([A-Z][a-z]+) )?    # script - Title Case - optional
-        (?: -([A-Z]+|\d\d\d) )?  # territory - ALL CAPS or 3 numbers - optional
-        (?: -([A-Z]+) )?         # variant - ALL CAPS - optional
-    /x;
+    my @pieces = split /-/, $_[0];
 
-    return ( $1, $2, $3, $4 );
+    return unless @pieces;
+
+    my %codes = ( language => lc shift @pieces );
+    if ( @pieces == 1 ) {
+        if ( length $pieces[0] == 2 ) {
+            $codes{territory} = uc shift @pieces;
+        }
+    }
+    elsif ( @pieces == 3 ) {
+        $codes{script}    = _tc( shift @pieces );
+        $codes{territory} = uc shift @pieces;
+        $codes{variant}   = uc shift @pieces;
+    }
+    elsif ( @pieces == 2 ) {
+
+        # I don't think it's possible to have a script + variant with also
+        # having a territory.
+        if ( length $pieces[1] == 2 ) {
+            $codes{script}    = _tc( shift @pieces );
+            $codes{territory} = uc shift @pieces;
+        }
+        else {
+            $codes{territory} = uc shift @pieces;
+            $codes{variant}   = uc shift @pieces;
+        }
+    }
+
+    return %codes;
+}
+
+sub _tc {
+    return ucfirst lc $_[0];
 }
 
 1;

@@ -238,29 +238,31 @@ sub _guess_code {
     my $class = shift;
     my $code  = shift;
 
-    my ( $language, $script, $territory, $variant )
-        = parse_locale_code($code);
+    my %codes = parse_locale_code($code);
 
     my @guesses;
 
-    if ( defined $script ) {
-        my $guess = join q{-}, lc $language, ucfirst lc $script;
+    if ( $codes{script} ) {
+        my $guess = join q{-}, $codes{language}, $codes{script};
 
         push @guesses, $guess;
 
-        $guess .= q{-} . uc $territory if defined $territory;
+        $guess .= q{-} . $codes{territory} if defined $codes{territory};
 
         # version with script comes first
         unshift @guesses, $guess;
     }
 
-    if ( defined $variant ) {
-        push @guesses, join q{-}, lc $language, uc $territory, uc $variant;
+    if ( $codes{variant} ) {
+        push @guesses, join q{-}, $codes{language}, $codes{territory},
+            $codes{variant};
     }
 
-    if ( defined $territory ) {
-        push @guesses, join q{-}, lc $language, uc $territory;
+    if ( $codes{territory} ) {
+        push @guesses, join q{-}, $codes{language}, $codes{territory};
     }
+
+    push @guesses, $codes{language};
 
     for my $code (@guesses) {
         return $code

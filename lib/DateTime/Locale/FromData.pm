@@ -196,26 +196,26 @@ sub prefers_24_hour_time {
 
 sub language_code {
     my $self = shift;
-    return ( $self->{parsed_code} ||= [ parse_locale_code( $self->code ) ] )
-        ->[0];
+    return ( $self->{parsed_code} ||= { parse_locale_code( $self->code ) } )
+        ->{language};
 }
 
 sub script_code {
     my $self = shift;
-    return ( $self->{parsed_code} ||= [ parse_locale_code( $self->code ) ] )
-        ->[1];
+    return ( $self->{parsed_code} ||= { parse_locale_code( $self->code ) } )
+        ->{script};
 }
 
 sub territory_code {
     my $self = shift;
-    return ( $self->{parsed_code} ||= [ parse_locale_code( $self->code ) ] )
-        ->[2];
+    return ( $self->{parsed_code} ||= { parse_locale_code( $self->code ) } )
+        ->{territory};
 }
 
 sub variant_code {
     my $self = shift;
-    return ( $self->{parsed_code} ||= [ parse_locale_code( $self->code ) ] )
-        ->[3];
+    return ( $self->{parsed_code} ||= { parse_locale_code( $self->code ) } )
+        ->{variant};
 }
 
 sub id {
