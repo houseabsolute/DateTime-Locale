@@ -224,7 +224,7 @@ sub _write_catalog_pm ($self) {
     $catalog_pm_file->spew( iomode => '>:encoding(UTF-8)', $catalog_pm );
 }
 
-sub _insert_var_in_code($self, $name, $value, $public, $code) {
+sub _insert_var_in_code ( $self, $name, $value, $public, $code ) {
     my $sigil
         = !ref $value              ? '$'
         : reftype $value eq 'HASH' ? '%'
@@ -258,20 +258,20 @@ sub _insert_var_in_code($self, $name, $value, $public, $code) {
 # this as a UTF-8 char when it sees it (either at compile or eval time). We
 # force it to use UTF-8 by replacing \x{feedad0g} with \N{U+feedad0g}, which
 # is always interpreted as UTF-8.
-sub _dump_with_unicode ($self, $val) {
+sub _dump_with_unicode ( $self, $val ) {
     my $dumped = Dumper($val);
     $dumped =~ s/\\x\{([^}]+)\}/$self->_unicode_char_for($1)/eg;
     return $dumped;
 }
 
-sub _unicode_char_for ($, $hex) {
+sub _unicode_char_for ( $, $hex ) {
     ## no critic (BuiltinFunctions::ProhibitStringyEval)
     my $num = eval '0x' . $hex;
     die $@ if $@;
     return '\N{U+' . sprintf( '%04x', $num ) . '}';
 }
 
-sub _insert_autogen_warning ($self, $code) {
+sub _insert_autogen_warning ( $self, $code ) {
     ${$code} =~ s/(?:^###+$).+(?:^###+$)\n+//ms;
     ${$code} =~ s/^/$self->_autogen_warning/e;
     return;

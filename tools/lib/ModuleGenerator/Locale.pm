@@ -159,7 +159,7 @@ has data_hash => (
 {
     my %Cache;
 
-    sub instance ($class, %p) {
+    sub instance ( $class, %p ) {
         return $Cache{ $p{code} } //= $class->new(%p);
     }
 }
@@ -278,7 +278,7 @@ sub _build_glibc_file ($self) {
     return $self->_source_data_root->file( 'glibc-locales', $glibc_code );
 }
 
-sub _extract_glibc_value ($self, $key, $raw) {
+sub _extract_glibc_value ( $self, $key, $raw ) {
     my ($val) = $raw =~ /^\Q$key\E\s+"([^"]+?)"/m
         or return;
 
@@ -428,7 +428,7 @@ sub _en_variants_data ($self) {
     return $en_variants_data //= $self->_populate_en_lookup('variants');
 }
 
-sub _populate_en_lookup ($self, $type) {
+sub _populate_en_lookup ( $self, $type ) {
     my $json = $self->_json_from(
         $self->_source_data_root->file(
             qw( cldr-localenames-full main en ), $type . '.json'
@@ -463,7 +463,7 @@ sub _build_native_variant ($self) {
     return $self->_native_lookup('variants')->{ $self->variant_code };
 }
 
-sub _native_lookup ($self, $type) {
+sub _native_lookup ( $self, $type ) {
     my $file;
     my $locale = $self;
     while ($locale) {
@@ -481,7 +481,7 @@ sub _native_lookup ($self, $type) {
     return $json->{main}{ $locale->code }{localeDisplayNames}{$type};
 }
 
-sub _json_from ($self, $file) {
+sub _json_from ( $self, $file ) {
     return decode_json( $file->slurp( iomode => '<:raw' ) );
 }
 
