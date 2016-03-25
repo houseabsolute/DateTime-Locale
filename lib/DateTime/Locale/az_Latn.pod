@@ -24,7 +24,7 @@ DateTime::Locale::az_Latn - Locale data examples for the az-Latn locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Azerbaijani Latin locale.
+Azerbaijani locale.
 
 =head2 Days
 

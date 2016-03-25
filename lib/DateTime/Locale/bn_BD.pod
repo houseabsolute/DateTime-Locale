@@ -588,7 +588,7 @@ No
 
 =head3 Local first day of the week
 
-1 (সোমবার)
+5 (শুক্রবার)
 
 =head1 SUPPORT
 

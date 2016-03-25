@@ -570,7 +570,7 @@ No
 
 =head3 Local first day of the week
 
-1 (Mon)
+6 (Sat)
 
 =head1 SUPPORT
 

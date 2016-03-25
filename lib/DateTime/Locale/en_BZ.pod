@@ -576,7 +576,7 @@ Yes
 
 =head3 Local first day of the week
 
-1 (Monday)
+7 (Sunday)
 
 =head1 SUPPORT
 

@@ -588,7 +588,7 @@ No
 
 =head3 Local first day of the week
 
-1 (الاثنين)
+6 (السبت)
 
 =head1 SUPPORT
 

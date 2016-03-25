@@ -24,7 +24,7 @@ DateTime::Locale::uz_Latn - Locale data examples for the uz-Latn locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Uzbek Latin locale.
+Uzbek locale.
 
 =head2 Days
 

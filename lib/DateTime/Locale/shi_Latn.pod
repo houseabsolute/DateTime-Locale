@@ -24,7 +24,7 @@ DateTime::Locale::shi_Latn - Locale data examples for the shi-Latn locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Tachelhit Latin locale.
+Tachelhit locale.
 
 =head2 Days
 
@@ -353,15 +353,15 @@ Tachelhit Latin locale.
 
 =head3 Ehm (E h:mm a)
 
-   2008-02-05T18:30:30 = asi 6:30 PM
-   1995-12-22T09:05:02 = asim 9:05 AM
-  -0010-09-15T04:44:23 = asiḍ 4:44 AM
+   2008-02-05T18:30:30 = asi 6:30 tadggʷat
+   1995-12-22T09:05:02 = asim 9:05 tifawt
+  -0010-09-15T04:44:23 = asiḍ 4:44 tifawt
 
 =head3 Ehms (E h:mm:ss a)
 
-   2008-02-05T18:30:30 = asi 6:30:30 PM
-   1995-12-22T09:05:02 = asim 9:05:02 AM
-  -0010-09-15T04:44:23 = asiḍ 4:44:23 AM
+   2008-02-05T18:30:30 = asi 6:30:30 tadggʷat
+   1995-12-22T09:05:02 = asim 9:05:02 tifawt
+  -0010-09-15T04:44:23 = asiḍ 4:44:23 tifawt
 
 =head3 Gy (G y)
 
@@ -485,33 +485,33 @@ Tachelhit Latin locale.
 
 =head3 h (h a)
 
-   2008-02-05T18:30:30 = 6 PM
-   1995-12-22T09:05:02 = 9 AM
-  -0010-09-15T04:44:23 = 4 AM
+   2008-02-05T18:30:30 = 6 tadggʷat
+   1995-12-22T09:05:02 = 9 tifawt
+  -0010-09-15T04:44:23 = 4 tifawt
 
 =head3 hm (h:mm a)
 
-   2008-02-05T18:30:30 = 6:30 PM
-   1995-12-22T09:05:02 = 9:05 AM
-  -0010-09-15T04:44:23 = 4:44 AM
+   2008-02-05T18:30:30 = 6:30 tadggʷat
+   1995-12-22T09:05:02 = 9:05 tifawt
+  -0010-09-15T04:44:23 = 4:44 tifawt
 
 =head3 hms (h:mm:ss a)
 
-   2008-02-05T18:30:30 = 6:30:30 PM
-   1995-12-22T09:05:02 = 9:05:02 AM
-  -0010-09-15T04:44:23 = 4:44:23 AM
+   2008-02-05T18:30:30 = 6:30:30 tadggʷat
+   1995-12-22T09:05:02 = 9:05:02 tifawt
+  -0010-09-15T04:44:23 = 4:44:23 tifawt
 
 =head3 hmsv (h:mm:ss a v)
 
-   2008-02-05T18:30:30 = 6:30:30 PM UTC
-   1995-12-22T09:05:02 = 9:05:02 AM UTC
-  -0010-09-15T04:44:23 = 4:44:23 AM UTC
+   2008-02-05T18:30:30 = 6:30:30 tadggʷat UTC
+   1995-12-22T09:05:02 = 9:05:02 tifawt UTC
+  -0010-09-15T04:44:23 = 4:44:23 tifawt UTC
 
 =head3 hmv (h:mm a v)
 
-   2008-02-05T18:30:30 = 6:30 PM UTC
-   1995-12-22T09:05:02 = 9:05 AM UTC
-  -0010-09-15T04:44:23 = 4:44 AM UTC
+   2008-02-05T18:30:30 = 6:30 tadggʷat UTC
+   1995-12-22T09:05:02 = 9:05 tifawt UTC
+  -0010-09-15T04:44:23 = 4:44 tifawt UTC
 
 =head3 ms (m:ss)
 

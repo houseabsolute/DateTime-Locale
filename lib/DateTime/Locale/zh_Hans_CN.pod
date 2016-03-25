@@ -582,7 +582,7 @@ No
 
 =head3 Local first day of the week
 
-1 (星期一)
+7 (星期日)
 
 =head1 SUPPORT
 

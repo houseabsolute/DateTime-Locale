@@ -570,7 +570,7 @@ Yes
 
 =head3 Local first day of the week
 
-1 (lundi)
+6 (samedi)
 
 =head1 SUPPORT
 

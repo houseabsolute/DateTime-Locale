@@ -24,7 +24,7 @@ DateTime::Locale::vai_Vaii - Locale data examples for the vai-Vaii locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Vai Vai locale.
+Vai locale.
 
 =head2 Days
 

@@ -24,7 +24,7 @@ DateTime::Locale::az_Cyrl - Locale data examples for the az-Cyrl locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Azerbaijani Cyrillic locale.
+Azerbaijani locale.
 
 =head2 Days
 

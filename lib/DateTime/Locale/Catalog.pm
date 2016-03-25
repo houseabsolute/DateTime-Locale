@@ -82,9 +82,9 @@ The available locales are:
  ast              Asturian                                  asturianu
  ast-ES           Asturian Spain                            asturianu España
  az               Azerbaijani                               azərbaycan dili
- az-Cyrl          Azerbaijani Cyrillic                      азәрбајҹан дили Кирил
+ az-Cyrl          Azerbaijani                               азәрбајҹан дили
  az-Cyrl-AZ       Azerbaijani Azerbaijan Cyrillic           азәрбајҹан дили Азәрбајҹан Кирил
- az-Latn          Azerbaijani Latin                         azərbaycan dili latın
+ az-Latn          Azerbaijani                               azərbaycan dili
  az-Latn-AZ       Azerbaijani Azerbaijan Latin              azərbaycan dili Azərbaycan latın
  bas              Basaa                                     Ɓàsàa
  bas-CM           Basaa Cameroon                            Ɓàsàa Kàmɛ̀rûn
@@ -109,9 +109,9 @@ The available locales are:
  brx              Bodo                                      बड़ो
  brx-IN           Bodo India                                बड़ो भारत
  bs               Bosnian                                   bosanski
- bs-Cyrl          Bosnian Cyrillic                          босански Ћирилица
+ bs-Cyrl          Bosnian                                   босански
  bs-Cyrl-BA       Bosnian Bosnia & Herzegovina Cyrillic     босански Босна и Херцеговина Ћирилица
- bs-Latn          Bosnian Latin                             bosanski latinica
+ bs-Latn          Bosnian                                   bosanski
  bs-Latn-BA       Bosnian Bosnia & Herzegovina Latin        bosanski Bosna i Hercegovina latinica
  ca               Catalan                                   català
  ca-AD            Catalan Andorra                           català Andorra
@@ -276,6 +276,7 @@ The available locales are:
  es-419           Spanish Latin America                     español Latinoamérica
  es-AR            Spanish Argentina                         español Argentina
  es-BO            Spanish Bolivia                           español Bolivia
+ es-BR            Spanish Brazil                            español Brasil
  es-CL            Spanish Chile                             español Chile
  es-CO            Spanish Colombia                          español Colombia
  es-CR            Spanish Costa Rica                        español Costa Rica
@@ -565,9 +566,9 @@ The available locales are:
  os-GE            Ossetic Georgia                           ирон Гуырдзыстон
  os-RU            Ossetic Russia                            ирон Уӕрӕсе
  pa               Punjabi                                   ਪੰਜਾਬੀ
- pa-Arab          Punjabi Arabic                            پنجابی عربی
+ pa-Arab          Punjabi                                   پنجابی
  pa-Arab-PK       Punjabi Pakistan Arabic                   پنجابی پکستان عربی
- pa-Guru          Punjabi Gurmukhi                          ਪੰਜਾਬੀ ਗੁਰਮੁਖੀ
+ pa-Guru          Punjabi                                   ਪੰਜਾਬੀ
  pa-Guru-IN       Punjabi India Gurmukhi                    ਪੰਜਾਬੀ ਭਾਰਤ ਗੁਰਮੁਖੀ
  pl               Polish                                    polski
  pl-PL            Polish Poland                             polski Polska
@@ -578,8 +579,11 @@ The available locales are:
  pt               Portuguese                                português
  pt-AO            Portuguese Angola                         português Angola
  pt-BR            Portuguese Brazil                         português Brasil
+ pt-CH            Portuguese Switzerland                    português Suíça
  pt-CV            Portuguese Cape Verde                     português Cabo Verde
+ pt-GQ            Portuguese Equatorial Guinea              português Guiné Equatorial
  pt-GW            Portuguese Guinea-Bissau                  português Guiné-Bissau
+ pt-LU            Portuguese Luxembourg                     português Luxemburgo
  pt-MO            Portuguese Macau SAR China                português Macau, RAE da China
  pt-MZ            Portuguese Mozambique                     português Moçambique
  pt-PT            Portuguese Portugal                       português Portugal
@@ -627,9 +631,9 @@ The available locales are:
  sg               Sango                                     Sängö
  sg-CF            Sango Central African Republic            Sängö Ködörösêse tî Bêafrîka
  shi              Tachelhit                                 ⵜⴰⵛⵍⵃⵉⵜ
- shi-Latn         Tachelhit Latin                           Tashelḥiyt Latn
+ shi-Latn         Tachelhit                                 Tashelḥiyt
  shi-Latn-MA      Tachelhit Morocco Latin                   Tashelḥiyt lmɣrib Latn
- shi-Tfng         Tachelhit Tifinagh                        ⵜⴰⵛⵍⵃⵉⵜ Tfng
+ shi-Tfng         Tachelhit                                 ⵜⴰⵛⵍⵃⵉⵜ
  shi-Tfng-MA      Tachelhit Morocco Tifinagh                ⵜⴰⵛⵍⵃⵉⵜ ⵍⵎⵖⵔⵉⴱ Tfng
  si               Sinhala                                   සිංහල
  si-LK            Sinhala Sri Lanka                         සිංහල ශ්‍රී ලංකාව
@@ -651,12 +655,12 @@ The available locales are:
  sq-MK            Albanian Macedonia                        shqip Maqedoni
  sq-XK            Albanian Kosovo                           shqip Kosovë
  sr               Serbian                                   српски
- sr-Cyrl          Serbian Cyrillic                          српски ћирилица
+ sr-Cyrl          Serbian                                   српски
  sr-Cyrl-BA       Serbian Bosnia & Herzegovina Cyrillic     српски Босна и Херцеговина ћирилица
  sr-Cyrl-ME       Serbian Montenegro Cyrillic               српски Црна Гора ћирилица
  sr-Cyrl-RS       Serbian Serbia Cyrillic                   српски Србија ћирилица
  sr-Cyrl-XK       Serbian Kosovo Cyrillic                   српски Косово ћирилица
- sr-Latn          Serbian Latin                             srpski latinica
+ sr-Latn          Serbian                                   srpski
  sr-Latn-BA       Serbian Bosnia & Herzegovina Latin        srpski Bosna i Hercegovina latinica
  sr-Latn-ME       Serbian Montenegro Latin                  srpski Crna Gora latinica
  sr-Latn-RS       Serbian Serbia Latin                      srpski Srbija latinica
@@ -690,7 +694,7 @@ The available locales are:
  to               Tongan                                    lea fakatonga
  to-TO            Tongan Tonga                              lea fakatonga Tonga
  tr               Turkish                                   Türkçe
- tr-CY            Turkish Cyprus                            Türkçe Güney Kıbrıs Rum Kesimi
+ tr-CY            Turkish Cyprus                            Türkçe Kıbrıs
  tr-TR            Turkish Turkey                            Türkçe Türkiye
  twq              Tasawaq                                   Tasawaq senni
  twq-NE           Tasawaq Niger                             Tasawaq senni Nižer
@@ -704,16 +708,16 @@ The available locales are:
  ur-IN            Urdu India                                اردو بھارت
  ur-PK            Urdu Pakistan                             اردو پاکستان
  uz               Uzbek                                     o‘zbek
- uz-Arab          Uzbek Arabic                              اوزبیک عربی
+ uz-Arab          Uzbek                                     اوزبیک
  uz-Arab-AF       Uzbek Afghanistan Arabic                  اوزبیک افغانستان عربی
- uz-Cyrl          Uzbek Cyrillic                            Ўзбек Кирил
+ uz-Cyrl          Uzbek                                     Ўзбек
  uz-Cyrl-UZ       Uzbek Uzbekistan Cyrillic                 Ўзбек Ўзбекистон Кирил
- uz-Latn          Uzbek Latin                               o‘zbek lotin
+ uz-Latn          Uzbek                                     o‘zbek
  uz-Latn-UZ       Uzbek Uzbekistan Latin                    o‘zbek Oʻzbekiston lotin
  vai              Vai                                       ꕙꔤ
- vai-Latn         Vai Latin                                 Vai Latn
+ vai-Latn         Vai                                       Vai
  vai-Latn-LR      Vai Liberia Latin                         Vai Laibhiya Latn
- vai-Vaii         Vai Vai                                   ꕙꔤ Vaii
+ vai-Vaii         Vai                                       ꕙꔤ
  vai-Vaii-LR      Vai Liberia Vai                           ꕙꔤ ꕞꔤꔫꕩ Vaii
  vi               Vietnamese                                Tiếng Việt
  vi-VN            Vietnamese Vietnam                        Tiếng Việt Việt Nam
@@ -732,15 +736,17 @@ The available locales are:
  yo               Yoruba                                    Èdè Yorùbá
  yo-BJ            Yoruba Benin                              Èdè Yorùbá Orílɛ́ède Bɛ̀nɛ̀
  yo-NG            Yoruba Nigeria                            Èdè Yorùbá Orílẹ́ède Nàìjíríà
+ yue              Cantonese                                 粵語
+ yue-HK           Cantonese Hong Kong SAR China             粵語 中華人民共和國香港特別行政區
  zgh              Standard Moroccan Tamazight               ⵜⴰⵎⴰⵣⵉⵖⵜ
  zgh-MA           Standard Moroccan Tamazight Morocco       ⵜⴰⵎⴰⵣⵉⵖⵜ ⵍⵎⵖⵔⵉⴱ
  zh               Chinese                                   中文
- zh-Hans          Chinese Simplified                        中文 简体
+ zh-Hans          Chinese                                   中文
  zh-Hans-CN       Chinese China Simplified                  中文 中国 简体
  zh-Hans-HK       Chinese Hong Kong SAR China Simplified    中文 中国香港特别行政区 简体
  zh-Hans-MO       Chinese Macau SAR China Simplified        中文 中国澳门特别行政区 简体
  zh-Hans-SG       Chinese Singapore Simplified              中文 新加坡 简体
- zh-Hant          Chinese Traditional                       中文 繁體
+ zh-Hant          Chinese                                   中文
  zh-Hant-HK       Chinese Hong Kong SAR China Traditional   中文 中華人民共和國香港特別行政區 繁體字
  zh-Hant-MO       Chinese Macau SAR China Traditional       中文 中華人民共和國澳門特別行政區 繁體字
  zh-Hant-TW       Chinese Taiwan Traditional                中文 台灣 繁體

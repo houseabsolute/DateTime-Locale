@@ -576,7 +576,7 @@ No
 
 =head3 Local first day of the week
 
-1 (ሰኞ)
+7 (እሑድ)
 
 =head1 SUPPORT
 

@@ -24,7 +24,7 @@ DateTime::Locale::zh_Hans - Locale data examples for the zh-Hans locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Chinese Simplified locale.
+Chinese locale.
 
 =head2 Days
 

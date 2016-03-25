@@ -570,7 +570,7 @@ Yes
 
 =head3 Local first day of the week
 
-1 (دوشنبه)
+6 (شنبه)
 
 =head1 SUPPORT
 

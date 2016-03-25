@@ -24,7 +24,7 @@ DateTime::Locale::uz_Cyrl - Locale data examples for the uz-Cyrl locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Uzbek Cyrillic locale.
+Uzbek locale.
 
 =head2 Days
 

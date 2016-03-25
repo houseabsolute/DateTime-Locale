@@ -254,15 +254,15 @@ English Australia locale.
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 5February,2008
-   1995-12-22T09:05:02 = 22December,1995
-  -0010-09-15T04:44:23 = 15September,-10
+   2008-02-05T18:30:30 = 5 February 2008
+   1995-12-22T09:05:02 = 22 December 1995
+  -0010-09-15T04:44:23 = 15 September -10
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5Feb.,2008
-   1995-12-22T09:05:02 = 22Dec.,1995
-  -0010-09-15T04:44:23 = 15Sep.,-10
+   2008-02-05T18:30:30 = 5 Feb. 2008
+   1995-12-22T09:05:02 = 22 Dec. 1995
+  -0010-09-15T04:44:23 = 15 Sep. -10
 
 =head3 Short
 
@@ -308,15 +308,15 @@ English Australia locale.
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 5February,2008 at 6:30:30 pm UTC
-   1995-12-22T09:05:02 = 22December,1995 at 9:05:02 am UTC
-  -0010-09-15T04:44:23 = 15September,-10 at 4:44:23 am UTC
+   2008-02-05T18:30:30 = 5 February 2008 at 6:30:30 pm UTC
+   1995-12-22T09:05:02 = 22 December 1995 at 9:05:02 am UTC
+  -0010-09-15T04:44:23 = 15 September -10 at 4:44:23 am UTC
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5Feb.,2008, 6:30:30 pm
-   1995-12-22T09:05:02 = 22Dec.,1995, 9:05:02 am
-  -0010-09-15T04:44:23 = 15Sep.,-10, 4:44:23 am
+   2008-02-05T18:30:30 = 5 Feb. 2008, 6:30:30 pm
+   1995-12-22T09:05:02 = 22 Dec. 1995, 9:05:02 am
+  -0010-09-15T04:44:23 = 15 Sep. -10, 4:44:23 am
 
 =head3 Short
 
@@ -531,11 +531,11 @@ English Australia locale.
    1995-12-22T09:05:02 = Dec. 1995
   -0010-09-15T04:44:23 = Sep. -10
 
-=head3 yMMMEd (E, d MMM,y)
+=head3 yMMMEd (E, d MMM y)
 
-   2008-02-05T18:30:30 = Tue., 5 Feb.,2008
-   1995-12-22T09:05:02 = Fri., 22 Dec.,1995
-  -0010-09-15T04:44:23 = Sat., 15 Sep.,-10
+   2008-02-05T18:30:30 = Tue., 5 Feb. 2008
+   1995-12-22T09:05:02 = Fri., 22 Dec. 1995
+  -0010-09-15T04:44:23 = Sat., 15 Sep. -10
 
 =head3 yMMMM (MMMM y)
 
@@ -576,7 +576,7 @@ No
 
 =head3 Local first day of the week
 
-1 (Monday)
+7 (Sunday)
 
 =head1 SUPPORT
 

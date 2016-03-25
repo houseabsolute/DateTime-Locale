@@ -24,7 +24,7 @@ DateTime::Locale::pa_Arab - Locale data examples for the pa-Arab locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Punjabi Arabic locale.
+Punjabi locale.
 
 =head2 Days
 

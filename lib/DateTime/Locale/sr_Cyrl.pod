@@ -24,7 +24,7 @@ DateTime::Locale::sr_Cyrl - Locale data examples for the sr-Cyrl locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Serbian Cyrillic locale.
+Serbian locale.
 
 =head2 Days
 

@@ -588,7 +588,7 @@ Yes
 
 =head3 Local first day of the week
 
-1 (lundi)
+7 (dimanche)
 
 =head1 SUPPORT
 

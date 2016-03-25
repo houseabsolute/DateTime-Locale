@@ -24,7 +24,7 @@ DateTime::Locale::pa_Guru - Locale data examples for the pa-Guru locale.
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Punjabi Gurmukhi locale.
+Punjabi locale.
 
 =head2 Days
 
