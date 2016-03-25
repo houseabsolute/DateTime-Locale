@@ -17,6 +17,7 @@ use Locale::Language
     qw( language_code2code LOCALE_LANG_ALPHA_2 LOCALE_LANG_ALPHA_3 );
 use Parse::PMFile;
 use Path::Class qw( file );
+use Path::Class::Rule;
 use Scalar::Util qw( reftype );
 use Text::Template;
 
@@ -68,12 +69,22 @@ has _locales => (
 );
 
 sub run ($self) {
+    $self->_clean_old_data;
     $self->_locales;
     $self->_write_data_pm;
     $self->_write_catalog_pm;
     $self->_write_pod_files;
 
     return 0;
+}
+
+sub _clean_old_data ($self) {
+    my $pir = Path::Class::Rule->new;
+    my $iter = $pir->file->name(qr/\.pod$/)->iter('lib');
+    while ( my $path = $iter->() ) {
+        say 'Removing ', $path->basename;
+        $path->remove;
+    }
 }
 
 sub _build_locales ($self) {
