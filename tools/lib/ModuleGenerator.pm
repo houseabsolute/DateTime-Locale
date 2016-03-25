@@ -79,9 +79,10 @@ sub run ($self) {
 }
 
 sub _clean_old_data ($self) {
-    my $pir = Path::Class::Rule->new;
+    my $pir  = Path::Class::Rule->new;
     my $iter = $pir->file->name(qr/\.pod$/)->iter('lib');
     while ( my $path = $iter->() ) {
+        ## no critic (InputOutput::RequireCheckedSyscalls)
         say 'Removing ', $path->basename;
         $path->remove;
     }
