@@ -452,7 +452,7 @@ Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
 names in UTF-8 characters as appropriate.
 
-=head1 SUPPORT
+=head1 CLDR DATA BUGS
 
 Please be aware that all locale data has been generated from the CLDR (Common
 Locale Data Repository) project locales data). The data is incomplete, and may
@@ -465,9 +465,6 @@ details.
 
 Once these errors have been confirmed, please forward the error report and
 corrections to the DateTime mailing list, datetime@perl.org.
-
-Support for this module is provided via the datetime@perl.org email list. See
-http://lists.perl.org/ for more details.
 
 =head1 AUTHOR EMERITUS
 
