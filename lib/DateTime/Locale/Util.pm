@@ -16,7 +16,7 @@ sub parse_locale_code {
 
     my %codes = ( language => lc shift @pieces );
     if ( @pieces == 1 ) {
-        if ( length $pieces[0] == 2 ) {
+        if ( length $pieces[0] == 2 || $pieces[0] =~ /^\d\d\d$/ ) {
             $codes{territory} = uc shift @pieces;
         }
     }
@@ -29,7 +29,7 @@ sub parse_locale_code {
 
         # I don't think it's possible to have a script + variant with also
         # having a territory.
-        if ( length $pieces[1] == 2 ) {
+        if ( length $pieces[1] == 2 || $pieces[1] =~ /^\d\d\d$/ ) {
             $codes{script}    = _tc( shift @pieces );
             $codes{territory} = uc shift @pieces;
         }
