@@ -70,7 +70,7 @@
   still included in the distribution in case someone has a custom locale that
   inherits from this module. However, this module will go away in a future
   release.
-z
+
 - The "ii-*" aliases for the "he-*" locales have been removed.
 
 - The "no-*" aliases for the "nn-*" locales have been removed.
