@@ -95,22 +95,19 @@ Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
 names in UTF-8 characters as appropriate.
 
-# DONATIONS
+# CLDR DATA BUGS
 
-If you'd like to thank me for the work I've done on this module, please
-consider making a "donation" to me via PayPal. I spend a lot of free time
-creating free software, and would appreciate any support you'd care to offer.
+Please be aware that all locale data has been generated from the CLDR (Common
+Locale Data Repository) project locales data). The data is incomplete, and may
+contain errors in some locales.
 
-Please note that **I am not suggesting that you must do this** in order for me
-to continue working on this particular software. I will continue to do so,
-inasmuch as I have in the past, for as long as it interests me.
+When reporting errors in data, please check the primary data sources first,
+then where necessary report errors directly to the primary source via the CLDR
+bug report system. See http://unicode.org/cldr/filing\_bug\_reports.html for
+details.
 
-Similarly, a donation made in this way will probably not make me work on this
-software much more, unless I get so many donations that I can consider working
-on free software full time, which seems unlikely at best.
-
-To donate, log into PayPal and send money to autarch@urth.org or use the
-button on this page: [http://www.urth.org/~autarch/fs-donation.html](http://www.urth.org/~autarch/fs-donation.html)
+Once these errors have been confirmed, please forward the error report and
+corrections to the DateTime mailing list, datetime@perl.org.
 
 # AUTHOR EMERITUS
 
@@ -127,23 +124,11 @@ http://datetime.perl.org/
 
 # SUPPORT
 
-Please be aware that all locale data has been generated from the CLDR (Common
-Locale Data Repository) project locales data). The data is incomplete, and may
-contain errors in some locales.
-
-When reporting errors in data, please check the primary data sources first,
-then where necessary report errors directly to the primary source via the CLDR
-bug report system. See http://unicode.org/cldr/filing\_bug\_reports.html for
-details.
-
-Once these errors have been confirmed, please forward the error report and
-corrections to the DateTime mailing list, datetime@perl.org.
-
-Support for this module is provided via the datetime@perl.org email list. See
-http://lists.perl.org/ for more details.
-
 Bugs may be submitted through [the RT bug tracker](http://rt.cpan.org/Public/Dist/Display.html?Name=DateTime-Locale)
 (or [bug-datetime-locale@rt.cpan.org](mailto:bug-datetime-locale@rt.cpan.org)).
+
+There is a mailing list available for users of this distribution,
+[mailto:datetime@perl.org](mailto:datetime@perl.org).
 
 I am also usually active on IRC as 'drolsky' on `irc://irc.perl.org`.
 
