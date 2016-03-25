@@ -12,7 +12,7 @@ use DateTime::Locale::Util qw( parse_locale_code );
 use JSON::MaybeXS qw( decode_json );
 
 use Moose;
-use MooseX::Types::Moose qw( ArrayRef HashRef Int Maybe Str );
+use MooseX::Types::Moose qw( HashRef Int Maybe Str );
 use MooseX::Types::Path::Class qw( Dir File );
 
 ## no critic (TestingAndDebugging::ProhibitNoWarnings)
@@ -69,7 +69,7 @@ has _glibc_data => (
 
 has _parsed_code => (
     is      => 'ro',
-    isa     => ArrayRef [ Maybe [Str] ],
+    isa     => HashRef [ Maybe [Str] ],
     lazy    => 1,
     builder => '_build_parsed_code',
 );
@@ -78,28 +78,28 @@ has language_code => (
     is      => 'ro',
     isa     => Str,
     lazy    => 1,
-    default => sub ($self) { $self->_parsed_code->[0] },
+    default => sub ($self) { $self->_parsed_code->{language} },
 );
 
 has script_code => (
     is      => 'ro',
     isa     => Maybe [Str],
     lazy    => 1,
-    default => sub ($self) { $self->_parsed_code->[1] },
+    default => sub ($self) { $self->_parsed_code->{script} },
 );
 
 has territory_code => (
     is      => 'ro',
     isa     => Maybe [Str],
     lazy    => 1,
-    default => sub ($self) { $self->_parsed_code->[2] },
+    default => sub ($self) { $self->_parsed_code->{territory} },
 );
 
 has variant_code => (
     is      => 'ro',
     isa     => Maybe [Str],
     lazy    => 1,
-    default => sub ($self) { $self->_parsed_code->[3] },
+    default => sub ($self) { $self->_parsed_code->{variant} },
 );
 
 has en_name => (
@@ -352,7 +352,8 @@ sub _explicit_parents ($self) {
 }
 
 sub _build_parsed_code ($self) {
-    return [ parse_locale_code( $self->code ) ];
+    my %parsed = parse_locale_code( $self->code );
+    return \%parsed;
 }
 
 {
