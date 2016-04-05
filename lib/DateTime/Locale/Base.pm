@@ -7,7 +7,7 @@ our $VERSION = '1.04';
 
 use Carp qw( carp );
 use DateTime::Locale;
-use List::MoreUtils ();
+use List::Util 1.45 ();
 use Params::Validate qw( validate_pos );
 
 BEGIN {
@@ -93,7 +93,7 @@ sub available_formats {
     # The various parens seem to be necessary to force uniq() to see
     # the caller's list context. Go figure.
     my @uniq
-        = List::MoreUtils::uniq(
+        = List::Util::uniq(
         map { keys %{ $_->_available_formats() || {} } }
             _self_and_super_path( ref $self ) );
 
