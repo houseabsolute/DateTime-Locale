@@ -93,8 +93,7 @@ sub available_formats {
     # The various parens seem to be necessary to force uniq() to see
     # the caller's list context. Go figure.
     my @uniq
-        = List::Util::uniq(
-        map { keys %{ $_->_available_formats() || {} } }
+        = List::Util::uniq( map { keys %{ $_->_available_formats() || {} } }
             _self_and_super_path( ref $self ) );
 
     # Doing the sort in the same expression doesn't work under 5.6.x.
