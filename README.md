@@ -4,7 +4,7 @@ DateTime::Locale - Localization support for DateTime.pm
 
 # VERSION
 
-version 1.03
+version 1.04
 
 # SYNOPSIS
 
@@ -151,7 +151,11 @@ button at [http://www.urth.org/~autarch/fs-donation.html](http://www.urth.org/~a
 
 # AUTHOR
 
-Dave Rolsky &lt;autarch@urth.org>
+Dave Rolsky <autarch@urth.org>
+
+# CONTRIBUTOR
+
+Karen Etheridge <ether@cpan.org>
 
 # COPYRIGHT AND LICENCE
 

@@ -29,19 +29,22 @@ on 'configure' => sub {
 };
 
 on 'develop' => sub {
-  requires "Code::TidyAll" => "0.24";
+  requires "Cwd" => "0";
   requires "File::Spec" => "0";
   requires "IO::Handle" => "0";
   requires "IPC::Open3" => "0";
-  requires "Perl::Critic" => "1.123";
-  requires "Perl::Tidy" => "20140711";
+  requires "Perl::Critic" => "1.126";
+  requires "Perl::Tidy" => "20160302";
+  requires "Pod::Wordlist" => "0";
   requires "Test::CPAN::Changes" => "0.19";
   requires "Test::CPAN::Meta::JSON" => "0.16";
   requires "Test::Code::TidyAll" => "0.24";
+  requires "Test::DependentModules" => "0";
   requires "Test::EOL" => "0";
-  requires "Test::More" => "0.88";
+  requires "Test::More" => "0.96";
   requires "Test::NoTabs" => "0";
   requires "Test::Output" => "0";
   requires "Test::Pod" => "1.41";
   requires "Test::Spelling" => "0.12";
+  requires "blib" => "1.01";
 };
