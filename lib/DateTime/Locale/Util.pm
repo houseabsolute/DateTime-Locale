@@ -5,7 +5,7 @@ use warnings;
 
 use Exporter qw( import );
 
-our $VERSION = '1.04';
+our $VERSION = '1.05';
 
 our @EXPORT_OK = 'parse_locale_code';
 
