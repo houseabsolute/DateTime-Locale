@@ -29,6 +29,7 @@ on 'configure' => sub {
 };
 
 on 'develop' => sub {
+  requires "Code::TidyAll::Plugin::Test::Vars" => "0.02";
   requires "Cwd" => "0";
   requires "File::Spec" => "0";
   requires "IO::Handle" => "0";
@@ -45,6 +46,8 @@ on 'develop' => sub {
   requires "Test::NoTabs" => "0";
   requires "Test::Output" => "0";
   requires "Test::Pod" => "1.41";
+  requires "Test::Portability::Files" => "0";
   requires "Test::Spelling" => "0.12";
+  requires "Test::Vars" => "0.009";
   requires "blib" => "1.01";
 };

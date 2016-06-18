@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.04     2016-06-17
+
 - Replaced List::MoreUtils with List::Util.
 
 
