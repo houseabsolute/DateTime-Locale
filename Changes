@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.05     2016-06-26
+
 - Instead of using the DATA handle to get at as-yet-unloaded locale data in
   DateTime::Locale::Data, we now read the raw data into memory once, and use
   eval to turn it into Perl data structures as a particular locale is
