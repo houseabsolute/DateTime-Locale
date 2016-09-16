@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Replaced Params::Validate with Params::ValidationCompiler.
+
+
 1.05     2016-06-26
 
 - Instead of using the DATA handle to get at as-yet-unloaded locale data in

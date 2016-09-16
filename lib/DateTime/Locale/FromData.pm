@@ -4,7 +4,8 @@ use strict;
 use warnings;
 
 use DateTime::Locale::Util qw( parse_locale_code );
-use Params::Validate qw( validate_pos );
+use Params::ValidationCompiler 0.13 qw( validation_for );
+use Specio::Declare;
 
 our $VERSION = '1.06';
 
@@ -133,18 +134,23 @@ sub _make_datetime_format {
     return $dt_format;
 }
 
+my $length = enum( values => [qw( full long medium short )] );
+my $validator = validation_for(
+    name             => '_check_length_parameter',
+    name_is_optional => 1,
+    params           => [ { type => $length } ],
+);
+
 sub set_default_date_format_length {
     my $self = shift;
-    my ($l)
-        = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
+    my ($l) = $validator->(@_);
 
     $self->{default_date_format_length} = lc $l;
 }
 
 sub set_default_time_format_length {
     my $self = shift;
-    my ($l)
-        = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
+    my ($l) = $validator->(@_);
 
     $self->{default_time_format_length} = lc $l;
 }

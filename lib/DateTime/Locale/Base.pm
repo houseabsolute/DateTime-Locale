@@ -8,7 +8,8 @@ our $VERSION = '1.06';
 use Carp qw( carp );
 use DateTime::Locale;
 use List::Util 1.45 ();
-use Params::Validate qw( validate_pos );
+use Params::ValidationCompiler 0.13 qw( validation_for );
+use Specio::Declare;
 
 BEGIN {
     foreach my $field (
@@ -141,10 +142,16 @@ sub _available_formats { }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
+my $length = enum( values => [qw( full long medium short )] );
+my $validator = validation_for(
+    name             => '_check_length_parameter',
+    name_is_optional => 1,
+    params           => [ { type => $length } ],
+);
+
 sub set_default_date_format_length {
     my $self = shift;
-    my ($l)
-        = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)$/i } );
+    my ($l) = $validator->(@_);
 
     $self->{default_date_format_length} = lc $l;
 }
@@ -153,8 +160,7 @@ sub default_time_format_length { $_[0]->{default_time_format_length} }
 
 sub set_default_time_format_length {
     my $self = shift;
-    my ($l)
-        = validate_pos( @_, { regex => qr/^(?:full|long|medium|short)/i } );
+    my ($l) = $validator->(@_);
 
     $self->{default_time_format_length} = lc $l;
 }
