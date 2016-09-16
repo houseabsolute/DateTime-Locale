@@ -2,6 +2,7 @@ package DateTime::Locale::Util;
 
 use strict;
 use warnings;
+use namespace::autoclean -except => ['import'];
 
 use Exporter qw( import );
 

@@ -2,6 +2,7 @@ package DateTime::Locale::Base;
 
 use strict;
 use warnings;
+use namespace::autoclean;
 
 our $VERSION = '1.06';
 

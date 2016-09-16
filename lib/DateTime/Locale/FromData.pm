@@ -2,6 +2,7 @@ package DateTime::Locale::FromData;
 
 use strict;
 use warnings;
+use namespace::autoclean;
 
 use DateTime::Locale::Util qw( parse_locale_code );
 use Params::ValidationCompiler 0.13 qw( validation_for );
