@@ -4,7 +4,7 @@ DateTime::Locale - Localization support for DateTime.pm
 
 # VERSION
 
-version 1.05
+version 1.06
 
 # SYNOPSIS
 
@@ -157,7 +157,7 @@ Dave Rolsky <autarch@urth.org>
 
 Karen Etheridge <ether@cpan.org>
 
-# COPYRIGHT AND LICENCE
+# COPYRIGHT AND LICENSE
 
 This software is copyright (c) 2016 by Dave Rolsky.
 
