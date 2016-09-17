@@ -36,8 +36,8 @@ sub register {
 }
 
 sub _register {
-    my $class = shift;
-    my %p     = @_;
+    shift;
+    my %p = @_;
 
     my $id = $p{id};
 
@@ -229,8 +229,8 @@ my %POSIXAliases = (
 }
 
 sub _guess_code {
-    my $class = shift;
-    my $code  = shift;
+    shift;
+    my $code = shift;
 
     my %codes = parse_locale_code($code);
 
