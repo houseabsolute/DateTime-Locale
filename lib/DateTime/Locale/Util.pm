@@ -6,7 +6,7 @@ use namespace::autoclean -except => ['import'];
 
 use Exporter qw( import );
 
-our $VERSION = '1.07';
+our $VERSION = '1.08';
 
 our @EXPORT_OK = 'parse_locale_code';
 
