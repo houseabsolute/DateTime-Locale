@@ -6,11 +6,13 @@ requires "Params::ValidationCompiler" => "0.13";
 requires "Specio::Declare" => "0";
 requires "Specio::Library::String" => "0";
 requires "namespace::autoclean" => "0";
-requires "perl" => "5.008001";
+requires "perl" => "5.008004";
 requires "strict" => "0";
 requires "warnings" => "0";
 
 on 'test' => sub {
+  requires "CPAN::Meta::Check" => "0.011";
+  requires "CPAN::Meta::Requirements" => "0";
   requires "ExtUtils::MakeMaker" => "0";
   requires "File::Spec" => "0";
   requires "Storable" => "0";
@@ -53,6 +55,6 @@ on 'develop' => sub {
   requires "Test::Portability::Files" => "0";
   requires "Test::Spelling" => "0.12";
   requires "Test::Vars" => "0.009";
-  requires "Test::Version" => "1";
+  requires "Test::Version" => "2.05";
   requires "blib" => "1.01";
 };
