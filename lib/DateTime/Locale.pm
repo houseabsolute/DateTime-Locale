@@ -6,7 +6,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '1.08';
+our $VERSION = '1.09';
 
 use DateTime::Locale::Data;
 use DateTime::Locale::FromData;
