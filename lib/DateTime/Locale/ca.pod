@@ -108,18 +108,18 @@ Catalan locale.
 
 =head3 Abbreviated (format)
 
-  gen.
-  febr.
-  març
-  abr.
-  maig
-  juny
-  jul.
-  ag.
-  set.
-  oct.
-  nov.
-  des.
+  de gen.
+  de febr.
+  de març
+  d’abr.
+  de maig
+  de juny
+  de jul.
+  d’ag.
+  de set.
+  d’oct.
+  de nov.
+  de des.
 
 =head3 Narrow (format)
 
@@ -260,9 +260,9 @@ Catalan locale.
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 febr. 2008
-   1995-12-22T09:05:02 = 22 des. 1995
-  -0010-09-15T04:44:23 = 15 set. -10
+   2008-02-05T18:30:30 = 5 de febr. 2008
+   1995-12-22T09:05:02 = 22 de des. 1995
+  -0010-09-15T04:44:23 = 15 de set. -10
 
 =head3 Short
 
@@ -308,15 +308,15 @@ Catalan locale.
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 5 de febrer de 2008, 18:30:30 UTC
-   1995-12-22T09:05:02 = 22 de desembre de 1995, 9:05:02 UTC
-  -0010-09-15T04:44:23 = 15 de setembre de -10, 4:44:23 UTC
+   2008-02-05T18:30:30 = 5 de febrer de 2008 a les 18:30:30 UTC
+   1995-12-22T09:05:02 = 22 de desembre de 1995 a les 9:05:02 UTC
+  -0010-09-15T04:44:23 = 15 de setembre de -10 a les 4:44:23 UTC
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 febr. 2008, 18:30:30
-   1995-12-22T09:05:02 = 22 des. 1995, 9:05:02
-  -0010-09-15T04:44:23 = 15 set. -10, 4:44:23
+   2008-02-05T18:30:30 = 5 de febr. 2008, 18:30:30
+   1995-12-22T09:05:02 = 22 de des. 1995, 9:05:02
+  -0010-09-15T04:44:23 = 15 de set. -10, 4:44:23
 
 =head3 Short
 
@@ -375,11 +375,11 @@ Catalan locale.
    1995-12-22T09:05:02 = des. 1995 dC
   -0010-09-15T04:44:23 = set. -10 aC
 
-=head3 GyMMMEd (E, d MMM y G)
+=head3 GyMMMEd (E, d MMM 'de' y G)
 
-   2008-02-05T18:30:30 = dt., 5 febr. 2008 dC
-   1995-12-22T09:05:02 = dv., 22 des. 1995 dC
-  -0010-09-15T04:44:23 = ds., 15 set. -10 aC
+   2008-02-05T18:30:30 = dt., 5 de febr. de 2008 dC
+   1995-12-22T09:05:02 = dv., 22 de des. de 1995 dC
+  -0010-09-15T04:44:23 = ds., 15 de set. de -10 aC
 
 =head3 GyMMMM (LLLL 'de' y G)
 
@@ -399,11 +399,11 @@ Catalan locale.
    1995-12-22T09:05:02 = 22 de desembre de 1995 dC
   -0010-09-15T04:44:23 = 15 de setembre de -10 aC
 
-=head3 GyMMMd (d MMM y G)
+=head3 GyMMMd (d MMM 'de' y G)
 
-   2008-02-05T18:30:30 = 5 febr. 2008 dC
-   1995-12-22T09:05:02 = 22 des. 1995 dC
-  -0010-09-15T04:44:23 = 15 set. -10 aC
+   2008-02-05T18:30:30 = 5 de febr. de 2008 dC
+   1995-12-22T09:05:02 = 22 de des. de 1995 dC
+  -0010-09-15T04:44:23 = 15 de set. de -10 aC
 
 =head3 H (H)
 
@@ -455,15 +455,21 @@ Catalan locale.
 
 =head3 MMMEd (E, d MMM)
 
-   2008-02-05T18:30:30 = dt., 5 febr.
-   1995-12-22T09:05:02 = dv., 22 des.
-  -0010-09-15T04:44:23 = ds., 15 set.
+   2008-02-05T18:30:30 = dt., 5 de febr.
+   1995-12-22T09:05:02 = dv., 22 de des.
+  -0010-09-15T04:44:23 = ds., 15 de set.
 
 =head3 MMMMEd (E, d MMMM)
 
    2008-02-05T18:30:30 = dt., 5 de febrer
    1995-12-22T09:05:02 = dv., 22 de desembre
   -0010-09-15T04:44:23 = ds., 15 de setembre
+
+=head3 MMMMW ('setmana' W MMMM)
+
+   2008-02-05T18:30:30 = setmana 1 de febrer
+   1995-12-22T09:05:02 = setmana 3 de desembre
+  -0010-09-15T04:44:23 = setmana 2 de setembre
 
 =head3 MMMMd (d MMMM)
 
@@ -473,9 +479,9 @@ Catalan locale.
 
 =head3 MMMd (d MMM)
 
-   2008-02-05T18:30:30 = 5 febr.
-   1995-12-22T09:05:02 = 22 des.
-  -0010-09-15T04:44:23 = 15 set.
+   2008-02-05T18:30:30 = 5 de febr.
+   1995-12-22T09:05:02 = 22 de des.
+  -0010-09-15T04:44:23 = 15 de set.
 
 =head3 Md (d/M)
 
@@ -551,9 +557,9 @@ Catalan locale.
 
 =head3 yMMMEd (E, d MMM y)
 
-   2008-02-05T18:30:30 = dt., 5 febr. 2008
-   1995-12-22T09:05:02 = dv., 22 des. 1995
-  -0010-09-15T04:44:23 = ds., 15 set. -10
+   2008-02-05T18:30:30 = dt., 5 de febr. 2008
+   1995-12-22T09:05:02 = dv., 22 de des. 1995
+  -0010-09-15T04:44:23 = ds., 15 de set. -10
 
 =head3 yMMMM (LLLL 'de' y)
 
@@ -573,7 +579,7 @@ Catalan locale.
    1995-12-22T09:05:02 = 22 de desembre de 1995
   -0010-09-15T04:44:23 = 15 de setembre de -10
 
-=head3 yMMMd (d MMM y)
+=head3 yMMMd (d LLL y)
 
    2008-02-05T18:30:30 = 5 febr. 2008
    1995-12-22T09:05:02 = 22 des. 1995
@@ -596,6 +602,12 @@ Catalan locale.
    2008-02-05T18:30:30 = 1r trimestre 2008
    1995-12-22T09:05:02 = 4t trimestre 1995
   -0010-09-15T04:44:23 = 3r trimestre -10
+
+=head3 yw ('setmana' w 'de' y)
+
+   2008-02-05T18:30:30 = setmana 6 de 2008
+   1995-12-22T09:05:02 = setmana 51 de 1995
+  -0010-09-15T04:44:23 = setmana 37 de -10
 
 
 =head2 Miscellaneous

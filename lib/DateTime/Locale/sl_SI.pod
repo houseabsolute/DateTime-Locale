@@ -71,13 +71,13 @@ Slovenian Slovenia locale.
 
 =head3 Abbreviated (stand-alone)
 
-  pon
-  tor
-  sre
-  čet
-  pet
-  sob
-  ned
+  pon.
+  tor.
+  sre.
+  čet.
+  pet.
+  sob.
+  ned.
 
 =head3 Narrow (stand-alone)
 
@@ -154,18 +154,18 @@ Slovenian Slovenia locale.
 
 =head3 Abbreviated (stand-alone)
 
-  jan
-  feb
-  mar
-  apr
+  jan.
+  feb.
+  mar.
+  apr.
   maj
-  jun
-  jul
-  avg
-  sep
-  okt
-  nov
-  dec
+  jun.
+  jul.
+  avg.
+  sep.
+  okt.
+  nov.
+  dec.
 
 =head3 Narrow (stand-alone)
 
@@ -232,17 +232,17 @@ Slovenian Slovenia locale.
 =head3 Wide (format)
 
   pred Kristusom
-  naše štetje
+  po Kristusu
 
 =head3 Abbreviated (format)
 
   pr. Kr.
-  po n. št.
+  po Kr.
 
 =head3 Narrow (format)
 
   pr. Kr.
-  po n. št.
+  po Kr.
 
 =head2 Date Formats
 
@@ -329,9 +329,9 @@ Slovenian Slovenia locale.
 
 =head3 E (ccc)
 
-   2008-02-05T18:30:30 = tor
-   1995-12-22T09:05:02 = pet
-  -0010-09-15T04:44:23 = sob
+   2008-02-05T18:30:30 = tor.
+   1995-12-22T09:05:02 = pet.
+  -0010-09-15T04:44:23 = sob.
 
 =head3 EHm (E HH:mm)
 
@@ -351,53 +351,53 @@ Slovenian Slovenia locale.
    1995-12-22T09:05:02 = pet., 22.
   -0010-09-15T04:44:23 = sob., 15.
 
-=head3 Ehm (E h:mm a)
+=head3 Ehm (E, h:mm a)
 
-   2008-02-05T18:30:30 = tor. 6:30 pop.
-   1995-12-22T09:05:02 = pet. 9:05 dop.
-  -0010-09-15T04:44:23 = sob. 4:44 dop.
+   2008-02-05T18:30:30 = tor., 6:30 pop.
+   1995-12-22T09:05:02 = pet., 9:05 dop.
+  -0010-09-15T04:44:23 = sob., 4:44 dop.
 
-=head3 Ehms (E h:mm:ss a)
+=head3 Ehms (E, h:mm:ss a)
 
-   2008-02-05T18:30:30 = tor. 6:30:30 pop.
-   1995-12-22T09:05:02 = pet. 9:05:02 dop.
-  -0010-09-15T04:44:23 = sob. 4:44:23 dop.
+   2008-02-05T18:30:30 = tor., 6:30:30 pop.
+   1995-12-22T09:05:02 = pet., 9:05:02 dop.
+  -0010-09-15T04:44:23 = sob., 4:44:23 dop.
 
 =head3 Gy (y G)
 
-   2008-02-05T18:30:30 = 2008 po n. št.
-   1995-12-22T09:05:02 = 1995 po n. št.
+   2008-02-05T18:30:30 = 2008 po Kr.
+   1995-12-22T09:05:02 = 1995 po Kr.
   -0010-09-15T04:44:23 = -10 pr. Kr.
 
 =head3 GyM (MMM y G)
 
-   2008-02-05T18:30:30 = feb. 2008 po n. št.
-   1995-12-22T09:05:02 = dec. 1995 po n. št.
+   2008-02-05T18:30:30 = feb. 2008 po Kr.
+   1995-12-22T09:05:02 = dec. 1995 po Kr.
   -0010-09-15T04:44:23 = sep. -10 pr. Kr.
 
 =head3 GyMMM (MMM y G)
 
-   2008-02-05T18:30:30 = feb. 2008 po n. št.
-   1995-12-22T09:05:02 = dec. 1995 po n. št.
+   2008-02-05T18:30:30 = feb. 2008 po Kr.
+   1995-12-22T09:05:02 = dec. 1995 po Kr.
   -0010-09-15T04:44:23 = sep. -10 pr. Kr.
 
 =head3 GyMMMEd (E, d. MMM y G)
 
-   2008-02-05T18:30:30 = tor., 5. feb. 2008 po n. št.
-   1995-12-22T09:05:02 = pet., 22. dec. 1995 po n. št.
+   2008-02-05T18:30:30 = tor., 5. feb. 2008 po Kr.
+   1995-12-22T09:05:02 = pet., 22. dec. 1995 po Kr.
   -0010-09-15T04:44:23 = sob., 15. sep. -10 pr. Kr.
 
 =head3 GyMMMd (d. MMM y G)
 
-   2008-02-05T18:30:30 = 5. feb. 2008 po n. št.
-   1995-12-22T09:05:02 = 22. dec. 1995 po n. št.
+   2008-02-05T18:30:30 = 5. feb. 2008 po Kr.
+   1995-12-22T09:05:02 = 22. dec. 1995 po Kr.
   -0010-09-15T04:44:23 = 15. sep. -10 pr. Kr.
 
-=head3 H (HH)
+=head3 H (HH'h')
 
-   2008-02-05T18:30:30 = 18
-   1995-12-22T09:05:02 = 09
-  -0010-09-15T04:44:23 = 04
+   2008-02-05T18:30:30 = 18h
+   1995-12-22T09:05:02 = 09h
+  -0010-09-15T04:44:23 = 04h
 
 =head3 Hm (HH:mm)
 
@@ -437,9 +437,9 @@ Slovenian Slovenia locale.
 
 =head3 MMM (LLL)
 
-   2008-02-05T18:30:30 = feb
-   1995-12-22T09:05:02 = dec
-  -0010-09-15T04:44:23 = sep
+   2008-02-05T18:30:30 = feb.
+   1995-12-22T09:05:02 = dec.
+  -0010-09-15T04:44:23 = sep.
 
 =head3 MMMEd (E, d. MMM)
 
@@ -447,11 +447,17 @@ Slovenian Slovenia locale.
    1995-12-22T09:05:02 = pet., 22. dec.
   -0010-09-15T04:44:23 = sob., 15. sep.
 
-=head3 MMMMd (d MMMM)
+=head3 MMMMW (W. 'teden' 'v' MMM)
 
-   2008-02-05T18:30:30 = 5 februar
-   1995-12-22T09:05:02 = 22 december
-  -0010-09-15T04:44:23 = 15 september
+   2008-02-05T18:30:30 = 1. teden v feb.
+   1995-12-22T09:05:02 = 3. teden v dec.
+  -0010-09-15T04:44:23 = 2. teden v sep.
+
+=head3 MMMMd (d. MMMM)
+
+   2008-02-05T18:30:30 = 5. februar
+   1995-12-22T09:05:02 = 22. december
+  -0010-09-15T04:44:23 = 15. september
 
 =head3 MMMd (d. MMM)
 
@@ -566,6 +572,12 @@ Slovenian Slovenia locale.
    2008-02-05T18:30:30 = 1. četrtletje 2008
    1995-12-22T09:05:02 = 4. četrtletje 1995
   -0010-09-15T04:44:23 = 3. četrtletje -10
+
+=head3 yw (w. 'teden' 'v' y)
+
+   2008-02-05T18:30:30 = 6. teden v 2008
+   1995-12-22T09:05:02 = 51. teden v 1995
+  -0010-09-15T04:44:23 = 37. teden v -10
 
 
 =head2 Miscellaneous

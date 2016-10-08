@@ -81,13 +81,13 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Narrow (stand-alone)
 
-  p
-  u
-  s
-  č
-  p
-  s
-  n
+  P
+  U
+  S
+  Č
+  P
+  S
+  N
 
 =head2 Months
 
@@ -193,10 +193,10 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Abbreviated (format)
 
-  1kv
-  2kv
-  3kv
-  4kv
+  1. kv.
+  2. kv.
+  3. kv.
+  4. kv.
 
 =head3 Narrow (format)
 
@@ -215,10 +215,10 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Abbreviated (stand-alone)
 
-  1kv
-  2kv
-  3kv
-  4kv
+  1. kv.
+  2. kv.
+  3. kv.
+  4. kv.
 
 =head3 Narrow (stand-alone)
 
@@ -237,7 +237,7 @@ Croatian Bosnia & Herzegovina locale.
 =head3 Abbreviated (format)
 
   pr. Kr.
-  p. Kr.
+  po. Kr.
 
 =head3 Narrow (format)
 
@@ -266,18 +266,18 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05.02.2008.
-   1995-12-22T09:05:02 = 22.12.1995.
-  -0010-09-15T04:44:23 = 15.09.-10.
+   2008-02-05T18:30:30 = 5. 2. 08.
+   1995-12-22T09:05:02 = 22. 12. 95.
+  -0010-09-15T04:44:23 = 15. 9. -10.
 
 
 =head2 Time Formats
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 18:30:30 UTC
-   1995-12-22T09:05:02 = 09:05:02 UTC
-  -0010-09-15T04:44:23 = 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 (UTC)
+   1995-12-22T09:05:02 = 09:05:02 (UTC)
+  -0010-09-15T04:44:23 = 04:44:23 (UTC)
 
 =head3 Long
 
@@ -302,9 +302,9 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = utorak, 5. veljače 2008. u 18:30:30 UTC
-   1995-12-22T09:05:02 = petak, 22. prosinca 1995. u 09:05:02 UTC
-  -0010-09-15T04:44:23 = subota, 15. rujna -10. u 04:44:23 UTC
+   2008-02-05T18:30:30 = utorak, 5. veljače 2008. u 18:30:30 (UTC)
+   1995-12-22T09:05:02 = petak, 22. prosinca 1995. u 09:05:02 (UTC)
+  -0010-09-15T04:44:23 = subota, 15. rujna -10. u 04:44:23 (UTC)
 
 =head3 Long
 
@@ -320,9 +320,9 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05.02.2008. 18:30
-   1995-12-22T09:05:02 = 22.12.1995. 09:05
-  -0010-09-15T04:44:23 = 15.09.-10. 04:44
+   2008-02-05T18:30:30 = 5. 2. 08. 18:30
+   1995-12-22T09:05:02 = 22. 12. 95. 09:05
+  -0010-09-15T04:44:23 = 15. 9. -10. 04:44
 
 
 =head2 Available Formats
@@ -365,26 +365,26 @@ Croatian Bosnia & Herzegovina locale.
 
 =head3 Gy (y. G)
 
-   2008-02-05T18:30:30 = 2008. p. Kr.
-   1995-12-22T09:05:02 = 1995. p. Kr.
+   2008-02-05T18:30:30 = 2008. po. Kr.
+   1995-12-22T09:05:02 = 1995. po. Kr.
   -0010-09-15T04:44:23 = -10. pr. Kr.
 
 =head3 GyMMM (LLL y. G)
 
-   2008-02-05T18:30:30 = velj 2008. p. Kr.
-   1995-12-22T09:05:02 = pro 1995. p. Kr.
+   2008-02-05T18:30:30 = velj 2008. po. Kr.
+   1995-12-22T09:05:02 = pro 1995. po. Kr.
   -0010-09-15T04:44:23 = ruj -10. pr. Kr.
 
 =head3 GyMMMEd (E, d. MMM y. G)
 
-   2008-02-05T18:30:30 = uto, 5. velj 2008. p. Kr.
-   1995-12-22T09:05:02 = pet, 22. pro 1995. p. Kr.
+   2008-02-05T18:30:30 = uto, 5. velj 2008. po. Kr.
+   1995-12-22T09:05:02 = pet, 22. pro 1995. po. Kr.
   -0010-09-15T04:44:23 = sub, 15. ruj -10. pr. Kr.
 
 =head3 GyMMMd (d. MMM y. G)
 
-   2008-02-05T18:30:30 = 5. velj 2008. p. Kr.
-   1995-12-22T09:05:02 = 22. pro 1995. p. Kr.
+   2008-02-05T18:30:30 = 5. velj 2008. po. Kr.
+   1995-12-22T09:05:02 = 22. pro 1995. po. Kr.
   -0010-09-15T04:44:23 = 15. ruj -10. pr. Kr.
 
 =head3 H (HH)
@@ -423,11 +423,11 @@ Croatian Bosnia & Herzegovina locale.
    1995-12-22T09:05:02 = 12.
   -0010-09-15T04:44:23 = 9.
 
-=head3 MEd (E, dd.MM.)
+=head3 MEd (E, dd. MM.)
 
-   2008-02-05T18:30:30 = uto, 05.02.
-   1995-12-22T09:05:02 = pet, 22.12.
-  -0010-09-15T04:44:23 = sub, 15.09.
+   2008-02-05T18:30:30 = uto, 05. 02.
+   1995-12-22T09:05:02 = pet, 22. 12.
+  -0010-09-15T04:44:23 = sub, 15. 09.
 
 =head3 MMM (LLL)
 
@@ -447,6 +447,12 @@ Croatian Bosnia & Herzegovina locale.
    1995-12-22T09:05:02 = pet, 22. prosinca
   -0010-09-15T04:44:23 = sub, 15. rujna
 
+=head3 MMMMW (W. 'tjedan' 'u' MMM)
+
+   2008-02-05T18:30:30 = 1. tjedan u velj
+   1995-12-22T09:05:02 = 3. tjedan u pro
+  -0010-09-15T04:44:23 = 2. tjedan u ruj
+
 =head3 MMMMd (d. MMMM)
 
    2008-02-05T18:30:30 = 5. veljače
@@ -465,11 +471,11 @@ Croatian Bosnia & Herzegovina locale.
    1995-12-22T09:05:02 = 22. 12.
   -0010-09-15T04:44:23 = 15. 09.
 
-=head3 Md (dd.MM.)
+=head3 Md (dd. MM.)
 
-   2008-02-05T18:30:30 = 05.02.
-   1995-12-22T09:05:02 = 22.12.
-  -0010-09-15T04:44:23 = 15.09.
+   2008-02-05T18:30:30 = 05. 02.
+   1995-12-22T09:05:02 = 22. 12.
+  -0010-09-15T04:44:23 = 15. 09.
 
 =head3 d (d.)
 
@@ -519,17 +525,17 @@ Croatian Bosnia & Herzegovina locale.
    1995-12-22T09:05:02 = 1995.
   -0010-09-15T04:44:23 = -10.
 
-=head3 yM (MM.y.)
+=head3 yM (MM. y.)
 
-   2008-02-05T18:30:30 = 02.2008.
-   1995-12-22T09:05:02 = 12.1995.
-  -0010-09-15T04:44:23 = 09.-10.
+   2008-02-05T18:30:30 = 02. 2008.
+   1995-12-22T09:05:02 = 12. 1995.
+  -0010-09-15T04:44:23 = 09. -10.
 
-=head3 yMEd (E, dd.MM.y.)
+=head3 yMEd (E, dd. MM. y.)
 
-   2008-02-05T18:30:30 = uto, 05.02.2008.
-   1995-12-22T09:05:02 = pet, 22.12.1995.
-  -0010-09-15T04:44:23 = sub, 15.09.-10.
+   2008-02-05T18:30:30 = uto, 05. 02. 2008.
+   1995-12-22T09:05:02 = pet, 22. 12. 1995.
+  -0010-09-15T04:44:23 = sub, 15. 09. -10.
 
 =head3 yMM (MM. y.)
 
@@ -561,23 +567,29 @@ Croatian Bosnia & Herzegovina locale.
    1995-12-22T09:05:02 = 22. pro 1995.
   -0010-09-15T04:44:23 = 15. ruj -10.
 
-=head3 yMd (dd.MM.y.)
+=head3 yMd (dd. MM. y.)
 
-   2008-02-05T18:30:30 = 05.02.2008.
-   1995-12-22T09:05:02 = 22.12.1995.
-  -0010-09-15T04:44:23 = 15.09.-10.
+   2008-02-05T18:30:30 = 05. 02. 2008.
+   1995-12-22T09:05:02 = 22. 12. 1995.
+  -0010-09-15T04:44:23 = 15. 09. -10.
 
 =head3 yQQQ (QQQ y.)
 
-   2008-02-05T18:30:30 = 1kv 2008.
-   1995-12-22T09:05:02 = 4kv 1995.
-  -0010-09-15T04:44:23 = 3kv -10.
+   2008-02-05T18:30:30 = 1. kv. 2008.
+   1995-12-22T09:05:02 = 4. kv. 1995.
+  -0010-09-15T04:44:23 = 3. kv. -10.
 
 =head3 yQQQQ (QQQQ y.)
 
    2008-02-05T18:30:30 = 1. kvartal 2008.
    1995-12-22T09:05:02 = 4. kvartal 1995.
   -0010-09-15T04:44:23 = 3. kvartal -10.
+
+=head3 yw (w. 'tjedan' 'u' y.)
+
+   2008-02-05T18:30:30 = 6. tjedan u 2008.
+   1995-12-22T09:05:02 = 51. tjedan u 1995.
+  -0010-09-15T04:44:23 = 37. tjedan u -10.
 
 
 =head2 Miscellaneous

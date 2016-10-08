@@ -447,6 +447,12 @@ Nama locale.
    1995-12-22T09:05:02 = Fr, Hôasoreǁkhâb 22
   -0010-09-15T04:44:23 = Sat, Taraǀkhuumûǁkhâb 15
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Feb
+   1995-12-22T09:05:02 = week 3 of Dec
+  -0010-09-15T04:44:23 = week 2 of Sep
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = ǃKhanǀgôab 5
@@ -566,6 +572,12 @@ Nama locale.
    2008-02-05T18:30:30 = 1ro kwartals 2008
    1995-12-22T09:05:02 = 4ǁî kwartals 1995
   -0010-09-15T04:44:23 = 3ǁî kwartals -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

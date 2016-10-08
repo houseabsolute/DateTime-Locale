@@ -236,13 +236,13 @@ Swahili Uganda locale.
 
 =head3 Abbreviated (format)
 
-  BC
-  AD
+  KK
+  BK
 
 =head3 Narrow (format)
 
-  BC
-  AD
+  KK
+  BK
 
 =head2 Date Formats
 
@@ -365,27 +365,27 @@ Swahili Uganda locale.
 
 =head3 Gy (y G)
 
-   2008-02-05T18:30:30 = 2008 AD
-   1995-12-22T09:05:02 = 1995 AD
-  -0010-09-15T04:44:23 = -10 BC
+   2008-02-05T18:30:30 = 2008 BK
+   1995-12-22T09:05:02 = 1995 BK
+  -0010-09-15T04:44:23 = -10 KK
 
 =head3 GyMMM (MMM y G)
 
-   2008-02-05T18:30:30 = Feb 2008 AD
-   1995-12-22T09:05:02 = Des 1995 AD
-  -0010-09-15T04:44:23 = Sep -10 BC
+   2008-02-05T18:30:30 = Feb 2008 BK
+   1995-12-22T09:05:02 = Des 1995 BK
+  -0010-09-15T04:44:23 = Sep -10 KK
 
 =head3 GyMMMEd (E, MMM d, y G)
 
-   2008-02-05T18:30:30 = Jumanne, Feb 5, 2008 AD
-   1995-12-22T09:05:02 = Ijumaa, Des 22, 1995 AD
-  -0010-09-15T04:44:23 = Jumamosi, Sep 15, -10 BC
+   2008-02-05T18:30:30 = Jumanne, Feb 5, 2008 BK
+   1995-12-22T09:05:02 = Ijumaa, Des 22, 1995 BK
+  -0010-09-15T04:44:23 = Jumamosi, Sep 15, -10 KK
 
 =head3 GyMMMd (d MMM y G)
 
-   2008-02-05T18:30:30 = 5 Feb 2008 AD
-   1995-12-22T09:05:02 = 22 Des 1995 AD
-  -0010-09-15T04:44:23 = 15 Sep -10 BC
+   2008-02-05T18:30:30 = 5 Feb 2008 BK
+   1995-12-22T09:05:02 = 22 Des 1995 BK
+  -0010-09-15T04:44:23 = 15 Sep -10 KK
 
 =head3 H (HH)
 
@@ -446,6 +446,12 @@ Swahili Uganda locale.
    2008-02-05T18:30:30 = Jumanne, 5 Februari
    1995-12-22T09:05:02 = Ijumaa, 22 Desemba
   -0010-09-15T04:44:23 = Jumamosi, 15 Septemba
+
+=head3 MMMMW ('wiki' W 'ya' MMM)
+
+   2008-02-05T18:30:30 = wiki 1 ya Feb
+   1995-12-22T09:05:02 = wiki 3 ya Des
+  -0010-09-15T04:44:23 = wiki 2 ya Sep
 
 =head3 MMMMd (d MMMM)
 
@@ -566,6 +572,12 @@ Swahili Uganda locale.
    2008-02-05T18:30:30 = Robo ya 1 2008
    1995-12-22T09:05:02 = Robo ya 4 1995
   -0010-09-15T04:44:23 = Robo ya 3 -10
+
+=head3 yw ('wiki' w 'ya' y)
+
+   2008-02-05T18:30:30 = wiki 6 ya 2008
+   1995-12-22T09:05:02 = wiki 51 ya 1995
+  -0010-09-15T04:44:23 = wiki 37 ya -10
 
 
 =head2 Miscellaneous

@@ -40,13 +40,13 @@ Uzbek locale.
 
 =head3 Abbreviated (format)
 
-  Du
-  Se
-  Ch
-  Pa
-  Ju
-  Sh
-  Ya
+  Dush
+  Sesh
+  Chor
+  Pay
+  Jum
+  Shan
+  Yak
 
 =head3 Narrow (format)
 
@@ -71,13 +71,13 @@ Uzbek locale.
 
 =head3 Abbreviated (stand-alone)
 
-  Du
-  Se
-  Ch
-  Pa
-  Ju
-  Sh
-  Ya
+  Dush
+  Sesh
+  Chor
+  Pay
+  Jum
+  Shan
+  Yak
 
 =head3 Narrow (stand-alone)
 
@@ -101,8 +101,8 @@ Uzbek locale.
   iyun
   iyul
   avgust
-  Sentabr
-  Oktabr
+  sentabr
+  oktabr
   noyabr
   dekabr
 
@@ -154,17 +154,17 @@ Uzbek locale.
 
 =head3 Abbreviated (stand-alone)
 
-  Yanv
+  Yan
   Fev
   Mar
   Apr
   May
-  Iyun
-  Iyul
+  Iyn
+  Iyl
   Avg
   Sen
   Okt
-  Noya
+  Noy
   Dek
 
 =head3 Narrow (stand-alone)
@@ -248,15 +248,15 @@ Uzbek locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = seshanba, 2008 fevral 05
-   1995-12-22T09:05:02 = juma, 1995 dekabr 22
-  -0010-09-15T04:44:23 = shanba, -10 Sentabr 15
+   2008-02-05T18:30:30 = seshanba, 5-fevral, 2008
+   1995-12-22T09:05:02 = juma, 22-dekabr, 1995
+  -0010-09-15T04:44:23 = shanba, 15-sentabr, -10
 
 =head3 Long
 
    2008-02-05T18:30:30 = 5-fevral, 2008
    1995-12-22T09:05:02 = 22-dekabr, 1995
-  -0010-09-15T04:44:23 = 15-Sentabr, -10
+  -0010-09-15T04:44:23 = 15-sentabr, -10
 
 =head3 Medium
 
@@ -302,15 +302,15 @@ Uzbek locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = seshanba, 2008 fevral 05, 18:30:30 (UTC)
-   1995-12-22T09:05:02 = juma, 1995 dekabr 22, 9:05:02 (UTC)
-  -0010-09-15T04:44:23 = shanba, -10 Sentabr 15, 4:44:23 (UTC)
+   2008-02-05T18:30:30 = seshanba, 5-fevral, 2008, 18:30:30 (UTC)
+   1995-12-22T09:05:02 = juma, 22-dekabr, 1995, 9:05:02 (UTC)
+  -0010-09-15T04:44:23 = shanba, 15-sentabr, -10, 4:44:23 (UTC)
 
 =head3 Long
 
    2008-02-05T18:30:30 = 5-fevral, 2008, 18:30:30 (UTC)
    1995-12-22T09:05:02 = 22-dekabr, 1995, 9:05:02 (UTC)
-  -0010-09-15T04:44:23 = 15-Sentabr, -10, 4:44:23 (UTC)
+  -0010-09-15T04:44:23 = 15-sentabr, -10, 4:44:23 (UTC)
 
 =head3 Medium
 
@@ -329,39 +329,39 @@ Uzbek locale.
 
 =head3 E (ccc)
 
-   2008-02-05T18:30:30 = Se
-   1995-12-22T09:05:02 = Ju
-  -0010-09-15T04:44:23 = Sh
+   2008-02-05T18:30:30 = Sesh
+   1995-12-22T09:05:02 = Jum
+  -0010-09-15T04:44:23 = Shan
 
 =head3 EHm (E, HH:mm)
 
-   2008-02-05T18:30:30 = Se, 18:30
-   1995-12-22T09:05:02 = Ju, 09:05
-  -0010-09-15T04:44:23 = Sh, 04:44
+   2008-02-05T18:30:30 = Sesh, 18:30
+   1995-12-22T09:05:02 = Jum, 09:05
+  -0010-09-15T04:44:23 = Shan, 04:44
 
 =head3 EHms (E, HH:mm:ss)
 
-   2008-02-05T18:30:30 = Se, 18:30:30
-   1995-12-22T09:05:02 = Ju, 09:05:02
-  -0010-09-15T04:44:23 = Sh, 04:44:23
+   2008-02-05T18:30:30 = Sesh, 18:30:30
+   1995-12-22T09:05:02 = Jum, 09:05:02
+  -0010-09-15T04:44:23 = Shan, 04:44:23
 
 =head3 Ed (d, E)
 
-   2008-02-05T18:30:30 = 5, Se
-   1995-12-22T09:05:02 = 22, Ju
-  -0010-09-15T04:44:23 = 15, Sh
+   2008-02-05T18:30:30 = 5, Sesh
+   1995-12-22T09:05:02 = 22, Jum
+  -0010-09-15T04:44:23 = 15, Shan
 
 =head3 Ehm (E, h:mm a)
 
-   2008-02-05T18:30:30 = Se, 6:30 TK
-   1995-12-22T09:05:02 = Ju, 9:05 TO
-  -0010-09-15T04:44:23 = Sh, 4:44 TO
+   2008-02-05T18:30:30 = Sesh, 6:30 TK
+   1995-12-22T09:05:02 = Jum, 9:05 TO
+  -0010-09-15T04:44:23 = Shan, 4:44 TO
 
 =head3 Ehms (E, h:mm:ss a)
 
-   2008-02-05T18:30:30 = Se, 6:30:30 TK
-   1995-12-22T09:05:02 = Ju, 9:05:02 TO
-  -0010-09-15T04:44:23 = Sh, 4:44:23 TO
+   2008-02-05T18:30:30 = Sesh, 6:30:30 TK
+   1995-12-22T09:05:02 = Jum, 9:05:02 TO
+  -0010-09-15T04:44:23 = Shan, 4:44:23 TO
 
 =head3 Gy (G y)
 
@@ -377,9 +377,9 @@ Uzbek locale.
 
 =head3 GyMMMEd (E, d-MMM, G y)
 
-   2008-02-05T18:30:30 = Se, 5-fev, milodiy 2008
-   1995-12-22T09:05:02 = Ju, 22-dek, milodiy 1995
-  -0010-09-15T04:44:23 = Sh, 15-sen, m.a. -10
+   2008-02-05T18:30:30 = Sesh, 5-fev, milodiy 2008
+   1995-12-22T09:05:02 = Jum, 22-dek, milodiy 1995
+  -0010-09-15T04:44:23 = Shan, 15-sen, m.a. -10
 
 =head3 GyMMMd (d-MMM, G y)
 
@@ -425,9 +425,9 @@ Uzbek locale.
 
 =head3 MEd (E, dd/MM)
 
-   2008-02-05T18:30:30 = Se, 05/02
-   1995-12-22T09:05:02 = Ju, 22/12
-  -0010-09-15T04:44:23 = Sh, 15/09
+   2008-02-05T18:30:30 = Sesh, 05/02
+   1995-12-22T09:05:02 = Jum, 22/12
+  -0010-09-15T04:44:23 = Shan, 15/09
 
 =head3 MMM (LLL)
 
@@ -437,15 +437,21 @@ Uzbek locale.
 
 =head3 MMMEd (E, d-MMM)
 
-   2008-02-05T18:30:30 = Se, 5-fev
-   1995-12-22T09:05:02 = Ju, 22-dek
-  -0010-09-15T04:44:23 = Sh, 15-sen
+   2008-02-05T18:30:30 = Sesh, 5-fev
+   1995-12-22T09:05:02 = Jum, 22-dek
+  -0010-09-15T04:44:23 = Shan, 15-sen
+
+=head3 MMMMW (MMM, W-'hafta')
+
+   2008-02-05T18:30:30 = fev, 1-hafta
+   1995-12-22T09:05:02 = dek, 3-hafta
+  -0010-09-15T04:44:23 = sen, 2-hafta
 
 =head3 MMMMd (d-MMMM)
 
    2008-02-05T18:30:30 = 5-fevral
    1995-12-22T09:05:02 = 22-dekabr
-  -0010-09-15T04:44:23 = 15-Sentabr
+  -0010-09-15T04:44:23 = 15-sentabr
 
 =head3 MMMd (d-MMM)
 
@@ -483,17 +489,17 @@ Uzbek locale.
    1995-12-22T09:05:02 = 9:05:02 TO
   -0010-09-15T04:44:23 = 4:44:23 TO
 
-=head3 hmsv (h:mm:ss (v))
+=head3 hmsv (h:mm:ss a (v))
 
-   2008-02-05T18:30:30 = 6:30:30 (UTC)
-   1995-12-22T09:05:02 = 9:05:02 (UTC)
-  -0010-09-15T04:44:23 = 4:44:23 (UTC)
+   2008-02-05T18:30:30 = 6:30:30 TK (UTC)
+   1995-12-22T09:05:02 = 9:05:02 TO (UTC)
+  -0010-09-15T04:44:23 = 4:44:23 TO (UTC)
 
-=head3 hmv (h:mm (v))
+=head3 hmv (h:mm a (v))
 
-   2008-02-05T18:30:30 = 6:30 (UTC)
-   1995-12-22T09:05:02 = 9:05 (UTC)
-  -0010-09-15T04:44:23 = 4:44 (UTC)
+   2008-02-05T18:30:30 = 6:30 TK (UTC)
+   1995-12-22T09:05:02 = 9:05 TO (UTC)
+  -0010-09-15T04:44:23 = 4:44 TO (UTC)
 
 =head3 ms (mm:ss)
 
@@ -515,9 +521,9 @@ Uzbek locale.
 
 =head3 yMEd (E, dd/MM/y)
 
-   2008-02-05T18:30:30 = Se, 05/02/2008
-   1995-12-22T09:05:02 = Ju, 22/12/1995
-  -0010-09-15T04:44:23 = Sh, 15/09/-10
+   2008-02-05T18:30:30 = Sesh, 05/02/2008
+   1995-12-22T09:05:02 = Jum, 22/12/1995
+  -0010-09-15T04:44:23 = Shan, 15/09/-10
 
 =head3 yMMM (MMM, y)
 
@@ -527,15 +533,15 @@ Uzbek locale.
 
 =head3 yMMMEd (E, d-MMM, y)
 
-   2008-02-05T18:30:30 = Se, 5-fev, 2008
-   1995-12-22T09:05:02 = Ju, 22-dek, 1995
-  -0010-09-15T04:44:23 = Sh, 15-sen, -10
+   2008-02-05T18:30:30 = Sesh, 5-fev, 2008
+   1995-12-22T09:05:02 = Jum, 22-dek, 1995
+  -0010-09-15T04:44:23 = Shan, 15-sen, -10
 
 =head3 yMMMM (MMMM, y)
 
    2008-02-05T18:30:30 = fevral, 2008
    1995-12-22T09:05:02 = dekabr, 1995
-  -0010-09-15T04:44:23 = Sentabr, -10
+  -0010-09-15T04:44:23 = sentabr, -10
 
 =head3 yMMMd (d-MMM, y)
 
@@ -560,6 +566,12 @@ Uzbek locale.
    2008-02-05T18:30:30 = 2008, 1-chorak
    1995-12-22T09:05:02 = 1995, 4-chorak
   -0010-09-15T04:44:23 = -10, 3-chorak
+
+=head3 yw (y, w-'hafta')
+
+   2008-02-05T18:30:30 = 2008, 6-hafta
+   1995-12-22T09:05:02 = 1995, 51-hafta
+  -0010-09-15T04:44:23 = -10, 37-hafta
 
 
 =head2 Miscellaneous

@@ -441,6 +441,12 @@ Lower Sorbian locale.
    1995-12-22T09:05:02 = pět, 22. dec.
   -0010-09-15T04:44:23 = sob, 15. sep.
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of feb.
+   1995-12-22T09:05:02 = week 3 of dec.
+  -0010-09-15T04:44:23 = week 2 of sep.
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = februara 5
@@ -560,6 +566,12 @@ Lower Sorbian locale.
    2008-02-05T18:30:30 = 1. kwartal 2008
    1995-12-22T09:05:02 = 4. kwartal 1995
   -0010-09-15T04:44:23 = 3. kwartal -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

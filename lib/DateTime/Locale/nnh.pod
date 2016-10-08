@@ -441,6 +441,12 @@ Ngiemboon locale.
    1995-12-22T09:05:02 = saŋ lùm 22, mvfò màga lyɛ̌ʼ
   -0010-09-15T04:44:23 = saŋ ngwɔ̀ʼ mbÿɛ 15, màga lyɛ̌ʼ
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of saŋ kàg ngwóŋ
+   1995-12-22T09:05:02 = week 3 of saŋ lùm
+  -0010-09-15T04:44:23 = week 2 of saŋ ngwɔ̀ʼ mbÿɛ
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = saŋ kàg ngwóŋ 5
@@ -560,6 +566,12 @@ Ngiemboon locale.
    2008-02-05T18:30:30 = 2008 Q1
    1995-12-22T09:05:02 = 1995 Q4
   -0010-09-15T04:44:23 = -10 Q3
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

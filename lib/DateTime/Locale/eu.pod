@@ -71,13 +71,13 @@ Basque locale.
 
 =head3 Abbreviated (stand-alone)
 
-  Al.
-  Ar.
-  Az.
-  Og.
-  Or.
-  Lr.
-  Ig.
+  al.
+  ar.
+  az.
+  og.
+  or.
+  lr.
+  ig.
 
 =head3 Narrow (stand-alone)
 
@@ -93,18 +93,18 @@ Basque locale.
 
 =head3 Wide (format)
 
-  urtarrilak
-  otsailak
-  martxoak
-  apirilak
-  maiatzak
-  ekainak
-  uztailak
-  abuztuak
-  irailak
-  urriak
-  azaroak
-  abenduak
+  urtarrila
+  otsaila
+  martxoa
+  apirila
+  maiatza
+  ekaina
+  uztaila
+  abuztua
+  iraila
+  urria
+  azaroa
+  abendua
 
 =head3 Abbreviated (format)
 
@@ -139,7 +139,7 @@ Basque locale.
 
 =head3 Wide (stand-alone)
 
-  Urtarrila
+  urtarrila
   Otsaila
   Martxoa
   Apirila
@@ -154,18 +154,18 @@ Basque locale.
 
 =head3 Abbreviated (stand-alone)
 
-  Urt.
-  Ots.
-  Mar.
-  Api.
-  Mai.
-  Eka.
-  Uzt.
-  Abu.
-  Ira.
-  Urr.
-  Aza.
-  Abe.
+  urt.
+  ots.
+  mar.
+  api.
+  mai.
+  eka.
+  uzt.
+  abu.
+  ira.
+  urr.
+  aza.
+  abe.
 
 =head3 Narrow (stand-alone)
 
@@ -232,7 +232,7 @@ Basque locale.
 =head3 Wide (format)
 
   K.a.
-  K.o.
+  Kristo ondoren
 
 =head3 Abbreviated (format)
 
@@ -248,15 +248,15 @@ Basque locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak 5, asteartea
-   1995-12-22T09:05:02 = 1995(e)ko abenduak 22, ostirala
-  -0010-09-15T04:44:23 = -10(e)ko irailak 15, larunbata
+   2008-02-05T18:30:30 = 2008(e)ko otsaila 5, asteartea
+   1995-12-22T09:05:02 = 1995(e)ko abendua 22, ostirala
+  -0010-09-15T04:44:23 = -10(e)ko iraila 15, larunbata
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak 5
-   1995-12-22T09:05:02 = 1995(e)ko abenduak 22
-  -0010-09-15T04:44:23 = -10(e)ko irailak 15
+   2008-02-05T18:30:30 = 2008(e)ko otsaila 5
+   1995-12-22T09:05:02 = 1995(e)ko abendua 22
+  -0010-09-15T04:44:23 = -10(e)ko iraila 15
 
 =head3 Medium
 
@@ -266,9 +266,9 @@ Basque locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 2008/02/05
-   1995-12-22T09:05:02 = 1995/12/22
-  -0010-09-15T04:44:23 = -10/09/15
+   2008-02-05T18:30:30 = 08/2/5
+   1995-12-22T09:05:02 = 95/12/22
+  -0010-09-15T04:44:23 = -10/9/15
 
 
 =head2 Time Formats
@@ -302,15 +302,15 @@ Basque locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak 5, asteartea 18:30:30 (UTC)
-   1995-12-22T09:05:02 = 1995(e)ko abenduak 22, ostirala 09:05:02 (UTC)
-  -0010-09-15T04:44:23 = -10(e)ko irailak 15, larunbata 04:44:23 (UTC)
+   2008-02-05T18:30:30 = 2008(e)ko otsaila 5, asteartea 18:30:30 (UTC)
+   1995-12-22T09:05:02 = 1995(e)ko abendua 22, ostirala 09:05:02 (UTC)
+  -0010-09-15T04:44:23 = -10(e)ko iraila 15, larunbata 04:44:23 (UTC)
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak 5 18:30:30 (UTC)
-   1995-12-22T09:05:02 = 1995(e)ko abenduak 22 09:05:02 (UTC)
-  -0010-09-15T04:44:23 = -10(e)ko irailak 15 04:44:23 (UTC)
+   2008-02-05T18:30:30 = 2008(e)ko otsaila 5 18:30:30 (UTC)
+   1995-12-22T09:05:02 = 1995(e)ko abendua 22 09:05:02 (UTC)
+  -0010-09-15T04:44:23 = -10(e)ko iraila 15 04:44:23 (UTC)
 
 =head3 Medium
 
@@ -320,18 +320,18 @@ Basque locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 2008/02/05 18:30
-   1995-12-22T09:05:02 = 1995/12/22 09:05
-  -0010-09-15T04:44:23 = -10/09/15 04:44
+   2008-02-05T18:30:30 = 08/2/5 18:30
+   1995-12-22T09:05:02 = 95/12/22 09:05
+  -0010-09-15T04:44:23 = -10/9/15 04:44
 
 
 =head2 Available Formats
 
 =head3 E (ccc)
 
-   2008-02-05T18:30:30 = Ar.
-   1995-12-22T09:05:02 = Or.
-  -0010-09-15T04:44:23 = Lr.
+   2008-02-05T18:30:30 = ar.
+   1995-12-22T09:05:02 = or.
+  -0010-09-15T04:44:23 = lr.
 
 =head3 EHm (E HH:mm)
 
@@ -431,9 +431,9 @@ Basque locale.
 
 =head3 MMM (LLL)
 
-   2008-02-05T18:30:30 = Ots.
-   1995-12-22T09:05:02 = Abe.
-  -0010-09-15T04:44:23 = Ira.
+   2008-02-05T18:30:30 = ots.
+   1995-12-22T09:05:02 = abe.
+  -0010-09-15T04:44:23 = ira.
 
 =head3 MMMEd (MMM d, E)
 
@@ -441,11 +441,17 @@ Basque locale.
    1995-12-22T09:05:02 = abe. 22, or.
   -0010-09-15T04:44:23 = ira. 15, lr.
 
+=head3 MMMMW (MMM'ren' 'astea' W)
+
+   2008-02-05T18:30:30 = ots.ren astea 1
+   1995-12-22T09:05:02 = abe.ren astea 3
+  -0010-09-15T04:44:23 = ira.ren astea 2
+
 =head3 MMMMd (MMMM d)
 
-   2008-02-05T18:30:30 = otsailak 5
-   1995-12-22T09:05:02 = abenduak 22
-  -0010-09-15T04:44:23 = irailak 15
+   2008-02-05T18:30:30 = otsaila 5
+   1995-12-22T09:05:02 = abendua 22
+  -0010-09-15T04:44:23 = iraila 15
 
 =head3 MMMd (MMM d)
 
@@ -533,21 +539,21 @@ Basque locale.
 
 =head3 yMMMM (y('e')'ko' MMMM)
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak
-   1995-12-22T09:05:02 = 1995(e)ko abenduak
-  -0010-09-15T04:44:23 = -10(e)ko irailak
+   2008-02-05T18:30:30 = 2008(e)ko otsaila
+   1995-12-22T09:05:02 = 1995(e)ko abendua
+  -0010-09-15T04:44:23 = -10(e)ko iraila
 
 =head3 yMMMMEd (y('e')'ko' MMMM d, E)
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak 5, ar.
-   1995-12-22T09:05:02 = 1995(e)ko abenduak 22, or.
-  -0010-09-15T04:44:23 = -10(e)ko irailak 15, lr.
+   2008-02-05T18:30:30 = 2008(e)ko otsaila 5, ar.
+   1995-12-22T09:05:02 = 1995(e)ko abendua 22, or.
+  -0010-09-15T04:44:23 = -10(e)ko iraila 15, lr.
 
 =head3 yMMMMd (y('e')'ko' MMMM d)
 
-   2008-02-05T18:30:30 = 2008(e)ko otsailak 5
-   1995-12-22T09:05:02 = 1995(e)ko abenduak 22
-  -0010-09-15T04:44:23 = -10(e)ko irailak 15
+   2008-02-05T18:30:30 = 2008(e)ko otsaila 5
+   1995-12-22T09:05:02 = 1995(e)ko abendua 22
+  -0010-09-15T04:44:23 = -10(e)ko iraila 15
 
 =head3 yMMMd (y MMM d)
 
@@ -572,6 +578,12 @@ Basque locale.
    2008-02-05T18:30:30 = 2008(e)ko 1. hiruhilekoa
    1995-12-22T09:05:02 = 1995(e)ko 4. hiruhilekoa
   -0010-09-15T04:44:23 = -10(e)ko 3. hiruhilekoa
+
+=head3 yw (w/y 'astea')
+
+   2008-02-05T18:30:30 = 6/2008 astea
+   1995-12-22T09:05:02 = 51/1995 astea
+  -0010-09-15T04:44:23 = 37/-10 astea
 
 
 =head2 Miscellaneous

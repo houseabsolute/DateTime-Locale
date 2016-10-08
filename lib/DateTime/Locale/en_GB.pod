@@ -423,11 +423,11 @@ English United Kingdom locale.
    1995-12-22T09:05:02 = 12
   -0010-09-15T04:44:23 = 9
 
-=head3 MEd (E, dd/MM)
+=head3 MEd (E dd/MM)
 
-   2008-02-05T18:30:30 = Tue, 05/02
-   1995-12-22T09:05:02 = Fri, 22/12
-  -0010-09-15T04:44:23 = Sat, 15/09
+   2008-02-05T18:30:30 = Tue 05/02
+   1995-12-22T09:05:02 = Fri 22/12
+  -0010-09-15T04:44:23 = Sat 15/09
 
 =head3 MMM (LLL)
 
@@ -435,11 +435,17 @@ English United Kingdom locale.
    1995-12-22T09:05:02 = Dec
   -0010-09-15T04:44:23 = Sep
 
-=head3 MMMEd (E, d MMM)
+=head3 MMMEd (E d MMM)
 
-   2008-02-05T18:30:30 = Tue, 5 Feb
-   1995-12-22T09:05:02 = Fri, 22 Dec
-  -0010-09-15T04:44:23 = Sat, 15 Sep
+   2008-02-05T18:30:30 = Tue 5 Feb
+   1995-12-22T09:05:02 = Fri 22 Dec
+  -0010-09-15T04:44:23 = Sat 15 Sep
+
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Feb
+   1995-12-22T09:05:02 = week 3 of Dec
+  -0010-09-15T04:44:23 = week 2 of Sep
 
 =head3 MMMMd (d MMMM)
 
@@ -566,6 +572,12 @@ English United Kingdom locale.
    2008-02-05T18:30:30 = 1st quarter 2008
    1995-12-22T09:05:02 = 4th quarter 1995
   -0010-09-15T04:44:23 = 3rd quarter -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

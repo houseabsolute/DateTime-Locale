@@ -186,10 +186,10 @@ French Mali locale.
 
 =head3 Wide (format)
 
-  1er trimestre
-  2e trimestre
-  3e trimestre
-  4e trimestre
+  le 1er trimestre
+  le 2ème trimestre
+  le 3ème trimestre
+  le 4ème trimestre
 
 =head3 Abbreviated (format)
 
@@ -209,9 +209,9 @@ French Mali locale.
 =head3 Wide (stand-alone)
 
   1er trimestre
-  2e trimestre
-  3e trimestre
-  4e trimestre
+  2ème trimestre
+  3ème trimestre
+  4ème trimestre
 
 =head3 Abbreviated (stand-alone)
 
@@ -314,15 +314,15 @@ French Mali locale.
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 févr. 2008 à 18:30:30
-   1995-12-22T09:05:02 = 22 déc. 1995 à 09:05:02
-  -0010-09-15T04:44:23 = 15 sept. -10 à 04:44:23
+   2008-02-05T18:30:30 = 5 févr. 2008, 18:30:30
+   1995-12-22T09:05:02 = 22 déc. 1995, 09:05:02
+  -0010-09-15T04:44:23 = 15 sept. -10, 04:44:23
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05/02/2008 18:30
-   1995-12-22T09:05:02 = 22/12/1995 09:05
-  -0010-09-15T04:44:23 = 15/09/-10 04:44
+   2008-02-05T18:30:30 = 05/02/2008, 18:30
+   1995-12-22T09:05:02 = 22/12/1995, 09:05
+  -0010-09-15T04:44:23 = 15/09/-10, 04:44
 
 
 =head2 Available Formats
@@ -441,6 +441,12 @@ French Mali locale.
    1995-12-22T09:05:02 = ven. 22 déc.
   -0010-09-15T04:44:23 = sam. 15 sept.
 
+=head3 MMMMW ('semaine' W 'de' MMM)
+
+   2008-02-05T18:30:30 = semaine 1 de févr.
+   1995-12-22T09:05:02 = semaine 3 de déc.
+  -0010-09-15T04:44:23 = semaine 2 de sept.
+
 =head3 MMMMd (d MMMM)
 
    2008-02-05T18:30:30 = 5 février
@@ -557,9 +563,15 @@ French Mali locale.
 
 =head3 yQQQQ (QQQQ y)
 
-   2008-02-05T18:30:30 = 1er trimestre 2008
-   1995-12-22T09:05:02 = 4e trimestre 1995
-  -0010-09-15T04:44:23 = 3e trimestre -10
+   2008-02-05T18:30:30 = le 1er trimestre 2008
+   1995-12-22T09:05:02 = le 4ème trimestre 1995
+  -0010-09-15T04:44:23 = le 3ème trimestre -10
+
+=head3 yw ('semaine' w 'de' y)
+
+   2008-02-05T18:30:30 = semaine 6 de 2008
+   1995-12-22T09:05:02 = semaine 51 de 1995
+  -0010-09-15T04:44:23 = semaine 37 de -10
 
 
 =head2 Miscellaneous

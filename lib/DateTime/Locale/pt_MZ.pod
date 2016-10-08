@@ -447,6 +447,12 @@ Portuguese Mozambique locale.
    1995-12-22T09:05:02 = sexta, 22 de dezembro
   -0010-09-15T04:44:23 = sábado, 15 de setembro
 
+=head3 MMMMW (W.'ª' 'semana' 'de' MMM)
+
+   2008-02-05T18:30:30 = 1.ª semana de fev
+   1995-12-22T09:05:02 = 3.ª semana de dez
+  -0010-09-15T04:44:23 = 2.ª semana de set
+
 =head3 MMMMd (d 'de' MMMM)
 
    2008-02-05T18:30:30 = 5 de fevereiro
@@ -596,6 +602,12 @@ Portuguese Mozambique locale.
    2008-02-05T18:30:30 = 1.º trimestre de 2008
    1995-12-22T09:05:02 = 4.º trimestre de 1995
   -0010-09-15T04:44:23 = 3.º trimestre de -10
+
+=head3 yw (w.'ª' 'semana' 'de' y)
+
+   2008-02-05T18:30:30 = 6.ª semana de 2008
+   1995-12-22T09:05:02 = 51.ª semana de 1995
+  -0010-09-15T04:44:23 = 37.ª semana de -10
 
 
 =head2 Miscellaneous

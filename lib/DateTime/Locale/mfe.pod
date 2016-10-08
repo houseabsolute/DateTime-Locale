@@ -447,6 +447,12 @@ Morisyen locale.
    1995-12-22T09:05:02 = van 22 desam
   -0010-09-15T04:44:23 = sam 15 septam
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of fev
+   1995-12-22T09:05:02 = week 3 of des
+  -0010-09-15T04:44:23 = week 2 of sep
+
 =head3 MMMMd (d MMMM)
 
    2008-02-05T18:30:30 = 5 fevriye
@@ -584,6 +590,12 @@ Morisyen locale.
    2008-02-05T18:30:30 = 1e trimes 2008
    1995-12-22T09:05:02 = 4em trimes 1995
   -0010-09-15T04:44:23 = 3em trimes -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

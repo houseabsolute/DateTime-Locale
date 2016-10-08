@@ -193,10 +193,10 @@ Cantonese Hong Kong SAR China locale.
 
 =head3 Abbreviated (format)
 
-  1季
-  2季
-  3季
-  4季
+  第1季
+  第2季
+  第3季
+  第4季
 
 =head3 Narrow (format)
 
@@ -215,10 +215,10 @@ Cantonese Hong Kong SAR China locale.
 
 =head3 Abbreviated (stand-alone)
 
-  1季
-  2季
-  3季
-  4季
+  第1季
+  第2季
+  第3季
+  第4季
 
 =head3 Narrow (stand-alone)
 
@@ -441,6 +441,12 @@ Cantonese Hong Kong SAR China locale.
    1995-12-22T09:05:02 = 12月22日 週五
   -0010-09-15T04:44:23 = 9月15日 週六
 
+=head3 MMMMW (M月第W個星期)
+
+   2008-02-05T18:30:30 = 2月第1個星期
+   1995-12-22T09:05:02 = 12月第3個星期
+  -0010-09-15T04:44:23 = 9月第2個星期
+
 =head3 MMMMd (M月d日)
 
    2008-02-05T18:30:30 = 2月5日
@@ -563,15 +569,21 @@ Cantonese Hong Kong SAR China locale.
 
 =head3 yQQQ (y年QQQ)
 
-   2008-02-05T18:30:30 = 2008年1季
-   1995-12-22T09:05:02 = 1995年4季
-  -0010-09-15T04:44:23 = -10年3季
+   2008-02-05T18:30:30 = 2008年第1季
+   1995-12-22T09:05:02 = 1995年第4季
+  -0010-09-15T04:44:23 = -10年第3季
 
 =head3 yQQQQ (y年QQQQ)
 
    2008-02-05T18:30:30 = 2008年第1季
    1995-12-22T09:05:02 = 1995年第4季
   -0010-09-15T04:44:23 = -10年第3季
+
+=head3 yw (y年第w個星期)
+
+   2008-02-05T18:30:30 = 2008年第6個星期
+   1995-12-22T09:05:02 = 1995年第51個星期
+  -0010-09-15T04:44:23 = -10年第37個星期
 
 
 =head2 Miscellaneous

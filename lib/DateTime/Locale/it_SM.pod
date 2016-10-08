@@ -61,13 +61,13 @@ Italian San Marino locale.
 
 =head3 Wide (stand-alone)
 
-  Lunedì
-  Martedì
-  Mercoledì
-  Giovedì
-  Venerdì
-  Sabato
-  Domenica
+  lunedì
+  martedì
+  mercoledì
+  giovedì
+  venerdì
+  sabato
+  domenica
 
 =head3 Abbreviated (stand-alone)
 
@@ -139,18 +139,18 @@ Italian San Marino locale.
 
 =head3 Wide (stand-alone)
 
-  Gennaio
-  Febbraio
-  Marzo
-  Aprile
-  Maggio
-  Giugno
-  Luglio
-  Agosto
-  Settembre
-  Ottobre
-  Novembre
-  Dicembre
+  gennaio
+  febbraio
+  marzo
+  aprile
+  maggio
+  giugno
+  luglio
+  agosto
+  settembre
+  ottobre
+  novembre
+  dicembre
 
 =head3 Abbreviated (stand-alone)
 
@@ -231,8 +231,8 @@ Italian San Marino locale.
 
 =head3 Wide (format)
 
-  a.C.
-  d.C.
+  avanti Cristo
+  dopo Cristo
 
 =head3 Abbreviated (format)
 
@@ -441,6 +441,12 @@ Italian San Marino locale.
    1995-12-22T09:05:02 = ven 22 dic
   -0010-09-15T04:44:23 = sab 15 set
 
+=head3 MMMMW ('settimana' W 'di' MMM)
+
+   2008-02-05T18:30:30 = settimana 1 di feb
+   1995-12-22T09:05:02 = settimana 3 di dic
+  -0010-09-15T04:44:23 = settimana 2 di set
+
 =head3 MMMMd (d MMMM)
 
    2008-02-05T18:30:30 = 5 febbraio
@@ -561,6 +567,12 @@ Italian San Marino locale.
    1995-12-22T09:05:02 = 4º trimestre 1995
   -0010-09-15T04:44:23 = 3º trimestre -10
 
+=head3 yw ('settimana' w 'del' y)
+
+   2008-02-05T18:30:30 = settimana 6 del 2008
+   1995-12-22T09:05:02 = settimana 51 del 1995
+  -0010-09-15T04:44:23 = settimana 37 del -10
+
 
 =head2 Miscellaneous
 
@@ -570,7 +582,7 @@ Yes
 
 =head3 Local first day of the week
 
-1 (Lunedì)
+1 (lunedì)
 
 =head1 SUPPORT
 

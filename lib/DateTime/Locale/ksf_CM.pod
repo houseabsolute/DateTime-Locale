@@ -441,6 +441,12 @@ Bafia Cameroon locale.
    1995-12-22T09:05:02 = júm 22 ŋ12
   -0010-09-15T04:44:23 = sam 15 ŋ9
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of ŋ2
+   1995-12-22T09:05:02 = week 3 of ŋ12
+  -0010-09-15T04:44:23 = week 2 of ŋ9
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = ŋwíí akǝ bɛ́ɛ 5
@@ -560,6 +566,12 @@ Bafia Cameroon locale.
    2008-02-05T18:30:30 = id́ɛ́n kǝbǝk kǝ ntɔ́ntɔ́ 2008
    1995-12-22T09:05:02 = idɛ́n kǝbǝk kǝ kǝnin 1995
   -0010-09-15T04:44:23 = idɛ́n kǝbǝk kǝ kǝráá -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

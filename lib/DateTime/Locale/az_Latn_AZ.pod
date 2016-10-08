@@ -232,17 +232,17 @@ Azerbaijani Azerbaijan Latin locale.
 =head3 Wide (format)
 
   eramızdan əvvəl
-  eramız
+  yeni era
 
 =head3 Abbreviated (format)
 
   e.ə.
-  b.e.
+  y.e.
 
 =head3 Narrow (format)
 
   e.ə.
-  b.e.
+  y.e.
 
 =head2 Date Formats
 
@@ -365,26 +365,26 @@ Azerbaijani Azerbaijan Latin locale.
 
 =head3 Gy (G y)
 
-   2008-02-05T18:30:30 = b.e. 2008
-   1995-12-22T09:05:02 = b.e. 1995
+   2008-02-05T18:30:30 = y.e. 2008
+   1995-12-22T09:05:02 = y.e. 1995
   -0010-09-15T04:44:23 = e.ə. -10
 
 =head3 GyMMM (G MMM y)
 
-   2008-02-05T18:30:30 = b.e. fev 2008
-   1995-12-22T09:05:02 = b.e. dek 1995
+   2008-02-05T18:30:30 = y.e. fev 2008
+   1995-12-22T09:05:02 = y.e. dek 1995
   -0010-09-15T04:44:23 = e.ə. sen -10
 
 =head3 GyMMMEd (G d MMM y, E)
 
-   2008-02-05T18:30:30 = b.e. 5 fev 2008, Ç.A.
-   1995-12-22T09:05:02 = b.e. 22 dek 1995, C.
+   2008-02-05T18:30:30 = y.e. 5 fev 2008, Ç.A.
+   1995-12-22T09:05:02 = y.e. 22 dek 1995, C.
   -0010-09-15T04:44:23 = e.ə. 15 sen -10, Ş.
 
 =head3 GyMMMd (G d MMM y)
 
-   2008-02-05T18:30:30 = b.e. 5 fev 2008
-   1995-12-22T09:05:02 = b.e. 22 dek 1995
+   2008-02-05T18:30:30 = y.e. 5 fev 2008
+   1995-12-22T09:05:02 = y.e. 22 dek 1995
   -0010-09-15T04:44:23 = e.ə. 15 sen -10
 
 =head3 H (HH)
@@ -440,6 +440,12 @@ Azerbaijani Azerbaijan Latin locale.
    2008-02-05T18:30:30 = 5 fev, Ç.A.
    1995-12-22T09:05:02 = 22 dek, C.
   -0010-09-15T04:44:23 = 15 sen, Ş.
+
+=head3 MMMMW (MMM, W 'həftə')
+
+   2008-02-05T18:30:30 = fev, 1 həftə
+   1995-12-22T09:05:02 = dek, 3 həftə
+  -0010-09-15T04:44:23 = sen, 2 həftə
 
 =head3 MMMMd (MMMM d)
 
@@ -560,6 +566,12 @@ Azerbaijani Azerbaijan Latin locale.
    2008-02-05T18:30:30 = 2008 1-ci kvartal
    1995-12-22T09:05:02 = 1995 4-cü kvartal
   -0010-09-15T04:44:23 = -10 3-cü kvartal
+
+=head3 yw (y, w 'həftə')
+
+   2008-02-05T18:30:30 = 2008, 6 həftə
+   1995-12-22T09:05:02 = 1995, 51 həftə
+  -0010-09-15T04:44:23 = -10, 37 həftə
 
 
 =head2 Miscellaneous

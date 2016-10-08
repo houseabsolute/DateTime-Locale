@@ -50,13 +50,13 @@ Oromo Kenya locale.
 
 =head3 Narrow (format)
 
-  M
-  T
   W
-  T
-  F
+  Q
+  R
+  K
+  J
   S
-  S
+  D
 
 
 =head3 Wide (stand-alone)
@@ -81,13 +81,13 @@ Oromo Kenya locale.
 
 =head3 Narrow (stand-alone)
 
-  M
-  T
   W
-  T
-  F
+  Q
+  R
+  K
+  J
   S
-  S
+  D
 
 =head2 Months
 
@@ -169,34 +169,34 @@ Oromo Kenya locale.
 
 =head3 Narrow (stand-alone)
 
-  J
+  A
+  G
+  B
+  E
+  C
+  W
+  A
+  H
   F
-  M
-  A
-  M
-  J
-  J
-  A
-  S
   O
-  N
-  D
+  S
+  M
 
 =head2 Quarters
 
 =head3 Wide (format)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  Kurmaana 1
+  Kurmaana 2
+  Kurmaana 3
+  Kurmaana 4
 
 =head3 Abbreviated (format)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  K1
+  K2
+  K3
+  K4
 
 =head3 Narrow (format)
 
@@ -208,10 +208,10 @@ Oromo Kenya locale.
 
 =head3 Wide (stand-alone)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  Kurmaana 1
+  Kurmaana 2
+  Kurmaana 3
+  Kurmaana 4
 
 =head3 Abbreviated (stand-alone)
 
@@ -231,18 +231,18 @@ Oromo Kenya locale.
 
 =head3 Wide (format)
 
-  KD
-  KB
+  Dheengadda Jeesu
+  CE
 
 =head3 Abbreviated (format)
 
   KD
-  KB
+  CE
 
 =head3 Narrow (format)
 
   KD
-  KB
+  CE
 
 =head2 Date Formats
 
@@ -365,26 +365,26 @@ Oromo Kenya locale.
 
 =head3 Gy (G y)
 
-   2008-02-05T18:30:30 = KB 2008
-   1995-12-22T09:05:02 = KB 1995
+   2008-02-05T18:30:30 = CE 2008
+   1995-12-22T09:05:02 = CE 1995
   -0010-09-15T04:44:23 = KD -10
 
 =head3 GyMMM (G y MMM)
 
-   2008-02-05T18:30:30 = KB 2008 Gur
-   1995-12-22T09:05:02 = KB 1995 Mud
+   2008-02-05T18:30:30 = CE 2008 Gur
+   1995-12-22T09:05:02 = CE 1995 Mud
   -0010-09-15T04:44:23 = KD -10 Ful
 
 =head3 GyMMMEd (G y MMM d, E)
 
-   2008-02-05T18:30:30 = KB 2008 Gur 5, Qib
-   1995-12-22T09:05:02 = KB 1995 Mud 22, Jim
+   2008-02-05T18:30:30 = CE 2008 Gur 5, Qib
+   1995-12-22T09:05:02 = CE 1995 Mud 22, Jim
   -0010-09-15T04:44:23 = KD -10 Ful 15, San
 
 =head3 GyMMMd (G y MMM d)
 
-   2008-02-05T18:30:30 = KB 2008 Gur 5
-   1995-12-22T09:05:02 = KB 1995 Mud 22
+   2008-02-05T18:30:30 = CE 2008 Gur 5
+   1995-12-22T09:05:02 = CE 1995 Mud 22
   -0010-09-15T04:44:23 = KD -10 Ful 15
 
 =head3 H (HH)
@@ -440,6 +440,12 @@ Oromo Kenya locale.
    2008-02-05T18:30:30 = Gur 5, Qib
    1995-12-22T09:05:02 = Mud 22, Jim
   -0010-09-15T04:44:23 = Ful 15, San
+
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Gur
+   1995-12-22T09:05:02 = week 3 of Mud
+  -0010-09-15T04:44:23 = week 2 of Ful
 
 =head3 MMMMd (MMMM d)
 
@@ -569,15 +575,21 @@ Oromo Kenya locale.
 
 =head3 yQQQ (QQQ y)
 
-   2008-02-05T18:30:30 = Q1 2008
-   1995-12-22T09:05:02 = Q4 1995
-  -0010-09-15T04:44:23 = Q3 -10
+   2008-02-05T18:30:30 = K1 2008
+   1995-12-22T09:05:02 = K4 1995
+  -0010-09-15T04:44:23 = K3 -10
 
 =head3 yQQQQ (y QQQQ)
 
-   2008-02-05T18:30:30 = 2008 Q1
-   1995-12-22T09:05:02 = 1995 Q4
-  -0010-09-15T04:44:23 = -10 Q3
+   2008-02-05T18:30:30 = 2008 Kurmaana 1
+   1995-12-22T09:05:02 = 1995 Kurmaana 4
+  -0010-09-15T04:44:23 = -10 Kurmaana 3
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

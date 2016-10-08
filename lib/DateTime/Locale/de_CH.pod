@@ -447,6 +447,12 @@ German Switzerland locale.
    1995-12-22T09:05:02 = Fr., 22. Dezember
   -0010-09-15T04:44:23 = Sa., 15. September
 
+=head3 MMMMW ('Woche' W 'im' MMM)
+
+   2008-02-05T18:30:30 = Woche 1 im Feb.
+   1995-12-22T09:05:02 = Woche 3 im Dez.
+  -0010-09-15T04:44:23 = Woche 2 im Sep.
+
 =head3 MMMMd (d. MMMM)
 
    2008-02-05T18:30:30 = 5. Februar
@@ -483,11 +489,11 @@ German Switzerland locale.
    1995-12-22T09:05:02 = 22
   -0010-09-15T04:44:23 = 15
 
-=head3 h (h a)
+=head3 h (h 'Uhr' a)
 
-   2008-02-05T18:30:30 = 6 nachm.
-   1995-12-22T09:05:02 = 9 vorm.
-  -0010-09-15T04:44:23 = 4 vorm.
+   2008-02-05T18:30:30 = 6 Uhr nachm.
+   1995-12-22T09:05:02 = 9 Uhr vorm.
+  -0010-09-15T04:44:23 = 4 Uhr vorm.
 
 =head3 hm (h:mm a)
 
@@ -590,6 +596,12 @@ German Switzerland locale.
    2008-02-05T18:30:30 = 1. Quartal 2008
    1995-12-22T09:05:02 = 4. Quartal 1995
   -0010-09-15T04:44:23 = 3. Quartal -10
+
+=head3 yw ('Woche' w 'des' 'Jahres' y)
+
+   2008-02-05T18:30:30 = Woche 6 des Jahres 2008
+   1995-12-22T09:05:02 = Woche 51 des Jahres 1995
+  -0010-09-15T04:44:23 = Woche 37 des Jahres -10
 
 
 =head2 Miscellaneous

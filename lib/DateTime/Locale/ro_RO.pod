@@ -200,32 +200,32 @@ Romanian Romania locale.
 
 =head3 Narrow (format)
 
-  1
-  2
-  3
-  4
+  I
+  II
+  III
+  IV
 
 
 =head3 Wide (stand-alone)
 
-  Trimestrul I
-  Trimestrul al II-lea
-  Trimestrul al III-lea
-  Trimestrul al IV-lea
+  trimestrul I
+  trimestrul al II-lea
+  trimestrul al III-lea
+  trimestrul al IV-lea
 
 =head3 Abbreviated (stand-alone)
 
-  Trim. I
-  Trim. II
-  Trim. III
-  Trim. IV
+  trim. I
+  trim. II
+  trim. III
+  trim. IV
 
 =head3 Narrow (stand-alone)
 
-  1
-  2
-  3
-  4
+  I
+  II
+  III
+  IV
 
 =head2 Eras
 
@@ -447,6 +447,12 @@ Romanian Romania locale.
    1995-12-22T09:05:02 = vin., 22 decembrie
   -0010-09-15T04:44:23 = sâm., 15 septembrie
 
+=head3 MMMMW ('săptămâna' W 'din' MMM)
+
+   2008-02-05T18:30:30 = săptămâna 1 din feb.
+   1995-12-22T09:05:02 = săptămâna 3 din dec.
+  -0010-09-15T04:44:23 = săptămâna 2 din sept.
+
 =head3 MMMMd (d MMMM)
 
    2008-02-05T18:30:30 = 5 februarie
@@ -578,6 +584,12 @@ Romanian Romania locale.
    2008-02-05T18:30:30 = trimestrul I 2008
    1995-12-22T09:05:02 = trimestrul al IV-lea 1995
   -0010-09-15T04:44:23 = trimestrul al III-lea -10
+
+=head3 yw ('săptămâna' w 'din' y)
+
+   2008-02-05T18:30:30 = săptămâna 6 din 2008
+   1995-12-22T09:05:02 = săptămâna 51 din 1995
+  -0010-09-15T04:44:23 = săptămâna 37 din -10
 
 
 =head2 Miscellaneous

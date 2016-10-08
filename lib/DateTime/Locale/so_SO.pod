@@ -53,7 +53,7 @@ Somali Somalia locale.
   I
   T
   A
-  K
+  Kh
   J
   S
   A
@@ -84,7 +84,7 @@ Somali Somalia locale.
   I
   T
   A
-  K
+  Kh
   J
   S
   A
@@ -123,18 +123,18 @@ Somali Somalia locale.
 
 =head3 Narrow (format)
 
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
+  K
+  L
+  S
+  A
+  S
+  L
+  T
+  S
+  S
+  T
+  K
+  L
 
 
 =head3 Wide (stand-alone)
@@ -231,8 +231,8 @@ Somali Somalia locale.
 
 =head3 Wide (format)
 
-  Ciise ka hor (CS)
-  Ciise ka dib (CS)
+  CK
+  CD
 
 =head3 Abbreviated (format)
 
@@ -447,6 +447,12 @@ Somali Somalia locale.
    1995-12-22T09:05:02 = Jim, Bisha Laba iyo Tobnaad 22
   -0010-09-15T04:44:23 = Sab, Bisha Sagaalaad 15
 
+=head3 MMMMW ('usbuuc' W 'ee' MMMM)
+
+   2008-02-05T18:30:30 = usbuuc 1 ee Bisha Labaad
+   1995-12-22T09:05:02 = usbuuc 3 ee Bisha Laba iyo Tobnaad
+  -0010-09-15T04:44:23 = usbuuc 2 ee Bisha Sagaalaad
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = Bisha Labaad 5
@@ -566,6 +572,12 @@ Somali Somalia locale.
    2008-02-05T18:30:30 = Rubaca 1aad 2008
    1995-12-22T09:05:02 = Rubaca 4aad 1995
   -0010-09-15T04:44:23 = Rubaca 3aad -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

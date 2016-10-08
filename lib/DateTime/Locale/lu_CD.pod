@@ -441,6 +441,12 @@ Luba-Katanga Congo - Kinshasa locale.
    1995-12-22T09:05:02 = Ngv 22 Cis
   -0010-09-15T04:44:23 = Lub 15 Lut
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Lui
+   1995-12-22T09:05:02 = week 3 of Cis
+  -0010-09-15T04:44:23 = week 2 of Lut
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = Lùishi 5
@@ -560,6 +566,12 @@ Luba-Katanga Congo - Kinshasa locale.
    2008-02-05T18:30:30 = Mueji 1 2008
    1995-12-22T09:05:02 = Mueji 4 1995
   -0010-09-15T04:44:23 = Mueji 3 -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

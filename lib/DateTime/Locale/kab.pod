@@ -447,6 +447,12 @@ Kabyle locale.
    1995-12-22T09:05:02 = Sḍis 22 Duǧembeṛ
   -0010-09-15T04:44:23 = Say 15 Ctembeṛ
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Fur
+   1995-12-22T09:05:02 = week 3 of Duǧ
+  -0010-09-15T04:44:23 = week 2 of Cte
+
 =head3 MMMMd (d MMMM)
 
    2008-02-05T18:30:30 = 5 Fuṛar
@@ -584,6 +590,12 @@ Kabyle locale.
    2008-02-05T18:30:30 = akraḍaggur amenzu 2008
    1995-12-22T09:05:02 = akraḍaggur wis-kuẓ 1995
   -0010-09-15T04:44:23 = akraḍaggur wis-kraḍ -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

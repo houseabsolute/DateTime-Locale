@@ -459,6 +459,12 @@ Czech Czech Republic locale.
    1995-12-22T09:05:02 = pá 22. prosince
   -0010-09-15T04:44:23 = so 15. září
 
+=head3 MMMMW (W. 'týden' MMMM)
+
+   2008-02-05T18:30:30 = 1. týden února
+   1995-12-22T09:05:02 = 3. týden prosince
+  -0010-09-15T04:44:23 = 2. týden září
+
 =head3 MMMMd (d. MMMM)
 
    2008-02-05T18:30:30 = 5. února
@@ -590,6 +596,12 @@ Czech Czech Republic locale.
    2008-02-05T18:30:30 = 1. čtvrtletí 2008
    1995-12-22T09:05:02 = 4. čtvrtletí 1995
   -0010-09-15T04:44:23 = 3. čtvrtletí -10
+
+=head3 yw (w. 'týden' 'roku' y)
+
+   2008-02-05T18:30:30 = 6. týden roku 2008
+   1995-12-22T09:05:02 = 51. týden roku 1995
+  -0010-09-15T04:44:23 = 37. týden roku -10
 
 
 =head2 Miscellaneous

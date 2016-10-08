@@ -30,7 +30,7 @@ Colognian locale.
 
 =head3 Wide (format)
 
-  Moondaach
+  Mohndaach
   Dinnsdaach
   Metwoch
   Dunnersdaach
@@ -61,7 +61,7 @@ Colognian locale.
 
 =head3 Wide (stand-alone)
 
-  Moondaach
+  Mohndaach
   Dinnsdaach
   Metwoch
   Dunnersdaach
@@ -97,12 +97,12 @@ Colognian locale.
   Fäbrowa
   Määz
   Aprell
-  Mäi
+  Mai
   Juuni
   Juuli
   Oujoß
   Septämber
-  Oktoober
+  Oktohber
   Novämber
   Dezämber
 
@@ -112,7 +112,7 @@ Colognian locale.
   Fäb
   Mäz
   Apr
-  Mäi
+  Mai
   Jun
   Jul
   Ouj
@@ -130,7 +130,7 @@ Colognian locale.
   M
   J
   J
-  A
+  O
   S
   O
   N
@@ -143,12 +143,12 @@ Colognian locale.
   Fäbrowa
   Määz
   Aprell
-  Mäi
+  Mai
   Juuni
   Juuli
   Oujoß
   Septämber
-  Oktoober
+  Oktohber
   Novämber
   Dezämber
 
@@ -158,7 +158,7 @@ Colognian locale.
   Fäb.
   Mäz.
   Apr.
-  Mäi
+  Mai
   Jun.
   Jul.
   Ouj.
@@ -176,7 +176,7 @@ Colognian locale.
   M
   J
   J
-  A
+  O
   S
   O
   N
@@ -186,10 +186,10 @@ Colognian locale.
 
 =head3 Wide (format)
 
-  1. Quattaal
-  2. Quattaal
-  3. Quattaal
-  4. Quattaal
+  1. Quattahl
+  2. Quattahl
+  3. Quattahl
+  4. Quattahl
 
 =head3 Abbreviated (format)
 
@@ -208,10 +208,10 @@ Colognian locale.
 
 =head3 Wide (stand-alone)
 
-  1. Quattaal
-  2. Quattaal
-  3. Quattaal
-  4. Quattaal
+  1. Quattahl
+  2. Quattahl
+  3. Quattahl
+  4. Quattahl
 
 =head3 Abbreviated (stand-alone)
 
@@ -222,17 +222,17 @@ Colognian locale.
 
 =head3 Narrow (stand-alone)
 
-  1
-  2
-  3
-  4
+  1Q
+  2Q
+  3Q
+  4Q
 
 =head2 Eras
 
 =head3 Wide (format)
 
-  vür Chrestus
-  noh Chrestus
+  vür Krestos
+  noh Krestos
 
 =head3 Abbreviated (format)
 
@@ -353,15 +353,15 @@ Colognian locale.
 
 =head3 Ehm (E h:mm a)
 
-   2008-02-05T18:30:30 = Di. 6:30 n.m.
-   1995-12-22T09:05:02 = Fr. 9:05 v.m.
-  -0010-09-15T04:44:23 = Sa. 4:44 v.m.
+   2008-02-05T18:30:30 = Di. 6:30 n.M.
+   1995-12-22T09:05:02 = Fr. 9:05 v.M.
+  -0010-09-15T04:44:23 = Sa. 4:44 v.M.
 
 =head3 Ehms (E h:mm:ss a)
 
-   2008-02-05T18:30:30 = Di. 6:30:30 n.m.
-   1995-12-22T09:05:02 = Fr. 9:05:02 v.m.
-  -0010-09-15T04:44:23 = Sa. 4:44:23 v.m.
+   2008-02-05T18:30:30 = Di. 6:30:30 n.M.
+   1995-12-22T09:05:02 = Fr. 9:05:02 v.M.
+  -0010-09-15T04:44:23 = Sa. 4:44:23 v.M.
 
 =head3 Gy (G y)
 
@@ -441,6 +441,12 @@ Colognian locale.
    1995-12-22T09:05:02 = Fr. 22. Dez
   -0010-09-15T04:44:23 = Sa. 15. Säp
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Fäb
+   1995-12-22T09:05:02 = week 3 of Dez
+  -0010-09-15T04:44:23 = week 2 of Säp
+
 =head3 MMMMd (d. MMMM)
 
    2008-02-05T18:30:30 = 5. Fäbrowa
@@ -467,33 +473,33 @@ Colognian locale.
 
 =head3 h (h a)
 
-   2008-02-05T18:30:30 = 6 n.m.
-   1995-12-22T09:05:02 = 9 v.m.
-  -0010-09-15T04:44:23 = 4 v.m.
+   2008-02-05T18:30:30 = 6 n.M.
+   1995-12-22T09:05:02 = 9 v.M.
+  -0010-09-15T04:44:23 = 4 v.M.
 
 =head3 hm (h:mm a)
 
-   2008-02-05T18:30:30 = 6:30 n.m.
-   1995-12-22T09:05:02 = 9:05 v.m.
-  -0010-09-15T04:44:23 = 4:44 v.m.
+   2008-02-05T18:30:30 = 6:30 n.M.
+   1995-12-22T09:05:02 = 9:05 v.M.
+  -0010-09-15T04:44:23 = 4:44 v.M.
 
 =head3 hms (h:mm:ss a)
 
-   2008-02-05T18:30:30 = 6:30:30 n.m.
-   1995-12-22T09:05:02 = 9:05:02 v.m.
-  -0010-09-15T04:44:23 = 4:44:23 v.m.
+   2008-02-05T18:30:30 = 6:30:30 n.M.
+   1995-12-22T09:05:02 = 9:05:02 v.M.
+  -0010-09-15T04:44:23 = 4:44:23 v.M.
 
 =head3 hmsv (h:mm:ss a v)
 
-   2008-02-05T18:30:30 = 6:30:30 n.m. UTC
-   1995-12-22T09:05:02 = 9:05:02 v.m. UTC
-  -0010-09-15T04:44:23 = 4:44:23 v.m. UTC
+   2008-02-05T18:30:30 = 6:30:30 n.M. UTC
+   1995-12-22T09:05:02 = 9:05:02 v.M. UTC
+  -0010-09-15T04:44:23 = 4:44:23 v.M. UTC
 
 =head3 hmv (h:mm a v)
 
-   2008-02-05T18:30:30 = 6:30 n.m. UTC
-   1995-12-22T09:05:02 = 9:05 v.m. UTC
-  -0010-09-15T04:44:23 = 4:44 v.m. UTC
+   2008-02-05T18:30:30 = 6:30 n.M. UTC
+   1995-12-22T09:05:02 = 9:05 v.M. UTC
+  -0010-09-15T04:44:23 = 4:44 v.M. UTC
 
 =head3 ms (mm:ss)
 
@@ -557,9 +563,15 @@ Colognian locale.
 
 =head3 yQQQQ (QQQQ y)
 
-   2008-02-05T18:30:30 = 1. Quattaal 2008
-   1995-12-22T09:05:02 = 4. Quattaal 1995
-  -0010-09-15T04:44:23 = 3. Quattaal -10
+   2008-02-05T18:30:30 = 1. Quattahl 2008
+   1995-12-22T09:05:02 = 4. Quattahl 1995
+  -0010-09-15T04:44:23 = 3. Quattahl -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous
@@ -570,7 +582,7 @@ Yes
 
 =head3 Local first day of the week
 
-1 (Moondaach)
+1 (Mohndaach)
 
 =head1 SUPPORT
 

@@ -66,7 +66,7 @@ Kabuverdianu Cape Verde locale.
   kuarta-fera
   kinta-fera
   sesta-fera
-  sabadu
+  sábadu
   dumingu
 
 =head3 Abbreviated (stand-alone)
@@ -81,13 +81,13 @@ Kabuverdianu Cape Verde locale.
 
 =head3 Narrow (stand-alone)
 
-  s
-  t
-  k
-  k
-  s
-  s
-  d
+  S
+  T
+  K
+  K
+  S
+  S
+  D
 
 =head2 Months
 
@@ -369,23 +369,23 @@ Kabuverdianu Cape Verde locale.
    1995-12-22T09:05:02 = 1995 DK
   -0010-09-15T04:44:23 = -10 AK
 
-=head3 GyMMM (MMM 'di' y G)
+=head3 GyMMM (MMM y G)
 
-   2008-02-05T18:30:30 = Feb di 2008 DK
-   1995-12-22T09:05:02 = Diz di 1995 DK
-  -0010-09-15T04:44:23 = Set di -10 AK
+   2008-02-05T18:30:30 = Feb 2008 DK
+   1995-12-22T09:05:02 = Diz 1995 DK
+  -0010-09-15T04:44:23 = Set -10 AK
 
-=head3 GyMMMEd (E, d 'di' MMM 'di' y G)
+=head3 GyMMMEd (E, d MMM y G)
 
-   2008-02-05T18:30:30 = ter, 5 di Feb di 2008 DK
-   1995-12-22T09:05:02 = ses, 22 di Diz di 1995 DK
-  -0010-09-15T04:44:23 = sab, 15 di Set di -10 AK
+   2008-02-05T18:30:30 = ter, 5 Feb 2008 DK
+   1995-12-22T09:05:02 = ses, 22 Diz 1995 DK
+  -0010-09-15T04:44:23 = sab, 15 Set -10 AK
 
-=head3 GyMMMd (d 'di' MMM 'di' y G)
+=head3 GyMMMd (d MMM y G)
 
-   2008-02-05T18:30:30 = 5 di Feb di 2008 DK
-   1995-12-22T09:05:02 = 22 di Diz di 1995 DK
-  -0010-09-15T04:44:23 = 15 di Set di -10 AK
+   2008-02-05T18:30:30 = 5 Feb 2008 DK
+   1995-12-22T09:05:02 = 22 Diz 1995 DK
+  -0010-09-15T04:44:23 = 15 Set -10 AK
 
 =head3 H (HH)
 
@@ -405,17 +405,17 @@ Kabuverdianu Cape Verde locale.
    1995-12-22T09:05:02 = 09:05:02
   -0010-09-15T04:44:23 = 04:44:23
 
-=head3 Hmsv (HH:mm:ss v)
+=head3 Hmsv (HH:mm:ss (v))
 
-   2008-02-05T18:30:30 = 18:30:30 UTC
-   1995-12-22T09:05:02 = 09:05:02 UTC
-  -0010-09-15T04:44:23 = 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 (UTC)
+   1995-12-22T09:05:02 = 09:05:02 (UTC)
+  -0010-09-15T04:44:23 = 04:44:23 (UTC)
 
-=head3 Hmv (HH:mm v)
+=head3 Hmv (HH:mm (v))
 
-   2008-02-05T18:30:30 = 18:30 UTC
-   1995-12-22T09:05:02 = 09:05 UTC
-  -0010-09-15T04:44:23 = 04:44 UTC
+   2008-02-05T18:30:30 = 18:30 (UTC)
+   1995-12-22T09:05:02 = 09:05 (UTC)
+  -0010-09-15T04:44:23 = 04:44 (UTC)
 
 =head3 M (L)
 
@@ -446,6 +446,12 @@ Kabuverdianu Cape Verde locale.
    2008-02-05T18:30:30 = ter, 5 di Febreru
    1995-12-22T09:05:02 = ses, 22 di Dizenbru
   -0010-09-15T04:44:23 = sab, 15 di Setenbru
+
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of Feb
+   1995-12-22T09:05:02 = week 3 of Diz
+  -0010-09-15T04:44:23 = week 2 of Set
 
 =head3 MMMMd (d 'di' MMMM)
 
@@ -495,17 +501,17 @@ Kabuverdianu Cape Verde locale.
    1995-12-22T09:05:02 = 9:05:02 am
   -0010-09-15T04:44:23 = 4:44:23 am
 
-=head3 hmsv (h:mm:ss a v)
+=head3 hmsv (h:mm:ss a (v))
 
-   2008-02-05T18:30:30 = 6:30:30 pm UTC
-   1995-12-22T09:05:02 = 9:05:02 am UTC
-  -0010-09-15T04:44:23 = 4:44:23 am UTC
+   2008-02-05T18:30:30 = 6:30:30 pm (UTC)
+   1995-12-22T09:05:02 = 9:05:02 am (UTC)
+  -0010-09-15T04:44:23 = 4:44:23 am (UTC)
 
-=head3 hmv (h:mm a v)
+=head3 hmv (h:mm a (v))
 
-   2008-02-05T18:30:30 = 6:30 pm UTC
-   1995-12-22T09:05:02 = 9:05 am UTC
-  -0010-09-15T04:44:23 = 4:44 am UTC
+   2008-02-05T18:30:30 = 6:30 pm (UTC)
+   1995-12-22T09:05:02 = 9:05 am (UTC)
+  -0010-09-15T04:44:23 = 4:44 am (UTC)
 
 =head3 mmss (mm:ss)
 
@@ -543,11 +549,11 @@ Kabuverdianu Cape Verde locale.
    1995-12-22T09:05:02 = 12/1995
   -0010-09-15T04:44:23 = 09/-10
 
-=head3 yMMM (MMM 'di' y)
+=head3 yMMM (MMM y)
 
-   2008-02-05T18:30:30 = Feb di 2008
-   1995-12-22T09:05:02 = Diz di 1995
-  -0010-09-15T04:44:23 = Set di -10
+   2008-02-05T18:30:30 = Feb 2008
+   1995-12-22T09:05:02 = Diz 1995
+  -0010-09-15T04:44:23 = Set -10
 
 =head3 yMMMEd (E, d MMM y)
 
@@ -584,6 +590,12 @@ Kabuverdianu Cape Verde locale.
    2008-02-05T18:30:30 = 1º trimestri di 2008
    1995-12-22T09:05:02 = 4º trimestri di 1995
   -0010-09-15T04:44:23 = 3º trimestri di -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

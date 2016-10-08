@@ -441,6 +441,12 @@ Ewondo locale.
    1995-12-22T09:05:02 = fúl 22 ngab
   -0010-09-15T04:44:23 = sér 15 nge
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of ngb
+   1995-12-22T09:05:02 = week 3 of ngab
+  -0010-09-15T04:44:23 = week 2 of nge
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = ngɔn bɛ̌ 5
@@ -560,6 +566,12 @@ Ewondo locale.
    2008-02-05T18:30:30 = nsámbá ngɔn asú 2008
    1995-12-22T09:05:02 = nsámbá ngɔn nyina 1995
   -0010-09-15T04:44:23 = nsámbá ngɔn lála -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

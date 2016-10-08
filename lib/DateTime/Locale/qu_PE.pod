@@ -254,15 +254,15 @@ Quechua Peru locale.
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 2008 Hatun puquy 5
-   1995-12-22T09:05:02 = 1995 Kapaq Raymi 22
-  -0010-09-15T04:44:23 = -10 Uma raymi 15
+   2008-02-05T18:30:30 = 5 Hatun puquy 2008
+   1995-12-22T09:05:02 = 22 Kapaq Raymi 1995
+  -0010-09-15T04:44:23 = 15 Uma raymi -10
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 2008 Hat 5
-   1995-12-22T09:05:02 = 1995 Kap 22
-  -0010-09-15T04:44:23 = -10 Uma 15
+   2008-02-05T18:30:30 = 5 Hat 2008
+   1995-12-22T09:05:02 = 22 Kap 1995
+  -0010-09-15T04:44:23 = 15 Uma -10
 
 =head3 Short
 
@@ -308,15 +308,15 @@ Quechua Peru locale.
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 2008 Hatun puquy 5 18:30:30 UTC
-   1995-12-22T09:05:02 = 1995 Kapaq Raymi 22 09:05:02 UTC
-  -0010-09-15T04:44:23 = -10 Uma raymi 15 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 UTC 5 Hatun puquy 2008
+   1995-12-22T09:05:02 = 09:05:02 UTC 22 Kapaq Raymi 1995
+  -0010-09-15T04:44:23 = 04:44:23 UTC 15 Uma raymi -10
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 2008 Hat 5 18:30:30
-   1995-12-22T09:05:02 = 1995 Kap 22 09:05:02
-  -0010-09-15T04:44:23 = -10 Uma 15 04:44:23
+   2008-02-05T18:30:30 = 5 Hat 2008 18:30:30
+   1995-12-22T09:05:02 = 22 Kap 1995 09:05:02
+  -0010-09-15T04:44:23 = 15 Uma -10 04:44:23
 
 =head3 Short
 
@@ -441,6 +441,12 @@ Quechua Peru locale.
    1995-12-22T09:05:02 = Kap 22, Vie
   -0010-09-15T04:44:23 = Uma 15, Sab
 
+=head3 MMMMW (W 'semana' MMM 'killapa')
+
+   2008-02-05T18:30:30 = 1 semana Hat killapa
+   1995-12-22T09:05:02 = 3 semana Kap killapa
+  -0010-09-15T04:44:23 = 2 semana Uma killapa
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = Hatun puquy 5
@@ -513,11 +519,11 @@ Quechua Peru locale.
    1995-12-22T09:05:02 = 1995-12
   -0010-09-15T04:44:23 = -10-09
 
-=head3 yMEd (y-MM-dd, E)
+=head3 yMEd (E, dd-MM-y)
 
-   2008-02-05T18:30:30 = 2008-02-05, Mar
-   1995-12-22T09:05:02 = 1995-12-22, Vie
-  -0010-09-15T04:44:23 = -10-09-15, Sab
+   2008-02-05T18:30:30 = Mar, 05-02-2008
+   1995-12-22T09:05:02 = Vie, 22-12-1995
+  -0010-09-15T04:44:23 = Sab, 15-09--10
 
 =head3 yMMM (y MMM)
 
@@ -560,6 +566,12 @@ Quechua Peru locale.
    2008-02-05T18:30:30 = 2008 Q1
    1995-12-22T09:05:02 = 1995 Q4
   -0010-09-15T04:44:23 = -10 Q3
+
+=head3 yw (w 'semana' y 'watapa')
+
+   2008-02-05T18:30:30 = 6 semana 2008 watapa
+   1995-12-22T09:05:02 = 51 semana 1995 watapa
+  -0010-09-15T04:44:23 = 37 semana -10 watapa
 
 
 =head2 Miscellaneous

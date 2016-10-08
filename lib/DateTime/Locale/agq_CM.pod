@@ -441,6 +441,12 @@ Aghem Cameroon locale.
    1995-12-22T09:05:02 = ghɨ 22 fwo
   -0010-09-15T04:44:23 = dzk 15 dzu
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of kɨz
+   1995-12-22T09:05:02 = week 3 of fwo
+  -0010-09-15T04:44:23 = week 2 of dzu
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = ndzɔ̀ŋɔ̀kƗ̀zùʔ 5
@@ -560,6 +566,12 @@ Aghem Cameroon locale.
    2008-02-05T18:30:30 = kɨbâ kɨ 1 2008
    1995-12-22T09:05:02 = ugbâ u 4 1995
   -0010-09-15T04:44:23 = ugbâ u 3 -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

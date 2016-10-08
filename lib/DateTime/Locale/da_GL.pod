@@ -154,18 +154,18 @@ Danish Greenland locale.
 
 =head3 Abbreviated (stand-alone)
 
-  jan
-  feb
-  mar
-  apr
+  jan.
+  feb.
+  mar.
+  apr.
   maj
-  jun
-  jul
-  aug
-  sep
-  okt
-  nov
-  dec
+  jun.
+  jul.
+  aug.
+  sep.
+  okt.
+  nov.
+  dec.
 
 =head3 Narrow (stand-alone)
 
@@ -447,6 +447,12 @@ Danish Greenland locale.
    1995-12-22T09:05:02 = fre. 22. december
   -0010-09-15T04:44:23 = lør. 15. september
 
+=head3 MMMMW ('uge' W 'i' MMM)
+
+   2008-02-05T18:30:30 = uge 1 i feb.
+   1995-12-22T09:05:02 = uge 3 i dec.
+  -0010-09-15T04:44:23 = uge 2 i sep.
+
 =head3 MMMMd (d. MMMM)
 
    2008-02-05T18:30:30 = 5. februar
@@ -578,6 +584,12 @@ Danish Greenland locale.
    2008-02-05T18:30:30 = 1. kvartal 2008
    1995-12-22T09:05:02 = 4. kvartal 1995
   -0010-09-15T04:44:23 = 3. kvartal -10
+
+=head3 yw ('uge' w 'i' y)
+
+   2008-02-05T18:30:30 = uge 6 i 2008
+   1995-12-22T09:05:02 = uge 51 i 1995
+  -0010-09-15T04:44:23 = uge 37 i -10
 
 
 =head2 Miscellaneous

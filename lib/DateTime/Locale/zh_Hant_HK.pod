@@ -186,10 +186,10 @@ Chinese Hong Kong SAR China Traditional locale.
 
 =head3 Wide (format)
 
-  第1季
-  第2季
-  第3季
-  第4季
+  第1季度
+  第2季度
+  第3季度
+  第4季度
 
 =head3 Abbreviated (format)
 
@@ -208,10 +208,10 @@ Chinese Hong Kong SAR China Traditional locale.
 
 =head3 Wide (stand-alone)
 
-  第1季
-  第2季
-  第3季
-  第4季
+  第1季度
+  第2季度
+  第3季度
+  第4季度
 
 =head3 Abbreviated (stand-alone)
 
@@ -327,11 +327,11 @@ Chinese Hong Kong SAR China Traditional locale.
 
 =head2 Available Formats
 
-=head3 E (cccc)
+=head3 E (ccc)
 
-   2008-02-05T18:30:30 = 星期二
-   1995-12-22T09:05:02 = 星期五
-  -0010-09-15T04:44:23 = 星期六
+   2008-02-05T18:30:30 = 週二
+   1995-12-22T09:05:02 = 週五
+  -0010-09-15T04:44:23 = 週六
 
 =head3 EHm (E HH:mm)
 
@@ -423,11 +423,11 @@ Chinese Hong Kong SAR China Traditional locale.
    1995-12-22T09:05:02 = 12月
   -0010-09-15T04:44:23 = 9月
 
-=head3 MEd (E, d/M)
+=head3 MEd (d/M（E）)
 
-   2008-02-05T18:30:30 = 週二, 5/2
-   1995-12-22T09:05:02 = 週五, 22/12
-  -0010-09-15T04:44:23 = 週六, 15/9
+   2008-02-05T18:30:30 = 5/2（週二）
+   1995-12-22T09:05:02 = 22/12（週五）
+  -0010-09-15T04:44:23 = 15/9（週六）
 
 =head3 MMM (LLL)
 
@@ -440,6 +440,12 @@ Chinese Hong Kong SAR China Traditional locale.
    2008-02-05T18:30:30 = 2月5日週二
    1995-12-22T09:05:02 = 12月22日週五
   -0010-09-15T04:44:23 = 9月15日週六
+
+=head3 MMMMW (M月第W週)
+
+   2008-02-05T18:30:30 = 2月第1週
+   1995-12-22T09:05:02 = 12月第3週
+  -0010-09-15T04:44:23 = 9月第2週
 
 =head3 MMMMd (M月d日)
 
@@ -519,11 +525,11 @@ Chinese Hong Kong SAR China Traditional locale.
    1995-12-22T09:05:02 = 12/1995
   -0010-09-15T04:44:23 = 9/-10
 
-=head3 yMEd (y/M/dE)
+=head3 yMEd (d/M/y（E）)
 
-   2008-02-05T18:30:30 = 2008/2/5週二
-   1995-12-22T09:05:02 = 1995/12/22週五
-  -0010-09-15T04:44:23 = -10/9/15週六
+   2008-02-05T18:30:30 = 5/2/2008（週二）
+   1995-12-22T09:05:02 = 22/12/1995（週五）
+  -0010-09-15T04:44:23 = 15/9/-10（週六）
 
 =head3 yMM (MM/y)
 
@@ -569,9 +575,15 @@ Chinese Hong Kong SAR China Traditional locale.
 
 =head3 yQQQQ (y年QQQQ)
 
-   2008-02-05T18:30:30 = 2008年第1季
-   1995-12-22T09:05:02 = 1995年第4季
-  -0010-09-15T04:44:23 = -10年第3季
+   2008-02-05T18:30:30 = 2008年第1季度
+   1995-12-22T09:05:02 = 1995年第4季度
+  -0010-09-15T04:44:23 = -10年第3季度
+
+=head3 yw (y年第w週)
+
+   2008-02-05T18:30:30 = 2008年第6週
+   1995-12-22T09:05:02 = 1995年第51週
+  -0010-09-15T04:44:23 = -10年第37週
 
 
 =head2 Miscellaneous

@@ -248,9 +248,9 @@ Kinyarwanda Rwanda locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = Kuwa kabiri, 2008 Gashyantare 05
-   1995-12-22T09:05:02 = Kuwa gatanu, 1995 Ukuboza 22
-  -0010-09-15T04:44:23 = Kuwa gatandatu, -10 Nzeli 15
+   2008-02-05T18:30:30 = 2008 Gashyantare 5, Kuwa kabiri
+   1995-12-22T09:05:02 = 1995 Ukuboza 22, Kuwa gatanu
+  -0010-09-15T04:44:23 = -10 Nzeli 15, Kuwa gatandatu
 
 =head3 Long
 
@@ -266,9 +266,9 @@ Kinyarwanda Rwanda locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 08/02/05
-   1995-12-22T09:05:02 = 95/12/22
-  -0010-09-15T04:44:23 = -10/09/15
+   2008-02-05T18:30:30 = 2008-02-05
+   1995-12-22T09:05:02 = 1995-12-22
+  -0010-09-15T04:44:23 = -10-09-15
 
 
 =head2 Time Formats
@@ -302,9 +302,9 @@ Kinyarwanda Rwanda locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = Kuwa kabiri, 2008 Gashyantare 05 18:30:30 UTC
-   1995-12-22T09:05:02 = Kuwa gatanu, 1995 Ukuboza 22 09:05:02 UTC
-  -0010-09-15T04:44:23 = Kuwa gatandatu, -10 Nzeli 15 04:44:23 UTC
+   2008-02-05T18:30:30 = 2008 Gashyantare 5, Kuwa kabiri 18:30:30 UTC
+   1995-12-22T09:05:02 = 1995 Ukuboza 22, Kuwa gatanu 09:05:02 UTC
+  -0010-09-15T04:44:23 = -10 Nzeli 15, Kuwa gatandatu 04:44:23 UTC
 
 =head3 Long
 
@@ -320,9 +320,9 @@ Kinyarwanda Rwanda locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 08/02/05 18:30
-   1995-12-22T09:05:02 = 95/12/22 09:05
-  -0010-09-15T04:44:23 = -10/09/15 04:44
+   2008-02-05T18:30:30 = 2008-02-05 18:30
+   1995-12-22T09:05:02 = 1995-12-22 09:05
+  -0010-09-15T04:44:23 = -10-09-15 04:44
 
 
 =head2 Available Formats
@@ -440,6 +440,12 @@ Kinyarwanda Rwanda locale.
    2008-02-05T18:30:30 = gas. 5, kab.
    1995-12-22T09:05:02 = uku. 22, gnu.
   -0010-09-15T04:44:23 = nze. 15, gnd.
+
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of gas.
+   1995-12-22T09:05:02 = week 3 of uku.
+  -0010-09-15T04:44:23 = week 2 of nze.
 
 =head3 MMMMd (MMMM d)
 
@@ -560,6 +566,12 @@ Kinyarwanda Rwanda locale.
    2008-02-05T18:30:30 = 2008 igihembwe cya mbere
    1995-12-22T09:05:02 = 1995 igihembwe cya kane
   -0010-09-15T04:44:23 = -10 igihembwe cya gatatu
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

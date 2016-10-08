@@ -441,6 +441,12 @@ Kwasio locale.
    1995-12-22T09:05:02 = mbs 22 kris
   -0010-09-15T04:44:23 = sas 15 ng9
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of ng2
+   1995-12-22T09:05:02 = week 3 of kris
+  -0010-09-15T04:44:23 = week 2 of ng9
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = ngwɛn ńmba 5
@@ -560,6 +566,12 @@ Kwasio locale.
    2008-02-05T18:30:30 = Tindɛ nvúr 2008
    1995-12-22T09:05:02 = Tindɛ ńna 1995
   -0010-09-15T04:44:23 = Tindɛ ńlal -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

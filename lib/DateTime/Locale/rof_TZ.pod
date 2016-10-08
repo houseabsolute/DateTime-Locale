@@ -447,6 +447,12 @@ Rombo Tanzania locale.
    1995-12-22T09:05:02 = Iju, Mweri wa ikumi na mbili 22
   -0010-09-15T04:44:23 = Ijm, Mweri wa tisa 15
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of M2
+   1995-12-22T09:05:02 = week 3 of M12
+  -0010-09-15T04:44:23 = week 2 of M9
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = Mweri wa kaili 5
@@ -566,6 +572,12 @@ Rombo Tanzania locale.
    2008-02-05T18:30:30 = Robo ya kwanza 2008
    1995-12-22T09:05:02 = Robo ya kaana 1995
   -0010-09-15T04:44:23 = Robo ya katatu -10
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

@@ -51,12 +51,12 @@ Western Frisian locale.
 =head3 Narrow (format)
 
   M
-  D
+  T
   W
-  D
-  V
-  Z
-  Z
+  T
+  F
+  S
+  S
 
 
 =head3 Wide (stand-alone)
@@ -82,44 +82,44 @@ Western Frisian locale.
 =head3 Narrow (stand-alone)
 
   M
-  D
+  T
   W
-  D
-  V
-  Z
-  Z
+  T
+  F
+  S
+  S
 
 =head2 Months
 
 =head3 Wide (format)
 
-  jannewaris
-  febrewaris
-  maart
-  april
-  maaie
-  juny
-  july
-  augustus
-  septimber
-  oktober
-  novimber
-  desimber
+  Jannewaris
+  Febrewaris
+  Maart
+  April
+  Maaie
+  Juny
+  July
+  Augustus
+  Septimber
+  Oktober
+  Novimber
+  Desimber
 
 =head3 Abbreviated (format)
 
-  jan.
-  feb.
-  mrt.
-  apr.
-  mai.
-  jun.
-  jul.
-  aug.
-  sep.
-  okt.
-  nov.
-  des.
+  Jan
+  Feb
+  Mrt
+  Apr
+  Mai
+  Jun
+  Jul
+  Aug
+  Sep
+  Okt
+  Nov
+  Des
 
 =head3 Narrow (format)
 
@@ -139,33 +139,33 @@ Western Frisian locale.
 
 =head3 Wide (stand-alone)
 
-  jannewaris
-  febrewaris
-  maart
-  april
-  maaie
-  juny
-  july
-  augustus
-  septimber
-  oktober
-  novimber
-  desimber
+  Jannewaris
+  Febrewaris
+  Maart
+  April
+  Maaie
+  Juny
+  July
+  Augustus
+  Septimber
+  Oktober
+  Novimber
+  Desimber
 
 =head3 Abbreviated (stand-alone)
 
-  jan
-  feb
-  mrt
-  apr
-  mai
-  jun
-  jul
-  aug
-  sep
-  okt
-  nov
-  des
+  Jan
+  Feb
+  Mrt
+  Apr
+  Mai
+  Jun
+  Jul
+  Aug
+  Sep
+  Okt
+  Nov
+  Des
 
 =head3 Narrow (stand-alone)
 
@@ -186,10 +186,10 @@ Western Frisian locale.
 
 =head3 Wide (format)
 
-  1e kwartaal
-  2e kwartaal
-  3e kwartaal
-  4e kwartaal
+  1e fearnsjier
+  2e fearnsjier
+  3e fearnsjier
+  4e fearnsjier
 
 =head3 Abbreviated (format)
 
@@ -208,10 +208,10 @@ Western Frisian locale.
 
 =head3 Wide (stand-alone)
 
-  1e kwartaal
-  2e kwartaal
-  3e kwartaal
-  4e kwartaal
+  1e fearnsjier
+  2e fearnsjier
+  3e fearnsjier
+  4e fearnsjier
 
 =head3 Abbreviated (stand-alone)
 
@@ -248,21 +248,21 @@ Western Frisian locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = tiisdei 5 febrewaris 2008
-   1995-12-22T09:05:02 = freed 22 desimber 1995
-  -0010-09-15T04:44:23 = sneon 15 septimber -10
+   2008-02-05T18:30:30 = tiisdei 5 Febrewaris 2008
+   1995-12-22T09:05:02 = freed 22 Desimber 1995
+  -0010-09-15T04:44:23 = sneon 15 Septimber -10
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 5 febrewaris 2008
-   1995-12-22T09:05:02 = 22 desimber 1995
-  -0010-09-15T04:44:23 = 15 septimber -10
+   2008-02-05T18:30:30 = 5 Febrewaris 2008
+   1995-12-22T09:05:02 = 22 Desimber 1995
+  -0010-09-15T04:44:23 = 15 Septimber -10
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 feb. 2008
-   1995-12-22T09:05:02 = 22 des. 1995
-  -0010-09-15T04:44:23 = 15 sep. -10
+   2008-02-05T18:30:30 = 5 Feb 2008
+   1995-12-22T09:05:02 = 22 Des 1995
+  -0010-09-15T04:44:23 = 15 Sep -10
 
 =head3 Short
 
@@ -302,21 +302,21 @@ Western Frisian locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = tiisdei 5 febrewaris 2008 18:30:30 UTC
-   1995-12-22T09:05:02 = freed 22 desimber 1995 09:05:02 UTC
-  -0010-09-15T04:44:23 = sneon 15 septimber -10 04:44:23 UTC
+   2008-02-05T18:30:30 = tiisdei 5 Febrewaris 2008 om 18:30:30 UTC
+   1995-12-22T09:05:02 = freed 22 Desimber 1995 om 09:05:02 UTC
+  -0010-09-15T04:44:23 = sneon 15 Septimber -10 om 04:44:23 UTC
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 5 febrewaris 2008 18:30:30 UTC
-   1995-12-22T09:05:02 = 22 desimber 1995 09:05:02 UTC
-  -0010-09-15T04:44:23 = 15 septimber -10 04:44:23 UTC
+   2008-02-05T18:30:30 = 5 Febrewaris 2008 om 18:30:30 UTC
+   1995-12-22T09:05:02 = 22 Desimber 1995 om 09:05:02 UTC
+  -0010-09-15T04:44:23 = 15 Septimber -10 om 04:44:23 UTC
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 feb. 2008 18:30:30
-   1995-12-22T09:05:02 = 22 des. 1995 09:05:02
-  -0010-09-15T04:44:23 = 15 sep. -10 04:44:23
+   2008-02-05T18:30:30 = 5 Feb 2008 18:30:30
+   1995-12-22T09:05:02 = 22 Des 1995 09:05:02
+  -0010-09-15T04:44:23 = 15 Sep -10 04:44:23
 
 =head3 Short
 
@@ -345,11 +345,11 @@ Western Frisian locale.
    1995-12-22T09:05:02 = fr 09:05:02
   -0010-09-15T04:44:23 = so 04:44:23
 
-=head3 Ed (E d)
+=head3 Ed (d, E)
 
-   2008-02-05T18:30:30 = ti 5
-   1995-12-22T09:05:02 = fr 22
-  -0010-09-15T04:44:23 = so 15
+   2008-02-05T18:30:30 = 5, ti
+   1995-12-22T09:05:02 = 22, fr
+  -0010-09-15T04:44:23 = 15, so
 
 =head3 Ehm (E h:mm a)
 
@@ -363,29 +363,29 @@ Western Frisian locale.
    1995-12-22T09:05:02 = fr 9:05:02 AM
   -0010-09-15T04:44:23 = so 4:44:23 AM
 
-=head3 Gy (y G)
+=head3 Gy (G y)
 
-   2008-02-05T18:30:30 = 2008 n.Kr.
-   1995-12-22T09:05:02 = 1995 n.Kr.
-  -0010-09-15T04:44:23 = -10 f.Kr.
+   2008-02-05T18:30:30 = n.Kr. 2008
+   1995-12-22T09:05:02 = n.Kr. 1995
+  -0010-09-15T04:44:23 = f.Kr. -10
 
 =head3 GyMMM (MMM y G)
 
-   2008-02-05T18:30:30 = feb. 2008 n.Kr.
-   1995-12-22T09:05:02 = des. 1995 n.Kr.
-  -0010-09-15T04:44:23 = sep. -10 f.Kr.
+   2008-02-05T18:30:30 = Feb 2008 n.Kr.
+   1995-12-22T09:05:02 = Des 1995 n.Kr.
+  -0010-09-15T04:44:23 = Sep -10 f.Kr.
 
 =head3 GyMMMEd (E d MMM y G)
 
-   2008-02-05T18:30:30 = ti 5 feb. 2008 n.Kr.
-   1995-12-22T09:05:02 = fr 22 des. 1995 n.Kr.
-  -0010-09-15T04:44:23 = so 15 sep. -10 f.Kr.
+   2008-02-05T18:30:30 = ti 5 Feb 2008 n.Kr.
+   1995-12-22T09:05:02 = fr 22 Des 1995 n.Kr.
+  -0010-09-15T04:44:23 = so 15 Sep -10 f.Kr.
 
 =head3 GyMMMd (d MMM y G)
 
-   2008-02-05T18:30:30 = 5 feb. 2008 n.Kr.
-   1995-12-22T09:05:02 = 22 des. 1995 n.Kr.
-  -0010-09-15T04:44:23 = 15 sep. -10 f.Kr.
+   2008-02-05T18:30:30 = 5 Feb 2008 n.Kr.
+   1995-12-22T09:05:02 = 22 Des 1995 n.Kr.
+  -0010-09-15T04:44:23 = 15 Sep -10 f.Kr.
 
 =head3 H (HH)
 
@@ -431,27 +431,33 @@ Western Frisian locale.
 
 =head3 MMM (LLL)
 
-   2008-02-05T18:30:30 = feb
-   1995-12-22T09:05:02 = des
-  -0010-09-15T04:44:23 = sep
+   2008-02-05T18:30:30 = Feb
+   1995-12-22T09:05:02 = Des
+  -0010-09-15T04:44:23 = Sep
 
 =head3 MMMEd (E d MMM)
 
-   2008-02-05T18:30:30 = ti 5 feb.
-   1995-12-22T09:05:02 = fr 22 des.
-  -0010-09-15T04:44:23 = so 15 sep.
+   2008-02-05T18:30:30 = ti 5 Feb
+   1995-12-22T09:05:02 = fr 22 Des
+  -0010-09-15T04:44:23 = so 15 Sep
+
+=head3 MMMMW ('wike' W 'fan' MMM)
+
+   2008-02-05T18:30:30 = wike 1 fan Feb
+   1995-12-22T09:05:02 = wike 3 fan Des
+  -0010-09-15T04:44:23 = wike 2 fan Sep
 
 =head3 MMMMd (d MMMM)
 
-   2008-02-05T18:30:30 = 5 febrewaris
-   1995-12-22T09:05:02 = 22 desimber
-  -0010-09-15T04:44:23 = 15 septimber
+   2008-02-05T18:30:30 = 5 Febrewaris
+   1995-12-22T09:05:02 = 22 Desimber
+  -0010-09-15T04:44:23 = 15 Septimber
 
 =head3 MMMd (d MMM)
 
-   2008-02-05T18:30:30 = 5 feb.
-   1995-12-22T09:05:02 = 22 des.
-  -0010-09-15T04:44:23 = 15 sep.
+   2008-02-05T18:30:30 = 5 Feb
+   1995-12-22T09:05:02 = 22 Des
+  -0010-09-15T04:44:23 = 15 Sep
 
 =head3 Md (d-M)
 
@@ -521,27 +527,27 @@ Western Frisian locale.
 
 =head3 yMMM (MMM y)
 
-   2008-02-05T18:30:30 = feb. 2008
-   1995-12-22T09:05:02 = des. 1995
-  -0010-09-15T04:44:23 = sep. -10
+   2008-02-05T18:30:30 = Feb 2008
+   1995-12-22T09:05:02 = Des 1995
+  -0010-09-15T04:44:23 = Sep -10
 
 =head3 yMMMEd (E d MMM y)
 
-   2008-02-05T18:30:30 = ti 5 feb. 2008
-   1995-12-22T09:05:02 = fr 22 des. 1995
-  -0010-09-15T04:44:23 = so 15 sep. -10
+   2008-02-05T18:30:30 = ti 5 Feb 2008
+   1995-12-22T09:05:02 = fr 22 Des 1995
+  -0010-09-15T04:44:23 = so 15 Sep -10
 
 =head3 yMMMM (MMMM y)
 
-   2008-02-05T18:30:30 = febrewaris 2008
-   1995-12-22T09:05:02 = desimber 1995
-  -0010-09-15T04:44:23 = septimber -10
+   2008-02-05T18:30:30 = Febrewaris 2008
+   1995-12-22T09:05:02 = Desimber 1995
+  -0010-09-15T04:44:23 = Septimber -10
 
 =head3 yMMMd (d MMM y)
 
-   2008-02-05T18:30:30 = 5 feb. 2008
-   1995-12-22T09:05:02 = 22 des. 1995
-  -0010-09-15T04:44:23 = 15 sep. -10
+   2008-02-05T18:30:30 = 5 Feb 2008
+   1995-12-22T09:05:02 = 22 Des 1995
+  -0010-09-15T04:44:23 = 15 Sep -10
 
 =head3 yMd (d-M-y)
 
@@ -557,9 +563,15 @@ Western Frisian locale.
 
 =head3 yQQQQ (QQQQ y)
 
-   2008-02-05T18:30:30 = 1e kwartaal 2008
-   1995-12-22T09:05:02 = 4e kwartaal 1995
-  -0010-09-15T04:44:23 = 3e kwartaal -10
+   2008-02-05T18:30:30 = 1e fearnsjier 2008
+   1995-12-22T09:05:02 = 4e fearnsjier 1995
+  -0010-09-15T04:44:23 = 3e fearnsjier -10
+
+=head3 yw ('wike' w 'fan' y)
+
+   2008-02-05T18:30:30 = wike 6 fan 2008
+   1995-12-22T09:05:02 = wike 51 fan 1995
+  -0010-09-15T04:44:23 = wike 37 fan -10
 
 
 =head2 Miscellaneous

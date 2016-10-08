@@ -441,6 +441,12 @@ Hungarian locale.
    1995-12-22T09:05:02 = dec. 22., P
   -0010-09-15T04:44:23 = szept. 15., Szo
 
+=head3 MMMMW (MMM W. 'hete')
+
+   2008-02-05T18:30:30 = febr. 1. hete
+   1995-12-22T09:05:02 = dec. 3. hete
+  -0010-09-15T04:44:23 = szept. 2. hete
+
 =head3 MMMMd (MMMM d.)
 
    2008-02-05T18:30:30 = február 5.
@@ -566,6 +572,12 @@ Hungarian locale.
    2008-02-05T18:30:30 = 2008. I. negyedév
    1995-12-22T09:05:02 = 1995. IV. negyedév
   -0010-09-15T04:44:23 = -10. III. negyedév
+
+=head3 yw (y w. 'hete')
+
+   2008-02-05T18:30:30 = 2008 6. hete
+   1995-12-22T09:05:02 = 1995 51. hete
+  -0010-09-15T04:44:23 = -10 37. hete
 
 
 =head2 Miscellaneous

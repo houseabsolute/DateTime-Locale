@@ -30,12 +30,12 @@ Northern Sami Finland locale.
 
 =head3 Wide (format)
 
-  vuossárga
-  maŋŋebárga
-  gaskavahkku
-  duorasdat
-  bearjadat
-  lávvardat
+  vuossárgga
+  maŋŋebárgga
+  gaskavahku
+  duorastaga
+  bearjadaga
+  lávvardaga
   sotnabeaivi
 
 =head3 Abbreviated (format)
@@ -50,8 +50,8 @@ Northern Sami Finland locale.
 
 =head3 Narrow (format)
 
-  V
   M
+  D
   G
   D
   B
@@ -81,8 +81,8 @@ Northern Sami Finland locale.
 
 =head3 Narrow (stand-alone)
 
-  V
   M
+  D
   G
   D
   B
@@ -248,9 +248,9 @@ Northern Sami Finland locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 2008 guovvamánnu 5, maŋŋebárga
-   1995-12-22T09:05:02 = 1995 juovlamánnu 22, bearjadat
-  -0010-09-15T04:44:23 = -10 čakčamánnu 15, lávvardat
+   2008-02-05T18:30:30 = 2008 guovvamánnu 5, maŋŋebárgga
+   1995-12-22T09:05:02 = 1995 juovlamánnu 22, bearjadaga
+  -0010-09-15T04:44:23 = -10 čakčamánnu 15, lávvardaga
 
 =head3 Long
 
@@ -302,9 +302,9 @@ Northern Sami Finland locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 2008 guovvamánnu 5, maŋŋebárga 18:30:30 UTC
-   1995-12-22T09:05:02 = 1995 juovlamánnu 22, bearjadat 09:05:02 UTC
-  -0010-09-15T04:44:23 = -10 čakčamánnu 15, lávvardat 04:44:23 UTC
+   2008-02-05T18:30:30 = 2008 guovvamánnu 5, maŋŋebárgga 18:30:30 UTC
+   1995-12-22T09:05:02 = 1995 juovlamánnu 22, bearjadaga 09:05:02 UTC
+  -0010-09-15T04:44:23 = -10 čakčamánnu 15, lávvardaga 04:44:23 UTC
 
 =head3 Long
 
@@ -441,6 +441,12 @@ Northern Sami Finland locale.
    1995-12-22T09:05:02 = juov 22, bear
   -0010-09-15T04:44:23 = čakč 15, láv
 
+=head3 MMMMW ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of guov
+   1995-12-22T09:05:02 = week 3 of juov
+  -0010-09-15T04:44:23 = week 2 of čakč
+
 =head3 MMMMd (MMMM d)
 
    2008-02-05T18:30:30 = guovvamánnu 5
@@ -560,6 +566,12 @@ Northern Sami Finland locale.
    2008-02-05T18:30:30 = 2008 Q1
    1995-12-22T09:05:02 = 1995 Q4
   -0010-09-15T04:44:23 = -10 Q3
+
+=head3 yw ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

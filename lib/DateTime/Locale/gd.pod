@@ -441,6 +441,12 @@ Scottish Gaelic locale.
    1995-12-22T09:05:02 = Dih, 22 Dùbh
   -0010-09-15T04:44:23 = DiS, 15 Sult
 
+=head3 MMMMW ('seachdain' W MMMM)
+
+   2008-02-05T18:30:30 = seachdain 1 dhen Ghearran
+   1995-12-22T09:05:02 = seachdain 3 dhen Dùbhlachd
+  -0010-09-15T04:44:23 = seachdain 2 dhen t-Sultain
+
 =head3 MMMMd (d'mh' MMMM)
 
    2008-02-05T18:30:30 = 5mh dhen Ghearran
@@ -572,6 +578,12 @@ Scottish Gaelic locale.
    2008-02-05T18:30:30 = 1d chairteal 2008
    1995-12-22T09:05:02 = 4mh cairteal 1995
   -0010-09-15T04:44:23 = 3s cairteal -10
+
+=head3 yw ('seachdain' w 'dhe' y)
+
+   2008-02-05T18:30:30 = seachdain 6 dhe 2008
+   1995-12-22T09:05:02 = seachdain 51 dhe 1995
+  -0010-09-15T04:44:23 = seachdain 37 dhe -10
 
 
 =head2 Miscellaneous

@@ -108,33 +108,33 @@ Albanian Macedonia locale.
 
 =head3 Abbreviated (format)
 
-  Jan
-  Shk
-  Mar
-  Pri
-  Maj
-  Qer
-  Kor
-  Gsh
-  Sht
-  Tet
-  Nën
-  Dhj
+  jan
+  shk
+  mar
+  pri
+  maj
+  qer
+  kor
+  gsh
+  sht
+  tet
+  nën
+  dhj
 
 =head3 Narrow (format)
 
-  J
-  S
-  M
-  P
-  M
-  Q
-  K
-  G
-  S
-  T
-  N
-  D
+  j
+  s
+  m
+  p
+  m
+  q
+  k
+  g
+  s
+  t
+  n
+  d
 
 
 =head3 Wide (stand-alone)
@@ -231,18 +231,18 @@ Albanian Macedonia locale.
 
 =head3 Wide (format)
 
-  para erës së re
-  erës së re
+  para Krishtit
+  mbas Krishtit
 
 =head3 Abbreviated (format)
 
-  p.e.r.
-  e.r.
+  p.K.
+  mb.K.
 
 =head3 Narrow (format)
 
-  p.e.r.
-  e.r.
+  p.K.
+  mb.K.
 
 =head2 Date Formats
 
@@ -260,9 +260,9 @@ Albanian Macedonia locale.
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 Shk 2008
-   1995-12-22T09:05:02 = 22 Dhj 1995
-  -0010-09-15T04:44:23 = 15 Sht -10
+   2008-02-05T18:30:30 = 5 shk 2008
+   1995-12-22T09:05:02 = 22 dhj 1995
+  -0010-09-15T04:44:23 = 15 sht -10
 
 =head3 Short
 
@@ -314,9 +314,9 @@ Albanian Macedonia locale.
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 Shk 2008, 18:30:30
-   1995-12-22T09:05:02 = 22 Dhj 1995, 09:05:02
-  -0010-09-15T04:44:23 = 15 Sht -10, 04:44:23
+   2008-02-05T18:30:30 = 5 shk 2008, 18:30:30
+   1995-12-22T09:05:02 = 22 dhj 1995, 09:05:02
+  -0010-09-15T04:44:23 = 15 sht -10, 04:44:23
 
 =head3 Short
 
@@ -365,27 +365,27 @@ Albanian Macedonia locale.
 
 =head3 Gy (y G)
 
-   2008-02-05T18:30:30 = 2008 e.r.
-   1995-12-22T09:05:02 = 1995 e.r.
-  -0010-09-15T04:44:23 = -10 p.e.r.
+   2008-02-05T18:30:30 = 2008 mb.K.
+   1995-12-22T09:05:02 = 1995 mb.K.
+  -0010-09-15T04:44:23 = -10 p.K.
 
 =head3 GyMMM (MMM y G)
 
-   2008-02-05T18:30:30 = Shk 2008 e.r.
-   1995-12-22T09:05:02 = Dhj 1995 e.r.
-  -0010-09-15T04:44:23 = Sht -10 p.e.r.
+   2008-02-05T18:30:30 = shk 2008 mb.K.
+   1995-12-22T09:05:02 = dhj 1995 mb.K.
+  -0010-09-15T04:44:23 = sht -10 p.K.
 
 =head3 GyMMMEd (E, d MMM y G)
 
-   2008-02-05T18:30:30 = Mar, 5 Shk 2008 e.r.
-   1995-12-22T09:05:02 = Pre, 22 Dhj 1995 e.r.
-  -0010-09-15T04:44:23 = Sht, 15 Sht -10 p.e.r.
+   2008-02-05T18:30:30 = Mar, 5 shk 2008 mb.K.
+   1995-12-22T09:05:02 = Pre, 22 dhj 1995 mb.K.
+  -0010-09-15T04:44:23 = Sht, 15 sht -10 p.K.
 
 =head3 GyMMMd (d MMM y G)
 
-   2008-02-05T18:30:30 = 5 Shk 2008 e.r.
-   1995-12-22T09:05:02 = 22 Dhj 1995 e.r.
-  -0010-09-15T04:44:23 = 15 Sht -10 p.e.r.
+   2008-02-05T18:30:30 = 5 shk 2008 mb.K.
+   1995-12-22T09:05:02 = 22 dhj 1995 mb.K.
+  -0010-09-15T04:44:23 = 15 sht -10 p.K.
 
 =head3 H (HH)
 
@@ -437,15 +437,21 @@ Albanian Macedonia locale.
 
 =head3 MMMEd (E, d MMM)
 
-   2008-02-05T18:30:30 = Mar, 5 Shk
-   1995-12-22T09:05:02 = Pre, 22 Dhj
-  -0010-09-15T04:44:23 = Sht, 15 Sht
+   2008-02-05T18:30:30 = Mar, 5 shk
+   1995-12-22T09:05:02 = Pre, 22 dhj
+  -0010-09-15T04:44:23 = Sht, 15 sht
 
 =head3 MMMMEd (E, d MMMM)
 
    2008-02-05T18:30:30 = Mar, 5 shkurt
    1995-12-22T09:05:02 = Pre, 22 dhjetor
   -0010-09-15T04:44:23 = Sht, 15 shtator
+
+=head3 MMMMW ('java' W 'e' MMM)
+
+   2008-02-05T18:30:30 = java 1 e shk
+   1995-12-22T09:05:02 = java 3 e dhj
+  -0010-09-15T04:44:23 = java 2 e sht
 
 =head3 MMMMd (d MMMM)
 
@@ -455,9 +461,9 @@ Albanian Macedonia locale.
 
 =head3 MMMd (d MMM)
 
-   2008-02-05T18:30:30 = 5 Shk
-   1995-12-22T09:05:02 = 22 Dhj
-  -0010-09-15T04:44:23 = 15 Sht
+   2008-02-05T18:30:30 = 5 shk
+   1995-12-22T09:05:02 = 22 dhj
+  -0010-09-15T04:44:23 = 15 sht
 
 =head3 MMdd (d.M)
 
@@ -533,15 +539,15 @@ Albanian Macedonia locale.
 
 =head3 yMMM (MMM y)
 
-   2008-02-05T18:30:30 = Shk 2008
-   1995-12-22T09:05:02 = Dhj 1995
-  -0010-09-15T04:44:23 = Sht -10
+   2008-02-05T18:30:30 = shk 2008
+   1995-12-22T09:05:02 = dhj 1995
+  -0010-09-15T04:44:23 = sht -10
 
 =head3 yMMMEd (E, d MMM y)
 
-   2008-02-05T18:30:30 = Mar, 5 Shk 2008
-   1995-12-22T09:05:02 = Pre, 22 Dhj 1995
-  -0010-09-15T04:44:23 = Sht, 15 Sht -10
+   2008-02-05T18:30:30 = Mar, 5 shk 2008
+   1995-12-22T09:05:02 = Pre, 22 dhj 1995
+  -0010-09-15T04:44:23 = Sht, 15 sht -10
 
 =head3 yMMMM (MMMM y)
 
@@ -551,9 +557,9 @@ Albanian Macedonia locale.
 
 =head3 yMMMd (d MMM y)
 
-   2008-02-05T18:30:30 = 5 Shk 2008
-   1995-12-22T09:05:02 = 22 Dhj 1995
-  -0010-09-15T04:44:23 = 15 Sht -10
+   2008-02-05T18:30:30 = 5 shk 2008
+   1995-12-22T09:05:02 = 22 dhj 1995
+  -0010-09-15T04:44:23 = 15 sht -10
 
 =head3 yMd (d.M.y)
 
@@ -572,6 +578,12 @@ Albanian Macedonia locale.
    2008-02-05T18:30:30 = tremujori i parë, 2008
    1995-12-22T09:05:02 = tremujori i katërt, 1995
   -0010-09-15T04:44:23 = tremujori i tretë, -10
+
+=head3 yw ('java' w 'e' y)
+
+   2008-02-05T18:30:30 = java 6 e 2008
+   1995-12-22T09:05:02 = java 51 e 1995
+  -0010-09-15T04:44:23 = java 37 e -10
 
 
 =head2 Miscellaneous

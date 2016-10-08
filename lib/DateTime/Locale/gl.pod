@@ -41,22 +41,22 @@ Galician locale.
 =head3 Abbreviated (format)
 
   luns
-  mar
-  mér
-  xov
-  ven
-  sáb
-  dom
+  mar.
+  mér.
+  xov.
+  ven.
+  sáb.
+  dom.
 
 =head3 Narrow (format)
 
-  L
-  M
-  M
-  X
-  V
-  S
-  D
+  l.
+  m.
+  m.
+  x.
+  v.
+  s.
+  d.
 
 
 =head3 Wide (stand-alone)
@@ -71,13 +71,13 @@ Galician locale.
 
 =head3 Abbreviated (stand-alone)
 
-  Lun
-  Mar
-  Mér
-  Xov
-  Ven
-  Sáb
-  Dom
+  Luns
+  Mar.
+  Mér.
+  Xov.
+  Ven.
+  Sáb.
+  Dom.
 
 =head3 Narrow (stand-alone)
 
@@ -108,33 +108,33 @@ Galician locale.
 
 =head3 Abbreviated (format)
 
-  xan
-  feb
-  mar
-  abr
-  mai
-  xuñ
-  xul
-  ago
-  set
-  out
-  nov
-  dec
+  xan.
+  feb.
+  mar.
+  abr.
+  maio
+  xuño
+  xul.
+  ago.
+  set.
+  out.
+  nov.
+  dec.
 
 =head3 Narrow (format)
 
-  X
-  F
-  M
-  A
-  M
-  X
-  X
-  A
-  S
-  O
-  N
-  D
+  x.
+  f.
+  m.
+  a.
+  m.
+  x.
+  x.
+  a.
+  s.
+  o.
+  n.
+  d.
 
 
 =head3 Wide (stand-alone)
@@ -154,18 +154,18 @@ Galician locale.
 
 =head3 Abbreviated (stand-alone)
 
-  Xan
-  Feb
-  Mar
-  Abr
-  Mai
-  Xuñ
-  Xul
-  Ago
-  Set
-  Out
-  Nov
-  Dec
+  Xan.
+  Feb.
+  Mar.
+  Abr.
+  Maio
+  Xuño
+  Xul.
+  Ago.
+  Set.
+  Out.
+  Nov.
+  Dec.
 
 =head3 Narrow (stand-alone)
 
@@ -186,10 +186,10 @@ Galician locale.
 
 =head3 Wide (format)
 
-  1º trimestre
-  2º trimestre
-  3º trimestre
-  4º trimestre
+  1.º trimestre
+  2.º trimestre
+  3.º trimestre
+  4.º trimestre
 
 =head3 Abbreviated (format)
 
@@ -208,10 +208,10 @@ Galician locale.
 
 =head3 Wide (stand-alone)
 
-  1º trimestre
-  2º trimestre
-  3º trimestre
-  4º trimestre
+  1.º trimestre
+  2.º trimestre
+  3.º trimestre
+  4.º trimestre
 
 =head3 Abbreviated (stand-alone)
 
@@ -248,21 +248,21 @@ Galician locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = martes 05 febreiro 2008
-   1995-12-22T09:05:02 = venres 22 decembro 1995
-  -0010-09-15T04:44:23 = sábado 15 setembro -10
+   2008-02-05T18:30:30 = martes, 5 de febreiro de 2008
+   1995-12-22T09:05:02 = venres, 22 de decembro de 1995
+  -0010-09-15T04:44:23 = sábado, 15 de setembro de -10
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 05 febreiro 2008
-   1995-12-22T09:05:02 = 22 decembro 1995
-  -0010-09-15T04:44:23 = 15 setembro -10
+   2008-02-05T18:30:30 = 5 de febreiro de 2008
+   1995-12-22T09:05:02 = 22 de decembro de 1995
+  -0010-09-15T04:44:23 = 15 de setembro de -10
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 feb, 2008
-   1995-12-22T09:05:02 = 22 dec, 1995
-  -0010-09-15T04:44:23 = 15 set, -10
+   2008-02-05T18:30:30 = 5 de feb. de 2008
+   1995-12-22T09:05:02 = 22 de dec. de 1995
+  -0010-09-15T04:44:23 = 15 de set. de -10
 
 =head3 Short
 
@@ -302,90 +302,90 @@ Galician locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = martes 05 febreiro 2008 18:30:30 UTC
-   1995-12-22T09:05:02 = venres 22 decembro 1995 09:05:02 UTC
-  -0010-09-15T04:44:23 = sábado 15 setembro -10 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 UTC do martes, 5 de febreiro de 2008
+   1995-12-22T09:05:02 = 09:05:02 UTC do venres, 22 de decembro de 1995
+  -0010-09-15T04:44:23 = 04:44:23 UTC do sábado, 15 de setembro de -10
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 05 febreiro 2008 18:30:30 UTC
-   1995-12-22T09:05:02 = 22 decembro 1995 09:05:02 UTC
-  -0010-09-15T04:44:23 = 15 setembro -10 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 UTC do 5 de febreiro de 2008
+   1995-12-22T09:05:02 = 09:05:02 UTC do 22 de decembro de 1995
+  -0010-09-15T04:44:23 = 04:44:23 UTC do 15 de setembro de -10
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 5 feb, 2008 18:30:30
-   1995-12-22T09:05:02 = 22 dec, 1995 09:05:02
-  -0010-09-15T04:44:23 = 15 set, -10 04:44:23
+   2008-02-05T18:30:30 = 18:30:30, 5 de feb. de 2008
+   1995-12-22T09:05:02 = 09:05:02, 22 de dec. de 1995
+  -0010-09-15T04:44:23 = 04:44:23, 15 de set. de -10
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05/02/08 18:30
-   1995-12-22T09:05:02 = 22/12/95 09:05
-  -0010-09-15T04:44:23 = 15/09/-10 04:44
+   2008-02-05T18:30:30 = 18:30, 05/02/08
+   1995-12-22T09:05:02 = 09:05, 22/12/95
+  -0010-09-15T04:44:23 = 04:44, 15/09/-10
 
 
 =head2 Available Formats
 
 =head3 E (ccc)
 
-   2008-02-05T18:30:30 = Mar
-   1995-12-22T09:05:02 = Ven
-  -0010-09-15T04:44:23 = Sáb
+   2008-02-05T18:30:30 = Mar.
+   1995-12-22T09:05:02 = Ven.
+  -0010-09-15T04:44:23 = Sáb.
 
-=head3 EHm (E HH:mm)
+=head3 EHm (ccc, HH:mm)
 
-   2008-02-05T18:30:30 = mar 18:30
-   1995-12-22T09:05:02 = ven 09:05
-  -0010-09-15T04:44:23 = sáb 04:44
+   2008-02-05T18:30:30 = Mar., 18:30
+   1995-12-22T09:05:02 = Ven., 09:05
+  -0010-09-15T04:44:23 = Sáb., 04:44
 
-=head3 EHms (E HH:mm:ss)
+=head3 EHms (ccc, HH:mm:ss)
 
-   2008-02-05T18:30:30 = mar 18:30:30
-   1995-12-22T09:05:02 = ven 09:05:02
-  -0010-09-15T04:44:23 = sáb 04:44:23
+   2008-02-05T18:30:30 = Mar., 18:30:30
+   1995-12-22T09:05:02 = Ven., 09:05:02
+  -0010-09-15T04:44:23 = Sáb., 04:44:23
 
-=head3 Ed (d E)
+=head3 Ed (d 'de' E)
 
-   2008-02-05T18:30:30 = 5 mar
-   1995-12-22T09:05:02 = 22 ven
-  -0010-09-15T04:44:23 = 15 sáb
+   2008-02-05T18:30:30 = 5 de mar.
+   1995-12-22T09:05:02 = 22 de ven.
+  -0010-09-15T04:44:23 = 15 de sáb.
 
-=head3 Ehm (E h:mm a)
+=head3 Ehm (E, h:mm a)
 
-   2008-02-05T18:30:30 = mar 6:30 p.m.
-   1995-12-22T09:05:02 = ven 9:05 a.m.
-  -0010-09-15T04:44:23 = sáb 4:44 a.m.
+   2008-02-05T18:30:30 = mar., 6:30 p.m.
+   1995-12-22T09:05:02 = ven., 9:05 a.m.
+  -0010-09-15T04:44:23 = sáb., 4:44 a.m.
 
-=head3 Ehms (E h:mm:ss a)
+=head3 Ehms (E, h:mm:ss a)
 
-   2008-02-05T18:30:30 = mar 6:30:30 p.m.
-   1995-12-22T09:05:02 = ven 9:05:02 a.m.
-  -0010-09-15T04:44:23 = sáb 4:44:23 a.m.
+   2008-02-05T18:30:30 = mar., 6:30:30 p.m.
+   1995-12-22T09:05:02 = ven., 9:05:02 a.m.
+  -0010-09-15T04:44:23 = sáb., 4:44:23 a.m.
 
-=head3 Gy (G y)
+=head3 Gy (y G)
 
-   2008-02-05T18:30:30 = d.C. 2008
-   1995-12-22T09:05:02 = d.C. 1995
-  -0010-09-15T04:44:23 = a.C. -10
+   2008-02-05T18:30:30 = 2008 d.C.
+   1995-12-22T09:05:02 = 1995 d.C.
+  -0010-09-15T04:44:23 = -10 a.C.
 
-=head3 GyMMM (G y MMM)
+=head3 GyMMM (MMM 'de' y G)
 
-   2008-02-05T18:30:30 = d.C. 2008 feb
-   1995-12-22T09:05:02 = d.C. 1995 dec
-  -0010-09-15T04:44:23 = a.C. -10 set
+   2008-02-05T18:30:30 = feb. de 2008 d.C.
+   1995-12-22T09:05:02 = dec. de 1995 d.C.
+  -0010-09-15T04:44:23 = set. de -10 a.C.
 
-=head3 GyMMMEd (G y MMM d, E)
+=head3 GyMMMEd (E, d 'de' MMM 'de' y G)
 
-   2008-02-05T18:30:30 = d.C. 2008 feb 5, mar
-   1995-12-22T09:05:02 = d.C. 1995 dec 22, ven
-  -0010-09-15T04:44:23 = a.C. -10 set 15, sáb
+   2008-02-05T18:30:30 = mar., 5 de feb. de 2008 d.C.
+   1995-12-22T09:05:02 = ven., 22 de dec. de 1995 d.C.
+  -0010-09-15T04:44:23 = sáb., 15 de set. de -10 a.C.
 
-=head3 GyMMMd (G y MMM d)
+=head3 GyMMMd (d 'de' MMMM 'de' y G)
 
-   2008-02-05T18:30:30 = d.C. 2008 feb 5
-   1995-12-22T09:05:02 = d.C. 1995 dec 22
-  -0010-09-15T04:44:23 = a.C. -10 set 15
+   2008-02-05T18:30:30 = 5 de febreiro de 2008 d.C.
+   1995-12-22T09:05:02 = 22 de decembro de 1995 d.C.
+  -0010-09-15T04:44:23 = 15 de setembro de -10 a.C.
 
 =head3 H (HH)
 
@@ -405,17 +405,17 @@ Galician locale.
    1995-12-22T09:05:02 = 09:05:02
   -0010-09-15T04:44:23 = 04:44:23
 
-=head3 Hmsv (HH:mm:ss v)
+=head3 Hmsv (HH:mm:ss (v))
 
-   2008-02-05T18:30:30 = 18:30:30 UTC
-   1995-12-22T09:05:02 = 09:05:02 UTC
-  -0010-09-15T04:44:23 = 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 (UTC)
+   1995-12-22T09:05:02 = 09:05:02 (UTC)
+  -0010-09-15T04:44:23 = 04:44:23 (UTC)
 
-=head3 Hmv (HH:mm v)
+=head3 Hmv (HH:mm (v))
 
-   2008-02-05T18:30:30 = 18:30 UTC
-   1995-12-22T09:05:02 = 09:05 UTC
-  -0010-09-15T04:44:23 = 04:44 UTC
+   2008-02-05T18:30:30 = 18:30 (UTC)
+   1995-12-22T09:05:02 = 09:05 (UTC)
+  -0010-09-15T04:44:23 = 04:44 (UTC)
 
 =head3 M (L)
 
@@ -423,41 +423,47 @@ Galician locale.
    1995-12-22T09:05:02 = 12
   -0010-09-15T04:44:23 = 9
 
-=head3 MEd (E, d-M)
+=head3 MEd (E, d/M)
 
-   2008-02-05T18:30:30 = mar, 5-2
-   1995-12-22T09:05:02 = ven, 22-12
-  -0010-09-15T04:44:23 = sáb, 15-9
+   2008-02-05T18:30:30 = mar., 5/2
+   1995-12-22T09:05:02 = ven., 22/12
+  -0010-09-15T04:44:23 = sáb., 15/9
 
 =head3 MMM (LLL)
 
-   2008-02-05T18:30:30 = Feb
-   1995-12-22T09:05:02 = Dec
-  -0010-09-15T04:44:23 = Set
+   2008-02-05T18:30:30 = Feb.
+   1995-12-22T09:05:02 = Dec.
+  -0010-09-15T04:44:23 = Set.
 
-=head3 MMMEd (E d MMM)
+=head3 MMMEd (ccc, d 'de' MMM)
 
-   2008-02-05T18:30:30 = mar 5 feb
-   1995-12-22T09:05:02 = ven 22 dec
-  -0010-09-15T04:44:23 = sáb 15 set
+   2008-02-05T18:30:30 = Mar., 5 de feb.
+   1995-12-22T09:05:02 = Ven., 22 de dec.
+  -0010-09-15T04:44:23 = Sáb., 15 de set.
 
-=head3 MMMMEd (E d MMMM)
+=head3 MMMMEd (ccc, d 'de' MMMM)
 
-   2008-02-05T18:30:30 = mar 5 febreiro
-   1995-12-22T09:05:02 = ven 22 decembro
-  -0010-09-15T04:44:23 = sáb 15 setembro
+   2008-02-05T18:30:30 = Mar., 5 de febreiro
+   1995-12-22T09:05:02 = Ven., 22 de decembro
+  -0010-09-15T04:44:23 = Sáb., 15 de setembro
 
-=head3 MMMMd (d MMMM)
+=head3 MMMMW (W.'ª' 'semana' 'de' MMMM)
 
-   2008-02-05T18:30:30 = 5 febreiro
-   1995-12-22T09:05:02 = 22 decembro
-  -0010-09-15T04:44:23 = 15 setembro
+   2008-02-05T18:30:30 = 1.ª semana de febreiro
+   1995-12-22T09:05:02 = 3.ª semana de decembro
+  -0010-09-15T04:44:23 = 2.ª semana de setembro
 
-=head3 MMMd (d MMM)
+=head3 MMMMd (d 'de' MMMM)
 
-   2008-02-05T18:30:30 = 5 feb
-   1995-12-22T09:05:02 = 22 dec
-  -0010-09-15T04:44:23 = 15 set
+   2008-02-05T18:30:30 = 5 de febreiro
+   1995-12-22T09:05:02 = 22 de decembro
+  -0010-09-15T04:44:23 = 15 de setembro
+
+=head3 MMMd (d 'de' MMM)
+
+   2008-02-05T18:30:30 = 5 de feb.
+   1995-12-22T09:05:02 = 22 de dec.
+  -0010-09-15T04:44:23 = 15 de set.
 
 =head3 MMdd (dd/MM)
 
@@ -465,11 +471,11 @@ Galician locale.
    1995-12-22T09:05:02 = 22/12
   -0010-09-15T04:44:23 = 15/09
 
-=head3 Md (d-M)
+=head3 Md (d/M)
 
-   2008-02-05T18:30:30 = 5-2
-   1995-12-22T09:05:02 = 22-12
-  -0010-09-15T04:44:23 = 15-9
+   2008-02-05T18:30:30 = 5/2
+   1995-12-22T09:05:02 = 22/12
+  -0010-09-15T04:44:23 = 15/9
 
 =head3 d (d)
 
@@ -519,17 +525,17 @@ Galician locale.
    1995-12-22T09:05:02 = 1995
   -0010-09-15T04:44:23 = -10
 
-=head3 yM (M-y)
+=head3 yM (M/y)
 
-   2008-02-05T18:30:30 = 2-2008
-   1995-12-22T09:05:02 = 12-1995
-  -0010-09-15T04:44:23 = 9--10
+   2008-02-05T18:30:30 = 2/2008
+   1995-12-22T09:05:02 = 12/1995
+  -0010-09-15T04:44:23 = 9/-10
 
-=head3 yMEd (E, d/M/y)
+=head3 yMEd (ccc, d/M/y)
 
-   2008-02-05T18:30:30 = mar, 5/2/2008
-   1995-12-22T09:05:02 = ven, 22/12/1995
-  -0010-09-15T04:44:23 = sáb, 15/9/-10
+   2008-02-05T18:30:30 = Mar., 5/2/2008
+   1995-12-22T09:05:02 = Ven., 22/12/1995
+  -0010-09-15T04:44:23 = Sáb., 15/9/-10
 
 =head3 yMM (MM/y)
 
@@ -537,29 +543,29 @@ Galician locale.
    1995-12-22T09:05:02 = 12/1995
   -0010-09-15T04:44:23 = 09/-10
 
-=head3 yMMM (MMM y)
+=head3 yMMM (LLL 'de' y)
 
-   2008-02-05T18:30:30 = feb 2008
-   1995-12-22T09:05:02 = dec 1995
-  -0010-09-15T04:44:23 = set -10
+   2008-02-05T18:30:30 = Feb. de 2008
+   1995-12-22T09:05:02 = Dec. de 1995
+  -0010-09-15T04:44:23 = Set. de -10
 
-=head3 yMMMEd (E, d MMM, y)
+=head3 yMMMEd (ccc, d 'de' MMM 'de' y)
 
-   2008-02-05T18:30:30 = mar, 5 feb, 2008
-   1995-12-22T09:05:02 = ven, 22 dec, 1995
-  -0010-09-15T04:44:23 = sáb, 15 set, -10
+   2008-02-05T18:30:30 = Mar., 5 de feb. de 2008
+   1995-12-22T09:05:02 = Ven., 22 de dec. de 1995
+  -0010-09-15T04:44:23 = Sáb., 15 de set. de -10
 
-=head3 yMMMM (MMMM y)
+=head3 yMMMM (LLLL 'de' y)
 
-   2008-02-05T18:30:30 = febreiro 2008
-   1995-12-22T09:05:02 = decembro 1995
-  -0010-09-15T04:44:23 = setembro -10
+   2008-02-05T18:30:30 = Febreiro de 2008
+   1995-12-22T09:05:02 = Decembro de 1995
+  -0010-09-15T04:44:23 = Setembro de -10
 
-=head3 yMMMd (d MMM, y)
+=head3 yMMMd (d 'de' MMM 'de' y)
 
-   2008-02-05T18:30:30 = 5 feb, 2008
-   1995-12-22T09:05:02 = 22 dec, 1995
-  -0010-09-15T04:44:23 = 15 set, -10
+   2008-02-05T18:30:30 = 5 de feb. de 2008
+   1995-12-22T09:05:02 = 22 de dec. de 1995
+  -0010-09-15T04:44:23 = 15 de set. de -10
 
 =head3 yMd (d/M/y)
 
@@ -573,11 +579,17 @@ Galician locale.
    1995-12-22T09:05:02 = T4 1995
   -0010-09-15T04:44:23 = T3 -10
 
-=head3 yQQQQ (QQQQ y)
+=head3 yQQQQ (QQQQ 'de' y)
 
-   2008-02-05T18:30:30 = 1º trimestre 2008
-   1995-12-22T09:05:02 = 4º trimestre 1995
-  -0010-09-15T04:44:23 = 3º trimestre -10
+   2008-02-05T18:30:30 = 1.º trimestre de 2008
+   1995-12-22T09:05:02 = 4.º trimestre de 1995
+  -0010-09-15T04:44:23 = 3.º trimestre de -10
+
+=head3 yw (w.'ª' 'semana' 'de' y)
+
+   2008-02-05T18:30:30 = 6.ª semana de 2008
+   1995-12-22T09:05:02 = 51.ª semana de 1995
+  -0010-09-15T04:44:23 = 37.ª semana de -10
 
 
 =head2 Miscellaneous
