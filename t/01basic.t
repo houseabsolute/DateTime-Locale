@@ -11,6 +11,10 @@ my @locale_codes = sort DateTime::Locale->codes;
 my %locale_names = map { $_ => 1 } DateTime::Locale->names;
 my %locale_codes = map { $_ => 1 } DateTime::Locale->codes;
 
+# These are locales that are missing native name data in the JSON source
+# files.
+my %locales_without_native_data = map { $_ => 1 } qw( nds nds-DE nds-NL );
+
 subtest( 'basic overall tests', \&basic_tests );
 for my $code (@locale_codes) {
     subtest( "basic tests for $code", sub { test_one_locale($code) } );
@@ -70,10 +74,13 @@ sub test_one_locale {
     );
 
     ok( length $locale->name, 'has a locale name' );
-    ok(
-        length $locale->native_name,
-        'has a native locale name',
-    );
+
+    unless ( $locales_without_native_data{$code} ) {
+        ok(
+            length $locale->native_name,
+            'has a native locale name',
+        );
+    }
 
     for my $test (
         {
@@ -251,6 +258,7 @@ sub check_root {
         MMMd    => 'MMM d',
         MMMEd   => 'MMM d, E',
         MMMMd   => 'MMMM d',
+        MMMMW   => q{'week' W 'of' MMM},
         ms      => 'mm:ss',
         y       => 'y',
         yM      => 'y-MM',
@@ -262,6 +270,7 @@ sub check_root {
         yMMMM   => 'y MMMM',
         yQQQ    => 'y QQQ',
         yQQQQ   => 'y QQQQ',
+        yw      => q{'week' w 'of' y},
     );
 
     test_formats( $locale, %formats );
@@ -328,12 +337,13 @@ sub check_en_GB {
         Hmv     => 'HH:mm v',
         M       => 'L',
         Md      => 'dd/MM',
-        MEd     => 'E, dd/MM',
+        MEd     => 'E dd/MM',
         MMdd    => 'dd/MM',
         MMM     => 'LLL',
         MMMd    => 'd MMM',
-        MMMEd   => 'E, d MMM',
+        MMMEd   => 'E d MMM',
         MMMMd   => 'd MMMM',
+        MMMMW   => q{'week' W 'of' MMM},
         ms      => 'mm:ss',
         y       => 'y',
         yM      => 'MM/y',
@@ -345,6 +355,7 @@ sub check_en_GB {
         yMMMM   => 'MMMM y',
         yQQQ    => 'QQQ y',
         yQQQQ   => 'QQQQ y',
+        yw      => q{'week' w 'of' y},
     );
 
     test_formats( $locale, %formats );
