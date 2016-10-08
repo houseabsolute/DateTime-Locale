@@ -173,7 +173,7 @@ This pod file contains examples of the locale data available for the
 =head2 Date Formats
 
 {
-  $_->set( locale => $locale ) for @example_dts;
+  $_->set_locale($locale) for @example_dts;
   for my $length (qw( full long medium short )) {
       my $meth = 'date_format_' . $length;
       $OUT .= "=head3 \u$length\n\n";
