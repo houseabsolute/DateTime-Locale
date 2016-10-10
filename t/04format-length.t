@@ -17,7 +17,7 @@ is(
 );
 
 is( $loc->date_format_default, 'y MMM d',  'check default date format' );
-is( $loc->time_format_default, 'HH:mm:ss', 'check default date format' );
+is( $loc->time_format_default, 'HH:mm:ss', 'check default time format' );
 
 $loc->set_default_date_format_length('short');
 $loc->set_default_time_format_length('short');
