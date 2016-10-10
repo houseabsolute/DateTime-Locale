@@ -13,7 +13,7 @@ my %locale_codes = map { $_ => 1 } DateTime::Locale->codes;
 
 # These are locales that are missing native name data in the JSON source
 # files.
-my %locales_without_native_data = map { $_ => 1 } qw( nds nds-DE nds-NL );
+my %is_locale_without_native_data = map { $_ => 1 } qw( nds nds-DE nds-NL );
 
 subtest( 'basic overall tests', \&basic_tests );
 for my $code (@locale_codes) {
@@ -75,7 +75,7 @@ sub test_one_locale {
 
     ok( length $locale->name, 'has a locale name' );
 
-    unless ( $locales_without_native_data{$code} ) {
+    unless ( $is_locale_without_native_data{$code} ) {
         ok(
             length $locale->native_name,
             'has a native locale name',
