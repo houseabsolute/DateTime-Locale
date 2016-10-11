@@ -15,6 +15,12 @@ like(
     'cannot add an alias that would cause a loop'
 );
 
+like(
+    exception { DateTime::Locale->add_aliases( bar => 'bar' ) },
+    qr/Can't alias an id to itself/,
+    'alias to itself should fail'
+);
+
 my $l = DateTime::Locale->load('baz');
 isa_ok( $l, 'DateTime::Locale::FromData' );
 is( $l->id, 'root', 'id is root' );
