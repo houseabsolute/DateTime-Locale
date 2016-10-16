@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Test::More;
-
+use Test::Fatal;
 use DateTime::Locale;
 
 ## no critic (Modules::ProhibitMultiplePackages)
@@ -42,6 +42,18 @@ use DateTime::Locale;
     @Other::Locale::fr_FR_BZH::ISA = qw(DateTime::Locale::Base);
     sub short_date_format {'test test2'}
 }
+
+like(
+    exception { DateTime::Locale->register( id => '@' ) },
+    qr/\Q'\@' or '=' are not allowed in locale ids\E/,
+    'locale id test with @'
+);
+
+like(
+    exception { DateTime::Locale->register( id => '=' ) },
+    qr/\Q'\@' or '=' are not allowed in locale ids\E/,
+    'locale id test with ='
+);
 
 DateTime::Locale->register(
     id           => 'en_GB_RIDAS',
