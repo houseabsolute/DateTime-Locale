@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Test::More;
-use Test::Warnings qw( warnings );
+use Test::Warnings qw( warnings :no_end_test );
 
 {
     package DateTime::Locale::fake;
