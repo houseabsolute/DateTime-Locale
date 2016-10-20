@@ -5,7 +5,6 @@ use Test::More;
 use Test::Warnings qw( warnings );
 
 {
-
     package DateTime::Locale::fake;
 
     use strict;
