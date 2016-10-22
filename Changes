@@ -1,5 +1,9 @@
 {{$NEXT}}
 
+- Don't let warnings from other modules cause t/09version-check.t to
+  fail. Reported by Graham Ollis. RT #118465
+
+
 1.09     2016-10-10
 
 - Rebuilt all locale data with CLDR 30, released on 2016-10-05.
