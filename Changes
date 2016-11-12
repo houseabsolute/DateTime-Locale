@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Switched from RT to the GitHub issue tracker.
+
+
 1.10     2016-10-22
 
 - Don't let warnings from other modules cause t/09version-check.t to
