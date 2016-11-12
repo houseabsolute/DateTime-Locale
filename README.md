@@ -4,7 +4,7 @@ DateTime::Locale - Localization support for DateTime.pm
 
 # VERSION
 
-version 1.10
+version 1.11
 
 # SYNOPSIS
 
@@ -124,8 +124,7 @@ http://datetime.perl.org/
 
 # SUPPORT
 
-Bugs may be submitted through [the RT bug tracker](http://rt.cpan.org/Public/Dist/Display.html?Name=DateTime-Locale)
-(or [bug-datetime-locale@rt.cpan.org](mailto:bug-datetime-locale@rt.cpan.org)).
+Bugs may be submitted through [https://github.com/houseabsolute/DateTime-Locale/issues](https://github.com/houseabsolute/DateTime-Locale/issues).
 
 There is a mailing list available for users of this distribution,
 [mailto:datetime@perl.org](mailto:datetime@perl.org).
