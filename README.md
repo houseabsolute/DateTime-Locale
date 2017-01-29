@@ -4,7 +4,7 @@ DateTime::Locale - Localization support for DateTime.pm
 
 # VERSION
 
-version 1.11
+version 1.12
 
 # SYNOPSIS
 
@@ -124,12 +124,16 @@ http://datetime.perl.org/
 
 # SUPPORT
 
-Bugs may be submitted through [https://github.com/houseabsolute/DateTime-Locale/issues](https://github.com/houseabsolute/DateTime-Locale/issues).
+Bugs may be submitted at [https://github.com/houseabsolute/DateTime-Locale/issues](https://github.com/houseabsolute/DateTime-Locale/issues).
 
 There is a mailing list available for users of this distribution,
 [mailto:datetime@perl.org](mailto:datetime@perl.org).
 
-I am also usually active on IRC as 'drolsky' on `irc://irc.perl.org`.
+I am also usually active on IRC as 'autarch' on `irc://irc.perl.org`.
+
+# SOURCE
+
+The source code repository for DateTime-Locale can be found at [https://github.com/houseabsolute/DateTime-Locale](https://github.com/houseabsolute/DateTime-Locale).
 
 # DONATIONS
 
@@ -159,7 +163,10 @@ Dave Rolsky <autarch@urth.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Dave Rolsky.
+This software is copyright (c) 2003 - 2017 by Dave Rolsky.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+The full text of the license can be found in the
+`LICENSE` file included with this distribution.

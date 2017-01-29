@@ -51,7 +51,6 @@ on 'develop' => sub {
   requires "Test::EOL" => "0";
   requires "Test::More" => "0.96";
   requires "Test::NoTabs" => "0";
-  requires "Test::Output" => "0";
   requires "Test::Pod" => "1.41";
   requires "Test::Portability::Files" => "0";
   requires "Test::Spelling" => "0.12";
