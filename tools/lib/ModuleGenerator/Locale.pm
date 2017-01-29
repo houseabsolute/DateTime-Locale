@@ -14,6 +14,7 @@ use JSON::MaybeXS qw( decode_json );
 use Moose;
 use MooseX::Types::Moose qw( HashRef Int Maybe Str );
 use MooseX::Types::Path::Class qw( Dir File );
+use MooseX::Types::Perl qw( LaxVersionStr );
 
 ## no critic (TestingAndDebugging::ProhibitNoWarnings)
 no warnings qw( experimental::postderef experimental::signatures );
@@ -144,7 +145,7 @@ has _first_day_of_week => (
 
 has version => (
     is      => 'ro',
-    isa     => Int,
+    isa     => LaxVersionStr,
     lazy    => 1,
     builder => '_build_version',
 );
