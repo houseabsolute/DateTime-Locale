@@ -447,11 +447,11 @@ Ewe Ghana locale.
    1995-12-22T09:05:02 = fiɖ, dzome 22 lia
   -0010-09-15T04:44:23 = mem, anyɔnyɔ 15 lia
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of dzd
-   1995-12-22T09:05:02 = week 3 of dzm
-  -0010-09-15T04:44:23 = week 2 of any
+   2008-02-05T18:30:30 = week 1 of dzodze
+   1995-12-22T09:05:02 = week 3 of dzome
+  -0010-09-15T04:44:23 = week 2 of anyɔnyɔ
 
 =head3 MMMMd (MMMM d 'lia')
 

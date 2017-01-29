@@ -441,11 +441,11 @@ Colognian locale.
    1995-12-22T09:05:02 = Fr. 22. Dez
   -0010-09-15T04:44:23 = Sa. 15. Säp
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Fäb
-   1995-12-22T09:05:02 = week 3 of Dez
-  -0010-09-15T04:44:23 = week 2 of Säp
+   2008-02-05T18:30:30 = week 1 of Fäbrowa
+   1995-12-22T09:05:02 = week 3 of Dezämber
+  -0010-09-15T04:44:23 = week 2 of Septämber
 
 =head3 MMMMd (d. MMMM)
 

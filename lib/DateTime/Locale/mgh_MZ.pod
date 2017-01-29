@@ -441,11 +441,11 @@ Makhuwa-Meetto Mozambique locale.
    1995-12-22T09:05:02 = Iju, Yel 22
   -0010-09-15T04:44:23 = Jmo, Tis 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Una
-   1995-12-22T09:05:02 = week 3 of Yel
-  -0010-09-15T04:44:23 = week 2 of Tis
+   2008-02-05T18:30:30 = week 1 of Mweri wo unayeli
+   1995-12-22T09:05:02 = week 3 of Mweri wo kumi na yel’li
+  -0010-09-15T04:44:23 = week 2 of Mweri wo tisa
 
 =head3 MMMMd (MMMM d)
 

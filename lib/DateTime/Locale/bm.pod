@@ -447,11 +447,11 @@ Bambara locale.
    1995-12-22T09:05:02 = jum 22 desanburu
   -0010-09-15T04:44:23 = sib 15 sɛtanburu
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of feb
-   1995-12-22T09:05:02 = week 3 of des
-  -0010-09-15T04:44:23 = week 2 of sɛt
+   2008-02-05T18:30:30 = week 1 of feburuye
+   1995-12-22T09:05:02 = week 3 of desanburu
+  -0010-09-15T04:44:23 = week 2 of sɛtanburu
 
 =head3 MMMMd (d MMMM)
 

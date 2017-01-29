@@ -441,11 +441,11 @@ Lingala Central African Republic locale.
    1995-12-22T09:05:02 = mtn 22 dsb
   -0010-09-15T04:44:23 = mps 15 stb
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of fbl
-   1995-12-22T09:05:02 = week 3 of dsb
-  -0010-09-15T04:44:23 = week 2 of stb
+   2008-02-05T18:30:30 = week 1 of sánzá ya míbalé
+   1995-12-22T09:05:02 = week 3 of sánzá ya zómi na míbalé
+  -0010-09-15T04:44:23 = week 2 of sánzá ya libwa
 
 =head3 MMMMd (MMMM d)
 

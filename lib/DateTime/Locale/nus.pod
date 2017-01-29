@@ -441,11 +441,11 @@ Nuer locale.
    1995-12-22T09:05:02 = Dhieec 22 Tid
   -0010-09-15T04:44:23 = Bäkɛl 15 Tɛɛ
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of Pɛt
-   1995-12-22T09:05:02 = week 3 of Tid
-  -0010-09-15T04:44:23 = week 2 of Tɛɛ
+   1995-12-22T09:05:02 = week 3 of Tio̱p in di̱i̱t
+  -0010-09-15T04:44:23 = week 2 of Tɛɛr
 
 =head3 MMMMd (MMMM d)
 

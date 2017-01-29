@@ -441,11 +441,11 @@ Kalaallisut locale.
    1995-12-22T09:05:02 = dec 22, tal
   -0010-09-15T04:44:23 = sep 15, arf
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of feb
-   1995-12-22T09:05:02 = week 3 of dec
-  -0010-09-15T04:44:23 = week 2 of sep
+   2008-02-05T18:30:30 = week 1 of februari
+   1995-12-22T09:05:02 = week 3 of decemberi
+  -0010-09-15T04:44:23 = week 2 of septemberi
 
 =head3 MMMMd (MMMM d)
 

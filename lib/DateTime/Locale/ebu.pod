@@ -447,11 +447,11 @@ Embu locale.
    1995-12-22T09:05:02 = Maa, Mweri wa ikũmi na Kaĩrĩ 22
   -0010-09-15T04:44:23 = NMM, Mweri wa kenda 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Kai
-   1995-12-22T09:05:02 = week 3 of Igi
-  -0010-09-15T04:44:23 = week 2 of Ken
+   2008-02-05T18:30:30 = week 1 of Mweri wa kaĩri
+   1995-12-22T09:05:02 = week 3 of Mweri wa ikũmi na Kaĩrĩ
+  -0010-09-15T04:44:23 = week 2 of Mweri wa kenda
 
 =head3 MMMMd (MMMM d)
 

@@ -447,11 +447,11 @@ Makonde Tanzania locale.
    1995-12-22T09:05:02 = Ll7, Mwedi wa Nnyano na Nnyano na M 22
   -0010-09-15T04:44:23 = Ll1, Mwedi wa Nnyano na Nchechi 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Feb
-   1995-12-22T09:05:02 = week 3 of Des
-  -0010-09-15T04:44:23 = week 2 of Sep
+   2008-02-05T18:30:30 = week 1 of Mwedi wa Pili
+   1995-12-22T09:05:02 = week 3 of Mwedi wa Nnyano na Nnyano na M
+  -0010-09-15T04:44:23 = week 2 of Mwedi wa Nnyano na Nchechi
 
 =head3 MMMMd (MMMM d)
 

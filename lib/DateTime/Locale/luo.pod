@@ -447,11 +447,11 @@ Luo locale.
    1995-12-22T09:05:02 = TAB, Dwe mar Apar gi ariyo 22
   -0010-09-15T04:44:23 = NGS, Dwe mar Ochiko 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of DAR
-   1995-12-22T09:05:02 = week 3 of DAG
-  -0010-09-15T04:44:23 = week 2 of DOC
+   2008-02-05T18:30:30 = week 1 of Dwe mar Ariyo
+   1995-12-22T09:05:02 = week 3 of Dwe mar Apar gi ariyo
+  -0010-09-15T04:44:23 = week 2 of Dwe mar Ochiko
 
 =head3 MMMMd (MMMM d)
 

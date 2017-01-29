@@ -441,11 +441,11 @@ Manx Isle of Man locale.
    1995-12-22T09:05:02 = M-Nollick 22, Jeh
   -0010-09-15T04:44:23 = M-fouyir 15, Jes
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of T-arree
-   1995-12-22T09:05:02 = week 3 of M-Nollick
-  -0010-09-15T04:44:23 = week 2 of M-fouyir
+   2008-02-05T18:30:30 = week 1 of Toshiaght-arree
+   1995-12-22T09:05:02 = week 3 of Mee ny Nollick
+  -0010-09-15T04:44:23 = week 2 of Mean-fouyir
 
 =head3 MMMMd (MMMM d)
 

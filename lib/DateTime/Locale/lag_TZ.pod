@@ -447,11 +447,11 @@ Langi Tanzania locale.
    1995-12-22T09:05:02 = Ijm, Kʉsasatʉ 22
   -0010-09-15T04:44:23 = Móosi, Kʉsaatʉ 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Naanɨ
-   1995-12-22T09:05:02 = week 3 of Sasatʉ
-  -0010-09-15T04:44:23 = week 2 of Saatʉ
+   2008-02-05T18:30:30 = week 1 of Kʉnaanɨ
+   1995-12-22T09:05:02 = week 3 of Kʉsasatʉ
+  -0010-09-15T04:44:23 = week 2 of Kʉsaatʉ
 
 =head3 MMMMd (MMMM d)
 

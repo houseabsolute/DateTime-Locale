@@ -441,11 +441,11 @@ Zarma locale.
    1995-12-22T09:05:02 = Alz 22 Dee
   -0010-09-15T04:44:23 = Asi 15 Sek
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Fee
-   1995-12-22T09:05:02 = week 3 of Dee
-  -0010-09-15T04:44:23 = week 2 of Sek
+   2008-02-05T18:30:30 = week 1 of Feewiriye
+   1995-12-22T09:05:02 = week 3 of Deesanbur
+  -0010-09-15T04:44:23 = week 2 of Sektanbur
 
 =head3 MMMMd (MMMM d)
 

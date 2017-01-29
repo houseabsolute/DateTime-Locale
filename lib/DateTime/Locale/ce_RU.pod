@@ -441,11 +441,11 @@ Chechen Russia locale.
    1995-12-22T09:05:02 = дек 22, пӀераскан де
   -0010-09-15T04:44:23 = сен 15, шот де
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of фев
-   1995-12-22T09:05:02 = week 3 of дек
-  -0010-09-15T04:44:23 = week 2 of сен
+   2008-02-05T18:30:30 = week 1 of февраль
+   1995-12-22T09:05:02 = week 3 of декабрь
+  -0010-09-15T04:44:23 = week 2 of сентябрь
 
 =head3 MMMMd (MMMM d)
 

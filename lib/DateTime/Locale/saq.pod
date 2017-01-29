@@ -447,11 +447,11 @@ Samburu locale.
    1995-12-22T09:05:02 = Sap, Lapa le tomon waare 22
   -0010-09-15T04:44:23 = Kwe, Lapa le saal 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Waa
-   1995-12-22T09:05:02 = week 3 of Tow
-  -0010-09-15T04:44:23 = week 2 of Saa
+   2008-02-05T18:30:30 = week 1 of Lapa le waare
+   1995-12-22T09:05:02 = week 3 of Lapa le tomon waare
+  -0010-09-15T04:44:23 = week 2 of Lapa le saal
 
 =head3 MMMMd (MMMM d)
 

@@ -441,11 +441,11 @@ Kwasio Cameroon locale.
    1995-12-22T09:05:02 = mbs 22 kris
   -0010-09-15T04:44:23 = sas 15 ng9
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of ng2
-   1995-12-22T09:05:02 = week 3 of kris
-  -0010-09-15T04:44:23 = week 2 of ng9
+   2008-02-05T18:30:30 = week 1 of ngwɛn ńmba
+   1995-12-22T09:05:02 = week 3 of krísimin
+  -0010-09-15T04:44:23 = week 2 of ngwɛn rɛbvuâ
 
 =head3 MMMMd (MMMM d)
 

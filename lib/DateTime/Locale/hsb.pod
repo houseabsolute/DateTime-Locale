@@ -441,11 +441,11 @@ Upper Sorbian locale.
    1995-12-22T09:05:02 = pja, 22. dec.
   -0010-09-15T04:44:23 = sob, 15. sep.
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of feb.
-   1995-12-22T09:05:02 = week 3 of dec.
-  -0010-09-15T04:44:23 = week 2 of sep.
+   2008-02-05T18:30:30 = week 1 of februara
+   1995-12-22T09:05:02 = week 3 of decembra
+  -0010-09-15T04:44:23 = week 2 of septembra
 
 =head3 MMMMd (MMMM d)
 

@@ -447,11 +447,11 @@ Masai Tanzania locale.
    1995-12-22T09:05:02 = Iju, Ntʉ́ŋʉ́s 22
   -0010-09-15T04:44:23 = Jmo, Kúshîn 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Ará
-   1995-12-22T09:05:02 = week 3 of Ntʉ́
-  -0010-09-15T04:44:23 = week 2 of Kús
+   2008-02-05T18:30:30 = week 1 of Arát
+   1995-12-22T09:05:02 = week 3 of Ntʉ́ŋʉ́s
+  -0010-09-15T04:44:23 = week 2 of Kúshîn
 
 =head3 MMMMd (MMMM d)
 

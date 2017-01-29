@@ -441,11 +441,11 @@ Rundi Burundi locale.
    1995-12-22T09:05:02 = gnu. 22 Uku.
   -0010-09-15T04:44:23 = gnd. 15 Nze.
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Gas.
-   1995-12-22T09:05:02 = week 3 of Uku.
-  -0010-09-15T04:44:23 = week 2 of Nze.
+   2008-02-05T18:30:30 = week 1 of Ruhuhuma
+   1995-12-22T09:05:02 = week 3 of Kigarama
+  -0010-09-15T04:44:23 = week 2 of Nyakanga
 
 =head3 MMMMd (MMMM d)
 

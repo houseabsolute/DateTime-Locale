@@ -441,11 +441,11 @@ Aghem Cameroon locale.
    1995-12-22T09:05:02 = ghɨ 22 fwo
   -0010-09-15T04:44:23 = dzk 15 dzu
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of kɨz
-   1995-12-22T09:05:02 = week 3 of fwo
-  -0010-09-15T04:44:23 = week 2 of dzu
+   2008-02-05T18:30:30 = week 1 of ndzɔ̀ŋɔ̀kƗ̀zùʔ
+   1995-12-22T09:05:02 = week 3 of ndzɔ̀ŋèfwòo
+  -0010-09-15T04:44:23 = week 2 of ndzɔ̀ŋɔ̀tƗ̀fʉ̀ghàdzughù
 
 =head3 MMMMd (MMMM d)
 

@@ -441,11 +441,11 @@ Cornish locale.
    1995-12-22T09:05:02 = Kev 22, Gwe
   -0010-09-15T04:44:23 = Gwn 15, Sad
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Hwe
-   1995-12-22T09:05:02 = week 3 of Kev
-  -0010-09-15T04:44:23 = week 2 of Gwn
+   2008-02-05T18:30:30 = week 1 of mis Hwevrer
+   1995-12-22T09:05:02 = week 3 of mis Kevardhu
+  -0010-09-15T04:44:23 = week 2 of mis Gwynngala
 
 =head3 MMMMd (MMMM d)
 

@@ -441,7 +441,7 @@ Ngiemboon locale.
    1995-12-22T09:05:02 = saŋ lùm 22, mvfò màga lyɛ̌ʼ
   -0010-09-15T04:44:23 = saŋ ngwɔ̀ʼ mbÿɛ 15, màga lyɛ̌ʼ
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of saŋ kàg ngwóŋ
    1995-12-22T09:05:02 = week 3 of saŋ lùm

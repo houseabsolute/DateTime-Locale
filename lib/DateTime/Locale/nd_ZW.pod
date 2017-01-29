@@ -447,11 +447,11 @@ North Ndebele Zimbabwe locale.
    1995-12-22T09:05:02 = Sih, Mpalakazi 22
   -0010-09-15T04:44:23 = Mgq, Mpandula 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Nhlo
-   1995-12-22T09:05:02 = week 3 of Mpal
-  -0010-09-15T04:44:23 = week 2 of Mpan
+   2008-02-05T18:30:30 = week 1 of Nhlolanja
+   1995-12-22T09:05:02 = week 3 of Mpalakazi
+  -0010-09-15T04:44:23 = week 2 of Mpandula
 
 =head3 MMMMd (MMMM d)
 

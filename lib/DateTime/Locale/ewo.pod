@@ -441,11 +441,11 @@ Ewondo locale.
    1995-12-22T09:05:02 = fúl 22 ngab
   -0010-09-15T04:44:23 = sér 15 nge
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of ngb
-   1995-12-22T09:05:02 = week 3 of ngab
-  -0010-09-15T04:44:23 = week 2 of nge
+   2008-02-05T18:30:30 = week 1 of ngɔn bɛ̌
+   1995-12-22T09:05:02 = week 3 of ngɔn awóm ai bɛ̌
+  -0010-09-15T04:44:23 = week 2 of ngɔn ebulú
 
 =head3 MMMMd (MMMM d)
 

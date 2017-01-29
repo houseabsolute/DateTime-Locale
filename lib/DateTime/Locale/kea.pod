@@ -447,11 +447,11 @@ Kabuverdianu locale.
    1995-12-22T09:05:02 = ses, 22 di Dizenbru
   -0010-09-15T04:44:23 = sab, 15 di Setenbru
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Feb
-   1995-12-22T09:05:02 = week 3 of Diz
-  -0010-09-15T04:44:23 = week 2 of Set
+   2008-02-05T18:30:30 = week 1 of Febreru
+   1995-12-22T09:05:02 = week 3 of Dizenbru
+  -0010-09-15T04:44:23 = week 2 of Setenbru
 
 =head3 MMMMd (d 'di' MMMM)
 

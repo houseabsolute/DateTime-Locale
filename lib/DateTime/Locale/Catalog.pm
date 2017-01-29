@@ -527,7 +527,7 @@ The available locales are:
  mua              Mundang                                   MUNDAŊ
  mua-CM           Mundang Cameroon                          MUNDAŊ kameruŋ
  my               Burmese                                   မြန်မာ
- my-MM            Burmese Myanmar (Burma)                   မြန်မာ မြန်မာ (Burma)
+ my-MM            Burmese Myanmar (Burma)                   မြန်မာ မြန်မာ
  mzn              Mazanderani                               مازرونی
  mzn-IR           Mazanderani Iran                          مازرونی ایران
  naq              Nama                                      Khoekhoegowab

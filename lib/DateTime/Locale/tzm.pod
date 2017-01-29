@@ -447,11 +447,11 @@ Central Atlas Tamazight locale.
    1995-12-22T09:05:02 = Asm, Dujanbir 22
   -0010-09-15T04:44:23 = Asḍ, Cutanbir 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Yeb
-   1995-12-22T09:05:02 = week 3 of Duj
-  -0010-09-15T04:44:23 = week 2 of Cut
+   2008-02-05T18:30:30 = week 1 of Yebrayer
+   1995-12-22T09:05:02 = week 3 of Dujanbir
+  -0010-09-15T04:44:23 = week 2 of Cutanbir
 
 =head3 MMMMd (MMMM d)
 

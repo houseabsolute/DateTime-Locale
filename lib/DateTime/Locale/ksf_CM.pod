@@ -441,11 +441,11 @@ Bafia Cameroon locale.
    1995-12-22T09:05:02 = júm 22 ŋ12
   -0010-09-15T04:44:23 = sam 15 ŋ9
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of ŋ2
-   1995-12-22T09:05:02 = week 3 of ŋ12
-  -0010-09-15T04:44:23 = week 2 of ŋ9
+   2008-02-05T18:30:30 = week 1 of ŋwíí akǝ bɛ́ɛ
+   1995-12-22T09:05:02 = week 3 of ŋwíí akǝ ntɛk di bɛ́ɛ
+  -0010-09-15T04:44:23 = week 2 of ŋwíí akǝ táanin
 
 =head3 MMMMd (MMMM d)
 

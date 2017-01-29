@@ -441,7 +441,7 @@ Kako Cameroon locale.
    1995-12-22T09:05:02 = vaŋdɛrɛdi 22 ɓulɓusɛ
   -0010-09-15T04:44:23 = mɔnɔ sɔndi 15 njapi
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of wanja
    1995-12-22T09:05:02 = week 3 of ɓulɓusɛ

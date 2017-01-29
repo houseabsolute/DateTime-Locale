@@ -441,11 +441,11 @@ Armenian Armenia locale.
    1995-12-22T09:05:02 = 22 դեկ, ուր
   -0010-09-15T04:44:23 = 15 սեպ, շբթ
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of փտվ
-   1995-12-22T09:05:02 = week 3 of դեկ
-  -0010-09-15T04:44:23 = week 2 of սեպ
+   2008-02-05T18:30:30 = week 1 of փետրվարի
+   1995-12-22T09:05:02 = week 3 of դեկտեմբերի
+  -0010-09-15T04:44:23 = week 2 of սեպտեմբերի
 
 =head3 MMMMd (MMMM d)
 

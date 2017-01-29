@@ -447,11 +447,11 @@ Morisyen locale.
    1995-12-22T09:05:02 = van 22 desam
   -0010-09-15T04:44:23 = sam 15 septam
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of fev
-   1995-12-22T09:05:02 = week 3 of des
-  -0010-09-15T04:44:23 = week 2 of sep
+   2008-02-05T18:30:30 = week 1 of fevriye
+   1995-12-22T09:05:02 = week 3 of desam
+  -0010-09-15T04:44:23 = week 2 of septam
 
 =head3 MMMMd (d MMMM)
 

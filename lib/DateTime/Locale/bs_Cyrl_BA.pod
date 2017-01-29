@@ -441,11 +441,11 @@ Bosnian Bosnia & Herzegovina Cyrillic locale.
    1995-12-22T09:05:02 = пет, 22. дец
   -0010-09-15T04:44:23 = суб, 15. сеп
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of феб
-   1995-12-22T09:05:02 = week 3 of дец
-  -0010-09-15T04:44:23 = week 2 of сеп
+   2008-02-05T18:30:30 = week 1 of фебруар
+   1995-12-22T09:05:02 = week 3 of децембар
+  -0010-09-15T04:44:23 = week 2 of септембар
 
 =head3 MMMMd (MMMM d)
 

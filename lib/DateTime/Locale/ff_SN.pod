@@ -447,11 +447,11 @@ Fulah Senegal locale.
    1995-12-22T09:05:02 = mwd 22 bowte
   -0010-09-15T04:44:23 = hbi 15 siilto
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of col
-   1995-12-22T09:05:02 = week 3 of bow
-  -0010-09-15T04:44:23 = week 2 of slt
+   2008-02-05T18:30:30 = week 1 of colte
+   1995-12-22T09:05:02 = week 3 of bowte
+  -0010-09-15T04:44:23 = week 2 of siilto
 
 =head3 MMMMd (d MMMM)
 

@@ -447,11 +447,11 @@ Kabyle Algeria locale.
    1995-12-22T09:05:02 = Sḍis 22 Duǧembeṛ
   -0010-09-15T04:44:23 = Say 15 Ctembeṛ
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Fur
-   1995-12-22T09:05:02 = week 3 of Duǧ
-  -0010-09-15T04:44:23 = week 2 of Cte
+   2008-02-05T18:30:30 = week 1 of Fuṛar
+   1995-12-22T09:05:02 = week 3 of Duǧembeṛ
+  -0010-09-15T04:44:23 = week 2 of Ctembeṛ
 
 =head3 MMMMd (d MMMM)
 

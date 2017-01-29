@@ -447,11 +447,11 @@ Nyankole Uganda locale.
    1995-12-22T09:05:02 = OKT, Okwaikumi na ibiri 22
   -0010-09-15T04:44:23 = OMK, Okwamwenda 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of KBR
-   1995-12-22T09:05:02 = week 3 of KNB
-  -0010-09-15T04:44:23 = week 2 of KMW
+   2008-02-05T18:30:30 = week 1 of Okwakabiri
+   1995-12-22T09:05:02 = week 3 of Okwaikumi na ibiri
+  -0010-09-15T04:44:23 = week 2 of Okwamwenda
 
 =head3 MMMMd (MMMM d)
 

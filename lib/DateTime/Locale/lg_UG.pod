@@ -447,11 +447,11 @@ Ganda Uganda locale.
    1995-12-22T09:05:02 = Lw5, Desemba 22
   -0010-09-15T04:44:23 = Lw6, Sebuttemba 15
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Feb
-   1995-12-22T09:05:02 = week 3 of Des
-  -0010-09-15T04:44:23 = week 2 of Seb
+   2008-02-05T18:30:30 = week 1 of Febwaliyo
+   1995-12-22T09:05:02 = week 3 of Desemba
+  -0010-09-15T04:44:23 = week 2 of Sebuttemba
 
 =head3 MMMMd (MMMM d)
 
