@@ -123,8 +123,8 @@ sub _write_data_pm ($self) {
     my %raw_locales;
     for my $locale ( $self->_locales->@* ) {
         $codes{ $locale->code }               = 1;
-        $names{ $locale->en_name }            = 1;
-        $native_names{ $locale->native_name } = 1;
+        $names{ $locale->en_name }            = $locale->code;
+        $native_names{ $locale->native_name } = $locale->code;
         $raw_locales{ $locale->code }         = $locale->data_hash;
     }
 
