@@ -3,6 +3,8 @@ use warnings;
 
 use Test::More;
 use Test::Warnings qw( warnings :no_end_test );
+use Test::File::ShareDir -share =>
+    { -dist => { locale_data => './locale_data' } };
 
 {
     package DateTime::Locale::fake;

@@ -21,6 +21,10 @@ use Path::Class::Rule;
 use Scalar::Util qw( reftype );
 use Text::Template;
 
+# use own share instead of system-wide
+use Test::File::ShareDir -share =>
+    { -dist => { locale_data => './locale_data' } };
+
 use Moose;
 use MooseX::Types::Moose qw( ArrayRef Bool Num Str );
 use MooseX::Types::Path::Class qw( Dir File );
@@ -161,6 +165,11 @@ sub _write_data_pm ($self) {
 
     $self->_insert_var_in_code( 'LocaleData', \%preload, 0, \$data_pm );
 
+    my $template = Text::Template->new(
+        TYPE   => 'FILE',
+        SOURCE => file(qw( tools templates locale.txt ))->stringify,
+    ) or die $Text::Template::ERROR;
+
     my $pos = 0;
     my %index;
     my $data_section = q{};
@@ -176,12 +185,22 @@ sub _write_data_pm ($self) {
         $pos += length $dumped;
 
         $index{$code} = [ $start_pos => $pos - $start_pos ];
+
+        # create small parts
+        my $underscore = $code =~ s/-/_/gr;
+        my $locale_txt_file = file( qw( locale_data ), "$underscore.txt" );
+        ## no critic (InputOutput::RequireCheckedSyscalls)
+        say "Generating $locale_txt_file";
+        ## use critic
+        my $locale_txt = $template->fill_in(
+            HASH => {
+                locale => $underscore,
+                dumped => $dumped,
+                code   => $code,
+            },
+        ) or die $Text::Template::ERROR;
+        $locale_txt_file->spew( iomode => '>:encoding(UTF-8)', $locale_txt );
     }
-
-    $self->_insert_var_in_code( 'DataSectionIndex', \%index, 0, \$data_pm );
-
-    $data_pm =~ s/(__DATA__\n).*(__END__\n)/$1$data_section\n$2/s
-        or die 'data section subst failed';
 
     $data_pm_file->spew( iomode => '>:encoding(UTF-8)', $data_pm );
 
@@ -364,7 +383,8 @@ sub _write_pod_files ($self) {
         ),
     );
 
-    for my $code ( DateTime::Locale->codes ) {
+    for my $locale ( $self->_locales->@* ) {
+        my $code       = $locale->code;
         my $underscore = $code =~ s/-/_/gr;
 
         my $pod_file

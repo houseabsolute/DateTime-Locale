@@ -1,0 +1,3 @@
+# Data for the {$locale} locale, code {$code}.
+{$dumped}
+;

@@ -202,7 +202,7 @@ my %POSIXAliases = (
         $code = $DateTime::Locale::Data::ISO639Aliases{$code}
             if exists $DateTime::Locale::Data::ISO639Aliases{$code};
 
-        if ( exists $DateTime::Locale::Data::Codes{$code} ) {
+        if ( DateTime::Locale::Data::hasCode($code) ) {
             return $class->_locale_object_for($code);
         }
 
