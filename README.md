@@ -12,7 +12,7 @@ version 1.12
 
     my $loc = DateTime::Locale->load('en-GB');
 
-    print $loc->native_locale_name, "\n", $loc->datetime_format_long, "\n";
+    print $loc->native_name, "\n", $loc->datetime_format_long, "\n";
 
     # but mostly just things like ...
 
