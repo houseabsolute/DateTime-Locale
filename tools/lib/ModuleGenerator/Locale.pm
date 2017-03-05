@@ -227,7 +227,7 @@ sub _build_data_hash ($self) {
         }
     }
 
-    my %eraLength = (
+    my %era_length = (
         narrow      => 'Narrow',
         abbreviated => 'Abbr',
         wide        => 'Names',
@@ -235,7 +235,9 @@ sub _build_data_hash ($self) {
     for my $length (@lengths) {
         ## no critic (ValuesAndExpressions::ProhibitCommaSeparatedStatements)
         $data{ 'era_' . $length }
-            = [ $cal_root->{eras}{ 'era' . $eraLength{$length} }->@{ 0, 1 } ];
+            = [
+            $cal_root->{eras}{ 'era' . $era_length{$length} }->@{ 0, 1 }
+            ];
     }
 
     return \%data;
