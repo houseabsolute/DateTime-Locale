@@ -179,7 +179,7 @@ sub _write_data_pm ($self) {
 sub _iso_639_aliases ($self) {
     my %aliases;
     for my $locale ( $self->_locales->@* ) {
-        next if length $locale->language_code >2;
+        next if length $locale->language_code > 2;
 
         my $three = language_code2code(
             $locale->language_code,
@@ -364,7 +364,7 @@ sub _write_pod_files ($self) {
         my $locale = DateTime::Locale->load($code)
             or die "Cannot load $code";
 
-        my $name = $locale->name;
+        my $name   = $locale->name;
         my $filled = $template->fill_in(
             HASH => {
                 autogen_warning => $self->_autogen_warning,
