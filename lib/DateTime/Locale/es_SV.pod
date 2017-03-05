@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_SV - Locale data examples for the Spanish El Salvador (es-SV) locale.
+DateTime::Locale::es_SV - Locale data examples for the Spanish El Salvador (es-SV) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zh_Hans_MO - Locale data examples for the Chinese Macau SAR China Simplified (zh-Hans-MO) locale.
+DateTime::Locale::zh_Hans_MO - Locale data examples for the Chinese Macau SAR China Simplified (zh-Hans-MO) locale
 
 =head1 DESCRIPTION
 

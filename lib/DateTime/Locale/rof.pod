@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rof - Locale data examples for the Rombo (rof) locale.
+DateTime::Locale::rof - Locale data examples for the Rombo (rof) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::km - Locale data examples for the Khmer (km) locale.
+DateTime::Locale::km - Locale data examples for the Khmer (km) locale
 
 =head1 DESCRIPTION
 

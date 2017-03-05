@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_KM - Locale data examples for the French Comoros (fr-KM) locale.
+DateTime::Locale::fr_KM - Locale data examples for the French Comoros (fr-KM) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nn - Locale data examples for the Norwegian Nynorsk (nn) locale.
+DateTime::Locale::nn - Locale data examples for the Norwegian Nynorsk (nn) locale
 
 =head1 DESCRIPTION
 

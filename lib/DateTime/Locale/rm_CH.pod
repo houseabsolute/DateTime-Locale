@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rm_CH - Locale data examples for the Romansh Switzerland (rm-CH) locale.
+DateTime::Locale::rm_CH - Locale data examples for the Romansh Switzerland (rm-CH) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::asa_TZ - Locale data examples for the Asu Tanzania (asa-TZ) locale.
+DateTime::Locale::asa_TZ - Locale data examples for the Asu Tanzania (asa-TZ) locale
 
 =head1 DESCRIPTION
 

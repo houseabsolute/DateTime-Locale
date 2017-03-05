@@ -382,7 +382,7 @@ sub _write_pod_files ($self) {
                 autogen_warning => $self->_autogen_warning,
                 name            => 'DateTime::Locale::' . $underscore,
                 description =>
-                    "Locale data examples for the $name ($code) locale.",
+                    "Locale data examples for the $name ($code) locale",
                 example_dts => \@example_dts,
                 locale      => \$locale,
             },

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sw_UG - Locale data examples for the Swahili Uganda (sw-UG) locale.
+DateTime::Locale::sw_UG - Locale data examples for the Swahili Uganda (sw-UG) locale
 
 =head1 DESCRIPTION
 

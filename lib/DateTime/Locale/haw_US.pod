@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::haw_US - Locale data examples for the Hawaiian United States (haw-US) locale.
+DateTime::Locale::haw_US - Locale data examples for the Hawaiian United States (haw-US) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ca_FR - Locale data examples for the Catalan France (ca-FR) locale.
+DateTime::Locale::ca_FR - Locale data examples for the Catalan France (ca-FR) locale
 
 =head1 DESCRIPTION
 

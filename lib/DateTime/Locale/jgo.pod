@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::jgo - Locale data examples for the Ngomba (jgo) locale.
+DateTime::Locale::jgo - Locale data examples for the Ngomba (jgo) locale
 
 =head1 DESCRIPTION
 

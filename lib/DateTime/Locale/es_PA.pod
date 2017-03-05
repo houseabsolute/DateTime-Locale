@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_PA - Locale data examples for the Spanish Panama (es-PA) locale.
+DateTime::Locale::es_PA - Locale data examples for the Spanish Panama (es-PA) locale
 
 =head1 DESCRIPTION
 

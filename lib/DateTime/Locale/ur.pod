@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ur - Locale data examples for the Urdu (ur) locale.
+DateTime::Locale::ur - Locale data examples for the Urdu (ur) locale
 
 =head1 DESCRIPTION
 

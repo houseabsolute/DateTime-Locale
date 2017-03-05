@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::tr - Locale data examples for the Turkish (tr) locale.
+DateTime::Locale::tr - Locale data examples for the Turkish (tr) locale
 
 =head1 DESCRIPTION
 

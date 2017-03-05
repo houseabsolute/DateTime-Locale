@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nl_CW - Locale data examples for the Dutch Curaçao (nl-CW) locale.
+DateTime::Locale::nl_CW - Locale data examples for the Dutch Curaçao (nl-CW) locale
 
 =head1 DESCRIPTION
 

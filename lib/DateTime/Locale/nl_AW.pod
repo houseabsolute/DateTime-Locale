@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nl_AW - Locale data examples for the Dutch Aruba (nl-AW) locale.
+DateTime::Locale::nl_AW - Locale data examples for the Dutch Aruba (nl-AW) locale
 
 =head1 DESCRIPTION
 

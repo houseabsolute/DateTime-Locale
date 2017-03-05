@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_UG - Locale data examples for the English Uganda (en-UG) locale.
+DateTime::Locale::en_UG - Locale data examples for the English Uganda (en-UG) locale
 
 =head1 DESCRIPTION
 

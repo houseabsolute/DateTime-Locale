@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_JM - Locale data examples for the English Jamaica (en-JM) locale.
+DateTime::Locale::en_JM - Locale data examples for the English Jamaica (en-JM) locale
 
 =head1 DESCRIPTION
 

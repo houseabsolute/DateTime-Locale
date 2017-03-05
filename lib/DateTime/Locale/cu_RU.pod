@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cu_RU - Locale data examples for the Church Slavic Russia (cu-RU) locale.
+DateTime::Locale::cu_RU - Locale data examples for the Church Slavic Russia (cu-RU) locale
 
 =head1 DESCRIPTION
 

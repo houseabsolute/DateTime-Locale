@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_UM - Locale data examples for the English U.S. Outlying Islands (en-UM) locale.
+DateTime::Locale::en_UM - Locale data examples for the English U.S. Outlying Islands (en-UM) locale
 
 =head1 DESCRIPTION
 

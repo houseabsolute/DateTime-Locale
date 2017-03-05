@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_HK - Locale data examples for the English Hong Kong SAR China (en-HK) locale.
+DateTime::Locale::en_HK - Locale data examples for the English Hong Kong SAR China (en-HK) locale
 
 =head1 DESCRIPTION
 

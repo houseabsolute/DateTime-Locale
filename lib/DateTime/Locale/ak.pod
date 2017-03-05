@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ak - Locale data examples for the Akan (ak) locale.
+DateTime::Locale::ak - Locale data examples for the Akan (ak) locale
 
 =head1 DESCRIPTION
 

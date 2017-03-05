@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::os_RU - Locale data examples for the Ossetic Russia (os-RU) locale.
+DateTime::Locale::os_RU - Locale data examples for the Ossetic Russia (os-RU) locale
 
 =head1 DESCRIPTION
 

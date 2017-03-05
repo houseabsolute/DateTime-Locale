@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yav_CM - Locale data examples for the Yangben Cameroon (yav-CM) locale.
+DateTime::Locale::yav_CM - Locale data examples for the Yangben Cameroon (yav-CM) locale
 
 =head1 DESCRIPTION
 

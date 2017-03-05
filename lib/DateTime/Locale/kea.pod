@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kea - Locale data examples for the Kabuverdianu (kea) locale.
+DateTime::Locale::kea - Locale data examples for the Kabuverdianu (kea) locale
 
 =head1 DESCRIPTION
 

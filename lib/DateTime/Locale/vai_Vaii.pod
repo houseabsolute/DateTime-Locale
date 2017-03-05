@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::vai_Vaii - Locale data examples for the Vai Vai (vai-Vaii) locale.
+DateTime::Locale::vai_Vaii - Locale data examples for the Vai Vai (vai-Vaii) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_DJ - Locale data examples for the Arabic Djibouti (ar-DJ) locale.
+DateTime::Locale::ar_DJ - Locale data examples for the Arabic Djibouti (ar-DJ) locale
 
 =head1 DESCRIPTION
 

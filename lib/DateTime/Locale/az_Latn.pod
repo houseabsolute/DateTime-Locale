@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::az_Latn - Locale data examples for the Azerbaijani Latin (az-Latn) locale.
+DateTime::Locale::az_Latn - Locale data examples for the Azerbaijani Latin (az-Latn) locale
 
 =head1 DESCRIPTION
 

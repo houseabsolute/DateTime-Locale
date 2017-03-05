@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sn_ZW - Locale data examples for the Shona Zimbabwe (sn-ZW) locale.
+DateTime::Locale::sn_ZW - Locale data examples for the Shona Zimbabwe (sn-ZW) locale
 
 =head1 DESCRIPTION
 

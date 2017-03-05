@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dje - Locale data examples for the Zarma (dje) locale.
+DateTime::Locale::dje - Locale data examples for the Zarma (dje) locale
 
 =head1 DESCRIPTION
 

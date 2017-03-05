@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ebu_KE - Locale data examples for the Embu Kenya (ebu-KE) locale.
+DateTime::Locale::ebu_KE - Locale data examples for the Embu Kenya (ebu-KE) locale
 
 =head1 DESCRIPTION
 

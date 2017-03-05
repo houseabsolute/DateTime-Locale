@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::he - Locale data examples for the Hebrew (he) locale.
+DateTime::Locale::he - Locale data examples for the Hebrew (he) locale
 
 =head1 DESCRIPTION
 

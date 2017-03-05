@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_IE - Locale data examples for the English Ireland (en-IE) locale.
+DateTime::Locale::en_IE - Locale data examples for the English Ireland (en-IE) locale
 
 =head1 DESCRIPTION
 

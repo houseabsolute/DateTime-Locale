@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ug_CN - Locale data examples for the Uyghur China (ug-CN) locale.
+DateTime::Locale::ug_CN - Locale data examples for the Uyghur China (ug-CN) locale
 
 =head1 DESCRIPTION
 

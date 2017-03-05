@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_SC - Locale data examples for the French Seychelles (fr-SC) locale.
+DateTime::Locale::fr_SC - Locale data examples for the French Seychelles (fr-SC) locale
 
 =head1 DESCRIPTION
 

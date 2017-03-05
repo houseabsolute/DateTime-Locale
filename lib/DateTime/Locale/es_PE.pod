@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_PE - Locale data examples for the Spanish Peru (es-PE) locale.
+DateTime::Locale::es_PE - Locale data examples for the Spanish Peru (es-PE) locale
 
 =head1 DESCRIPTION
 

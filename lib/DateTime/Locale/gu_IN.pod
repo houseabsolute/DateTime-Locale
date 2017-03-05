@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::gu_IN - Locale data examples for the Gujarati India (gu-IN) locale.
+DateTime::Locale::gu_IN - Locale data examples for the Gujarati India (gu-IN) locale
 
 =head1 DESCRIPTION
 

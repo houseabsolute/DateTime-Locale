@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::am_ET - Locale data examples for the Amharic Ethiopia (am-ET) locale.
+DateTime::Locale::am_ET - Locale data examples for the Amharic Ethiopia (am-ET) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mzn_IR - Locale data examples for the Mazanderani Iran (mzn-IR) locale.
+DateTime::Locale::mzn_IR - Locale data examples for the Mazanderani Iran (mzn-IR) locale
 
 =head1 DESCRIPTION
 

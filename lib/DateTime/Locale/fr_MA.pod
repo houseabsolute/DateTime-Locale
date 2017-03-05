@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_MA - Locale data examples for the French Morocco (fr-MA) locale.
+DateTime::Locale::fr_MA - Locale data examples for the French Morocco (fr-MA) locale
 
 =head1 DESCRIPTION
 

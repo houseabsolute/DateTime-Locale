@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_MP - Locale data examples for the English Northern Mariana Islands (en-MP) locale.
+DateTime::Locale::en_MP - Locale data examples for the English Northern Mariana Islands (en-MP) locale
 
 =head1 DESCRIPTION
 

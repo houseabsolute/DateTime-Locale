@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_BW - Locale data examples for the English Botswana (en-BW) locale.
+DateTime::Locale::en_BW - Locale data examples for the English Botswana (en-BW) locale
 
 =head1 DESCRIPTION
 

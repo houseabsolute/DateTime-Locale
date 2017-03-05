@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nb_SJ - Locale data examples for the Norwegian Bokmål Svalbard & Jan Mayen (nb-SJ) locale.
+DateTime::Locale::nb_SJ - Locale data examples for the Norwegian Bokmål Svalbard & Jan Mayen (nb-SJ) locale
 
 =head1 DESCRIPTION
 

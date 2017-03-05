@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dyo_SN - Locale data examples for the Jola-Fonyi Senegal (dyo-SN) locale.
+DateTime::Locale::dyo_SN - Locale data examples for the Jola-Fonyi Senegal (dyo-SN) locale
 
 =head1 DESCRIPTION
 

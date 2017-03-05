@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ta - Locale data examples for the Tamil (ta) locale.
+DateTime::Locale::ta - Locale data examples for the Tamil (ta) locale
 
 =head1 DESCRIPTION
 

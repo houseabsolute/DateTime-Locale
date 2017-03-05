@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Latn - Locale data examples for the Serbian Latin (sr-Latn) locale.
+DateTime::Locale::sr_Latn - Locale data examples for the Serbian Latin (sr-Latn) locale
 
 =head1 DESCRIPTION
 

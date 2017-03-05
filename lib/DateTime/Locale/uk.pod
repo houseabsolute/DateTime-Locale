@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::uk - Locale data examples for the Ukrainian (uk) locale.
+DateTime::Locale::uk - Locale data examples for the Ukrainian (uk) locale
 
 =head1 DESCRIPTION
 

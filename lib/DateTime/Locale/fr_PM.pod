@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_PM - Locale data examples for the French St. Pierre & Miquelon (fr-PM) locale.
+DateTime::Locale::fr_PM - Locale data examples for the French St. Pierre & Miquelon (fr-PM) locale
 
 =head1 DESCRIPTION
 

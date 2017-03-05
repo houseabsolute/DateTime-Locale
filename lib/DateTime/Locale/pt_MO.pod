@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_MO - Locale data examples for the Portuguese Macau SAR China (pt-MO) locale.
+DateTime::Locale::pt_MO - Locale data examples for the Portuguese Macau SAR China (pt-MO) locale
 
 =head1 DESCRIPTION
 

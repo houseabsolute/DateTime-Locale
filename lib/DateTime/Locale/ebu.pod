@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ebu - Locale data examples for the Embu (ebu) locale.
+DateTime::Locale::ebu - Locale data examples for the Embu (ebu) locale
 
 =head1 DESCRIPTION
 

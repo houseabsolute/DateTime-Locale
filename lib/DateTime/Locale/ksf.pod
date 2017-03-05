@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ksf - Locale data examples for the Bafia (ksf) locale.
+DateTime::Locale::ksf - Locale data examples for the Bafia (ksf) locale
 
 =head1 DESCRIPTION
 

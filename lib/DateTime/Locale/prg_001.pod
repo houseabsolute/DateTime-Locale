@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::prg_001 - Locale data examples for the Prussian World (prg-001) locale.
+DateTime::Locale::prg_001 - Locale data examples for the Prussian World (prg-001) locale
 
 =head1 DESCRIPTION
 

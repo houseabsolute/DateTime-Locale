@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ha - Locale data examples for the Hausa (ha) locale.
+DateTime::Locale::ha - Locale data examples for the Hausa (ha) locale
 
 =head1 DESCRIPTION
 

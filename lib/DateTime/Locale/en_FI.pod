@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_FI - Locale data examples for the English Finland (en-FI) locale.
+DateTime::Locale::en_FI - Locale data examples for the English Finland (en-FI) locale
 
 =head1 DESCRIPTION
 

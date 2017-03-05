@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yo - Locale data examples for the Yoruba (yo) locale.
+DateTime::Locale::yo - Locale data examples for the Yoruba (yo) locale
 
 =head1 DESCRIPTION
 

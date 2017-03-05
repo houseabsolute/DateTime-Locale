@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr - Locale data examples for the French (fr) locale.
+DateTime::Locale::fr - Locale data examples for the French (fr) locale
 
 =head1 DESCRIPTION
 

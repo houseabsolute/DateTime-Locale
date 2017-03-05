@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_NF - Locale data examples for the English Norfolk Island (en-NF) locale.
+DateTime::Locale::en_NF - Locale data examples for the English Norfolk Island (en-NF) locale
 
 =head1 DESCRIPTION
 

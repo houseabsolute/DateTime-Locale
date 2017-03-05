@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kkj_CM - Locale data examples for the Kako Cameroon (kkj-CM) locale.
+DateTime::Locale::kkj_CM - Locale data examples for the Kako Cameroon (kkj-CM) locale
 
 =head1 DESCRIPTION
 

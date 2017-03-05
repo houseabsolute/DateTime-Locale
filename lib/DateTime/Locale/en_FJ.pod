@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_FJ - Locale data examples for the English Fiji (en-FJ) locale.
+DateTime::Locale::en_FJ - Locale data examples for the English Fiji (en-FJ) locale
 
 =head1 DESCRIPTION
 

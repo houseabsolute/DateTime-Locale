@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bo - Locale data examples for the Tibetan (bo) locale.
+DateTime::Locale::bo - Locale data examples for the Tibetan (bo) locale
 
 =head1 DESCRIPTION
 

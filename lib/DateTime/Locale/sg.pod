@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sg - Locale data examples for the Sango (sg) locale.
+DateTime::Locale::sg - Locale data examples for the Sango (sg) locale
 
 =head1 DESCRIPTION
 

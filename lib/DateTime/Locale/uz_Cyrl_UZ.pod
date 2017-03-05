@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::uz_Cyrl_UZ - Locale data examples for the Uzbek Uzbekistan Cyrillic (uz-Cyrl-UZ) locale.
+DateTime::Locale::uz_Cyrl_UZ - Locale data examples for the Uzbek Uzbekistan Cyrillic (uz-Cyrl-UZ) locale
 
 =head1 DESCRIPTION
 

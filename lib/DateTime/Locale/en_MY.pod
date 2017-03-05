@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_MY - Locale data examples for the English Malaysia (en-MY) locale.
+DateTime::Locale::en_MY - Locale data examples for the English Malaysia (en-MY) locale
 
 =head1 DESCRIPTION
 

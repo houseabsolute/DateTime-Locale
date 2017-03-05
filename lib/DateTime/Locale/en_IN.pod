@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_IN - Locale data examples for the English India (en-IN) locale.
+DateTime::Locale::en_IN - Locale data examples for the English India (en-IN) locale
 
 =head1 DESCRIPTION
 

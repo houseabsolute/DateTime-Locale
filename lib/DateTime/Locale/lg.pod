@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lg - Locale data examples for the Ganda (lg) locale.
+DateTime::Locale::lg - Locale data examples for the Ganda (lg) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::se_FI - Locale data examples for the Northern Sami Finland (se-FI) locale.
+DateTime::Locale::se_FI - Locale data examples for the Northern Sami Finland (se-FI) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::asa - Locale data examples for the Asu (asa) locale.
+DateTime::Locale::asa - Locale data examples for the Asu (asa) locale
 
 =head1 DESCRIPTION
 

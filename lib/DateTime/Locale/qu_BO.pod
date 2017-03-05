@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::qu_BO - Locale data examples for the Quechua Bolivia (qu-BO) locale.
+DateTime::Locale::qu_BO - Locale data examples for the Quechua Bolivia (qu-BO) locale
 
 =head1 DESCRIPTION
 

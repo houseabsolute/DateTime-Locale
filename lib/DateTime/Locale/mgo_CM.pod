@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mgo_CM - Locale data examples for the Metaʼ Cameroon (mgo-CM) locale.
+DateTime::Locale::mgo_CM - Locale data examples for the Metaʼ Cameroon (mgo-CM) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ak_GH - Locale data examples for the Akan Ghana (ak-GH) locale.
+DateTime::Locale::ak_GH - Locale data examples for the Akan Ghana (ak-GH) locale
 
 =head1 DESCRIPTION
 

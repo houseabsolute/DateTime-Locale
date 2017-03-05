@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::agq_CM - Locale data examples for the Aghem Cameroon (agq-CM) locale.
+DateTime::Locale::agq_CM - Locale data examples for the Aghem Cameroon (agq-CM) locale
 
 =head1 DESCRIPTION
 

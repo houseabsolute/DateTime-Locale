@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::so_SO - Locale data examples for the Somali Somalia (so-SO) locale.
+DateTime::Locale::so_SO - Locale data examples for the Somali Somalia (so-SO) locale
 
 =head1 DESCRIPTION
 

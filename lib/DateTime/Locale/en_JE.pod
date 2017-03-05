@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_JE - Locale data examples for the English Jersey (en-JE) locale.
+DateTime::Locale::en_JE - Locale data examples for the English Jersey (en-JE) locale
 
 =head1 DESCRIPTION
 

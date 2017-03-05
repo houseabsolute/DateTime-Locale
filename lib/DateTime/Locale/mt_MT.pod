@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mt_MT - Locale data examples for the Maltese Malta (mt-MT) locale.
+DateTime::Locale::mt_MT - Locale data examples for the Maltese Malta (mt-MT) locale
 
 =head1 DESCRIPTION
 

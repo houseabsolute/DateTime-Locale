@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::jmc_TZ - Locale data examples for the Machame Tanzania (jmc-TZ) locale.
+DateTime::Locale::jmc_TZ - Locale data examples for the Machame Tanzania (jmc-TZ) locale
 
 =head1 DESCRIPTION
 

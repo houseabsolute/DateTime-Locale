@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mas_TZ - Locale data examples for the Masai Tanzania (mas-TZ) locale.
+DateTime::Locale::mas_TZ - Locale data examples for the Masai Tanzania (mas-TZ) locale
 
 =head1 DESCRIPTION
 

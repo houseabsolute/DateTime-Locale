@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ms_SG - Locale data examples for the Malay Singapore (ms-SG) locale.
+DateTime::Locale::ms_SG - Locale data examples for the Malay Singapore (ms-SG) locale
 
 =head1 DESCRIPTION
 

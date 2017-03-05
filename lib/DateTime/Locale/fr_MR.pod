@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_MR - Locale data examples for the French Mauritania (fr-MR) locale.
+DateTime::Locale::fr_MR - Locale data examples for the French Mauritania (fr-MR) locale
 
 =head1 DESCRIPTION
 

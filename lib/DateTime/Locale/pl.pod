@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pl - Locale data examples for the Polish (pl) locale.
+DateTime::Locale::pl - Locale data examples for the Polish (pl) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::is - Locale data examples for the Icelandic (is) locale.
+DateTime::Locale::is - Locale data examples for the Icelandic (is) locale
 
 =head1 DESCRIPTION
 

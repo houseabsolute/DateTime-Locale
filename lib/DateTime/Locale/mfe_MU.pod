@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mfe_MU - Locale data examples for the Morisyen Mauritius (mfe-MU) locale.
+DateTime::Locale::mfe_MU - Locale data examples for the Morisyen Mauritius (mfe-MU) locale
 
 =head1 DESCRIPTION
 

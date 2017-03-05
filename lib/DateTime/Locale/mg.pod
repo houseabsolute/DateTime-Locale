@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mg - Locale data examples for the Malagasy (mg) locale.
+DateTime::Locale::mg - Locale data examples for the Malagasy (mg) locale
 
 =head1 DESCRIPTION
 

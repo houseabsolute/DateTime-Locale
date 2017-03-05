@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_TL - Locale data examples for the Portuguese Timor-Leste (pt-TL) locale.
+DateTime::Locale::pt_TL - Locale data examples for the Portuguese Timor-Leste (pt-TL) locale
 
 =head1 DESCRIPTION
 

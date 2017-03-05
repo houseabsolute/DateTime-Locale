@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_NA - Locale data examples for the English Namibia (en-NA) locale.
+DateTime::Locale::en_NA - Locale data examples for the English Namibia (en-NA) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nmg_CM - Locale data examples for the Kwasio Cameroon (nmg-CM) locale.
+DateTime::Locale::nmg_CM - Locale data examples for the Kwasio Cameroon (nmg-CM) locale
 
 =head1 DESCRIPTION
 

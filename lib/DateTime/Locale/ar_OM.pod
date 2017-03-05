@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_OM - Locale data examples for the Arabic Oman (ar-OM) locale.
+DateTime::Locale::ar_OM - Locale data examples for the Arabic Oman (ar-OM) locale
 
 =head1 DESCRIPTION
 

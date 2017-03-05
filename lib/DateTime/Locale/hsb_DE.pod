@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hsb_DE - Locale data examples for the Upper Sorbian Germany (hsb-DE) locale.
+DateTime::Locale::hsb_DE - Locale data examples for the Upper Sorbian Germany (hsb-DE) locale
 
 =head1 DESCRIPTION
 

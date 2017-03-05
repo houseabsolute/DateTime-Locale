@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_MZ - Locale data examples for the Portuguese Mozambique (pt-MZ) locale.
+DateTime::Locale::pt_MZ - Locale data examples for the Portuguese Mozambique (pt-MZ) locale
 
 =head1 DESCRIPTION
 

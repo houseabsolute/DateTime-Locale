@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_GD - Locale data examples for the English Grenada (en-GD) locale.
+DateTime::Locale::en_GD - Locale data examples for the English Grenada (en-GD) locale
 
 =head1 DESCRIPTION
 

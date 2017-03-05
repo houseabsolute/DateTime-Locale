@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::eo_001 - Locale data examples for the Esperanto World (eo-001) locale.
+DateTime::Locale::eo_001 - Locale data examples for the Esperanto World (eo-001) locale
 
 =head1 DESCRIPTION
 

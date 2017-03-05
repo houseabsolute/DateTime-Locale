@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_MA - Locale data examples for the Arabic Morocco (ar-MA) locale.
+DateTime::Locale::ar_MA - Locale data examples for the Arabic Morocco (ar-MA) locale
 
 =head1 DESCRIPTION
 

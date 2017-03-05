@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Cyrl_RS - Locale data examples for the Serbian Serbia Cyrillic (sr-Cyrl-RS) locale.
+DateTime::Locale::sr_Cyrl_RS - Locale data examples for the Serbian Serbia Cyrillic (sr-Cyrl-RS) locale
 
 =head1 DESCRIPTION
 

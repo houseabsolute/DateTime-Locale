@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_LS - Locale data examples for the English Lesotho (en-LS) locale.
+DateTime::Locale::en_LS - Locale data examples for the English Lesotho (en-LS) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_KE - Locale data examples for the English Kenya (en-KE) locale.
+DateTime::Locale::en_KE - Locale data examples for the English Kenya (en-KE) locale
 
 =head1 DESCRIPTION
 

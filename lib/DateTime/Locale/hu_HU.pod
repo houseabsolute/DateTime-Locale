@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hu_HU - Locale data examples for the Hungarian Hungary (hu-HU) locale.
+DateTime::Locale::hu_HU - Locale data examples for the Hungarian Hungary (hu-HU) locale
 
 =head1 DESCRIPTION
 

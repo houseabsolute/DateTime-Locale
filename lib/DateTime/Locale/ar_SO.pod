@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_SO - Locale data examples for the Arabic Somalia (ar-SO) locale.
+DateTime::Locale::ar_SO - Locale data examples for the Arabic Somalia (ar-SO) locale
 
 =head1 DESCRIPTION
 

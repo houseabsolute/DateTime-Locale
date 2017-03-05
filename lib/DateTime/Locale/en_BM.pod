@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_BM - Locale data examples for the English Bermuda (en-BM) locale.
+DateTime::Locale::en_BM - Locale data examples for the English Bermuda (en-BM) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sw_CD - Locale data examples for the Swahili Congo - Kinshasa (sw-CD) locale.
+DateTime::Locale::sw_CD - Locale data examples for the Swahili Congo - Kinshasa (sw-CD) locale
 
 =head1 DESCRIPTION
 

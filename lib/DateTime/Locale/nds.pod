@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nds - Locale data examples for the Low German (nds) locale.
+DateTime::Locale::nds - Locale data examples for the Low German (nds) locale
 
 =head1 DESCRIPTION
 

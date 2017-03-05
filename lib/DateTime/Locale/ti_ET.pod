@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ti_ET - Locale data examples for the Tigrinya Ethiopia (ti-ET) locale.
+DateTime::Locale::ti_ET - Locale data examples for the Tigrinya Ethiopia (ti-ET) locale
 
 =head1 DESCRIPTION
 

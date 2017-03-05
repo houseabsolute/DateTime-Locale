@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::uk_UA - Locale data examples for the Ukrainian Ukraine (uk-UA) locale.
+DateTime::Locale::uk_UA - Locale data examples for the Ukrainian Ukraine (uk-UA) locale
 
 =head1 DESCRIPTION
 

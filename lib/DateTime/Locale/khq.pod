@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::khq - Locale data examples for the Koyra Chiini (khq) locale.
+DateTime::Locale::khq - Locale data examples for the Koyra Chiini (khq) locale
 
 =head1 DESCRIPTION
 

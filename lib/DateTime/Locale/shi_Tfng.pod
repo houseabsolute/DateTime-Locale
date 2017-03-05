@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::shi_Tfng - Locale data examples for the Tachelhit Tifinagh (shi-Tfng) locale.
+DateTime::Locale::shi_Tfng - Locale data examples for the Tachelhit Tifinagh (shi-Tfng) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::saq_KE - Locale data examples for the Samburu Kenya (saq-KE) locale.
+DateTime::Locale::saq_KE - Locale data examples for the Samburu Kenya (saq-KE) locale
 
 =head1 DESCRIPTION
 

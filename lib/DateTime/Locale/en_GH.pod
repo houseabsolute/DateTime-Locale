@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_GH - Locale data examples for the English Ghana (en-GH) locale.
+DateTime::Locale::en_GH - Locale data examples for the English Ghana (en-GH) locale
 
 =head1 DESCRIPTION
 

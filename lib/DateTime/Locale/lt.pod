@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lt - Locale data examples for the Lithuanian (lt) locale.
+DateTime::Locale::lt - Locale data examples for the Lithuanian (lt) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::gsw - Locale data examples for the Swiss German (gsw) locale.
+DateTime::Locale::gsw - Locale data examples for the Swiss German (gsw) locale
 
 =head1 DESCRIPTION
 

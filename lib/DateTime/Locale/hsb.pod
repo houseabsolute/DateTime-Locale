@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hsb - Locale data examples for the Upper Sorbian (hsb) locale.
+DateTime::Locale::hsb - Locale data examples for the Upper Sorbian (hsb) locale
 
 =head1 DESCRIPTION
 

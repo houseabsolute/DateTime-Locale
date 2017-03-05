@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::et_EE - Locale data examples for the Estonian Estonia (et-EE) locale.
+DateTime::Locale::et_EE - Locale data examples for the Estonian Estonia (et-EE) locale
 
 =head1 DESCRIPTION
 

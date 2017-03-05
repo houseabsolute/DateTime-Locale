@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lu_CD - Locale data examples for the Luba-Katanga Congo - Kinshasa (lu-CD) locale.
+DateTime::Locale::lu_CD - Locale data examples for the Luba-Katanga Congo - Kinshasa (lu-CD) locale
 
 =head1 DESCRIPTION
 

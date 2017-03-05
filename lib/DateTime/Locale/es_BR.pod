@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_BR - Locale data examples for the Spanish Brazil (es-BR) locale.
+DateTime::Locale::es_BR - Locale data examples for the Spanish Brazil (es-BR) locale
 
 =head1 DESCRIPTION
 

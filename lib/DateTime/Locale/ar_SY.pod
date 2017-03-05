@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_SY - Locale data examples for the Arabic Syria (ar-SY) locale.
+DateTime::Locale::ar_SY - Locale data examples for the Arabic Syria (ar-SY) locale
 
 =head1 DESCRIPTION
 

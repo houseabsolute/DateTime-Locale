@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::twq - Locale data examples for the Tasawaq (twq) locale.
+DateTime::Locale::twq - Locale data examples for the Tasawaq (twq) locale
 
 =head1 DESCRIPTION
 

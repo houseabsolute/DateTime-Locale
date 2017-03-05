@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_DM - Locale data examples for the English Dominica (en-DM) locale.
+DateTime::Locale::en_DM - Locale data examples for the English Dominica (en-DM) locale
 
 =head1 DESCRIPTION
 

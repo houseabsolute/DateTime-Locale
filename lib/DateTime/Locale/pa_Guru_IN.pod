@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pa_Guru_IN - Locale data examples for the Punjabi India Gurmukhi (pa-Guru-IN) locale.
+DateTime::Locale::pa_Guru_IN - Locale data examples for the Punjabi India Gurmukhi (pa-Guru-IN) locale
 
 =head1 DESCRIPTION
 

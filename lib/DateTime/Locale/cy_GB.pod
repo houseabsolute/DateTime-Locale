@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cy_GB - Locale data examples for the Welsh United Kingdom (cy-GB) locale.
+DateTime::Locale::cy_GB - Locale data examples for the Welsh United Kingdom (cy-GB) locale
 
 =head1 DESCRIPTION
 

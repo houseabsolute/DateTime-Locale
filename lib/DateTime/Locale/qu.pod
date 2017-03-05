@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::qu - Locale data examples for the Quechua (qu) locale.
+DateTime::Locale::qu - Locale data examples for the Quechua (qu) locale
 
 =head1 DESCRIPTION
 

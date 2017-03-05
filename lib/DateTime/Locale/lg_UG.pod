@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lg_UG - Locale data examples for the Ganda Uganda (lg-UG) locale.
+DateTime::Locale::lg_UG - Locale data examples for the Ganda Uganda (lg-UG) locale
 
 =head1 DESCRIPTION
 

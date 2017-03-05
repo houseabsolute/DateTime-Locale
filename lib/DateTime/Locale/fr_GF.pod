@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_GF - Locale data examples for the French French Guiana (fr-GF) locale.
+DateTime::Locale::fr_GF - Locale data examples for the French French Guiana (fr-GF) locale
 
 =head1 DESCRIPTION
 

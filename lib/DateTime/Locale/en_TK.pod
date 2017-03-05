@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_TK - Locale data examples for the English Tokelau (en-TK) locale.
+DateTime::Locale::en_TK - Locale data examples for the English Tokelau (en-TK) locale
 
 =head1 DESCRIPTION
 

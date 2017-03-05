@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lv_LV - Locale data examples for the Latvian Latvia (lv-LV) locale.
+DateTime::Locale::lv_LV - Locale data examples for the Latvian Latvia (lv-LV) locale
 
 =head1 DESCRIPTION
 

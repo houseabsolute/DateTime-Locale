@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_CM - Locale data examples for the English Cameroon (en-CM) locale.
+DateTime::Locale::en_CM - Locale data examples for the English Cameroon (en-CM) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_PK - Locale data examples for the English Pakistan (en-PK) locale.
+DateTime::Locale::en_PK - Locale data examples for the English Pakistan (en-PK) locale
 
 =head1 DESCRIPTION
 

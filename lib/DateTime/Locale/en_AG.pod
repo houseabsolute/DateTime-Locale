@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_AG - Locale data examples for the English Antigua & Barbuda (en-AG) locale.
+DateTime::Locale::en_AG - Locale data examples for the English Antigua & Barbuda (en-AG) locale
 
 =head1 DESCRIPTION
 

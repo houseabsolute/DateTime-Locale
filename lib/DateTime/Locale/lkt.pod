@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lkt - Locale data examples for the Lakota (lkt) locale.
+DateTime::Locale::lkt - Locale data examples for the Lakota (lkt) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dsb - Locale data examples for the Lower Sorbian (dsb) locale.
+DateTime::Locale::dsb - Locale data examples for the Lower Sorbian (dsb) locale
 
 =head1 DESCRIPTION
 

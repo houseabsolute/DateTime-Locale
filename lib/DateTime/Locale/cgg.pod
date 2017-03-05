@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cgg - Locale data examples for the Chiga (cgg) locale.
+DateTime::Locale::cgg - Locale data examples for the Chiga (cgg) locale
 
 =head1 DESCRIPTION
 

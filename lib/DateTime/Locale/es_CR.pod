@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_CR - Locale data examples for the Spanish Costa Rica (es-CR) locale.
+DateTime::Locale::es_CR - Locale data examples for the Spanish Costa Rica (es-CR) locale
 
 =head1 DESCRIPTION
 

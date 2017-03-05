@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::xog - Locale data examples for the Soga (xog) locale.
+DateTime::Locale::xog - Locale data examples for the Soga (xog) locale
 
 =head1 DESCRIPTION
 

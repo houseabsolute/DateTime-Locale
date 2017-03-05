@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mas - Locale data examples for the Masai (mas) locale.
+DateTime::Locale::mas - Locale data examples for the Masai (mas) locale
 
 =head1 DESCRIPTION
 

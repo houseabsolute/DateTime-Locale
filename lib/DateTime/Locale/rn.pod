@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rn - Locale data examples for the Rundi (rn) locale.
+DateTime::Locale::rn - Locale data examples for the Rundi (rn) locale
 
 =head1 DESCRIPTION
 

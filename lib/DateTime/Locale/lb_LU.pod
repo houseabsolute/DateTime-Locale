@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lb_LU - Locale data examples for the Luxembourgish Luxembourg (lb-LU) locale.
+DateTime::Locale::lb_LU - Locale data examples for the Luxembourgish Luxembourg (lb-LU) locale
 
 =head1 DESCRIPTION
 

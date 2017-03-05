@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dav - Locale data examples for the Taita (dav) locale.
+DateTime::Locale::dav - Locale data examples for the Taita (dav) locale
 
 =head1 DESCRIPTION
 

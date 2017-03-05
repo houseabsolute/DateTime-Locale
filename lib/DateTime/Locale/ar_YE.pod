@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_YE - Locale data examples for the Arabic Yemen (ar-YE) locale.
+DateTime::Locale::ar_YE - Locale data examples for the Arabic Yemen (ar-YE) locale
 
 =head1 DESCRIPTION
 

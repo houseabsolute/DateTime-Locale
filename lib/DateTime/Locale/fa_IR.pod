@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fa_IR - Locale data examples for the Persian Iran (fa-IR) locale.
+DateTime::Locale::fa_IR - Locale data examples for the Persian Iran (fa-IR) locale
 
 =head1 DESCRIPTION
 

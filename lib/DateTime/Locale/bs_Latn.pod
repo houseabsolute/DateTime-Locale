@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bs_Latn - Locale data examples for the Bosnian Latin (bs-Latn) locale.
+DateTime::Locale::bs_Latn - Locale data examples for the Bosnian Latin (bs-Latn) locale
 
 =head1 DESCRIPTION
 

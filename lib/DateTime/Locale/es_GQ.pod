@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_GQ - Locale data examples for the Spanish Equatorial Guinea (es-GQ) locale.
+DateTime::Locale::es_GQ - Locale data examples for the Spanish Equatorial Guinea (es-GQ) locale
 
 =head1 DESCRIPTION
 

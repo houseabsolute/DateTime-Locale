@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_TN - Locale data examples for the Arabic Tunisia (ar-TN) locale.
+DateTime::Locale::ar_TN - Locale data examples for the Arabic Tunisia (ar-TN) locale
 
 =head1 DESCRIPTION
 

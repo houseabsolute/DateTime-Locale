@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_QA - Locale data examples for the Arabic Qatar (ar-QA) locale.
+DateTime::Locale::ar_QA - Locale data examples for the Arabic Qatar (ar-QA) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fa_AF - Locale data examples for the Persian Afghanistan (fa-AF) locale.
+DateTime::Locale::fa_AF - Locale data examples for the Persian Afghanistan (fa-AF) locale
 
 =head1 DESCRIPTION
 

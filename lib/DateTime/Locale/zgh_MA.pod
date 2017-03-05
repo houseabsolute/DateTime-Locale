@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zgh_MA - Locale data examples for the Standard Moroccan Tamazight Morocco (zgh-MA) locale.
+DateTime::Locale::zgh_MA - Locale data examples for the Standard Moroccan Tamazight Morocco (zgh-MA) locale
 
 =head1 DESCRIPTION
 

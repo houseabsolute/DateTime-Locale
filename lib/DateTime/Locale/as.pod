@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::as - Locale data examples for the Assamese (as) locale.
+DateTime::Locale::as - Locale data examples for the Assamese (as) locale
 
 =head1 DESCRIPTION
 

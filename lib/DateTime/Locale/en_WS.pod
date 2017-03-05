@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_WS - Locale data examples for the English Samoa (en-WS) locale.
+DateTime::Locale::en_WS - Locale data examples for the English Samoa (en-WS) locale
 
 =head1 DESCRIPTION
 

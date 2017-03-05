@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_LU - Locale data examples for the French Luxembourg (fr-LU) locale.
+DateTime::Locale::fr_LU - Locale data examples for the French Luxembourg (fr-LU) locale
 
 =head1 DESCRIPTION
 

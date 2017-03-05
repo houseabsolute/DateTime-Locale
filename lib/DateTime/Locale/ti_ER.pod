@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ti_ER - Locale data examples for the Tigrinya Eritrea (ti-ER) locale.
+DateTime::Locale::ti_ER - Locale data examples for the Tigrinya Eritrea (ti-ER) locale
 
 =head1 DESCRIPTION
 

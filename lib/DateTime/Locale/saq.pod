@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::saq - Locale data examples for the Samburu (saq) locale.
+DateTime::Locale::saq - Locale data examples for the Samburu (saq) locale
 
 =head1 DESCRIPTION
 

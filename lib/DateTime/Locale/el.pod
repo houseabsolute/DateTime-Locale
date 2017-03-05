@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::el - Locale data examples for the Greek (el) locale.
+DateTime::Locale::el - Locale data examples for the Greek (el) locale
 
 =head1 DESCRIPTION
 

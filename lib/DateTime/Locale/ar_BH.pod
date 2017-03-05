@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_BH - Locale data examples for the Arabic Bahrain (ar-BH) locale.
+DateTime::Locale::ar_BH - Locale data examples for the Arabic Bahrain (ar-BH) locale
 
 =head1 DESCRIPTION
 

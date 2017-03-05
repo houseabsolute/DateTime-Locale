@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::el_CY - Locale data examples for the Greek Cyprus (el-CY) locale.
+DateTime::Locale::el_CY - Locale data examples for the Greek Cyprus (el-CY) locale
 
 =head1 DESCRIPTION
 

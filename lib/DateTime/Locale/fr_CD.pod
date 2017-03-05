@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_CD - Locale data examples for the French Congo - Kinshasa (fr-CD) locale.
+DateTime::Locale::fr_CD - Locale data examples for the French Congo - Kinshasa (fr-CD) locale
 
 =head1 DESCRIPTION
 

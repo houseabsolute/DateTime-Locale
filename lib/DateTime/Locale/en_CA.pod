@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_CA - Locale data examples for the English Canada (en-CA) locale.
+DateTime::Locale::en_CA - Locale data examples for the English Canada (en-CA) locale
 
 =head1 DESCRIPTION
 

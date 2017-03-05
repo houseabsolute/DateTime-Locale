@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mk - Locale data examples for the Macedonian (mk) locale.
+DateTime::Locale::mk - Locale data examples for the Macedonian (mk) locale
 
 =head1 DESCRIPTION
 

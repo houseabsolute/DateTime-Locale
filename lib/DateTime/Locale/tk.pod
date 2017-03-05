@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::tk - Locale data examples for the Turkmen (tk) locale.
+DateTime::Locale::tk - Locale data examples for the Turkmen (tk) locale
 
 =head1 DESCRIPTION
 

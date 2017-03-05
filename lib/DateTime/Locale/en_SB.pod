@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_SB - Locale data examples for the English Solomon Islands (en-SB) locale.
+DateTime::Locale::en_SB - Locale data examples for the English Solomon Islands (en-SB) locale
 
 =head1 DESCRIPTION
 

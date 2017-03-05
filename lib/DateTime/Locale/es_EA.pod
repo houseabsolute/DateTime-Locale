@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_EA - Locale data examples for the Spanish Ceuta & Melilla (es-EA) locale.
+DateTime::Locale::es_EA - Locale data examples for the Spanish Ceuta & Melilla (es-EA) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nnh_CM - Locale data examples for the Ngiemboon Cameroon (nnh-CM) locale.
+DateTime::Locale::nnh_CM - Locale data examples for the Ngiemboon Cameroon (nnh-CM) locale
 
 =head1 DESCRIPTION
 

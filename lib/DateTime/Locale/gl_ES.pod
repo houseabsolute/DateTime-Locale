@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::gl_ES - Locale data examples for the Galician Spain (gl-ES) locale.
+DateTime::Locale::gl_ES - Locale data examples for the Galician Spain (gl-ES) locale
 
 =head1 DESCRIPTION
 

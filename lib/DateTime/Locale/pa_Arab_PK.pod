@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pa_Arab_PK - Locale data examples for the Punjabi Pakistan Arabic (pa-Arab-PK) locale.
+DateTime::Locale::pa_Arab_PK - Locale data examples for the Punjabi Pakistan Arabic (pa-Arab-PK) locale
 
 =head1 DESCRIPTION
 

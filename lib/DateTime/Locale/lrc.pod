@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lrc - Locale data examples for the Northern Luri (lrc) locale.
+DateTime::Locale::lrc - Locale data examples for the Northern Luri (lrc) locale
 
 =head1 DESCRIPTION
 

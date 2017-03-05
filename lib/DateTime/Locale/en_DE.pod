@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_DE - Locale data examples for the English Germany (en-DE) locale.
+DateTime::Locale::en_DE - Locale data examples for the English Germany (en-DE) locale
 
 =head1 DESCRIPTION
 

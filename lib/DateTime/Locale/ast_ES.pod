@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ast_ES - Locale data examples for the Asturian Spain (ast-ES) locale.
+DateTime::Locale::ast_ES - Locale data examples for the Asturian Spain (ast-ES) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::eu_ES - Locale data examples for the Basque Spain (eu-ES) locale.
+DateTime::Locale::eu_ES - Locale data examples for the Basque Spain (eu-ES) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::vo_001 - Locale data examples for the Volapük World (vo-001) locale.
+DateTime::Locale::vo_001 - Locale data examples for the Volapük World (vo-001) locale
 
 =head1 DESCRIPTION
 

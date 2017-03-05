@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pa - Locale data examples for the Punjabi (pa) locale.
+DateTime::Locale::pa - Locale data examples for the Punjabi (pa) locale
 
 =head1 DESCRIPTION
 

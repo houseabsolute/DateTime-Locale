@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ee_TG - Locale data examples for the Ewe Togo (ee-TG) locale.
+DateTime::Locale::ee_TG - Locale data examples for the Ewe Togo (ee-TG) locale
 
 =head1 DESCRIPTION
 

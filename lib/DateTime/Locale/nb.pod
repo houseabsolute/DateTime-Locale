@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nb - Locale data examples for the Norwegian Bokmål (nb) locale.
+DateTime::Locale::nb - Locale data examples for the Norwegian Bokmål (nb) locale
 
 =head1 DESCRIPTION
 

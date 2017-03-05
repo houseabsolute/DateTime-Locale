@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::om_KE - Locale data examples for the Oromo Kenya (om-KE) locale.
+DateTime::Locale::om_KE - Locale data examples for the Oromo Kenya (om-KE) locale
 
 =head1 DESCRIPTION
 
