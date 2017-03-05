@@ -444,7 +444,7 @@ reference if called in a scalar context.
 
 Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
-names in UTF-8 characters as appropriate.
+names use UTF-8 as appropriate.
 
 =head1 CLDR DATA BUGS
 
