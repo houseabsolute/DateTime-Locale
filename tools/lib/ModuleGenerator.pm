@@ -13,7 +13,7 @@ use Data::Dumper::Concise qw( Dumper );
 use JSON::MaybeXS qw( decode_json );
 use List::AllUtils qw( max );
 use ModuleGenerator::Locale;
-use Locale::Language
+use Locale::Codes::Language
     qw( language_code2code LOCALE_LANG_ALPHA_2 LOCALE_LANG_ALPHA_3 );
 use Parse::PMFile;
 use Path::Class qw( file );
@@ -179,10 +179,12 @@ sub _write_data_pm ($self) {
 sub _iso_639_aliases ($self) {
     my %aliases;
     for my $locale ( $self->_locales->@* ) {
+        next if length $locale->language_code >2;
+
         my $three = language_code2code(
             $locale->language_code,
             LOCALE_LANG_ALPHA_2, LOCALE_LANG_ALPHA_3
-        ) or next;
+        );
 
         my $full_three_code = join '-',
             grep {defined} (
