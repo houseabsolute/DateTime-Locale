@@ -40,11 +40,11 @@ has _autogen_warning => (
     builder => '_build_autogen_warning',
 );
 
-has _script => (
+has _generator_script => (
     is      => 'ro',
     isa     => File,
     lazy    => 1,
-    builder => '_build_script',
+    builder => '_build_generator_script',
 );
 
 has _source_data_root => (
@@ -292,7 +292,7 @@ sub _insert_autogen_warning ( $self, $code ) {
 }
 
 sub _build_autogen_warning ($self) {
-    my $script = $self->_script->basename;
+    my $script = $self->_generator_script->basename;
 
     return <<"EOF";
 ###########################################################################
@@ -382,12 +382,12 @@ sub _write_pod_files ($self) {
     return;
 }
 
-sub _build_script {
+sub _build_generator_script {
     return file($0);
 }
 
 sub _build_source_data_root ($self) {
-    return $self->_script->parent->parent->subdir('source-data');
+    return $self->_generator_script->parent->parent->subdir('source-data');
 }
 
 sub _build_locale_codes ($self) {
