@@ -316,10 +316,10 @@ sub _build_json_file ($self) {
 }
 
 sub _build_parent_code ($self) {
-    my $explicit_parent = $self->_explicit_parents;
+    my $explicit_parents = $self->_explicit_parents;
 
-    return $explicit_parent->{ $self->code }
-        if $explicit_parent->{ $self->code };
+    return $explicit_parents->{ $self->code }
+        if $explicit_parents->{ $self->code };
 
     return
           $self->code =~ /-/    ? $self->code =~ s/-[^-]+$//r
