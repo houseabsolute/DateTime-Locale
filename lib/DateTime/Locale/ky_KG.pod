@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ky_KG - Locale data examples for the ky-KG locale.
+DateTime::Locale::ky_KG - Locale data examples for the Kyrgyz Kyrgyzstan (ky-KG) locale.
 
 =head1 DESCRIPTION
 

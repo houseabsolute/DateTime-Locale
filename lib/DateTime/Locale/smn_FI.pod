@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::smn_FI - Locale data examples for the smn-FI locale.
+DateTime::Locale::smn_FI - Locale data examples for the Inari Sami Finland (smn-FI) locale.
 
 =head1 DESCRIPTION
 

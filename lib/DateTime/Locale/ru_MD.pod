@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ru_MD - Locale data examples for the ru-MD locale.
+DateTime::Locale::ru_MD - Locale data examples for the Russian Moldova (ru-MD) locale.
 
 =head1 DESCRIPTION
 

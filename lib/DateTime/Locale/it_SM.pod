@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::it_SM - Locale data examples for the it-SM locale.
+DateTime::Locale::it_SM - Locale data examples for the Italian San Marino (it-SM) locale.
 
 =head1 DESCRIPTION
 

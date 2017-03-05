@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dz_BT - Locale data examples for the dz-BT locale.
+DateTime::Locale::dz_BT - Locale data examples for the Dzongkha Bhutan (dz-BT) locale.
 
 =head1 DESCRIPTION
 

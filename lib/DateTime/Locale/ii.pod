@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ii - Locale data examples for the ii locale.
+DateTime::Locale::ii - Locale data examples for the Sichuan Yi (ii) locale.
 
 =head1 DESCRIPTION
 

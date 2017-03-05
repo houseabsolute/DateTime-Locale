@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cgg_UG - Locale data examples for the cgg-UG locale.
+DateTime::Locale::cgg_UG - Locale data examples for the Chiga Uganda (cgg-UG) locale.
 
 =head1 DESCRIPTION
 

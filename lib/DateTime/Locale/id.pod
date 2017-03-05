@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::id - Locale data examples for the id locale.
+DateTime::Locale::id - Locale data examples for the Indonesian (id) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pl_PL - Locale data examples for the pl-PL locale.
+DateTime::Locale::pl_PL - Locale data examples for the Polish Poland (pl-PL) locale.
 
 =head1 DESCRIPTION
 

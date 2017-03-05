@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ckb_IQ - Locale data examples for the ckb-IQ locale.
+DateTime::Locale::ckb_IQ - Locale data examples for the Central Kurdish Iraq (ckb-IQ) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en - Locale data examples for the en locale.
+DateTime::Locale::en - Locale data examples for the English (en) locale.
 
 =head1 DESCRIPTION
 

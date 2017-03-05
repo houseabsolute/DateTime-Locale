@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yi_001 - Locale data examples for the yi-001 locale.
+DateTime::Locale::yi_001 - Locale data examples for the Yiddish World (yi-001) locale.
 
 =head1 DESCRIPTION
 

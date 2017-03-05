@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rwk - Locale data examples for the rwk locale.
+DateTime::Locale::rwk - Locale data examples for the Rwa (rwk) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_CG - Locale data examples for the fr-CG locale.
+DateTime::Locale::fr_CG - Locale data examples for the French Congo - Brazzaville (fr-CG) locale.
 
 =head1 DESCRIPTION
 

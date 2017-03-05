@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_MT - Locale data examples for the en-MT locale.
+DateTime::Locale::en_MT - Locale data examples for the English Malta (en-MT) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nnh - Locale data examples for the nnh locale.
+DateTime::Locale::nnh - Locale data examples for the Ngiemboon (nnh) locale.
 
 =head1 DESCRIPTION
 

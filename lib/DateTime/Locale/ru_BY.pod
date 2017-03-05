@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ru_BY - Locale data examples for the ru-BY locale.
+DateTime::Locale::ru_BY - Locale data examples for the Russian Belarus (ru-BY) locale.
 
 =head1 DESCRIPTION
 

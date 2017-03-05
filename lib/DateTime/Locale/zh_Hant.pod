@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zh_Hant - Locale data examples for the zh-Hant locale.
+DateTime::Locale::zh_Hant - Locale data examples for the Chinese (zh-Hant) locale.
 
 =head1 DESCRIPTION
 

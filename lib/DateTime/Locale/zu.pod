@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zu - Locale data examples for the zu locale.
+DateTime::Locale::zu - Locale data examples for the Zulu (zu) locale.
 
 =head1 DESCRIPTION
 

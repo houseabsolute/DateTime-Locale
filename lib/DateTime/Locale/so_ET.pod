@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::so_ET - Locale data examples for the so-ET locale.
+DateTime::Locale::so_ET - Locale data examples for the Somali Ethiopia (so-ET) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::qu_PE - Locale data examples for the qu-PE locale.
+DateTime::Locale::qu_PE - Locale data examples for the Quechua Peru (qu-PE) locale.
 
 =head1 DESCRIPTION
 

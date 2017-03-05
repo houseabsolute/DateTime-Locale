@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_MR - Locale data examples for the ar-MR locale.
+DateTime::Locale::ar_MR - Locale data examples for the Arabic Mauritania (ar-MR) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_GW - Locale data examples for the pt-GW locale.
+DateTime::Locale::pt_GW - Locale data examples for the Portuguese Guinea-Bissau (pt-GW) locale.
 
 =head1 DESCRIPTION
 

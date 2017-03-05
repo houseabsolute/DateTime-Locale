@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_ER - Locale data examples for the ar-ER locale.
+DateTime::Locale::ar_ER - Locale data examples for the Arabic Eritrea (ar-ER) locale.
 
 =head1 DESCRIPTION
 

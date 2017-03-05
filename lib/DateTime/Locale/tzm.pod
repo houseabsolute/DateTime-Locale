@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::tzm - Locale data examples for the tzm locale.
+DateTime::Locale::tzm - Locale data examples for the Central Atlas Tamazight (tzm) locale.
 
 =head1 DESCRIPTION
 

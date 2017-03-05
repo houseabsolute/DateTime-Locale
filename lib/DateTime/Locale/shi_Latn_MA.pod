@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::shi_Latn_MA - Locale data examples for the shi-Latn-MA locale.
+DateTime::Locale::shi_Latn_MA - Locale data examples for the Tachelhit Morocco Latin (shi-Latn-MA) locale.
 
 =head1 DESCRIPTION
 

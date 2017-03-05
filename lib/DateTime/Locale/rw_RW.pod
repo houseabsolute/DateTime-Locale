@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rw_RW - Locale data examples for the rw-RW locale.
+DateTime::Locale::rw_RW - Locale data examples for the Kinyarwanda Rwanda (rw-RW) locale.
 
 =head1 DESCRIPTION
 

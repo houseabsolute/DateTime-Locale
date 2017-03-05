@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bas_CM - Locale data examples for the bas-CM locale.
+DateTime::Locale::bas_CM - Locale data examples for the Basaa Cameroon (bas-CM) locale.
 
 =head1 DESCRIPTION
 

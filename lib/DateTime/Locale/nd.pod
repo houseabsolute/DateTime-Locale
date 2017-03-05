@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nd - Locale data examples for the nd locale.
+DateTime::Locale::nd - Locale data examples for the North Ndebele (nd) locale.
 
 =head1 DESCRIPTION
 

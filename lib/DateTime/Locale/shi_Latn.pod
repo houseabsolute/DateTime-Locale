@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::shi_Latn - Locale data examples for the shi-Latn locale.
+DateTime::Locale::shi_Latn - Locale data examples for the Tachelhit (shi-Latn) locale.
 
 =head1 DESCRIPTION
 

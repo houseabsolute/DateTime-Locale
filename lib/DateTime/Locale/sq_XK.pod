@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sq_XK - Locale data examples for the sq-XK locale.
+DateTime::Locale::sq_XK - Locale data examples for the Albanian Kosovo (sq-XK) locale.
 
 =head1 DESCRIPTION
 

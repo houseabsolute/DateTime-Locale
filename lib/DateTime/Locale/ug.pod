@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ug - Locale data examples for the ug locale.
+DateTime::Locale::ug - Locale data examples for the Uyghur (ug) locale.
 
 =head1 DESCRIPTION
 

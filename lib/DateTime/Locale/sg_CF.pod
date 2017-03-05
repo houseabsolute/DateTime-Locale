@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sg_CF - Locale data examples for the sg-CF locale.
+DateTime::Locale::sg_CF - Locale data examples for the Sango Central African Republic (sg-CF) locale.
 
 =head1 DESCRIPTION
 

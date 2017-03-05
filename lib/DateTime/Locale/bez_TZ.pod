@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bez_TZ - Locale data examples for the bez-TZ locale.
+DateTime::Locale::bez_TZ - Locale data examples for the Bena Tanzania (bez-TZ) locale.
 
 =head1 DESCRIPTION
 

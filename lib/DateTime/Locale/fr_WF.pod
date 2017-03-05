@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_WF - Locale data examples for the fr-WF locale.
+DateTime::Locale::fr_WF - Locale data examples for the French Wallis & Futuna (fr-WF) locale.
 
 =head1 DESCRIPTION
 

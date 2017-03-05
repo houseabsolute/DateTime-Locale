@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_CU - Locale data examples for the es-CU locale.
+DateTime::Locale::es_CU - Locale data examples for the Spanish Cuba (es-CU) locale.
 
 =head1 DESCRIPTION
 

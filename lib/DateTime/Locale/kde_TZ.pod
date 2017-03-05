@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kde_TZ - Locale data examples for the kde-TZ locale.
+DateTime::Locale::kde_TZ - Locale data examples for the Makonde Tanzania (kde-TZ) locale.
 
 =head1 DESCRIPTION
 

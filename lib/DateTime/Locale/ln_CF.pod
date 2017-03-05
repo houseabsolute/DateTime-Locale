@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ln_CF - Locale data examples for the ln-CF locale.
+DateTime::Locale::ln_CF - Locale data examples for the Lingala Central African Republic (ln-CF) locale.
 
 =head1 DESCRIPTION
 

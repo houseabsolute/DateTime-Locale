@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_MG - Locale data examples for the fr-MG locale.
+DateTime::Locale::fr_MG - Locale data examples for the French Madagascar (fr-MG) locale.
 
 =head1 DESCRIPTION
 

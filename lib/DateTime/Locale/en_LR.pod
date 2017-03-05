@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_LR - Locale data examples for the en-LR locale.
+DateTime::Locale::en_LR - Locale data examples for the English Liberia (en-LR) locale.
 
 =head1 DESCRIPTION
 

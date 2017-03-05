@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kok - Locale data examples for the kok locale.
+DateTime::Locale::kok - Locale data examples for the Konkani (kok) locale.
 
 =head1 DESCRIPTION
 

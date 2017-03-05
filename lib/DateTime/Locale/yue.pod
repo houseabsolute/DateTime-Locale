@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yue - Locale data examples for the yue locale.
+DateTime::Locale::yue - Locale data examples for the Cantonese (yue) locale.
 
 =head1 DESCRIPTION
 

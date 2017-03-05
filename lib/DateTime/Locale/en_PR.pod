@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_PR - Locale data examples for the en-PR locale.
+DateTime::Locale::en_PR - Locale data examples for the English Puerto Rico (en-PR) locale.
 
 =head1 DESCRIPTION
 

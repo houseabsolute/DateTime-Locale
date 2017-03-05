@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_DZ - Locale data examples for the fr-DZ locale.
+DateTime::Locale::fr_DZ - Locale data examples for the French Algeria (fr-DZ) locale.
 
 =head1 DESCRIPTION
 

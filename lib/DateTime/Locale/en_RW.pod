@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_RW - Locale data examples for the en-RW locale.
+DateTime::Locale::en_RW - Locale data examples for the English Rwanda (en-RW) locale.
 
 =head1 DESCRIPTION
 

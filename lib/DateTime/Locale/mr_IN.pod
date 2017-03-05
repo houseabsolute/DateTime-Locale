@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mr_IN - Locale data examples for the mr-IN locale.
+DateTime::Locale::mr_IN - Locale data examples for the Marathi India (mr-IN) locale.
 
 =head1 DESCRIPTION
 

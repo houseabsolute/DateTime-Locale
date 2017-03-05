@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_SL - Locale data examples for the en-SL locale.
+DateTime::Locale::en_SL - Locale data examples for the English Sierra Leone (en-SL) locale.
 
 =head1 DESCRIPTION
 

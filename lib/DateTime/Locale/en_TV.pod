@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_TV - Locale data examples for the en-TV locale.
+DateTime::Locale::en_TV - Locale data examples for the English Tuvalu (en-TV) locale.
 
 =head1 DESCRIPTION
 

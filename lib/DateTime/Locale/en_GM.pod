@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_GM - Locale data examples for the en-GM locale.
+DateTime::Locale::en_GM - Locale data examples for the English Gambia (en-GM) locale.
 
 =head1 DESCRIPTION
 

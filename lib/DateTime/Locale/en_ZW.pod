@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_ZW - Locale data examples for the en-ZW locale.
+DateTime::Locale::en_ZW - Locale data examples for the English Zimbabwe (en-ZW) locale.
 
 =head1 DESCRIPTION
 

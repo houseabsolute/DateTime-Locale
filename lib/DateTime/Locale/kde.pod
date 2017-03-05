@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kde - Locale data examples for the kde locale.
+DateTime::Locale::kde - Locale data examples for the Makonde (kde) locale.
 
 =head1 DESCRIPTION
 

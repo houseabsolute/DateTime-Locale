@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ks_IN - Locale data examples for the ks-IN locale.
+DateTime::Locale::ks_IN - Locale data examples for the Kashmiri India (ks-IN) locale.
 
 =head1 DESCRIPTION
 

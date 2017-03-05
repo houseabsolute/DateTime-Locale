@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::si - Locale data examples for the si locale.
+DateTime::Locale::si - Locale data examples for the Sinhala (si) locale.
 
 =head1 DESCRIPTION
 

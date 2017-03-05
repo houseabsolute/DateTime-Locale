@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_VU - Locale data examples for the en-VU locale.
+DateTime::Locale::en_VU - Locale data examples for the English Vanuatu (en-VU) locale.
 
 =head1 DESCRIPTION
 

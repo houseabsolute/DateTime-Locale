@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_IC - Locale data examples for the es-IC locale.
+DateTime::Locale::es_IC - Locale data examples for the Spanish Canary Islands (es-IC) locale.
 
 =head1 DESCRIPTION
 

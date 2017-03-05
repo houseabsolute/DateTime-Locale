@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dua - Locale data examples for the dua locale.
+DateTime::Locale::dua - Locale data examples for the Duala (dua) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Cyrl_ME - Locale data examples for the sr-Cyrl-ME locale.
+DateTime::Locale::sr_Cyrl_ME - Locale data examples for the Serbian Montenegro Cyrillic (sr-Cyrl-ME) locale.
 
 =head1 DESCRIPTION
 

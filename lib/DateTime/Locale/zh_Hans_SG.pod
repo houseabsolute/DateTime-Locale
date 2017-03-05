@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zh_Hans_SG - Locale data examples for the zh-Hans-SG locale.
+DateTime::Locale::zh_Hans_SG - Locale data examples for the Chinese Singapore Simplified (zh-Hans-SG) locale.
 
 =head1 DESCRIPTION
 

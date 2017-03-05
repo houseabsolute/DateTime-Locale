@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::so_KE - Locale data examples for the so-KE locale.
+DateTime::Locale::so_KE - Locale data examples for the Somali Kenya (so-KE) locale.
 
 =head1 DESCRIPTION
 

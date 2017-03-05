@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zu_ZA - Locale data examples for the zu-ZA locale.
+DateTime::Locale::zu_ZA - Locale data examples for the Zulu South Africa (zu-ZA) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sv_AX - Locale data examples for the sv-AX locale.
+DateTime::Locale::sv_AX - Locale data examples for the Swedish Åland Islands (sv-AX) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sw_KE - Locale data examples for the sw-KE locale.
+DateTime::Locale::sw_KE - Locale data examples for the Swahili Kenya (sw-KE) locale.
 
 =head1 DESCRIPTION
 

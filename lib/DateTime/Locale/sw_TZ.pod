@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sw_TZ - Locale data examples for the sw-TZ locale.
+DateTime::Locale::sw_TZ - Locale data examples for the Swahili Tanzania (sw-TZ) locale.
 
 =head1 DESCRIPTION
 

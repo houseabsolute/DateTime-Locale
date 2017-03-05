@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nyn - Locale data examples for the nyn locale.
+DateTime::Locale::nyn - Locale data examples for the Nyankole (nyn) locale.
 
 =head1 DESCRIPTION
 

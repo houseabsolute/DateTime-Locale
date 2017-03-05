@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::luy - Locale data examples for the luy locale.
+DateTime::Locale::luy - Locale data examples for the Luyia (luy) locale.
 
 =head1 DESCRIPTION
 

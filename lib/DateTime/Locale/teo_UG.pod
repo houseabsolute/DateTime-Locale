@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::teo_UG - Locale data examples for the teo-UG locale.
+DateTime::Locale::teo_UG - Locale data examples for the Teso Uganda (teo-UG) locale.
 
 =head1 DESCRIPTION
 

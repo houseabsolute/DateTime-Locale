@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sah - Locale data examples for the sah locale.
+DateTime::Locale::sah - Locale data examples for the Sakha (sah) locale.
 
 =head1 DESCRIPTION
 

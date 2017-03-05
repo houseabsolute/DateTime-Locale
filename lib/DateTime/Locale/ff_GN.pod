@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ff_GN - Locale data examples for the ff-GN locale.
+DateTime::Locale::ff_GN - Locale data examples for the Fulah Guinea (ff-GN) locale.
 
 =head1 DESCRIPTION
 

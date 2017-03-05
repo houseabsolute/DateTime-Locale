@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fy - Locale data examples for the fy locale.
+DateTime::Locale::fy - Locale data examples for the Western Frisian (fy) locale.
 
 =head1 DESCRIPTION
 

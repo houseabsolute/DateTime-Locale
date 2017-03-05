@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_FK - Locale data examples for the en-FK locale.
+DateTime::Locale::en_FK - Locale data examples for the English Falkland Islands (en-FK) locale.
 
 =head1 DESCRIPTION
 

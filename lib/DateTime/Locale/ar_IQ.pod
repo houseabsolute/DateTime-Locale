@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_IQ - Locale data examples for the ar-IQ locale.
+DateTime::Locale::ar_IQ - Locale data examples for the Arabic Iraq (ar-IQ) locale.
 
 =head1 DESCRIPTION
 

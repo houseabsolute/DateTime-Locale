@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_IL - Locale data examples for the ar-IL locale.
+DateTime::Locale::ar_IL - Locale data examples for the Arabic Israel (ar-IL) locale.
 
 =head1 DESCRIPTION
 

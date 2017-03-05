@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ha_NG - Locale data examples for the ha-NG locale.
+DateTime::Locale::ha_NG - Locale data examples for the Hausa Nigeria (ha-NG) locale.
 
 =head1 DESCRIPTION
 

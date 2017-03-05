@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_NL - Locale data examples for the en-NL locale.
+DateTime::Locale::en_NL - Locale data examples for the English Netherlands (en-NL) locale.
 
 =head1 DESCRIPTION
 

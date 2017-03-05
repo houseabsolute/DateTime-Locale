@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_US_POSIX - Locale data examples for the en-US-POSIX locale.
+DateTime::Locale::en_US_POSIX - Locale data examples for the English United States Computer (en-US-POSIX) locale.
 
 =head1 DESCRIPTION
 

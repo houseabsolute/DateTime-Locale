@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::qu_EC - Locale data examples for the qu-EC locale.
+DateTime::Locale::qu_EC - Locale data examples for the Quechua Ecuador (qu-EC) locale.
 
 =head1 DESCRIPTION
 

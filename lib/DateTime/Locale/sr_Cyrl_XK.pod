@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Cyrl_XK - Locale data examples for the sr-Cyrl-XK locale.
+DateTime::Locale::sr_Cyrl_XK - Locale data examples for the Serbian Kosovo Cyrillic (sr-Cyrl-XK) locale.
 
 =head1 DESCRIPTION
 

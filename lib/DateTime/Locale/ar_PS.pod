@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_PS - Locale data examples for the ar-PS locale.
+DateTime::Locale::ar_PS - Locale data examples for the Arabic Palestinian Territories (ar-PS) locale.
 
 =head1 DESCRIPTION
 

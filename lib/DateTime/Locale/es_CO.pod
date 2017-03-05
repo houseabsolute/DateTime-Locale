@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_CO - Locale data examples for the es-CO locale.
+DateTime::Locale::es_CO - Locale data examples for the Spanish Colombia (es-CO) locale.
 
 =head1 DESCRIPTION
 

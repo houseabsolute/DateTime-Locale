@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_UY - Locale data examples for the es-UY locale.
+DateTime::Locale::es_UY - Locale data examples for the Spanish Uruguay (es-UY) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_DZ - Locale data examples for the ar-DZ locale.
+DateTime::Locale::ar_DZ - Locale data examples for the Arabic Algeria (ar-DZ) locale.
 
 =head1 DESCRIPTION
 

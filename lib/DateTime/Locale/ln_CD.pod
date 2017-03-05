@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ln_CD - Locale data examples for the ln-CD locale.
+DateTime::Locale::ln_CD - Locale data examples for the Lingala Congo - Kinshasa (ln-CD) locale.
 
 =head1 DESCRIPTION
 

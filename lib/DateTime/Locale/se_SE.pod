@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::se_SE - Locale data examples for the se-SE locale.
+DateTime::Locale::se_SE - Locale data examples for the Northern Sami Sweden (se-SE) locale.
 
 =head1 DESCRIPTION
 

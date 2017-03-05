@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::tzm_MA - Locale data examples for the tzm-MA locale.
+DateTime::Locale::tzm_MA - Locale data examples for the Central Atlas Tamazight Morocco (tzm-MA) locale.
 
 =head1 DESCRIPTION
 

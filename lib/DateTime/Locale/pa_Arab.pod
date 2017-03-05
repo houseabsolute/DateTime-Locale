@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pa_Arab - Locale data examples for the pa-Arab locale.
+DateTime::Locale::pa_Arab - Locale data examples for the Punjabi (pa-Arab) locale.
 
 =head1 DESCRIPTION
 

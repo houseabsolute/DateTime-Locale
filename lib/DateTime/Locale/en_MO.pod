@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_MO - Locale data examples for the en-MO locale.
+DateTime::Locale::en_MO - Locale data examples for the English Macau SAR China (en-MO) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nl_SR - Locale data examples for the nl-SR locale.
+DateTime::Locale::nl_SR - Locale data examples for the Dutch Suriname (nl-SR) locale.
 
 =head1 DESCRIPTION
 

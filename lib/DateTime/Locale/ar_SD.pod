@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_SD - Locale data examples for the ar-SD locale.
+DateTime::Locale::ar_SD - Locale data examples for the Arabic Sudan (ar-SD) locale.
 
 =head1 DESCRIPTION
 

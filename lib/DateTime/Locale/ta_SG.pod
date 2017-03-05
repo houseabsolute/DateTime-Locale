@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ta_SG - Locale data examples for the ta-SG locale.
+DateTime::Locale::ta_SG - Locale data examples for the Tamil Singapore (ta-SG) locale.
 
 =head1 DESCRIPTION
 

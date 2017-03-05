@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mgh - Locale data examples for the mgh locale.
+DateTime::Locale::mgh - Locale data examples for the Makhuwa-Meetto (mgh) locale.
 
 =head1 DESCRIPTION
 

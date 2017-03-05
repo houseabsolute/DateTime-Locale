@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sv_FI - Locale data examples for the sv-FI locale.
+DateTime::Locale::sv_FI - Locale data examples for the Swedish Finland (sv-FI) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ewo - Locale data examples for the ewo locale.
+DateTime::Locale::ewo - Locale data examples for the Ewondo (ewo) locale.
 
 =head1 DESCRIPTION
 

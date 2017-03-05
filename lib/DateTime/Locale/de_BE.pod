@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::de_BE - Locale data examples for the de-BE locale.
+DateTime::Locale::de_BE - Locale data examples for the German Belgium (de-BE) locale.
 
 =head1 DESCRIPTION
 

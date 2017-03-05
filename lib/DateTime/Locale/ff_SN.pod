@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ff_SN - Locale data examples for the ff-SN locale.
+DateTime::Locale::ff_SN - Locale data examples for the Fulah Senegal (ff-SN) locale.
 
 =head1 DESCRIPTION
 

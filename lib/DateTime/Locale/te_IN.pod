@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::te_IN - Locale data examples for the te-IN locale.
+DateTime::Locale::te_IN - Locale data examples for the Telugu India (te-IN) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_AO - Locale data examples for the pt-AO locale.
+DateTime::Locale::pt_AO - Locale data examples for the Portuguese Angola (pt-AO) locale.
 
 =head1 DESCRIPTION
 

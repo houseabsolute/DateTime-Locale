@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_KN - Locale data examples for the en-KN locale.
+DateTime::Locale::en_KN - Locale data examples for the English St. Kitts & Nevis (en-KN) locale.
 
 =head1 DESCRIPTION
 

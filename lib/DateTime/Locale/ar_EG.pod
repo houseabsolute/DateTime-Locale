@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_EG - Locale data examples for the ar-EG locale.
+DateTime::Locale::ar_EG - Locale data examples for the Arabic Egypt (ar-EG) locale.
 
 =head1 DESCRIPTION
 

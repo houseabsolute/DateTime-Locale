@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::seh - Locale data examples for the seh locale.
+DateTime::Locale::seh - Locale data examples for the Sena (seh) locale.
 
 =head1 DESCRIPTION
 

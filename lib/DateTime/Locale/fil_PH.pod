@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fil_PH - Locale data examples for the fil-PH locale.
+DateTime::Locale::fil_PH - Locale data examples for the Filipino Philippines (fil-PH) locale.
 
 =head1 DESCRIPTION
 

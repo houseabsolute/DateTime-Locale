@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kam - Locale data examples for the kam locale.
+DateTime::Locale::kam - Locale data examples for the Kamba (kam) locale.
 
 =head1 DESCRIPTION
 

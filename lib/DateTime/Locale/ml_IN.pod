@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ml_IN - Locale data examples for the ml-IN locale.
+DateTime::Locale::ml_IN - Locale data examples for the Malayalam India (ml-IN) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nl_BE - Locale data examples for the nl-BE locale.
+DateTime::Locale::nl_BE - Locale data examples for the Dutch Belgium (nl-BE) locale.
 
 =head1 DESCRIPTION
 

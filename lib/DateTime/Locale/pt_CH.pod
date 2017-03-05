@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_CH - Locale data examples for the pt-CH locale.
+DateTime::Locale::pt_CH - Locale data examples for the Portuguese Switzerland (pt-CH) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_EH - Locale data examples for the ar-EH locale.
+DateTime::Locale::ar_EH - Locale data examples for the Arabic Western Sahara (ar-EH) locale.
 
 =head1 DESCRIPTION
 

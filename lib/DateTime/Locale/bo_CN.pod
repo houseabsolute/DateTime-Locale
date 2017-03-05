@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bo_CN - Locale data examples for the bo-CN locale.
+DateTime::Locale::bo_CN - Locale data examples for the Tibetan China (bo-CN) locale.
 
 =head1 DESCRIPTION
 

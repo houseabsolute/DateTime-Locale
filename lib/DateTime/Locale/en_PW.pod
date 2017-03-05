@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_PW - Locale data examples for the en-PW locale.
+DateTime::Locale::en_PW - Locale data examples for the English Palau (en-PW) locale.
 
 =head1 DESCRIPTION
 

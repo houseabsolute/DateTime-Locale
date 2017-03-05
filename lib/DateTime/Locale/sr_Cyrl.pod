@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Cyrl - Locale data examples for the sr-Cyrl locale.
+DateTime::Locale::sr_Cyrl - Locale data examples for the Serbian (sr-Cyrl) locale.
 
 =head1 DESCRIPTION
 

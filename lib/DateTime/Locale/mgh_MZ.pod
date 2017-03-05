@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mgh_MZ - Locale data examples for the mgh-MZ locale.
+DateTime::Locale::mgh_MZ - Locale data examples for the Makhuwa-Meetto Mozambique (mgh-MZ) locale.
 
 =head1 DESCRIPTION
 

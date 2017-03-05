@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::chr - Locale data examples for the chr locale.
+DateTime::Locale::chr - Locale data examples for the Cherokee (chr) locale.
 
 =head1 DESCRIPTION
 

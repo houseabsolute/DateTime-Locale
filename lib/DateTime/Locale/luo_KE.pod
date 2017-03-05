@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::luo_KE - Locale data examples for the luo-KE locale.
+DateTime::Locale::luo_KE - Locale data examples for the Luo Kenya (luo-KE) locale.
 
 =head1 DESCRIPTION
 

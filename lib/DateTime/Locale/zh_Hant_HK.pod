@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zh_Hant_HK - Locale data examples for the zh-Hant-HK locale.
+DateTime::Locale::zh_Hant_HK - Locale data examples for the Chinese Hong Kong SAR China Traditional (zh-Hant-HK) locale.
 
 =head1 DESCRIPTION
 

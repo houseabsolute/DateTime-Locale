@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::vi_VN - Locale data examples for the vi-VN locale.
+DateTime::Locale::vi_VN - Locale data examples for the Vietnamese Vietnam (vi-VN) locale.
 
 =head1 DESCRIPTION
 

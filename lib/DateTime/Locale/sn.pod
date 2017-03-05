@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sn - Locale data examples for the sn locale.
+DateTime::Locale::sn - Locale data examples for the Shona (sn) locale.
 
 =head1 DESCRIPTION
 

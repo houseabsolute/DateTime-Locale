@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bm - Locale data examples for the bm locale.
+DateTime::Locale::bm - Locale data examples for the Bambara (bm) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::brx_IN - Locale data examples for the brx-IN locale.
+DateTime::Locale::brx_IN - Locale data examples for the Bodo India (brx-IN) locale.
 
 =head1 DESCRIPTION
 

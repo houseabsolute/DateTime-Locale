@@ -364,11 +364,13 @@ sub _write_pod_files ($self) {
         my $locale = DateTime::Locale->load($code)
             or die "Cannot load $code";
 
+        my $name = $locale->name;
         my $filled = $template->fill_in(
             HASH => {
                 autogen_warning => $self->_autogen_warning,
                 name            => 'DateTime::Locale::' . $underscore,
-                description => "Locale data examples for the $code locale.",
+                description =>
+                    "Locale data examples for the $name ($code) locale.",
                 example_dts => \@example_dts,
                 locale      => \$locale,
             },

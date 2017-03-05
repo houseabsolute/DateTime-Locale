@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nl_SX - Locale data examples for the nl-SX locale.
+DateTime::Locale::nl_SX - Locale data examples for the Dutch Sint Maarten (nl-SX) locale.
 
 =head1 DESCRIPTION
 

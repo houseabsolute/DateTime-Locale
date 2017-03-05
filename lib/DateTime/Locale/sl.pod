@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sl - Locale data examples for the sl locale.
+DateTime::Locale::sl - Locale data examples for the Slovenian (sl) locale.
 
 =head1 DESCRIPTION
 

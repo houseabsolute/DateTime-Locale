@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kab_DZ - Locale data examples for the kab-DZ locale.
+DateTime::Locale::kab_DZ - Locale data examples for the Kabyle Algeria (kab-DZ) locale.
 
 =head1 DESCRIPTION
 

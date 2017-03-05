@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::gd - Locale data examples for the gd locale.
+DateTime::Locale::gd - Locale data examples for the Scottish Gaelic (gd) locale.
 
 =head1 DESCRIPTION
 

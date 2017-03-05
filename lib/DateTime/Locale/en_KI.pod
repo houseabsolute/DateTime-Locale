@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_KI - Locale data examples for the en-KI locale.
+DateTime::Locale::en_KI - Locale data examples for the English Kiribati (en-KI) locale.
 
 =head1 DESCRIPTION
 

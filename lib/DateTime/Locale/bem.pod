@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bem - Locale data examples for the bem locale.
+DateTime::Locale::bem - Locale data examples for the Bemba (bem) locale.
 
 =head1 DESCRIPTION
 

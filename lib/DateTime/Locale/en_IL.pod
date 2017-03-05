@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_IL - Locale data examples for the en-IL locale.
+DateTime::Locale::en_IL - Locale data examples for the English Israel (en-IL) locale.
 
 =head1 DESCRIPTION
 

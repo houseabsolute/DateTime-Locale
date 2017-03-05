@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_AE - Locale data examples for the ar-AE locale.
+DateTime::Locale::ar_AE - Locale data examples for the Arabic United Arab Emirates (ar-AE) locale.
 
 =head1 DESCRIPTION
 

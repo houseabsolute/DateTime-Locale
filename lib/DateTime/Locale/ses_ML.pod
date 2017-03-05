@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ses_ML - Locale data examples for the ses-ML locale.
+DateTime::Locale::ses_ML - Locale data examples for the Koyraboro Senni Mali (ses-ML) locale.
 
 =head1 DESCRIPTION
 

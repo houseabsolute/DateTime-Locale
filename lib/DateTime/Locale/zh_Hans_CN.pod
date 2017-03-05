@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zh_Hans_CN - Locale data examples for the zh-Hans-CN locale.
+DateTime::Locale::zh_Hans_CN - Locale data examples for the Chinese China Simplified (zh-Hans-CN) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ti - Locale data examples for the ti locale.
+DateTime::Locale::ti - Locale data examples for the Tigrinya (ti) locale.
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::gv - Locale data examples for the gv locale.
+DateTime::Locale::gv - Locale data examples for the Manx (gv) locale.
 
 =head1 DESCRIPTION
 

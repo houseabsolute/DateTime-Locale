@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::om - Locale data examples for the om locale.
+DateTime::Locale::om - Locale data examples for the Oromo (om) locale.
 
 =head1 DESCRIPTION
 

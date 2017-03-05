@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kk_KZ - Locale data examples for the kk-KZ locale.
+DateTime::Locale::kk_KZ - Locale data examples for the Kazakh Kazakhstan (kk-KZ) locale.
 
 =head1 DESCRIPTION
 

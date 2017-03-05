@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::vun_TZ - Locale data examples for the vun-TZ locale.
+DateTime::Locale::vun_TZ - Locale data examples for the Vunjo Tanzania (vun-TZ) locale.
 
 =head1 DESCRIPTION
 

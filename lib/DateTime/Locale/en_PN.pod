@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_PN - Locale data examples for the en-PN locale.
+DateTime::Locale::en_PN - Locale data examples for the English Pitcairn Islands (en-PN) locale.
 
 =head1 DESCRIPTION
 

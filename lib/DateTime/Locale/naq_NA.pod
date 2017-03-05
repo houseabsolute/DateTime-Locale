@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::naq_NA - Locale data examples for the naq-NA locale.
+DateTime::Locale::naq_NA - Locale data examples for the Nama Namibia (naq-NA) locale.
 
 =head1 DESCRIPTION
 

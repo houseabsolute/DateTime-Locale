@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_ST - Locale data examples for the pt-ST locale.
+DateTime::Locale::pt_ST - Locale data examples for the Portuguese São Tomé & Príncipe (pt-ST) locale.
 
 =head1 DESCRIPTION
 

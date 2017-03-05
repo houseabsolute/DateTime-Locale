@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hy - Locale data examples for the hy locale.
+DateTime::Locale::hy - Locale data examples for the Armenian (hy) locale.
 
 =head1 DESCRIPTION
 

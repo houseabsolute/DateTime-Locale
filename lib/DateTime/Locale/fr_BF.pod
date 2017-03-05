@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_BF - Locale data examples for the fr-BF locale.
+DateTime::Locale::fr_BF - Locale data examples for the French Burkina Faso (fr-BF) locale.
 
 =head1 DESCRIPTION
 

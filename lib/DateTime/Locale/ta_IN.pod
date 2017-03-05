@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ta_IN - Locale data examples for the ta-IN locale.
+DateTime::Locale::ta_IN - Locale data examples for the Tamil India (ta-IN) locale.
 
 =head1 DESCRIPTION
 

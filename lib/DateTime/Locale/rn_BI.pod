@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rn_BI - Locale data examples for the rn-BI locale.
+DateTime::Locale::rn_BI - Locale data examples for the Rundi Burundi (rn-BI) locale.
 
 =head1 DESCRIPTION
 

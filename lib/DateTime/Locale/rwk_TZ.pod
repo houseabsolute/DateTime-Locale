@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rwk_TZ - Locale data examples for the rwk-TZ locale.
+DateTime::Locale::rwk_TZ - Locale data examples for the Rwa Tanzania (rwk-TZ) locale.
 
 =head1 DESCRIPTION
 

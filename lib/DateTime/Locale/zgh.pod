@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zgh - Locale data examples for the zgh locale.
+DateTime::Locale::zgh - Locale data examples for the Standard Moroccan Tamazight (zgh) locale.
 
 =head1 DESCRIPTION
 

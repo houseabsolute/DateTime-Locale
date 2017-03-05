@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_419 - Locale data examples for the es-419 locale.
+DateTime::Locale::es_419 - Locale data examples for the Spanish Latin America (es-419) locale.
 
 =head1 DESCRIPTION
 

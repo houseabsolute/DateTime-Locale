@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_DJ - Locale data examples for the fr-DJ locale.
+DateTime::Locale::fr_DJ - Locale data examples for the French Djibouti (fr-DJ) locale.
 
 =head1 DESCRIPTION
 

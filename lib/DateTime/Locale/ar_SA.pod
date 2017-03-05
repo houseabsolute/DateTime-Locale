@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_SA - Locale data examples for the ar-SA locale.
+DateTime::Locale::ar_SA - Locale data examples for the Arabic Saudi Arabia (ar-SA) locale.
 
 =head1 DESCRIPTION
 

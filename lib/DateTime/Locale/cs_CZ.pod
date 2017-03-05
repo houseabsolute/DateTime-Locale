@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cs_CZ - Locale data examples for the cs-CZ locale.
+DateTime::Locale::cs_CZ - Locale data examples for the Czech Czech Republic (cs-CZ) locale.
 
 =head1 DESCRIPTION
 

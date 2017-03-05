@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::or_IN - Locale data examples for the or-IN locale.
+DateTime::Locale::or_IN - Locale data examples for the Odia India (or-IN) locale.
 
 =head1 DESCRIPTION
 

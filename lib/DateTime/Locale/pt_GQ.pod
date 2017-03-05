@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_GQ - Locale data examples for the pt-GQ locale.
+DateTime::Locale::pt_GQ - Locale data examples for the Portuguese Equatorial Guinea (pt-GQ) locale.
 
 =head1 DESCRIPTION
 

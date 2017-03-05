@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::uz - Locale data examples for the uz locale.
+DateTime::Locale::uz - Locale data examples for the Uzbek (uz) locale.
 
 =head1 DESCRIPTION
 
