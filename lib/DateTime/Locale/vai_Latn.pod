@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::vai_Latn - Locale data examples for the Vai (vai-Latn) locale.
+DateTime::Locale::vai_Latn - Locale data examples for the Vai Latin (vai-Latn) locale.
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Vai locale.
+Vai Latin locale.
 
 =head2 Days
 

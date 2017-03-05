@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::uz_Latn - Locale data examples for the Uzbek (uz-Latn) locale.
+DateTime::Locale::uz_Latn - Locale data examples for the Uzbek Latin (uz-Latn) locale.
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Uzbek locale.
+Uzbek Latin locale.
 
 =head2 Days
 

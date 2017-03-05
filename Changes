@@ -1,5 +1,11 @@
 {{$NEXT}}
 
+- Codes with just a language and script code were not parsed correctly,
+  leading to bugs in their data, so that they did not report a script_code,
+  nor did their name reflect the script. So for example "bs-Latn" was just
+  "Bosnian" instead of "Bosnian Latin".
+
+
 1.13     2017-03-05
 
 - Fixed a regression bug where providing a locale's English name or native

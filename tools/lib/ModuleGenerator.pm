@@ -11,7 +11,7 @@ use autodie;
 
 use Data::Dumper::Concise qw( Dumper );
 use JSON::MaybeXS qw( decode_json );
-use List::AllUtils qw( max );
+use List::AllUtils qw( max uniq );
 use ModuleGenerator::Locale;
 use Locale::Codes::Language
     qw( language_code2code LOCALE_LANG_ALPHA_2 LOCALE_LANG_ALPHA_3 );
@@ -32,6 +32,18 @@ no warnings qw( experimental::postderef experimental::signatures );
 with 'MooseX::Getopt::Dashes';
 
 our $VERSION = '0.10';
+
+has _only_locales => (
+    traits   => ['Array'],
+    is       => 'ro',
+    isa      => ArrayRef [Str],
+    init_arg => 'locales',
+    default  => sub { [] },
+    handles  => {
+        _has_only_locales => 'count',
+    },
+    documentation => 'If specified, only these locales will be built.',
+);
 
 has _autogen_warning => (
     is      => 'ro',
@@ -97,7 +109,7 @@ sub _build_locales ($self) {
         );
 
         ## no critic (InputOutput::RequireCheckedSyscalls)
-        say $locale->code;
+        say $locale->code . q{ - } . $locale->en_name;
         say $_ for $locale->source_files;
         print "\n";
         ## use critic
@@ -391,6 +403,11 @@ sub _build_source_data_root ($self) {
 }
 
 sub _build_locale_codes ($self) {
+
+    # We need to have en-US available so we can build a DateTime.pm object.
+    return [ uniq( 'en-US', @{ $self->_only_locales } ) ]
+        if $self->_has_only_locales;
+
     my $avail
         = decode_json(
         $self->_source_data_root->file(qw( cldr-core availableLocales.json ))

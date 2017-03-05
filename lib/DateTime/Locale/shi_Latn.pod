@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::shi_Latn - Locale data examples for the Tachelhit (shi-Latn) locale.
+DateTime::Locale::shi_Latn - Locale data examples for the Tachelhit Latin (shi-Latn) locale.
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Tachelhit locale.
+Tachelhit Latin locale.
 
 =head2 Days
 

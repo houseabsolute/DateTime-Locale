@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::shi_Tfng - Locale data examples for the Tachelhit (shi-Tfng) locale.
+DateTime::Locale::shi_Tfng - Locale data examples for the Tachelhit Tifinagh (shi-Tfng) locale.
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Tachelhit locale.
+Tachelhit Tifinagh locale.
 
 =head2 Days
 
