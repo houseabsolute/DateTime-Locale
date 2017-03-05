@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.13     2017-03-05
+
 - Fixed a regression bug where providing a locale's English name or native
   name to DateTime::Locale->load no longer worked. Fixed by Sergey. GH #13.
 
