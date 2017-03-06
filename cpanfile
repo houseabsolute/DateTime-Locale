@@ -9,6 +9,8 @@ requires "namespace::autoclean" => "0.19";
 requires "perl" => "5.008004";
 requires "strict" => "0";
 requires "warnings" => "0";
+requires "File::ShareDir" => "1.102";
+requires "File::Slurper" => "0.009";
 
 on 'test' => sub {
   requires "CPAN::Meta::Check" => "0.011";
@@ -22,6 +24,7 @@ on 'test' => sub {
   requires "Test::Warnings" => "0";
   requires "base" => "0";
   requires "utf8" => "0";
+  requires "Test::File::ShareDir" => "1.001002";
 };
 
 on 'test' => sub {
@@ -58,4 +61,5 @@ on 'develop' => sub {
   requires "Test::Vars" => "0.009";
   requires "Test::Version" => "2.05";
   requires "blib" => "1.01";
+  requires "Test::File::ShareDir" => "1.001002";
 };

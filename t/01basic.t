@@ -5,6 +5,9 @@ use utf8;
 use Test::Fatal;
 use Test::More 0.96;
 
+use Test::File::ShareDir -share =>
+    { -dist => { locale_data => './locale_data' } };
+
 use DateTime::Locale;
 
 my @locale_codes = sort DateTime::Locale->codes;

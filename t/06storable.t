@@ -6,6 +6,8 @@ use Test::Requires {
 };
 
 use Test::More;
+use Test::File::ShareDir -share =>
+    { -dist => { locale_data => './locale_data' } };
 
 use DateTime::Locale;
 use Storable;
