@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::guz_KE - Locale data examples for the guz-KE locale.
+DateTime::Locale::guz_KE - Locale data examples for the Gusii Kenya (guz-KE) locale
 
 =head1 DESCRIPTION
 

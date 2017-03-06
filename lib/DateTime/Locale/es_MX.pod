@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_MX - Locale data examples for the es-MX locale.
+DateTime::Locale::es_MX - Locale data examples for the Spanish Mexico (es-MX) locale
 
 =head1 DESCRIPTION
 

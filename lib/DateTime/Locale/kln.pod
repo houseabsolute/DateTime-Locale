@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kln - Locale data examples for the kln locale.
+DateTime::Locale::kln - Locale data examples for the Kalenjin (kln) locale
 
 =head1 DESCRIPTION
 

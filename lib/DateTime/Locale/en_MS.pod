@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_MS - Locale data examples for the en-MS locale.
+DateTime::Locale::en_MS - Locale data examples for the English Montserrat (en-MS) locale
 
 =head1 DESCRIPTION
 

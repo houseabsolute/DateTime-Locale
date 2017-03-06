@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::my_MM - Locale data examples for the my-MM locale.
+DateTime::Locale::my_MM - Locale data examples for the Burmese Myanmar (Burma) (my-MM) locale
 
 =head1 DESCRIPTION
 

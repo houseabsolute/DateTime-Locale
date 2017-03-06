@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ksb_TZ - Locale data examples for the ksb-TZ locale.
+DateTime::Locale::ksb_TZ - Locale data examples for the Shambala Tanzania (ksb-TZ) locale
 
 =head1 DESCRIPTION
 

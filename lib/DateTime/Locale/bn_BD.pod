@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bn_BD - Locale data examples for the bn-BD locale.
+DateTime::Locale::bn_BD - Locale data examples for the Bangla Bangladesh (bn-BD) locale
 
 =head1 DESCRIPTION
 

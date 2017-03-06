@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_NZ - Locale data examples for the en-NZ locale.
+DateTime::Locale::en_NZ - Locale data examples for the English New Zealand (en-NZ) locale
 
 =head1 DESCRIPTION
 

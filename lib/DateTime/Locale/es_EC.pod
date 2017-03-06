@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_EC - Locale data examples for the es-EC locale.
+DateTime::Locale::es_EC - Locale data examples for the Spanish Ecuador (es-EC) locale
 
 =head1 DESCRIPTION
 

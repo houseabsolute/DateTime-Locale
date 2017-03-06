@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::os_GE - Locale data examples for the os-GE locale.
+DateTime::Locale::os_GE - Locale data examples for the Ossetic Georgia (os-GE) locale
 
 =head1 DESCRIPTION
 

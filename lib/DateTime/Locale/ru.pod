@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ru - Locale data examples for the ru locale.
+DateTime::Locale::ru - Locale data examples for the Russian (ru) locale
 
 =head1 DESCRIPTION
 

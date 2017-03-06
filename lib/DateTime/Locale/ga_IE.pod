@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ga_IE - Locale data examples for the ga-IE locale.
+DateTime::Locale::ga_IE - Locale data examples for the Irish Ireland (ga-IE) locale
 
 =head1 DESCRIPTION
 

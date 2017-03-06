@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nl_BQ - Locale data examples for the nl-BQ locale.
+DateTime::Locale::nl_BQ - Locale data examples for the Dutch Caribbean Netherlands (nl-BQ) locale
 
 =head1 DESCRIPTION
 

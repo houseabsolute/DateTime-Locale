@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::so_DJ - Locale data examples for the so-DJ locale.
+DateTime::Locale::so_DJ - Locale data examples for the Somali Djibouti (so-DJ) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ru_KG - Locale data examples for the ru-KG locale.
+DateTime::Locale::ru_KG - Locale data examples for the Russian Kyrgyzstan (ru-KG) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ksb - Locale data examples for the ksb locale.
+DateTime::Locale::ksb - Locale data examples for the Shambala (ksb) locale
 
 =head1 DESCRIPTION
 

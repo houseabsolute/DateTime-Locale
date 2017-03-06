@@ -6,7 +6,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '1.13';
+our $VERSION = '1.15';
 
 use DateTime::Locale::Data;
 use DateTime::Locale::FromData;
@@ -362,7 +362,7 @@ __END__
 
   my $loc = DateTime::Locale->load('en-GB');
 
-  print $loc->native_locale_name, "\n", $loc->datetime_format_long, "\n";
+  print $loc->native_name, "\n", $loc->datetime_format_long, "\n";
 
   # but mostly just things like ...
 
@@ -444,7 +444,7 @@ reference if called in a scalar context.
 
 Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
-names in UTF-8 characters as appropriate.
+names use UTF-8 as appropriate.
 
 =head1 CLDR DATA BUGS
 

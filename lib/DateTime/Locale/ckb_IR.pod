@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ckb_IR - Locale data examples for the ckb-IR locale.
+DateTime::Locale::ckb_IR - Locale data examples for the Central Kurdish Iran (ckb-IR) locale
 
 =head1 DESCRIPTION
 

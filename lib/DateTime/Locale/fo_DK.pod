@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fo_DK - Locale data examples for the fo-DK locale.
+DateTime::Locale::fo_DK - Locale data examples for the Faroese Denmark (fo-DK) locale
 
 =head1 DESCRIPTION
 

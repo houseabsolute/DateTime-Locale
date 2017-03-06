@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_SY - Locale data examples for the fr-SY locale.
+DateTime::Locale::fr_SY - Locale data examples for the French Syria (fr-SY) locale
 
 =head1 DESCRIPTION
 

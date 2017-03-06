@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mua - Locale data examples for the mua locale.
+DateTime::Locale::mua - Locale data examples for the Mundang (mua) locale
 
 =head1 DESCRIPTION
 

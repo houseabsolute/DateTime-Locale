@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Latn - Locale data examples for the sr-Latn locale.
+DateTime::Locale::sr_Latn - Locale data examples for the Serbian Latin (sr-Latn) locale
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Serbian locale.
+Serbian Latin locale.
 
 =head2 Days
 

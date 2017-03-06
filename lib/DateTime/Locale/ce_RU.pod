@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ce_RU - Locale data examples for the ce-RU locale.
+DateTime::Locale::ce_RU - Locale data examples for the Chechen Russia (ce-RU) locale
 
 =head1 DESCRIPTION
 

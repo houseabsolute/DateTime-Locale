@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lag_TZ - Locale data examples for the lag-TZ locale.
+DateTime::Locale::lag_TZ - Locale data examples for the Langi Tanzania (lag-TZ) locale
 
 =head1 DESCRIPTION
 

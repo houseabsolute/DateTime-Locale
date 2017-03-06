@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_KY - Locale data examples for the en-KY locale.
+DateTime::Locale::en_KY - Locale data examples for the English Cayman Islands (en-KY) locale
 
 =head1 DESCRIPTION
 

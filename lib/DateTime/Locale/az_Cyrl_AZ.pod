@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::az_Cyrl_AZ - Locale data examples for the az-Cyrl-AZ locale.
+DateTime::Locale::az_Cyrl_AZ - Locale data examples for the Azerbaijani Azerbaijan Cyrillic (az-Cyrl-AZ) locale
 
 =head1 DESCRIPTION
 

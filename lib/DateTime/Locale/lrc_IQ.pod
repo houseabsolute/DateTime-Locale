@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lrc_IQ - Locale data examples for the lrc-IQ locale.
+DateTime::Locale::lrc_IQ - Locale data examples for the Northern Luri Iraq (lrc-IQ) locale
 
 =head1 DESCRIPTION
 

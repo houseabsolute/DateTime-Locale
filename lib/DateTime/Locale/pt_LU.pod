@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_LU - Locale data examples for the pt-LU locale.
+DateTime::Locale::pt_LU - Locale data examples for the Portuguese Luxembourg (pt-LU) locale
 
 =head1 DESCRIPTION
 

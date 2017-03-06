@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_PH - Locale data examples for the es-PH locale.
+DateTime::Locale::es_PH - Locale data examples for the Spanish Philippines (es-PH) locale
 
 =head1 DESCRIPTION
 

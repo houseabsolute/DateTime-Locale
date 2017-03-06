@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kea_CV - Locale data examples for the kea-CV locale.
+DateTime::Locale::kea_CV - Locale data examples for the Kabuverdianu Cape Verde (kea-CV) locale
 
 =head1 DESCRIPTION
 

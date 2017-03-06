@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::it - Locale data examples for the it locale.
+DateTime::Locale::it - Locale data examples for the Italian (it) locale
 
 =head1 DESCRIPTION
 

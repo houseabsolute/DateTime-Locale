@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_FM - Locale data examples for the en-FM locale.
+DateTime::Locale::en_FM - Locale data examples for the English Micronesia (en-FM) locale
 
 =head1 DESCRIPTION
 

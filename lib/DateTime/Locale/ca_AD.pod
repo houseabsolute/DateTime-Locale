@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ca_AD - Locale data examples for the ca-AD locale.
+DateTime::Locale::ca_AD - Locale data examples for the Catalan Andorra (ca-AD) locale
 
 =head1 DESCRIPTION
 

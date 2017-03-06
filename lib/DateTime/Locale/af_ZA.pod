@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::af_ZA - Locale data examples for the af-ZA locale.
+DateTime::Locale::af_ZA - Locale data examples for the Afrikaans South Africa (af-ZA) locale
 
 =head1 DESCRIPTION
 

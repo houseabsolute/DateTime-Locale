@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ii_CN - Locale data examples for the ii-CN locale.
+DateTime::Locale::ii_CN - Locale data examples for the Sichuan Yi China (ii-CN) locale
 
 =head1 DESCRIPTION
 

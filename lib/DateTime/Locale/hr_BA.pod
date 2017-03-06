@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hr_BA - Locale data examples for the hr-BA locale.
+DateTime::Locale::hr_BA - Locale data examples for the Croatian Bosnia & Herzegovina (hr-BA) locale
 
 =head1 DESCRIPTION
 

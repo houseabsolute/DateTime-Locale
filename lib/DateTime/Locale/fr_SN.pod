@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_SN - Locale data examples for the fr-SN locale.
+DateTime::Locale::fr_SN - Locale data examples for the French Senegal (fr-SN) locale
 
 =head1 DESCRIPTION
 

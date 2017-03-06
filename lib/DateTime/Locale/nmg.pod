@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nmg - Locale data examples for the nmg locale.
+DateTime::Locale::nmg - Locale data examples for the Kwasio (nmg) locale
 
 =head1 DESCRIPTION
 

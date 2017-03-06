@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::be_BY - Locale data examples for the be-BY locale.
+DateTime::Locale::be_BY - Locale data examples for the Belarusian Belarus (be-BY) locale
 
 =head1 DESCRIPTION
 

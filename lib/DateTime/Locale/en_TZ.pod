@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_TZ - Locale data examples for the en-TZ locale.
+DateTime::Locale::en_TZ - Locale data examples for the English Tanzania (en-TZ) locale
 
 =head1 DESCRIPTION
 

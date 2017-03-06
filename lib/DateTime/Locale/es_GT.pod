@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_GT - Locale data examples for the es-GT locale.
+DateTime::Locale::es_GT - Locale data examples for the Spanish Guatemala (es-GT) locale
 
 =head1 DESCRIPTION
 

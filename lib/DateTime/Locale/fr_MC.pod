@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_MC - Locale data examples for the fr-MC locale.
+DateTime::Locale::fr_MC - Locale data examples for the French Monaco (fr-MC) locale
 
 =head1 DESCRIPTION
 

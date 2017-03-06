@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::vai_Latn_LR - Locale data examples for the vai-Latn-LR locale.
+DateTime::Locale::vai_Latn_LR - Locale data examples for the Vai Liberia Latin (vai-Latn-LR) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::jgo_CM - Locale data examples for the jgo-CM locale.
+DateTime::Locale::jgo_CM - Locale data examples for the Ngomba Cameroon (jgo-CM) locale
 
 =head1 DESCRIPTION
 

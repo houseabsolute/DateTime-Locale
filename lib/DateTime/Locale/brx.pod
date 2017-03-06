@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::brx - Locale data examples for the brx locale.
+DateTime::Locale::brx - Locale data examples for the Bodo (brx) locale
 
 =head1 DESCRIPTION
 

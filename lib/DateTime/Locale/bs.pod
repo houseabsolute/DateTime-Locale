@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bs - Locale data examples for the bs locale.
+DateTime::Locale::bs - Locale data examples for the Bosnian (bs) locale
 
 =head1 DESCRIPTION
 

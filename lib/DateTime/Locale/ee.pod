@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ee - Locale data examples for the ee locale.
+DateTime::Locale::ee - Locale data examples for the Ewe (ee) locale
 
 =head1 DESCRIPTION
 

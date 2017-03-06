@@ -3,7 +3,7 @@ package DateTime::Locale::Catalog;
 use strict;
 use warnings;
 
-our $VERSION = '1.13';
+our $VERSION = '1.15';
 
 1;
 
@@ -82,9 +82,9 @@ The available locales are:
  ast              Asturian                                  asturianu
  ast-ES           Asturian Spain                            asturianu España
  az               Azerbaijani                               azərbaycan
- az-Cyrl          Azerbaijani                               азәрбајҹан
+ az-Cyrl          Azerbaijani Cyrillic                      азәрбајҹан Кирил
  az-Cyrl-AZ       Azerbaijani Azerbaijan Cyrillic           азәрбајҹан Азәрбајҹан Кирил
- az-Latn          Azerbaijani                               azərbaycan
+ az-Latn          Azerbaijani Latin                         azərbaycan latın
  az-Latn-AZ       Azerbaijani Azerbaijan Latin              azərbaycan Azərbaycan latın
  bas              Basaa                                     Ɓàsàa
  bas-CM           Basaa Cameroon                            Ɓàsàa Kàmɛ̀rûn
@@ -109,9 +109,9 @@ The available locales are:
  brx              Bodo                                      बड़ो
  brx-IN           Bodo India                                बड़ो भारत
  bs               Bosnian                                   bosanski
- bs-Cyrl          Bosnian                                   босански
+ bs-Cyrl          Bosnian Cyrillic                          босански Ћирилица
  bs-Cyrl-BA       Bosnian Bosnia & Herzegovina Cyrillic     босански Босна и Херцеговина Ћирилица
- bs-Latn          Bosnian                                   bosanski
+ bs-Latn          Bosnian Latin                             bosanski latinica
  bs-Latn-BA       Bosnian Bosnia & Herzegovina Latin        bosanski Bosna i Hercegovina latinica
  ca               Catalan                                   català
  ca-AD            Catalan Andorra                           català Andorra
@@ -570,9 +570,9 @@ The available locales are:
  os-GE            Ossetic Georgia                           ирон Гуырдзыстон
  os-RU            Ossetic Russia                            ирон Уӕрӕсе
  pa               Punjabi                                   ਪੰਜਾਬੀ
- pa-Arab          Punjabi                                   پنجابی
+ pa-Arab          Punjabi Arabic                            پنجابی عربی
  pa-Arab-PK       Punjabi Pakistan Arabic                   پنجابی پاکستان عربی
- pa-Guru          Punjabi                                   ਪੰਜਾਬੀ
+ pa-Guru          Punjabi Gurmukhi                          ਪੰਜਾਬੀ ਗੁਰਮੁਖੀ
  pa-Guru-IN       Punjabi India Gurmukhi                    ਪੰਜਾਬੀ ਭਾਰਤ ਗੁਰਮੁਖੀ
  pl               Polish                                    polski
  pl-PL            Polish Poland                             polski Polska
@@ -635,9 +635,9 @@ The available locales are:
  sg               Sango                                     Sängö
  sg-CF            Sango Central African Republic            Sängö Ködörösêse tî Bêafrîka
  shi              Tachelhit                                 ⵜⴰⵛⵍⵃⵉⵜ
- shi-Latn         Tachelhit                                 Tashelḥiyt
+ shi-Latn         Tachelhit Latin                           Tashelḥiyt Latn
  shi-Latn-MA      Tachelhit Morocco Latin                   Tashelḥiyt lmɣrib Latn
- shi-Tfng         Tachelhit                                 ⵜⴰⵛⵍⵃⵉⵜ
+ shi-Tfng         Tachelhit Tifinagh                        ⵜⴰⵛⵍⵃⵉⵜ Tfng
  shi-Tfng-MA      Tachelhit Morocco Tifinagh                ⵜⴰⵛⵍⵃⵉⵜ ⵍⵎⵖⵔⵉⴱ Tfng
  si               Sinhala                                   සිංහල
  si-LK            Sinhala Sri Lanka                         සිංහල ශ්‍රී ලංකාව
@@ -659,12 +659,12 @@ The available locales are:
  sq-MK            Albanian Macedonia                        shqip Maqedoni
  sq-XK            Albanian Kosovo                           shqip Kosovë
  sr               Serbian                                   српски
- sr-Cyrl          Serbian                                   српски
+ sr-Cyrl          Serbian Cyrillic                          српски ћирилица
  sr-Cyrl-BA       Serbian Bosnia & Herzegovina Cyrillic     српски Босна и Херцеговина ћирилица
  sr-Cyrl-ME       Serbian Montenegro Cyrillic               српски Црна Гора ћирилица
  sr-Cyrl-RS       Serbian Serbia Cyrillic                   српски Србија ћирилица
  sr-Cyrl-XK       Serbian Kosovo Cyrillic                   српски Косово ћирилица
- sr-Latn          Serbian                                   srpski
+ sr-Latn          Serbian Latin                             srpski latinica
  sr-Latn-BA       Serbian Bosnia & Herzegovina Latin        srpski Bosna i Hercegovina latinica
  sr-Latn-ME       Serbian Montenegro Latin                  srpski Crna Gora latinica
  sr-Latn-RS       Serbian Serbia Latin                      srpski Srbija latinica
@@ -712,16 +712,16 @@ The available locales are:
  ur-IN            Urdu India                                اردو بھارت
  ur-PK            Urdu Pakistan                             اردو پاکستان
  uz               Uzbek                                     o‘zbek
- uz-Arab          Uzbek                                     اوزبیک
+ uz-Arab          Uzbek Arabic                              اوزبیک عربی
  uz-Arab-AF       Uzbek Afghanistan Arabic                  اوزبیک افغانستان عربی
- uz-Cyrl          Uzbek                                     ўзбекча
+ uz-Cyrl          Uzbek Cyrillic                            ўзбекча Кирил
  uz-Cyrl-UZ       Uzbek Uzbekistan Cyrillic                 ўзбекча Ўзбекистон Кирил
- uz-Latn          Uzbek                                     o‘zbek
+ uz-Latn          Uzbek Latin                               o‘zbek lotin
  uz-Latn-UZ       Uzbek Uzbekistan Latin                    o‘zbek Oʻzbekiston lotin
  vai              Vai                                       ꕙꔤ
- vai-Latn         Vai                                       Vai
+ vai-Latn         Vai Latin                                 Vai Latn
  vai-Latn-LR      Vai Liberia Latin                         Vai Laibhiya Latn
- vai-Vaii         Vai                                       ꕙꔤ
+ vai-Vaii         Vai Vai                                   ꕙꔤ Vaii
  vai-Vaii-LR      Vai Liberia Vai                           ꕙꔤ ꕞꔤꔫꕩ Vaii
  vi               Vietnamese                                Tiếng Việt
  vi-VN            Vietnamese Vietnam                        Tiếng Việt Việt Nam
@@ -745,12 +745,12 @@ The available locales are:
  zgh              Standard Moroccan Tamazight               ⵜⴰⵎⴰⵣⵉⵖⵜ
  zgh-MA           Standard Moroccan Tamazight Morocco       ⵜⴰⵎⴰⵣⵉⵖⵜ ⵍⵎⵖⵔⵉⴱ
  zh               Chinese                                   中文
- zh-Hans          Chinese                                   中文
+ zh-Hans          Chinese Simplified                        中文 简体
  zh-Hans-CN       Chinese China Simplified                  中文 中国 简体
  zh-Hans-HK       Chinese Hong Kong SAR China Simplified    中文 中国香港特别行政区 简体
  zh-Hans-MO       Chinese Macau SAR China Simplified        中文 中国澳门特别行政区 简体
  zh-Hans-SG       Chinese Singapore Simplified              中文 新加坡 简体
- zh-Hant          Chinese                                   中文
+ zh-Hant          Chinese Traditional                       中文 繁體
  zh-Hant-HK       Chinese Hong Kong SAR China Traditional   中文 中國香港特別行政區 繁體字
  zh-Hant-MO       Chinese Macau SAR China Traditional       中文 中國澳門特別行政區 繁體字
  zh-Hant-TW       Chinese Taiwan Traditional                中文 台灣 繁體

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kw_GB - Locale data examples for the kw-GB locale.
+DateTime::Locale::kw_GB - Locale data examples for the Cornish United Kingdom (kw-GB) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_JO - Locale data examples for the ar-JO locale.
+DateTime::Locale::ar_JO - Locale data examples for the Arabic Jordan (ar-JO) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_IM - Locale data examples for the en-IM locale.
+DateTime::Locale::en_IM - Locale data examples for the English Isle of Man (en-IM) locale
 
 =head1 DESCRIPTION
 

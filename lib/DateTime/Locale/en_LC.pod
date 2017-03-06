@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_LC - Locale data examples for the en-LC locale.
+DateTime::Locale::en_LC - Locale data examples for the English St. Lucia (en-LC) locale
 
 =head1 DESCRIPTION
 

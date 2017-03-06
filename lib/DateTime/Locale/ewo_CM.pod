@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ewo_CM - Locale data examples for the ewo-CM locale.
+DateTime::Locale::ewo_CM - Locale data examples for the Ewondo Cameroon (ewo-CM) locale
 
 =head1 DESCRIPTION
 

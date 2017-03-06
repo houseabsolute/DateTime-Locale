@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::gu - Locale data examples for the gu locale.
+DateTime::Locale::gu - Locale data examples for the Gujarati (gu) locale
 
 =head1 DESCRIPTION
 

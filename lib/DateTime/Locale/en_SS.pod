@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_SS - Locale data examples for the en-SS locale.
+DateTime::Locale::en_SS - Locale data examples for the English South Sudan (en-SS) locale
 
 =head1 DESCRIPTION
 

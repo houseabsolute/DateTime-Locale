@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::guz - Locale data examples for the guz locale.
+DateTime::Locale::guz - Locale data examples for the Gusii (guz) locale
 
 =head1 DESCRIPTION
 

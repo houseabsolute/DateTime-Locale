@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::my - Locale data examples for the my locale.
+DateTime::Locale::my - Locale data examples for the Burmese (my) locale
 
 =head1 DESCRIPTION
 

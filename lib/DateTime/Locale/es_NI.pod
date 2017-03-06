@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_NI - Locale data examples for the es-NI locale.
+DateTime::Locale::es_NI - Locale data examples for the Spanish Nicaragua (es-NI) locale
 
 =head1 DESCRIPTION
 

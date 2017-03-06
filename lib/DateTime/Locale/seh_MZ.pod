@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::seh_MZ - Locale data examples for the seh-MZ locale.
+DateTime::Locale::seh_MZ - Locale data examples for the Sena Mozambique (seh-MZ) locale
 
 =head1 DESCRIPTION
 

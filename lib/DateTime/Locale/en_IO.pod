@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_IO - Locale data examples for the en-IO locale.
+DateTime::Locale::en_IO - Locale data examples for the English British Indian Ocean Territory (en-IO) locale
 
 =head1 DESCRIPTION
 

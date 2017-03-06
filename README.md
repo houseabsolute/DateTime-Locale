@@ -4,7 +4,7 @@ DateTime::Locale - Localization support for DateTime.pm
 
 # VERSION
 
-version 1.12
+version 1.14
 
 # SYNOPSIS
 
@@ -12,7 +12,7 @@ version 1.12
 
     my $loc = DateTime::Locale->load('en-GB');
 
-    print $loc->native_locale_name, "\n", $loc->datetime_format_long, "\n";
+    print $loc->native_name, "\n", $loc->datetime_format_long, "\n";
 
     # but mostly just things like ...
 
@@ -93,7 +93,7 @@ reference if called in a scalar context.
 
 Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
-names in UTF-8 characters as appropriate.
+names use UTF-8 as appropriate.
 
 # CLDR DATA BUGS
 
@@ -160,6 +160,8 @@ Dave Rolsky <autarch@urth.org>
 
 - Karen Etheridge <ether@cpan.org>
 - Mohammad S Anwar <mohammad.anwar@yahoo.com>
+- Sergey Leschenko <Sergey.Leschenko@portaone.com>
+- yasu47b <nakayamayasuhiro1986@gmail.com>
 
 # COPYRIGHT AND LICENSE
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_ZA - Locale data examples for the en-ZA locale.
+DateTime::Locale::en_ZA - Locale data examples for the English South Africa (en-ZA) locale
 
 =head1 DESCRIPTION
 

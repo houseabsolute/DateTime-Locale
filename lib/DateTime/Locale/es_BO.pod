@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_BO - Locale data examples for the es-BO locale.
+DateTime::Locale::es_BO - Locale data examples for the Spanish Bolivia (es-BO) locale
 
 =head1 DESCRIPTION
 

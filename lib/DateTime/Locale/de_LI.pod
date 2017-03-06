@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::de_LI - Locale data examples for the de-LI locale.
+DateTime::Locale::de_LI - Locale data examples for the German Liechtenstein (de-LI) locale
 
 =head1 DESCRIPTION
 

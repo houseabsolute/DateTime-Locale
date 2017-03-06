@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dua_CM - Locale data examples for the dua-CM locale.
+DateTime::Locale::dua_CM - Locale data examples for the Duala Cameroon (dua-CM) locale
 
 =head1 DESCRIPTION
 

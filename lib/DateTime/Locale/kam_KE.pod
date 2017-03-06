@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kam_KE - Locale data examples for the kam-KE locale.
+DateTime::Locale::kam_KE - Locale data examples for the Kamba Kenya (kam-KE) locale
 
 =head1 DESCRIPTION
 

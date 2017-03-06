@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ksh - Locale data examples for the ksh locale.
+DateTime::Locale::ksh - Locale data examples for the Colognian (ksh) locale
 
 =head1 DESCRIPTION
 

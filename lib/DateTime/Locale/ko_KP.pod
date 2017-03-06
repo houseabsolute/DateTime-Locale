@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ko_KP - Locale data examples for the ko-KP locale.
+DateTime::Locale::ko_KP - Locale data examples for the Korean North Korea (ko-KP) locale
 
 =head1 DESCRIPTION
 

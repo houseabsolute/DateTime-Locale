@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_NG - Locale data examples for the en-NG locale.
+DateTime::Locale::en_NG - Locale data examples for the English Nigeria (en-NG) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sah_RU - Locale data examples for the sah-RU locale.
+DateTime::Locale::sah_RU - Locale data examples for the Sakha Russia (sah-RU) locale
 
 =head1 DESCRIPTION
 

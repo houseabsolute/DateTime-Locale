@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mer - Locale data examples for the mer locale.
+DateTime::Locale::mer - Locale data examples for the Meru (mer) locale
 
 =head1 DESCRIPTION
 

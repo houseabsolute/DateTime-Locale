@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_BB - Locale data examples for the en-BB locale.
+DateTime::Locale::en_BB - Locale data examples for the English Barbados (en-BB) locale
 
 =head1 DESCRIPTION
 

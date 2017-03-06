@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ro_RO - Locale data examples for the ro-RO locale.
+DateTime::Locale::ro_RO - Locale data examples for the Romanian Romania (ro-RO) locale
 
 =head1 DESCRIPTION
 

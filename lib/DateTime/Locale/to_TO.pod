@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::to_TO - Locale data examples for the to-TO locale.
+DateTime::Locale::to_TO - Locale data examples for the Tongan Tonga (to-TO) locale
 
 =head1 DESCRIPTION
 

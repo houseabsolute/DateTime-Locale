@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_GB - Locale data examples for the en-GB locale.
+DateTime::Locale::en_GB - Locale data examples for the English United Kingdom (en-GB) locale
 
 =head1 DESCRIPTION
 

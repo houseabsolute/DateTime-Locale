@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mua_CM - Locale data examples for the mua-CM locale.
+DateTime::Locale::mua_CM - Locale data examples for the Mundang Cameroon (mua-CM) locale
 
 =head1 DESCRIPTION
 

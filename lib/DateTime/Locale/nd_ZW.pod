@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nd_ZW - Locale data examples for the nd-ZW locale.
+DateTime::Locale::nd_ZW - Locale data examples for the North Ndebele Zimbabwe (nd-ZW) locale
 
 =head1 DESCRIPTION
 

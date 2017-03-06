@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ca_IT - Locale data examples for the ca-IT locale.
+DateTime::Locale::ca_IT - Locale data examples for the Catalan Italy (ca-IT) locale
 
 =head1 DESCRIPTION
 

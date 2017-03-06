@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lu - Locale data examples for the lu locale.
+DateTime::Locale::lu - Locale data examples for the Luba-Katanga (lu) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_BS - Locale data examples for the en-BS locale.
+DateTime::Locale::en_BS - Locale data examples for the English Bahamas (en-BS) locale
 
 =head1 DESCRIPTION
 

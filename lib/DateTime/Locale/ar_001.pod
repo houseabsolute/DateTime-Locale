@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_001 - Locale data examples for the ar-001 locale.
+DateTime::Locale::ar_001 - Locale data examples for the Arabic World (ar-001) locale
 
 =head1 DESCRIPTION
 

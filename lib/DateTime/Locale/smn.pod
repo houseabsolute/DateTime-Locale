@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::smn - Locale data examples for the smn locale.
+DateTime::Locale::smn - Locale data examples for the Inari Sami (smn) locale
 
 =head1 DESCRIPTION
 

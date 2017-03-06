@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ne - Locale data examples for the ne locale.
+DateTime::Locale::ne - Locale data examples for the Nepali (ne) locale
 
 =head1 DESCRIPTION
 

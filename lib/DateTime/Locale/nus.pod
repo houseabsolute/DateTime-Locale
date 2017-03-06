@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nus - Locale data examples for the nus locale.
+DateTime::Locale::nus - Locale data examples for the Nuer (nus) locale
 
 =head1 DESCRIPTION
 

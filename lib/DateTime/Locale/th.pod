@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::th - Locale data examples for the th locale.
+DateTime::Locale::th - Locale data examples for the Thai (th) locale
 
 =head1 DESCRIPTION
 

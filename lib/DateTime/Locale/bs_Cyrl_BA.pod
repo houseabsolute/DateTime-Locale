@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bs_Cyrl_BA - Locale data examples for the bs-Cyrl-BA locale.
+DateTime::Locale::bs_Cyrl_BA - Locale data examples for the Bosnian Bosnia & Herzegovina Cyrillic (bs-Cyrl-BA) locale
 
 =head1 DESCRIPTION
 

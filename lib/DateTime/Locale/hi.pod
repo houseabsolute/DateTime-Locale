@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hi - Locale data examples for the hi locale.
+DateTime::Locale::hi - Locale data examples for the Hindi (hi) locale
 
 =head1 DESCRIPTION
 

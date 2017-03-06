@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_DG - Locale data examples for the en-DG locale.
+DateTime::Locale::en_DG - Locale data examples for the English Diego Garcia (en-DG) locale
 
 =head1 DESCRIPTION
 

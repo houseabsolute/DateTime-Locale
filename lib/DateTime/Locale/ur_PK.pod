@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ur_PK - Locale data examples for the ur-PK locale.
+DateTime::Locale::ur_PK - Locale data examples for the Urdu Pakistan (ur-PK) locale
 
 =head1 DESCRIPTION
 

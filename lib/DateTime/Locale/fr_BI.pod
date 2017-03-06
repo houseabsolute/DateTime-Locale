@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_BI - Locale data examples for the fr-BI locale.
+DateTime::Locale::fr_BI - Locale data examples for the French Burundi (fr-BI) locale
 
 =head1 DESCRIPTION
 

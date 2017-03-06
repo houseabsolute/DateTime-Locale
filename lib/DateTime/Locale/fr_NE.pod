@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_NE - Locale data examples for the fr-NE locale.
+DateTime::Locale::fr_NE - Locale data examples for the French Niger (fr-NE) locale
 
 =head1 DESCRIPTION
 

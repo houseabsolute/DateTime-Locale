@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::wae - Locale data examples for the wae locale.
+DateTime::Locale::wae - Locale data examples for the Walser (wae) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bas - Locale data examples for the bas locale.
+DateTime::Locale::bas - Locale data examples for the Basaa (bas) locale
 
 =head1 DESCRIPTION
 

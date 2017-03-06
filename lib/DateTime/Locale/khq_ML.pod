@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::khq_ML - Locale data examples for the khq-ML locale.
+DateTime::Locale::khq_ML - Locale data examples for the Koyra Chiini Mali (khq-ML) locale
 
 =head1 DESCRIPTION
 

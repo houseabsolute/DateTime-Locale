@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fo - Locale data examples for the fo locale.
+DateTime::Locale::fo - Locale data examples for the Faroese (fo) locale
 
 =head1 DESCRIPTION
 

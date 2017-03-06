@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_SH - Locale data examples for the en-SH locale.
+DateTime::Locale::en_SH - Locale data examples for the English St. Helena (en-SH) locale
 
 =head1 DESCRIPTION
 

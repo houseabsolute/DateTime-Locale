@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_CC - Locale data examples for the en-CC locale.
+DateTime::Locale::en_CC - Locale data examples for the English Cocos (Keeling) Islands (en-CC) locale
 
 =head1 DESCRIPTION
 

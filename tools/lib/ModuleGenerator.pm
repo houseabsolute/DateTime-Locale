@@ -11,9 +11,9 @@ use autodie;
 
 use Data::Dumper::Concise qw( Dumper );
 use JSON::MaybeXS qw( decode_json );
-use List::AllUtils qw( max );
+use List::AllUtils qw( max uniq );
 use ModuleGenerator::Locale;
-use Locale::Language
+use Locale::Codes::Language
     qw( language_code2code LOCALE_LANG_ALPHA_2 LOCALE_LANG_ALPHA_3 );
 use Parse::PMFile;
 use Path::Class qw( file );
@@ -33,6 +33,18 @@ with 'MooseX::Getopt::Dashes';
 
 our $VERSION = '0.10';
 
+has _only_locales => (
+    traits   => ['Array'],
+    is       => 'ro',
+    isa      => ArrayRef [Str],
+    init_arg => 'locales',
+    default  => sub { [] },
+    handles  => {
+        _has_only_locales => 'count',
+    },
+    documentation => 'If specified, only these locales will be built.',
+);
+
 has _autogen_warning => (
     is      => 'ro',
     isa     => Str,
@@ -40,11 +52,11 @@ has _autogen_warning => (
     builder => '_build_autogen_warning',
 );
 
-has _script => (
+has _generator_script => (
     is      => 'ro',
     isa     => File,
     lazy    => 1,
-    builder => '_build_script',
+    builder => '_build_generator_script',
 );
 
 has _source_data_root => (
@@ -97,7 +109,7 @@ sub _build_locales ($self) {
         );
 
         ## no critic (InputOutput::RequireCheckedSyscalls)
-        say $locale->code;
+        say $locale->code . q{ - } . $locale->en_name;
         say $_ for $locale->source_files;
         print "\n";
         ## use critic
@@ -123,8 +135,8 @@ sub _write_data_pm ($self) {
     my %raw_locales;
     for my $locale ( $self->_locales->@* ) {
         $codes{ $locale->code }               = 1;
-        $names{ $locale->en_name }            = 1;
-        $native_names{ $locale->native_name } = 1;
+        $names{ $locale->en_name }            = $locale->code;
+        $native_names{ $locale->native_name } = $locale->code;
         $raw_locales{ $locale->code }         = $locale->data_hash;
     }
 
@@ -179,10 +191,12 @@ sub _write_data_pm ($self) {
 sub _iso_639_aliases ($self) {
     my %aliases;
     for my $locale ( $self->_locales->@* ) {
+        next if length $locale->language_code > 2;
+
         my $three = language_code2code(
             $locale->language_code,
             LOCALE_LANG_ALPHA_2, LOCALE_LANG_ALPHA_3
-        ) or next;
+        );
 
         my $full_three_code = join '-',
             grep {defined} (
@@ -290,7 +304,7 @@ sub _insert_autogen_warning ( $self, $code ) {
 }
 
 sub _build_autogen_warning ($self) {
-    my $script = $self->_script->basename;
+    my $script = $self->_generator_script->basename;
 
     return <<"EOF";
 ###########################################################################
@@ -362,11 +376,13 @@ sub _write_pod_files ($self) {
         my $locale = DateTime::Locale->load($code)
             or die "Cannot load $code";
 
+        my $name   = $locale->name;
         my $filled = $template->fill_in(
             HASH => {
                 autogen_warning => $self->_autogen_warning,
                 name            => 'DateTime::Locale::' . $underscore,
-                description => "Locale data examples for the $code locale.",
+                description =>
+                    "Locale data examples for the $name ($code) locale",
                 example_dts => \@example_dts,
                 locale      => \$locale,
             },
@@ -378,15 +394,20 @@ sub _write_pod_files ($self) {
     return;
 }
 
-sub _build_script {
+sub _build_generator_script {
     return file($0);
 }
 
 sub _build_source_data_root ($self) {
-    return $self->_script->parent->parent->subdir('source-data');
+    return $self->_generator_script->parent->parent->subdir('source-data');
 }
 
 sub _build_locale_codes ($self) {
+
+    # We need to have en-US available so we can build a DateTime.pm object.
+    return [ uniq( 'en-US', @{ $self->_only_locales } ) ]
+        if $self->_has_only_locales;
+
     my $avail
         = decode_json(
         $self->_source_data_root->file(qw( cldr-core availableLocales.json ))

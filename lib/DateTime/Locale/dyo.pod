@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dyo - Locale data examples for the dyo locale.
+DateTime::Locale::dyo - Locale data examples for the Jola-Fonyi (dyo) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dje_NE - Locale data examples for the dje-NE locale.
+DateTime::Locale::dje_NE - Locale data examples for the Zarma Niger (dje-NE) locale
 
 =head1 DESCRIPTION
 

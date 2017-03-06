@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::af - Locale data examples for the af locale.
+DateTime::Locale::af - Locale data examples for the Afrikaans (af) locale
 
 =head1 DESCRIPTION
 

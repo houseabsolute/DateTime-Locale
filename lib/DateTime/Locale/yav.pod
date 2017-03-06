@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yav - Locale data examples for the yav locale.
+DateTime::Locale::yav - Locale data examples for the Yangben (yav) locale
 
 =head1 DESCRIPTION
 

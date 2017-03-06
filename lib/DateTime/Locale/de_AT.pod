@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::de_AT - Locale data examples for the de-AT locale.
+DateTime::Locale::de_AT - Locale data examples for the German Austria (de-AT) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lag - Locale data examples for the lag locale.
+DateTime::Locale::lag - Locale data examples for the Langi (lag) locale
 
 =head1 DESCRIPTION
 

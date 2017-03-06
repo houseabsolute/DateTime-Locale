@@ -227,7 +227,7 @@ sub _build_data_hash ($self) {
         }
     }
 
-    my %eraLength = (
+    my %era_length = (
         narrow      => 'Narrow',
         abbreviated => 'Abbr',
         wide        => 'Names',
@@ -235,7 +235,9 @@ sub _build_data_hash ($self) {
     for my $length (@lengths) {
         ## no critic (ValuesAndExpressions::ProhibitCommaSeparatedStatements)
         $data{ 'era_' . $length }
-            = [ $cal_root->{eras}{ 'era' . $eraLength{$length} }->@{ 0, 1 } ];
+            = [
+            $cal_root->{eras}{ 'era' . $era_length{$length} }->@{ 0, 1 }
+            ];
     }
 
     return \%data;
@@ -316,10 +318,10 @@ sub _build_json_file ($self) {
 }
 
 sub _build_parent_code ($self) {
-    my $explicit_parent = $self->_explicit_parents;
+    my $explicit_parents = $self->_explicit_parents;
 
-    return $explicit_parent->{ $self->code }
-        if $explicit_parent->{ $self->code };
+    return $explicit_parents->{ $self->code }
+        if $explicit_parents->{ $self->code };
 
     return
           $self->code =~ /-/    ? $self->code =~ s/-[^-]+$//r

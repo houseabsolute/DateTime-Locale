@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yue_HK - Locale data examples for the yue-HK locale.
+DateTime::Locale::yue_HK - Locale data examples for the Cantonese Hong Kong SAR China (yue-HK) locale
 
 =head1 DESCRIPTION
 

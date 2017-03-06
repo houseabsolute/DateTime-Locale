@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::root - Locale data examples for the root locale.
+DateTime::Locale::root - Locale data examples for the Root (root) locale
 
 =head1 DESCRIPTION
 

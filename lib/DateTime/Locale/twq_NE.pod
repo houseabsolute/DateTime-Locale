@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::twq_NE - Locale data examples for the twq-NE locale.
+DateTime::Locale::twq_NE - Locale data examples for the Tasawaq Niger (twq-NE) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rm - Locale data examples for the rm locale.
+DateTime::Locale::rm - Locale data examples for the Romansh (rm) locale
 
 =head1 DESCRIPTION
 

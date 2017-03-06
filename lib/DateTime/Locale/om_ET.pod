@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::om_ET - Locale data examples for the om-ET locale.
+DateTime::Locale::om_ET - Locale data examples for the Oromo Ethiopia (om-ET) locale
 
 =head1 DESCRIPTION
 

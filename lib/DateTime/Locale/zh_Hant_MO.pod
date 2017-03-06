@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::zh_Hant_MO - Locale data examples for the zh-Hant-MO locale.
+DateTime::Locale::zh_Hant_MO - Locale data examples for the Chinese Macau SAR China Traditional (zh-Hant-MO) locale
 
 =head1 DESCRIPTION
 

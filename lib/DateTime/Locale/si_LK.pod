@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::si_LK - Locale data examples for the si-LK locale.
+DateTime::Locale::si_LK - Locale data examples for the Sinhala Sri Lanka (si-LK) locale
 
 =head1 DESCRIPTION
 

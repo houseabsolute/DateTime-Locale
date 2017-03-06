@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ff - Locale data examples for the ff locale.
+DateTime::Locale::ff - Locale data examples for the Fulah (ff) locale
 
 =head1 DESCRIPTION
 

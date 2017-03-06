@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bez - Locale data examples for the bez locale.
+DateTime::Locale::bez - Locale data examples for the Bena (bez) locale
 
 =head1 DESCRIPTION
 

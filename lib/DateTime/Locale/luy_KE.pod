@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::luy_KE - Locale data examples for the luy-KE locale.
+DateTime::Locale::luy_KE - Locale data examples for the Luyia Kenya (luy-KE) locale
 
 =head1 DESCRIPTION
 

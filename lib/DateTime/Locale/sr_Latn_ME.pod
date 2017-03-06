@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sr_Latn_ME - Locale data examples for the sr-Latn-ME locale.
+DateTime::Locale::sr_Latn_ME - Locale data examples for the Serbian Montenegro Latin (sr-Latn-ME) locale
 
 =head1 DESCRIPTION
 

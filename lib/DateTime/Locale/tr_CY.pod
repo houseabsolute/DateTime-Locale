@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::tr_CY - Locale data examples for the tr-CY locale.
+DateTime::Locale::tr_CY - Locale data examples for the Turkish Cyprus (tr-CY) locale
 
 =head1 DESCRIPTION
 

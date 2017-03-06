@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_VE - Locale data examples for the es-VE locale.
+DateTime::Locale::es_VE - Locale data examples for the Spanish Venezuela (es-VE) locale
 
 =head1 DESCRIPTION
 

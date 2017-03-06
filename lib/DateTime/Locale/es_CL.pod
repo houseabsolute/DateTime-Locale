@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::es_CL - Locale data examples for the es-CL locale.
+DateTime::Locale::es_CL - Locale data examples for the Spanish Chile (es-CL) locale
 
 =head1 DESCRIPTION
 

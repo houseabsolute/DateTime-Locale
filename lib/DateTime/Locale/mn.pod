@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mn - Locale data examples for the mn locale.
+DateTime::Locale::mn - Locale data examples for the Mongolian (mn) locale
 
 =head1 DESCRIPTION
 

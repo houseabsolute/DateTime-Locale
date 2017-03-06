@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::mfe - Locale data examples for the mfe locale.
+DateTime::Locale::mfe - Locale data examples for the Morisyen (mfe) locale
 
 =head1 DESCRIPTION
 

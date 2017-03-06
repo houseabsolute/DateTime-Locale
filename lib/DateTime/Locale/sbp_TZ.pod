@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sbp_TZ - Locale data examples for the sbp-TZ locale.
+DateTime::Locale::sbp_TZ - Locale data examples for the Sangu Tanzania (sbp-TZ) locale
 
 =head1 DESCRIPTION
 

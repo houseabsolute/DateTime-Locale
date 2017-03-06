@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_AT - Locale data examples for the en-AT locale.
+DateTime::Locale::en_AT - Locale data examples for the English Austria (en-AT) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::or - Locale data examples for the or locale.
+DateTime::Locale::or - Locale data examples for the Odia (or) locale
 
 =head1 DESCRIPTION
 

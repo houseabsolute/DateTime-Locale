@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sv - Locale data examples for the sv locale.
+DateTime::Locale::sv - Locale data examples for the Swedish (sv) locale
 
 =head1 DESCRIPTION
 

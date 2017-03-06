@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::da_GL - Locale data examples for the da-GL locale.
+DateTime::Locale::da_GL - Locale data examples for the Danish Greenland (da-GL) locale
 
 =head1 DESCRIPTION
 

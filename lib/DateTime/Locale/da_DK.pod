@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::da_DK - Locale data examples for the da-DK locale.
+DateTime::Locale::da_DK - Locale data examples for the Danish Denmark (da-DK) locale
 
 =head1 DESCRIPTION
 

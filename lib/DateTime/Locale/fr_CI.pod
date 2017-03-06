@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_CI - Locale data examples for the fr-CI locale.
+DateTime::Locale::fr_CI - Locale data examples for the French Côte d’Ivoire (fr-CI) locale
 
 =head1 DESCRIPTION
 

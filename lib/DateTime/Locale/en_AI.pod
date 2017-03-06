@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_AI - Locale data examples for the en-AI locale.
+DateTime::Locale::en_AI - Locale data examples for the English Anguilla (en-AI) locale
 
 =head1 DESCRIPTION
 

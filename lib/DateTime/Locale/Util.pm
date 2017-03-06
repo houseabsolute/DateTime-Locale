@@ -6,7 +6,7 @@ use namespace::autoclean 0.19 -except => ['import'];
 
 use Exporter qw( import );
 
-our $VERSION = '1.13';
+our $VERSION = '1.15';
 
 our @EXPORT_OK = 'parse_locale_code';
 
@@ -20,6 +20,9 @@ sub parse_locale_code {
         if ( length $pieces[0] == 2 || $pieces[0] =~ /^\d\d\d$/ ) {
             $codes{territory} = uc shift @pieces;
         }
+        else {
+            $codes{script} = _tc( shift @pieces );
+        }
     }
     elsif ( @pieces == 3 ) {
         $codes{script}    = _tc( shift @pieces );
@@ -28,7 +31,7 @@ sub parse_locale_code {
     }
     elsif ( @pieces == 2 ) {
 
-        # I don't think it's possible to have a script + variant with also
+        # I don't think it's possible to have a script + variant without also
         # having a territory.
         if ( length $pieces[1] == 2 || $pieces[1] =~ /^\d\d\d$/ ) {
             $codes{script}    = _tc( shift @pieces );

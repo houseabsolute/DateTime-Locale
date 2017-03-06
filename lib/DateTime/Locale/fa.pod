@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fa - Locale data examples for the fa locale.
+DateTime::Locale::fa - Locale data examples for the Persian (fa) locale
 
 =head1 DESCRIPTION
 

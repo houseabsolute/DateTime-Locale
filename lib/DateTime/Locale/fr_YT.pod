@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_YT - Locale data examples for the fr-YT locale.
+DateTime::Locale::fr_YT - Locale data examples for the French Mayotte (fr-YT) locale
 
 =head1 DESCRIPTION
 

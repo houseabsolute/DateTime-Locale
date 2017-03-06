@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ca_ES_VALENCIA - Locale data examples for the ca-ES-VALENCIA locale.
+DateTime::Locale::ca_ES_VALENCIA - Locale data examples for the Catalan Spain Valencian (ca-ES-VALENCIA) locale
 
 =head1 DESCRIPTION
 

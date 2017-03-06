@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ru_UA - Locale data examples for the ru-UA locale.
+DateTime::Locale::ru_UA - Locale data examples for the Russian Ukraine (ru-UA) locale
 
 =head1 DESCRIPTION
 

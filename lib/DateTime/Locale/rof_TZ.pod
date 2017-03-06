@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::rof_TZ - Locale data examples for the rof-TZ locale.
+DateTime::Locale::rof_TZ - Locale data examples for the Rombo Tanzania (rof-TZ) locale
 
 =head1 DESCRIPTION
 

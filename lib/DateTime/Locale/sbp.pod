@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sbp - Locale data examples for the sbp locale.
+DateTime::Locale::sbp - Locale data examples for the Sangu (sbp) locale
 
 =head1 DESCRIPTION
 

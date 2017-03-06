@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_ZM - Locale data examples for the en-ZM locale.
+DateTime::Locale::en_ZM - Locale data examples for the English Zambia (en-ZM) locale
 
 =head1 DESCRIPTION
 

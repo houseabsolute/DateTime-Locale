@@ -6,16 +6,30 @@ use Test::More;
 
 use DateTime::Locale;
 
-if ( $] <= 5.008 ) {
-    plan skip_all => 'These tests require Perl 5.8.0+';
+my %tests = (
+    'bs-Latn' => {
+        name        => 'Bosnian Latin',
+        script      => 'Latin',
+        script_code => 'Latn',
+    },
+    'zh-Hans-SG' => {
+        script         => 'Simplified',
+        native_script  => '简体',
+        script_code    => 'Hans',
+        territory_code => 'SG',
+    },
+);
+
+for my $code ( sort keys %tests ) {
+    subtest(
+        $code,
+        sub {
+            my $loc = DateTime::Locale->load($code);
+            for my $meth ( sort keys %{ $tests{$code} } ) {
+                is( $loc->$meth, $tests{$code}{$meth}, "$meth" );
+            }
+        }
+    );
 }
-
-my $loc = DateTime::Locale->load('zh-Hans-SG');
-
-is( $loc->script,        'Simplified', 'check script' );
-is( $loc->native_script, '简体',     'check native_script' );
-is( $loc->script_id,     'Hans',       'check script_id' );
-
-is( $loc->territory_id, 'SG', 'check territory_id' );
 
 done_testing();

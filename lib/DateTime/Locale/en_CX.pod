@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_CX - Locale data examples for the en-CX locale.
+DateTime::Locale::en_CX - Locale data examples for the English Christmas Island (en-CX) locale
 
 =head1 DESCRIPTION
 

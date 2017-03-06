@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::sk - Locale data examples for the sk locale.
+DateTime::Locale::sk - Locale data examples for the Slovak (sk) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ps - Locale data examples for the ps locale.
+DateTime::Locale::ps - Locale data examples for the Pashto (ps) locale
 
 =head1 DESCRIPTION
 

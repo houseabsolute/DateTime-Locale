@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ta_MY - Locale data examples for the ta-MY locale.
+DateTime::Locale::ta_MY - Locale data examples for the Tamil Malaysia (ta-MY) locale
 
 =head1 DESCRIPTION
 

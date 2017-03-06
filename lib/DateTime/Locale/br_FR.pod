@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::br_FR - Locale data examples for the br-FR locale.
+DateTime::Locale::br_FR - Locale data examples for the Breton France (br-FR) locale
 
 =head1 DESCRIPTION
 

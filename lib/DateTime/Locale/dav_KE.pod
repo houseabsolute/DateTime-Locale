@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::dav_KE - Locale data examples for the dav-KE locale.
+DateTime::Locale::dav_KE - Locale data examples for the Taita Kenya (dav-KE) locale
 
 =head1 DESCRIPTION
 

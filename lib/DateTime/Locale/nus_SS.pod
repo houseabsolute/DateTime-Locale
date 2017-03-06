@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::nus_SS - Locale data examples for the nus-SS locale.
+DateTime::Locale::nus_SS - Locale data examples for the Nuer South Sudan (nus-SS) locale
 
 =head1 DESCRIPTION
 

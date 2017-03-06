@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fur - Locale data examples for the fur locale.
+DateTime::Locale::fur - Locale data examples for the Friulian (fur) locale
 
 =head1 DESCRIPTION
 

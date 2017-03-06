@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_TC - Locale data examples for the en-TC locale.
+DateTime::Locale::en_TC - Locale data examples for the English Turks & Caicos Islands (en-TC) locale
 
 =head1 DESCRIPTION
 

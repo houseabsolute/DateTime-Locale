@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lo - Locale data examples for the lo locale.
+DateTime::Locale::lo - Locale data examples for the Lao (lo) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::jmc - Locale data examples for the jmc locale.
+DateTime::Locale::jmc - Locale data examples for the Machame (jmc) locale
 
 =head1 DESCRIPTION
 

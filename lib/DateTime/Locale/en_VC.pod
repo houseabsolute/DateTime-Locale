@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_VC - Locale data examples for the en-VC locale.
+DateTime::Locale::en_VC - Locale data examples for the English St. Vincent & Grenadines (en-VC) locale
 
 =head1 DESCRIPTION
 

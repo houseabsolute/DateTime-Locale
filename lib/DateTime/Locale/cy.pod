@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cy - Locale data examples for the cy locale.
+DateTime::Locale::cy - Locale data examples for the Welsh (cy) locale
 
 =head1 DESCRIPTION
 

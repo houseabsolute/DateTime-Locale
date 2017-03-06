@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::el_GR - Locale data examples for the el-GR locale.
+DateTime::Locale::el_GR - Locale data examples for the Greek Greece (el-GR) locale
 
 =head1 DESCRIPTION
 

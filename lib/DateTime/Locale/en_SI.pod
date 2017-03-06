@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_SI - Locale data examples for the en-SI locale.
+DateTime::Locale::en_SI - Locale data examples for the English Slovenia (en-SI) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_PG - Locale data examples for the en-PG locale.
+DateTime::Locale::en_PG - Locale data examples for the English Papua New Guinea (en-PG) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ig - Locale data examples for the ig locale.
+DateTime::Locale::ig - Locale data examples for the Igbo (ig) locale
 
 =head1 DESCRIPTION
 

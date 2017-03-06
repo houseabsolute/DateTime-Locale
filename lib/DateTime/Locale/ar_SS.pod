@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ar_SS - Locale data examples for the ar-SS locale.
+DateTime::Locale::ar_SS - Locale data examples for the Arabic South Sudan (ar-SS) locale
 
 =head1 DESCRIPTION
 

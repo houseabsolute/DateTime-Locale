@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::haw - Locale data examples for the haw locale.
+DateTime::Locale::haw - Locale data examples for the Hawaiian (haw) locale
 
 =head1 DESCRIPTION
 

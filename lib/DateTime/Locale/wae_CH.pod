@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::wae_CH - Locale data examples for the wae-CH locale.
+DateTime::Locale::wae_CH - Locale data examples for the Walser Switzerland (wae-CH) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ps_AF - Locale data examples for the ps-AF locale.
+DateTime::Locale::ps_AF - Locale data examples for the Pashto Afghanistan (ps-AF) locale
 
 =head1 DESCRIPTION
 

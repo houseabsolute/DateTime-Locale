@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::teo_KE - Locale data examples for the teo-KE locale.
+DateTime::Locale::teo_KE - Locale data examples for the Teso Kenya (teo-KE) locale
 
 =head1 DESCRIPTION
 

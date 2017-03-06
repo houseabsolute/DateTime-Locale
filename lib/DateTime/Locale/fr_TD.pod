@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_TD - Locale data examples for the fr-TD locale.
+DateTime::Locale::fr_TD - Locale data examples for the French Chad (fr-TD) locale
 
 =head1 DESCRIPTION
 

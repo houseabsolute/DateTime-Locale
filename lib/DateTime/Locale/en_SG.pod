@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::en_SG - Locale data examples for the en-SG locale.
+DateTime::Locale::en_SG - Locale data examples for the English Singapore (en-SG) locale
 
 =head1 DESCRIPTION
 

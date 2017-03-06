@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fr_RE - Locale data examples for the fr-RE locale.
+DateTime::Locale::fr_RE - Locale data examples for the French Réunion (fr-RE) locale
 
 =head1 DESCRIPTION
 

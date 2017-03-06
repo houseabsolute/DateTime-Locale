@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::fy_NL - Locale data examples for the fy-NL locale.
+DateTime::Locale::fy_NL - Locale data examples for the Western Frisian Netherlands (fy-NL) locale
 
 =head1 DESCRIPTION
 

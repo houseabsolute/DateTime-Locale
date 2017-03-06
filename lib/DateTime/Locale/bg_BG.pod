@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::bg_BG - Locale data examples for the bg-BG locale.
+DateTime::Locale::bg_BG - Locale data examples for the Bulgarian Bulgaria (bg-BG) locale
 
 =head1 DESCRIPTION
 

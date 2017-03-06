@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::kn_IN - Locale data examples for the kn-IN locale.
+DateTime::Locale::kn_IN - Locale data examples for the Kannada India (kn-IN) locale
 
 =head1 DESCRIPTION
 

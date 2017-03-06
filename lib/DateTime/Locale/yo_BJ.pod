@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::yo_BJ - Locale data examples for the yo-BJ locale.
+DateTime::Locale::yo_BJ - Locale data examples for the Yoruba Benin (yo-BJ) locale
 
 =head1 DESCRIPTION
 

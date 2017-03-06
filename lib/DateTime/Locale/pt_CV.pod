@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::pt_CV - Locale data examples for the pt-CV locale.
+DateTime::Locale::pt_CV - Locale data examples for the Portuguese Cape Verde (pt-CV) locale
 
 =head1 DESCRIPTION
 

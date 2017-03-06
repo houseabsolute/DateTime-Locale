@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::hr - Locale data examples for the hr locale.
+DateTime::Locale::hr - Locale data examples for the Croatian (hr) locale
 
 =head1 DESCRIPTION
 

@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::lb - Locale data examples for the lb locale.
+DateTime::Locale::lb - Locale data examples for the Luxembourgish (lb) locale
 
 =head1 DESCRIPTION
 

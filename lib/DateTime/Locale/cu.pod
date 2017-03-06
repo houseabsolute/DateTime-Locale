@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::cu - Locale data examples for the cu locale.
+DateTime::Locale::cu - Locale data examples for the Church Slavic (cu) locale
 
 =head1 DESCRIPTION
 
