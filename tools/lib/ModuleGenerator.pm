@@ -83,7 +83,7 @@ has _locales => (
 sub run ($self) {
     $self->_clean_old_data;
     $self->_locales;
-    $self->_write_data_pm;
+    $self->_write_data_files;
     $self->_write_catalog_pm;
     $self->_write_pod_files;
 
@@ -120,15 +120,21 @@ sub _build_locales ($self) {
     return \@locales;
 }
 
+sub _write_data_files ($self) {
+    my %raw_locales = $self->_write_data_pm;
+
+    for my $code ( sort keys %raw_locales ) {
+        my $dumped = $self->_dump_with_unicode( $raw_locales{$code} );
+        my $file = file( 'share', $code . '.pl' );
+        ## no critic (InputOutput::RequireCheckedSyscalls)
+        say "Generating $file";
+        $file->spew($dumped);
+    }
+
+    return;
+}
+
 sub _write_data_pm ($self) {
-    my $data_pm_file = file(qw( lib DateTime Locale Data.pm ));
-    ## no critic (InputOutput::RequireCheckedSyscalls)
-    say "Generating $data_pm_file";
-    ## use critic
-    my $data_pm = $data_pm_file->slurp( iomode => '<:encoding(UTF-8)' );
-
-    $self->_insert_autogen_warning( \$data_pm );
-
     my %codes;
     my %names;
     my %native_names;
@@ -139,6 +145,14 @@ sub _write_data_pm ($self) {
         $native_names{ $locale->native_name } = $locale->code;
         $raw_locales{ $locale->code }         = $locale->data_hash;
     }
+
+    my $data_pm_file = file(qw( lib DateTime Locale Data.pm ));
+    ## no critic (InputOutput::RequireCheckedSyscalls)
+    say "Generating $data_pm_file";
+    ## use critic
+    my $data_pm = $data_pm_file->slurp( iomode => '<:encoding(UTF-8)' );
+
+    $self->_insert_autogen_warning( \$data_pm );
 
     $self->_insert_var_in_code(
         'CLDRVersion',
@@ -161,31 +175,9 @@ sub _write_data_pm ($self) {
 
     $self->_insert_var_in_code( 'LocaleData', \%preload, 0, \$data_pm );
 
-    my $pos = 0;
-    my %index;
-    my $data_section = q{};
-    for my $code ( sort keys %raw_locales ) {
-        my $marker = "__[ $code ]__\n";
-        $data_section .= $marker;
-        $pos += length $marker;
-
-        my $start_pos = $pos;
-
-        my $dumped = $self->_dump_with_unicode( $raw_locales{$code} );
-        $data_section .= $dumped;
-        $pos += length $dumped;
-
-        $index{$code} = [ $start_pos => $pos - $start_pos ];
-    }
-
-    $self->_insert_var_in_code( 'DataSectionIndex', \%index, 0, \$data_pm );
-
-    $data_pm =~ s/(__DATA__\n).*(__END__\n)/$1$data_section\n$2/s
-        or die 'data section subst failed';
-
     $data_pm_file->spew( iomode => '>:encoding(UTF-8)', $data_pm );
 
-    return;
+    return %raw_locales;
 }
 
 sub _iso_639_aliases ($self) {
