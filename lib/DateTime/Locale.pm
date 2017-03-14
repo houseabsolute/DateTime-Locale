@@ -446,6 +446,13 @@ Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
 names use UTF-8 as appropriate.
 
+=head1 LOADING LOCALES IN A PRE-FORKING SYSTEM
+
+If you are running an application that does pre-forking (for example with
+Starman), then you should try to load all the locales that you'll need in the
+parent process. Locales are loaded on-demand, so loading them once in each
+child will waste memory that could otherwise be shared.
+
 =head1 CLDR DATA BUGS
 
 Please be aware that all locale data has been generated from the CLDR (Common

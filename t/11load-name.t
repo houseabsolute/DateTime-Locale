@@ -3,6 +3,7 @@ use warnings;
 use utf8;
 
 use Test::More 0.96;
+use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
 
 use DateTime::Locale;
 

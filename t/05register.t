@@ -3,6 +3,8 @@ use warnings;
 
 use Test::More;
 use Test::Fatal;
+use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
+
 use DateTime::Locale;
 
 ## no critic (Modules::ProhibitMultiplePackages)
