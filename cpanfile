@@ -1,6 +1,7 @@
 requires "Carp" => "0";
 requires "Dist::CheckConflicts" => "0.02";
 requires "Exporter" => "0";
+requires "File::ShareDir" => "0";
 requires "List::Util" => "1.45";
 requires "Params::ValidationCompiler" => "0.13";
 requires "Specio::Declare" => "0";
@@ -17,6 +18,7 @@ on 'test' => sub {
   requires "File::Spec" => "0";
   requires "Storable" => "0";
   requires "Test::Fatal" => "0";
+  requires "Test::File::ShareDir::Dist" => "0";
   requires "Test::More" => "0.96";
   requires "Test::Requires" => "0";
   requires "Test::Warnings" => "0";
@@ -31,10 +33,12 @@ on 'test' => sub {
 on 'configure' => sub {
   requires "Dist::CheckConflicts" => "0.02";
   requires "ExtUtils::MakeMaker" => "0";
+  requires "File::ShareDir::Install" => "0.06";
 };
 
 on 'develop' => sub {
   requires "Code::TidyAll" => "0.56";
+  requires "Code::TidyAll::Plugin::SortLines::Naturally" => "0.000003";
   requires "Code::TidyAll::Plugin::Test::Vars" => "0.02";
   requires "Cwd" => "0";
   requires "File::Spec" => "0";

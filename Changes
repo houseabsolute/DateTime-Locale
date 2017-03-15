@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.15     2017-03-15 (TRIAL RELEASE)
+
 - Most data is now stored in a share dir and only loaded as needed. This
   should reduce the memory usage from just loading DateTime::Locale by about
   4mb. Based on a PR by sergey. GH #14.

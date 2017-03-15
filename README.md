@@ -4,7 +4,7 @@ DateTime::Locale - Localization support for DateTime.pm
 
 # VERSION
 
-version 1.14
+version 1.15
 
 # SYNOPSIS
 
@@ -94,6 +94,13 @@ reference if called in a scalar context.
 Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
 names use UTF-8 as appropriate.
+
+# LOADING LOCALES IN A PRE-FORKING SYSTEM
+
+If you are running an application that does pre-forking (for example with
+Starman), then you should try to load all the locales that you'll need in the
+parent process. Locales are loaded on-demand, so loading them once in each
+child will waste memory that could otherwise be shared.
 
 # CLDR DATA BUGS
 
