@@ -8,7 +8,7 @@ use DateTime::Locale::Util qw( parse_locale_code );
 use Params::ValidationCompiler 0.13 qw( validation_for );
 use Specio::Declare;
 
-our $VERSION = '1.15';
+our $VERSION = '1.16';
 
 my @FormatLengths;
 
