@@ -323,6 +323,8 @@ sub _write_pod_files ($self) {
     ) or die $Text::Template::ERROR;
 
     use lib 'lib';
+    require Test::File::ShareDir::Dist;
+    Test::File::ShareDir::Dist->import( { 'DateTime-Locale' => 'share' } );
     require DateTime;
     require DateTime::Locale;
 
