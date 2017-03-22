@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.16     2017-03-22
+
 - Rebuilt all locale data with CLDR 31, released on 2017-03-20.
 
 
