@@ -23,7 +23,8 @@
     MEd => "dd-MM, E",
     MMM => "LLL",
     MMMEd => "MMM d, E",
-    MMMMW => "MMM W -\N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0bb5}\N{U+0bbe}\N{U+0bb0}\N{U+0bae}\N{U+0bcd}",
+    "MMMMW-count-one" => "MMM W -\N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0bb5}\N{U+0bbe}\N{U+0bb0}\N{U+0bae}\N{U+0bcd}",
+    "MMMMW-count-other" => "MMM W -\N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0bb5}\N{U+0bbe}\N{U+0bb0}\N{U+0bae}\N{U+0bcd}",
     MMMMd => "d MMMM",
     MMMd => "MMM d",
     MMdd => "dd-MM",
@@ -46,7 +47,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "y \N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0b86}\N{U+0ba3}\N{U+0bcd}\N{U+0b9f}\N{U+0bbf}\N{U+0ba9}\N{U+0bcd} w -\N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0bb5}\N{U+0bbe}\N{U+0bb0}\N{U+0bae}\N{U+0bcd}"
+    "yw-count-one" => "y \N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0b86}\N{U+0ba3}\N{U+0bcd}\N{U+0b9f}\N{U+0bbf}\N{U+0ba9}\N{U+0bcd} w -\N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0bb5}\N{U+0bbe}\N{U+0bb0}\N{U+0bae}\N{U+0bcd}",
+    "yw-count-other" => "y \N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0b86}\N{U+0ba3}\N{U+0bcd}\N{U+0b9f}\N{U+0bbf}\N{U+0ba9}\N{U+0bcd} w -\N{U+0b86}\N{U+0bae}\N{U+0bcd} \N{U+0bb5}\N{U+0bbe}\N{U+0bb0}\N{U+0bae}\N{U+0bcd}"
   },
   code => "ta-IN",
   date_format_full => "EEEE, d MMMM, y",
@@ -263,5 +265,5 @@
   time_format_medium => "a h:mm:ss",
   time_format_short => "a h:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

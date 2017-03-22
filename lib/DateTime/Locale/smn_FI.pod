@@ -441,7 +441,19 @@ Inari Sami Finland locale.
    1995-12-22T09:05:02 = vás, juovlâ 22.
   -0010-09-15T04:44:23 = láv, čohčâ 15.
 
-=head3 MMMMW ('okko' W, MMM)
+=head3 MMMMW-count-one ('okko' W, MMM)
+
+   2008-02-05T18:30:30 = okko 1, kuovâ
+   1995-12-22T09:05:02 = okko 3, juovlâ
+  -0010-09-15T04:44:23 = okko 2, čohčâ
+
+=head3 MMMMW-count-other ('okko' W, MMM)
+
+   2008-02-05T18:30:30 = okko 1, kuovâ
+   1995-12-22T09:05:02 = okko 3, juovlâ
+  -0010-09-15T04:44:23 = okko 2, čohčâ
+
+=head3 MMMMW-count-two ('okko' W, MMM)
 
    2008-02-05T18:30:30 = okko 1, kuovâ
    1995-12-22T09:05:02 = okko 3, juovlâ
@@ -567,7 +579,19 @@ Inari Sami Finland locale.
    1995-12-22T09:05:02 = 4. niäljádâs 1995
   -0010-09-15T04:44:23 = 3. niäljádâs -10
 
-=head3 yw ('okko' w, y)
+=head3 yw-count-one ('okko' w, y)
+
+   2008-02-05T18:30:30 = okko 6, 2008
+   1995-12-22T09:05:02 = okko 51, 1995
+  -0010-09-15T04:44:23 = okko 37, -10
+
+=head3 yw-count-other ('okko' w, y)
+
+   2008-02-05T18:30:30 = okko 6, 2008
+   1995-12-22T09:05:02 = okko 51, 1995
+  -0010-09-15T04:44:23 = okko 37, -10
+
+=head3 yw-count-two ('okko' w, y)
 
    2008-02-05T18:30:30 = okko 6, 2008
    1995-12-22T09:05:02 = okko 51, 1995

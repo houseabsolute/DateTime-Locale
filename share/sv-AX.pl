@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E d MMM",
     MMMMEd => "E d MMMM",
-    MMMMW => "'vecka' W 'i' MMM",
+    "MMMMW-count-one" => "'vecka' W 'i' MMM",
+    "MMMMW-count-other" => "'vecka' W 'i' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMd => "d/M",
@@ -48,7 +49,8 @@
     yMd => "y-MM-dd",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'vecka' w, y"
+    "yw-count-one" => "'vecka' w, y",
+    "yw-count-other" => "'vecka' w, y"
   },
   code => "sv-AX",
   date_format_full => "EEEE d MMMM y",
@@ -265,5 +267,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

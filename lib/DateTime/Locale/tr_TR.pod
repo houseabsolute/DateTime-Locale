@@ -447,7 +447,13 @@ Turkish Turkey locale.
    1995-12-22T09:05:02 = 22 Aralık Cum
   -0010-09-15T04:44:23 = 15 Eylül Cmt
 
-=head3 MMMMW (MMMM 'ayının' W. 'haftası')
+=head3 MMMMW-count-one (MMMM 'ayının' W. 'haftası')
+
+   2008-02-05T18:30:30 = Şubat ayının 1. haftası
+   1995-12-22T09:05:02 = Aralık ayının 3. haftası
+  -0010-09-15T04:44:23 = Eylül ayının 2. haftası
+
+=head3 MMMMW-count-other (MMMM 'ayının' W. 'haftası')
 
    2008-02-05T18:30:30 = Şubat ayının 1. haftası
    1995-12-22T09:05:02 = Aralık ayının 3. haftası
@@ -585,7 +591,13 @@ Turkish Turkey locale.
    1995-12-22T09:05:02 = 1995 4. çeyrek
   -0010-09-15T04:44:23 = -10 3. çeyrek
 
-=head3 yw (y 'yılının' w. 'haftası')
+=head3 yw-count-one (y 'yılının' w. 'haftası')
+
+   2008-02-05T18:30:30 = 2008 yılının 6. haftası
+   1995-12-22T09:05:02 = 1995 yılının 51. haftası
+  -0010-09-15T04:44:23 = -10 yılının 37. haftası
+
+=head3 yw-count-other (y 'yılının' w. 'haftası')
 
    2008-02-05T18:30:30 = 2008 yılının 6. haftası
    1995-12-22T09:05:02 = 1995 yılının 51. haftası

@@ -447,7 +447,13 @@ Portuguese Brazil locale.
    1995-12-22T09:05:02 = sex, 22 de dezembro
   -0010-09-15T04:44:23 = sáb, 15 de setembro
 
-=head3 MMMMW (W'ª' 'semana' 'de' MMMM)
+=head3 MMMMW-count-one (W'ª' 'semana' 'de' MMM)
+
+   2008-02-05T18:30:30 = 1ª semana de fev
+   1995-12-22T09:05:02 = 3ª semana de dez
+  -0010-09-15T04:44:23 = 2ª semana de set
+
+=head3 MMMMW-count-other (W'ª' 'semana' 'de' MMMM)
 
    2008-02-05T18:30:30 = 1ª semana de fevereiro
    1995-12-22T09:05:02 = 3ª semana de dezembro
@@ -597,7 +603,13 @@ Portuguese Brazil locale.
    1995-12-22T09:05:02 = 4º trimestre de 1995
   -0010-09-15T04:44:23 = 3º trimestre de -10
 
-=head3 yw (w'ª' 'semana' 'de' y)
+=head3 yw-count-one (w'ª' 'semana' 'de' y)
+
+   2008-02-05T18:30:30 = 6ª semana de 2008
+   1995-12-22T09:05:02 = 51ª semana de 1995
+  -0010-09-15T04:44:23 = 37ª semana de -10
+
+=head3 yw-count-other (w'ª' 'semana' 'de' y)
 
    2008-02-05T18:30:30 = 6ª semana de 2008
    1995-12-22T09:05:02 = 51ª semana de 1995

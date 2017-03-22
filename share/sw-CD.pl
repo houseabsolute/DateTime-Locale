@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "'wiki' W 'ya' MMM",
+    "MMMMW-count-one" => "'wiki' W 'ya' MMM",
+    "MMMMW-count-other" => "'wiki' W 'ya' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d/M",
@@ -45,7 +46,8 @@
     yMd => "d/M/y",
     yQQQ => "y QQQ",
     yQQQQ => "QQQQ y",
-    yw => "'wiki' w 'ya' y"
+    "yw-count-one" => "'wiki' w 'ya' y",
+    "yw-count-other" => "'wiki' w 'ya' y"
   },
   code => "sw-CD",
   date_format_full => "EEEE, d MMMM y",
@@ -262,5 +264,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

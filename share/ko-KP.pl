@@ -28,7 +28,7 @@
     MMM => "LLL",
     MMMEEEEd => "MMM d\N{U+c77c} EEEE",
     MMMEd => "MMM d\N{U+c77c} (E)",
-    MMMMW => "MMM W\N{U+bc88}\N{U+c9f8} \N{U+c8fc}",
+    "MMMMW-count-other" => "MMM W\N{U+bc88}\N{U+c9f8} \N{U+c8fc}",
     MMMMd => "MMMM d\N{U+c77c}",
     MMMd => "MMM d\N{U+c77c}",
     Md => "M. d.",
@@ -53,7 +53,7 @@
     yMd => "y. M. d.",
     yQQQ => "y\N{U+b144} QQQ",
     yQQQQ => "y\N{U+b144} QQQQ",
-    yw => "y\N{U+b144} w\N{U+bc88}\N{U+c9f8} \N{U+c8fc}"
+    "yw-count-other" => "y\N{U+b144} w\N{U+bc88}\N{U+c9f8} \N{U+c8fc}"
   },
   code => "ko-KP",
   date_format_full => "y\N{U+b144} M\N{U+c6d4} d\N{U+c77c} EEEE",
@@ -270,5 +270,5 @@
   time_format_medium => "a h:mm:ss",
   time_format_short => "a h:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

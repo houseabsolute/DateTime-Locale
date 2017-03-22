@@ -23,7 +23,8 @@
     MEd => "E d.M",
     MMM => "LLL",
     MMMEd => "E d. MMM",
-    MMMMW => "W. 'uke' 'i' MMM",
+    "MMMMW-count-one" => "W. 'uke' 'i' MMM",
+    "MMMMW-count-other" => "W. 'uke' 'i' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     MMdd => "d.M.",
@@ -46,7 +47,8 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'uke' w 'i' y"
+    "yw-count-one" => "'uke' w 'i' y",
+    "yw-count-other" => "'uke' w 'i' y"
   },
   code => "nb-SJ",
   date_format_full => "EEEE d. MMMM y",
@@ -263,5 +265,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

@@ -447,7 +447,19 @@ Romanian Romania locale.
    1995-12-22T09:05:02 = vin., 22 decembrie
   -0010-09-15T04:44:23 = sâm., 15 septembrie
 
-=head3 MMMMW ('săptămâna' W 'din' MMM)
+=head3 MMMMW-count-few ('săptămâna' W 'din' MMM)
+
+   2008-02-05T18:30:30 = săptămâna 1 din feb.
+   1995-12-22T09:05:02 = săptămâna 3 din dec.
+  -0010-09-15T04:44:23 = săptămâna 2 din sept.
+
+=head3 MMMMW-count-one ('săptămâna' W 'din' MMM)
+
+   2008-02-05T18:30:30 = săptămâna 1 din feb.
+   1995-12-22T09:05:02 = săptămâna 3 din dec.
+  -0010-09-15T04:44:23 = săptămâna 2 din sept.
+
+=head3 MMMMW-count-other ('săptămâna' W 'din' MMM)
 
    2008-02-05T18:30:30 = săptămâna 1 din feb.
    1995-12-22T09:05:02 = săptămâna 3 din dec.
@@ -585,7 +597,19 @@ Romanian Romania locale.
    1995-12-22T09:05:02 = trimestrul al IV-lea 1995
   -0010-09-15T04:44:23 = trimestrul al III-lea -10
 
-=head3 yw ('săptămâna' w 'din' y)
+=head3 yw-count-few ('săptămâna' w 'din' y)
+
+   2008-02-05T18:30:30 = săptămâna 6 din 2008
+   1995-12-22T09:05:02 = săptămâna 51 din 1995
+  -0010-09-15T04:44:23 = săptămâna 37 din -10
+
+=head3 yw-count-one ('săptămâna' w 'din' y)
+
+   2008-02-05T18:30:30 = săptămâna 6 din 2008
+   1995-12-22T09:05:02 = săptămâna 51 din 1995
+  -0010-09-15T04:44:23 = săptămâna 37 din -10
+
+=head3 yw-count-other ('săptămâna' w 'din' y)
 
    2008-02-05T18:30:30 = săptămâna 6 din 2008
    1995-12-22T09:05:02 = săptămâna 51 din 1995

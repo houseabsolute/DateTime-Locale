@@ -441,7 +441,13 @@ Azerbaijani locale.
    1995-12-22T09:05:02 = 22 dek, C.
   -0010-09-15T04:44:23 = 15 sen, Ş.
 
-=head3 MMMMW (MMM, W 'həftə')
+=head3 MMMMW-count-one (MMM, W 'həftə')
+
+   2008-02-05T18:30:30 = fev, 1 həftə
+   1995-12-22T09:05:02 = dek, 3 həftə
+  -0010-09-15T04:44:23 = sen, 2 həftə
+
+=head3 MMMMW-count-other (MMM, W 'həftə')
 
    2008-02-05T18:30:30 = fev, 1 həftə
    1995-12-22T09:05:02 = dek, 3 həftə
@@ -537,11 +543,11 @@ Azerbaijani locale.
    1995-12-22T09:05:02 = 22 dek 1995, C.
   -0010-09-15T04:44:23 = 15 sen -10, Ş.
 
-=head3 yMMMM (y MMMM)
+=head3 yMMMM (MMMM y)
 
-   2008-02-05T18:30:30 = 2008 fevral
-   1995-12-22T09:05:02 = 1995 dekabr
-  -0010-09-15T04:44:23 = -10 sentyabr
+   2008-02-05T18:30:30 = fevral 2008
+   1995-12-22T09:05:02 = dekabr 1995
+  -0010-09-15T04:44:23 = sentyabr -10
 
 =head3 yMMMd (d MMM y)
 
@@ -567,7 +573,13 @@ Azerbaijani locale.
    1995-12-22T09:05:02 = 1995 4-cü kvartal
   -0010-09-15T04:44:23 = -10 3-cü kvartal
 
-=head3 yw (y, w 'həftə')
+=head3 yw-count-one (y, w 'həftə')
+
+   2008-02-05T18:30:30 = 2008, 6 həftə
+   1995-12-22T09:05:02 = 1995, 51 həftə
+  -0010-09-15T04:44:23 = -10, 37 həftə
+
+=head3 yw-count-other (y, w 'həftə')
 
    2008-02-05T18:30:30 = 2008, 6 həftə
    1995-12-22T09:05:02 = 1995, 51 həftə

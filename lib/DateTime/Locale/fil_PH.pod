@@ -447,7 +447,13 @@ Filipino Philippines locale.
    1995-12-22T09:05:02 = Biy, Disyembre 22
   -0010-09-15T04:44:23 = Sab, Setyembre 15
 
-=head3 MMMMW ('linggo' W 'ng' MMM)
+=head3 MMMMW-count-one ('ika'-W 'linggo' 'ng' MMM)
+
+   2008-02-05T18:30:30 = ika-1 linggo ng Peb
+   1995-12-22T09:05:02 = ika-3 linggo ng Dis
+  -0010-09-15T04:44:23 = ika-2 linggo ng Set
+
+=head3 MMMMW-count-other ('linggo' W 'ng' MMM)
 
    2008-02-05T18:30:30 = linggo 1 ng Peb
    1995-12-22T09:05:02 = linggo 3 ng Dis
@@ -579,7 +585,13 @@ Filipino Philippines locale.
    1995-12-22T09:05:02 = ika-4 na quarter 1995
   -0010-09-15T04:44:23 = ika-3 quarter -10
 
-=head3 yw ('linggo' w 'ng' y)
+=head3 yw-count-one ('ika'-w 'linggo' 'ng' y)
+
+   2008-02-05T18:30:30 = ika-6 linggo ng 2008
+   1995-12-22T09:05:02 = ika-51 linggo ng 1995
+  -0010-09-15T04:44:23 = ika-37 linggo ng -10
+
+=head3 yw-count-other ('linggo' w 'ng' y)
 
    2008-02-05T18:30:30 = linggo 6 ng 2008
    1995-12-22T09:05:02 = linggo 51 ng 1995

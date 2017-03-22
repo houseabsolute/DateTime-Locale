@@ -447,7 +447,7 @@ Luyia locale.
    1995-12-22T09:05:02 = Ij, Desemba 22
   -0010-09-15T04:44:23 = J1, Septemba 15
 
-=head3 MMMMW ('week' W 'of' MMMM)
+=head3 MMMMW-count-other ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of Februari
    1995-12-22T09:05:02 = week 3 of Desemba
@@ -573,7 +573,7 @@ Luyia locale.
    1995-12-22T09:05:02 = Robo ya Kanne 1995
   -0010-09-15T04:44:23 = Robo ya Kavaga -10
 
-=head3 yw ('week' w 'of' y)
+=head3 yw-count-other ('week' w 'of' y)
 
    2008-02-05T18:30:30 = week 6 of 2008
    1995-12-22T09:05:02 = week 51 of 1995

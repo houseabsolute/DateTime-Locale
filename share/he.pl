@@ -23,7 +23,10 @@
     MEd => "E, d.M",
     MMM => "LLL",
     MMMEd => "E, d \N{U+05d1}MMM",
-    MMMMW => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} W \N{U+05d1}MMM",
+    "MMMMW-count-many" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} W \N{U+05d1}MMM",
+    "MMMMW-count-one" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} W \N{U+05d1}MMM",
+    "MMMMW-count-other" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} W \N{U+05d1}MMM",
+    "MMMMW-count-two" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} W \N{U+05d1}MMM",
     MMMMd => "d \N{U+05d1}MMMM",
     MMMd => "d \N{U+05d1}MMM",
     Md => "d.M",
@@ -45,7 +48,10 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} w \N{U+05d1}\N{U+05e9}\N{U+05e0}\N{U+05ea} y"
+    "yw-count-many" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} w \N{U+05d1}\N{U+05e9}\N{U+05e0}\N{U+05ea} y",
+    "yw-count-one" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} w \N{U+05d1}\N{U+05e9}\N{U+05e0}\N{U+05ea} y",
+    "yw-count-other" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} w \N{U+05d1}\N{U+05e9}\N{U+05e0}\N{U+05ea} y",
+    "yw-count-two" => "\N{U+05e9}\N{U+05d1}\N{U+05d5}\N{U+05e2} w \N{U+05d1}\N{U+05e9}\N{U+05e0}\N{U+05ea} y"
   },
   code => "he",
   date_format_full => "EEEE, d \N{U+05d1}MMMM y",
@@ -262,5 +268,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

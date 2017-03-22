@@ -441,7 +441,7 @@ Chinese Macau SAR China Simplified locale.
    1995-12-22T09:05:02 = 12月22日周五
   -0010-09-15T04:44:23 = 9月15日周六
 
-=head3 MMMMW (MMM第W周)
+=head3 MMMMW-count-other (MMM第W周)
 
    2008-02-05T18:30:30 = 2月第1周
    1995-12-22T09:05:02 = 12月第3周
@@ -585,7 +585,7 @@ Chinese Macau SAR China Simplified locale.
    1995-12-22T09:05:02 = 1995年第4季度
   -0010-09-15T04:44:23 = -10年第3季度
 
-=head3 yw (y年第w周)
+=head3 yw-count-other (y年第w周)
 
    2008-02-05T18:30:30 = 2008年第6周
    1995-12-22T09:05:02 = 1995年第51周

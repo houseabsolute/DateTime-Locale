@@ -447,7 +447,19 @@ Croatian locale.
    1995-12-22T09:05:02 = pet, 22. prosinca
   -0010-09-15T04:44:23 = sub, 15. rujna
 
-=head3 MMMMW (W. 'tjedan' 'u' MMM)
+=head3 MMMMW-count-few (W. 'tjedan' 'u' MMM)
+
+   2008-02-05T18:30:30 = 1. tjedan u velj
+   1995-12-22T09:05:02 = 3. tjedan u pro
+  -0010-09-15T04:44:23 = 2. tjedan u ruj
+
+=head3 MMMMW-count-one (W. 'tjedan' 'u' MMM)
+
+   2008-02-05T18:30:30 = 1. tjedan u velj
+   1995-12-22T09:05:02 = 3. tjedan u pro
+  -0010-09-15T04:44:23 = 2. tjedan u ruj
+
+=head3 MMMMW-count-other (W. 'tjedan' 'u' MMM)
 
    2008-02-05T18:30:30 = 1. tjedan u velj
    1995-12-22T09:05:02 = 3. tjedan u pro
@@ -585,7 +597,19 @@ Croatian locale.
    1995-12-22T09:05:02 = 4. kvartal 1995.
   -0010-09-15T04:44:23 = 3. kvartal -10.
 
-=head3 yw (w. 'tjedan' 'u' y.)
+=head3 yw-count-few (w. 'tjedan' 'u' y.)
+
+   2008-02-05T18:30:30 = 6. tjedan u 2008.
+   1995-12-22T09:05:02 = 51. tjedan u 1995.
+  -0010-09-15T04:44:23 = 37. tjedan u -10.
+
+=head3 yw-count-one (w. 'tjedan' 'u' y.)
+
+   2008-02-05T18:30:30 = 6. tjedan u 2008.
+   1995-12-22T09:05:02 = 51. tjedan u 1995.
+  -0010-09-15T04:44:23 = 37. tjedan u -10.
+
+=head3 yw-count-other (w. 'tjedan' 'u' y.)
 
    2008-02-05T18:30:30 = 6. tjedan u 2008.
    1995-12-22T09:05:02 = 51. tjedan u 1995.

@@ -23,7 +23,8 @@
     MEd => "dd.MM, E",
     MMM => "LLL",
     MMMEd => "d MMM, E",
-    MMMMW => "MMM, W '\N{U+04bb}\N{U+04d9}\N{U+0444}\N{U+0442}\N{U+04d9}'",
+    "MMMMW-count-one" => "MMM, W '\N{U+04bb}\N{U+04d9}\N{U+0444}\N{U+0442}\N{U+04d9}'",
+    "MMMMW-count-other" => "MMM, W '\N{U+04bb}\N{U+04d9}\N{U+0444}\N{U+0442}\N{U+04d9}'",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "dd.MM",
@@ -44,7 +45,8 @@
     yMd => "dd.MM.y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y, w '\N{U+04bb}\N{U+04d9}\N{U+0444}\N{U+0442}\N{U+04d9}'"
+    "yw-count-one" => "y, w '\N{U+04bb}\N{U+04d9}\N{U+0444}\N{U+0442}\N{U+04d9}'",
+    "yw-count-other" => "y, w '\N{U+04bb}\N{U+04d9}\N{U+0444}\N{U+0442}\N{U+04d9}'"
   },
   code => "az-Cyrl-AZ",
   date_format_full => "d MMMM y, EEEE",
@@ -261,5 +263,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

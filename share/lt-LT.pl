@@ -28,7 +28,10 @@
     MMMEd => "MM-dd, E",
     MMMM => "LLLL",
     MMMMEd => "MMMM d 'd'., E",
-    MMMMW => "MMM W 'sav'.",
+    "MMMMW-count-few" => "MMM W 'sav'.",
+    "MMMMW-count-many" => "MMM W 'sav'.",
+    "MMMMW-count-one" => "MMM W 'sav'.",
+    "MMMMW-count-other" => "MMM W 'sav'.",
     MMMMd => "MMMM d 'd'.",
     MMMd => "MM-dd",
     MMdd => "MM-dd",
@@ -52,7 +55,10 @@
     yMd => "y-MM-dd",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y w 'sav'."
+    "yw-count-few" => "y w 'sav'.",
+    "yw-count-many" => "y w 'sav'.",
+    "yw-count-one" => "y w 'sav'.",
+    "yw-count-other" => "y w 'sav'."
   },
   code => "lt-LT",
   date_format_full => "y 'm'. MMMM d 'd'., EEEE",
@@ -269,5 +275,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

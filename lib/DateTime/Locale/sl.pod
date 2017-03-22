@@ -447,7 +447,25 @@ Slovenian locale.
    1995-12-22T09:05:02 = pet., 22. dec.
   -0010-09-15T04:44:23 = sob., 15. sep.
 
-=head3 MMMMW (W. 'teden' 'v' MMM)
+=head3 MMMMW-count-few (W. 'teden' 'v' MMM)
+
+   2008-02-05T18:30:30 = 1. teden v feb.
+   1995-12-22T09:05:02 = 3. teden v dec.
+  -0010-09-15T04:44:23 = 2. teden v sep.
+
+=head3 MMMMW-count-one (W. 'teden' 'v' MMM)
+
+   2008-02-05T18:30:30 = 1. teden v feb.
+   1995-12-22T09:05:02 = 3. teden v dec.
+  -0010-09-15T04:44:23 = 2. teden v sep.
+
+=head3 MMMMW-count-other (W. 'teden' 'v' MMM)
+
+   2008-02-05T18:30:30 = 1. teden v feb.
+   1995-12-22T09:05:02 = 3. teden v dec.
+  -0010-09-15T04:44:23 = 2. teden v sep.
+
+=head3 MMMMW-count-two (W. 'teden' 'v' MMM)
 
    2008-02-05T18:30:30 = 1. teden v feb.
    1995-12-22T09:05:02 = 3. teden v dec.
@@ -573,7 +591,25 @@ Slovenian locale.
    1995-12-22T09:05:02 = 4. četrtletje 1995
   -0010-09-15T04:44:23 = 3. četrtletje -10
 
-=head3 yw (w. 'teden' 'v' y)
+=head3 yw-count-few (w. 'teden' 'v' y)
+
+   2008-02-05T18:30:30 = 6. teden v 2008
+   1995-12-22T09:05:02 = 51. teden v 1995
+  -0010-09-15T04:44:23 = 37. teden v -10
+
+=head3 yw-count-one (w. 'teden' 'v' y)
+
+   2008-02-05T18:30:30 = 6. teden v 2008
+   1995-12-22T09:05:02 = 51. teden v 1995
+  -0010-09-15T04:44:23 = 37. teden v -10
+
+=head3 yw-count-other (w. 'teden' 'v' y)
+
+   2008-02-05T18:30:30 = 6. teden v 2008
+   1995-12-22T09:05:02 = 51. teden v 1995
+  -0010-09-15T04:44:23 = 37. teden v -10
+
+=head3 yw-count-two (w. 'teden' 'v' y)
 
    2008-02-05T18:30:30 = 6. teden v 2008
    1995-12-22T09:05:02 = 51. teden v 1995

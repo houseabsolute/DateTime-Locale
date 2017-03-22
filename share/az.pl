@@ -23,7 +23,8 @@
     MEd => "dd.MM, E",
     MMM => "LLL",
     MMMEd => "d MMM, E",
-    MMMMW => "MMM, W 'h\N{U+0259}ft\N{U+0259}'",
+    "MMMMW-count-one" => "MMM, W 'h\N{U+0259}ft\N{U+0259}'",
+    "MMMMW-count-other" => "MMM, W 'h\N{U+0259}ft\N{U+0259}'",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "dd.MM",
@@ -39,12 +40,13 @@
     yMEd => "dd.MM.y, E",
     yMMM => "MMM y",
     yMMMEd => "d MMM y, E",
-    yMMMM => "y MMMM",
+    yMMMM => "MMMM y",
     yMMMd => "d MMM y",
     yMd => "dd.MM.y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y, w 'h\N{U+0259}ft\N{U+0259}'"
+    "yw-count-one" => "y, w 'h\N{U+0259}ft\N{U+0259}'",
+    "yw-count-other" => "y, w 'h\N{U+0259}ft\N{U+0259}'"
   },
   code => "az",
   date_format_full => "d MMMM y, EEEE",
@@ -261,5 +263,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

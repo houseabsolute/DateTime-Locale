@@ -24,7 +24,12 @@
     MMM => "LLL",
     MMMEd => "E\N{U+060c} d MMM",
     MMMMEd => "E\N{U+060c} d MMMM",
-    MMMMW => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
+    "MMMMW-count-few" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
+    "MMMMW-count-many" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
+    "MMMMW-count-one" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
+    "MMMMW-count-other" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
+    "MMMMW-count-two" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
+    "MMMMW-count-zero" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} W \N{U+0645}\N{U+0646} MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd\N{U+200f}/MM",
@@ -47,7 +52,12 @@
     yMd => "d\N{U+200f}/M\N{U+200f}/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y"
+    "yw-count-few" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y",
+    "yw-count-many" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y",
+    "yw-count-one" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y",
+    "yw-count-other" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y",
+    "yw-count-two" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y",
+    "yw-count-zero" => "\N{U+0627}\N{U+0644}\N{U+0623}\N{U+0633}\N{U+0628}\N{U+0648}\N{U+0639} w \N{U+0645}\N{U+0646} \N{U+0633}\N{U+0646}\N{U+0629} y"
   },
   code => "ar-DZ",
   date_format_full => "EEEE\N{U+060c} d MMMM\N{U+060c} y",
@@ -264,5 +274,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

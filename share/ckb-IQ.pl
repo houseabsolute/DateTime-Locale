@@ -23,7 +23,8 @@
     MEd => "E\N{U+060c} M/d",
     MMM => "LLL",
     MMMEd => "E\N{U+060c} d\N{U+06cc} MMM",
-    MMMMW => "\N{U+0647}\N{U+06d5}\N{U+0641}\N{U+062a}\N{U+06d5}\N{U+06cc} W \N{U+06cc} MMM",
+    "MMMMW-count-one" => "\N{U+0647}\N{U+06d5}\N{U+0641}\N{U+062a}\N{U+06d5}\N{U+06cc} W \N{U+06cc} MMM",
+    "MMMMW-count-other" => "\N{U+0647}\N{U+06d5}\N{U+0641}\N{U+062a}\N{U+06d5}\N{U+06cc} W \N{U+06cc} MMM",
     MMMMd => "MMMM d",
     MMMd => "d\N{U+06cc} MMM",
     Md => "MM-dd",
@@ -44,7 +45,8 @@
     yMd => "d/M/y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "\N{U+0647}\N{U+06d5}\N{U+0641}\N{U+062a}\N{U+06d5}\N{U+06cc} w \N{U+06cc} y"
+    "yw-count-one" => "\N{U+0647}\N{U+06d5}\N{U+0641}\N{U+062a}\N{U+06d5}\N{U+06cc} w \N{U+06cc} y",
+    "yw-count-other" => "\N{U+0647}\N{U+06d5}\N{U+0641}\N{U+062a}\N{U+06d5}\N{U+06cc} w \N{U+06cc} y"
   },
   code => "ckb-IQ",
   date_format_full => "y MMMM d, EEEE",
@@ -261,5 +263,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-one" => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd/MM",
@@ -46,7 +47,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'week' w 'of' y"
+    "yw-count-one" => "'week' w 'of' y",
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "en-HK",
   date_format_full => "EEEE, d MMMM y",
@@ -263,5 +265,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

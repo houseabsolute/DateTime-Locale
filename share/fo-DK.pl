@@ -23,7 +23,8 @@
     MEd => "E dd.MM",
     MMM => "LLL",
     MMMEd => "E d. MMM",
-    MMMMW => "W. 'vika' '\N{U+00ed}' MMM",
+    "MMMMW-count-one" => "W. 'vika' '\N{U+00ed}' MMM",
+    "MMMMW-count-other" => "W. 'vika' '\N{U+00ed}' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     Md => "dd.MM",
@@ -44,7 +45,8 @@
     yMd => "dd.MM.y",
     yQQQ => "QQQ '\N{U+00ed}' y",
     yQQQQ => "QQQQ '\N{U+00ed}' y",
-    yw => "w. 'vika' '\N{U+00ed}' y"
+    "yw-count-one" => "w. 'vika' '\N{U+00ed}' y",
+    "yw-count-other" => "w. 'vika' '\N{U+00ed}' y"
   },
   code => "fo-DK",
   date_format_full => "EEEE, d. MMMM y",
@@ -261,5 +263,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

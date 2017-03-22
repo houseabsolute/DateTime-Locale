@@ -441,7 +441,13 @@ Western Frisian Netherlands locale.
    1995-12-22T09:05:02 = fr 22 Des
   -0010-09-15T04:44:23 = so 15 Sep
 
-=head3 MMMMW ('wike' W 'fan' MMM)
+=head3 MMMMW-count-one ('wike' W 'fan' MMM)
+
+   2008-02-05T18:30:30 = wike 1 fan Feb
+   1995-12-22T09:05:02 = wike 3 fan Des
+  -0010-09-15T04:44:23 = wike 2 fan Sep
+
+=head3 MMMMW-count-other ('wike' W 'fan' MMM)
 
    2008-02-05T18:30:30 = wike 1 fan Feb
    1995-12-22T09:05:02 = wike 3 fan Des
@@ -567,7 +573,13 @@ Western Frisian Netherlands locale.
    1995-12-22T09:05:02 = 4e fearnsjier 1995
   -0010-09-15T04:44:23 = 3e fearnsjier -10
 
-=head3 yw ('wike' w 'fan' y)
+=head3 yw-count-one ('wike' w 'fan' y)
+
+   2008-02-05T18:30:30 = wike 6 fan 2008
+   1995-12-22T09:05:02 = wike 51 fan 1995
+  -0010-09-15T04:44:23 = wike 37 fan -10
+
+=head3 yw-count-other ('wike' w 'fan' y)
 
    2008-02-05T18:30:30 = wike 6 fan 2008
    1995-12-22T09:05:02 = wike 51 fan 1995

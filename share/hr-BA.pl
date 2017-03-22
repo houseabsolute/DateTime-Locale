@@ -24,7 +24,9 @@
     MMM => "LLL",
     MMMEd => "E, d. MMM",
     MMMMEd => "E, d. MMMM",
-    MMMMW => "W. 'tjedan' 'u' MMM",
+    "MMMMW-count-few" => "W. 'tjedan' 'u' MMM",
+    "MMMMW-count-one" => "W. 'tjedan' 'u' MMM",
+    "MMMMW-count-other" => "W. 'tjedan' 'u' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     MMdd => "dd. MM.",
@@ -47,7 +49,9 @@
     yMd => "dd. MM. y.",
     yQQQ => "QQQ y.",
     yQQQQ => "QQQQ y.",
-    yw => "w. 'tjedan' 'u' y."
+    "yw-count-few" => "w. 'tjedan' 'u' y.",
+    "yw-count-one" => "w. 'tjedan' 'u' y.",
+    "yw-count-other" => "w. 'tjedan' 'u' y."
   },
   code => "hr-BA",
   date_format_full => "EEEE, d. MMMM y.",
@@ -264,5 +268,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

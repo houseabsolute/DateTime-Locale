@@ -24,7 +24,7 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "M\N{U+6708}d\N{U+65e5}E",
-    MMMMW => "MMM\N{U+7b2c}W\N{U+5468}",
+    "MMMMW-count-other" => "MMM\N{U+7b2c}W\N{U+5468}",
     MMMMd => "M\N{U+6708}d\N{U+65e5}",
     MMMMdd => "M\N{U+6708}d\N{U+65e5}",
     MMMd => "M\N{U+6708}d\N{U+65e5}",
@@ -48,7 +48,7 @@
     yMd => "d/M/y",
     yQQQ => "y\N{U+5e74}\N{U+7b2c}Q\N{U+5b63}\N{U+5ea6}",
     yQQQQ => "y\N{U+5e74}\N{U+7b2c}Q\N{U+5b63}\N{U+5ea6}",
-    yw => "y\N{U+5e74}\N{U+7b2c}w\N{U+5468}"
+    "yw-count-other" => "y\N{U+5e74}\N{U+7b2c}w\N{U+5468}"
   },
   code => "zh-Hans-HK",
   date_format_full => "y\N{U+5e74}M\N{U+6708}d\N{U+65e5}EEEE",
@@ -265,5 +265,5 @@
   time_format_medium => "ah:mm:ss",
   time_format_short => "ah:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

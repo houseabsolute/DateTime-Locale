@@ -441,7 +441,13 @@ Nepali locale.
    1995-12-22T09:05:02 = डिसेम्बर 22, शुक्र
   -0010-09-15T04:44:23 = सेप्टेम्बर 15, शनि
 
-=head3 MMMMW ('week' W 'of' MMM)
+=head3 MMMMW-count-one ('week' W 'of' MMM)
+
+   2008-02-05T18:30:30 = week 1 of फेब्रुअरी
+   1995-12-22T09:05:02 = week 3 of डिसेम्बर
+  -0010-09-15T04:44:23 = week 2 of सेप्टेम्बर
+
+=head3 MMMMW-count-other ('week' W 'of' MMM)
 
    2008-02-05T18:30:30 = week 1 of फेब्रुअरी
    1995-12-22T09:05:02 = week 3 of डिसेम्बर
@@ -567,7 +573,13 @@ Nepali locale.
    1995-12-22T09:05:02 = 1995 चौथो सत्र
   -0010-09-15T04:44:23 = -10 तेस्रो सत्र
 
-=head3 yw ('week' w 'of' y)
+=head3 yw-count-one ('week' w 'of' y)
+
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
+
+=head3 yw-count-other ('week' w 'of' y)
 
    2008-02-05T18:30:30 = week 6 of 2008
    1995-12-22T09:05:02 = week 51 of 1995

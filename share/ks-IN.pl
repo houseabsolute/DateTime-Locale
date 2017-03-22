@@ -24,7 +24,7 @@
     MMM => "LLL",
     MMMEd => "E, MMM d",
     MMMMEd => "E, MMMM d",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "MMMM d",
     MMMd => "d-MMM",
     Md => "M/d",
@@ -45,7 +45,7 @@
     yMd => "y-MM-dd",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "ks-IN",
   date_format_full => "EEEE, MMMM d, y",
@@ -262,5 +262,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

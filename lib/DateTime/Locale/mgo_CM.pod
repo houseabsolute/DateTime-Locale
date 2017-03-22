@@ -441,7 +441,7 @@ Metaʼ Cameroon locale.
    1995-12-22T09:05:02 = iməg krizmed 22, Aneg 6
   -0010-09-15T04:44:23 = iməg kud 15, Aneg 7
 
-=head3 MMMMW ('week' W 'of' MMMM)
+=head3 MMMMW-count-other ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of imeg àbùbì
    1995-12-22T09:05:02 = week 3 of iməg krizmed
@@ -567,7 +567,7 @@ Metaʼ Cameroon locale.
    1995-12-22T09:05:02 = 1995 Q4
   -0010-09-15T04:44:23 = -10 Q3
 
-=head3 yw ('week' w 'of' y)
+=head3 yw-count-other ('week' w 'of' y)
 
    2008-02-05T18:30:30 = week 6 of 2008
    1995-12-22T09:05:02 = week 51 of 1995

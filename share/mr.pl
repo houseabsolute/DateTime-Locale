@@ -23,7 +23,8 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "MMM \N{U+091a}\N{U+093e} W \N{U+0930}\N{U+093e} \N{U+0906}\N{U+0920}\N{U+0935}\N{U+0921}\N{U+093e}",
+    "MMMMW-count-one" => "MMM \N{U+091a}\N{U+093e} W \N{U+0930}\N{U+093e} \N{U+0906}\N{U+0920}\N{U+0935}\N{U+0921}\N{U+093e}",
+    "MMMMW-count-other" => "MMM \N{U+091a}\N{U+093e} W \N{U+0930}\N{U+093e} \N{U+0906}\N{U+0920}\N{U+0935}\N{U+0921}\N{U+093e}",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd-MM",
@@ -46,7 +47,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "y \N{U+091a}\N{U+093e} w \N{U+0930}\N{U+093e} \N{U+0906}\N{U+0920}\N{U+0935}\N{U+0921}\N{U+093e}"
+    "yw-count-one" => "y \N{U+091a}\N{U+093e} w \N{U+0930}\N{U+093e} \N{U+0906}\N{U+0920}\N{U+0935}\N{U+0921}\N{U+093e}",
+    "yw-count-other" => "y \N{U+091a}\N{U+093e} w \N{U+0930}\N{U+093e} \N{U+0906}\N{U+0920}\N{U+0935}\N{U+0921}\N{U+093e}"
   },
   code => "mr",
   date_format_full => "EEEE, d MMMM, y",
@@ -263,5 +265,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

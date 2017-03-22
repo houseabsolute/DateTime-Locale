@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "'java' W 'e' MMM",
+    "MMMMW-count-one" => "'java' W 'e' MMM",
+    "MMMMW-count-other" => "'java' W 'e' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "d.M",
@@ -46,7 +47,8 @@
     yMd => "d.M.y",
     yQQQ => "QQQ, y",
     yQQQQ => "QQQQ, y",
-    yw => "'java' w 'e' y"
+    "yw-count-one" => "'java' w 'e' y",
+    "yw-count-other" => "'java' w 'e' y"
   },
   code => "sq-MK",
   date_format_full => "EEEE, d MMMM y",
@@ -263,5 +265,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

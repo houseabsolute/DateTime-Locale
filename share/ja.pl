@@ -27,7 +27,7 @@
     MMM => "M\N{U+6708}",
     MMMEEEEd => "M\N{U+6708}d\N{U+65e5}EEEE",
     MMMEd => "M\N{U+6708}d\N{U+65e5}(E)",
-    MMMMW => "M\N{U+6708}\N{U+7b2c}W\N{U+9031}",
+    "MMMMW-count-other" => "M\N{U+6708}\N{U+7b2c}W\N{U+9031}",
     MMMMd => "M\N{U+6708}d\N{U+65e5}",
     MMMd => "M\N{U+6708}d\N{U+65e5}",
     Md => "M/d",
@@ -51,7 +51,7 @@
     yMd => "y/M/d",
     yQQQ => "y/QQQ",
     yQQQQ => "y\N{U+5e74}QQQQ",
-    yw => "y\N{U+5e74}\N{U+7b2c}w\N{U+9031}"
+    "yw-count-other" => "y\N{U+5e74}\N{U+7b2c}w\N{U+9031}"
   },
   code => "ja",
   date_format_full => "y\N{U+5e74}M\N{U+6708}d\N{U+65e5}EEEE",
@@ -268,5 +268,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

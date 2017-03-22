@@ -23,7 +23,7 @@
     MEd => "dd.MM, E",
     MMM => "LLL",
     MMMEd => "d MMM, E",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "dd.MM",
@@ -44,7 +44,7 @@
     yMd => "dd.MM.y",
     yQQQ => "y \N{U+0569}, QQQ",
     yQQQQ => "y \N{U+0569}, QQQQ",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "hy",
   date_format_full => "y \N{U+0569}. MMMM d, EEEE",
@@ -261,5 +261,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

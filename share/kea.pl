@@ -24,7 +24,7 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d 'di' MMMM",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "d 'di' MMMM",
     MMMd => "d MMM",
     MMdd => "dd/MM",
@@ -48,7 +48,7 @@
     yMd => "dd/MM/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ 'di' y",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "kea",
   date_format_full => "EEEE, d 'di' MMMM 'di' y",
@@ -265,5 +265,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

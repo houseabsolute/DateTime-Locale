@@ -441,7 +441,13 @@ Basque locale.
    1995-12-22T09:05:02 = abe. 22, or.
   -0010-09-15T04:44:23 = ira. 15, lr.
 
-=head3 MMMMW (MMM'ren' 'astea' W)
+=head3 MMMMW-count-one (MMM W 'astea')
+
+   2008-02-05T18:30:30 = ots. 1 astea
+   1995-12-22T09:05:02 = abe. 3 astea
+  -0010-09-15T04:44:23 = ira. 2 astea
+
+=head3 MMMMW-count-other (MMM'ren' 'astea' W)
 
    2008-02-05T18:30:30 = ots.ren astea 1
    1995-12-22T09:05:02 = abe.ren astea 3
@@ -579,7 +585,13 @@ Basque locale.
    1995-12-22T09:05:02 = 1995(e)ko 4. hiruhilekoa
   -0010-09-15T04:44:23 = -10(e)ko 3. hiruhilekoa
 
-=head3 yw (w/y 'astea')
+=head3 yw-count-one (y 'urteko' w 'astea')
+
+   2008-02-05T18:30:30 = 2008 urteko 6 astea
+   1995-12-22T09:05:02 = 1995 urteko 51 astea
+  -0010-09-15T04:44:23 = -10 urteko 37 astea
+
+=head3 yw-count-other (w/y 'astea')
 
    2008-02-05T18:30:30 = 6/2008 astea
    1995-12-22T09:05:02 = 51/1995 astea

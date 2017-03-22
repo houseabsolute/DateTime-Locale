@@ -24,7 +24,9 @@
     MMM => "LLL",
     MMMEd => "E, d. MMM",
     MMMMEd => "E, d. MMMM",
-    MMMMW => "MMM W. 'ned\N{U+0113}\N{U+013c}a'",
+    "MMMMW-count-one" => "MMM W. 'ned\N{U+0113}\N{U+013c}a'",
+    "MMMMW-count-other" => "MMM W. 'ned\N{U+0113}\N{U+013c}a'",
+    "MMMMW-count-zero" => "MMM W. 'ned\N{U+0113}\N{U+013c}a'",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     Md => "dd.MM.",
@@ -46,7 +48,9 @@
     yMd => "y.MM.d.",
     yQQQ => "y. 'g'. QQQ",
     yQQQQ => "y. 'g'. QQQQ",
-    yw => "y. 'g'. w. 'ned\N{U+0113}\N{U+013c}a'"
+    "yw-count-one" => "y. 'g'. w. 'ned\N{U+0113}\N{U+013c}a'",
+    "yw-count-other" => "y. 'g'. w. 'ned\N{U+0113}\N{U+013c}a'",
+    "yw-count-zero" => "y. 'g'. w. 'ned\N{U+0113}\N{U+013c}a'"
   },
   code => "lv-LV",
   date_format_full => "EEEE, y. 'gada' d. MMMM",
@@ -263,5 +267,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

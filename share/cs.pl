@@ -26,7 +26,10 @@
     MMM => "LLL",
     MMMEd => "E d. M.",
     MMMMEd => "E d. MMMM",
-    MMMMW => "W. 't\N{U+00fd}den' MMMM",
+    "MMMMW-count-few" => "W. 't\N{U+00fd}den' MMMM",
+    "MMMMW-count-many" => "W. 't\N{U+00fd}den' MMMM",
+    "MMMMW-count-one" => "W. 't\N{U+00fd}den' MMMM",
+    "MMMMW-count-other" => "W. 't\N{U+00fd}den' MMMM",
     MMMMd => "d. MMMM",
     MMMd => "d. M.",
     Md => "d. M.",
@@ -49,7 +52,10 @@
     yMd => "d. M. y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "w. 't\N{U+00fd}den' 'roku' y"
+    "yw-count-few" => "w. 't\N{U+00fd}den' 'roku' y",
+    "yw-count-many" => "w. 't\N{U+00fd}den' 'roku' y",
+    "yw-count-one" => "w. 't\N{U+00fd}den' 'roku' y",
+    "yw-count-other" => "w. 't\N{U+00fd}den' 'roku' y"
   },
   code => "cs",
   date_format_full => "EEEE d. MMMM y",
@@ -266,5 +272,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

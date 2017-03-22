@@ -23,7 +23,8 @@
     MEd => "MM-dd, E",
     MMM => "LLL",
     MMMEd => "MMM d, E",
-    MMMMW => "\N{U+0627}\N{U+0648}\N{U+0646}\N{U+06cd} W \N{U+062f} MMM",
+    "MMMMW-count-one" => "\N{U+0627}\N{U+0648}\N{U+0646}\N{U+06cd} W \N{U+062f} MMM",
+    "MMMMW-count-other" => "\N{U+0627}\N{U+0648}\N{U+0646}\N{U+06cd} W \N{U+062f} MMM",
     MMMMd => "d MMMM",
     MMMd => "MMM d",
     Md => "M/d",
@@ -44,7 +45,8 @@
     yMd => "y-MM-dd",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "\N{U+0627}\N{U+0648}\N{U+0646}\N{U+06cd} w \N{U+062f} y"
+    "yw-count-one" => "\N{U+0627}\N{U+0648}\N{U+0646}\N{U+06cd} w \N{U+062f} y",
+    "yw-count-other" => "\N{U+0627}\N{U+0648}\N{U+0646}\N{U+06cd} w \N{U+062f} y"
   },
   code => "ps-AF",
   date_format_full => "EEEE \N{U+062f} y \N{U+062f} MMMM d",
@@ -261,5 +263,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

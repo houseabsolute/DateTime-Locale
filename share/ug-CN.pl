@@ -23,7 +23,8 @@
     MEd => "d-M\N{U+060c} E",
     MMM => "LLL",
     MMMEd => "d-MMM\N{U+060c} E",
-    MMMMW => "MMM\N{U+060c} W-\N{U+06be}\N{U+06d5}\N{U+067e}\N{U+062a}\N{U+06d5}",
+    "MMMMW-count-one" => "MMM\N{U+060c} W-\N{U+06be}\N{U+06d5}\N{U+067e}\N{U+062a}\N{U+06d5}",
+    "MMMMW-count-other" => "MMM\N{U+060c} W-\N{U+06be}\N{U+06d5}\N{U+067e}\N{U+062a}\N{U+06d5}",
     MMMMd => "d-MMMM",
     MMMd => "d-MMM",
     Md => "d-M",
@@ -44,7 +45,8 @@
     yMd => "y-d-M",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y\N{U+060c} w-\N{U+06be}\N{U+06d5}\N{U+067e}\N{U+062a}\N{U+06d5}"
+    "yw-count-one" => "y\N{U+060c} w-\N{U+06be}\N{U+06d5}\N{U+067e}\N{U+062a}\N{U+06d5}",
+    "yw-count-other" => "y\N{U+060c} w-\N{U+06be}\N{U+06d5}\N{U+067e}\N{U+062a}\N{U+06d5}"
   },
   code => "ug-CN",
   date_format_full => "y d-MMMM\N{U+060c} EEEE",
@@ -261,5 +263,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

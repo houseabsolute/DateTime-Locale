@@ -447,7 +447,13 @@ Estonian Estonia locale.
    1995-12-22T09:05:02 = R, 22. detsember
   -0010-09-15T04:44:23 = L, 15. september
 
-=head3 MMMMW (MMM (W. 'nädal'))
+=head3 MMMMW-count-one (MMM (W. 'nädal'))
+
+   2008-02-05T18:30:30 = veebr (1. nädal)
+   1995-12-22T09:05:02 = dets (3. nädal)
+  -0010-09-15T04:44:23 = sept (2. nädal)
+
+=head3 MMMMW-count-other (MMM (W. 'nädal'))
 
    2008-02-05T18:30:30 = veebr (1. nädal)
    1995-12-22T09:05:02 = dets (3. nädal)
@@ -579,7 +585,13 @@ Estonian Estonia locale.
    1995-12-22T09:05:02 = 4. kvartal 1995
   -0010-09-15T04:44:23 = 3. kvartal -10
 
-=head3 yw (y (w. 'nädal'))
+=head3 yw-count-one (y (w. 'nädal'))
+
+   2008-02-05T18:30:30 = 2008 (6. nädal)
+   1995-12-22T09:05:02 = 1995 (51. nädal)
+  -0010-09-15T04:44:23 = -10 (37. nädal)
+
+=head3 yw-count-other (y (w. 'nädal'))
 
    2008-02-05T18:30:30 = 2008 (6. nädal)
    1995-12-22T09:05:02 = 1995 (51. nädal)

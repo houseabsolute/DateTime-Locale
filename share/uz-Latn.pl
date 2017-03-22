@@ -23,7 +23,8 @@
     MEd => "E, dd/MM",
     MMM => "LLL",
     MMMEd => "E, d-MMM",
-    MMMMW => "MMM, W-'hafta'",
+    "MMMMW-count-one" => "MMM, W-'hafta'",
+    "MMMMW-count-other" => "MMM, W-'hafta'",
     MMMMd => "d-MMMM",
     MMMd => "d-MMM",
     Md => "dd/MM",
@@ -44,7 +45,8 @@
     yMd => "dd/MM/y",
     yQQQ => "y, QQQ",
     yQQQQ => "y, QQQQ",
-    yw => "y, w-'hafta'"
+    "yw-count-one" => "y, w-'hafta'",
+    "yw-count-other" => "y, w-'hafta'"
   },
   code => "uz-Latn",
   date_format_full => "EEEE, d-MMMM, y",
@@ -261,5 +263,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

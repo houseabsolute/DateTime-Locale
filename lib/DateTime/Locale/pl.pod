@@ -465,7 +465,25 @@ Polish locale.
    1995-12-22T09:05:02 = pt., 22 grudnia
   -0010-09-15T04:44:23 = sob., 15 września
 
-=head3 MMMMW (MMM, 'tydz'. W)
+=head3 MMMMW-count-few (MMM, 'tydz'. W)
+
+   2008-02-05T18:30:30 = lut, tydz. 1
+   1995-12-22T09:05:02 = gru, tydz. 3
+  -0010-09-15T04:44:23 = wrz, tydz. 2
+
+=head3 MMMMW-count-many (MMM, 'tydz'. W)
+
+   2008-02-05T18:30:30 = lut, tydz. 1
+   1995-12-22T09:05:02 = gru, tydz. 3
+  -0010-09-15T04:44:23 = wrz, tydz. 2
+
+=head3 MMMMW-count-one (MMM, 'tydz'. W)
+
+   2008-02-05T18:30:30 = lut, tydz. 1
+   1995-12-22T09:05:02 = gru, tydz. 3
+  -0010-09-15T04:44:23 = wrz, tydz. 2
+
+=head3 MMMMW-count-other (MMM, 'tydz'. W)
 
    2008-02-05T18:30:30 = lut, tydz. 1
    1995-12-22T09:05:02 = gru, tydz. 3
@@ -603,7 +621,25 @@ Polish locale.
    1995-12-22T09:05:02 = IV kwartał 1995
   -0010-09-15T04:44:23 = III kwartał -10
 
-=head3 yw (y, 'tydz'. w)
+=head3 yw-count-few (y, 'tydz'. w)
+
+   2008-02-05T18:30:30 = 2008, tydz. 6
+   1995-12-22T09:05:02 = 1995, tydz. 51
+  -0010-09-15T04:44:23 = -10, tydz. 37
+
+=head3 yw-count-many (y, 'tydz'. w)
+
+   2008-02-05T18:30:30 = 2008, tydz. 6
+   1995-12-22T09:05:02 = 1995, tydz. 51
+  -0010-09-15T04:44:23 = -10, tydz. 37
+
+=head3 yw-count-one (y, 'tydz'. w)
+
+   2008-02-05T18:30:30 = 2008, tydz. 6
+   1995-12-22T09:05:02 = 1995, tydz. 51
+  -0010-09-15T04:44:23 = -10, tydz. 37
+
+=head3 yw-count-other (y, 'tydz'. w)
 
    2008-02-05T18:30:30 = 2008, tydz. 6
    1995-12-22T09:05:02 = 1995, tydz. 51

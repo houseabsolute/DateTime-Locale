@@ -23,7 +23,7 @@
     MEd => "MM-dd, E",
     MMM => "MMM",
     MMMEd => "E d MMM",
-    MMMMW => "'week' W 'of' MMM",
+    "MMMMW-count-other" => "'week' W 'of' MMM",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "d/M",
@@ -44,7 +44,7 @@
     yMd => "y-MM-dd",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "zgh-MA",
   date_format_full => "EEEE d MMMM y",
@@ -261,5 +261,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

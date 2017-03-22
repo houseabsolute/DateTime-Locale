@@ -24,7 +24,8 @@
     MMM => "MMM",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "\N{U+03b5}\N{U+03b2}\N{U+03b4}\N{U+03bf}\N{U+03bc}\N{U+03ac}\N{U+03b4}\N{U+03b1} W \N{U+03c4}\N{U+03bf}\N{U+03c5} MMM",
+    "MMMMW-count-one" => "\N{U+03b5}\N{U+03b2}\N{U+03b4}\N{U+03bf}\N{U+03bc}\N{U+03ac}\N{U+03b4}\N{U+03b1} W \N{U+03c4}\N{U+03bf}\N{U+03c5} MMM",
+    "MMMMW-count-other" => "\N{U+03b5}\N{U+03b2}\N{U+03b4}\N{U+03bf}\N{U+03bc}\N{U+03ac}\N{U+03b4}\N{U+03b1} W \N{U+03c4}\N{U+03bf}\N{U+03c5} MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d/M",
@@ -45,7 +46,8 @@
     yMd => "d/M/y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "\N{U+03b5}\N{U+03b2}\N{U+03b4}\N{U+03bf}\N{U+03bc}\N{U+03ac}\N{U+03b4}\N{U+03b1} w \N{U+03c4}\N{U+03bf}\N{U+03c5} y"
+    "yw-count-one" => "\N{U+03b5}\N{U+03b2}\N{U+03b4}\N{U+03bf}\N{U+03bc}\N{U+03ac}\N{U+03b4}\N{U+03b1} w \N{U+03c4}\N{U+03bf}\N{U+03c5} y",
+    "yw-count-other" => "\N{U+03b5}\N{U+03b2}\N{U+03b4}\N{U+03bf}\N{U+03bc}\N{U+03ac}\N{U+03b4}\N{U+03b1} w \N{U+03c4}\N{U+03bf}\N{U+03c5} y"
   },
   code => "el-GR",
   date_format_full => "EEEE, d MMMM y",
@@ -262,5 +264,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

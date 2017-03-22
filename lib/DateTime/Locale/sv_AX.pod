@@ -447,7 +447,13 @@ Swedish Åland Islands locale.
    1995-12-22T09:05:02 = fre 22 december
   -0010-09-15T04:44:23 = lör 15 september
 
-=head3 MMMMW ('vecka' W 'i' MMM)
+=head3 MMMMW-count-one ('vecka' W 'i' MMM)
+
+   2008-02-05T18:30:30 = vecka 1 i feb.
+   1995-12-22T09:05:02 = vecka 3 i dec.
+  -0010-09-15T04:44:23 = vecka 2 i sep.
+
+=head3 MMMMW-count-other ('vecka' W 'i' MMM)
 
    2008-02-05T18:30:30 = vecka 1 i feb.
    1995-12-22T09:05:02 = vecka 3 i dec.
@@ -591,7 +597,13 @@ Swedish Åland Islands locale.
    1995-12-22T09:05:02 = 4:e kvartalet 1995
   -0010-09-15T04:44:23 = 3:e kvartalet -10
 
-=head3 yw ('vecka' w, y)
+=head3 yw-count-one ('vecka' w, y)
+
+   2008-02-05T18:30:30 = vecka 6, 2008
+   1995-12-22T09:05:02 = vecka 51, 1995
+  -0010-09-15T04:44:23 = vecka 37, -10
+
+=head3 yw-count-other ('vecka' w, y)
 
    2008-02-05T18:30:30 = vecka 6, 2008
    1995-12-22T09:05:02 = vecka 51, 1995

@@ -23,7 +23,8 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "MMM \N{U+0aa8}\N{U+0abe} W \N{U+0a85}\N{U+0aa0}\N{U+0ab5}\N{U+0abe}\N{U+0aa1}\N{U+0abf}\N{U+0aaf}\N{U+0abe}",
+    "MMMMW-count-one" => "MMM \N{U+0aa8}\N{U+0abe} W \N{U+0a85}\N{U+0aa0}\N{U+0ab5}\N{U+0abe}\N{U+0aa1}\N{U+0abf}\N{U+0aaf}\N{U+0abe}",
+    "MMMMW-count-other" => "MMM \N{U+0aa8}\N{U+0abe} W \N{U+0a85}\N{U+0aa0}\N{U+0ab5}\N{U+0abe}\N{U+0aa1}\N{U+0abf}\N{U+0aaf}\N{U+0abe}",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd-MM",
@@ -46,7 +47,8 @@
     yMd => "d/M/y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y \N{U+0aa8}\N{U+0abe} w \N{U+0a85}\N{U+0aa0}\N{U+0ab5}\N{U+0abe}\N{U+0aa1}\N{U+0abf}\N{U+0aaf}\N{U+0abe}"
+    "yw-count-one" => "y \N{U+0aa8}\N{U+0abe} w \N{U+0a85}\N{U+0aa0}\N{U+0ab5}\N{U+0abe}\N{U+0aa1}\N{U+0abf}\N{U+0aaf}\N{U+0abe}",
+    "yw-count-other" => "y \N{U+0aa8}\N{U+0abe} w \N{U+0a85}\N{U+0aa0}\N{U+0ab5}\N{U+0abe}\N{U+0aa1}\N{U+0abf}\N{U+0aaf}\N{U+0abe}"
   },
   code => "gu-IN",
   date_format_full => "EEEE, d MMMM, y",
@@ -263,5 +265,5 @@
   time_format_medium => "hh:mm:ss a",
   time_format_short => "hh:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

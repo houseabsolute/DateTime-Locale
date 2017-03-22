@@ -23,7 +23,7 @@
     MEd => "E, d-M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "'week' W 'of' MMM",
+    "MMMMW-count-other" => "'week' W 'of' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd/MM",
@@ -45,7 +45,7 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "ms-BN",
   date_format_full => "dd MMMM y",
@@ -262,5 +262,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

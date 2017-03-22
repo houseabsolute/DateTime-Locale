@@ -129,7 +129,7 @@ The available locales are:
  ckb-IQ           Central Kurdish Iraq                      کوردیی ناوەندی عێراق
  ckb-IR           Central Kurdish Iran                      کوردیی ناوەندی ئێران
  cs               Czech                                     čeština
- cs-CZ            Czech Czech Republic                      čeština Česká republika
+ cs-CZ            Czech Czechia                             čeština Česko
  cu               Church Slavic                             cu
  cu-RU            Church Slavic Russia                      cu RU
  cy               Welsh                                     Cymraeg
@@ -278,6 +278,7 @@ The available locales are:
  es-AR            Spanish Argentina                         español Argentina
  es-BO            Spanish Bolivia                           español Bolivia
  es-BR            Spanish Brazil                            español Brasil
+ es-BZ            Spanish Belize                            español Belice
  es-CL            Spanish Chile                             español Chile
  es-CO            Spanish Colombia                          español Colombia
  es-CR            Spanish Costa Rica                        español Costa Rica
@@ -420,6 +421,7 @@ The available locales are:
  it-CH            Italian Switzerland                       italiano Svizzera
  it-IT            Italian Italy                             italiano Italia
  it-SM            Italian San Marino                        italiano San Marino
+ it-VA            Italian Vatican City                      italiano Città del Vaticano
  ja               Japanese                                  日本語
  ja-JP            Japanese Japan                            日本語 日本
  jgo              Ngomba                                    Ndaꞌa

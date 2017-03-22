@@ -24,7 +24,8 @@
     MMM => "MMMM",
     MMMEd => "E, d. MMM",
     MMMMEd => "E, d. MMMM",
-    MMMMW => "MMM (W. 'n\N{U+00e4}dal')",
+    "MMMMW-count-one" => "MMM (W. 'n\N{U+00e4}dal')",
+    "MMMMW-count-other" => "MMM (W. 'n\N{U+00e4}dal')",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     Md => "d.M",
@@ -46,7 +47,8 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "y (w. 'n\N{U+00e4}dal')"
+    "yw-count-one" => "y (w. 'n\N{U+00e4}dal')",
+    "yw-count-other" => "y (w. 'n\N{U+00e4}dal')"
   },
   code => "et-EE",
   date_format_full => "EEEE, d. MMMM y",
@@ -263,5 +265,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

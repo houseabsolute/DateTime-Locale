@@ -24,7 +24,10 @@
     MEd => "E, d. M.",
     MMM => "LLL",
     MMMEd => "E, d. MMM",
-    MMMMW => "W. 'teden' 'v' MMM",
+    "MMMMW-count-few" => "W. 'teden' 'v' MMM",
+    "MMMMW-count-one" => "W. 'teden' 'v' MMM",
+    "MMMMW-count-other" => "W. 'teden' 'v' MMM",
+    "MMMMW-count-two" => "W. 'teden' 'v' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     Md => "d. M.",
@@ -45,7 +48,10 @@
     yMd => "d. M. y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "w. 'teden' 'v' y"
+    "yw-count-few" => "w. 'teden' 'v' y",
+    "yw-count-one" => "w. 'teden' 'v' y",
+    "yw-count-other" => "w. 'teden' 'v' y",
+    "yw-count-two" => "w. 'teden' 'v' y"
   },
   code => "sl-SI",
   date_format_full => "EEEE, dd. MMMM y",
@@ -262,5 +268,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

@@ -465,7 +465,13 @@ Catalan locale.
    1995-12-22T09:05:02 = dv., 22 de desembre
   -0010-09-15T04:44:23 = ds., 15 de setembre
 
-=head3 MMMMW ('setmana' W MMMM)
+=head3 MMMMW-count-one ('setmana' W MMMM)
+
+   2008-02-05T18:30:30 = setmana 1 de febrer
+   1995-12-22T09:05:02 = setmana 3 de desembre
+  -0010-09-15T04:44:23 = setmana 2 de setembre
+
+=head3 MMMMW-count-other ('setmana' W MMMM)
 
    2008-02-05T18:30:30 = setmana 1 de febrer
    1995-12-22T09:05:02 = setmana 3 de desembre
@@ -603,7 +609,13 @@ Catalan locale.
    1995-12-22T09:05:02 = 4t trimestre 1995
   -0010-09-15T04:44:23 = 3r trimestre -10
 
-=head3 yw ('setmana' w 'de' y)
+=head3 yw-count-one ('setmana' w 'de' y)
+
+   2008-02-05T18:30:30 = setmana 6 de 2008
+   1995-12-22T09:05:02 = setmana 51 de 1995
+  -0010-09-15T04:44:23 = setmana 37 de -10
+
+=head3 yw-count-other ('setmana' w 'de' y)
 
    2008-02-05T18:30:30 = setmana 6 de 2008
    1995-12-22T09:05:02 = setmana 51 de 1995

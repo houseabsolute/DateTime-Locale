@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E, d. MMM",
     MMMMEd => "E, d. MMMM",
-    MMMMW => "'viku' W '\N{U+00ed}' MMM",
+    "MMMMW-count-one" => "'viku' W '\N{U+00ed}' MMM",
+    "MMMMW-count-other" => "'viku' W '\N{U+00ed}' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     Md => "d.M.",
@@ -45,7 +46,8 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'viku' w 'af' y"
+    "yw-count-one" => "'viku' w 'af' y",
+    "yw-count-other" => "'viku' w 'af' y"
   },
   code => "is",
   date_format_full => "EEEE, d. MMMM y",
@@ -262,5 +264,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

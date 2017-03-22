@@ -25,7 +25,10 @@
     MMM => "LLL",
     MMMEd => "E d. M.",
     MMMMEd => "E d. MMMM",
-    MMMMW => "W. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' MMM",
+    "MMMMW-count-few" => "W. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' MMM",
+    "MMMMW-count-many" => "W. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' MMM",
+    "MMMMW-count-one" => "W. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' MMM",
+    "MMMMW-count-other" => "W. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. M.",
     Md => "d. M.",
@@ -48,7 +51,10 @@
     yMd => "d. M. y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "w. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' 'roku' y"
+    "yw-count-few" => "w. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' 'roku' y",
+    "yw-count-many" => "w. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' 'roku' y",
+    "yw-count-one" => "w. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' 'roku' y",
+    "yw-count-other" => "w. 't\N{U+00fd}\N{U+017e}de\N{U+0148}' 'v' 'roku' y"
   },
   code => "sk",
   date_format_full => "EEEE, d. MMMM y",
@@ -265,5 +271,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

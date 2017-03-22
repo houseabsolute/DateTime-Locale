@@ -447,7 +447,7 @@ Indonesian locale.
    1995-12-22T09:05:02 = Jum, 22 Desember
   -0010-09-15T04:44:23 = Sab, 15 September
 
-=head3 MMMMW ('minggu' 'ke'-W MMM)
+=head3 MMMMW-count-other ('minggu' 'ke'-W MMM)
 
    2008-02-05T18:30:30 = minggu ke-1 Feb
    1995-12-22T09:05:02 = minggu ke-3 Des
@@ -573,7 +573,7 @@ Indonesian locale.
    1995-12-22T09:05:02 = Kuartal ke-4 1995
   -0010-09-15T04:44:23 = Kuartal ke-3 -10
 
-=head3 yw ('minggu' 'ke'-w y)
+=head3 yw-count-other ('minggu' 'ke'-w y)
 
    2008-02-05T18:30:30 = minggu ke-6 2008
    1995-12-22T09:05:02 = minggu ke-51 1995

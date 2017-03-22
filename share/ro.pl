@@ -24,7 +24,9 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' W 'din' MMM",
+    "MMMMW-count-few" => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' W 'din' MMM",
+    "MMMMW-count-one" => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' W 'din' MMM",
+    "MMMMW-count-other" => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' W 'din' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd.MM",
@@ -47,7 +49,9 @@
     yMd => "dd.MM.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' w 'din' y"
+    "yw-count-few" => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' w 'din' y",
+    "yw-count-one" => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' w 'din' y",
+    "yw-count-other" => "'s\N{U+0103}pt\N{U+0103}m\N{U+00e2}na' w 'din' y"
   },
   code => "ro",
   date_format_full => "EEEE, d MMMM y",
@@ -264,5 +268,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

@@ -27,7 +27,8 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "'setmana' W MMMM",
+    "MMMMW-count-one" => "'setmana' W MMMM",
+    "MMMMW-count-other" => "'setmana' W MMMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d/M",
@@ -50,7 +51,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'setmana' w 'de' y"
+    "yw-count-one" => "'setmana' w 'de' y",
+    "yw-count-other" => "'setmana' w 'de' y"
   },
   code => "ca-IT",
   date_format_full => "EEEE, d MMMM 'de' y",
@@ -267,5 +269,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

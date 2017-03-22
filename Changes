@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Rebuilt all locale data with CLDR 31, released on 2017-03-20.
+
+
 1.15     2017-03-15 (TRIAL RELEASE)
 
 - Most data is now stored in a share dir and only loaded as needed. This

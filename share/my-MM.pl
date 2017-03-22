@@ -24,7 +24,7 @@
     MMM => "LLL",
     MMMEd => "MMM d \N{U+101b}\N{U+1000}\N{U+103a} E\N{U+1014}\N{U+1031}\N{U+1037}",
     MMMMEd => "MMMM d \N{U+101b}\N{U+1000}\N{U+103a} E\N{U+1014}\N{U+1031}\N{U+1037}",
-    MMMMW => "MMM \N{U+101c} W \N{U+1015}\N{U+1010}\N{U+103a}\N{U+1019}\N{U+103c}\N{U+1031}\N{U+102c}\N{U+1000}\N{U+103a}",
+    "MMMMW-count-other" => "MMM \N{U+101c} W \N{U+1015}\N{U+1010}\N{U+103a}\N{U+1019}\N{U+103c}\N{U+1031}\N{U+102c}\N{U+1000}\N{U+103a}",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "d/M",
@@ -45,7 +45,7 @@
     yMd => "dd-MM-y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y \N{U+1001}\N{U+102f} w \N{U+1015}\N{U+1010}\N{U+103a}\N{U+1019}\N{U+103c}\N{U+1031}\N{U+102c}\N{U+1000}\N{U+103a}"
+    "yw-count-other" => "y \N{U+1001}\N{U+102f} w \N{U+1015}\N{U+1010}\N{U+103a}\N{U+1019}\N{U+103c}\N{U+1031}\N{U+102c}\N{U+1000}\N{U+103a}"
   },
   code => "my-MM",
   date_format_full => "EEEE d MMMM y",
@@ -262,5 +262,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

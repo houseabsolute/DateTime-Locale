@@ -441,7 +441,7 @@ Lingala Central African Republic locale.
    1995-12-22T09:05:02 = mtn 22 dsb
   -0010-09-15T04:44:23 = mps 15 stb
 
-=head3 MMMMW ('week' W 'of' MMMM)
+=head3 MMMMW-count-other ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of sánzá ya míbalé
    1995-12-22T09:05:02 = week 3 of sánzá ya zómi na míbalé
@@ -567,7 +567,7 @@ Lingala Central African Republic locale.
    1995-12-22T09:05:02 = sánzá mísáto ya mínei 1995
   -0010-09-15T04:44:23 = sánzá mísáto ya mísáto -10
 
-=head3 yw ('week' w 'of' y)
+=head3 yw-count-other ('week' w 'of' y)
 
    2008-02-05T18:30:30 = week 6 of 2008
    1995-12-22T09:05:02 = week 51 of 1995

@@ -23,7 +23,7 @@
     MEd => "M/d\N{U+ff08}E\N{U+ff09}",
     MMM => "LLL",
     MMMEd => "M\N{U+6708}d\N{U+65e5} E",
-    MMMMW => "M\N{U+6708}\N{U+7b2c}W\N{U+500b}\N{U+661f}\N{U+671f}",
+    "MMMMW-count-other" => "M\N{U+6708}\N{U+7b2c}W\N{U+500b}\N{U+661f}\N{U+671f}",
     MMMMd => "M\N{U+6708}d\N{U+65e5}",
     MMMd => "M\N{U+6708}d\N{U+65e5}",
     MMdd => "MM/dd",
@@ -46,7 +46,7 @@
     yMd => "y/M/d",
     yQQQ => "y\N{U+5e74}QQQ",
     yQQQQ => "y\N{U+5e74}QQQQ",
-    yw => "y\N{U+5e74}\N{U+7b2c}w\N{U+500b}\N{U+661f}\N{U+671f}"
+    "yw-count-other" => "y\N{U+5e74}\N{U+7b2c}w\N{U+500b}\N{U+661f}\N{U+671f}"
   },
   code => "yue",
   date_format_full => "y\N{U+5e74}M\N{U+6708}d\N{U+65e5} EEEE",
@@ -263,5 +263,5 @@
   time_format_medium => "ah:mm:ss",
   time_format_short => "ah:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

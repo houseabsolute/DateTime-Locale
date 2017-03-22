@@ -441,7 +441,13 @@ Finnish locale.
    1995-12-22T09:05:02 = pe 22. jouluk.
   -0010-09-15T04:44:23 = la 15. syysk.
 
-=head3 MMMMW (LLLL'n' W. 'viikko')
+=head3 MMMMW-count-one (LLLL'n' W. 'viikko')
+
+   2008-02-05T18:30:30 = helmikuun 1. viikko
+   1995-12-22T09:05:02 = joulukuun 3. viikko
+  -0010-09-15T04:44:23 = syyskuun 2. viikko
+
+=head3 MMMMW-count-other (LLLL'n' W. 'viikko')
 
    2008-02-05T18:30:30 = helmikuun 1. viikko
    1995-12-22T09:05:02 = joulukuun 3. viikko
@@ -579,7 +585,13 @@ Finnish locale.
    1995-12-22T09:05:02 = 4. neljännes 1995
   -0010-09-15T04:44:23 = 3. neljännes -10
 
-=head3 yw ('vuoden' y 'viikko' w)
+=head3 yw-count-one ('vuoden' y 'viikko' w)
+
+   2008-02-05T18:30:30 = vuoden 2008 viikko 6
+   1995-12-22T09:05:02 = vuoden 1995 viikko 51
+  -0010-09-15T04:44:23 = vuoden -10 viikko 37
+
+=head3 yw-count-other ('vuoden' y 'viikko' w)
 
    2008-02-05T18:30:30 = vuoden 2008 viikko 6
    1995-12-22T09:05:02 = vuoden 1995 viikko 51

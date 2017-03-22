@@ -447,7 +447,7 @@ Kabuverdianu Cape Verde locale.
    1995-12-22T09:05:02 = ses, 22 di Dizenbru
   -0010-09-15T04:44:23 = sab, 15 di Setenbru
 
-=head3 MMMMW ('week' W 'of' MMMM)
+=head3 MMMMW-count-other ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of Febreru
    1995-12-22T09:05:02 = week 3 of Dizenbru
@@ -591,7 +591,7 @@ Kabuverdianu Cape Verde locale.
    1995-12-22T09:05:02 = 4º trimestri di 1995
   -0010-09-15T04:44:23 = 3º trimestri di -10
 
-=head3 yw ('week' w 'of' y)
+=head3 yw-count-other ('week' w 'of' y)
 
    2008-02-05T18:30:30 = week 6 of 2008
    1995-12-22T09:05:02 = week 51 of 1995

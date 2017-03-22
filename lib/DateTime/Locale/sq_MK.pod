@@ -447,7 +447,13 @@ Albanian Macedonia locale.
    1995-12-22T09:05:02 = Pre, 22 dhjetor
   -0010-09-15T04:44:23 = Sht, 15 shtator
 
-=head3 MMMMW ('java' W 'e' MMM)
+=head3 MMMMW-count-one ('java' W 'e' MMM)
+
+   2008-02-05T18:30:30 = java 1 e shk
+   1995-12-22T09:05:02 = java 3 e dhj
+  -0010-09-15T04:44:23 = java 2 e sht
+
+=head3 MMMMW-count-other ('java' W 'e' MMM)
 
    2008-02-05T18:30:30 = java 1 e shk
    1995-12-22T09:05:02 = java 3 e dhj
@@ -579,7 +585,13 @@ Albanian Macedonia locale.
    1995-12-22T09:05:02 = tremujori i katërt, 1995
   -0010-09-15T04:44:23 = tremujori i tretë, -10
 
-=head3 yw ('java' w 'e' y)
+=head3 yw-count-one ('java' w 'e' y)
+
+   2008-02-05T18:30:30 = java 6 e 2008
+   1995-12-22T09:05:02 = java 51 e 1995
+  -0010-09-15T04:44:23 = java 37 e -10
+
+=head3 yw-count-other ('java' w 'e' y)
 
    2008-02-05T18:30:30 = java 6 e 2008
    1995-12-22T09:05:02 = java 51 e 1995

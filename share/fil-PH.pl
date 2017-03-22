@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E, MMM d",
     MMMMEd => "E, MMMM d",
-    MMMMW => "'linggo' W 'ng' MMM",
+    "MMMMW-count-one" => "'ika'-W 'linggo' 'ng' MMM",
+    "MMMMW-count-other" => "'linggo' W 'ng' MMM",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     Md => "M/d",
@@ -46,7 +47,8 @@
     yMd => "M/d/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'linggo' w 'ng' y"
+    "yw-count-one" => "'ika'-w 'linggo' 'ng' y",
+    "yw-count-other" => "'linggo' w 'ng' y"
   },
   code => "fil-PH",
   date_format_full => "EEEE, MMMM d, y",
@@ -263,5 +265,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

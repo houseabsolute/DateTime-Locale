@@ -441,7 +441,13 @@ French Tunisia locale.
    1995-12-22T09:05:02 = ven. 22 déc.
   -0010-09-15T04:44:23 = sam. 15 sept.
 
-=head3 MMMMW ('semaine' W 'de' MMM)
+=head3 MMMMW-count-one ('semaine' W 'de' MMM)
+
+   2008-02-05T18:30:30 = semaine 1 de févr.
+   1995-12-22T09:05:02 = semaine 3 de déc.
+  -0010-09-15T04:44:23 = semaine 2 de sept.
+
+=head3 MMMMW-count-other ('semaine' W 'de' MMM)
 
    2008-02-05T18:30:30 = semaine 1 de févr.
    1995-12-22T09:05:02 = semaine 3 de déc.
@@ -567,7 +573,13 @@ French Tunisia locale.
    1995-12-22T09:05:02 = 4e trimestre 1995
   -0010-09-15T04:44:23 = 3e trimestre -10
 
-=head3 yw ('semaine' w 'de' y)
+=head3 yw-count-one ('semaine' w 'de' y)
+
+   2008-02-05T18:30:30 = semaine 6 de 2008
+   1995-12-22T09:05:02 = semaine 51 de 1995
+  -0010-09-15T04:44:23 = semaine 37 de -10
+
+=head3 yw-count-other ('semaine' w 'de' y)
 
    2008-02-05T18:30:30 = semaine 6 de 2008
    1995-12-22T09:05:02 = semaine 51 de 1995

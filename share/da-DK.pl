@@ -24,7 +24,8 @@
     MMM => "MMM",
     MMMEd => "E d. MMM",
     MMMMEd => "E d. MMMM",
-    MMMMW => "'uge' W 'i' MMM",
+    "MMMMW-count-one" => "'uge' W 'i' MMM",
+    "MMMMW-count-other" => "'uge' W 'i' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     MMdd => "dd/MM",
@@ -47,7 +48,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'uge' w 'i' y"
+    "yw-count-one" => "'uge' w 'i' y",
+    "yw-count-other" => "'uge' w 'i' y"
   },
   code => "da-DK",
   date_format_full => "EEEE 'den' d. MMMM y",
@@ -264,5 +266,5 @@
   time_format_medium => "HH.mm.ss",
   time_format_short => "HH.mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

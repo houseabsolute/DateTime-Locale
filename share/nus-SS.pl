@@ -23,7 +23,7 @@
     MEd => "E\N{U+060c} d-M",
     MMM => "LLL",
     MMMEd => "E d MMM",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "d/M",
@@ -44,7 +44,7 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "nus-SS",
   date_format_full => "EEEE d MMMM y",
@@ -261,5 +261,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

@@ -441,7 +441,13 @@ Italian San Marino locale.
    1995-12-22T09:05:02 = ven 22 dic
   -0010-09-15T04:44:23 = sab 15 set
 
-=head3 MMMMW ('settimana' W 'di' MMM)
+=head3 MMMMW-count-one ('settimana' W 'di' MMM)
+
+   2008-02-05T18:30:30 = settimana 1 di feb
+   1995-12-22T09:05:02 = settimana 3 di dic
+  -0010-09-15T04:44:23 = settimana 2 di set
+
+=head3 MMMMW-count-other ('settimana' W 'di' MMM)
 
    2008-02-05T18:30:30 = settimana 1 di feb
    1995-12-22T09:05:02 = settimana 3 di dic
@@ -567,7 +573,13 @@ Italian San Marino locale.
    1995-12-22T09:05:02 = 4º trimestre 1995
   -0010-09-15T04:44:23 = 3º trimestre -10
 
-=head3 yw ('settimana' w 'del' y)
+=head3 yw-count-one ('settimana' w 'del' y)
+
+   2008-02-05T18:30:30 = settimana 6 del 2008
+   1995-12-22T09:05:02 = settimana 51 del 1995
+  -0010-09-15T04:44:23 = settimana 37 del -10
+
+=head3 yw-count-other ('settimana' w 'del' y)
 
    2008-02-05T18:30:30 = settimana 6 del 2008
    1995-12-22T09:05:02 = settimana 51 del 1995

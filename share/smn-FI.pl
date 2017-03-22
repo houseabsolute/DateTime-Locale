@@ -23,7 +23,9 @@
     MEd => "E d.M.",
     MMM => "LLL",
     MMMEd => "E, MMM d.",
-    MMMMW => "'okko' W, MMM",
+    "MMMMW-count-one" => "'okko' W, MMM",
+    "MMMMW-count-other" => "'okko' W, MMM",
+    "MMMMW-count-two" => "'okko' W, MMM",
     MMMMd => "MMMM d.",
     MMMd => "MMM d.",
     Md => "d.M.",
@@ -44,7 +46,9 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'okko' w, y"
+    "yw-count-one" => "'okko' w, y",
+    "yw-count-other" => "'okko' w, y",
+    "yw-count-two" => "'okko' w, y"
   },
   code => "smn-FI",
   date_format_full => "cccc, MMMM d. y",
@@ -261,5 +265,5 @@
   time_format_medium => "H.mm.ss",
   time_format_short => "H.mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

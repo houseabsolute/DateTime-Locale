@@ -447,7 +447,13 @@ German Belgium locale.
    1995-12-22T09:05:02 = Fr., 22. Dezember
   -0010-09-15T04:44:23 = Sa., 15. September
 
-=head3 MMMMW ('Woche' W 'im' MMM)
+=head3 MMMMW-count-one ('Woche' W 'im' MMM)
+
+   2008-02-05T18:30:30 = Woche 1 im Feb.
+   1995-12-22T09:05:02 = Woche 3 im Dez.
+  -0010-09-15T04:44:23 = Woche 2 im Sep.
+
+=head3 MMMMW-count-other ('Woche' W 'im' MMM)
 
    2008-02-05T18:30:30 = Woche 1 im Feb.
    1995-12-22T09:05:02 = Woche 3 im Dez.
@@ -597,7 +603,13 @@ German Belgium locale.
    1995-12-22T09:05:02 = 4. Quartal 1995
   -0010-09-15T04:44:23 = 3. Quartal -10
 
-=head3 yw ('Woche' w 'des' 'Jahres' y)
+=head3 yw-count-one ('Woche' w 'des' 'Jahres' y)
+
+   2008-02-05T18:30:30 = Woche 6 des Jahres 2008
+   1995-12-22T09:05:02 = Woche 51 des Jahres 1995
+  -0010-09-15T04:44:23 = Woche 37 des Jahres -10
+
+=head3 yw-count-other ('Woche' w 'des' 'Jahres' y)
 
    2008-02-05T18:30:30 = Woche 6 des Jahres 2008
    1995-12-22T09:05:02 = Woche 51 des Jahres 1995

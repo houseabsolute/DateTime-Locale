@@ -27,7 +27,10 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "MMM, 'tydz'. W",
+    "MMMMW-count-few" => "MMM, 'tydz'. W",
+    "MMMMW-count-many" => "MMM, 'tydz'. W",
+    "MMMMW-count-one" => "MMM, 'tydz'. W",
+    "MMMMW-count-other" => "MMM, 'tydz'. W",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d.MM",
@@ -50,7 +53,10 @@
     yMd => "d.MM.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "y, 'tydz'. w"
+    "yw-count-few" => "y, 'tydz'. w",
+    "yw-count-many" => "y, 'tydz'. w",
+    "yw-count-one" => "y, 'tydz'. w",
+    "yw-count-other" => "y, 'tydz'. w"
   },
   code => "pl",
   date_format_full => "EEEE, d MMMM y",
@@ -267,5 +273,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

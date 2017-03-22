@@ -23,7 +23,8 @@
     MEd => "E, M-d",
     MMM => "LLL",
     MMMEd => "E MMM d",
-    MMMMW => "MMM-'\N{U+044b}\N{U+043d}' W '\N{U+0434}\N{U+043e}\N{U+043b}\N{U+043e}\N{U+043e}' '\N{U+0445}\N{U+043e}\N{U+043d}\N{U+043e}\N{U+0433}'",
+    "MMMMW-count-one" => "MMM-'\N{U+044b}\N{U+043d}' W '\N{U+0434}\N{U+043e}\N{U+043b}\N{U+043e}\N{U+043e}' '\N{U+0445}\N{U+043e}\N{U+043d}\N{U+043e}\N{U+0433}'",
+    "MMMMW-count-other" => "MMM-'\N{U+044b}\N{U+043d}' W '\N{U+0434}\N{U+043e}\N{U+043b}\N{U+043e}\N{U+043e}' '\N{U+0445}\N{U+043e}\N{U+043d}\N{U+043e}\N{U+0433}'",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     Md => "M-d",
@@ -44,7 +45,8 @@
     yMd => "y-M-d",
     yQQQ => "y QQQ",
     yQQQQ => "y '\N{U+043e}\N{U+043d}\N{U+044b}' QQQQ",
-    yw => "y '\N{U+0436}\N{U+0438}\N{U+043b}\N{U+0438}\N{U+0439}\N{U+043d}' w '\N{U+0434}\N{U+043e}\N{U+043b}\N{U+043e}\N{U+043e}' '\N{U+0445}\N{U+043e}\N{U+043d}\N{U+043e}\N{U+0433}'"
+    "yw-count-one" => "y'\N{U+0436}\N{U+0438}\N{U+043b}\N{U+0438}\N{U+0439}\N{U+043d}' w '\N{U+0434}\N{U+043e}\N{U+043b}\N{U+043e}\N{U+043e}' '\N{U+0445}\N{U+043e}\N{U+043d}\N{U+043e}\N{U+0433}'",
+    "yw-count-other" => "y '\N{U+0436}\N{U+0438}\N{U+043b}\N{U+0438}\N{U+0439}\N{U+043d}' w '\N{U+0434}\N{U+043e}\N{U+043b}\N{U+043e}\N{U+043e}' '\N{U+0445}\N{U+043e}\N{U+043d}\N{U+043e}\N{U+0433}'"
   },
   code => "mn-MN",
   date_format_full => "EEEE, y '\N{U+043e}\N{U+043d}\N{U+044b}' MM '\N{U+0441}\N{U+0430}\N{U+0440}\N{U+044b}\N{U+043d}' d",
@@ -261,5 +263,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

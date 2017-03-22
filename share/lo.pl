@@ -23,7 +23,7 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E d MMM",
-    MMMMW => "\N{U+0ead}\N{U+0eb2}\N{U+0e97}\N{U+0eb4}\N{U+0e94}\N{U+0e97}\N{U+0eb5}\N{U+0ec8} W \N{U+0e82}\N{U+0ead}\N{U+0e87}\N{U+0ec0}\N{U+0e94}\N{U+0eb7}\N{U+0ead}\N{U+0e99} M",
+    "MMMMW-count-other" => "\N{U+0ead}\N{U+0eb2}\N{U+0e97}\N{U+0eb4}\N{U+0e94}\N{U+0e97}\N{U+0eb5}\N{U+0ec8} W \N{U+0e82}\N{U+0ead}\N{U+0e87}\N{U+0ec0}\N{U+0e94}\N{U+0eb7}\N{U+0ead}\N{U+0e99} M",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "d/M",
@@ -39,12 +39,12 @@
     yMEd => "E, d/M/y",
     yMMM => "MMM y",
     yMMMEd => "E, d MMM y",
-    yMMMM => "y MMMM",
+    yMMMM => "MMMM y",
     yMMMd => "d MMM y",
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "\N{U+0ead}\N{U+0eb2}\N{U+0e97}\N{U+0eb4}\N{U+0e94}\N{U+0e97}\N{U+0eb5}\N{U+0ec8} w \N{U+0e82}\N{U+0ead}\N{U+0e87}\N{U+0e9b}\N{U+0eb5} y"
+    "yw-count-other" => "\N{U+0ead}\N{U+0eb2}\N{U+0e97}\N{U+0eb4}\N{U+0e94}\N{U+0e97}\N{U+0eb5}\N{U+0ec8} w \N{U+0e82}\N{U+0ead}\N{U+0e87}\N{U+0e9b}\N{U+0eb5} y"
   },
   code => "lo",
   date_format_full => "EEEE \N{U+0e97}\N{U+0eb5} d MMMM G y",
@@ -261,5 +261,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

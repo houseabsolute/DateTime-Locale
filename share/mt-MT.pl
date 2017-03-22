@@ -23,7 +23,7 @@
     MEd => "E, M-d",
     MMM => "LLL",
     MMMEd => "E, d 'ta'\N{U+2019} MMM",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "d 'ta'\N{U+2019} MMMM",
     MMMd => "MMM d",
     Md => "MM-dd",
@@ -44,7 +44,7 @@
     yMd => "y-MM-dd",
     yQQQ => "QQQ - y",
     yQQQQ => "QQQQ - y",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "mt-MT",
   date_format_full => "EEEE, d 'ta'\N{U+2019} MMMM y",
@@ -261,5 +261,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

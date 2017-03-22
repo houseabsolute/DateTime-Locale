@@ -24,7 +24,10 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "W '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' MMM",
+    "MMMMW-count-few" => "W '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' MMM",
+    "MMMMW-count-many" => "W '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' MMM",
+    "MMMMW-count-one" => "W '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' MMM",
+    "MMMMW-count-other" => "W '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d.M",
@@ -45,7 +48,10 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "w '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' y"
+    "yw-count-few" => "w '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' y",
+    "yw-count-many" => "w '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' y",
+    "yw-count-one" => "w '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' y",
+    "yw-count-other" => "w '\N{U+0442}\N{U+044b}\N{U+0434}\N{U+0437}\N{U+0435}\N{U+043d}\N{U+044c}' y"
   },
   code => "be-BY",
   date_format_full => "EEEE, d MMMM y '\N{U+0433}'.",
@@ -262,5 +268,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

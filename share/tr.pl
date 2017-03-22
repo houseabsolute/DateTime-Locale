@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "d MMMM E",
     MMMMEd => "d MMMM E",
-    MMMMW => "MMMM 'ay\N{U+0131}n\N{U+0131}n' W. 'haftas\N{U+0131}'",
+    "MMMMW-count-one" => "MMMM 'ay\N{U+0131}n\N{U+0131}n' W. 'haftas\N{U+0131}'",
+    "MMMMW-count-other" => "MMMM 'ay\N{U+0131}n\N{U+0131}n' W. 'haftas\N{U+0131}'",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d/M",
@@ -47,7 +48,8 @@
     yMd => "dd.MM.y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y 'y\N{U+0131}l\N{U+0131}n\N{U+0131}n' w. 'haftas\N{U+0131}'"
+    "yw-count-one" => "y 'y\N{U+0131}l\N{U+0131}n\N{U+0131}n' w. 'haftas\N{U+0131}'",
+    "yw-count-other" => "y 'y\N{U+0131}l\N{U+0131}n\N{U+0131}n' w. 'haftas\N{U+0131}'"
   },
   code => "tr",
   date_format_full => "d MMMM y EEEE",
@@ -264,5 +266,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

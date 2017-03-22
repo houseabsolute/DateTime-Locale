@@ -23,7 +23,7 @@
     MEd => "MM-dd, E",
     MMM => "LLL",
     MMMEd => "MMM\N{U+0f5a}\N{U+0f7a}\N{U+0f66}\N{U+0f0b}d, E",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "MMMM\N{U+0f60}\N{U+0f72}\N{U+0f0b}\N{U+0f5a}\N{U+0f7a}\N{U+0f66}\N{U+0f0b}d",
     MMMd => "MMM\N{U+0f5a}\N{U+0f7a}\N{U+0f66}\N{U+0f0b}d",
     Md => "MM-dd",
@@ -45,7 +45,7 @@
     yMd => "y-MM-dd",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "bo-CN",
   date_format_full => "y MMMM\N{U+0f60}\N{U+0f72}\N{U+0f0b}\N{U+0f5a}\N{U+0f7a}\N{U+0f66}\N{U+0f0b}d, EEEE",
@@ -262,5 +262,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

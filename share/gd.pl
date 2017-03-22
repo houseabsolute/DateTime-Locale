@@ -23,7 +23,10 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "'seachdain' W MMMM",
+    "MMMMW-count-few" => "'seachdain' W MMMM",
+    "MMMMW-count-one" => "'seachdain' W MMMM",
+    "MMMMW-count-other" => "'seachdain' W MMMM",
+    "MMMMW-count-two" => "'seachdain' W MMMM",
     MMMMd => "d'mh' MMMM",
     MMMd => "d MMM",
     MMdd => "dd/MM",
@@ -46,7 +49,10 @@
     yMd => "M/d/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'seachdain' w 'dhe' y"
+    "yw-count-few" => "'seachdain' w 'dhe' y",
+    "yw-count-one" => "'seachdain' w 'dhe' y",
+    "yw-count-other" => "'seachdain' w 'dhe' y",
+    "yw-count-two" => "'seachdain' w 'dhe' y"
   },
   code => "gd",
   date_format_full => "EEEE, d'mh' MMMM y",
@@ -263,5 +269,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

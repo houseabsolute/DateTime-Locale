@@ -27,7 +27,7 @@
     MMMEd => "E d MMM",
     MMMMEEEEd => "EEEE\N{U+0e17}\N{U+0e35}\N{U+0e48} d MMMM",
     MMMMEd => "E d MMMM",
-    MMMMW => "\N{U+0e2a}\N{U+0e31}\N{U+0e1b}\N{U+0e14}\N{U+0e32}\N{U+0e2b}\N{U+0e4c}\N{U+0e17}\N{U+0e35}\N{U+0e48} W \N{U+0e02}\N{U+0e2d}\N{U+0e07} MMM",
+    "MMMMW-count-other" => "\N{U+0e2a}\N{U+0e31}\N{U+0e1b}\N{U+0e14}\N{U+0e32}\N{U+0e2b}\N{U+0e4c}\N{U+0e17}\N{U+0e35}\N{U+0e48} W \N{U+0e02}\N{U+0e2d}\N{U+0e07} MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d/M",
@@ -53,7 +53,7 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ G y",
-    yw => "\N{U+0e2a}\N{U+0e31}\N{U+0e1b}\N{U+0e14}\N{U+0e32}\N{U+0e2b}\N{U+0e4c}\N{U+0e17}\N{U+0e35}\N{U+0e48} w \N{U+0e02}\N{U+0e2d}\N{U+0e07} y"
+    "yw-count-other" => "\N{U+0e2a}\N{U+0e31}\N{U+0e1b}\N{U+0e14}\N{U+0e32}\N{U+0e2b}\N{U+0e4c}\N{U+0e17}\N{U+0e35}\N{U+0e48} w \N{U+0e02}\N{U+0e2d}\N{U+0e07} y"
   },
   code => "th",
   date_format_full => "EEEE\N{U+0e17}\N{U+0e35}\N{U+0e48} d MMMM G y",
@@ -270,5 +270,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

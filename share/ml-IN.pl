@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "MMM d, E",
     MMMMEd => "MMMM d, E",
-    MMMMW => "MMM - \N{U+0d06}\N{U+0d34}\N{U+0d4d}\N{U+0d1a} W",
+    "MMMMW-count-one" => "MMM - \N{U+0d06}\N{U+0d34}\N{U+0d4d}\N{U+0d1a} W",
+    "MMMMW-count-other" => "MMM - \N{U+0d06}\N{U+0d34}\N{U+0d4d}\N{U+0d1a} W",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     MMdd => "dd/MM",
@@ -47,7 +48,8 @@
     yMd => "d/M/y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y-\N{U+0d32}\N{U+0d46} \N{U+0d06}\N{U+0d34}\N{U+0d4d}\N{U+0d1a} w"
+    "yw-count-one" => "y-\N{U+0d32}\N{U+0d46} \N{U+0d06}\N{U+0d34}\N{U+0d4d}\N{U+0d1a} w",
+    "yw-count-other" => "y-\N{U+0d32}\N{U+0d46} \N{U+0d06}\N{U+0d34}\N{U+0d4d}\N{U+0d1a} w"
   },
   code => "ml-IN",
   date_format_full => "y, MMMM d, EEEE",
@@ -264,5 +266,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

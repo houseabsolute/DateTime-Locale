@@ -447,7 +447,7 @@ Vietnamese locale.
    1995-12-22T09:05:02 = Th 6, 22 tháng 12
   -0010-09-15T04:44:23 = Th 7, 15 tháng 9
 
-=head3 MMMMW ('tuần' W 'của' 'tháng' M)
+=head3 MMMMW-count-other ('tuần' W 'của' 'tháng' M)
 
    2008-02-05T18:30:30 = tuần 1 của tháng 2
    1995-12-22T09:05:02 = tuần 3 của tháng 12
@@ -591,7 +591,7 @@ Vietnamese locale.
    1995-12-22T09:05:02 = Quý 4 năm 1995
   -0010-09-15T04:44:23 = Quý 3 năm -10
 
-=head3 yw ('tuần' w 'của' 'năm' y)
+=head3 yw-count-other ('tuần' w 'của' 'năm' y)
 
    2008-02-05T18:30:30 = tuần 6 của năm 2008
    1995-12-22T09:05:02 = tuần 51 của năm 1995

@@ -23,7 +23,8 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "MMM W\N{U+0c35} \N{U+0c35}\N{U+0c3e}\N{U+0c30}\N{U+0c02}",
+    "MMMMW-count-one" => "MMM W\N{U+0c35} \N{U+0c35}\N{U+0c3e}\N{U+0c30}\N{U+0c02}",
+    "MMMMW-count-other" => "MMM W\N{U+0c35} \N{U+0c35}\N{U+0c3e}\N{U+0c30}\N{U+0c02}",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd-MM",
@@ -46,7 +47,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "y w\N{U+0c35} \N{U+0c35}\N{U+0c3e}\N{U+0c30}\N{U+0c02}"
+    "yw-count-one" => "y w\N{U+0c35} \N{U+0c35}\N{U+0c3e}\N{U+0c30}\N{U+0c02}",
+    "yw-count-other" => "y w\N{U+0c35} \N{U+0c35}\N{U+0c3e}\N{U+0c30}\N{U+0c02}"
   },
   code => "te",
   date_format_full => "d, MMMM y, EEEE",
@@ -263,5 +265,5 @@
   time_format_medium => "h:mm:ss a",
   time_format_short => "h:mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

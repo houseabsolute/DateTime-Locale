@@ -441,7 +441,31 @@ Irish Ireland locale.
    1995-12-22T09:05:02 = Aoine 22 Noll
   -0010-09-15T04:44:23 = Sath 15 MFómh
 
-=head3 MMMMW ('seachtain' 'a' W 'i' MMM)
+=head3 MMMMW-count-few ('seachtain' 'a' W 'i' MMM)
+
+   2008-02-05T18:30:30 = seachtain a 1 i Feabh
+   1995-12-22T09:05:02 = seachtain a 3 i Noll
+  -0010-09-15T04:44:23 = seachtain a 2 i MFómh
+
+=head3 MMMMW-count-many ('seachtain' 'a' W 'i' MMM)
+
+   2008-02-05T18:30:30 = seachtain a 1 i Feabh
+   1995-12-22T09:05:02 = seachtain a 3 i Noll
+  -0010-09-15T04:44:23 = seachtain a 2 i MFómh
+
+=head3 MMMMW-count-one ('seachtain' 'a' W 'i' MMM)
+
+   2008-02-05T18:30:30 = seachtain a 1 i Feabh
+   1995-12-22T09:05:02 = seachtain a 3 i Noll
+  -0010-09-15T04:44:23 = seachtain a 2 i MFómh
+
+=head3 MMMMW-count-other ('seachtain' 'a' W 'i' MMM)
+
+   2008-02-05T18:30:30 = seachtain a 1 i Feabh
+   1995-12-22T09:05:02 = seachtain a 3 i Noll
+  -0010-09-15T04:44:23 = seachtain a 2 i MFómh
+
+=head3 MMMMW-count-two ('seachtain' 'a' W 'i' MMM)
 
    2008-02-05T18:30:30 = seachtain a 1 i Feabh
    1995-12-22T09:05:02 = seachtain a 3 i Noll
@@ -567,7 +591,31 @@ Irish Ireland locale.
    1995-12-22T09:05:02 = 4ú ráithe 1995
   -0010-09-15T04:44:23 = 3ú ráithe -10
 
-=head3 yw ('seachtain' 'a' w 'i' y)
+=head3 yw-count-few ('seachtain' 'a' w 'i' y)
+
+   2008-02-05T18:30:30 = seachtain a 6 i 2008
+   1995-12-22T09:05:02 = seachtain a 51 i 1995
+  -0010-09-15T04:44:23 = seachtain a 37 i -10
+
+=head3 yw-count-many ('seachtain' 'a' w 'i' y)
+
+   2008-02-05T18:30:30 = seachtain a 6 i 2008
+   1995-12-22T09:05:02 = seachtain a 51 i 1995
+  -0010-09-15T04:44:23 = seachtain a 37 i -10
+
+=head3 yw-count-one ('seachtain' 'a' w 'i' y)
+
+   2008-02-05T18:30:30 = seachtain a 6 i 2008
+   1995-12-22T09:05:02 = seachtain a 51 i 1995
+  -0010-09-15T04:44:23 = seachtain a 37 i -10
+
+=head3 yw-count-other ('seachtain' 'a' w 'i' y)
+
+   2008-02-05T18:30:30 = seachtain a 6 i 2008
+   1995-12-22T09:05:02 = seachtain a 51 i 1995
+  -0010-09-15T04:44:23 = seachtain a 37 i -10
+
+=head3 yw-count-two ('seachtain' 'a' w 'i' y)
 
    2008-02-05T18:30:30 = seachtain a 6 i 2008
    1995-12-22T09:05:02 = seachtain a 51 i 1995

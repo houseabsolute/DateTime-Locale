@@ -23,7 +23,8 @@
     MEd => "M. d., E",
     MMM => "LLL",
     MMMEd => "MMM d., E",
-    MMMMW => "MMM W. 'hete'",
+    "MMMMW-count-one" => "MMM W. 'hete'",
+    "MMMMW-count-other" => "MMM W. 'hete'",
     MMMMd => "MMMM d.",
     MMMd => "MMM d.",
     Md => "M. d.",
@@ -45,7 +46,8 @@
     yMd => "y. MM. dd.",
     yQQQ => "y. QQQ",
     yQQQQ => "y. QQQQ",
-    yw => "y w. 'hete'"
+    "yw-count-one" => "y w. 'hete'",
+    "yw-count-other" => "y w. 'hete'"
   },
   code => "hu",
   date_format_full => "y. MMMM d., EEEE",
@@ -262,5 +264,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

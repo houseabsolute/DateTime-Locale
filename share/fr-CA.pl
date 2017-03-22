@@ -23,7 +23,8 @@
     MEd => "E M-d",
     MMM => "LLL",
     MMMEd => "E d MMM",
-    MMMMW => "'semaine' W 'de' MMM",
+    "MMMMW-count-one" => "'semaine' W 'de' MMM",
+    "MMMMW-count-other" => "'semaine' W 'de' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMd => "MM-d",
@@ -47,7 +48,8 @@
     yMd => "y-MM-dd",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'semaine' w 'de' y"
+    "yw-count-one" => "'semaine' w 'de' y",
+    "yw-count-other" => "'semaine' w 'de' y"
   },
   code => "fr-CA",
   date_format_full => "EEEE d MMMM y",
@@ -264,5 +266,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH 'h' mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

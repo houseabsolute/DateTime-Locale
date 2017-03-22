@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "ccc, d 'de' MMM",
     MMMMEd => "ccc, d 'de' MMMM",
-    MMMMW => "W.'\N{U+00aa}' 'semana' 'de' MMMM",
+    "MMMMW-count-one" => "W.'\N{U+00aa}' 'semana' 'de' MMMM",
+    "MMMMW-count-other" => "W.'\N{U+00aa}' 'semana' 'de' MMMM",
     MMMMd => "d 'de' MMMM",
     MMMd => "d 'de' MMM",
     MMdd => "dd/MM",
@@ -47,7 +48,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ 'de' y",
-    yw => "w.'\N{U+00aa}' 'semana' 'de' y"
+    "yw-count-one" => "w.'\N{U+00aa}' 'semana' 'de' y",
+    "yw-count-other" => "w.'\N{U+00aa}' 'semana' 'de' y"
   },
   code => "gl-ES",
   date_format_full => "EEEE, d 'de' MMMM 'de' y",
@@ -264,5 +266,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

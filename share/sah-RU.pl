@@ -23,7 +23,7 @@
     MEd => "MM-dd, E",
     MMM => "LLL",
     MMMEd => "MMM d, E",
-    MMMMW => "MMM W '\N{U+043d}\N{U+044d}\N{U+0434}\N{U+0438}\N{U+044d}\N{U+043b}\N{U+044d}\N{U+0442}\N{U+044d}'",
+    "MMMMW-count-other" => "MMM W '\N{U+043d}\N{U+044d}\N{U+0434}\N{U+0438}\N{U+044d}\N{U+043b}\N{U+044d}\N{U+0442}\N{U+044d}'",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     Md => "MM-dd",
@@ -44,7 +44,7 @@
     yMd => "y-MM-dd",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y '\N{U+0441}\N{U+044b}\N{U+043b}' w '\N{U+043d}\N{U+044d}\N{U+0434}\N{U+0438}\N{U+044d}\N{U+043b}\N{U+044d}\N{U+0442}\N{U+044d}'"
+    "yw-count-other" => "y '\N{U+0441}\N{U+044b}\N{U+043b}' w '\N{U+043d}\N{U+044d}\N{U+0434}\N{U+0438}\N{U+044d}\N{U+043b}\N{U+044d}\N{U+0442}\N{U+044d}'"
   },
   code => "sah-RU",
   date_format_full => "y '\N{U+0441}\N{U+044b}\N{U+043b}' MMMM d '\N{U+043a}\N{U+04af}\N{U+043d}\N{U+044d}', EEEE",
@@ -261,5 +261,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

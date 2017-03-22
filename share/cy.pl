@@ -23,7 +23,12 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "'wythnos' W 'o' MMM",
+    "MMMMW-count-few" => "'wythnos' W 'o' MMM",
+    "MMMMW-count-many" => "'wythnos' W 'o' MMM",
+    "MMMMW-count-one" => "'wythnos' W 'o' MMM",
+    "MMMMW-count-other" => "'wythnos' W 'o' MMM",
+    "MMMMW-count-two" => "'wythnos' W 'o' MMM",
+    "MMMMW-count-zero" => "'wythnos' W 'o' MMM",
     MMMMd => "MMMM d",
     MMMd => "d MMM",
     Md => "d/M",
@@ -45,7 +50,12 @@
     yQ => "Q y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'wythnos' w 'of' y"
+    "yw-count-few" => "'wythnos' w 'of' y",
+    "yw-count-many" => "'wythnos' w 'of' y",
+    "yw-count-one" => "'wythnos' w 'of' y",
+    "yw-count-other" => "'wythnos' w 'of' y",
+    "yw-count-two" => "'wythnos' w 'of' y",
+    "yw-count-zero" => "'wythnos' w 'of' y"
   },
   code => "cy",
   date_format_full => "EEEE, d MMMM y",
@@ -262,5 +272,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

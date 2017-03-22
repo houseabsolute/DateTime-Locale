@@ -23,7 +23,7 @@
     MEd => "E, M-d",
     MMM => "\N{U+0f66}\N{U+0fa4}\N{U+0fb1}\N{U+0f72}\N{U+0f0b}LLL",
     MMMEd => "E, \N{U+0f66}\N{U+0fa4}\N{U+0fb1}\N{U+0f72}\N{U+0f0b}LLL \N{U+0f5a}\N{U+0f7a}\N{U+0f0b}d",
-    MMMMW => "'week' W 'of' MMMM",
+    "MMMMW-count-other" => "'week' W 'of' MMMM",
     MMMMd => "MMMM d",
     MMMd => "\N{U+0f66}\N{U+0fa4}\N{U+0fb1}\N{U+0f72}\N{U+0f0b}LLL \N{U+0f5a}\N{U+0f7a}\N{U+0f0b}d",
     Md => "M-d",
@@ -44,7 +44,7 @@
     yMd => "y-M-d",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "'week' w 'of' y"
+    "yw-count-other" => "'week' w 'of' y"
   },
   code => "dz",
   date_format_full => "EEEE, \N{U+0f66}\N{U+0fa4}\N{U+0fb1}\N{U+0f72}\N{U+0f0b}\N{U+0f63}\N{U+0f7c}\N{U+0f0b}y MMMM \N{U+0f5a}\N{U+0f7a}\N{U+0f66}\N{U+0f0b}dd",
@@ -261,5 +261,5 @@
   time_format_medium => "\N{U+0f46}\N{U+0f74}\N{U+0f0b}\N{U+0f5a}\N{U+0f7c}\N{U+0f51}\N{U+0f0b}h:mm:ss a",
   time_format_short => "\N{U+0f46}\N{U+0f74}\N{U+0f0b}\N{U+0f5a}\N{U+0f7c}\N{U+0f51}\N{U+0f0b} h \N{U+0f66}\N{U+0f90}\N{U+0f62}\N{U+0f0b}\N{U+0f58}\N{U+0f0b} mm a",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

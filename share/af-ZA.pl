@@ -24,7 +24,8 @@
     MMM => "LLL",
     MMMEd => "E d MMM",
     MMMMEd => "E d MMMM",
-    MMMMW => "'week' W 'van' MMM",
+    "MMMMW-count-one" => "'week' W 'van' MMM",
+    "MMMMW-count-other" => "'week' W 'van' MMM",
     MMMMd => "d MMM",
     MMMd => "d MMM",
     Md => "dd-MM",
@@ -45,7 +46,8 @@
     yMd => "y-MM-dd",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'week' w 'van' y"
+    "yw-count-one" => "'week' w 'van' y",
+    "yw-count-other" => "'week' w 'van' y"
   },
   code => "af-ZA",
   date_format_full => "EEEE, dd MMMM y",
@@ -262,5 +264,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

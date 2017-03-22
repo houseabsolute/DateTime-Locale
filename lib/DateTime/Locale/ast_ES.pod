@@ -441,7 +441,13 @@ Asturian Spain locale.
    1995-12-22T09:05:02 = vie, 22 avi
   -0010-09-15T04:44:23 = sáb, 15 set
 
-=head3 MMMMW ('selmana' W 'de' MMM)
+=head3 MMMMW-count-one ('selmana' W 'de' MMM)
+
+   2008-02-05T18:30:30 = selmana 1 de feb
+   1995-12-22T09:05:02 = selmana 3 de avi
+  -0010-09-15T04:44:23 = selmana 2 de set
+
+=head3 MMMMW-count-other ('selmana' W 'de' MMM)
 
    2008-02-05T18:30:30 = selmana 1 de feb
    1995-12-22T09:05:02 = selmana 3 de avi
@@ -567,7 +573,13 @@ Asturian Spain locale.
    1995-12-22T09:05:02 = 4u trimestre de 1995
   -0010-09-15T04:44:23 = 3er trimestre de -10
 
-=head3 yw ('selmana' w 'de' y)
+=head3 yw-count-one ('selmana' w 'de' y)
+
+   2008-02-05T18:30:30 = selmana 6 de 2008
+   1995-12-22T09:05:02 = selmana 51 de 1995
+  -0010-09-15T04:44:23 = selmana 37 de -10
+
+=head3 yw-count-other ('selmana' w 'de' y)
 
    2008-02-05T18:30:30 = selmana 6 de 2008
    1995-12-22T09:05:02 = selmana 51 de 1995

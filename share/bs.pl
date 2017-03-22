@@ -24,7 +24,9 @@
     MMM => "LLL",
     MMMEd => "E, d. MMM",
     MMMMEd => "E, d. MMMM",
-    MMMMW => "W. 'sedmica' 'u' MMM",
+    "MMMMW-count-few" => "W. 'sedmica' 'u' MMM",
+    "MMMMW-count-one" => "W. 'sedmica' 'u' MMM",
+    "MMMMW-count-other" => "W. 'sedmica' 'u' MMM",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     MMdd => "d. M.",
@@ -47,7 +49,9 @@
     yMd => "d.M.y.",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "w. 'sedmica' 'u' y."
+    "yw-count-few" => "w. 'sedmica' 'u' y.",
+    "yw-count-one" => "w. 'sedmica' 'u' y.",
+    "yw-count-other" => "w. 'sedmica' 'u' y."
   },
   code => "bs",
   date_format_full => "EEEE, d. MMMM y.",
@@ -264,5 +268,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

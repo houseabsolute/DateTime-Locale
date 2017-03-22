@@ -23,7 +23,8 @@
     MEd => "M-d, E",
     MMM => "LLL",
     MMMEd => "MMM d E",
-    MMMMW => "MMM \N{U+0dc3}\N{U+0dad}\N{U+0dd2}\N{U+0dba} W",
+    "MMMMW-count-one" => "MMM \N{U+0dc3}\N{U+0dad}\N{U+0dd2}\N{U+0dba} W",
+    "MMMMW-count-other" => "MMM \N{U+0dc3}\N{U+0dad}\N{U+0dd2}\N{U+0dba} W",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     Md => "M-d",
@@ -44,7 +45,8 @@
     yMd => "y-M-d",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "y \N{U+0dc3}\N{U+0dad}\N{U+0dd2}\N{U+0dba} w"
+    "yw-count-one" => "y \N{U+0dc3}\N{U+0dad}\N{U+0dd2}\N{U+0dba} w",
+    "yw-count-other" => "y \N{U+0dc3}\N{U+0dad}\N{U+0dd2}\N{U+0dba} w"
   },
   code => "si-LK",
   date_format_full => "y MMMM d, EEEE",
@@ -261,5 +263,5 @@
   time_format_medium => "HH.mm.ss",
   time_format_short => "HH.mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

@@ -23,7 +23,8 @@
     MEd => "E d.M.",
     MMM => "LLL",
     MMMEd => "ccc d. MMM",
-    MMMMW => "LLLL'n' W. 'viikko'",
+    "MMMMW-count-one" => "LLLL'n' W. 'viikko'",
+    "MMMMW-count-other" => "LLLL'n' W. 'viikko'",
     MMMMd => "d. MMMM",
     MMMd => "d. MMM",
     Md => "d.M.",
@@ -46,7 +47,8 @@
     yMd => "d.M.y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ y",
-    yw => "'vuoden' y 'viikko' w"
+    "yw-count-one" => "'vuoden' y 'viikko' w",
+    "yw-count-other" => "'vuoden' y 'viikko' w"
   },
   code => "fi",
   date_format_full => "cccc d. MMMM y",
@@ -263,5 +265,5 @@
   time_format_medium => "H.mm.ss",
   time_format_short => "H.mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

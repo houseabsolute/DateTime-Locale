@@ -23,7 +23,8 @@
     MEd => "M/d, E",
     MMM => "LLL",
     MMMEd => "MMM d, E",
-    MMMMW => "MMM'ren' 'astea' W",
+    "MMMMW-count-one" => "MMM W 'astea'",
+    "MMMMW-count-other" => "MMM'ren' 'astea' W",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     Md => "M/d",
@@ -46,7 +47,8 @@
     yMd => "y/M/d",
     yQQQ => "y('e')'ko' QQQ",
     yQQQQ => "y('e')'ko' QQQQ",
-    yw => "w/y 'astea'"
+    "yw-count-one" => "y 'urteko' w 'astea'",
+    "yw-count-other" => "w/y 'astea'"
   },
   code => "eu",
   date_format_full => "y('e')'ko' MMMM d, EEEE",
@@ -263,5 +265,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

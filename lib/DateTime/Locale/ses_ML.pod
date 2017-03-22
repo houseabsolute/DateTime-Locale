@@ -447,7 +447,7 @@ Koyraboro Senni Mali locale.
    1995-12-22T09:05:02 = Alz 22 Deesanbur
   -0010-09-15T04:44:23 = Asi 15 Sektanbur
 
-=head3 MMMMW ('week' W 'of' MMMM)
+=head3 MMMMW-count-other ('week' W 'of' MMMM)
 
    2008-02-05T18:30:30 = week 1 of Feewiriye
    1995-12-22T09:05:02 = week 3 of Deesanbur
@@ -591,7 +591,7 @@ Koyraboro Senni Mali locale.
    1995-12-22T09:05:02 = Arrubu 4 1995
   -0010-09-15T04:44:23 = Arrubu 3 -10
 
-=head3 yw ('week' w 'of' y)
+=head3 yw-count-other ('week' w 'of' y)
 
    2008-02-05T18:30:30 = week 6 of 2008
    1995-12-22T09:05:02 = week 51 of 1995

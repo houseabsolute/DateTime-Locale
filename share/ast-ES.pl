@@ -23,7 +23,8 @@
     MEd => "E, d/M",
     MMM => "LLL",
     MMMEd => "E, d MMM",
-    MMMMW => "'selmana' W 'de' MMM",
+    "MMMMW-count-one" => "'selmana' W 'de' MMM",
+    "MMMMW-count-other" => "'selmana' W 'de' MMM",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     Md => "d/M",
@@ -44,7 +45,8 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ 'de' y",
-    yw => "'selmana' w 'de' y"
+    "yw-count-one" => "'selmana' w 'de' y",
+    "yw-count-other" => "'selmana' w 'de' y"
   },
   code => "ast-ES",
   date_format_full => "EEEE, d MMMM 'de' y",
@@ -261,5 +263,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

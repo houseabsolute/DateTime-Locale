@@ -25,7 +25,8 @@
     MMM => "LLL",
     MMMEd => "E d LLL",
     MMMMEd => "E d LLLL",
-    MMMMW => "\N{U+0647}\N{U+0641}\N{U+062a}\N{U+0647} W \N{U+0627}\N{U+0632} MMM",
+    "MMMMW-count-one" => "\N{U+0647}\N{U+0641}\N{U+062a}\N{U+0647} W \N{U+0627}\N{U+0632} MMM",
+    "MMMMW-count-other" => "\N{U+0647}\N{U+0641}\N{U+062a}\N{U+0647} W \N{U+0627}\N{U+0632} MMM",
     MMMMd => "d LLLL",
     MMMd => "d LLL",
     Md => "M/d",
@@ -48,7 +49,8 @@
     yMd => "y/M/d",
     yQQQ => "QQQQ y",
     yQQQQ => "QQQQ y",
-    yw => "\N{U+0647}\N{U+0641}\N{U+062a}\N{U+0647} w \N{U+0627}\N{U+0632} y"
+    "yw-count-one" => "\N{U+0647}\N{U+0641}\N{U+062a}\N{U+0647} w \N{U+0627}\N{U+0632} y",
+    "yw-count-other" => "\N{U+0647}\N{U+0641}\N{U+062a}\N{U+0647} w \N{U+0627}\N{U+0632} y"
   },
   code => "fa-IR",
   date_format_full => "EEEE d MMMM y",
@@ -265,5 +267,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

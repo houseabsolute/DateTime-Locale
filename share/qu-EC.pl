@@ -23,7 +23,7 @@
     MEd => "MM-dd, E",
     MMM => "LLL",
     MMMEd => "MMM d, E",
-    MMMMW => "W 'semana' MMM 'killapa'",
+    "MMMMW-count-other" => "W 'semana' MMM 'killapa'",
     MMMMd => "MMMM d",
     MMMd => "MMM d",
     Md => "MM-dd",
@@ -44,7 +44,7 @@
     yMd => "dd-MM-y",
     yQQQ => "y QQQ",
     yQQQQ => "y QQQQ",
-    yw => "w 'semana' y 'watapa'"
+    "yw-count-other" => "w 'semana' y 'watapa'"
   },
   code => "qu-EC",
   date_format_full => "EEEE, d MMMM, y",
@@ -261,5 +261,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }

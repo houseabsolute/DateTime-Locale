@@ -24,7 +24,7 @@
     MMM => "LLL",
     MMMEd => "E, d MMM",
     MMMMEd => "E, d MMMM",
-    MMMMW => "'tu\N{U+1ea7}n' W 'c\N{U+1ee7}a' 'th\N{U+00e1}ng' M",
+    "MMMMW-count-other" => "'tu\N{U+1ea7}n' W 'c\N{U+1ee7}a' 'th\N{U+00e1}ng' M",
     MMMMd => "d MMMM",
     MMMd => "d MMM",
     MMdd => "dd-MM",
@@ -48,7 +48,7 @@
     yMd => "d/M/y",
     yQQQ => "QQQ y",
     yQQQQ => "QQQQ 'n\N{U+0103}m' y",
-    yw => "'tu\N{U+1ea7}n' w 'c\N{U+1ee7}a' 'n\N{U+0103}m' y"
+    "yw-count-other" => "'tu\N{U+1ea7}n' w 'c\N{U+1ee7}a' 'n\N{U+0103}m' y"
   },
   code => "vi",
   date_format_full => "EEEE, d MMMM, y",
@@ -265,5 +265,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => "30.0.3"
+  version => 31
 }
