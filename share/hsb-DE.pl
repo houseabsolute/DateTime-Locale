@@ -261,5 +261,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm 'hod\N{U+017a}'.",
   variant => undef,
-  version => 31
+  version => "31.0.1"
 }

@@ -262,5 +262,5 @@
   time_format_medium => "a 'ga' h:mm:ss",
   time_format_short => "a 'ga' h:mm",
   variant => undef,
-  version => 31
+  version => "31.0.1"
 }

@@ -265,5 +265,5 @@
   time_format_medium => "hh:mm:ss a",
   time_format_short => "hh:mm a",
   variant => undef,
-  version => 31
+  version => "31.0.1"
 }
