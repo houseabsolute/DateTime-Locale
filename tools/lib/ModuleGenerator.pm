@@ -16,8 +16,8 @@ use Locale::Codes::Language
     qw( language_code2code LOCALE_LANG_ALPHA_2 LOCALE_LANG_ALPHA_3 );
 use ModuleGenerator::Locale;
 use Parse::PMFile;
-use Path::Iterator::Rule;
 use Path::Tiny qw( path );
+use Path::Tiny::Rule;
 use Scalar::Util qw( reftype );
 use Specio::Declare;
 use Specio::Library::Builtins;
@@ -93,10 +93,9 @@ sub run ($self) {
 }
 
 sub _clean_old_data ($self) {
-    my $pir  = Path::Iterator::Rule->new;
-    my $iter = $pir->file->name(qr/\.pod$/)->iter('lib');
+    my $ptr  = Path::Tiny::Rule->new;
+    my $iter = $ptr->file->name(qr/\.pod$/)->iter('lib');
     while ( my $path = $iter->() ) {
-        $path = path($path);
         ## no critic (InputOutput::RequireCheckedSyscalls)
         say 'Removing ', $path->basename;
         $path->remove;
