@@ -12,7 +12,7 @@ use DateTime::Locale::Util qw( parse_locale_code );
 use JSON::MaybeXS qw( decode_json );
 use Specio::Declare;
 use Specio::Library::Builtins;
-use Specio::Library::Perl;
+use Specio::Library::Perl 0.42;
 use Specio::Library::Path::Tiny;
 
 use Moose;
@@ -146,7 +146,7 @@ has _first_day_of_week => (
 
 has version => (
     is      => 'ro',
-    isa     => t('LaxVersion'),
+    isa     => t('LaxVersionStr'),
     lazy    => 1,
     builder => '_build_version',
 );
