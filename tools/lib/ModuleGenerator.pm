@@ -40,8 +40,8 @@ has _only_locales => (
     is       => 'ro',
     isa      => t( 'ArrayRef', of => t('Str') ),
     init_arg => 'locales',
-    default => sub { [] },
-    handles => {
+    default  => sub { [] },
+    handles  => {
         _has_only_locales => 'count',
     },
     documentation => 'If specified, only these locales will be built.',

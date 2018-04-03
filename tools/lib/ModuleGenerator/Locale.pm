@@ -84,23 +84,23 @@ has language_code => (
 );
 
 has script_code => (
-    is   => 'ro',
-    isa  => t( 'Maybe', of => t('Str') ),
-    lazy => 1,
+    is      => 'ro',
+    isa     => t( 'Maybe', of => t('Str') ),
+    lazy    => 1,
     default => sub ($self) { $self->_parsed_code->{script} },
 );
 
 has territory_code => (
-    is   => 'ro',
-    isa  => t( 'Maybe', of => t('Str') ),
-    lazy => 1,
+    is      => 'ro',
+    isa     => t( 'Maybe', of => t('Str') ),
+    lazy    => 1,
     default => sub ($self) { $self->_parsed_code->{territory} },
 );
 
 has variant_code => (
-    is   => 'ro',
-    isa  => t( 'Maybe', of => t('Str') ),
-    lazy => 1,
+    is      => 'ro',
+    isa     => t( 'Maybe', of => t('Str') ),
+    lazy    => 1,
     default => sub ($self) { $self->_parsed_code->{variant} },
 );
 

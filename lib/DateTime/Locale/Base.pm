@@ -18,7 +18,7 @@ BEGIN {
         en_language en_script en_territory en_variant
         native_language native_script native_territory native_variant
         )
-        ) {
+    ) {
 
         # remove leading 'en_' for method name
         ( my $meth_name = $field ) =~ s/^en_//;
