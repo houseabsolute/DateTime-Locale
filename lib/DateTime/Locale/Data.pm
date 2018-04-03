@@ -20,7 +20,7 @@ use namespace::autoclean;
 
 use File::ShareDir qw( dist_file );
 
-our $VERSION = '1.18';
+our $VERSION = '1.19';
 
 #<<<
 ### :start CLDRVersion:
