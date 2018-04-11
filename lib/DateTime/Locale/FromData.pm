@@ -101,6 +101,7 @@ sub new {
         %{$data},
         default_date_format_length => 'medium',
         default_time_format_length => 'medium',
+        locale_data                => $data
     }, $class;
 }
 
@@ -243,6 +244,10 @@ sub territory_id {
 
 sub variant_id {
     $_[0]->variant_code;
+}
+
+sub locale_data {
+    return %{ $_[0]->{locale_data} };
 }
 
 sub STORABLE_freeze {
@@ -483,5 +488,11 @@ week, with Monday being 1 and Sunday being 7.
 =item * $locale->version
 
 The CLDR version from which this locale was generated.
+
+=item * $locale->locale_data
+
+Returns the original data used to create this locale as a hash. This is here
+to facilitate creating custom locale that via
+C<DateTime::Locale->register_data_locale>.
 
 =back

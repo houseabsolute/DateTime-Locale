@@ -5887,6 +5887,27 @@ sub _data_for {
     return $data;
 }
 
+sub add_locale {
+    my $code = shift;
+    my $data = shift;
+
+    die "You cannot add an existing locale - $code\n"
+        if exists $Codes{$code};
+    die
+        qq{One of either the 'en_language' or 'language' keys is required to add a new locale\n}
+        if !( exists $data->{en_language} || exists $data->{language} );
+
+    my $lang
+        = ( exists $data->{en_language} )
+        ? $data->{en_language}
+        : $data->{language};
+    $Names{$lang}                            = $code;
+    $Codes{$code}                            = 1;
+    $NativeNames{ $data->{native_language} } = $code
+        if exists $data->{native_language};
+    $LocaleData{$code} = $data;
+}
+
 # ABSTRACT: Locale data generated from CLDR
 
 __END__
