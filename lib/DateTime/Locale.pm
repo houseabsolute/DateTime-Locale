@@ -478,8 +478,8 @@ names use UTF-8 as appropriate.
 =head2 DateTime::Locale->register_from_data( $locale_data )
 
 This method allows you to register a custom locale.  The data for the locale
-is specified as a hash, and should use keys matching the method names given 
-in C<DateTime::Locale::FromData>.  The one exception is that the locale 
+is specified as a hash, and should use keys matching the method names given
+in C<DateTime::Locale::FromData>.  The one exception is that the locale
 C<code> should be specified under the key C<id>.
 
 Example of making a custom locale based off of C<en-US>:
@@ -488,9 +488,9 @@ Example of making a custom locale based off of C<en-US>:
   my %data = %$locale;                          #copy the contents
   $data{id} = 'en-US-CUSTOM';
   $data{time_format_medium} =   'HH:mm:ss';     #use 24 hour time
-  
+
   DateTime::Locale->register_data_locale(%data);
-  
+
   say DateTime->now(locale => 'en-US-CUSTOM')->strftime('%X');
   #18:24:38
   say DateTime->now(locale => 'en-US')->strftime('%X');
