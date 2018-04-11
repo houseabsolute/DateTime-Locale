@@ -5888,6 +5888,16 @@ sub _data_for {
     return $data;
 }
 
+sub add_locale {
+    my $code = shift;
+    my $data = shift;
+
+    $Codes{$code} = 1;
+    $Names{$data->{en_language}} = $code if exists $data->{en_language};
+    $NativeNames{$data->{native_language}} = $code if exists $data->{native_language};
+    $LocaleData{$code} = $data;
+}
+
 # ABSTRACT: Locale data generated from CLDR
 
 __END__
