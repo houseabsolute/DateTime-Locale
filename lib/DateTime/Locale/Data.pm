@@ -1515,7 +1515,6 @@ our %Names = (
 #<<<
 ### :start NativeNames:
 our %NativeNames = (
-  "" => "nds",
   Afrikaans => "af",
   "Afrikaans Namibi\N{U+00eb}" => "af-NA",
   "Afrikaans Suid-Afrika" => "af-ZA",

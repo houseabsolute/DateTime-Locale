@@ -259,6 +259,7 @@ sub STORABLE_thaw {
     shift;
     my $serialized = shift;
 
+    require DateTime::Locale;
     my $obj = DateTime::Locale->load($serialized);
 
     %{$self} = %{$obj};
