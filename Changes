@@ -1,5 +1,10 @@
 {{$NEXT}}
 
+- Fix handling of a locale (nds) that does not provide a native name for its
+  own locale code. This is a bug in CLDR, but since it exists we should handle
+  it sanely.
+
+
 1.18     2018-04-03
 
 - Rebuilt all locale data with CLDR 33, released on 2018-03-26.
