@@ -64,6 +64,7 @@ BEGIN {
         glibc_date_1_format
         glibc_time_format
         glibc_time_12_format
+        locale_cldr_data
     );
 
     for my $meth (@methods) {
@@ -101,6 +102,7 @@ sub new {
         %{$data},
         default_date_format_length => 'medium',
         default_time_format_length => 'medium',
+        locale_cldr_data           => $data
     }, $class;
 }
 
@@ -483,5 +485,10 @@ week, with Monday being 1 and Sunday being 7.
 =item * $locale->version
 
 The CLDR version from which this locale was generated.
+
+=item * $locale->locale_cldr_data
+
+The original data used to create this locale, which can be used to customize
+locales via C<DateTime::Locale::register_data_locale>
 
 =back

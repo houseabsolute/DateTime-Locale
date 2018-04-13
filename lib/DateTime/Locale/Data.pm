@@ -5891,8 +5891,18 @@ sub add_locale {
     my $code = shift;
     my $data = shift;
 
-    $Codes{$code} = 1;
-    $Names{ $data->{en_language} } = $code if exists $data->{en_language};
+    die "You cannot add an existing locale ('$code')\n"
+        if exists $Codes{$code};
+    die
+        "'en_language' or 'language' required in data hash to add new locale\n"
+        if !( exists $data->{en_language} || exists $data->{language} );
+
+    my $lang
+        = ( exists $data->{en_language} )
+        ? $data->{en_language}
+        : $data->{language};
+    $Names{$lang}                            = $code;
+    $Codes{$code}                            = 1;
     $NativeNames{ $data->{native_language} } = $code
         if exists $data->{native_language};
     $LocaleData{$code} = $data;

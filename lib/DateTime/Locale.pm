@@ -72,31 +72,18 @@ sub _register {
 }
 
 sub register_data_locale {
-    my $class = shift;
-
-    %LoadCache = ();
-
-    if ( ref $_[0] ) {
-        return $class->_register_data_locale( %{ $_[0] } );
-    }
-    else {
-        return $class->_register_data_locale(@_);
-    }
-}
-
-sub _register_data_locale {
     shift;
     my %p = @_;
 
-    my $id = $p{id};
+    my $code = $p{code};
 
-    die q{'\@' or '=' are not allowed in locale ids}
-        if $id =~ /[\@=]/;
+    die q{'\@' or '=' are not allowed in locale codes}
+        if $code =~ /[\@=]/;
 
-    $id =~ s/_/-/g;
+    $code =~ s/_/-/g;
 
-    DateTime::Locale::Data::add_locale( $id, \%p );
-    return $LoadCache{$id} = DateTime::Locale::FromData->new( \%p );
+    DateTime::Locale::Data::add_locale( $code, \%p );
+    return $LoadCache{$code} = DateTime::Locale::FromData->new( \%p );
 }
 
 sub add_aliases {
@@ -445,8 +432,7 @@ Eg. For the locale code C<es-Latn-XX> the fallback search would be:
 If no suitable replacement is found, then an exception is thrown.
 
 The loaded locale is cached, so that B<locale objects may be
-singletons>. Calling C<< DateTime::Locale->register() >>,
-C<< DateTime::Locale->register_data_locale() >>, C<<
+singletons>. Calling C<< DateTime::Locale->register() >>, C<<
 DateTime::Locale->add_aliases() >>, or C<< DateTime::Locale->remove_alias() >>
 clears the cache.
 
@@ -479,17 +465,16 @@ names use UTF-8 as appropriate.
 
 This method allows you to register a custom locale.  The data for the locale
 is specified as a hash, and should use keys matching the method names given
-in C<DateTime::Locale::FromData>.  The one exception is that the locale
-C<code> should be specified under the key C<id>.
+in C<DateTime::Locale::FromData>.
 
 Example of making a custom locale based off of C<en-US>:
 
   my $locale = DateTime::Locale->load('en-US');
-  my %data = %$locale;                          #copy the contents
-  $data{id} = 'en-US-CUSTOM';
-  $data{time_format_medium} =   'HH:mm:ss';     #use 24 hour time
+  my $data = $locale->locale_cldr_data();         #retrieve the raw locale data
+  $data->{code} = 'en-US-CUSTOM';
+  $data->{time_format_medium} =   'HH:mm:ss';     #use 24 hour time
 
-  DateTime::Locale->register_data_locale(%data);
+  DateTime::Locale->register_data_locale(%$data);
 
   say DateTime->now(locale => 'en-US-CUSTOM')->strftime('%X');
   #18:24:38
