@@ -1,6 +1,5 @@
 {{$NEXT}}
 
-
 - Fix handling of a locale (nds) that does not provide a native name for its
   own locale code. This is a bug in CLDR, but since it exists we should handle
   it sanely.
