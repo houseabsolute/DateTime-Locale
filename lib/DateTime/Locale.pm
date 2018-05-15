@@ -71,6 +71,21 @@ sub _register {
     $Class{$id} = $p{class} if defined exists $p{class};
 }
 
+sub register_data_locale {
+    shift;
+    my %p = @_;
+
+    my $code = $p{code};
+
+    die q{'\@' or '=' are not allowed in locale codes}
+        if $code =~ /[\@=]/;
+
+    $code =~ s/_/-/g;
+
+    DateTime::Locale::Data::add_locale( $code, \%p );
+    return $LoadCache{$code} = DateTime::Locale::FromData->new( \%p );
+}
+
 sub add_aliases {
     shift;
 
@@ -445,6 +460,26 @@ reference if called in a scalar context.
 Returns an unsorted list of the available locale names in their native
 language, or an array reference if called in a scalar context. All native
 names use UTF-8 as appropriate.
+
+=head2 DateTime::Locale->register_from_data( $locale_data )
+
+This method allows you to register a custom locale.  The data for the locale
+is specified as a hash, and should use keys matching the method names given
+in C<DateTime::Locale::FromData>.
+
+Example of making a custom locale based off of C<en-US>:
+
+  my $locale = DateTime::Locale->load('en-US');
+  my $data = $locale->locale_cldr_data();         #retrieve the raw locale data
+  $data->{code} = 'en-US-CUSTOM';
+  $data->{time_format_medium} =   'HH:mm:ss';     #use 24 hour time
+
+  DateTime::Locale->register_data_locale(%$data);
+
+  say DateTime->now(locale => 'en-US-CUSTOM')->strftime('%X');
+  #18:24:38
+  say DateTime->now(locale => 'en-US')->strftime('%X');
+  # 6:24:38 PM
 
 =head1 LOADING LOCALES IN A PRE-FORKING SYSTEM
 
