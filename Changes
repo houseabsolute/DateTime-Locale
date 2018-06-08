@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.21     2018-06-08
+
 - Added a new DateTime::Local->register_from_data method. This replaces the
   old custom locale registration system with something much simpler. Instead
   of providing a new class you simply provide a hash of data for the locale
