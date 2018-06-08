@@ -1,5 +1,12 @@
 {{$NEXT}}
 
+- Update the glibc source data to the data from glibc 2.27.
+
+- Added documentation for this glibc data.
+
+- Reformatted the DateTime::Locale::FromData docs.
+
+
 1.21     2018-06-08
 
 - Added a new DateTime::Local->register_from_data method. This replaces the
