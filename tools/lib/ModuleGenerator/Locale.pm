@@ -61,7 +61,7 @@ has _glibc_file => (
     lazy    => 1,
     builder => '_build_glibc_file',
 );
-use Devel::Confess;
+
 has _glibc_data => (
     is      => 'ro',
     isa     => t('HashRef'),
