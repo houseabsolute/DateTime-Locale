@@ -1,5 +1,13 @@
-escape_char /
 comment_char %
+escape_char /
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
+
 % Dutch language locale for Aruba.
 % Contributed by Ulrich Drepper <drepper@redhat.com>, 2008
 
@@ -15,19 +23,19 @@ language   "Dutch"
 territory  "Aruba"
 revision   "1.0"
 date       "2008-09-16"
-%
-category  "nl_AW:2008";LC_IDENTIFICATION
-category  "nl_AW:2008";LC_CTYPE
-category  "nl_AW:2008";LC_COLLATE
-category  "nl_AW:2008";LC_TIME
-category  "nl_AW:2008";LC_NUMERIC
-category  "nl_AW:2008";LC_MONETARY
-category  "nl_AW:2008";LC_MESSAGES
-category  "nl_AW:2008";LC_PAPER
-category  "nl_AW:2008";LC_NAME
-category  "nl_AW:2008";LC_ADDRESS
-category  "nl_AW:2008";LC_TELEPHONE
-category  "nl_AW:2008";LC_MEASUREMENT
+
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
+category "i18n:2012";LC_MEASUREMENT
 END LC_IDENTIFICATION
 
 LC_CTYPE
@@ -39,13 +47,13 @@ copy "nl_NL"
 END LC_COLLATE
 
 LC_MONETARY
-int_curr_symbol     "<U0041><U0057><U0047><U0020>"
-currency_symbol     "<U0041><U0066><U006C><U002E>"
-mon_decimal_point   "<U002C>"
-mon_thousands_sep   "<U0020>"
+int_curr_symbol     "AWG "
+currency_symbol     "Afl."
+mon_decimal_point   ","
+mon_thousands_sep   "<U202F>"
 mon_grouping        3;3
 positive_sign       ""
-negative_sign       "<U002D>"
+negative_sign       "-"
 int_frac_digits     2
 frac_digits         2
 p_cs_precedes       1
@@ -61,7 +69,42 @@ copy "nl_NL"
 END LC_NUMERIC
 
 LC_TIME
-copy "nl_NL"
+abday   "zo";"ma";"di";/
+	"wo";"do";"vr";/
+	"za"
+day     "zondag";/
+	"maandag";/
+	"dinsdag";/
+	"woensdag";/
+	"donderdag";/
+	"vrijdag";/
+	"zaterdag"
+abmon   "jan";"feb";/
+	"mrt";"apr";/
+	"mei";"jun";/
+	"jul";"aug";/
+	"sep";"okt";/
+	"nov";"dec"
+mon     "januari";/
+	"februari";/
+	"maart";/
+	"april";/
+	"mei";/
+	"juni";/
+	"juli";/
+	"augustus";/
+	"september";/
+	"oktober";/
+	"november";/
+	"december"
+d_t_fmt "%a %d %b %Y %T %Z"
+d_fmt   "%d-%m-%y"
+t_fmt   "%T"
+am_pm   "";""
+t_fmt_ampm ""
+date_fmt       "%a %e %b %Y %k:%M:%S %Z"
+week 7;19971130;1
+first_weekday 2
 END LC_TIME
 
 LC_MESSAGES
@@ -69,7 +112,7 @@ copy "nl_NL"
 END LC_MESSAGES
 
 LC_PAPER
-copy "en_US"
+copy "nl_NL"
 END LC_PAPER
 
 LC_NAME
@@ -77,30 +120,25 @@ copy "nl_NL"
 END LC_NAME
 
 LC_ADDRESS
-postal_fmt    "<U0025><U0066><U0025><U004E><U0025><U0061><U0025><U004E>/
-<U0025><U0064><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0073>/
-<U0020><U0025><U0068><U0020><U0025><U0065><U0020><U0025><U0072><U0025>/
-<U004E><U0025><U0025><U007A><U0020><U0025><U0054><U0025>/
-<U004E><U0025><U0063><U0025><U004E>"
-country_ab2   "<U0041><U0057>"
-country_ab3   "<U0041><U0042><U0057>"
+postal_fmt    "%f%N%a%N%d%N%b%N%s %h %e %r%N%%z %T%N%c%N"
+country_name "Aruba"
+country_ab2   "AW"
+country_ab3   "ABW"
 country_num   533
-% Nederlands
-lang_name    "<U004E><U0065><U0064><U0065><U0072><U006C><U0061><U006E><U0064><U0073>"
-lang_ab "<U006E><U006C>"
-lang_term "<U006E><U006C><U0064>"
-lang_lib "<U0064><U0075><U0074>"
+country_car "AUA"
+lang_name    "Nederlands"
+lang_ab "nl"
+lang_term "nld"
+lang_lib "dut"
 END LC_ADDRESS
 
 LC_TELEPHONE
 % FIXME
-tel_int_fmt    "<U002B><U0025><U0063><U0020><U0025><U0061><U0020><U0025>/
-<U006C>"
-int_prefix     "<U0032><U0039><U0037>"
-int_select     "<U0030><U0031><U0031>"
+tel_int_fmt    "+%c %a %l"
+int_prefix     "297"
+int_select     "011"
 END LC_TELEPHONE
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "nl_NL"
 END LC_MEASUREMENT

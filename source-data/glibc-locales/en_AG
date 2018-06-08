@@ -1,5 +1,13 @@
-escape_char /
 comment_char %
+escape_char /
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
+
 % English language locale for Antigua and Barbuda.
 % Contributed by Ulrich Drepper <drepper@redhat.com>, 2008
 
@@ -12,22 +20,22 @@ email      "bug-glibc-locales@gnu.org"
 tel        ""
 fax        ""
 language   "English"
-territory  "Antigua and Barbuda"
+territory  "Antigua & Barbuda"
 revision   "1.0"
 date       "2008-09-16"
-%
-category  "en_AG:2008";LC_IDENTIFICATION
-category  "en_AG:2008";LC_CTYPE
-category  "en_AG:2008";LC_COLLATE
-category  "en_AG:2008";LC_TIME
-category  "en_AG:2008";LC_NUMERIC
-category  "en_AG:2008";LC_MONETARY
-category  "en_AG:2008";LC_MESSAGES
-category  "en_AG:2008";LC_PAPER
-category  "en_AG:2008";LC_NAME
-category  "en_AG:2008";LC_ADDRESS
-category  "en_AG:2008";LC_TELEPHONE
-category  "en_AG:2008";LC_MEASUREMENT
+
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
+category "i18n:2012";LC_MEASUREMENT
 END LC_IDENTIFICATION
 
 LC_CTYPE
@@ -39,13 +47,13 @@ copy "en_GB"
 END LC_COLLATE
 
 LC_MONETARY
-int_curr_symbol     "<U0058><U0043><U0044><U0020>"
-currency_symbol     "<U0024>"
-mon_decimal_point   "<U002E>"
-mon_thousands_sep   "<U002C>"
+int_curr_symbol     "XCD "
+currency_symbol     "$"
+mon_decimal_point   "."
+mon_thousands_sep   ","
 mon_grouping        3;3
 positive_sign       ""
-negative_sign       "<U002D>"
+negative_sign       "-"
 int_frac_digits     2
 frac_digits         2
 p_cs_precedes       1
@@ -61,7 +69,39 @@ copy "en_GB"
 END LC_NUMERIC
 
 LC_TIME
-copy "en_GB"
+abday       "Sun";"Mon";"Tue";"Wed";"Thu";"Fri";"Sat"
+day         "Sunday";/
+            "Monday";/
+            "Tuesday";/
+            "Wednesday";/
+            "Thursday";/
+            "Friday";/
+            "Saturday"
+abmon       "Jan";"Feb";/
+            "Mar";"Apr";/
+            "May";"Jun";/
+            "Jul";"Aug";/
+            "Sep";"Oct";/
+            "Nov";"Dec"
+mon         "January";/
+            "February";/
+            "March";/
+            "April";/
+            "May";/
+            "June";/
+            "July";/
+            "August";/
+            "September";/
+            "October";/
+            "November";/
+            "December"
+d_t_fmt     "%a %d %b %Y %T %Z"
+d_fmt       "%d//%m//%y"
+t_fmt       "%T"
+am_pm       "am";"pm"
+t_fmt_ampm  "%l:%M:%S %P %Z"
+date_fmt    "%a %e %b %H:%M:%S %Z %Y"
+week 7;19971130;1
 END LC_TIME
 
 LC_MESSAGES
@@ -69,7 +109,7 @@ copy "en_GB"
 END LC_MESSAGES
 
 LC_PAPER
-copy "en_US"
+copy "en_GB"
 END LC_PAPER
 
 LC_NAME
@@ -77,32 +117,24 @@ copy "en_GB"
 END LC_NAME
 
 LC_ADDRESS
-postal_fmt    "<U0025><U0066><U0025><U004E><U0025><U0061><U0025><U004E>/
-<U0025><U0064><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0073>/
-<U0020><U0025><U0068><U0020><U0025><U0065><U0020><U0025><U0072><U0025>/
-<U004E><U0025><U0025><U007A><U0020><U0025><U0054><U0025>/
-<U004E><U0025><U0063><U0025><U004E>"
-country_ab2   "<U0041><U0047>"
-country_ab3   "<U0041><U0054><U0047>"
-country_num   28
-% English
-lang_name     "<U0045><U006E><U0067><U006C><U0069><U0073><U0068>"
-% en
-lang_ab      "<U0065><U006E>"
-% eng
-lang_term    "<U0065><U006E><U0067>"
-% eng
-lang_lib    "<U0065><U006E><U0067>"
+postal_fmt    "%f%N%a%N%d%N%b%N%s %h %e %r%N%%z %T%N%c%N"
+country_name "Antigua & Barbuda"
+country_ab2   "AG"
+country_ab3   "ATG"
+country_num 028
+country_car "AG"
+lang_name     "English"
+lang_ab      "en"
+lang_term    "eng"
+lang_lib    "eng"
 END LC_ADDRESS
 
 LC_TELEPHONE
-tel_int_fmt    "<U002B><U0025><U0063><U0020><U0025><U0061><U0020><U0025>/
-<U006C>"
-int_prefix     "<U0031>"
-int_select     "<U0030><U0031><U0031>"
+tel_int_fmt    "+%c %a %l"
+int_prefix     "1"
+int_select     "011"
 END LC_TELEPHONE
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "en_GB"
 END LC_MEASUREMENT

@@ -1,9 +1,13 @@
 comment_char %
-escape_char  /
-%
-% Copyright (C) 2003-2006 Volodymyr M. Lisivka <v_lisivka@sourceforge.net>
-% Copyright (C) 2006 Max Kutny <mkutny@gmail.com>
-%
+escape_char /
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
+
 % Ukrainian Language Locale for Ukraine
 % Source:
 % Contact: Volodymyr M. Lisivka
@@ -16,9 +20,6 @@ escape_char  /
 % Date: 2006-05-20
 % Application: general
 % Users: general
-% Charset: UTF-8
-%
-% Distribution and use is free, also for commercial purposes.
 %
 % Keywords in this file are treated according to ISO/IEC 14652
 % http://anubis.dkuug.dk/jtc1/sc22/wg20/docs/14652fcd.txt
@@ -28,68 +29,36 @@ escape_char  /
 
 
 LC_IDENTIFICATION
-
-% Title of document: Ukrainian Language Locale for Ukraine
 title      "Ukrainian Language Locale for Ukraine"
-
-% Organization name.
 source     ""
-
-% Organization postal address.
 address    ""
-
-% Name of contact person.
 contact    "GNU libc maintainers"
-
-% Electronic address of organization or contact person.
 email      "bug-glibc-locales@gnu.org"
-
-% Telephone number of organization in international format.
 tel        ""
-
-% Fax number of organization in international format.
 fax        ""
-
-% Code of language, to which this document applies.
-language   "uk"
-
-% Code of country/geographic extent (ISO 3166), to which this document applies.
-territory  "UA"
-
-% Intended user audience.
-audience   "general"
-
-% If for use with special application, a description of this application.
-application "general"
-
-% Short name.
-abbreviation "ULU-2.1.12"
-
-% Revision (numbers and dots).
+language   "Ukrainian"
+territory  "Ukraine"
 revision   "2.1.12"
-
-% Revision date
 date       "2006-05-20"
 
-category  "i18n:2002";LC_IDENTIFICATION
-category  "i18n:2002";LC_CTYPE
-category  "i18n:2002";LC_COLLATE
-category  "i18n:2000";LC_TIME
-category  "posix:1993";LC_NUMERIC
-category  "i18n:2002";LC_MONETARY
-category  "i18n:2002";LC_MESSAGES
-category  "i18n:2002";LC_PAPER
-category  "i18n:2002";LC_NAME
-category  "i18n:2000";LC_ADDRESS
-category  "i18n:2002";LC_TELEPHONE
-category  "posix:1993";LC_MEASUREMENT
-
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
+category "i18n:2012";LC_MEASUREMENT
 END LC_IDENTIFICATION
 
 
 LC_CTYPE
 
-copy "<U0069><U0031><U0038><U006E>"
+copy "i18n"
 
 translit_start
 
@@ -331,18 +300,18 @@ LC_COLLATE
 % academic Ivanenko who tried to make MS DOS code pages compatible between
 % Russian, Ukrainian and Belarusian languages.
 %
-% See "<U0050><U0072><U006F><U0062><U006C><U0065><U006D><U0079><U0020><U0075><U006B><U0072><U0061><U0069><U006E><U0069><U007A><U0061><U0074><U0063><U0069><U0069><U0020><U006B><U006F><U006D><U0070><U0075><U0074><U0065><U0072><U0069><U0076>" N2 (UDK 681.3.06), p. 16
+% See "Problemy ukrainizatcii komputeriv" N2 (UDK 681.3.06), p. 16
 % Ivanenko L. M. "Na shliakhu pobudovy <<idealnoho>> standartu abo
 % synii ptakh Neokyrylytci".
 
-copy "<U0069><U0073><U006F><U0031><U0034><U0036><U0035><U0031><U005F><U0074><U0031>"
+copy "iso14651_t1"
 
 % Ukrainian ghe is missing in iso14651_t1
 collating-symbol <UKR-GHE>
 
 % Apostrophe must be ignored during sorting because it's just a sign, not a
 % real letter.
-% ( "<U006E><U0060>"=="<U006E>", "<U0027><U0079><U0061>"=="<U0079><U0061>", etc. )
+% ( "n`"=="n", "'ya"=="ya", etc. )
 %
 % Apostrophe already ignored by iso14651_t1.
 %
@@ -464,7 +433,7 @@ reorder-after <U0423>
 reorder-after <U0443>
 <U045E> <CYR-OU>;<CYR-OUBRE>;<MIN>;IGNORE
 
-% Capital letters go before small letters. ("<U0041>"<"<U0061>")
+% Capital letters go before small letters. ("A"<"a")
 reorder-after <CAP>
 <CAP-MIN>
 <MIN-CAP>
@@ -573,36 +542,32 @@ END LC_COLLATE
 
 
 LC_MESSAGES
-
-
-% WARNING: symbols "<U0059>" and "<U0043><U0079><U0072><U0069><U006C><U006C><U0069><U0063><U005F><U004E>" are placed at one key in Ukrainian keyboard
-% layout although the meaning is semantically opposite ("<U0059>" stands for "<U0059><U0065><U0073>"
-% while "<U0043><U0079><U0072><U0069><U006C><U006C><U0069><U0063><U005F><U004E>" stands for "<U004E><U006F>").
+% WARNING: symbols "Y" and "Cyrillic_N" are placed at one key in Ukrainian keyboard
+% layout although the meaning is semantically opposite ("Y" stands for "Yes"
+% while "Cyrillic_N" stands for "No").
 %
 % This problem may be dealt with by requiring at least two letters to be
 % entered in Ukrainian language.
 
 % A regular expression that describes possible yes-responses
-% "<U0079>", "<U0059>", "<U002B>", "<U0074><U0061>" or "<U0074><U0061><U006B>" in Cyrillic
-yesexpr "<U005E><U0028><U005B><U0059><U0079><U002B><U005D><U007C><U005B><U0422><U0442><U005D><U005B><U0410><U0430><U005D><U005B><U041A><U043A><U005D><U003F><U0029><U0024>"
+% "y", "Y", "+", "ta" or "tak" in Cyrillic
+yesexpr "^([+1Yy]|[<U0422><U0442>][<U0410><U0430>][<U041A><U043A>]?)$"
 
-% WARNING: symbols "<U004E>" and "<U0043><U0079><U0072><U0069><U006C><U006C><U0069><U0063><U005F><U0054>" are placed at one key in Ukrainian
-% keyboard layout although the meaning is semantically opposite ("<U004E>" stands for
-% "<U004E><U006F>" while "<U0043><U0079><U0072><U0069><U006C><U006C><U0069><U0063><U005F><U0054>" stands for "<U0059><U0065><U0073>").
+% WARNING: symbols "N" and "Cyrillic_T" are placed at one key in Ukrainian
+% keyboard layout although the meaning is semantically opposite ("N" stands for
+% "No" while "Cyrillic_T" stands for "Yes").
 %
 % We may require two Ukrainian letters as input to deal with this potential
 % problem.
 
 % A regular expression that describes possible no-responses.
-% "<U006E>", "<U004E>", "<U002D>" or word "<U006E><U0069>" in Cyrillic
-noexpr  "<U005E><U0028><U005B><U004E><U006E><U002D><U005D><U007C><U005B><U041D><U043D><U005D><U005B><U0406><U0456><U005D><U0029><U0024>"
-% "<U006E>" "<U004E>" "<U002D>" or word "<U006E><U0069>" in Cyrillic
+% "n", "N", "-" or word "ni" in Cyrillic
+noexpr  "^([-0Nn]|[<U041D><U043D>][<U0406><U0456>])$"
 
-
-% Output string for ``yes'' ("<U0074><U0061><U006B>").
+% Output string for ``yes'' ("tak").
 yesstr "<U0442><U0430><U043A>"
 
-% Output string for ``no'' ("<U006E><U0069>").
+% Output string for ``no'' ("ni").
 nostr "<U043D><U0456>"
 
 END LC_MESSAGES
@@ -630,9 +595,9 @@ LC_MONETARY
 % ...
 %
 % Note:
-% There is potential conflict between "<U0068><U0072><U0079><U0076><U006E><U0079><U0061>" ("<U0068><U0072>", "<U0068><U0072><U0076><U002E>", money),
-% "<U0068><U0072><U0061><U006D>" ("<U0068>","<U0068><U0072><U002E>", weight) and "<U0068><U006F><U0064><U0079><U006E><U0061>" ("<U0068><U006F><U0064>","<U0068><U006F><U0064><U002E>", time),
-% because some people uses "<U0068>" for "<U0068><U006F><U0064><U0079><U006E><U0079>", "<U0068><U0072>" for "<U0068><U0072><U0061><U006D><U0079>", etc.
+% There is potential conflict between "hryvnya" ("hr", "hrv.", money),
+% "hram" ("h","hr.", weight) and "hodyna" ("hod","hod.", time),
+% because some people uses "h" for "hodyny", "hr" for "hramy", etc.
 %
 % 200h - 200 hram (weight)
 % 200 hr. - 200 hram (weight)
@@ -642,7 +607,7 @@ LC_MONETARY
 % 200 hrv. - 200 hryven (money)
 
 % the local currency symbol
-currency_symbol           "<U0433><U0440><U043D><U002E>" % hr (hryvnya)
+currency_symbol           "<U0433><U0440><U043D>." % hr (hryvnya)
 
 % This must be a 4-character string containing the international currency
 % symbol as defined by the ISO 4217 standard (three characters) followed
@@ -651,17 +616,17 @@ currency_symbol           "<U0433><U0440><U043D><U002E>" % hr (hryvnya)
 % DSTU ISO 3166
 % Code   Name    Name in English language
 % UAH    <U0433><U0440><U0438><U0432><U043D><U044F>  hryvnya
-int_curr_symbol           "<U0055><U0041><U0048><U0020>"
+int_curr_symbol           "UAH "
 
 % This string is used as the decimal delimiter when formatting monetary
 % quantities.
 % see LC_NUMERIC:decimal_point
-mon_decimal_point         "<U002C>"
+mon_decimal_point         ","
 
 % This string is used as a thousands separator when formatting monetary
 % quantities.
 % see LC_NUMERIC:thousands separator
-mon_thousands_sep         "<U00A0>" % <NBSP> (0xA0)
+mon_thousands_sep         "<U202F>" % <NNBSP> (0X202F)
 
 % Define  the  size of each group of digits in formatted monetary
 % quantities.  The operand is a sequence of integers separated by
@@ -674,7 +639,7 @@ mon_thousands_sep         "<U00A0>" % <NBSP> (0xA0)
 % integer is -1, then no further grouping shall be performed.
 %
 % FIXME:
-%   Note difference between "<U0031><U0032><U0033><U0020><U0034><U0035><U0036><U0020><U0037><U0038><U0039><U002C><U0030><U0031>" and "<U0031><U0032><U0033><U0034><U002C><U0035><U0036>".
+%   Note difference between "123 456 789,01" and "1234,56".
 %   Unfortunately, it can't be implemented with current (2.3.6) glibc.
 mon_grouping              3;3
 
@@ -684,7 +649,7 @@ positive_sign             ""
 
 % String that is used to indicate a negative sign for monetary
 % quantities
-negative_sign             "<U002D>"
+negative_sign             "-"
 
 % An integer representing the number of fractional digits (those to the right of
 % the decimal delimiter) to be written in a formatted monetary quantity using
@@ -784,21 +749,21 @@ LC_NUMERIC
 
 % The string that will be used as the decimal delimiter when formatting
 % numeric quantities.
-decimal_point             "<U002C>" % see LC_MONETARY:mon_decimal_pint
+decimal_point             "," % see LC_MONETARY:mon_decimal_pint
 % Comma cause lot of problems - changed to dot.
-% decimal_point             "<U002E>" % see LC_MONETARY:mon_decimal_pint
+% decimal_point             "." % see LC_MONETARY:mon_decimal_pint
 
 % The string that will be used as a group separator when formatting
 % numeric quantities.
 % see LC_MONETARY:mon_thousands_sep
-thousands_sep             "<U00A0>" % <NBSP> (0xA0)
+thousands_sep             "<U202F>" % <NNBSP> (0X202F)
 
 % A string that describes the formatting of numeric quantities.
 %
 % See mon_grouping
 %
 % FIXME:
-%   Note difference between "<U0031><U0032><U0033><U0020><U0034><U0035><U0036><U0020><U0037><U0038><U0039><U002C><U0030><U0031>" and "<U0031><U0032><U0033><U0034><U002C><U0035><U0036>".
+%   Note difference between "123 456 789,01" and "1234,56".
 %   Unfortunately, it can't be implemented with current glibc.
 grouping                  3;3
 
@@ -822,7 +787,7 @@ LC_TIME
 % 01.05.2003 (Allowed but not recomended by DSTU)
 % 2003.05.01 (Allowed but not recomended by DSTU)
 % 01/tra/03 (Deprecated, but still commonly used format)
-% 1-e travnya (not "<U0031><U0020><U0074><U0072><U0061><U0076><U006E><U0079><U0061>" or "<U0031><U0020><U0074><U0072><U0061><U0076><U0065><U006E><U0060>" or "<U0031><U002D><U0074><U0072><U0061>")
+% 1-e travnya (not "1 travnya" or "1 traven`" or "1-tra")
 %
 % Notes:
 %  month after day, year after month
@@ -836,24 +801,9 @@ LC_TIME
 % 00:00:00 +0200
 % 00:00
 
-% Week description, consists of three fields:
-% 1. Number of days in a week.
-% 2. Gregorian date that is a first weekday (19971130 for Sunday, 19971201 for Monday).
-% 3. The weekday number to be contained in the first week of the year.
-%
-% ISO 8601 conforming applications should use the values 7, 19971201 (a
-% Monday), and 4 (Thursday), respectively.
-% week 7;19971201;4
-% But see BUG below.
-week 7;19971130;4
+week 7;19971130;1
 
 % A list of abbreviated weekday names. (%a)
-%
-% BUG: glibc-2.3.6
-%   Violation of ISO/IEC TR14652:2002 - weekday list must correlate with value
-%   of <week> keyword (e.g. start from Monday in our case) but glibc assumes that
-%   it always starts from Sunday. Stick to Sunday too until the bug is fixed.
-
 % Note:
 % Never use three letters for day abbreviations because of conflict between
 % SEReda (day name) and
@@ -868,19 +818,13 @@ abday /
         "<U0441><U0431>"  %sb
 
 % A list of weekday names starting with first day of week as defined by <week> keyword. (%A)
-%
-% BUG: glibc-2.3.6
-%   Violation of ISO/IEC TR14652:2002 - weekday list must correlate with value
-%   of <week> keyword (e.g. start from Monday in our case) but glibc assumes that
-%   it always starts from Sunday. Stick to Sunday too until the bug is fixed.
-
 day /
         "<U043D><U0435><U0434><U0456><U043B><U044F>";    %nedilya   /
 	"<U043F><U043E><U043D><U0435><U0434><U0456><U043B><U043E><U043A>"; %ponedilok /
         "<U0432><U0456><U0432><U0442><U043E><U0440><U043E><U043A>";  %vivtorok  /
 	"<U0441><U0435><U0440><U0435><U0434><U0430>";    %sereda    /
         "<U0447><U0435><U0442><U0432><U0435><U0440>";    %chetver   /
-        "<U043F><U0027><U044F><U0442><U043D><U0438><U0446><U044F>";  %pjatnycya /
+        "<U043F>'<U044F><U0442><U043D><U0438><U0446><U044F>";  %pjatnycya /
         "<U0441><U0443><U0431><U043E><U0442><U0430>"     %subota
 
 % A list of abbreviated month names. (%b)
@@ -898,8 +842,8 @@ abmon /
         "<U043B><U0438><U0441>"; %lys  /
         "<U0433><U0440><U0443>"  %hru
 
-% A list of month names in proper form for calendar, see alt_digits. (%B)
-mon /
+% A list of month names in proper form for calendar (%OB).  See also mon.
+alt_mon /
         "<U0441><U0456><U0447><U0435><U043D><U044C>";   %sichen`  /
         "<U043B><U044E><U0442><U0438><U0439>";    %lyutyj   /
         "<U0431><U0435><U0440><U0435><U0437><U0435><U043D><U044C>"; %berezen` /
@@ -913,16 +857,8 @@ mon /
         "<U043B><U0438><U0441><U0442><U043E><U043F><U0430><U0434>"; %lystopad /
         "<U0433><U0440><U0443><U0434><U0435><U043D><U044C>"   %hruden`
 
-% Initially alt_digits was supposed to hold alternative symbols for _digits_,
-% corresponding to %O modified conversion specification.
-% Although in Ukrainian language alternate _names_ are used instead of digits.
-% We'll use this keyword to present a list of month names in proper form for
-% date, see mon.  (%Om)
-%
-% This hack is dedicated for months it won't work for other %O* modifiers
-% (weeks, days etc).
-%
-alt_digits "<U0030>";	     % digits are starting from zero /
+% A list of month names in genitive form, for full date format, with day (%B).
+mon /
         "<U0441><U0456><U0447><U043D><U044F>";     % sichnya   /
         "<U043B><U044E><U0442><U043E><U0433><U043E>";    % lyutoho   /
         "<U0431><U0435><U0440><U0435><U0437><U043D><U044F>";   % bereznya  /
@@ -937,57 +873,29 @@ alt_digits "<U0030>";	     % digits are starting from zero /
         "<U0433><U0440><U0443><U0434><U043D><U044F>"     % hrudnya
 
 % Appropriate date representation for date(1).
-date_fmt       "<U0025><U0041><U002C><U0020><U0025><U002D><U0064><U0020><U0025><U004F><U006D><U0020><U0025><U0059><U0020><U0025><U0058><U0020><U0025><U007A>"
+date_fmt       "%A, %-d %B %Y %X %z"
 
 % The appropriate date and time format. (%c)
-d_t_fmt  "<U0025><U0061><U002C><U0020><U0025><U0064><U002D><U0025><U0062><U002D><U0025><U0059><U0020><U0025><U0058><U0020><U0025><U007A>"
+d_t_fmt  "%a, %d-%b-%Y %X %z"
 
 % The appropriate date format. (%x)
-d_fmt     "<U0025><U0064><U002E><U0025><U006D><U002E><U0025><U0079>"
+d_fmt     "%d.%m.%y"
 
 % The appropriate time format. (%X)
-t_fmt     "<U0025><U0054>"
+t_fmt     "%T"
 
 % The appropriate time format when using 12h clock format. (%r)
 % If the string is empty the 12-hour format is not supported by in the FDCC-set.
 t_fmt_ampm ""
 
 %The appropriate representation of the am and pm strings. (%p)
-%am_pm     "<U0434><U043E>";"<U043F><U043E>"   % "<U0064><U006F>" ; "<U0070><U006F>" - do obidu/po obidi
+%am_pm     "<U0434><U043E>";"<U043F><U043E>"   % "do" ; "po" - do obidu/po obidi
 % Empty strings are used to force 24h time format.
 am_pm     "";""
 
 % Define the first day of the week to be displayed in a calendar.
 % This weekday is relative to the date defined in the <week> keyword.
 first_weekday 2
-
-% Define the first workday relative to the <week> keyword
-first_workday 2
-
-% Zymovyj CHas (winter time) or z.ch. (or nothing)
-% Litnij CHas (summer time) or l.ch.
-%
-% ( or EET/EEST (Easter Europe [Summer] Time) )
-% ( or Europe/Kyiv (or Kiev, in Russian) )
-%
-% Format:
-%
-% <ZoneName><Offset><ZoneName><Offset>,<rule>,<rule>[,...]
-%
-%  ZoneName - at least 3 letters, up to 10
-%  Offset - (+|-)hh[:mm[:ss]]
-%     - - time zone is east of Prime Meridian
-%     + - time zone is west of Prime Meridian
-%  rule: <date>[/time[/year]]
-%   date:
-%     J<JulianDay> , 1-365 (without 29.02)
-%     <JulianDay> , 0-364 (without 29.02)
-%     M<m>.<n>.<d> - m - month(1-12)
-%                    n - week(1-5)
-%                    d - day of week(0-7), day zero and day seven is Sunday
-%   time - the same as <offset> (but without leading +/-)
-%
-timezone "<U0437><U002E><U0447><U002E><U002D><U0030><U0032><U003A><U0030><U0030><U043B><U002E><U0447><U002E><U002D><U0030><U0033><U003A><U0030><U0030><U002C><U004D><U0033><U002E><U0035><U002E><U0030><U002F><U0030><U0033><U003A><U0030><U0030><U002C><U004D><U0031><U0030><U002E><U0035><U002E><U0030><U002F><U0030><U0034><U003A><U0030><U0030>"
 
 % Example:
 %
@@ -1014,9 +922,7 @@ END LC_TIME
 
 
 LC_PAPER
-% Default paper: A4
-height   297 % in millimeters
-width    210 % in millimeters
+copy "i18n"
 END LC_PAPER
 
 
@@ -1036,28 +942,27 @@ LC_TELEPHONE
 %
 % Example: +380 44 4908888
 %
-tel_int_fmt    "<U002B><U0025><U0063><U0020><U0025><U0061><U0020><U0025><U006C>"
+tel_int_fmt    "+%c %a %l"
 
 % Format of a telephone number for domestic use.
 % See tel_int_fmt.
 %
 % Example:  (044) 4908888
 %
-tel_dom_fmt    "<U0028><U0025><U0041><U0029><U0020><U0025><U006C>"
+tel_dom_fmt    "(%A) %l"
 
 % Prefix to call international phone numbers.
-int_select     "<U0038><U007E><U0031><U0030>"
+int_select     "8~10"
 
 % Prefix used from other countries to dial Ukraine. (%c)
-int_prefix     "<U0033><U0038><U0030>"
+int_prefix     "380"
 
 END LC_TELEPHONE
 
 
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "i18n"
 END LC_MEASUREMENT
 
 
@@ -1105,8 +1010,8 @@ LC_NAME
 % m - additional given name
 % M - initials for additional given names
 % p - profession
-% s - salutation, such as "<U0044><U006F><U0063><U0074><U006F><U0072>"
-% S - abbreviated salutation, such as "<U004D><U0072><U002E>" or "<U0044><U0072><U002E>"
+% s - salutation, such as "Doctor"
+% S - abbreviated salutation, such as "Mr." or "Dr."
 % d - salutation, using the FDCC-sets conventions
 %    1 for the name_gen
 %    2 for name_mr
@@ -1115,10 +1020,10 @@ LC_NAME
 %    5 for name_ms
 % t - if the preceding field descriptor resulted in an empty string,
 %     then the empty string, else a <space>.
-name_fmt    "<U0025><U0064><U0025><U0074><U0025><U0067><U0025><U0074><U0025><U006D><U0025><U0074><U0025><U0066>" % pan Volodymyr Mykolayovych Lisivka
+name_fmt    "%d%t%g%t%m%t%f" % pan Volodymyr Mykolayovych Lisivka
 
 % A salutation valid for all persons
-name_gen    "<U0448><U0430><U043D><U043E><U0432><U043D><U0438><U0439><U0028><U002D><U043D><U0430><U0029>" % shanovnyj(-na)
+name_gen    "<U0448><U0430><U043D><U043E><U0432><U043D><U0438><U0439>(-<U043D><U0430>)" % shanovnyj(-na)
 
 % A salutation valid for males
 name_mr     "<U043F><U0430><U043D>" % pane
@@ -1153,13 +1058,13 @@ LC_ADDRESS
 %
 % Example of firm address in a city:
 %
-%  Volodymyru Lisivtci, firma "<U004D><U0069><U0073><U0074><U0065><U0072><U0069><U0079><U0061>"
+%  Volodymyru Lisivtci, firma "Misteriya"
 %  vul. Naukova 5a, 2-yj poverh, k. 239
 %  m. L`viv
 %  79005
 %
 % Means:
-%  firma "<U004D><U0069><U0073><U0074><U0065><U0072><U0069><U0079><U0061>" - firm name
+%  firma "Misteriya" - firm name
 %  2-yj poverh - floor number (ground floor has number one)
 %
 % Example of address in a town:
@@ -1213,8 +1118,8 @@ LC_ADDRESS
 %
 % BUG: %n escape sequence from ISO/IEC 14652:2002 is not supported by glibc-2.3.2.
 % BUG: %l escape sequence from ISO/IEC 14652:2002 is not supported by glibc-2.3.2.
-%postal_fmt "<U0025><U0061><U0025><U0074><U0025><U006E><U0025><U0074><U0025><U0066><U0025><U0074><U0025><U0064><U0025><U004E><U0025><U0073><U0025><U0074><U0025><U0068><U0025><U0074><U002C><U0020><U0025><U0062><U0025><U0074><U0025><U0065><U0025><U0074><U0025><U0072><U0025><U004E><U0025><U006C><U0025><U0074><U0025><U0054><U0025><U0074><U0025><U0053><U0025><U004E><U0025><U007A><U0025><U004E><U0025><U0063>"
-postal_fmt "<U0025><U0061><U0025><U0074><U0025><U0066><U0025><U0074><U0025><U0064><U0025><U004E><U0025><U0073><U0025><U0074><U0025><U0068><U0025><U0074><U002C><U0020><U0025><U0062><U0025><U0074><U0025><U0065><U0025><U0074><U0025><U0072><U0025><U004E><U0025><U0054><U0025><U0074><U0025><U0053><U0025><U004E><U0025><U007A><U0025><U004E><U0025><U0063>"
+%postal_fmt "%a%t%n%t%f%t%d%N%s%t%h%t, %b%t%e%t%r%N%l%t%T%t%S%N%z%N%c"
+postal_fmt "%a%t%f%t%d%N%s%t%h%t, %b%t%e%t%r%N%T%t%S%N%z%N%c"
 
 % Giving:
 %
@@ -1231,33 +1136,33 @@ country_name  "<U0423><U043A><U0440><U0430><U0457><U043D><U0430>" % Ukrayina
 lang_name     "<U0443><U043A><U0440><U0430><U0457><U043D><U0441><U044C><U043A><U0430>" % ukrayins`ka [mova]
 
 % Abbreviation of the country, see CERT-MAILCODES. (%c)
-country_post  "<U0055><U0041>"
+country_post  "UA"
 
 % Two-letter abbreviation of the country, see ISO 3166.
-country_ab2   "<U0055><U0041>"
+country_ab2   "UA"
 
 % Three-letter abbreviation of the country, see ISO 3166.
-country_ab3   "<U0055><U004B><U0052>"
+country_ab3   "UKR"
 
 % Numeric country code, see ISO 3166.
 country_num   804
 
 % Code for country car number.
-country_car   "<U0055><U0041>"
+country_car   "UA"
 
 % ISBN code, for books.
 country_isbn  966
 
 % Two-letter abbreviation of the language, see ISO 639.
-lang_ab       "<U0075><U006B>"
-% lang_ab2      "<U0075><U006B>" % ISO/IEC 14652:2002
+lang_ab       "uk"
+% lang_ab2      "uk" % ISO/IEC 14652:2002
 
 % Three-letter abbreviation of the language, see ISO 639-2.
-lang_term     "<U0075><U006B><U0072>"
-% lang_ab3_term "<U0075><U006B><U0072>" % ISO/IEC 14652:2002
+lang_term     "ukr"
+% lang_ab3_term "ukr" % ISO/IEC 14652:2002
 
 % Three-letter abbreviation of the language for library use, see ISO 639-2.
-lang_lib      "<U0075><U006B><U0072>"
-% lang_ab3_lib  "<U0075><U006B><U0072>" % ISO/IEC 14652:2002
+lang_lib      "ukr"
+% lang_ab3_lib  "ukr" % ISO/IEC 14652:2002
 
 END LC_ADDRESS

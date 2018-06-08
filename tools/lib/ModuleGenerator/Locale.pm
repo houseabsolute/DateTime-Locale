@@ -287,6 +287,7 @@ sub _extract_glibc_value ( $self, $key, $raw ) {
         or return;
 
     $val =~ s/[\\\/]\n//g;
+    $val =~ s{//}{/}g;
 
     $val =~ s/\<U([A-F\d]+)\>/chr(hex($1))/eg;
 

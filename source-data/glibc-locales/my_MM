@@ -1,5 +1,13 @@
-escape_char     /
-comment_char    %
+comment_char %
+escape_char /
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
+
 % This is the locale definition file for Myanmar Burmese
 % It is derived from the locale by Ngwe Tun <ngwestar@etrademyanmar.com> and
 % Members of the Solveware Solution Team. http://www.myazedi.com
@@ -15,22 +23,22 @@ email       "devel@thanlwinsoft.org"
 tel        ""
 fax        ""
 language   "Burmese"
-territory  "Myanmar"
+territory  "Myanmar (Burma)"
 revision "1.3"
 date       "2009-10-02"
 
-category "my_MM:2006";LC_IDENTIFICATION
-category "my_MM:2006";LC_COLLATE
-category "my_MM:2006";LC_CTYPE
-category "my_MM:2006";LC_MESSAGES
-category "my_MM:2006";LC_MONETARY
-category "my_MM:2006";LC_NUMERIC
-category "my_MM:2006";LC_TIME
-category "my_MM:2006";LC_PAPER
-category "my_MM:2006";LC_MEASUREMENT
-category "my_MM:2006";LC_TELEPHONE
-category "my_MM:2006";LC_ADDRESS
-category "my_MM:2006";LC_NAME
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_MEASUREMENT
+category "i18n:2012";LC_TELEPHONE
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_NAME
 END LC_IDENTIFICATION
 
 
@@ -61,16 +69,16 @@ END LC_COLLATE
 
 LC_MONETARY
 % MMK
-int_curr_symbol     "<U004D><U004D><U004B><U0020>"
+int_curr_symbol     "MMK "
 % Kyat in Burmese - it would be better to use this if Myanmar digits are used
 % currency_symbol         "<U1000><U103B><U1015><U103A>"
 % Ks
-currency_symbol "<U004B><U0073>"
-mon_decimal_point     "<U002E>"
-mon_thousands_sep     "<U002C>"
+currency_symbol "K"
+mon_decimal_point     "."
+mon_thousands_sep     ","
 mon_grouping          3;3
 positive_sign         ""
-negative_sign         "<U002D>"
+negative_sign         "-"
 int_frac_digits       2
 frac_digits           2
 p_cs_precedes         0
@@ -88,8 +96,8 @@ LC_NUMERIC
 % These are generated based on XML base Locale defintion file
 % for IBM Class for Unicode.
 %
-decimal_point          "<U002E>"
-thousands_sep          "<U002C>"
+decimal_point          "."
+thousands_sep          ","
 grouping               3;3
 %
 END LC_NUMERIC
@@ -147,18 +155,11 @@ mon         "<U1007><U1014><U103A><U1014><U101D><U102B><U101B><U102E>";/
 	    "<U1012><U102E><U1007><U1004><U103A><U1018><U102C>"
 
 am_pm       "<U1014><U1036><U1014><U1000><U103A>";"<U100A><U1014><U1031>"
-% %OC%Oy %b %Od %A %OI:%OM:%OS %Op %Z
-d_t_fmt     "<U0025><U004F><U0043><U0025><U004F><U0079><U0020><U0025><U0062><U0020><U0025><U004F><U0064><U0020><U0025><U0041><U0020><U0025><U004F><U0049><U003A><U0025><U004F><U004D><U003A><U0025><U004F><U0053><U0020><U0025><U004F><U0070><U0020><U0025><U005A>"
+d_t_fmt     "%OC%Oy %b %Od %A %OI:%OM:%OS %Op %Z"
 % Note: the use of %OC requires a patch to strftime_l.h
-% %OC%Oy %b %Od %A
-d_fmt       "<U0025><U004F><U0043><U0025><U004F><U0079><U0020><U0025><U0062><U0020><U0025><U004F><U0064><U0020><U0025><U0041>"
-% %OH:%OM:%OS %p
-t_fmt       "<U0025><U004F><U0049><U003A><U0025><U004F><U004D><U003A><U0025><U004F><U0053><U0020><U0025><U0070>"
-% %OI:%OM:%OS %p
-t_fmt_ampm  "<U0025><U004F><U0049><U003A><U0025><U004F><U004D><U003A><U0025><U004F><U0053><U0020><U0025><U0070>"
-
-% MMT-6.5MMT-6.5
-timezone "<U004D><U004D><U0054><U002D><U0036><U002E><U0035><U004D><U004D><U0054><U002D><U0036><U002E><U0035>"
+d_fmt       "%OC%Oy %b %Od %A"
+t_fmt       "%OI:%OM:%OS %p"
+t_fmt_ampm  "%OI:%OM:%OS %p"
 
 alt_digits  "<U1040><U1040>";/
 		"<U1040><U1041>";/
@@ -261,44 +262,36 @@ alt_digits  "<U1040><U1040>";/
 		"<U1049><U1048>";/
 		"<U1049><U1049>"
 
+week 7;19971130;1
 END LC_TIME
 
 
 LC_MESSAGES
-% ^[yY\x{101F}].*
-yesexpr     "<U005E><U005B><U0079><U0059><U101F><U005D><U002E><U002A>"
-% ^[nN\x{1019}].*
-noexpr      "<U005E><U005B><U006E><U004E><U1019><U005D><U002E><U002A>"
-yesstr      "<U101F><U102F><U1010><U103A><U1010><U101A><U103A>"
-nostr       "<U1019><U101F><U102F><U1010><U103A><U1018><U1030><U1038>"
+yesexpr "^[+1yY<U101F>]"
+noexpr  "^[-0nN<U1019>]"
+yesstr  "<U101F><U102F><U1010><U103A><U1010><U101A><U103A>"
+nostr   "<U1019><U101F><U102F><U1010><U103A><U1018><U1030><U1038>"
 END LC_MESSAGES
 
 
 LC_MEASUREMENT
-% http://en.wikipedia.org/wiki/Burmese_units_of_measurement
-% metric
-measurement 1
+copy "i18n"
 END LC_MEASUREMENT
 
-% Default paper: A4
 LC_PAPER
-height 297
-width 210
+copy "i18n"
 END LC_PAPER
 
 LC_TELEPHONE
-% +%c %a %l
-tel_int_fmt   "<U002B><U0025><U0063><U0020><U0025><U0061><U0020><U0025><U006C>"
-% %a %l
-tel_dom_fmt   "<U0025><U0061><U0020><U0025><U006C>"
-int_select    "<U0030>"
-int_prefix    "<U0039><U0035>"
+tel_int_fmt   "+%c %a %l"
+tel_dom_fmt   "%a %l"
+int_select    "0"
+int_prefix    "95"
 END LC_TELEPHONE
 
 LC_NAME
 %			[profession] Given_Name [middle_name] Family_Name
-% %p%t%g%t%m%t%f
-name_fmt    "<U0025><U0070><U0025><U0074><U0025><U0067><U0025><U0074><U0025><U006D><U0025><U0074><U0025><U0066>"
+name_fmt    "%p%t%g%t%m%t%f"
 name_gen	""
 % name_gen	"<U1026><U1038>"
 name_mr	"<U1026><U1038>"
@@ -309,14 +302,14 @@ name_miss   "<U1019>"
 END LC_NAME
 
 LC_ADDRESS
-postal_fmt   "<U0025><U0061><U0025><U004E><U0025><U0064><U0025><U004E><U0025><U0066><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0068><U0025><U0074><U0025><U0072><U0025><U0074><U0025><U0065><U0025><U0074><U0025><U0073><U0025><U004E><U0025><U0054><U0025><U0074><U0025><U007A><U0025><U004E><U0025><U0063><U0025><U004E>"
+postal_fmt   "%a%N%d%N%f%N%b%N%h%t%r%t%e%t%s%N%T%t%z%N%c%N"
 country_name   "<U1019><U103C><U1014><U103A><U1019><U102C>"
-country_post    "<U004D><U0079><U0061><U006E><U006D><U0061><U0072>"
-country_ab2     "<U004D><U004D>"
-% BA
-country_car  "<U0042><U0041>"
-lang_ab         "<U006D><U0079>"
+country_post    "Myanmar"
+country_ab2     "MM"
+country_num 104
+country_car "MYA"
+lang_ab         "my"
 lang_name       "<U1017><U1019><U102C>"
-lang_term   "<U006D><U0079><U0061>"
-lang_lib    "<U006D><U0079><U0061>"
+lang_term   "mya"
+lang_lib    "bur"
 END LC_ADDRESS

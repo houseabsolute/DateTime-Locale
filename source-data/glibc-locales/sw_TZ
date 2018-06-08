@@ -1,11 +1,16 @@
 comment_char %
 escape_char /
-% Charset: UTF-8
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
+
 % Authors:
 % 2011-03-07, locales@kamusi.org
 % 2011-03-07, info@2xlibre.net
-% Distribution and use is free, also
-% for commercial purposes.
 
 LC_IDENTIFICATION
 title      "Swahili locale for Tanzania"
@@ -14,23 +19,23 @@ contact    "Martin Benjamin"
 email      "locales@kamusi.org"
 tel        ""
 fax        ""
-language   "sw"
+language   "Swahili"
 territory  "Tanzania"
 revision   "1.0"
 date       "2011-03-07"
-%
-category  "sw_TZ:2000";LC_IDENTIFICATION
-category  "sw_TZ:2000";LC_CTYPE
-category  "sw_TZ:2000";LC_COLLATE
-category  "sw_TZ:2000";LC_TIME
-category  "sw_TZ:2000";LC_NUMERIC
-category  "sw_TZ:2000";LC_MONETARY
-category  "sw_TZ:2000";LC_PAPER
-category  "sw_TZ:2000";LC_MEASUREMENT
-category  "sw_TZ:2000";LC_MESSAGES
-category  "sw_TZ:2000";LC_NAME
-category  "sw_TZ:2000";LC_ADDRESS
-category  "sw_TZ:2000";LC_TELEPHONE
+
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_MEASUREMENT
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
 END LC_IDENTIFICATION
 
 LC_CTYPE
@@ -42,7 +47,45 @@ copy "iso14651_t1"
 END LC_COLLATE
 
 LC_TIME
-copy "sw_KE"
+mon  "Januari";/
+     "Februari";/
+     "Machi";/
+     "Aprili";/
+     "Mei";/
+     "Juni";/
+     "Julai";/
+     "Agosti";/
+     "Septemba";/
+     "Oktoba";/
+     "Novemba";/
+     "Desemba"
+abmon  "Jan";/
+       "Feb";/
+       "Mac";/
+       "Apr";/
+       "Mei";/
+       "Jun";/
+       "Jul";/
+       "Ago";/
+       "Sep";/
+       "Okt";/
+       "Nov";/
+       "Des"
+day  "Jumapili";/
+     "Jumatatu";/
+     "Jumanne";/
+     "Jumatano";/
+     "Alhamisi";/
+     "Ijumaa";/
+     "Jumamosi"
+abday  "J2";"J3";"J4";"J5";"Alh";"Ij";"J1"
+d_t_fmt  "%e %B %Y %I:%M:%S %p %Z"
+d_fmt  "%d//%m//%Y"
+t_fmt  "%I:%M:%S %p"
+am_pm  "asubuhi";"alasiri"
+t_fmt_ampm  "%I:%M:%S %p"
+week 7;19971130;1
+first_weekday 2
 END LC_TIME
 
 LC_NUMERIC
@@ -50,18 +93,13 @@ copy "sw_KE"
 END LC_NUMERIC
 
 LC_MONETARY
-% TSh
-currency_symbol  "<U0054><U0053><U0068>"
-% TZS
-int_curr_symbol  "<U0054><U005A><U0053><U0020>"
-% .
-mon_decimal_point  "<U002E>"
-% ,
-mon_thousands_sep  "<U002C>"
+currency_symbol  "TSh"
+int_curr_symbol  "TZS "
+mon_decimal_point  "."
+mon_thousands_sep  ","
 mon_grouping  3
 positive_sign  ""
-% -
-negative_sign  "<U002D>"
+negative_sign  "-"
 frac_digits  2
 int_frac_digits  2
 p_cs_precedes  1
@@ -77,8 +115,7 @@ copy "sw_KE"
 END LC_PAPER
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "sw_KE"
 END LC_MEASUREMENT
 
 LC_MESSAGES
@@ -90,39 +127,22 @@ copy "sw_KE"
 END LC_NAME
 
 LC_ADDRESS
-% %a%N%f%N%d%N%b%N%h %s %e %r%N%T, %S %z%N%c%N
-postal_fmt  "<U0025><U0061><U0025><U004E><U0025><U0066><U0025><U004E><U0025><U0064><U0025><U004E>/
-<U0025><U0062><U0025><U004E><U0025><U0068><U0020><U0025><U0073><U0020><U0025><U0065><U0020><U0025>/
-<U0072><U0025><U004E><U0025><U0054><U002C><U0020><U0025><U0053><U0020><U0025><U007A><U0025><U004E>/
-<U0025><U0063><U0025><U004E>"
-% Tanzania
-country_name  "<U0054><U0061><U006E><U007A><U0061><U006E><U0069><U0061>"
-% TZ
-country_post  "<U0054><U005A>"
-% TZ
-country_ab2   "<U0054><U005A>"
-% TZA
-country_ab3   "<U0054><U005A><U0041>"
+postal_fmt  "%a%N%f%N%d%N%b%N%h %s %e %r%N%T, %S %z%N%c%N"
+country_name  "Tanzania"
+country_post  "TZ"
+country_ab2   "TZ"
+country_ab3   "TZA"
 country_num   834
-% EAT
-country_car  "<U0045><U0041><U0054>"
-% Kiswahili
-lang_name     "<U004B><U0069><U0073><U0077><U0061><U0068><U0069><U006C><U0069>"
-% sw
-lang_ab      "<U0073><U0077>"
-% swa
-lang_term    "<U0073><U0077><U0061>"
-% swa
-lang_lib     "<U0073><U0077><U0061>"
+country_car  "EAT"
+lang_name     "Kiswahili"
+lang_ab      "sw"
+lang_term    "swa"
+lang_lib     "swa"
 END LC_ADDRESS
 
 LC_TELEPHONE
-% %c %a %l
-tel_int_fmt  "<U0025><U0063><U0020><U0025><U0061><U0020><U0025><U006C>"
-% %A %l
-tel_dom_fmt  "<U0025><U0041><U0020><U0025><U006C>"
-% 000
-int_select   "<U0030><U0030><U0030>"
-% 255
-int_prefix   "<U0032><U0035><U0035>"
+tel_int_fmt  "%c %a %l"
+tel_dom_fmt  "%A %l"
+int_select   "000"
+int_prefix   "255"
 END LC_TELEPHONE

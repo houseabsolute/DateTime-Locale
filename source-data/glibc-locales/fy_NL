@@ -1,14 +1,18 @@
 comment_char %
-escape_char  /
-%
+escape_char /
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
+
 % Frisian Language Locale for the Netherlands
 % Language: fy
 % Territory: NL
 % Date: 2006-8-13
 % Users: general
-% Charset: ISO-8859-1
-% Distribution and use is free, also
-% for commercial purposes.
 
 LC_IDENTIFICATION
 title      "Frisian locale for the Netherlands"
@@ -18,23 +22,23 @@ contact    ""
 email      "bug-glibc-locales@gnu.org"
 tel        ""
 fax        ""
-language   "Frisian"
+language   "Western Frisian"
 territory  "Netherlands"
 revision   "1.0"
 date       "2006-08-13"
-%
-category  "fy_NL:2000";LC_IDENTIFICATION
-category  "fy_NL:2000";LC_CTYPE
-category  "fy_NL:2000";LC_COLLATE
-category  "fy_NL:2000";LC_TIME
-category  "fy_NL:2000";LC_NUMERIC
-category  "fy_NL:2000";LC_MONETARY
-category  "fy_NL:2000";LC_MEASUREMENT
-category  "fy_NL:2000";LC_MESSAGES
-category  "fy_NL:2000";LC_PAPER
-category  "fy_NL:2000";LC_NAME
-category  "fy_NL:2000";LC_ADDRESS
-category  "fy_NL:2000";LC_TELEPHONE
+
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_MEASUREMENT
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
 END LC_IDENTIFICATION
 
 LC_CTYPE
@@ -46,53 +50,44 @@ copy "nl_NL"
 END LC_COLLATE
 
 LC_TIME
-abday   "<U0053><U006E>";/
-        "<U004D><U006F>";/
-        "<U0054><U0069>";/
-        "<U0057><U006F>";/
-        "<U0054><U006F>";/
-        "<U0046><U0072>";/
-        "<U0053><U006E>"
-day     "<U0053><U006E><U0065><U0069><U006E>";/
-        "<U004D><U006F><U0061><U006E><U0064><U0065><U0069>";/
-        "<U0054><U0069><U0069><U0073><U0064><U0065><U0069>";/
-        "<U0057><U006F><U0061><U006E><U0073><U0064><U0065><U0069>";/
-        "<U0054><U006F><U006E><U0067><U0065><U0072><U0073><U0064><U0065><U0069>";/
-        "<U0046><U0072><U0065><U0065><U0064>";/
-        "<U0053><U006E><U0065><U006F><U006E>"
-abmon   "<U004A><U0061><U006E>";/
-        "<U0046><U0065><U0062>";/
-        "<U004D><U0061><U0061>";/
-        "<U0041><U0070><U0072>";/
-        "<U004D><U0061><U0061>";/
-        "<U004A><U0075><U006E>";/
-        "<U004A><U0075><U006C>";/
-        "<U0041><U0075><U0067>";/
-        "<U0053><U0065><U0070>";/
-        "<U004F><U006B><U0074>";/
-        "<U004E><U006F><U0076>";/
-        "<U0044><U0065><U0073>"
-mon     "<U004A><U0061><U006E><U0061><U0072><U0069><U0073>";/
-        "<U0046><U0065><U0062><U0072><U0065><U0077><U0061><U0072><U0069><U0073>";/
-        "<U004D><U0061><U0061><U0072><U0074>";/
-        "<U0041><U0070><U0072><U0069><U006C>";/
-        "<U004D><U0061><U0061><U0069><U0065>";/
-        "<U004A><U0075><U006E><U0079>";/
-        "<U004A><U0075><U006C><U0079>";/
-        "<U0041><U0075><U0067><U0075><U0073><U0074><U0075><U0073>";/
-        "<U0053><U0065><U0070><U0074><U0069><U006D><U0062><U0065><U0072>";/
-        "<U004F><U006B><U0074><U006F><U0062><U0065><U0072>";/
-        "<U004E><U006F><U0076><U0069><U006D><U0062><U0065><U0072>";/
-        "<U0044><U0065><U0073><U0069><U006D><U0062><U0065><U0072>"
-d_t_fmt "<U0025><U0061><U0020><U0025><U0064><U0020><U0025><U0062><U0020><U0025><U0059><U0020><U0025><U0054><U0020><U0025><U005A>"
-d_fmt   "<U0025><U0064><U002D><U0025><U006D><U002D><U0025><U0079>"
-t_fmt   "<U0025><U0054>"
+abday   "Sn";"Mo";"Ti";"Wo";"To";"Fr";"Sn"
+day     "Snein";/
+        "Moandei";/
+        "Tiisdei";/
+        "Woansdei";/
+        "Tongersdei";/
+        "Freed";/
+        "Sneon"
+abmon   "Jan";/
+        "Feb";/
+        "Mrt";/
+        "Apr";/
+        "Mai";/
+        "Jun";/
+        "Jul";/
+        "Aug";/
+        "Sep";/
+        "Okt";/
+        "Nov";/
+        "Des"
+mon     "Jannewaris";/
+        "Febrewaris";/
+        "Maart";/
+        "April";/
+        "Maaie";/
+        "Juny";/
+        "July";/
+        "Augustus";/
+        "Septimber";/
+        "Oktober";/
+        "Novimber";/
+        "Desimber"
+d_t_fmt "%a %d %b %Y %T %Z"
+d_fmt   "%d-%m-%y"
+t_fmt   "%T"
 am_pm   "";""
 t_fmt_ampm ""
-date_fmt       "<U0025><U0061><U0020><U0025><U0062><U0020><U0025><U0065>/
-<U0020><U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053><U0020>/
-<U0025><U005A><U0020><U0025><U0059>"
-first_workday 2
+week 7;19971130;4
 first_weekday 2
 END LC_TIME
 
@@ -105,8 +100,7 @@ copy "nl_NL"
 END LC_MONETARY
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "nl_NL"
 END LC_MEASUREMENT
 
 LC_MESSAGES
@@ -122,23 +116,16 @@ copy "nl_NL"
 END LC_NAME
 
 LC_ADDRESS
-postal_fmt    "<U0025><U0066><U0025><U004E><U0025><U0061><U0025><U004E>/
-<U0025><U0064><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0073>/
-<U0020><U0025><U0068><U0020><U0025><U0065><U0020><U0025><U0072><U0025>/
-<U004E><U0025><U007A><U0020><U0025><U0054><U0025>/
-<U004E><U0025><U0063><U0025><U004E>"
-country_ab2 "<U004E><U004C>"
-country_ab3 "<U004E><U004C><U0044>"
+postal_fmt    "%f%N%a%N%d%N%b%N%s %h %e %r%N%z %T%N%c%N"
+country_name "Nederl<U00E2>n"
+country_ab2 "NL"
+country_ab3 "NLD"
 country_num 528
-country_car "<U004E><U004C>"
-% Frysk
-lang_name    "<U0046><U0072><U0079><U0073><U006B>"
-% fy
-lang_ab      "<U0066><U0079>"
-% fry
-lang_term    "<U0066><U0072><U0079>"
-% fry
-lang_lib "<U0066><U0072><U0079>"
+country_car "NL"
+lang_name    "West-Frysk"
+lang_ab      "fy"
+lang_term    "fry"
+lang_lib "fry"
 END LC_ADDRESS
 
 LC_TELEPHONE

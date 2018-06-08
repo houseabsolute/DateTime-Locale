@@ -1,5 +1,12 @@
+comment_char %
 escape_char /
-comment_char  %
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
 
 % Secwepemctsin (Shuswap) language locale for Canada
 % sorting according to CAN/CSA-Z243.4.1-1992
@@ -16,8 +23,6 @@ comment_char  %
 % Date: 2008-01-11
 % Application: general
 % Users: general
-% Distribution and use is free, also
-% for commercial purposes.
 
 LC_IDENTIFICATION
 title      "Secwepemctsin locale for Canada"
@@ -31,19 +36,19 @@ language   "Secwepemctsin"
 territory  "Canada"
 revision   "1.0"
 date       "2008-01-15"
-%
-category  "shs_CA:2000";LC_IDENTIFICATION
-category  "shs_CA:2000";LC_CTYPE
-category  "shs_CA:2000";LC_COLLATE
-category  "shs_CA:2000";LC_TIME
-category  "shs_CA:2000";LC_NUMERIC
-category  "shs_CA:2000";LC_MONETARY
-category  "shs_CA:2000";LC_MESSAGES
-category  "shs_CA:2000";LC_PAPER
-category  "shs_CA:2000";LC_NAME
-category  "shs_CA:2000";LC_ADDRESS
-category  "shs_CA:2000";LC_TELEPHONE
-category  "shs_CA:2000";LC_MEASUREMENT
+
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
+category "i18n:2012";LC_MEASUREMENT
 END LC_IDENTIFICATION
 
 LC_COLLATE
@@ -77,52 +82,51 @@ copy "en_CA"
 END LC_NUMERIC
 
 LC_TIME
-abday      "<U0053><U0078><U0065>";/
-           "<U0053><U0070><U0065>";/
-           "<U0053><U0065><U006C>";/
-           "<U0053><U006B><U0065>";/
-           "<U0053><U006D><U0065>";/
-           "<U0053><U0074><U0073>";/
-           "<U0053><U0074><U0071>"
-day        "<U0053><U0078><U0065><U0074><U0073><U0070><U0065><U0073><U0071><U0313><U0074>";/
-           "<U0053><U0070><U0065><U0074><U006B><U0065><U0073><U0071><U0313><U0074>";/
-           "<U0053><U0065><U006C><U0065><U0073><U0071><U0313><U0074>";/
-           "<U0053><U006B><U0065><U006C><U006C><U0065><U0073><U0071><U0313><U0074>";/
-           "<U0053><U006D><U0065><U0073><U0065><U0073><U0071><U0313><U0074>";/
-           "<U0053><U0074><U0073><U0065><U006C><U006B><U0073><U0074><U0065><U0073><U0071><U0313><U0074>";/
-           "<U0053><U0074><U0071><U006D><U0065><U006B><U0073><U0074><U0065><U0073><U0071><U0313><U0074>"
-abmon      "<U004B><U0077><U0065>";/
-           "<U0054><U0073><U0069>";/
-           "<U0053><U0071><U0065>";/
-           "<U00C9><U0077><U0074>";/
-           "<U0045><U006C><U006C>";/
-           "<U0054><U0073><U0070>";/
-           "<U0054><U0071><U0077>";/
-           "<U0043><U0074><U0313><U00E9>";/
-           "<U0051><U0065><U006C>";/
-           "<U0057><U00E9><U006C>";/
-           "<U0055><U0037><U006C>";/
-           "<U0054><U0065><U0074>"
-mon        "<U0050><U0065><U006C><U006C><U006B><U0077><U0065><U0074><U0313><U006D><U0069><U006E>";/
-       "<U0050><U0065><U006C><U0063><U0074><U0073><U0069><U0070><U0077><U0065><U006E><U0313><U0074><U0065><U006E>";/
-       "<U0050><U0065><U006C><U006C><U0073><U0071><U00E9><U0070><U0074><U0073>";/
-       "<U0050><U0065><U0073><U006C><U006C><U00E9><U0077><U0074><U0065><U006E>";/
-       "<U0050><U0065><U006C><U006C><U0037><U0065><U006C><U006C><U0037><U00E9><U0037><U006C><U006C><U0071><U0074><U0065><U006E>";/
-       "<U0050><U0065><U006C><U006C><U0074><U0073><U0070><U00E9><U006E><U0074><U0073><U006B>";/
-       "<U0050><U0065><U006C><U006C><U0074><U0071><U0077><U0065><U006C><U0071><U0313><U0077><U00E9><U006C><U0313><U0074>";/
-       "<U0050><U0065><U006C><U006C><U0063><U0074><U0313><U00E9><U0078><U0065><U006C><U0313><U0063><U0074><U0065><U006E>";/
-       "<U0050><U0065><U0073><U0071><U0065><U006C><U0071><U006C><U00E9><U006C><U0074><U0065><U006E>";/
-       "<U0050><U0065><U0073><U006C><U006C><U0077><U00E9><U006C><U0073><U0074><U0065><U006E>";/
-       "<U0050><U0065><U006C><U006C><U0063><U0037><U0065><U006C><U006C><U0037><U00E9><U0037><U006C><U006C><U0063><U0077><U0074><U0065><U006E><U0313>";/
-       "<U0050><U0065><U006C><U006C><U0074><U0065><U0074><U00E9><U0074><U0071><U0313><U0065><U006D>"
-d_t_fmt    "<U0025><U0061><U0020><U0025><U0064><U0020><U0025><U0062><U0020><U0025><U0059><U0020><U0025><U0072><U0020><U0025><U005A>"
-d_fmt      "<U0025><U0064><U002F><U0025><U006D><U002F><U0025><U0079>"
-t_fmt      "<U0025><U0072>"
-am_pm      "<U0041><U004D>";"<U0050><U004D>"
-t_fmt_ampm "<U0025><U0049><U003A><U0025><U004D><U003A><U0025><U0053><U0020><U0025><U0070>"
-date_fmt   "<U0025><U0061><U0020><U0025><U0062><U0020><U0025><U0065><U0020><U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053><U0020><U0025><U005A><U0020><U0025><U0059>"
+abday      "Sxe";/
+           "Spe";/
+           "Sel";/
+           "Ske";/
+           "Sme";/
+           "Sts";/
+           "Stq"
+day        "Sxetspesq<U0313>t";/
+           "Spetkesq<U0313>t";/
+           "Selesq<U0313>t";/
+           "Skellesq<U0313>t";/
+           "Smesesq<U0313>t";/
+           "Stselkstesq<U0313>t";/
+           "Stqmekstesq<U0313>t"
+abmon      "Kwe";/
+           "Tsi";/
+           "Sqe";/
+           "<U00C9>wt";/
+           "Ell";/
+           "Tsp";/
+           "Tqw";/
+           "Ct<U0313><U00E9>";/
+           "Qel";/
+           "W<U00E9>l";/
+           "U7l";/
+           "Tet"
+mon        "Pellkwet<U0313>min";/
+       "Pelctsipwen<U0313>ten";/
+       "Pellsq<U00E9>pts";/
+       "Pesll<U00E9>wten";/
+       "Pell7ell7<U00E9>7llqten";/
+       "Pelltsp<U00E9>ntsk";/
+       "Pelltqwelq<U0313>w<U00E9>l<U0313>t";/
+       "Pellct<U0313><U00E9>xel<U0313>cten";/
+       "Pesqelql<U00E9>lten";/
+       "Pesllw<U00E9>lsten";/
+       "Pellc7ell7<U00E9>7llcwten<U0313>";/
+       "Pelltet<U00E9>tq<U0313>em"
+d_t_fmt    "%a %d %b %Y %r %Z"
+d_fmt      "%d//%m//%y"
+t_fmt      "%r"
+am_pm      "AM";"PM"
+t_fmt_ampm "%I:%M:%S %p"
 %  FIXME: found in CLDR
-first_weekday 1
+week 7;19971130;1
 END LC_TIME
 
 LC_MESSAGES
@@ -138,8 +142,7 @@ copy "en_CA"
 END LC_TELEPHONE
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "en_CA"
 END LC_MEASUREMENT
 
 LC_NAME
@@ -147,17 +150,12 @@ copy "en_CA"
 END LC_NAME
 
 LC_ADDRESS
-postal_fmt    "<U0025><U0066><U0025><U004E><U0025><U0061><U0025><U004E>/
-<U0025><U0064><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0073>/
-<U0020><U0025><U0068><U0020><U0025><U0065><U0020><U0025><U0072><U0025>/
-<U004E><U0025><U007A><U0020><U0025><U0054><U0025>/
-<U004E><U0025><U0063><U0025><U004E>"
-country_ab2 "<U0043><U0041>"
-country_ab3 "<U0043><U0041><U004E>"
+postal_fmt    "%f%N%a%N%d%N%b%N%s %h %e %r%N%z %T%N%c%N"
+country_ab2 "CA"
+country_ab3 "CAN"
 country_num 124
-% CDN
-country_car    "<U0043><U0044><U004E>"
-lang_name "<U0053><U0065><U0063><U0077><U0065><U0070><U0065><U006D><U0063><U0074><U0073><U0069><U006E>"
-lang_term "<U0073><U0068><U0073>"
-lang_lib "<U0073><U0068><U0073>"
+country_car    "CDN"
+lang_name "Secwepemctsin"
+lang_term "shs"
+lang_lib "shs"
 END LC_ADDRESS

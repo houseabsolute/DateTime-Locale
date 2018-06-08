@@ -1,5 +1,12 @@
-escape_char /
 comment_char %
+escape_char /
+
+% This file is part of the GNU C Library and contains locale data.
+% The Free Software Foundation does not claim any copyright interest
+% in the locale data contained in this file.  The foregoing does not
+% affect the license of the GNU C Library as a whole.  It does not
+% exempt you from the conditions of the license if your use would
+% otherwise be governed by that license.
 
 % Faroese language locale for Faroe Islands
 % Source: Danish Standards Association
@@ -14,9 +21,6 @@ comment_char %
 % Revision: 4.3
 % Date: 1996-10-15
 % Users: general
-% Charset: ISO-8859-1
-% Distribution and use is free, also
-% for commercial purposes.
 %
 % Only LC_TIME and LC_MESSAGES are
 % specified here, else use the da_DK locale
@@ -33,19 +37,19 @@ language   "Faroese"
 territory  "Faroe Islands"
 revision   "1.0"
 date       "2000-06-29"
-%
-category  "fo_FO:2000";LC_IDENTIFICATION
-category  "fo_FO:2000";LC_CTYPE
-category  "fo_FO:2000";LC_COLLATE
-category  "fo_FO:2000";LC_TIME
-category  "fo_FO:2000";LC_NUMERIC
-category  "fo_FO:2000";LC_MONETARY
-category  "fo_FO:2000";LC_MESSAGES
-category  "fo_FO:2000";LC_PAPER
-category  "fo_FO:2000";LC_NAME
-category  "fo_FO:2000";LC_ADDRESS
-category  "fo_FO:2000";LC_TELEPHONE
-category  "fo_FO:2000";LC_MEASUREMENT
+
+category "i18n:2012";LC_IDENTIFICATION
+category "i18n:2012";LC_CTYPE
+category "i18n:2012";LC_COLLATE
+category "i18n:2012";LC_TIME
+category "i18n:2012";LC_NUMERIC
+category "i18n:2012";LC_MONETARY
+category "i18n:2012";LC_MESSAGES
+category "i18n:2012";LC_PAPER
+category "i18n:2012";LC_NAME
+category "i18n:2012";LC_ADDRESS
+category "i18n:2012";LC_TELEPHONE
+category "i18n:2012";LC_MEASUREMENT
 END LC_IDENTIFICATION
 
 LC_CTYPE
@@ -65,88 +69,78 @@ copy "da_DK"
 END LC_NUMERIC
 
 LC_TIME
-abday   "<U0073><U0075><U006E>";"<U006D><U00E1><U006E>";/
-        "<U0074><U00FD><U0073>";"<U006D><U0069><U006B>";/
-        "<U0068><U00F3><U0073>";"<U0066><U0072><U00ED>";/
-        "<U006C><U0065><U0079>"
-day     "<U0073><U0075><U006E><U006E><U0075><U0064><U0061><U0067><U0075><U0072>";/
-        "<U006D><U00E1><U006E><U0061><U0064><U0061><U0067><U0075><U0072>";/
-        "<U0074><U00FD><U0073><U0064><U0061><U0067><U0075><U0072>";/
-        "<U006D><U0069><U006B><U0075><U0064><U0061><U0067><U0075><U0072>";/
-        "<U0068><U00F3><U0073><U0064><U0061><U0067><U0075><U0072>";/
-        "<U0066><U0072><U00ED><U0067><U0067><U006A><U0061><U0064><U0061><U0067><U0075><U0072>";/
-        "<U006C><U0065><U0079><U0067><U0061><U0072><U0064><U0061><U0067><U0075><U0072>"
-abmon   "<U006A><U0061><U006E>";"<U0066><U0065><U0062>";/
-        "<U006D><U0061><U0072>";"<U0061><U0070><U0072>";/
-        "<U006D><U0061><U0069>";"<U006A><U0075><U006E>";/
-        "<U006A><U0075><U006C>";"<U0061><U0075><U0067>";/
-        "<U0073><U0065><U0070>";"<U006F><U006B><U0074>";/
-        "<U006E><U006F><U0076>";"<U0064><U0065><U0073>"
-mon     "<U006A><U0061><U006E><U0075><U0061><U0072>";/
-        "<U0066><U0065><U0062><U0072><U0075><U0061><U0072>";/
-        "<U006D><U0061><U0072><U0073>";/
-        "<U0061><U0070><U0072><U00ED><U006C>";/
-        "<U006D><U0061><U0069>";/
-        "<U006A><U0075><U006E><U0069>";/
-        "<U006A><U0075><U006C><U0069>";/
-        "<U0061><U0075><U0067><U0075><U0073><U0074>";/
-        "<U0073><U0065><U0070><U0074><U0065><U006D><U0062><U0065><U0072>";/
-        "<U006F><U006B><U0074><U006F><U0062><U0065><U0072>";/
-        "<U006E><U006F><U0076><U0065><U006D><U0062><U0065><U0072>";/
-        "<U0064><U0065><U0073><U0065><U006D><U0062><U0065><U0072>"
-d_t_fmt "<U0025><U0061><U0020><U0025><U0064><U0020><U0025><U0062><U0020><U0025><U0059><U0020><U0025><U0054><U0020><U0025><U005A>"
-d_fmt   "<U0025><U0064><U002F><U0025><U006D><U002D><U0025><U0059>"
-t_fmt   "<U0025><U0054>"
+abday   "sun";"m<U00E1>n";/
+        "t<U00FD>s";"mik";/
+        "h<U00F3>s";"fr<U00ED>";/
+        "ley"
+day     "sunnudagur";/
+        "m<U00E1>nadagur";/
+        "t<U00FD>sdagur";/
+        "mikudagur";/
+        "h<U00F3>sdagur";/
+        "fr<U00ED>ggjadagur";/
+        "leygardagur"
+abmon   "jan";"feb";/
+        "mar";"apr";/
+        "mai";"jun";/
+        "jul";"aug";/
+        "sep";"okt";/
+        "nov";"des"
+mon     "januar";/
+        "februar";/
+        "mars";/
+        "apr<U00ED>l";/
+        "mai";/
+        "juni";/
+        "juli";/
+        "august";/
+        "september";/
+        "oktober";/
+        "november";/
+        "desember"
+d_t_fmt "%a %d %b %Y %T %Z"
+d_fmt   "%d//%m-%Y"
+t_fmt   "%T"
 am_pm   "";""
 t_fmt_ampm  ""
-date_fmt       "<U0025><U0061><U0020><U0025><U0062><U0020><U0025><U0065>/
-<U0020><U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053><U0020>/
-<U0025><U005A><U0020><U0025><U0059>"
+week 7;19971130;4
+first_weekday 2
 END LC_TIME
 
 LC_MESSAGES
-yesexpr "<U005E><U005B><U004A><U006A><U0059><U0079><U005D><U002E><U002A>"
-noexpr  "<U005E><U005B><U004E><U006E><U005D><U002E><U002A>"
+yesexpr "^[+1JjYy]"
+noexpr  "^[-0Nn]"
+yesstr  "j<U00E1>"
+nostr   "nei"
 END LC_MESSAGES
 
 LC_PAPER
-% FIXME
-height   297
-% FIXME
-width    210
+copy "i18n"
 END LC_PAPER
 
 LC_TELEPHONE
-tel_int_fmt    "<U002B><U0025><U0063><U0020><U0025><U0061><U0020><U0025>/
-<U006C>"
-int_prefix     "<U0032><U0039><U0038>"
+tel_int_fmt    "+%c %a %l"
+int_prefix     "298"
+int_select  "00"
 END LC_TELEPHONE
 
 LC_MEASUREMENT
-% metric
-measurement 1
+copy "i18n"
 END LC_MEASUREMENT
 
 LC_NAME
-name_fmt    "<U0025><U0064><U0025><U0074><U0025><U0067><U0025><U0074>/
-<U0025><U006D><U0025><U0074><U0025><U0066>"
+name_fmt    "%d%t%g%t%m%t%f"
 END LC_NAME
 
 LC_ADDRESS
-postal_fmt    "<U0025><U0066><U0025><U004E><U0025><U0061><U0025><U004E>/
-<U0025><U0064><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0073>/
-<U0020><U0025><U0068><U0020><U0025><U0065><U0020><U0025><U0072><U0025>/
-<U004E><U0025><U007A><U0020><U0025><U0054><U0025>/
-<U004E><U0025><U0063><U0025><U004E>"
-country_ab2 "<U0046><U004F>"
-country_ab3 "<U0046><U0052><U004F>"
+postal_fmt    "%f%N%a%N%d%N%b%N%s %h %e %r%N%z %T%N%c%N"
+country_name "F<U00F8>royar"
+country_ab2 "FO"
+country_ab3 "FRO"
 country_num 234
-% FO
-country_car    "<U0046><U004F>"
+country_car  "FO"
 % føroyskt
-lang_name    "<U0066><U00F8><U0072><U006F><U0079><U0073><U006B><U0074>"
-% fo
-lang_ab      "<U0066><U006F>"
-% fao
-lang_term    "<U0066><U0061><U006F>"
+lang_name    "f<U00F8>royskt"
+lang_ab      "fo"
+lang_term    "fao"
 END LC_ADDRESS
