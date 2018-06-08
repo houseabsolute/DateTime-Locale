@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.22     2018-06-08
+
 - Update the glibc source data to the data from glibc 2.27.
 
 - Added documentation for this glibc data.
