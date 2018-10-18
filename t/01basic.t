@@ -444,7 +444,7 @@ sub test_formats {
     my $locale  = shift;
     my %formats = @_;
 
-    for my $name ( keys %formats ) {
+    for my $name ( sort keys %formats ) {
         is(
             $locale->format_for($name), $formats{$name},
             "Format for $name with " . $locale->code
