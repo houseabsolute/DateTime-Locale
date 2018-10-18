@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Rebuilt all locale data with CLDR 34, released on 2018-10-15.
+
+
 1.22     2018-06-08
 
 - Rebuilt all locale date with the glibc data from glibc 2.27.
