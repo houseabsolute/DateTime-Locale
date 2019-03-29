@@ -114,7 +114,7 @@ sub _self_and_super_path {
     my @out = ();
 
     my @in_stack = ( $_[0] );
-    my %seen = ( $_[0] => 1 );
+    my %seen     = ( $_[0] => 1 );
 
     my $current;
     while (@in_stack) {
@@ -143,7 +143,7 @@ sub _available_formats { }
 
 sub default_date_format_length { $_[0]->{default_date_format_length} }
 
-my $length = enum( values => [qw( full long medium short )] );
+my $length    = enum( values => [qw( full long medium short )] );
 my $validator = validation_for(
     name             => '_check_length_parameter',
     name_is_optional => 1,

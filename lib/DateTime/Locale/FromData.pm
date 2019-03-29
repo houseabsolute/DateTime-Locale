@@ -136,7 +136,7 @@ sub _make_datetime_format {
     return $dt_format;
 }
 
-my $length = enum( values => [qw( full long medium short )] );
+my $length    = enum( values => [qw( full long medium short )] );
 my $validator = validation_for(
     name             => '_check_length_parameter',
     name_is_optional => 1,
