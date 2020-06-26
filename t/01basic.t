@@ -461,14 +461,14 @@ sub test_formats {
 sub check_es_ES {
     my $locale = DateTime::Locale->load('es_ES');
 
-    is( $locale->name,             'Spanish Spain',    'name' );
-    is( $locale->native_name,      'espaÃ±ol EspaÃ±a', 'native_name' );
-    is( $locale->language,         'Spanish',          'language' );
-    is( $locale->native_language,  'espaÃ±ol',         'native_language' );
-    is( $locale->territory,        'Spain',            'territory' );
-    is( $locale->native_territory, 'EspaÃ±a',          'native_territory' );
-    is( $locale->variant,          undef,              'variant' );
-    is( $locale->native_variant,   undef,              'native_variant' );
+    is( $locale->name,             'Spanish Spain',  'name' );
+    is( $locale->native_name,      'español España', 'native_name' );
+    is( $locale->language,         'Spanish',        'language' );
+    is( $locale->native_language,  'español',        'native_language' );
+    is( $locale->territory,        'Spain',          'territory' );
+    is( $locale->native_territory, 'España',         'native_territory' );
+    is( $locale->variant,          undef,            'variant' );
+    is( $locale->native_variant,   undef,            'native_variant' );
 
     is( $locale->language_code,  'es',  'language_code' );
     is( $locale->territory_code, 'ES',  'territory_code' );

@@ -237,8 +237,7 @@ sub _build_data_hash ($self) {
         ## no critic (ValuesAndExpressions::ProhibitCommaSeparatedStatements)
         $data{ 'era_' . $length }
             = [
-            $cal_root->{eras}{ 'era' . $era_length{$length} }->@{ 0, 1 }
-            ];
+            $cal_root->{eras}{ 'era' . $era_length{$length} }->@{ 0, 1 } ];
     }
 
     return \%data;
