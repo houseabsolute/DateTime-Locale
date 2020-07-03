@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::ks_IN - Locale data examples for the Kashmiri India (ks-IN) locale
+DateTime::Locale::ks_Arab_IN - Locale data examples for the Kashmiri India Arabic (ks-Arab-IN) locale
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Kashmiri India locale.
+Kashmiri India Arabic locale.
 
 =head2 Days
 

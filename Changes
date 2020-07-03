@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Rebuilt all locale data with CLDR 37, released on 2020-04-23.
+
+
 1.25     2019-10-09
 
 - Rebuilt all locale data with CLDR 36, released on 2019-10-04.

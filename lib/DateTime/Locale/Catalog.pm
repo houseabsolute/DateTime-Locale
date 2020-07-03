@@ -318,6 +318,19 @@ The available locales are:
  fa-AF            Persian Afghanistan                         فارسی افغانستان
  fa-IR            Persian Iran                                فارسی ایران
  ff               Fulah                                       Pulaar
+ ff-Adlm          Fulah Adlam                                 ff Adlm
+ ff-Adlm-BF       Fulah Burkina Faso Adlam                    ff BF Adlm
+ ff-Adlm-CM       Fulah Cameroon Adlam                        ff CM Adlm
+ ff-Adlm-GH       Fulah Ghana Adlam                           ff GH Adlm
+ ff-Adlm-GM       Fulah Gambia Adlam                          ff GM Adlm
+ ff-Adlm-GN       Fulah Guinea Adlam                          ff GN Adlm
+ ff-Adlm-GW       Fulah Guinea-Bissau Adlam                   ff GW Adlm
+ ff-Adlm-LR       Fulah Liberia Adlam                         ff LR Adlm
+ ff-Adlm-MR       Fulah Mauritania Adlam                      ff MR Adlm
+ ff-Adlm-NE       Fulah Niger Adlam                           ff NE Adlm
+ ff-Adlm-NG       Fulah Nigeria Adlam                         ff NG Adlm
+ ff-Adlm-SL       Fulah Sierra Leone Adlam                    ff SL Adlm
+ ff-Adlm-SN       Fulah Senegal Adlam                         ff SN Adlm
  ff-Latn          Fulah Latin                                 Pulaar Latn
  ff-Latn-BF       Fulah Burkina Faso Latin                    Pulaar Burkibaa Faaso Latn
  ff-Latn-CM       Fulah Cameroon Latin                        Pulaar Kameruun Latn
@@ -480,7 +493,8 @@ The available locales are:
  kok              Konkani                                     कोंकणी
  kok-IN           Konkani India                               कोंकणी भारत
  ks               Kashmiri                                    کٲشُر
- ks-IN            Kashmiri India                              کٲشُر ہِندوستان
+ ks-Arab          Kashmiri Arabic                             کٲشُر اَربی
+ ks-Arab-IN       Kashmiri India Arabic                       کٲشُر ہِندوستان اَربی
  ksb              Shambala                                    Kishambaa
  ksb-TZ           Shambala Tanzania                           Kishambaa Tanzania
  ksf              Bafia                                       rikpa
@@ -521,6 +535,8 @@ The available locales are:
  luy-KE           Luyia Kenya                                 Luluhia Kenya
  lv               Latvian                                     latviešu
  lv-LV            Latvian Latvia                              latviešu Latvija
+ mai              Maithili                                    mai
+ mai-IN           Maithili India                              mai IN
  mas              Masai                                       Maa
  mas-KE           Masai Kenya                                 Maa Kenya
  mas-TZ           Masai Tanzania                              Maa Tansania
@@ -542,10 +558,14 @@ The available locales are:
  ml-IN            Malayalam India                             മലയാളം ഇന്ത്യ
  mn               Mongolian                                   монгол
  mn-MN            Mongolian Mongolia                          монгол Монгол
+ mni              Manipuri                                    mni
+ mni-Beng         Manipuri Bangla                             mni Beng
+ mni-Beng-IN      Manipuri India Bangla                       mni IN Beng
  mr               Marathi                                     मराठी
  mr-IN            Marathi India                               मराठी भारत
  ms               Malay                                       Melayu
  ms-BN            Malay Brunei                                Melayu Brunei
+ ms-ID            Malay Indonesia                             Melayu Indonesia
  ms-MY            Malay Malaysia                              Melayu Malaysia
  ms-SG            Malay Singapore                             Melayu Singapura
  mt               Maltese                                     Malti
@@ -600,6 +620,8 @@ The available locales are:
  pa-Arab-PK       Punjabi Pakistan Arabic                     پنجابی پاکستان عربی
  pa-Guru          Punjabi Gurmukhi                            ਪੰਜਾਬੀ ਗੁਰਮੁਖੀ
  pa-Guru-IN       Punjabi India Gurmukhi                      ਪੰਜਾਬੀ ਭਾਰਤ ਗੁਰਮੁਖੀ
+ pcm              Nigerian Pidgin                             pcm
+ pcm-NG           Nigerian Pidgin Nigeria                     pcm NG
  pl               Polish                                      polski
  pl-PL            Polish Poland                               polski Polska
  prg              Prussian                                    prūsiskan
@@ -649,10 +671,16 @@ The available locales are:
  sah-RU           Sakha Russia                                саха тыла Арассыыйа
  saq              Samburu                                     Kisampur
  saq-KE           Samburu Kenya                               Kisampur Kenya
+ sat              Santali                                     sat
+ sat-Olck         Santali Ol Chiki                            sat Olck
+ sat-Olck-IN      Santali India Ol Chiki                      sat IN Olck
  sbp              Sangu                                       Ishisangu
  sbp-TZ           Sangu Tanzania                              Ishisangu Tansaniya
  sd               Sindhi                                      سنڌي
- sd-PK            Sindhi Pakistan                             سنڌي پاڪستان
+ sd-Arab          Sindhi Arabic                               سنڌي عربي
+ sd-Arab-PK       Sindhi Pakistan Arabic                      سنڌي پاڪستان عربي
+ sd-Deva          Sindhi Devanagari                           sd Deva
+ sd-Deva-IN       Sindhi India Devanagari                     sd IN Deva
  se               Northern Sami                               davvisámegiella
  se-FI            Northern Sami Finland                       davvisámegiella Suopma
  se-NO            Northern Sami Norway                        davvisámegiella Norga
@@ -698,6 +726,9 @@ The available locales are:
  sr-Latn-ME       Serbian Montenegro Latin                    srpski Crna Gora latinica
  sr-Latn-RS       Serbian Serbia Latin                        srpski Srbija latinica
  sr-Latn-XK       Serbian Kosovo Latin                        srpski Kosovo latinica
+ su               Sundanese                                   su
+ su-Latn          Sundanese Latin                             su Latn
+ su-Latn-ID       Sundanese Indonesia Latin                   su ID Latn
  sv               Swedish                                     svenska
  sv-AX            Swedish Åland Islands                       svenska Åland
  sv-FI            Swedish Finland                             svenska Finland

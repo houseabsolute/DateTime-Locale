@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::sd_PK - Locale data examples for the Sindhi Pakistan (sd-PK) locale
+DateTime::Locale::sd_Arab - Locale data examples for the Sindhi Arabic (sd-Arab) locale
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
-Sindhi Pakistan locale.
+Sindhi Arabic locale.
 
 =head2 Days
 
@@ -624,7 +624,7 @@ No
 
 =head3 Local first day of the week
 
-7 (آچر)
+1 (سومر)
 
 =head1 SUPPORT
 
