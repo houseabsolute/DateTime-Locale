@@ -19,6 +19,7 @@ use warnings;
 use namespace::autoclean;
 
 use File::ShareDir qw( dist_file );
+use File::Spec;
 
 our $VERSION = '1.27';
 
@@ -6090,7 +6091,10 @@ sub locale_data {
 sub _data_for {
     my $code = shift;
 
-    my $data = do( dist_file( 'DateTime-Locale', $code . '.pl' ) );
+    my $data
+        = do(
+        File::Spec->rel2abs( dist_file( 'DateTime-Locale', $code . '.pl' ) )
+        );
     die $@ if $@;
 
     return $data;
