@@ -6092,6 +6092,7 @@ sub _data_for {
 
     my $data = do( dist_file( 'DateTime-Locale', $code . '.pl' ) );
     die $@ if $@;
+    die $! if $!;
 
     return $data;
 }

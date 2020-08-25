@@ -1,5 +1,10 @@
 {{$NEXT}}
 
+- When loading locale data, we now check $! for read errors, as well as
+  checking for an error eval'ing the file's contents in $@. Fixed by Alexander
+  Pankoff. GH #24.
+
+
 1.26     2020-07-03
 
 - Rebuilt all locale data with CLDR 37, released on 2020-04-23.
