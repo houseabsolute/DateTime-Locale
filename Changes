@@ -1,5 +1,10 @@
 {{$NEXT}}
 
+- The $locale->locale_data method now returns a deep clone of the locale's
+  data. This allows you to safely modify any elements of the returned hash
+  without breaking the original locale. Implemented by Alexander Pankoff. GH
+  #26.
+
 - Support loading locale data from relative directories in @INC. Implemented
   by Alexander Pankoff. GH #25.
 
