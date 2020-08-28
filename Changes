@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.27     2020-08-28
+
 - The $locale->locale_data method now returns a deep clone of the locale's
   data. This allows you to safely modify any elements of the returned hash
   without breaking the original locale. Implemented by Alexander Pankoff. GH
