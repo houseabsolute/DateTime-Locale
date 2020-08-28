@@ -486,7 +486,7 @@ week, with Monday being 1 and Sunday being 7.
 =head2 $locale->locale_data
 
 Returns the original data used to create this locale as a hash. This is here
-to facilitate creating custom locale that via
+to facilitate creating custom locales via
 C<DateTime::Locale->register_data_locale>.
 
 =cut
