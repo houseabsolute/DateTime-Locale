@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.28     2020-08-28
+
 - Move a test that was added in 1.27 to xt. This test is a sensitive to small
   variations in error message text, and testing it locally and in CI is
   sufficient. Reported by Kent Fredric. GH #27.
