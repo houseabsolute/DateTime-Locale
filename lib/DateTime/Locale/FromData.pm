@@ -7,6 +7,7 @@ use namespace::autoclean;
 use DateTime::Locale::Util qw( parse_locale_code );
 use Params::ValidationCompiler 0.13 qw( validation_for );
 use Specio::Declare;
+use Storable qw(dclone);
 
 our $VERSION = '1.27';
 
@@ -247,7 +248,7 @@ sub variant_id {
 }
 
 sub locale_data {
-    return %{ $_[0]->{locale_data} };
+    return %{ dclone( $_[0]->{locale_data} ) };
 }
 
 sub STORABLE_freeze {
@@ -485,8 +486,8 @@ week, with Monday being 1 and Sunday being 7.
 
 =head2 $locale->locale_data
 
-Returns the original data used to create this locale as a hash. This is here
-to facilitate creating custom locales via
+Returns a clone of the original data used to create this locale as a hash.
+This is here to facilitate creating custom locales via
 C<DateTime::Locale->register_data_locale>.
 
 =cut
