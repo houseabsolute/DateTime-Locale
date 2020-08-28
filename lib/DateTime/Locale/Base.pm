@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use namespace::autoclean;
 
-our $VERSION = '1.27';
+our $VERSION = '1.28';
 
 use Carp qw( carp );
 use DateTime::Locale;
