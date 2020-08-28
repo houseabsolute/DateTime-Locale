@@ -404,6 +404,10 @@ a calendar it's okay to have "T" for both Tuesday and Thursday).
 The wide name should always be the full name of thing in question. The narrow
 name should be just one or two characters.
 
+B<These methods return a reference to the data stored in the locale object. If
+you change this reference's contents, this will affect the data in the locale
+object! You should clone the data first if you want to modify it.>
+
 =head2 $locale->date_format_full
 
 =head2 $locale->date_format_long
