@@ -1,5 +1,10 @@
 {{$NEXT}}
 
+- Move a test that was added in 1.27 to xt. This test is a sensitive to small
+  variations in error message text, and testing it locally and in CI is
+  sufficient. Reported by Kent Fredric. GH #27.
+
+
 1.27     2020-08-28
 
 - The $locale->locale_data method now returns a deep clone of the locale's
