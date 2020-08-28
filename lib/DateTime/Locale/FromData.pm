@@ -392,7 +392,9 @@ string.
 
 =head2 $locale->era_narrow
 
-These methods all return an array reference containing the specified data.
+These methods all return an array reference containing the specified data. If
+you want to modify the data you should create a copy of the referenced data
+first to prevent your changes from affecting the original locale data.
 
 The methods with "format" in the name should return strings that can be used a
 part of a string, like "the month of July". The stand alone values are for use
