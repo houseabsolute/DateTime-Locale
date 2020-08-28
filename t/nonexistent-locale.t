@@ -8,6 +8,9 @@ use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
 use DateTime::Locale::Data;
 use File::ShareDir qw( dist_dir );
 
+skip_all 'This test requires chmod support'
+    if $^O eq 'MSWin32';
+
 my $file
     = File::Spec->catfile( dist_dir('DateTime-Locale'), 'unreadable.pl' );
 open my $fh, '>', $file or die $!;
