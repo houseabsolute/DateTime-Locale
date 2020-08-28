@@ -5,8 +5,8 @@
   without breaking the original locale. Implemented by Alexander Pankoff. GH
   #26.
 
-- Support loading locale data from relative directories in @INC. Implemented
-  by Alexander Pankoff. GH #25.
+- We now support loading locale data from relative directories in
+  @INC. Implemented by Alexander Pankoff. GH #25.
 
 - When loading locale data, we now check $! for read errors, as well as
   checking for an error eval'ing the file's contents in $@. Fixed by Alexander
