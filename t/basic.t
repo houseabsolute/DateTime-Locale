@@ -2,8 +2,7 @@ use strict;
 use warnings;
 use utf8;
 
-use Test::Fatal;
-use Test::More 0.96;
+use Test2::V0;
 use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
 
 use DateTime::Locale;
@@ -38,7 +37,7 @@ sub basic_tests {
     ok( $locale_codes{'ar-JO'}, q{Locale code 'ar-JO' found} );
 
     like(
-        exception { DateTime::Locale->load('Does not exist') },
+        dies { DateTime::Locale->load('Does not exist') },
         qr/invalid/i,
         'invalid locale name/code to DateTime::Locale->load causes an error'
     );
@@ -59,7 +58,7 @@ sub test_one_locale {
 
     my $locale;
     is(
-        exception { $locale = DateTime::Locale->load($code) },
+        dies { $locale = DateTime::Locale->load($code) },
         undef,
         "no exception loading locale for $code"
     );
@@ -432,7 +431,7 @@ sub test_data {
     for my $k ( sort keys %tests ) {
         my $desc = "$k for " . $locale->code;
         if ( ref $tests{$k} ) {
-            is_deeply( $locale->$k, $tests{$k}, $desc );
+            is( $locale->$k, $tests{$k}, $desc );
         }
         else {
             is( $locale->$k, $tests{$k}, $desc );
@@ -451,7 +450,7 @@ sub test_formats {
         );
     }
 
-    is_deeply(
+    is(
         [ $locale->available_formats ],
         [ sort keys %formats ],
         'Available formats for ' . $locale->code . ' match what is expected'
@@ -478,13 +477,13 @@ sub check_es_ES {
 sub check_af {
     my $locale = DateTime::Locale->load('af');
 
-    is_deeply(
+    is(
         $locale->month_format_abbreviated,
         [qw( Jan. Feb. Mrt. Apr. Mei Jun. Jul. Aug. Sep. Okt. Nov. Des. )],
         'month abbreviations for af use non-draft form'
     );
 
-    is_deeply(
+    is(
         $locale->month_format_narrow,
         [qw( J F M A M J J A S O N D )],
         'month narrows for af use draft form because that is the only form available'

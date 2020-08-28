@@ -1,8 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More;
-use Test::Fatal;
+use Test2::V0;
 use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
 
 use DateTime::Locale;
@@ -46,13 +45,13 @@ use DateTime::Locale;
 }
 
 like(
-    exception { DateTime::Locale->register( id => '@' ) },
+    dies { DateTime::Locale->register( id => '@' ) },
     qr/\Q'\@' or '=' are not allowed in locale ids\E/,
     'locale id test with @'
 );
 
 like(
-    exception { DateTime::Locale->register( id => '=' ) },
+    dies { DateTime::Locale->register( id => '=' ) },
     qr/\Q'\@' or '=' are not allowed in locale ids\E/,
     'locale id test with ='
 );

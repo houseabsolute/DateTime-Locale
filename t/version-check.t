@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-use Test::More;
-use Test::Warnings qw( warnings :no_end_test );
+use Test2::V0;
+use Test2::Plugin::NoWarnings;
 use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
 
 {
@@ -23,12 +23,13 @@ use Test::File::ShareDir::Dist { 'DateTime-Locale' => 'share' };
     );
 }
 
-my @warnings = warnings { DateTime::Locale->load('fake') };
-is( scalar @warnings, 1, 'got one warning from loading old locale' );
-like(
-    $warnings[0],
-    qr/\Qfrom an older version (0)/,
-    'loading locale from an older CLDR version warns'
+is(
+    warnings { DateTime::Locale->load('fake') },
+    array {
+        item 0 => match qr/\Qfrom an older version (0)/;
+        end();
+    },
+    'got a warning when loading a locale from an older CLDR version'
 );
 
 done_testing()
