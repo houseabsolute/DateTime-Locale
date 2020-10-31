@@ -195,11 +195,11 @@ sub check_root {
         day_stand_alone_wide        => [qw( Mon Tue Wed Thu Fri Sat Sun )],
         day_stand_alone_abbreviated => [qw( Mon Tue Wed Thu Fri Sat Sun )],
         day_stand_alone_narrow      => [qw( M T W T F S S )],
-        month_format_wide =>
+        month_format_wide           =>
             [qw( M01 M02 M03 M04 M05 M06 M07 M08 M09 M10 M11 M12 )],
         month_format_abbreviated =>
             [qw( M01 M02 M03 M04 M05 M06 M07 M08 M09 M10 M11 M12 )],
-        month_format_narrow => [qw( 1 2 3 4 5 6 7 8 9 10 11 12 )],
+        month_format_narrow    => [qw( 1 2 3 4 5 6 7 8 9 10 11 12 )],
         month_stand_alone_wide =>
             [qw( M01 M02 M03 M04 M05 M06 M07 M08 M09 M10 M11 M12 )],
         month_stand_alone_abbreviated =>
@@ -390,7 +390,7 @@ sub en_data {
             [qw( Monday Tuesday Wednesday Thursday Friday Saturday Sunday )],
         day_format_abbreviated => [qw( Mon Tue Wed Thu Fri Sat Sun )],
         day_format_narrow      => [qw( M T W T F S S )],
-        day_stand_alone_wide =>
+        day_stand_alone_wide   =>
             [qw( Monday Tuesday Wednesday Thursday Friday Saturday Sunday )],
         day_stand_alone_abbreviated => [qw( Mon Tue Wed Thu Fri Sat Sun )],
         day_stand_alone_narrow      => [qw( M T W T F S S )],
@@ -408,11 +408,11 @@ sub en_data {
         month_stand_alone_abbreviated =>
             [qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec )],
         month_stand_alone_narrow => [qw( J F M A M J J A S O N D )],
-        quarter_format_wide =>
+        quarter_format_wide      =>
             [ '1st quarter', '2nd quarter', '3rd quarter', '4th quarter' ],
         quarter_format_abbreviated => [qw( Q1 Q2 Q3 Q4 )],
         quarter_format_narrow      => [qw( 1 2 3 4 )],
-        quarter_stand_alone_wide =>
+        quarter_stand_alone_wide   =>
             [ '1st quarter', '2nd quarter', '3rd quarter', '4th quarter' ],
         quarter_stand_alone_abbreviated => [qw( Q1 Q2 Q3 Q4 )],
         quarter_stand_alone_narrow      => [qw( 1 2 3 4 )],
