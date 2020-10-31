@@ -54,19 +54,9 @@ LC_COLLATE
 % <i> (dotless i), <i.> (i with dot), <i'>, <j>, <k>, <l>, <m>, <n>, <n?>, <o>,
 % <o:>, <p>, <q>, <r>, <s>, <s,>, <t>, <u>, <u:>, <v>, <w>, <x>, <y>, <z>
 
+% The crh_UA locale already does all of the above correctly in LC_COLLATE
+% just copy it:
 copy "crh_UA"
-
-collating-symbol <i'>
-
-reorder-after <i.>
-<i'>
-
-reorder-after <U0069>
-<U00ED> <i'>;<ACA>;<MIN>;IGNORE
-reorder-after <U0130>
-<U00CD> <i'>;<ACA>;<CAP>;IGNORE
-
-reorder-end
 
 END LC_COLLATE
 
@@ -146,7 +136,8 @@ abmon   "<U011E><U0131>n";/
         "<U00DC>kt";/
         "Noy";/
         "Dik"
-d_t_fmt "%a %d %b %Y %T"
+d_t_fmt   "%a %d %b %Y %T"
+date_fmt  "%a %d %b %Y %T %Z"
 d_fmt     "%d.%m.%Y"
 t_fmt     "%T"
 am_pm     "<U00D6>A";"<U00D6>S"
@@ -165,10 +156,12 @@ END LC_MEASUREMENT
 
 LC_ADDRESS
 postal_fmt    "%f%N%a%N%d%N%b%N%s %h %e %r%N%z %T%N%c%N"
+country_name  "Ur<U0131>s Pat<U015F>ahl<U0131>q"
 country_ab2 "RU"
 country_ab3 "RUS"
 country_num 643
 country_car    "RUS"
+lang_name    "tatar tele"
 lang_ab      "tt"
 lang_term    "tat"
 lang_lib    "tat"
