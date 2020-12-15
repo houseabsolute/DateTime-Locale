@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.30     2020-12-15
+
 - The previous release included some locale data for locales that had been
   deleted from CLDR 38.0.0.
 
