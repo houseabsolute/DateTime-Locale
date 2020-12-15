@@ -1,6 +1,6 @@
 {{$NEXT}}
 
-- Rebuilt all locale data with the glibc data from glibc 2.32.
+- Rebuilt all locale data with the data from CLDR 38.0.0 and glibc 2.32.
 
 
 1.28     2020-08-28

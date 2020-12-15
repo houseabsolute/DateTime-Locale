@@ -297,6 +297,10 @@ sub check_en_GB {
 
     my %tests = (
         en_data(),
+        month_format_abbreviated =>
+            [qw( Jan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec )],
+        month_stand_alone_abbreviated =>
+            [qw( Jan Feb Mar Apr May Jun Jul Aug Sept Oct Nov Dec )],
         am_pm_abbreviated       => [ 'am', 'pm' ],
         first_day_of_week       => 1,
         name                    => 'English United Kingdom',
