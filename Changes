@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.31     2020-12-22
+
 - The docs for each locale now show examples of its strftime patterns as well.
 
 
