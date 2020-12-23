@@ -394,7 +394,7 @@ also provides some functions for getting information on all the available
 locales.
 
 If you want to know what methods are available for locale objects, then please
-read the C<DateTime::Locale::FromData> documentation.
+read the L<DateTime::Locale::FromData> documentation.
 
 =head1 USAGE
 
@@ -403,7 +403,7 @@ This module provides the following class methods:
 =head2 DateTime::Locale->load( $locale_code | $locale_name )
 
 Returns the locale object for the specified locale code or name - see the
-C<DateTime::Locale::Catalog> documentation for the list of available codes and
+L<DateTime::Locale::Catalog> documentation for the list of available codes and
 names. The name provided may be either the English or native name.
 
 If the requested locale is not found, a fallback search takes place to
@@ -468,7 +468,7 @@ names use UTF-8 as appropriate.
 
 This method allows you to register a custom locale. The data for the locale is
 specified as a hash (or hashref) where the keys match the method names given
-in C<DateTime::Locale::FromData>.
+in L<DateTime::Locale::FromData>.
 
 If you just want to make some small changes on top of an existing locale you
 can get that locale's data by calling C<< $locale->locale_data >>.
@@ -545,7 +545,7 @@ contain errors in some locales.
 
 When reporting errors in data, please check the primary data sources first,
 then where necessary report errors directly to the primary source via the CLDR
-bug report system. See http://unicode.org/cldr/filing_bug_reports.html for
+bug report system. See L<http://unicode.org/cldr/filing_bug_reports.html> for
 details.
 
 Once these errors have been confirmed, please forward the error report and

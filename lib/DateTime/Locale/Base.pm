@@ -479,7 +479,7 @@ sub STORABLE_thaw {
 
 1;
 
-# ABSTRACT: Base class for individual locale objects
+# ABSTRACT: Base class for individual locale objects (deprecated)
 
 __END__
 
