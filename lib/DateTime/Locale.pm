@@ -406,8 +406,8 @@ Returns the locale object for the specified locale code or name - see the
 L<DateTime::Locale::Catalog> documentation for the list of available codes and
 names. The name provided may be either the English or native name.
 
-If the requested locale is not found, a fallback search takes place to
-find a suitable replacement.
+If the requested locale is not found, a fallback search takes place to find a
+suitable replacement.
 
 The fallback search order is:
 
@@ -434,8 +434,8 @@ Eg. For the locale code C<es-Latn-XX> the fallback search would be:
 
 If no suitable replacement is found, then an exception is thrown.
 
-The loaded locale is cached, so that B<locale objects may be
-singletons>. Calling C<< DateTime::Locale->register_from_data >>, C<<
+The loaded locale is cached, so that B<locale objects may be singletons>.
+Calling C<< DateTime::Locale->register_from_data >>, C<<
 DateTime::Locale->add_aliases >>, or C<< DateTime::Locale->remove_alias >>
 clears the cache.
 
@@ -444,8 +444,8 @@ clears the cache.
   my @codes = DateTime::Locale->codes;
   my $codes = DateTime::Locale->codes;
 
-Returns an unsorted list of the available locale codes, or an array reference if
-called in a scalar context. This list does not include aliases.
+Returns an unsorted list of the available locale codes, or an array reference
+if called in a scalar context. This list does not include aliases.
 
 =head2 DateTime::Locale->names
 
@@ -461,14 +461,14 @@ reference if called in a scalar context.
   my $names = DateTime::Locale->native_names;
 
 Returns an unsorted list of the available locale names in their native
-language, or an array reference if called in a scalar context. All native
-names use UTF-8 as appropriate.
+language, or an array reference if called in a scalar context. All native names
+use UTF-8 as appropriate.
 
 =head2 DateTime::Locale->register_from_data( $locale_data )
 
 This method allows you to register a custom locale. The data for the locale is
-specified as a hash (or hashref) where the keys match the method names given
-in L<DateTime::Locale::FromData>.
+specified as a hash (or hashref) where the keys match the method names given in
+L<DateTime::Locale::FromData>.
 
 If you just want to make some small changes on top of an existing locale you
 can get that locale's data by calling C<< $locale->locale_data >>.
@@ -495,8 +495,8 @@ methods provided by L<DateTime::Locale::FromData>, except for the following:
 
 =item The C<*_code> methods
 
-While you should provide a C<code> key, the other methods like
-C<language_code> and C<script_code> are determined by parsing the code.
+While you should provide a C<code> key, the other methods like C<language_code>
+and C<script_code> are determined by parsing the code.
 
 =item All C<id> returning methods
 

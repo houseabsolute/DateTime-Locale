@@ -23,12 +23,12 @@ This module contains a list of all known locales.
 
 Any method taking locale code or name arguments should use one of the values
 listed below. Codes and names are case sensitive. The code starts with the
-ISO639-1 language code, and may also include information identifying any or
-all of territory, script, or variant.
+ISO639-1 language code, and may also include information identifying any or all
+of territory, script, or variant.
 
-Always select the closest matching locale - for example, French Canadians
-would choose C<fr-CA> over fr - and B<always> use locale codes in preference
-to names; locale codes offer greater compatibility when using localized third
+Always select the closest matching locale - for example, French Canadians would
+choose C<fr-CA> over fr - and B<always> use locale codes in preference to
+names; locale codes offer greater compatibility when using localized third
 party modules.
 
 The available locales are:

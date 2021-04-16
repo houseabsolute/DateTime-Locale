@@ -330,8 +330,8 @@ component, plus optional territory and variant components. Something like
 
 =head2 $locale->variant
 
-The relevant component from the locale's complete name, like "English"
-or "United States".
+The relevant component from the locale's complete name, like "English" or
+"United States".
 
 =head2 $locale->native_name
 
@@ -437,8 +437,8 @@ method.
 
 =head2 $locale->format_for($name)
 
-These are accessed by passing a name to C<< $locale->format_for(...)  >>,
-where the name is a CLDR-style format specifier.
+These are accessed by passing a name to C<< $locale->format_for(...)  >>, where
+the name is a CLDR-style format specifier.
 
 The return value is a string suitable for passing to C<< $dt->format_cldr >>,
 so you can do something like this:
@@ -454,8 +454,8 @@ Chinese characters for "day" (日) and month (月), so you get something like
 
 =head2 $locale->available_formats
 
-This should return a list of all the format names that could be passed
-to C<< $locale->format_for >>.
+This should return a list of all the format names that could be passed to C<<
+$locale->format_for >>.
 
 See the documentation for individual locales for details and examples of these
 formats. The format names that are available vary by locale.
@@ -472,8 +472,8 @@ formats. The format names that are available vary by locale.
 
 These methods return strings appropriate for the C<< DateTime->strftime >>
 method. However, you are strongly encouraged to use the other format methods,
-which use the CLDR format data. They are primarily included for the benefit
-for L<DateTime::Format::Strptime>.
+which use the CLDR format data. They are primarily included for the benefit for
+L<DateTime::Format::Strptime>.
 
 =head2 $locale->version
 
@@ -485,13 +485,13 @@ Returns a boolean indicating whether or not the locale prefers 24-hour time.
 
 =head2 $locale->first_day_of_week
 
-Returns a number from 1 to 7 indicating the I<local> first day of the
-week, with Monday being 1 and Sunday being 7.
+Returns a number from 1 to 7 indicating the I<local> first day of the week,
+with Monday being 1 and Sunday being 7.
 
 =head2 $locale->locale_data
 
-Returns a clone of the original data used to create this locale as a hash.
-This is here to facilitate creating custom locales via
+Returns a clone of the original data used to create this locale as a hash. This
+is here to facilitate creating custom locales via
 C<DateTime::Locale->register_data_locale>.
 
 =cut
