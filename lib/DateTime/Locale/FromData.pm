@@ -9,7 +9,7 @@ use Params::ValidationCompiler 0.13 qw( validation_for );
 use Specio::Declare;
 use Storable qw( dclone );
 
-our $VERSION = '1.32';
+our $VERSION = '1.33';
 
 my @FormatLengths;
 
