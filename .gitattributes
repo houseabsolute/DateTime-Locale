@@ -1,2 +1,4 @@
 *.pl linguist-language=Perl
+lib/DateTime/Locale/*.pod linguist-generated
+share/*.pl linguist-generated
 source-data/* linguist-vendored
