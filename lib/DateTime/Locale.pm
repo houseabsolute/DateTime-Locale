@@ -558,10 +558,6 @@ to extract the CLDR data.
 
 =head1 SEE ALSO
 
-L<DateTime::Locale::Base>
-
 datetime@perl.org mailing list
-
-http://datetime.perl.org/
 
 =cut
