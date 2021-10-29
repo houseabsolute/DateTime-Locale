@@ -19,12 +19,12 @@
 
 =head1 NAME
 
-DateTime::Locale::root - Locale data examples for the  (root) locale
+DateTime::Locale::und - Locale data examples for the Unknown language (und) locale
 
 =head1 DESCRIPTION
 
 This pod file contains examples of the locale data available for the
- locale.
+Unknown language locale.
 
 =head2 Days
 
@@ -416,6 +416,12 @@ This pod file contains examples of the locale data available for the
    2008-02-05T18:30:30 = CE 2008 M02 5
    1995-12-22T09:05:02 = CE 1995 M12 22
   -0010-09-15T04:44:23 = BCE -10 M09 15
+
+=head3 GyMd (GGGGG y-MM-dd)
+
+   2008-02-05T18:30:30 = CE 2008-02-05
+   1995-12-22T09:05:02 = CE 1995-12-22
+  -0010-09-15T04:44:23 = BCE -10-09-15
 
 =head3 H (HH)
 

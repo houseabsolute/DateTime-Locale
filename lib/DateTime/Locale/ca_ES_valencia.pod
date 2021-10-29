@@ -19,7 +19,7 @@
 
 =head1 NAME
 
-DateTime::Locale::ca_ES_VALENCIA - Locale data examples for the Catalan Spain Valencian (ca-ES-VALENCIA) locale
+DateTime::Locale::ca_ES_valencia - Locale data examples for the Catalan Spain Valencian (ca-ES-valencia) locale
 
 =head1 DESCRIPTION
 
@@ -434,6 +434,12 @@ Catalan Spain Valencian locale.
    2008-02-05T18:30:30 = 5 de febr. de 2008 dC
    1995-12-22T09:05:02 = 22 de des. de 1995 dC
   -0010-09-15T04:44:23 = 15 de set. de -10 aC
+
+=head3 GyMd (dd-MM-y GGGGG)
+
+   2008-02-05T18:30:30 = 05-02-2008 dC
+   1995-12-22T09:05:02 = 22-12-1995 dC
+  -0010-09-15T04:44:23 = 15-09--10 aC
 
 =head3 H (H)
 

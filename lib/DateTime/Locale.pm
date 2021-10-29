@@ -184,8 +184,8 @@ my %DateTimeLanguageAliases = (
 );
 
 my %POSIXAliases = (
-    C     => 'en-US-POSIX',
-    POSIX => 'en-US-POSIX',
+    C     => 'en-US',
+    POSIX => 'en-US',
 );
 
 {

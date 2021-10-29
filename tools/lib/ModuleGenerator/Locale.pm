@@ -298,7 +298,7 @@ sub _build_glibc_file ($self) {
     }
 
     # This ensures some sort of sanish fallback
-    $glibc_code = 'POSIX' if $self->code eq 'root';
+    $glibc_code = 'POSIX' if $self->code eq 'und';
 
     return $self->_glibc_root->child($glibc_code);
 }
@@ -339,7 +339,7 @@ sub _build_parent_code ($self) {
         return $code if -f $parent_file;
     }
 
-    # This is impossible because we should always be able to find root as a
+    # This is impossible because we should always be able to find und as a
     # parent.
     confess 'Impossible! Could not find a parent!';
 }
@@ -351,9 +351,9 @@ sub _parent_of_code ( $self, $code ) {
         if $explicit_parents->{$code};
 
     return
-          $code =~ /-/    ? $code =~ s/-[^-]+$//r
-        : $code ne 'root' ? 'root'
-        :                   confess 'There is no parent for the root locale!';
+          $code =~ /-/   ? $code =~ s/-[^-]+$//r
+        : $code ne 'und' ? 'und'
+        :                  confess 'There is no parent for the und locale!';
 }
 
 sub _gregorian_file_for_code ( $self, $code ) {
@@ -374,7 +374,7 @@ sub _build_parent_locale ($self) {
 }
 
 sub _has_parent_code ($self) {
-    return $self->code ne 'root';
+    return $self->code ne 'und';
 }
 
 sub _explicit_parents ($self) {
