@@ -8,6 +8,7 @@ use warnings;
 use feature qw( postderef signatures );
 use namespace::autoclean;
 
+use Carp qw( confess );
 use DateTime::Locale::Util qw( parse_locale_code );
 use JSON::MaybeXS qw( decode_json );
 use Specio::Declare;
@@ -264,7 +265,7 @@ sub _build_glibc_data ($self) {
     my $parent = $self->_parent_locale;
 
     unless ( -f $self->_glibc_file ) {
-        die sprintf(
+        confess sprintf(
             'No glibc data for %s and it has no parent',
             $self->code
         ) unless $parent;
@@ -324,7 +325,7 @@ sub _build_json_file ($self) {
 
     my $parent_file = $self->_gregorian_file_for_code( $self->_parent_code );
     unless ( -f $parent_file ) {
-        die "Could not find $code_file or $parent_file for locale ",
+        confess "Could not find $code_file or $parent_file for locale ",
             $self->code, "\n";
     }
 
@@ -340,7 +341,7 @@ sub _build_parent_code ($self) {
 
     # This is impossible because we should always be able to find root as a
     # parent.
-    die 'Impossible! Could not find a parent!';
+    confess 'Impossible! Could not find a parent!';
 }
 
 sub _parent_of_code ( $self, $code ) {
@@ -352,7 +353,7 @@ sub _parent_of_code ( $self, $code ) {
     return
           $code =~ /-/    ? $code =~ s/-[^-]+$//r
         : $code ne 'root' ? 'root'
-        :                   die 'There is no parent for the root locale!';
+        :                   confess 'There is no parent for the root locale!';
 }
 
 sub _gregorian_file_for_code ( $self, $code ) {
@@ -363,10 +364,6 @@ sub _gregorian_file_for_code ( $self, $code ) {
     );
 }
 
-sub _has_parent_code ($self) {
-    return $self->code ne 'root';
-}
-
 sub _build_parent_locale ($self) {
     return unless $self->_has_parent_code;
     return ModuleGenerator::Locale->instance(
@@ -374,6 +371,10 @@ sub _build_parent_locale ($self) {
         cldr_root  => $self->_cldr_root,
         glibc_root => $self->_glibc_root,
     );
+}
+
+sub _has_parent_code ($self) {
+    return $self->code ne 'root';
 }
 
 sub _explicit_parents ($self) {
