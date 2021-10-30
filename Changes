@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.33     2021-10-30
+
 - Rebuilt all locale data with the data from CLDR 40.0.0. There are some
   notable data changes in CLDR 40.0.0.
 
