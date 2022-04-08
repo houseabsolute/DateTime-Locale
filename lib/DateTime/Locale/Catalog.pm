@@ -107,8 +107,8 @@ The available locales are:
  bo-IN            Tibetan India                               བོད་སྐད་ རྒྱ་གར་
  br               Breton                                      brezhoneg
  br-FR            Breton France                               brezhoneg Frañs
- brx              Bodo                                        बड़ो
- brx-IN           Bodo India                                  बड़ो भारत
+ brx              Bodo                                        बर’
+ brx-IN           Bodo India                                  बर’ भारत
  bs               Bosnian                                     bosanski
  bs-Cyrl          Bosnian Cyrillic                            босански ћирилица
  bs-Cyrl-BA       Bosnian Bosnia & Herzegovina Cyrillic       босански Босна и Херцеговина ћирилица
@@ -233,6 +233,7 @@ The available locales are:
  en-MS            English Montserrat                          English Montserrat
  en-MT            English Malta                               English Malta
  en-MU            English Mauritius                           English Mauritius
+ en-MV            English Maldives                            English Maldives
  en-MW            English Malawi                              English Malawi
  en-MY            English Malaysia                            English Malaysia
  en-NA            English Namibia                             English Namibia
@@ -429,6 +430,8 @@ The available locales are:
  he-IL            Hebrew Israel                               עברית ישראל
  hi               Hindi                                       हिन्दी
  hi-IN            Hindi India                                 हिन्दी भारत
+ hi-Latn          Hindi Latin                                 Hindi Latin
+ hi-Latn-IN       Hindi India Latin                           Hindi India Latin
  hr               Croatian                                    hrvatski
  hr-BA            Croatian Bosnia & Herzegovina               hrvatski Bosna i Hercegovina
  hr-HR            Croatian Croatia                            hrvatski Hrvatska
@@ -497,6 +500,8 @@ The available locales are:
  ks               Kashmiri                                    کٲشُر
  ks-Arab          Kashmiri Arabic                             کٲشُر اَربی
  ks-Arab-IN       Kashmiri India Arabic                       کٲشُر ہِندوستان اَربی
+ ks-Deva          Kashmiri Devanagari                         कॉशुर देवनागरी
+ ks-Deva-IN       Kashmiri India Devanagari                   कॉशुर भारत देवनागरी
  ksb              Shambala                                    Kishambaa
  ksb-TZ           Shambala Tanzania                           Kishambaa Tanzania
  ksf              Bafia                                       rikpa
