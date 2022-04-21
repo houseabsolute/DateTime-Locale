@@ -6143,9 +6143,12 @@ sub locale_data {
 sub _data_for {
     my $code = shift;
 
+    # Basic sanity check before we load from disk.
+    die "Invalid locale code - $code\n" if $code !~ /^([A-Za-z0-9-]+)$/;
+
     my $data
         = do(
-        File::Spec->rel2abs( dist_file( 'DateTime-Locale', $code . '.pl' ) )
+        File::Spec->rel2abs( dist_file( 'DateTime-Locale', $1 . '.pl' ) )
         );
     die $@ if $@;
     die $! if $!;
