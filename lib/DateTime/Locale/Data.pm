@@ -6143,6 +6143,10 @@ sub locale_data {
 sub _data_for {
     my $code = shift;
 
+    # This untaints the variable.
+    ($code) = $code =~ /^([A-Za-z0-9-]+)$/
+        or die "Invalid locale code - $code\n";
+
     my $data
         = do(
         File::Spec->rel2abs( dist_file( 'DateTime-Locale', $code . '.pl' ) )
