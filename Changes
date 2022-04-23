@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.35     2022-04-23
+
 - The code passed to DateTime::Locale->load is now validated and untainted
   before using it to load and eval data from the filesystem. I don't think
   there were any security issues without this, as the load method would only
