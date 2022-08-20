@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.36     2022-08-20
+
 - Fixed misparsing of the `be-tarask` locale code. This is a locale with just
   a language name and a variant. The locale parsing code assumed that all
   two-part locale codes had either a script or territory, not a variant. This
