@@ -8,7 +8,7 @@ our $VERSION = '1.36';
 
 use Carp qw( carp );
 use DateTime::Locale;
-use List::Util 1.45 ();
+use List::Util 1.45                 ();
 use Params::ValidationCompiler 0.13 qw( validation_for );
 use Specio::Declare;
 
