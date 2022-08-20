@@ -106,7 +106,6 @@ sub run ($self) {
         or confess $!;
 
     $self->_clean_old_data;
-    $self->_locales;
     $self->_write_data_files;
     $self->_write_catalog_pm;
     $self->_write_pod_files;
