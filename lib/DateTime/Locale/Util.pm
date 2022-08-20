@@ -10,6 +10,10 @@ our $VERSION = '1.36';
 
 our @EXPORT_OK = 'parse_locale_code';
 
+# It might be better to redo this as something that looks up each piece in a
+# catalog of codes. In particular, attempting to distinguish variants from
+# scripts is basically impossible without hard-coding (see 'tarask' below) or
+# by looking the codes up in a catalog.
 sub parse_locale_code {
     my @pieces = split /-/, $_[0];
 
@@ -19,6 +23,12 @@ sub parse_locale_code {
     if ( @pieces == 1 ) {
         if ( length $pieces[0] == 2 || $pieces[0] =~ /^\d\d\d$/ ) {
             $codes{territory} = uc shift @pieces;
+        }
+
+        # The "be-Tarask" locale appears to be the only locale with a variant
+        # and no territory or script.
+        elsif ( lc $pieces[0] eq 'tarask' ) {
+            $codes{variant} = uc shift @pieces;
         }
         else {
             $codes{script} = _tc( shift @pieces );

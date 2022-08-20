@@ -90,7 +90,7 @@ The available locales are:
  bas-CM           Basaa Cameroon                              Ɓàsàa Kàmɛ̀rûn
  be               Belarusian                                  беларуская
  be-BY            Belarusian Belarus                          беларуская Беларусь
- be-tarask        Belarusian                                  беларуская
+ be-tarask        Belarusian Taraskievica orthography         беларуская TARASK
  bem              Bemba                                       Ichibemba
  bem-ZM           Bemba Zambia                                Ichibemba Zambia
  bez              Bena                                        Hibena
