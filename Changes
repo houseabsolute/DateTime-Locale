@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.37     2022-10-23
+
 - Rebuilt all locale data with the data from CLDR 42.0.0.
 
 
