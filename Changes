@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Rebuilt all locale data with the data from CLDR 42.0.0.
+
+
 1.36     2022-08-20
 
 - Fixed misparsing of the `be-tarask` locale code. This is a locale with just
