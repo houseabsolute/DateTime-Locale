@@ -229,7 +229,7 @@ The available locales are:
  el               Greek                                             Ελληνικά
  el-CY            Greek Cyprus                                      Ελληνικά Κύπρος
  el-GR            Greek Greece                                      Ελληνικά Ελλάδα
- el-polyton       Greek                                             Ἑλληνικά
+ el-polyton       Greek Polytonic                                   Ἑλληνικά Πολυτονικό
  en               English                                           English
  en-001           English world                                     English world
  en-150           English Europe                                    English Europe
