@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Rebuilt all locale data with the data from CLDR 44.0.1.
+
+
 1.39     2023-05-28
 
 - Fixed parsing of the 'el-polyton' locale code. This had the same issue as
