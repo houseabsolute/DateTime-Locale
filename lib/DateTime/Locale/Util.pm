@@ -8,7 +8,7 @@ use DateTime::Locale::Data;
 
 use Exporter qw( import );
 
-our $VERSION = '1.40';
+our $VERSION = '1.41';
 
 our @EXPORT_OK = 'parse_locale_code';
 
