@@ -217,6 +217,7 @@
 %Z
 %z
 +J.C
+>B
 02.2008 г
 02월
 02초
@@ -458,7 +459,9 @@
 1em
 1er
 1Hh
+1ja
 1K
+1ka
 1kv
 1Ky
 1me
@@ -468,6 +471,7 @@
 1r
 1ro
 1st
+1sṭ
 1ste
 1T
 1u
@@ -632,6 +636,7 @@
 2ᵍᵉ
 2Hh
 2il
+2ja
 2K
 2kv
 2Ky
@@ -639,6 +644,7 @@
 2n
 2na
 2nd
+2nḍ
 2nde
 2ni
 2º
@@ -732,6 +738,7 @@
 37.ª
 37ª
 37em
+37ja
 37º
 37م
 37তম
@@ -747,6 +754,7 @@
 3er
 3et
 3Hh
+3ja
 3K
 3kv
 3Ky
@@ -755,6 +763,7 @@
 3Q
 3r
 3rd
+3rḍ
 3s
 3T
 3tie
@@ -785,6 +794,7 @@
 3𐑻𐑛
 3季度
 3月
+4 1ka
 4 a. m
 4 A.M
 4 a.m
@@ -1030,6 +1040,7 @@
 4h44 AM
 4h44:23 AM
 4Hh
+4ja
 4K
 4kv
 4Ky
@@ -1108,6 +1119,7 @@
 51.ª
 51ª
 51em
+51ja
 51º
 51م
 51তম
@@ -1128,6 +1140,7 @@
 5日周二
 5日火曜日
 5月
+6 2ja
 6 CH
 6 e.b
 6 e.h
@@ -1357,6 +1370,7 @@
 6f
 6h30 PM
 6h30:30 PM
+6ja
 6K
 6Ky
 6º
@@ -1383,6 +1397,7 @@
 8᠊ᠷ
 8월
 8月
+9 1ka
 9 a. m
 9 A.M
 9 a.m
@@ -1650,10 +1665,12 @@ aa-ER
 aa-ET
 aaɓ
 aaɓnde
+aadi
 Aaktopaʼ
 Aane
 Aar
 Àárọ̀
+aasaḍi
 AB
 Ab
 ab
@@ -1670,7 +1687,9 @@ abenduaren
 Abich
 Abiriyo
 Abkhazian
+abofʊmka
 Aboro
+abɔkɔɩ
 Abr
 abr
 Abrëll
@@ -1683,11 +1702,15 @@ abu
 àbùbì
 Aburil
 abuztua
+Abʊŋʊma
 AC
 aC
+acafʊnɖuka
+acapomka
 Achiel
 achiel
 AD
+ad
 adamsan
 adar
 Adduha
@@ -1700,6 +1723,8 @@ Adooleessa
 adr
 àdùmbə̀ŋ
 aɖabaƒoƒo
+aɖɩt
+aɖɩtɛnɛɛ
 aeng’
 AF
 af
@@ -1767,6 +1792,7 @@ aijima
 Àìkú
 aimisa
 aiǃâ
+AƖAK
 Aj
 Ajé
 Àjj
@@ -1805,16 +1831,23 @@ Ala
 ala
 Àla
 Alaámisi
+alaamɩshɩ
+alaarba
 alaba
 Alah
+alah
 Alahady
+alahaɖɩ
 Alahamisi
 Alak
 Alakamisy
+alàlaka
+alam
 Alamíisi
 alamisa
 Åland
 Alar
+alar
 Alarba
 Àlarba
 Alarbay
@@ -1844,6 +1877,10 @@ AM
 Am
 am
 ÁM
+AM 4:44
+AM 4:44:23
+AM 9:05
+AM 9:05:02
 am-ET
 AM፡UTC
 am04:44:23
@@ -1871,13 +1908,17 @@ Ang’wen
 angakabuyi
 Angola
 Anguilla
+Anii
 Ann
 ann
 ann-NG
 Anna
 anna
 annab
+Annabi
 Anno
+anɔɔbʊnka
+anɔɔɖuka
 Ansa
 antaŭ
 ante
@@ -1994,6 +2035,7 @@ Arbaco
 Arbc
 Are
 are
+arɛ́cika
 arf
 arfininngorneq
 Argentina
@@ -2001,6 +2043,8 @@ Ariŋuu
 ariré
 Ariyo
 ariyo
+arɩs
+arɩsǝma
 Arj
 Arjuma
 Arm
@@ -2032,10 +2076,12 @@ Aseer
 Ashanali
 Asi
 asi
+asib
 Asibti
 asiḍ
 Asiḍyas
 asiḍyas
+asiibi
 asim
 Asimwas
 asimwas
@@ -2060,7 +2106,9 @@ ata
 ataasinngorneq
 ataiborwa
 Atakaijire
+atal
 Atalaata
+atalaata
 Atalata
 Ati
 Atini
@@ -2189,6 +2237,7 @@ ba
 ba-RU
 Bǎa
 Baada
+bado
 Bafia
 Bahamas
 Bahrain
@@ -2222,6 +2271,7 @@ Bảy
 Bayan
 bazar
 BC
+bc
 BCE
 be
 Bé
@@ -2233,7 +2283,6 @@ bear
 bearjadat
 Bed
 Before
-before
 beke
 Bél
 Bêl
@@ -2255,6 +2304,10 @@ berfanbara
 berfanbarê
 berî
 Bermuda
+bese
+Betawi
+bew
+bew-ID
 bez
 bez-TZ
 bɛ̌
@@ -2321,6 +2374,8 @@ BL
 bla
 blaɖa
 Blin
+blo
+blo-BJ
 blt
 blt-VN
 BM
@@ -2392,6 +2447,7 @@ Burkina
 Burma
 Burmese
 Burundi
+bʊn
 byn
 byn-ER
 BZ
@@ -2590,10 +2646,12 @@ Chw
 chwarter
 Chwef
 Chwefror
+ci
 cic
 cic-US
 Ciise
 cikin
+cim
 Cio
 Ciongo
 Cis
@@ -2644,6 +2702,7 @@ Côte
 cotmeh
 Cpr
 Cr
+Cree
 Crist
 Cristo
 Cristu
@@ -2656,6 +2715,8 @@ cs
 cs-CZ
 çşm
 csütörtök
+csw
+csw-CA
 čt
 Cte
 Ctembeṛ
@@ -2785,6 +2846,7 @@ DAO
 DAP
 dap
 DAR
+dasara
 daspò
 Dat
 dat
@@ -2873,6 +2935,8 @@ DateTime::Locale::be_BY
 DateTime::Locale::be_tarask
 DateTime::Locale::bem
 DateTime::Locale::bem_ZM
+DateTime::Locale::bew
+DateTime::Locale::bew_ID
 DateTime::Locale::bez
 DateTime::Locale::bez_TZ
 DateTime::Locale::bg
@@ -2887,6 +2951,8 @@ DateTime::Locale::bgn_OM
 DateTime::Locale::bgn_PK
 DateTime::Locale::bho
 DateTime::Locale::bho_IN
+DateTime::Locale::blo
+DateTime::Locale::blo_BJ
 DateTime::Locale::blt
 DateTime::Locale::blt_VN
 DateTime::Locale::bm
@@ -2944,6 +3010,8 @@ DateTime::Locale::co
 DateTime::Locale::co_FR
 DateTime::Locale::cs
 DateTime::Locale::cs_CZ
+DateTime::Locale::csw
+DateTime::Locale::csw_CA
 DateTime::Locale::cu
 DateTime::Locale::cu_RU
 DateTime::Locale::cv
@@ -3029,6 +3097,7 @@ DateTime::Locale::en_GM
 DateTime::Locale::en_GU
 DateTime::Locale::en_GY
 DateTime::Locale::en_HK
+DateTime::Locale::en_ID
 DateTime::Locale::en_IE
 DateTime::Locale::en_IL
 DateTime::Locale::en_IM
@@ -3279,6 +3348,8 @@ DateTime::Locale::ia
 DateTime::Locale::ia_001
 DateTime::Locale::id
 DateTime::Locale::id_ID
+DateTime::Locale::ie
+DateTime::Locale::ie_EE
 DateTime::Locale::ig
 DateTime::Locale::ig_NG
 DateTime::Locale::ii
@@ -3341,6 +3412,7 @@ DateTime::Locale::km_KH
 DateTime::Locale::kn
 DateTime::Locale::kn_IN
 DateTime::Locale::ko
+DateTime::Locale::ko_CN
 DateTime::Locale::ko_KP
 DateTime::Locale::ko_KR
 DateTime::Locale::kok
@@ -3363,6 +3435,15 @@ DateTime::Locale::ku
 DateTime::Locale::ku_TR
 DateTime::Locale::kw
 DateTime::Locale::kw_GB
+DateTime::Locale::kxv
+DateTime::Locale::kxv_Deva
+DateTime::Locale::kxv_Deva_IN
+DateTime::Locale::kxv_Latn
+DateTime::Locale::kxv_Latn_IN
+DateTime::Locale::kxv_Orya
+DateTime::Locale::kxv_Orya_IN
+DateTime::Locale::kxv_Telu
+DateTime::Locale::kxv_Telu_IN
 DateTime::Locale::ky
 DateTime::Locale::ky_KG
 DateTime::Locale::la
@@ -3418,6 +3499,8 @@ DateTime::Locale::mgo
 DateTime::Locale::mgo_CM
 DateTime::Locale::mi
 DateTime::Locale::mi_NZ
+DateTime::Locale::mic
+DateTime::Locale::mic_CA
 DateTime::Locale::mk
 DateTime::Locale::mk_MK
 DateTime::Locale::ml
@@ -3526,7 +3609,7 @@ DateTime::Locale::pis_SB
 DateTime::Locale::pl
 DateTime::Locale::pl_PL
 DateTime::Locale::prg
-DateTime::Locale::prg_001
+DateTime::Locale::prg_PL
 DateTime::Locale::ps
 DateTime::Locale::ps_AF
 DateTime::Locale::ps_PK
@@ -3626,6 +3709,8 @@ DateTime::Locale::sid
 DateTime::Locale::sid_ET
 DateTime::Locale::sk
 DateTime::Locale::sk_SK
+DateTime::Locale::skr
+DateTime::Locale::skr_PK
 DateTime::Locale::sl
 DateTime::Locale::sl_SI
 DateTime::Locale::sma
@@ -3728,6 +3813,8 @@ DateTime::Locale::tt
 DateTime::Locale::tt_RU
 DateTime::Locale::twq
 DateTime::Locale::twq_NE
+DateTime::Locale::tyv
+DateTime::Locale::tyv_RU
 DateTime::Locale::tzm
 DateTime::Locale::tzm_MA
 DateTime::Locale::ug
@@ -3756,6 +3843,8 @@ DateTime::Locale::vec
 DateTime::Locale::vec_IT
 DateTime::Locale::vi
 DateTime::Locale::vi_VN
+DateTime::Locale::vmw
+DateTime::Locale::vmw_MZ
 DateTime::Locale::vo
 DateTime::Locale::vo_001
 DateTime::Locale::vun
@@ -3772,12 +3861,14 @@ DateTime::Locale::wo
 DateTime::Locale::wo_SN
 DateTime::Locale::xh
 DateTime::Locale::xh_ZA
+DateTime::Locale::xnr
+DateTime::Locale::xnr_IN
 DateTime::Locale::xog
 DateTime::Locale::xog_UG
 DateTime::Locale::yav
 DateTime::Locale::yav_CM
 DateTime::Locale::yi
-DateTime::Locale::yi_001
+DateTime::Locale::yi_UA
 DateTime::Locale::yo
 DateTime::Locale::yo_BJ
 DateTime::Locale::yo_NG
@@ -3790,6 +3881,8 @@ DateTime::Locale::yue_Hans
 DateTime::Locale::yue_Hans_CN
 DateTime::Locale::yue_Hant
 DateTime::Locale::yue_Hant_HK
+DateTime::Locale::za
+DateTime::Locale::za_CN
 DateTime::Locale::zgh
 DateTime::Locale::zgh_MA
 DateTime::Locale::zh
@@ -3913,6 +4006,7 @@ dez
 Dezämber
 Dezember
 dezembro
+dezembru
 Dǝɓlii
 ḌƐ
 dfɛ
@@ -4019,6 +4113,7 @@ DIT
 diumenge
 Divehi
 divendres
+divi
 Diz
 Dizenbru
 dj
@@ -4155,6 +4250,10 @@ d日
 d日(E
 d日E
 d日EEEE
+ɖt
+ɖu5
+ɖu6
+ɖʊ
 ɗ
 ɗaya
 ɗón
@@ -4302,6 +4401,7 @@ en-GM
 en-GU
 en-GY
 en-HK
+en-ID
 en-IE
 en-IL
 en-IM
@@ -4453,6 +4553,7 @@ es-US
 es-UY
 es-VE
 esa
+esaabadu
 Esabato
 esaɓasú
 esmaspäev
@@ -4474,6 +4575,7 @@ Ethiopia
 Ẹtì
 etɔ̃lia
 etter
+ettiminku
 eu
 eu-ES
 Europe
@@ -4613,6 +4715,7 @@ Fev
 fev
 fév
 fevereiro
+fevereiru
 févr
 Fevral
 fevral
@@ -4802,6 +4905,7 @@ fur-IT
 Fuṛar
 Futuna
 Fuulbana
+fʊm
 fwo
 fy
 fy-NL
@@ -5136,6 +5240,7 @@ hil
 Hìlòndɛ̀
 Hinapiya
 Hindi
+hire
 hiruhilekoa
 Hit
 hitayi
@@ -5308,6 +5413,7 @@ Ido
 időszámításunk
 Idwaata
 ie
+ie-EE
 ig
 Ìg
 ig-NG
@@ -5412,6 +5518,7 @@ inkókúâ
 inn
 innayr
 Interlingua
+Interlingue
 Inuktitut
 Inya
 inya
@@ -5507,6 +5614,20 @@ Iýun
 iýun
 IZ
 Izu
+ɩ1
+ɩ2
+ɩ3
+ɩ4
+ɩjicimka
+ɩjikawǝrka
+ɩjikǝuka
+ɩjikpaka
+ɩnantaja
+ɩnyɩʊtaja
+ɩŋɔrɩriu
+ɩriutaja
+Ɩsa
+ɩsǝbaka
 J
 j
 J-fouyir
@@ -5536,6 +5657,7 @@ Janairu
 janar
 Janeiro
 janeiro
+janeiru
 Janeru
 Jannaayo
 Jannar
@@ -5582,6 +5704,7 @@ Jasyporundy
 Jasypoteĩ
 Jasyrundy
 Jasyteĩ
+jaṭṭa
 ĵaŭdo
 java
 Javanese
@@ -5668,6 +5791,7 @@ joulukuuta
 joulukuutata
 jov
 jovedi
+jovedí
 Jpi
 Jtn
 Jtt
@@ -5702,6 +5826,7 @@ julho
 Julhu
 Juli
 juli
+julí
 júlí
 Julie
 julij
@@ -5713,6 +5838,7 @@ juliol
 július
 July
 Julyai
+julyu
 JUM
 Jum
 jum
@@ -5772,6 +5898,7 @@ június
 Juny
 juny
 Junyi
+junyu
 juov
 juovlâ
 juovlâmáánu
@@ -5824,6 +5951,7 @@ kab-DZ
 Kabàlàshìpù
 kabiri
 Kabla
+kabɔkɔɩ
 Kabuverdianu
 Kabyle
 Kad
@@ -5861,8 +5989,11 @@ kanana
 kándíɛ
 kane
 kang’ama
+Kangri
 Kannada
 Kanne
+Kaŋkǝm
+kaŋɔrɔ
 kaping
 Kapok
 Kar
@@ -5889,6 +6020,7 @@ katikupíen
 Kavaga
 Kaviri
 Kaw
+kaw
 kawi
 Kazakh
 Kazakhstan
@@ -5972,6 +6104,7 @@ kǝbɔpka
 kǝnin
 KǝPel
 kǝráá
+kǝu
 Kɛin
 Kɛlísɛtɔ
 Kɛr
@@ -6066,6 +6199,7 @@ Knn
 kny
 KO
 ko
+ko-CN
 ko-KP
 ko-KR
 Koa
@@ -6139,7 +6273,9 @@ Krishtit
 krísimin
 krisiti
 Krist
+krisṭ
 Krista
+krisṭabd
 Kristaus
 Kristi
 Kristo
@@ -6196,6 +6332,7 @@ kuarta-fera
 Kuartal
 kuartal
 kuartal-ka
+kuarṭr
 kuata
 Kub
 Kubi
@@ -6238,6 +6375,7 @@ Kúshîn
 Kuta
 kutúan
 Kuuza
+Kuvi
 Kuvita
 Kuwa
 Kuwait
@@ -6299,6 +6437,15 @@ Kwiinyambála
 Kwiinyi
 KWOTA
 Kwọ́ta
+kxv
+kxv-Deva
+kxv-Deva-IN
+kxv-Latn
+kxv-Latn-IN
+kxv-Orya
+kxv-Orya-IN
+kxv-Telu
+kxv-Telu-IN
 ky
 kỹ
 ky-KG
@@ -6348,6 +6495,7 @@ Lah
 Lahadi
 lahadi
 Lahlɛ̄
+laki
 Lakota
 lála
 Lam
@@ -6399,6 +6547,7 @@ Lehin
 Lem
 Len
 Lengua
+lenju
 Leo
 Leone
 Leotshe
@@ -6419,6 +6568,7 @@ lǝndí
 lɛɛnɛ
 lg
 lg-UG
+lh
 Li
 li
 lia
@@ -6482,6 +6632,7 @@ LLLLL
 llu
 Llun
 llunes
+lm
 lmo
 lmo-IT
 ln
@@ -6559,6 +6710,7 @@ lundi
 lundì
 lundo
 lunedi
+lunedí
 lunedì
 Lunes
 lunes
@@ -6722,6 +6874,7 @@ mag
 màga
 Magali
 maggio
+maha
 Maʻa
 Maʻasi
 Mai
@@ -6736,6 +6889,7 @@ maio
 Máirt
 Maithili
 Maiu
+maiu
 Maj
 maj
 máj
@@ -6749,6 +6903,7 @@ maju
 május
 makandikɛ
 makeo
+Makhuwa
 Makhuwa-Meetto
 Makonde
 Mal
@@ -6780,6 +6935,8 @@ mandag
 måndag
 Mande
 Mane
+manga
+mangaḍa
 Mangal
 Mangalwaar
 Manipuri
@@ -6811,6 +6968,7 @@ március
 Marco
 março
 mardi
+mardí
 mardì
 mardo
 marec
@@ -6836,11 +6994,13 @@ marsip
 Marso
 marso
 Marsu
+marsu
 Mart
 mart
 Màrt
 Márta
 martars
+marte
 martë
 martedi
 martedì
@@ -7013,6 +7173,7 @@ mercoledì
 mèrcore
 mércores
 mercredi
+mercurdí
 mercuridi
 mèrcuris
 Mercʼher
@@ -7071,7 +7232,10 @@ Mhr
 Mi
 mi
 mi-NZ
+Mi'kmaw
 míbalé
+mic
+mic-CA
 Micronesia
 mið
 Middeweken
@@ -7441,6 +7605,7 @@ N4
 Na
 na
 naa
+naaBYŊAƖ
 naaninan
 Naanɨ
 naasaande
@@ -7464,6 +7629,10 @@ nam
 Năm
 năm
 Nama
+namaanli
+namararu
+namathanu
+namaxexe
 NAME
 Namibia
 Nan
@@ -7517,6 +7686,19 @@ ndu3
 ndu4
 ndúmbū
 Nduŋmbi
+ndwen
+ndwenbet
+ndwencaet
+ndwencib
+ndwencib’it
+ndwencibngeih
+ndwengouj
+ndwenit
+ndwenloeg
+ndwenngeih
+ndwenngux
+ndwensam
+ndwenseiq
 Ndy
 Ndz
 Ndzhati
@@ -7532,6 +7714,7 @@ ndzɔ̀ŋɔ̀nzùghò
 ndzɔ̀ŋɔ̀tǎafʉ̄ghā
 ndzɔ̀ŋɔ̀tƗ̀dʉ̀ghà
 ndzɔ̀ŋɔ̀tƗ̀fʉ̀ghàdzughù
+nɖʊka
 Ne
 ne
 ne-IN
@@ -7589,6 +7772,8 @@ ngl
 ngm
 ngn
 ngo
+ngoenz
+ngoenzsinghgiz
 Ngomba
 Ngòvya
 ngɔn
@@ -7627,6 +7812,7 @@ niedziela
 Niger
 Nigeria
 Nigerian
+nihiku
 nin
 Nípbaa
 Nípbaatiˀtiˀ
@@ -7648,6 +7834,7 @@ njedźela
 Njenuarĩ
 njeslaare
 njeźela
+njɩbɔ
 Njòwa
 NJR
 NJU
@@ -7669,6 +7856,7 @@ Njuraĩ
 Njw
 njÿoláʼ
 NK
+nki
 Nko
 Nkodya
 Nkw
@@ -7722,6 +7910,7 @@ Nollick
 nomëttes
 Noo
 Noofeembar
+noolempwa
 Noowanbur
 Nop
 Nopémber
@@ -7757,6 +7946,7 @@ novembris
 Novembro
 novembro
 Novembru
+novembru
 novenbre
 Noviembre
 noviembre
@@ -7896,6 +8086,7 @@ nzu
 ŋka mbɔ́t nji
 ŋɔli
 Ŋuaan
+Ŋʊm
 ŋwíí
 O
 o
@@ -8150,6 +8341,7 @@ Oujoß
 out
 Outlying
 outubro
+outubru
 ovdal
 Ovdil
 Ow
@@ -8217,6 +8409,7 @@ pa-Guru-IN
 Paa
 Paagi
 Pachibelushi
+pagu
 Pakistan
 Palau
 Palestinian
@@ -8231,6 +8424,7 @@ pamunyi
 Pamwandi
 panadīli
 Panama
+pande
 pap
 pap-AW
 pap-CW
@@ -8369,6 +8563,8 @@ pl
 pl-PL
 PM
 pm
+PM 6:30
+PM 6:30:30
 PM፡UTC
 pm06:30:30
 PM06.30.30
@@ -8388,6 +8584,7 @@ Poland
 Polish
 Polynesia
 Polytonic
+pom
 pon
 pón
 Pona
@@ -8419,7 +8616,7 @@ před
 Prefers
 premte
 prg
-prg-001
+prg-PL
 pri
 prieš
 prije
@@ -8463,6 +8660,8 @@ pú-mukũi
 pú-musapíri
 pú-yepé
 Puachue
+puda
+pudara
 Puerto
 pühapäev
 Pul
@@ -8472,8 +8671,10 @@ Pun
 Pundungwane
 Punjabi
 puɔs
+purb
 pussisawaiti
 pustis
+pusu
 putúk,oóli
 Pʉshʉ́ka
 py
@@ -8600,6 +8801,7 @@ Roobii
 Rooptui
 roovvâd
 roovvâdmáánu
+rs
 Rt
 ru
 RŨ
@@ -8729,6 +8931,7 @@ Sanda-Ɔpɛpɔn
 Sande
 Sango
 Sangu
+sani
 Sanskrit
 Santali
 santandria
@@ -8783,6 +8986,7 @@ Satọdee
 Sàttumbar
 Satumba
 Saturday
+saturdí
 Sau
 sau
 Sáu
@@ -8796,6 +9000,7 @@ savnu
 Say
 Sayass
 Sb
+sb
 sbp
 sbp-TZ
 sbt
@@ -8937,6 +9142,7 @@ setember
 setembre
 Setembro
 setembro
+setembru
 setenbre
 Setenbru
 Setiembre
@@ -9042,6 +9248,12 @@ Sin
 Sindhi
 Sine
 Singapore
+singhgizhaj
+singhgizit
+singhgizngeih
+singhgizroek
+singhgizsam
+singhgizseiq
 Sinh
 Sinhala
 Sint
@@ -9070,6 +9282,8 @@ skábmamánnu
 skammâ
 skammâmáánu
 Skolt
+skr
+skr-PK
 sl
 sl-SI
 Slavic
@@ -9088,6 +9302,8 @@ sma
 sma-NO
 sma-SE
 smb
+smba
+smbara
 smj
 smj-NO
 smj-SE
@@ -9116,6 +9332,7 @@ sobota
 Soga
 Soistiʼ
 Sok
+soledí
 Solomon
 Som
 Somali
@@ -9180,6 +9397,8 @@ sr-Latn-BA
 sr-Latn-ME
 sr-Latn-RS
 sr-Latn-XK
+sra
+srabĩ
 sre
 sreda
 Sri
@@ -9243,6 +9462,7 @@ subota
 Sudan
 suenter
 Sueŋ
+sukru
 Suku
 sukul
 Sul
@@ -9293,6 +9513,7 @@ sw-KE
 sw-TZ
 sw-UG
 Swahili
+Swampy
 Swati
 Sweden
 Swedish
@@ -9524,6 +9745,7 @@ TK
 tk
 tk-TM
 Tl
+tl
 Tldo
 Tlh
 Tlhakole
@@ -9677,6 +9899,7 @@ Turks
 Tūs
 Tūsite
 Tuvalu
+Tuvinian
 TW1
 TW2
 TW3
@@ -9693,6 +9916,8 @@ tys
 týs
 tysdag
 týsdagur
+tyv
+tyv-RU
 týždeň
 tyźeń
 tzm
@@ -9818,6 +10043,7 @@ vandredi
 vanti
 Vanuatu
 vaŋdɛrɛdi
+vara
 vas
 vás
 vasario
@@ -9849,6 +10075,7 @@ venderdi
 vendredi
 vendredo
 venerdi
+venerdí
 venerdì
 Venetian
 Venezuela
@@ -9879,6 +10106,8 @@ vineri
 Virgin
 viz
 Vɨɨrɨ
+vmw
+vmw-MZ
 vo
 vo-001
 voalohany
@@ -9936,6 +10165,8 @@ w'ª
 W'em
 w'em
 w’indwi
+W'ja
+w'ja
 W'º
 w'º
 Wa
@@ -10083,6 +10314,8 @@ XII/22
 Xin
 xin
 xineru
+xnr
+xnr-IN
 Xnt
 xnt
 xog
@@ -10166,6 +10399,7 @@ yaw
 Yawda
 yawoɖa
 ybo
+Ye
 ye
 Yeb
 Yebrayer
@@ -10211,7 +10445,7 @@ Yɛ́sʉ
 yG
 Yi
 yi
-yi-001
+yi-UA
 Yiddish
 Yiẹ
 yie̱tni
@@ -10309,6 +10543,7 @@ Z-K
 Z.MU
 Z.MW
 za
+za-CN
 Zaarikay b
 zah
 zallaws
@@ -10351,6 +10586,7 @@ zh-Hant
 zh-Hant-HK
 zh-Hant-MO
 zh-Hant-TW
+Zhuang
 Zi
 Zib
 Zibandlela
@@ -12157,10 +12393,12 @@ zyé
 आगष्ट
 आठवडा
 आथवार
+आदि
 आन्न’
 आयतार
 आर्त
 आर्तवार
+आसाड़ी
 इ
 ई
 ई.पू
@@ -12169,6 +12407,7 @@ zyé
 ईसवीसनपूर्व
 ईसा
 ईसा-पूर्व
+ईसा-पैले
 ईस्वी
 ए
 ए.दि
@@ -12210,6 +12449,7 @@ zyé
 चारिम
 चोथीं
 चौथी
+चौथे
 चौथो
 छं
 छंछ
@@ -12221,6 +12461,7 @@ zyé
 जनवरी:
 जनवरीमासः
 जा
+जाटा
 जान
 जानुवारी
 जाने
@@ -12243,6 +12484,7 @@ zyé
 जून
 जून:
 जूनमासः
+जो
 टिमाही
 टीं
 ड
@@ -12253,6 +12495,7 @@ zyé
 डिसें
 डिसेंबर
 डिसेम्बर
+त
 ति1
 ति१
 ति2
@@ -12261,11 +12504,14 @@ zyé
 ति३
 ति4
 ति४
+तिन
 तिमाही
+तीजे
 तीसरी
 तृतीय
 तेसर
 तेस्रो
+तोआर
 त्र.1
 त्र.2
 त्र.3
@@ -12280,18 +12526,22 @@ zyé
 त्रैमासीक
 थामथि
 द
+दपेहरा/संजा
 दसमबर
+दसारा
 दसूमबर
 दा
 दामिनि
 दि
 दिन
+दिवी
 दिस
 दिस॰
 दिसंबर
 दिसंबर:
 दिसंबरमासः
 दूई
+दूजे
 दूसरी
 दोसर
 दोस्रो
@@ -12320,9 +12570,14 @@ zyé
 पहिंरी
 पहिल
 पहिलो
+पागुणी
+पान्डे
+पुद्दारा
+पुसु
 पू
 पूर्व
 पूर्वाह्न
+पैले
 पैहली
 प्रथम
 फ
@@ -12371,13 +12626,16 @@ zyé
 बृहस्पति
 बृहस्पतिबार
 बेलासे
+बेसे
 बोदवार
+बोदो
 बोमवार
 ब्रेसवार
 ब्रै
 ब्रैथि
 ब्रोंठ
 भोर
+भ्यागा
 म
 मं
 मई
@@ -12391,6 +12649,7 @@ zyé
 मंगळ
 मंगळवार
 मंगळार
+मंगाड़ा
 मङ्गल
 मङ्गलबार
 मा
@@ -12399,6 +12658,8 @@ zyé
 मार्चमासः
 मार्चु
 माह
+माहाका
+मीन्ने
 मे
 मेई
 र
@@ -12409,16 +12670,25 @@ zyé
 रविवार
 रविवासरः
 रा
+लाक्कि
+लेञ्जु
 वा
+वारा
 वि
 विस
 विस्पत
+वी
+वीर
+वीरवार
 श
 शनि
+शनिच्चरवार
 शनिबार
 शनिवार
 शनिवासरः
 शु
+शुक्कर
+शुक्करवार
 शुक्र
 शुक्रबार
 शुक्रवार
@@ -12444,6 +12714,8 @@ zyé
 सवेर
 सह
 सांझ
+सान्नि
+साॅम्वारा
 सि
 सिगां
 सित
@@ -12453,6 +12725,7 @@ zyé
 सितंबरमासः
 सितम्बर
 सु
+सुकुरु
 सुखुर
 सुखुरबार
 सुुखुरबार
@@ -12463,13 +12736,16 @@ zyé
 सेप्टेम्बर
 सेप्थेम्बर
 सो
+सोआर
 सोम
 सोमबार
 सोमवार
 सोमवासरः
 सोमार
+स्राबाँ
 हप्ता
 हफ्ता
+हिरे
 অ
 অক্টো
 অক্টোঃ
@@ -12765,12 +13041,15 @@ zyé
 ଅକ୍ଟୋବର
 ଅଗଷ୍ଟ
 ଅପ୍ରେଲ
+ଆଦି
+ଆସାଡ଼ି
 ଖ୍ରୀଷ୍ଟପୂର୍ବ
 ଖ୍ରୀଷ୍ଟାବ୍ଦ
 ଗୁ
 ଗୁରୁ
 ଗୁରୁବାର
 ଜା
+ଜାଟା
 ଜାନୁଆରୀ
 ଜୁ
 ଜୁନ
@@ -12778,22 +13057,35 @@ zyé
 ଡି
 ଡିସେମ୍ବର
 ତ୍ରୟମାସ
+ଦାସାରା
+ଦିୱିଡ଼ି
 ନ
 ନଭେମ୍ବର
+ପାଗୁଣି
+ପାଣ୍ଡେ
+ପୁଦାରା
+ପୁସୁ
 ଫେ
 ଫେବୃଆରୀ
+ବଦ
 ବୁ
 ବୁଧ
 ବୁଧବାର
+ବେସେ
 ମ
 ମଇ
 ମଙ୍ଗଳ
 ମଙ୍ଗଳବାର
 ମା
+ମାଙ୍ଗାଡ଼ା
 ମାର୍ଚ୍ଚ
+ମାହାକା
 ର
 ରବି
 ରବିବାର
+ଲାକି
+ଲେଞ୍ଜୁ
+ୱାରା
 ଶ
 ଶନି
 ଶନିବାର
@@ -12801,11 +13093,16 @@ zyé
 ଶୁକ୍ର
 ଶୁକ୍ରବାର
 ସପ୍ତାହ
+ସମ୍ବାରା
+ସାନି
+ସୁକ୍ରୁ
 ସେ
 ସେପ୍ଟେମ୍ବର
 ସୋ
 ସୋମ
 ସୋମବାର
+ସ୍ରାବାଁ
+ହିରେ
 அ
 அக்
 அக்டோபர்
@@ -12878,6 +13175,7 @@ zyé
 అ
 అక్టో
 అక్టోబర్
+అస్ర
 ఆ
 ఆగ
 ఆగస్టు
@@ -12890,6 +13188,7 @@ zyé
 క్రీశ
 క్రీస్తు
 గు
+గుండు
 గురు
 గురువారం
 జ
@@ -12908,24 +13207,40 @@ zyé
 త్రై3
 త్రై4
 త్రైమాసికం
+దివెడి
 న
+నమారా
 నవం
 నవంబర్
+నుక్
+పాండు
+పుసు
 పూర్వం
 ఫి
 ఫిబ్ర
 ఫిబ్రవరి
 ఫిబ్రవరిలో
+బాన్దపాణా
+బార్సి
 బు
 బుధ
 బుధవారం
+బెసెకి
 మ
 మంగళ
 మంగళవారం
 మా
+మాగ
+మాంగాడా
 మార్చి
 మే
+రాత
+లండి
+లాకివరా
+వరా
 వారం
+వారమి
+వుదారా
 శ
 శకం
 శని
@@ -12933,6 +13248,7 @@ zyé
 శు
 శుక్ర
 శుక్రవారం
+సానివరా
 సె
 సెప్టెం
 సెప్టెంబర్
@@ -12940,6 +13256,7 @@ zyé
 సో
 సోమ
 సోమవారం
+హిరెఇ
 ಅ
 ಅಕ್ಟೋ
 ಅಕ್ಟೋಬರ್
@@ -13781,6 +14098,26 @@ zyé
 𐓏𐓣͘𐓸𐓲𐓣
 𐓸
 𐓻𐓣͘
+ᐅᐸᐦᐅᐏᐱᓯᒼ
+ᐊᐱᐦᑕᐘᐣ
+ᐊᑿᑎᓄᐏᐱᓯᒼ
+ᐊᓂᑭᐱᓯᒼ
+ᐊᔭᒥᐦᐁᐃ
+ᐯᔭᐠᑭᓯᑲᐤ
+ᐱᒪᐦᐊᒧᐏᐱᓯᒼ
+ᐸᐘᐢᒐᑲᓂᓹᐱᓯᒼ
+ᐸᐢᑯᐏᐱᓯᒼ
+ᐸᐢᑲᐍᐦᐅᐱᓯᒼ
+ᑕᐦᑿᑭᐱᓯᒼ
+ᑭᓯᑲᐤ
+ᑭᓴᐱᓯᒼ
+ᒥᑭᓯᐏᐱᓯᒼ
+ᒪᑎᓄᐏᑭᓯᑲᐤ
+ᓀᐓᑭᓯᑲᐤ
+ᓂᐢᑭᐱᓯᒼ
+ᓂᓱᑭᓯᑲᐤ
+ᓂᔭᓇᓄᑭᓯᑲᐤ
+ᓴᑭᐸᑲᐏᐱᓯᒼ
 ꔞꔀꕮꕊ
 ꔞꘋ
 ꔞꘋꕔꕿ

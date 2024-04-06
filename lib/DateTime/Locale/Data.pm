@@ -25,7 +25,7 @@ our $VERSION = '1.41';
 
 #<<<
 ### :start CLDRVersion:
-our $CLDRVersion = 44;
+our $CLDRVersion = 44.1;
 ### :end CLDRVersion:
 #>>>
 
@@ -5332,7 +5332,7 @@ my %LocaleData = (
     time_format_medium => "h:mm:ss a",
     time_format_short => "h:mm a",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   en => {
     am_pm_abbreviated => [
@@ -5612,7 +5612,7 @@ my %LocaleData = (
     time_format_medium => "h:mm:ss\N{U+202f}a",
     time_format_short => "h:mm\N{U+202f}a",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "en-CA" => {
     am_pm_abbreviated => [
@@ -5898,7 +5898,7 @@ my %LocaleData = (
     time_format_medium => "h:mm:ss\N{U+202f}a",
     time_format_short => "h:mm\N{U+202f}a",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "en-US" => {
     am_pm_abbreviated => [
@@ -6178,7 +6178,7 @@ my %LocaleData = (
     time_format_medium => "h:mm:ss\N{U+202f}a",
     time_format_short => "h:mm\N{U+202f}a",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   es => {
     am_pm_abbreviated => [
@@ -6462,7 +6462,7 @@ my %LocaleData = (
     time_format_medium => "H:mm:ss",
     time_format_short => "H:mm",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "fr-FR" => {
     am_pm_abbreviated => [
@@ -6735,7 +6735,7 @@ my %LocaleData = (
     time_format_medium => "HH:mm:ss",
     time_format_short => "HH:mm",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   hi => {
     am_pm_abbreviated => [
@@ -7012,7 +7012,7 @@ my %LocaleData = (
     time_format_medium => "h:mm:ss a",
     time_format_short => "h:mm a",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "ja-JP" => {
     am_pm_abbreviated => [
@@ -7290,7 +7290,7 @@ my %LocaleData = (
     time_format_medium => "H:mm:ss",
     time_format_short => "H:mm",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "pt-BR" => {
     am_pm_abbreviated => [
@@ -7568,7 +7568,7 @@ my %LocaleData = (
     time_format_medium => "HH:mm:ss",
     time_format_short => "HH:mm",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "zh-Hans-CN" => {
     am_pm_abbreviated => [
@@ -7842,7 +7842,7 @@ my %LocaleData = (
     time_format_medium => "HH:mm:ss",
     time_format_short => "HH:mm",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
   "zh-Hant-TW" => {
     am_pm_abbreviated => [
@@ -8116,7 +8116,7 @@ my %LocaleData = (
     time_format_medium => "Bh:mm:ss",
     time_format_short => "Bh:mm",
     variant => undef,
-    version => 44,
+    version => "44.1",
   },
 );
 ### :end LocaleData:
