@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.41     2024-04-06
+
 - Rebuilt all locale data with the data from CLDR 44.1.0.
 
 
