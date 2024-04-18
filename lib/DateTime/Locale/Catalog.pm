@@ -513,7 +513,7 @@ The available locales are:
  hi               Hindi                                             हिन्दी
  hi-IN            Hindi India                                       हिन्दी भारत
  hi-Latn          Hindi Latin                                       Hindi Latin
- hi-Latn-IN       Hindi India Latin                                 Hindi India Latin
+ hi-Latn-IN       Hindi India Latin                                 Hindi Bharat Latin
  hnj              Hmong Njua                                        𞄀𞄄𞄰𞄩𞄍𞄜𞄰
  hnj-Hmnp         Hmong Njua Nyiakeng Puachue Hmong                 𞄀𞄄𞄰𞄩𞄍𞄜𞄰
  hnj-Hmnp-US      Hmong Njua United States Nyiakeng Puachue Hmong   𞄀𞄄𞄰𞄩𞄍𞄜𞄰 𞄒𞄫𞄱𞄔𞄩𞄴
