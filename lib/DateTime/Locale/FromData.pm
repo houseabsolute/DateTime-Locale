@@ -200,7 +200,9 @@ sub prefers_24_hour_time {
     return $self->{prefers_24_hour_time}
         if exists $self->{prefers_24_hour_time};
 
-    $self->{prefers_24_hour_time} = $self->time_format_short =~ /h|K/ ? 0 : 1;
+    my $pat = $self->time_format_short;
+    my @parts = split( /(?:'(?:(?:[^']|'')*)')/, $pat );
+    $self->{prefers_24_hour_time} = scalar( grep( /h|K/, @parts ) ) ? 0 : 1;
 }
 
 sub language_code {
