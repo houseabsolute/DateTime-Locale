@@ -21,7 +21,7 @@ use namespace::autoclean;
 use File::ShareDir qw( dist_file );
 use File::Spec;
 
-our $VERSION = '1.45';
+our $VERSION = '1.46';
 
 #<<<
 ### :start CLDRVersion:
