@@ -1,0 +1,68 @@
+name: Run tests
+
+on: [push, pull_request]
+
+jobs:
+  test-matrix:
+    name: ${{ matrix.platform.os-name }} with Perl ${{ matrix.perl-version }}
+    runs-on: ${{ matrix.platform.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - os-name: Linux
+            runs-on: ubuntu-24.04
+
+        perl-version:
+          - "latest"
+          - "5.20"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl-version }}
+          enable-modules-cache: false
+
+      - name: Install mise
+        run: |
+          set -e
+          set -x
+          curl https://mise.run | sh
+          mise install
+
+      - name: Install aspell
+        run: |
+          set -e
+          set -x
+          sudo apt-get -y update
+          sudo apt-get -y install aspell
+
+      - name: Install Dist::Zilla and Test::Harness
+        run: cpm install --global Dist::Zilla Test::Harness
+
+      - name: Generate list of author deps
+        run: dzil authordeps > /tmp/dzil-authordeps.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "dzil-authordeps-${{matrix.platform.os-name}}-perl-${{ matrix.perl-version }}.txt"
+          path: /tmp/dzil-authordeps.txt
+
+      - name: Install author deps
+        run: cpm install --show-build-log-on-failure --global $(cat /tmp/dzil-authordeps.txt)
+
+      - name: Generate list of module deps
+        run: dzil listdeps --develop > /tmp/dzil-listdeps.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "dzil-listdeps-${{matrix.platform.os-name}}-perl-${{ matrix.perl-version }}.txt"
+          path: /tmp/dzil-listdeps.txt
+
+      - name: Install module deps
+        run: cpm install --show-build-log-on-failure --global $(cat /tmp/dzil-listdeps.txt)
+
+      - name: Run tests
+        run: mise exec -- dzil test --all
