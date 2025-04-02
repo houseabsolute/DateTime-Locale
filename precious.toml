@@ -72,6 +72,7 @@ lint_failure_exit_codes = 1
 [commands.prettier]
 type = "both"
 include = ["**/*.yml"]
+exclude = "META.yml"
 cmd = ["prettier", "--no-config", "--prose-wrap", "always", "--print-width", "100"]
 lint_flags = "--check"
 tidy_flags = "--write"
