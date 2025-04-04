@@ -1,6 +1,8 @@
 exclude = [
     ".build/**/*",
     "DateTime-Locale-*/**/*",
+    "META.yml",
+    "MYMETA.yml",
     "blib/**/*",
     "lib/DateTime/Locale/Conflicts.pm",
     "lib/DateTime/Locale/*.pod",
@@ -17,12 +19,11 @@ exclude = [
 [commands.omegasort-gitignore]
 type = "both"
 include = "**/.gitignore"
-cmd = ["omegasort", "--sort=path", "--unique"]
+cmd = ["omegasort", "--sort", "path", "--unique"]
 lint_flags = "--check"
 tidy_flags = "--in-place"
 ok_exit_codes = 0
 lint_failure_exit_codes = 1
-expect_stderr = true
 
 [commands.omegasort-stopwords]
 type = "both"
@@ -32,7 +33,6 @@ lint_flags = "--check"
 tidy_flags = "--in-place"
 ok_exit_codes = 0
 lint_failure_exit_codes = 1
-expect_stderr = true
 
 [commands.perlcritic]
 type = "lint"
@@ -79,7 +79,6 @@ tidy_flags = "--write"
 ok_exit_codes = 0
 lint_failure_exit_codes = 1
 ignore_stderr = "Code style issues"
-labels = ["default", "fast-tidy"]
 
 [commands.taplo]
 type = "both"
@@ -89,4 +88,3 @@ lint_flags = "--check"
 ok_exit_codes = 0
 lint_failure_exit_codes = 1
 ignore_stderr = "INFO taplo.+"
-labels = ["default", "fast-tidy"]
