@@ -116,10 +116,10 @@ Italy locale.
   de jügn
   de messé
   d’aost
-  de set
-  d’oto
-  de nov
-  de dez
+  de setëmber
+  d’otober
+  de novëmber
+  de dezëmber
 
 =head3 Narrow (format)
 
@@ -193,10 +193,10 @@ Italy locale.
 
 =head3 Abbreviated (format)
 
-  T1
-  T2
-  T3
-  T4
+  pröm trimester
+  secundo trimester
+  terzo trimester
+  cuarto trimester
 
 =head3 Narrow (format)
 
@@ -215,10 +215,10 @@ Italy locale.
 
 =head3 Abbreviated (stand-alone)
 
-  T1
-  T2
-  T3
-  T4
+  pröm trimester
+  secundo trimester
+  terzo trimester
+  cuarto trimester
 
 =head3 Narrow (stand-alone)
 
@@ -232,7 +232,7 @@ Italy locale.
 =head3 Wide (format)
 
   dan Gejú Crist
-  A.D.
+  AD
 
 =head3 Abbreviated (format)
 
@@ -261,8 +261,8 @@ Italy locale.
 =head3 Medium
 
    2008-02-05T18:30:30 = 5 de forá 2008
-   1995-12-22T09:05:02 = 22 de dez 1995
-  -0010-09-15T04:44:23 = 15 de set -10
+   1995-12-22T09:05:02 = 22 de dezëmber 1995
+  -0010-09-15T04:44:23 = 15 de setëmber -10
 
 =head3 Short
 
@@ -315,8 +315,8 @@ Italy locale.
 =head3 Medium
 
    2008-02-05T18:30:30 = 5 de forá 2008, 18:30:30
-   1995-12-22T09:05:02 = 22 de dez 1995, 09:05:02
-  -0010-09-15T04:44:23 = 15 de set -10, 04:44:23
+   1995-12-22T09:05:02 = 22 de dezëmber 1995, 09:05:02
+  -0010-09-15T04:44:23 = 15 de setëmber -10, 04:44:23
 
 =head3 Short
 
@@ -351,6 +351,12 @@ Italy locale.
    1995-12-22T09:05:02 = vën
   -0010-09-15T04:44:23 = sab
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = mert 6 B
+   1995-12-22T09:05:02 = vën 9 B
+  -0010-09-15T04:44:23 = sab 4 B
+
 =head3 EBhm (E, h:mm B)
 
    2008-02-05T18:30:30 = mert, 6:30 B
@@ -381,6 +387,12 @@ Italy locale.
    1995-12-22T09:05:02 = vën, 22
   -0010-09-15T04:44:23 = sab, 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = mert 6 PM
+   1995-12-22T09:05:02 = vën 9 AM
+  -0010-09-15T04:44:23 = sab 4 AM
+
 =head3 Ehm (E, h:mm a)
 
    2008-02-05T18:30:30 = mert, 6:30 PM
@@ -393,11 +405,23 @@ Italy locale.
    1995-12-22T09:05:02 = vën, 9:05:02 AM
   -0010-09-15T04:44:23 = sab, 4:44:23 AM
 
-=head3 Gy (y G)
+=head3 Gy (G y)
 
-   2008-02-05T18:30:30 = 2008 AD
-   1995-12-22T09:05:02 = 1995 AD
-  -0010-09-15T04:44:23 = -10 dan G.C.
+   2008-02-05T18:30:30 = AD 2008
+   1995-12-22T09:05:02 = AD 1995
+  -0010-09-15T04:44:23 = dan G.C. -10
+
+=head3 GyM (G y, MM)
+
+   2008-02-05T18:30:30 = AD 2008, 02
+   1995-12-22T09:05:02 = AD 1995, 12
+  -0010-09-15T04:44:23 = dan G.C. -10, 09
+
+=head3 GyMEd (G y.MM.dd, E)
+
+   2008-02-05T18:30:30 = AD 2008.02.05, mert
+   1995-12-22T09:05:02 = AD 1995.12.22, vën
+  -0010-09-15T04:44:23 = dan G.C. -10.09.15, sab
 
 =head3 GyMMM (LLL y G)
 
@@ -408,14 +432,14 @@ Italy locale.
 =head3 GyMMMEd (E, d MMM y G)
 
    2008-02-05T18:30:30 = mert, 5 de forá 2008 AD
-   1995-12-22T09:05:02 = vën, 22 de dez 1995 AD
-  -0010-09-15T04:44:23 = sab, 15 de set -10 dan G.C.
+   1995-12-22T09:05:02 = vën, 22 de dezëmber 1995 AD
+  -0010-09-15T04:44:23 = sab, 15 de setëmber -10 dan G.C.
 
 =head3 GyMMMd (d MMM y G)
 
    2008-02-05T18:30:30 = 5 de forá 2008 AD
-   1995-12-22T09:05:02 = 22 de dez 1995 AD
-  -0010-09-15T04:44:23 = 15 de set -10 dan G.C.
+   1995-12-22T09:05:02 = 22 de dezëmber 1995 AD
+  -0010-09-15T04:44:23 = 15 de setëmber -10 dan G.C.
 
 =head3 GyMd (d.M.y GGGGG)
 
@@ -453,6 +477,12 @@ Italy locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -474,8 +504,8 @@ Italy locale.
 =head3 MMMEd (E, d MMM)
 
    2008-02-05T18:30:30 = mert, 5 de forá
-   1995-12-22T09:05:02 = vën, 22 de dez
-  -0010-09-15T04:44:23 = sab, 15 de set
+   1995-12-22T09:05:02 = vën, 22 de dezëmber
+  -0010-09-15T04:44:23 = sab, 15 de setëmber
 
 =head3 MMMMW-count-one ('edema' W MMMM)
 
@@ -498,8 +528,8 @@ Italy locale.
 =head3 MMMd (d MMM)
 
    2008-02-05T18:30:30 = 5 de forá
-   1995-12-22T09:05:02 = 22 de dez
-  -0010-09-15T04:44:23 = 15 de set
+   1995-12-22T09:05:02 = 22 de dezëmber
+  -0010-09-15T04:44:23 = 15 de setëmber
 
 =head3 Md (d.M.)
 
@@ -543,6 +573,12 @@ Italy locale.
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
 
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
+
 =head3 ms (mm:ss)
 
    2008-02-05T18:30:30 = 30:30
@@ -576,8 +612,8 @@ Italy locale.
 =head3 yMMMEd (E, d MMM y)
 
    2008-02-05T18:30:30 = mert, 5 de forá 2008
-   1995-12-22T09:05:02 = vën, 22 de dez 1995
-  -0010-09-15T04:44:23 = sab, 15 de set -10
+   1995-12-22T09:05:02 = vën, 22 de dezëmber 1995
+  -0010-09-15T04:44:23 = sab, 15 de setëmber -10
 
 =head3 yMMMM (LLLL y)
 
@@ -588,8 +624,8 @@ Italy locale.
 =head3 yMMMd (d MMM y)
 
    2008-02-05T18:30:30 = 5 de forá 2008
-   1995-12-22T09:05:02 = 22 de dez 1995
-  -0010-09-15T04:44:23 = 15 de set -10
+   1995-12-22T09:05:02 = 22 de dezëmber 1995
+  -0010-09-15T04:44:23 = 15 de setëmber -10
 
 =head3 yMd (d.M.y)
 
@@ -599,9 +635,9 @@ Italy locale.
 
 =head3 yQQQ (QQQ y)
 
-   2008-02-05T18:30:30 = T1 2008
-   1995-12-22T09:05:02 = T4 1995
-  -0010-09-15T04:44:23 = T3 -10
+   2008-02-05T18:30:30 = pröm trimester 2008
+   1995-12-22T09:05:02 = cuarto trimester 1995
+  -0010-09-15T04:44:23 = terzo trimester -10
 
 =head3 yQQQQ (QQQQ y)
 
@@ -637,8 +673,8 @@ Yes
 =head3 %c (%a %b %e %H:%M:%S %Y) - date time format
 
    2008-02-05T18:30:30 = mert de forá  5 18:30:30 2008
-   1995-12-22T09:05:02 = vën de dez 22 09:05:02 1995
-  -0010-09-15T04:44:23 = sab de set 15 04:44:23 -10
+   1995-12-22T09:05:02 = vën de dezëmber 22 09:05:02 1995
+  -0010-09-15T04:44:23 = sab de setëmber 15 04:44:23 -10
 
 =head3 %x (%m/%d/%y) - date format
 

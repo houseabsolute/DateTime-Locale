@@ -327,11 +327,11 @@ Upper Sorbian Germany locale.
 
 =head2 Available Formats
 
-=head3 Bh (h B)
+=head3 Bh (h 'hodź'. B)
 
-   2008-02-05T18:30:30 = 6 B
-   1995-12-22T09:05:02 = 9 B
-  -0010-09-15T04:44:23 = 4 B
+   2008-02-05T18:30:30 = 6 hodź. B
+   1995-12-22T09:05:02 = 9 hodź. B
+  -0010-09-15T04:44:23 = 4 hodź. B
 
 =head3 Bhm (h:mm B)
 
@@ -350,6 +350,12 @@ Upper Sorbian Germany locale.
    2008-02-05T18:30:30 = wut
    1995-12-22T09:05:02 = pja
   -0010-09-15T04:44:23 = sob
+
+=head3 EBh (E, h 'hodź'. B)
+
+   2008-02-05T18:30:30 = wut, 6 hodź. B
+   1995-12-22T09:05:02 = pja, 9 hodź. B
+  -0010-09-15T04:44:23 = sob, 4 hodź. B
 
 =head3 EBhm (E h:mm B)
 
@@ -381,6 +387,12 @@ Upper Sorbian Germany locale.
    1995-12-22T09:05:02 = pja, 22.
   -0010-09-15T04:44:23 = sob, 15.
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = wut 6 pop.
+   1995-12-22T09:05:02 = pja 9 dop.
+  -0010-09-15T04:44:23 = sob 4 dop.
+
 =head3 Ehm (E, h:mm a)
 
    2008-02-05T18:30:30 = wut, 6:30 pop.
@@ -398,6 +410,18 @@ Upper Sorbian Germany locale.
    2008-02-05T18:30:30 = 2008 po Chr.n.
    1995-12-22T09:05:02 = 1995 po Chr.n.
   -0010-09-15T04:44:23 = -10 př.Chr.n.
+
+=head3 GyM (M/y G)
+
+   2008-02-05T18:30:30 = 2/2008 po Chr.n.
+   1995-12-22T09:05:02 = 12/1995 po Chr.n.
+  -0010-09-15T04:44:23 = 9/-10 př.Chr.n.
+
+=head3 GyMEd (E, d.M.y G)
+
+   2008-02-05T18:30:30 = wut, 5.2.2008 po Chr.n.
+   1995-12-22T09:05:02 = pja, 22.12.1995 po Chr.n.
+  -0010-09-15T04:44:23 = sob, 15.9.-10 př.Chr.n.
 
 =head3 GyMMM (MMM y G)
 
@@ -452,6 +476,12 @@ Upper Sorbian Germany locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 9:05 UTC
   -0010-09-15T04:44:23 = 4:44 UTC
+
+=head3 Hv (H 'hodź'. v)
+
+   2008-02-05T18:30:30 = 18 hodź. UTC
+   1995-12-22T09:05:02 = 9 hodź. UTC
+  -0010-09-15T04:44:23 = 4 hodź. UTC
 
 =head3 M (L)
 
@@ -554,6 +584,12 @@ Upper Sorbian Germany locale.
    2008-02-05T18:30:30 = 6:30 pop. UTC
    1995-12-22T09:05:02 = 9:05 dop. UTC
   -0010-09-15T04:44:23 = 4:44 dop. UTC
+
+=head3 hv (h 'hodź'. a v)
+
+   2008-02-05T18:30:30 = 6 hodź. pop. UTC
+   1995-12-22T09:05:02 = 9 hodź. dop. UTC
+  -0010-09-15T04:44:23 = 4 hodź. dop. UTC
 
 =head3 ms (mm:ss)
 

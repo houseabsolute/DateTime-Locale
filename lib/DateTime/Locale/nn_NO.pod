@@ -275,9 +275,9 @@ Norwegian Nynorsk Norway locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = kl. 18:30:30 UTC
-   1995-12-22T09:05:02 = kl. 09:05:02 UTC
-  -0010-09-15T04:44:23 = kl. 04:44:23 UTC
+   2008-02-05T18:30:30 = 18:30:30 UTC
+   1995-12-22T09:05:02 = 09:05:02 UTC
+  -0010-09-15T04:44:23 = 04:44:23 UTC
 
 =head3 Long
 
@@ -302,9 +302,9 @@ Norwegian Nynorsk Norway locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = tysdag 5. februar 2008 kl. 18:30:30 UTC
-   1995-12-22T09:05:02 = fredag 22. desember 1995 kl. 09:05:02 UTC
-  -0010-09-15T04:44:23 = laurdag 15. september -10 kl. 04:44:23 UTC
+   2008-02-05T18:30:30 = tysdag 5. februar 2008 18:30:30 UTC
+   1995-12-22T09:05:02 = fredag 22. desember 1995 09:05:02 UTC
+  -0010-09-15T04:44:23 = laurdag 15. september -10 04:44:23 UTC
 
 =head3 Long
 
@@ -351,6 +351,12 @@ Norwegian Nynorsk Norway locale.
    1995-12-22T09:05:02 = fre
   -0010-09-15T04:44:23 = lau
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = ty. 6 B
+   1995-12-22T09:05:02 = fr. 9 B
+  -0010-09-15T04:44:23 = la. 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = ty. 6:30 B
@@ -381,6 +387,12 @@ Norwegian Nynorsk Norway locale.
    1995-12-22T09:05:02 = fr. 22.
   -0010-09-15T04:44:23 = la. 15.
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = ty. 6 e.m.
+   1995-12-22T09:05:02 = fr. 9 f.m.
+  -0010-09-15T04:44:23 = la. 4 f.m.
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = ty. 6:30 e.m.
@@ -398,6 +410,18 @@ Norwegian Nynorsk Norway locale.
    2008-02-05T18:30:30 = 2008 e.Kr.
    1995-12-22T09:05:02 = 1995 e.Kr.
   -0010-09-15T04:44:23 = -10 f.Kr.
+
+=head3 GyM (M.y G)
+
+   2008-02-05T18:30:30 = 2.2008 e.Kr.
+   1995-12-22T09:05:02 = 12.1995 e.Kr.
+  -0010-09-15T04:44:23 = 9.-10 f.Kr.
+
+=head3 GyMEd (E d.M.y G)
+
+   2008-02-05T18:30:30 = ty. 5.2.2008 e.Kr.
+   1995-12-22T09:05:02 = fr. 22.12.1995 e.Kr.
+  -0010-09-15T04:44:23 = la. 15.9.-10 f.Kr.
 
 =head3 GyMMM (MMM y G)
 
@@ -417,11 +441,11 @@ Norwegian Nynorsk Norway locale.
    1995-12-22T09:05:02 = 22. des. 1995 e.Kr.
   -0010-09-15T04:44:23 = 15. sep. -10 f.Kr.
 
-=head3 GyMd (dd.MM.y GGGGG)
+=head3 GyMd (d.M.y G)
 
-   2008-02-05T18:30:30 = 05.02.2008 e.Kr.
+   2008-02-05T18:30:30 = 5.2.2008 e.Kr.
    1995-12-22T09:05:02 = 22.12.1995 e.Kr.
-  -0010-09-15T04:44:23 = 15.09.-10 f.Kr.
+  -0010-09-15T04:44:23 = 15.9.-10 f.Kr.
 
 =head3 H (HH)
 
@@ -452,6 +476,12 @@ Norwegian Nynorsk Norway locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH v)
+
+   2008-02-05T18:30:30 = 18 UTC
+   1995-12-22T09:05:02 = 09 UTC
+  -0010-09-15T04:44:23 = 04 UTC
 
 =head3 M (L.)
 
@@ -548,6 +578,12 @@ Norwegian Nynorsk Norway locale.
    2008-02-05T18:30:30 = 6:30 e.m. UTC
    1995-12-22T09:05:02 = 9:05 f.m. UTC
   -0010-09-15T04:44:23 = 4:44 f.m. UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 e.m. UTC
+   1995-12-22T09:05:02 = 9 f.m. UTC
+  -0010-09-15T04:44:23 = 4 f.m. UTC
 
 =head3 ms (mm:ss)
 

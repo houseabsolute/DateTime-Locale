@@ -186,17 +186,17 @@ Interlingue Estonia locale.
 
 =head3 Wide (format)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  1-m trimestre
+  2-m trimestre
+  3-m trimestre
+  4-m trimestre
 
 =head3 Abbreviated (format)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  1-m trimestre
+  2-m trimestre
+  3-m trimestre
+  4-m trimestre
 
 =head3 Narrow (format)
 
@@ -208,17 +208,17 @@ Interlingue Estonia locale.
 
 =head3 Wide (stand-alone)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  1-m trimestre
+  2-m trimestre
+  3-m trimestre
+  4-m trimestre
 
 =head3 Abbreviated (stand-alone)
 
-  Q1
-  Q2
-  Q3
-  Q4
+  1-m trimestre
+  2-m trimestre
+  3-m trimestre
+  4-m trimestre
 
 =head3 Narrow (stand-alone)
 
@@ -351,6 +351,12 @@ Interlingue Estonia locale.
    1995-12-22T09:05:02 = ven.
   -0010-09-15T04:44:23 = sat.
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = mar. 6 B
+   1995-12-22T09:05:02 = ven. 9 B
+  -0010-09-15T04:44:23 = sat. 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = mar. 6:30 B
@@ -381,6 +387,12 @@ Interlingue Estonia locale.
    1995-12-22T09:05:02 = ven. 22
   -0010-09-15T04:44:23 = sat. 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = mar. 6 p.m.
+   1995-12-22T09:05:02 = ven. 9 a.m.
+  -0010-09-15T04:44:23 = sat. 4 a.m.
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = mar. 6:30 p.m.
@@ -398,6 +410,18 @@ Interlingue Estonia locale.
    2008-02-05T18:30:30 = 2008 e.C.
    1995-12-22T09:05:02 = 1995 e.C.
   -0010-09-15T04:44:23 = -10 a.C.
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = e.C. 2008-02
+   1995-12-22T09:05:02 = e.C. 1995-12
+  -0010-09-15T04:44:23 = a.C. -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = e.C. 2008-02-05, mar.
+   1995-12-22T09:05:02 = e.C. 1995-12-22, ven.
+  -0010-09-15T04:44:23 = a.C. -10-09-15, sat.
 
 =head3 GyMMM (LLL y G)
 
@@ -423,11 +447,11 @@ Interlingue Estonia locale.
    1995-12-22T09:05:02 = 22.12.1995 e.C.
   -0010-09-15T04:44:23 = 15.9.-10 a.C.
 
-=head3 H (HH)
+=head3 H (H 'h'.)
 
-   2008-02-05T18:30:30 = 18
-   1995-12-22T09:05:02 = 09
-  -0010-09-15T04:44:23 = 04
+   2008-02-05T18:30:30 = 18 h.
+   1995-12-22T09:05:02 = 9 h.
+  -0010-09-15T04:44:23 = 4 h.
 
 =head3 Hm (HH:mm)
 
@@ -453,6 +477,12 @@ Interlingue Estonia locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH 'h'. 'de' v)
+
+   2008-02-05T18:30:30 = 18 h. de UTC
+   1995-12-22T09:05:02 = 09 h. de UTC
+  -0010-09-15T04:44:23 = 04 h. de UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -477,11 +507,11 @@ Interlingue Estonia locale.
    1995-12-22T09:05:02 = ven. 22 dec.
   -0010-09-15T04:44:23 = sat. 15 sept.
 
-=head3 MMMMW-count-other (W-'im' 'semane' 'de' MMMM)
+=head3 MMMMW-count-other ('week' W 'of' MMMM)
 
-   2008-02-05T18:30:30 = 1-im semane de februar
-   1995-12-22T09:05:02 = 3-im semane de decembre
-  -0010-09-15T04:44:23 = 2-im semane de septembre
+   2008-02-05T18:30:30 = week 1 of februar
+   1995-12-22T09:05:02 = week 3 of decembre
+  -0010-09-15T04:44:23 = week 2 of septembre
 
 =head3 MMMMd (d MMMM)
 
@@ -536,6 +566,12 @@ Interlingue Estonia locale.
    2008-02-05T18:30:30 = 6:30 p.m. UTC
    1995-12-22T09:05:02 = 9:05 a.m. UTC
   -0010-09-15T04:44:23 = 4:44 a.m. UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 p.m. UTC
+   1995-12-22T09:05:02 = 9 a.m. UTC
+  -0010-09-15T04:44:23 = 4 a.m. UTC
 
 =head3 ms (mm:ss)
 
@@ -593,21 +629,21 @@ Interlingue Estonia locale.
 
 =head3 yQQQ (QQQ y)
 
-   2008-02-05T18:30:30 = Q1 2008
-   1995-12-22T09:05:02 = Q4 1995
-  -0010-09-15T04:44:23 = Q3 -10
+   2008-02-05T18:30:30 = 1-m trimestre 2008
+   1995-12-22T09:05:02 = 4-m trimestre 1995
+  -0010-09-15T04:44:23 = 3-m trimestre -10
 
 =head3 yQQQQ (QQQQ y)
 
-   2008-02-05T18:30:30 = Q1 2008
-   1995-12-22T09:05:02 = Q4 1995
-  -0010-09-15T04:44:23 = Q3 -10
+   2008-02-05T18:30:30 = 1-m trimestre 2008
+   1995-12-22T09:05:02 = 4-m trimestre 1995
+  -0010-09-15T04:44:23 = 3-m trimestre -10
 
-=head3 yw-count-other (w-'im' 'semane' 'de' Y)
+=head3 yw-count-other ('week' w 'of' Y)
 
-   2008-02-05T18:30:30 = 6-im semane de 2008
-   1995-12-22T09:05:02 = 51-im semane de 1995
-  -0010-09-15T04:44:23 = 37-im semane de -10
+   2008-02-05T18:30:30 = week 6 of 2008
+   1995-12-22T09:05:02 = week 51 of 1995
+  -0010-09-15T04:44:23 = week 37 of -10
 
 
 =head2 Miscellaneous

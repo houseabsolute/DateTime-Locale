@@ -351,6 +351,12 @@ Swiss German Switzerland locale.
    1995-12-22T09:05:02 = Fr.
   -0010-09-15T04:44:23 = Sa.
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Zi. 6 B
+   1995-12-22T09:05:02 = Fr. 9 B
+  -0010-09-15T04:44:23 = Sa. 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Zi. 6:30 B
@@ -381,6 +387,12 @@ Swiss German Switzerland locale.
    1995-12-22T09:05:02 = Fr. 22.
   -0010-09-15T04:44:23 = Sa. 15.
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Zi. 6 nam.
+   1995-12-22T09:05:02 = Fr. 9 vorm.
+  -0010-09-15T04:44:23 = Sa. 4 vorm.
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Zi. 6:30 nam.
@@ -398,6 +410,18 @@ Swiss German Switzerland locale.
    2008-02-05T18:30:30 = n. Chr. 2008
    1995-12-22T09:05:02 = n. Chr. 1995
   -0010-09-15T04:44:23 = v. Chr. -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = n. Chr. 2008-02
+   1995-12-22T09:05:02 = n. Chr. 1995-12
+  -0010-09-15T04:44:23 = v. Chr. -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = n. Chr. 2008-02-05, Zi.
+   1995-12-22T09:05:02 = n. Chr. 1995-12-22, Fr.
+  -0010-09-15T04:44:23 = v. Chr. -10-09-15, Sa.
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Swiss German Switzerland locale.
    1995-12-22T09:05:02 = n. Chr. 1995 Dez 22
   -0010-09-15T04:44:23 = v. Chr. -10 Sep 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = n. Chr. 2008-02-05
    1995-12-22T09:05:02 = n. Chr. 1995-12-22
@@ -452,6 +476,12 @@ Swiss German Switzerland locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -554,6 +584,12 @@ Swiss German Switzerland locale.
    2008-02-05T18:30:30 = 6:30 nam. UTC
    1995-12-22T09:05:02 = 9:05 vorm. UTC
   -0010-09-15T04:44:23 = 4:44 vorm. UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 nam. UTC
+   1995-12-22T09:05:02 = 9 vorm. UTC
+  -0010-09-15T04:44:23 = 4 vorm. UTC
 
 =head3 mmss (mm:ss)
 

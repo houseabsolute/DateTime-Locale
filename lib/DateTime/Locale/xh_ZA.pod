@@ -50,7 +50,7 @@ Xhosa South Africa locale.
 
 =head3 Narrow (format)
 
-  M
+  Mv
   Sb
   Tht
   Sin
@@ -81,7 +81,7 @@ Xhosa South Africa locale.
 
 =head3 Narrow (stand-alone)
 
-  M
+  Mv
   Sb
   St
   Sin
@@ -123,18 +123,18 @@ Xhosa South Africa locale.
 
 =head3 Narrow (format)
 
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
+  J
+  F
+  M
+  A
+  M
+  J
+  J
+  A
+  S
+  O
+  N
+  D
 
 
 =head3 Wide (stand-alone)
@@ -169,18 +169,18 @@ Xhosa South Africa locale.
 
 =head3 Narrow (stand-alone)
 
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  12
+  J
+  F
+  M
+  A
+  M
+  J
+  J
+  A
+  S
+  O
+  N
+  D
 
 =head2 Quarters
 
@@ -231,8 +231,8 @@ Xhosa South Africa locale.
 
 =head3 Wide (format)
 
-  BC
-  AD
+  Phambi KoKristu
+  Anno Domino
 
 =head3 Abbreviated (format)
 
@@ -351,6 +351,12 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = Hla
   -0010-09-15T04:44:23 = Mgq
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Lwesb 6 B
+   1995-12-22T09:05:02 = Hla 9 B
+  -0010-09-15T04:44:23 = Mgq 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Lwesb 6:30 B
@@ -375,11 +381,17 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = Hla 09:05:02
   -0010-09-15T04:44:23 = Mgq 04:44:23
 
-=head3 Ed (d E)
+=head3 Ed (d, E)
 
-   2008-02-05T18:30:30 = 5 Lwesb
-   1995-12-22T09:05:02 = 22 Hla
-  -0010-09-15T04:44:23 = 15 Mgq
+   2008-02-05T18:30:30 = 5, Lwesb
+   1995-12-22T09:05:02 = 22, Hla
+  -0010-09-15T04:44:23 = 15, Mgq
+
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Lwesb 6 PM
+   1995-12-22T09:05:02 = Hla 9 AM
+  -0010-09-15T04:44:23 = Mgq 4 AM
 
 =head3 Ehm (E h:mm a)
 
@@ -393,35 +405,47 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = Hla 9:05:02 AM
   -0010-09-15T04:44:23 = Mgq 4:44:23 AM
 
-=head3 Gy (y G)
+=head3 Gy (G y)
 
-   2008-02-05T18:30:30 = 2008 AD
-   1995-12-22T09:05:02 = 1995 AD
-  -0010-09-15T04:44:23 = -10 BC
+   2008-02-05T18:30:30 = AD 2008
+   1995-12-22T09:05:02 = AD 1995
+  -0010-09-15T04:44:23 = BC -10
 
-=head3 GyMMM (MMM y G)
+=head3 GyM (G y-MM)
 
-   2008-02-05T18:30:30 = Feb 2008 AD
-   1995-12-22T09:05:02 = Dis 1995 AD
-  -0010-09-15T04:44:23 = Sept -10 BC
+   2008-02-05T18:30:30 = AD 2008-02
+   1995-12-22T09:05:02 = AD 1995-12
+  -0010-09-15T04:44:23 = BC -10-09
 
-=head3 GyMMMEd (E, MMM d, y G)
+=head3 GyMEd (G y-MM-dd, E)
 
-   2008-02-05T18:30:30 = Lwesb, Feb 5, 2008 AD
-   1995-12-22T09:05:02 = Hla, Dis 22, 1995 AD
-  -0010-09-15T04:44:23 = Mgq, Sept 15, -10 BC
+   2008-02-05T18:30:30 = AD 2008-02-05, Lwesb
+   1995-12-22T09:05:02 = AD 1995-12-22, Hla
+  -0010-09-15T04:44:23 = BC -10-09-15, Mgq
 
-=head3 GyMMMd (MMM d, y G)
+=head3 GyMMM (G y MMM)
 
-   2008-02-05T18:30:30 = Feb 5, 2008 AD
-   1995-12-22T09:05:02 = Dis 22, 1995 AD
-  -0010-09-15T04:44:23 = Sept 15, -10 BC
+   2008-02-05T18:30:30 = AD 2008 Feb
+   1995-12-22T09:05:02 = AD 1995 Dis
+  -0010-09-15T04:44:23 = BC -10 Sept
 
-=head3 GyMd (M/d/y G)
+=head3 GyMMMEd (G y MMM d, E)
 
-   2008-02-05T18:30:30 = 2/5/2008 AD
-   1995-12-22T09:05:02 = 12/22/1995 AD
-  -0010-09-15T04:44:23 = 9/15/-10 BC
+   2008-02-05T18:30:30 = AD 2008 Feb 5, Lwesb
+   1995-12-22T09:05:02 = AD 1995 Dis 22, Hla
+  -0010-09-15T04:44:23 = BC -10 Sept 15, Mgq
+
+=head3 GyMMMd (G y MMM d)
+
+   2008-02-05T18:30:30 = AD 2008 Feb 5
+   1995-12-22T09:05:02 = AD 1995 Dis 22
+  -0010-09-15T04:44:23 = BC -10 Sept 15
+
+=head3 GyMd (G y-MM-dd)
+
+   2008-02-05T18:30:30 = AD 2008-02-05
+   1995-12-22T09:05:02 = AD 1995-12-22
+  -0010-09-15T04:44:23 = BC -10-09-15
 
 =head3 H (HH)
 
@@ -453,17 +477,23 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
    1995-12-22T09:05:02 = 12
   -0010-09-15T04:44:23 = 9
 
-=head3 MEd (E, M/d)
+=head3 MEd (MM-dd, E)
 
-   2008-02-05T18:30:30 = Lwesb, 2/5
-   1995-12-22T09:05:02 = Hla, 12/22
-  -0010-09-15T04:44:23 = Mgq, 9/15
+   2008-02-05T18:30:30 = 02-05, Lwesb
+   1995-12-22T09:05:02 = 12-22, Hla
+  -0010-09-15T04:44:23 = 09-15, Mgq
 
 =head3 MMM (LLL)
 
@@ -471,17 +501,23 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = Dis
   -0010-09-15T04:44:23 = Sep
 
-=head3 MMMEd (E, MMM d)
+=head3 MMMEd (MMM d, E)
 
-   2008-02-05T18:30:30 = Lwesb, Feb 5
-   1995-12-22T09:05:02 = Hla, Dis 22
-  -0010-09-15T04:44:23 = Mgq, Sept 15
+   2008-02-05T18:30:30 = Feb 5, Lwesb
+   1995-12-22T09:05:02 = Dis 22, Hla
+  -0010-09-15T04:44:23 = Sept 15, Mgq
 
-=head3 MMMMW-count-other ('week' W 'of' MMMM)
+=head3 MMMMW-count-one ('iveki' W 'ka' MMMM)
 
-   2008-02-05T18:30:30 = week 1 of Februwari
-   1995-12-22T09:05:02 = week 3 of Disemba
-  -0010-09-15T04:44:23 = week 2 of Septemba
+   2008-02-05T18:30:30 = iveki 1 ka Februwari
+   1995-12-22T09:05:02 = iveki 3 ka Disemba
+  -0010-09-15T04:44:23 = iveki 2 ka Septemba
+
+=head3 MMMMW-count-other ('iveki' W 'ka' MMMM)
+
+   2008-02-05T18:30:30 = iveki 1 ka Februwari
+   1995-12-22T09:05:02 = iveki 3 ka Disemba
+  -0010-09-15T04:44:23 = iveki 2 ka Septemba
 
 =head3 MMMMd (MMMM d)
 
@@ -495,11 +531,11 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = Dis 22
   -0010-09-15T04:44:23 = Sept 15
 
-=head3 Md (M/d)
+=head3 Md (MM-dd)
 
-   2008-02-05T18:30:30 = 2/5
-   1995-12-22T09:05:02 = 12/22
-  -0010-09-15T04:44:23 = 9/15
+   2008-02-05T18:30:30 = 02-05
+   1995-12-22T09:05:02 = 12-22
+  -0010-09-15T04:44:23 = 09-15
 
 =head3 d (d)
 
@@ -536,6 +572,12 @@ Xhosa South Africa locale.
    2008-02-05T18:30:30 = 6:30 PM UTC
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
 
 =head3 ms (mm:ss)
 
@@ -603,11 +645,17 @@ Xhosa South Africa locale.
    1995-12-22T09:05:02 = ikota yesi-4 1995
   -0010-09-15T04:44:23 = ikota yesi-3 -10
 
-=head3 yw-count-other ('week' w 'of' Y)
+=head3 yw-count-one ('iveki' w 'ka' Y)
 
-   2008-02-05T18:30:30 = week 6 of 2008
-   1995-12-22T09:05:02 = week 51 of 1995
-  -0010-09-15T04:44:23 = week 37 of -10
+   2008-02-05T18:30:30 = iveki 6 ka 2008
+   1995-12-22T09:05:02 = iveki 51 ka 1995
+  -0010-09-15T04:44:23 = iveki 37 ka -10
+
+=head3 yw-count-other ('iveki' w 'ka' Y)
+
+   2008-02-05T18:30:30 = iveki 6 ka 2008
+   1995-12-22T09:05:02 = iveki 51 ka 1995
+  -0010-09-15T04:44:23 = iveki 37 ka -10
 
 
 =head2 Miscellaneous

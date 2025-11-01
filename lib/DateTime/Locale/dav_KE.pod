@@ -351,6 +351,12 @@ Taita Kenya locale.
    1995-12-22T09:05:02 = Kas
   -0010-09-15T04:44:23 = Ngu
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Kaw 6 B
+   1995-12-22T09:05:02 = Kas 9 B
+  -0010-09-15T04:44:23 = Ngu 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Kaw 6:30 B
@@ -381,6 +387,12 @@ Taita Kenya locale.
    1995-12-22T09:05:02 = 22, Kas
   -0010-09-15T04:44:23 = 15, Ngu
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Kaw 6 luma lwa p
+   1995-12-22T09:05:02 = Kas 9 Luma lwa K
+  -0010-09-15T04:44:23 = Ngu 4 Luma lwa K
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Kaw 6:30 luma lwa p
@@ -398,6 +410,18 @@ Taita Kenya locale.
    2008-02-05T18:30:30 = BK 2008
    1995-12-22T09:05:02 = BK 1995
   -0010-09-15T04:44:23 = KK -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = BK 2008-02
+   1995-12-22T09:05:02 = BK 1995-12
+  -0010-09-15T04:44:23 = KK -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = BK 2008-02-05, Kaw
+   1995-12-22T09:05:02 = BK 1995-12-22, Kas
+  -0010-09-15T04:44:23 = KK -10-09-15, Ngu
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Taita Kenya locale.
    1995-12-22T09:05:02 = BK 1995 Iwi 22
   -0010-09-15T04:44:23 = KK -10 Ike 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = BK 2008-02-05
    1995-12-22T09:05:02 = BK 1995-12-22
@@ -452,6 +476,12 @@ Taita Kenya locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -542,6 +572,12 @@ Taita Kenya locale.
    2008-02-05T18:30:30 = 6:30 luma lwa p UTC
    1995-12-22T09:05:02 = 9:05 Luma lwa K UTC
   -0010-09-15T04:44:23 = 4:44 Luma lwa K UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 luma lwa p UTC
+   1995-12-22T09:05:02 = 9 Luma lwa K UTC
+  -0010-09-15T04:44:23 = 4 Luma lwa K UTC
 
 =head3 ms (mm:ss)
 

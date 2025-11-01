@@ -351,6 +351,12 @@ English Philippines locale.
    1995-12-22T09:05:02 = Fri
   -0010-09-15T04:44:23 = Sat
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Tue 6 B
+   1995-12-22T09:05:02 = Fri 9 B
+  -0010-09-15T04:44:23 = Sat 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Tue 6:30 B
@@ -381,6 +387,18 @@ English Philippines locale.
    1995-12-22T09:05:02 = 22 Fri
   -0010-09-15T04:44:23 = 15 Sat
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Tue 6 PM
+   1995-12-22T09:05:02 = Fri 9 AM
+  -0010-09-15T04:44:23 = Sat 4 AM
+
+=head3 Eh-alt-ascii (E h a)
+
+   2008-02-05T18:30:30 = Tue 6 PM
+   1995-12-22T09:05:02 = Fri 9 AM
+  -0010-09-15T04:44:23 = Sat 4 AM
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Tue 6:30 PM
@@ -410,6 +428,18 @@ English Philippines locale.
    2008-02-05T18:30:30 = 2008 AD
    1995-12-22T09:05:02 = 1995 AD
   -0010-09-15T04:44:23 = -10 BC
+
+=head3 GyM (M/y G)
+
+   2008-02-05T18:30:30 = 2/2008 AD
+   1995-12-22T09:05:02 = 12/1995 AD
+  -0010-09-15T04:44:23 = 9/-10 BC
+
+=head3 GyMEd (E, M/d/y G)
+
+   2008-02-05T18:30:30 = Tue, 2/5/2008 AD
+   1995-12-22T09:05:02 = Fri, 12/22/1995 AD
+  -0010-09-15T04:44:23 = Sat, 9/15/-10 BC
 
 =head3 GyMMM (MMM y G)
 
@@ -464,6 +494,12 @@ English Philippines locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -584,6 +620,18 @@ English Philippines locale.
    2008-02-05T18:30:30 = 6:30 PM UTC
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
+
+=head3 hv-alt-ascii (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
 
 =head3 ms (mm:ss)
 

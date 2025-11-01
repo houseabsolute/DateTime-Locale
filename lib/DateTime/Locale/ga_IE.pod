@@ -266,9 +266,9 @@ Irish Ireland locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05/02/2008
-   1995-12-22T09:05:02 = 22/12/1995
-  -0010-09-15T04:44:23 = 15/09/-10
+   2008-02-05T18:30:30 = 5/2/08
+   1995-12-22T09:05:02 = 22/12/95
+  -0010-09-15T04:44:23 = 15/9/-10
 
 
 =head2 Time Formats
@@ -320,9 +320,9 @@ Irish Ireland locale.
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05/02/2008 18:30
-   1995-12-22T09:05:02 = 22/12/1995 09:05
-  -0010-09-15T04:44:23 = 15/09/-10 04:44
+   2008-02-05T18:30:30 = 5/2/08 18:30
+   1995-12-22T09:05:02 = 22/12/95 09:05
+  -0010-09-15T04:44:23 = 15/9/-10 04:44
 
 
 =head2 Available Formats
@@ -350,6 +350,12 @@ Irish Ireland locale.
    2008-02-05T18:30:30 = Máirt
    1995-12-22T09:05:02 = Aoine
   -0010-09-15T04:44:23 = Sath
+
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Máirt 6 B
+   1995-12-22T09:05:02 = Aoine 9 B
+  -0010-09-15T04:44:23 = Sath 4 B
 
 =head3 EBhm (E h:mm B)
 
@@ -381,6 +387,12 @@ Irish Ireland locale.
    1995-12-22T09:05:02 = Aoine 22
   -0010-09-15T04:44:23 = Sath 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Máirt 6 i.n.
+   1995-12-22T09:05:02 = Aoine 9 r.n.
+  -0010-09-15T04:44:23 = Sath 4 r.n.
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Máirt 6:30 i.n.
@@ -398,6 +410,18 @@ Irish Ireland locale.
    2008-02-05T18:30:30 = 2008 AD
    1995-12-22T09:05:02 = 1995 AD
   -0010-09-15T04:44:23 = -10 RC
+
+=head3 GyM (M/y G)
+
+   2008-02-05T18:30:30 = 2/2008 AD
+   1995-12-22T09:05:02 = 12/1995 AD
+  -0010-09-15T04:44:23 = 9/-10 RC
+
+=head3 GyMEd (E, d/M/y G)
+
+   2008-02-05T18:30:30 = Máirt, 5/2/2008 AD
+   1995-12-22T09:05:02 = Aoine, 22/12/1995 AD
+  -0010-09-15T04:44:23 = Sath, 15/9/-10 RC
 
 =head3 GyMMM (MMM y G)
 
@@ -453,6 +477,12 @@ Irish Ireland locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
+
 =head3 M (LL)
 
    2008-02-05T18:30:30 = 02
@@ -477,35 +507,35 @@ Irish Ireland locale.
    1995-12-22T09:05:02 = Aoine 22 Noll
   -0010-09-15T04:44:23 = Sath 15 MFómh
 
-=head3 MMMMW-count-few ('seachtain' 'a' W 'i' MMMM)
+=head3 MMMMW-count-few (MMMM: 'seachtain' W)
 
-   2008-02-05T18:30:30 = seachtain a 1 i Feabhra
-   1995-12-22T09:05:02 = seachtain a 3 i Nollaig
-  -0010-09-15T04:44:23 = seachtain a 2 i Meán Fómhair
+   2008-02-05T18:30:30 = Feabhra: seachtain 1
+   1995-12-22T09:05:02 = Nollaig: seachtain 3
+  -0010-09-15T04:44:23 = Meán Fómhair: seachtain 2
 
-=head3 MMMMW-count-many ('seachtain' 'a' W 'i' MMMM)
+=head3 MMMMW-count-many (MMMM: 'seachtain' W)
 
-   2008-02-05T18:30:30 = seachtain a 1 i Feabhra
-   1995-12-22T09:05:02 = seachtain a 3 i Nollaig
-  -0010-09-15T04:44:23 = seachtain a 2 i Meán Fómhair
+   2008-02-05T18:30:30 = Feabhra: seachtain 1
+   1995-12-22T09:05:02 = Nollaig: seachtain 3
+  -0010-09-15T04:44:23 = Meán Fómhair: seachtain 2
 
-=head3 MMMMW-count-one ('seachtain' 'a' W 'i' MMMM)
+=head3 MMMMW-count-one (MMMM: 'seachtain' W)
 
-   2008-02-05T18:30:30 = seachtain a 1 i Feabhra
-   1995-12-22T09:05:02 = seachtain a 3 i Nollaig
-  -0010-09-15T04:44:23 = seachtain a 2 i Meán Fómhair
+   2008-02-05T18:30:30 = Feabhra: seachtain 1
+   1995-12-22T09:05:02 = Nollaig: seachtain 3
+  -0010-09-15T04:44:23 = Meán Fómhair: seachtain 2
 
-=head3 MMMMW-count-other ('seachtain' 'a' W 'i' MMMM)
+=head3 MMMMW-count-other (MMMM: 'seachtain' W)
 
-   2008-02-05T18:30:30 = seachtain a 1 i Feabhra
-   1995-12-22T09:05:02 = seachtain a 3 i Nollaig
-  -0010-09-15T04:44:23 = seachtain a 2 i Meán Fómhair
+   2008-02-05T18:30:30 = Feabhra: seachtain 1
+   1995-12-22T09:05:02 = Nollaig: seachtain 3
+  -0010-09-15T04:44:23 = Meán Fómhair: seachtain 2
 
-=head3 MMMMW-count-two ('seachtain' 'a' W 'i' MMMM)
+=head3 MMMMW-count-two (MMMM: 'seachtain' W)
 
-   2008-02-05T18:30:30 = seachtain a 1 i Feabhra
-   1995-12-22T09:05:02 = seachtain a 3 i Nollaig
-  -0010-09-15T04:44:23 = seachtain a 2 i Meán Fómhair
+   2008-02-05T18:30:30 = Feabhra: seachtain 1
+   1995-12-22T09:05:02 = Nollaig: seachtain 3
+  -0010-09-15T04:44:23 = Meán Fómhair: seachtain 2
 
 =head3 MMMMd (d MMMM)
 
@@ -560,6 +590,12 @@ Irish Ireland locale.
    2008-02-05T18:30:30 = 6:30 i.n. UTC
    1995-12-22T09:05:02 = 9:05 r.n. UTC
   -0010-09-15T04:44:23 = 4:44 r.n. UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 i.n. UTC
+   1995-12-22T09:05:02 = 9 r.n. UTC
+  -0010-09-15T04:44:23 = 4 r.n. UTC
 
 =head3 ms (mm:ss)
 
@@ -627,35 +663,35 @@ Irish Ireland locale.
    1995-12-22T09:05:02 = 4ú ráithe 1995
   -0010-09-15T04:44:23 = 3ú ráithe -10
 
-=head3 yw-count-few ('seachtain' 'a' w 'in' Y)
+=head3 yw-count-few ('seachtain' w 'in' Y)
 
-   2008-02-05T18:30:30 = seachtain a 6 in 2008
-   1995-12-22T09:05:02 = seachtain a 51 in 1995
-  -0010-09-15T04:44:23 = seachtain a 37 in -10
+   2008-02-05T18:30:30 = seachtain 6 in 2008
+   1995-12-22T09:05:02 = seachtain 51 in 1995
+  -0010-09-15T04:44:23 = seachtain 37 in -10
 
-=head3 yw-count-many ('seachtain' 'a' w 'in' Y)
+=head3 yw-count-many ('seachtain' w 'in' Y)
 
-   2008-02-05T18:30:30 = seachtain a 6 in 2008
-   1995-12-22T09:05:02 = seachtain a 51 in 1995
-  -0010-09-15T04:44:23 = seachtain a 37 in -10
+   2008-02-05T18:30:30 = seachtain 6 in 2008
+   1995-12-22T09:05:02 = seachtain 51 in 1995
+  -0010-09-15T04:44:23 = seachtain 37 in -10
 
-=head3 yw-count-one ('seachtain' 'a' w 'in' Y)
+=head3 yw-count-one ('seachtain' w 'in' Y)
 
-   2008-02-05T18:30:30 = seachtain a 6 in 2008
-   1995-12-22T09:05:02 = seachtain a 51 in 1995
-  -0010-09-15T04:44:23 = seachtain a 37 in -10
+   2008-02-05T18:30:30 = seachtain 6 in 2008
+   1995-12-22T09:05:02 = seachtain 51 in 1995
+  -0010-09-15T04:44:23 = seachtain 37 in -10
 
-=head3 yw-count-other ('seachtain' 'a' w 'in' Y)
+=head3 yw-count-other ('seachtain' w 'in' Y)
 
-   2008-02-05T18:30:30 = seachtain a 6 in 2008
-   1995-12-22T09:05:02 = seachtain a 51 in 1995
-  -0010-09-15T04:44:23 = seachtain a 37 in -10
+   2008-02-05T18:30:30 = seachtain 6 in 2008
+   1995-12-22T09:05:02 = seachtain 51 in 1995
+  -0010-09-15T04:44:23 = seachtain 37 in -10
 
-=head3 yw-count-two ('seachtain' 'a' w 'in' Y)
+=head3 yw-count-two ('seachtain' w 'in' Y)
 
-   2008-02-05T18:30:30 = seachtain a 6 in 2008
-   1995-12-22T09:05:02 = seachtain a 51 in 1995
-  -0010-09-15T04:44:23 = seachtain a 37 in -10
+   2008-02-05T18:30:30 = seachtain 6 in 2008
+   1995-12-22T09:05:02 = seachtain 51 in 1995
+  -0010-09-15T04:44:23 = seachtain 37 in -10
 
 
 =head2 Miscellaneous

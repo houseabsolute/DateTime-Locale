@@ -351,6 +351,12 @@ Serbian Montenegro Latin locale.
    1995-12-22T09:05:02 = pet
   -0010-09-15T04:44:23 = sub
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = uto 6 B
+   1995-12-22T09:05:02 = pet 9 B
+  -0010-09-15T04:44:23 = sub 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = uto 6:30 B
@@ -381,6 +387,12 @@ Serbian Montenegro Latin locale.
    1995-12-22T09:05:02 = pet 22.
   -0010-09-15T04:44:23 = sub 15.
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = uto 6 po podne
+   1995-12-22T09:05:02 = pet 9 prije podne
+  -0010-09-15T04:44:23 = sub 4 prije podne
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = uto 6:30 po podne
@@ -398,6 +410,18 @@ Serbian Montenegro Latin locale.
    2008-02-05T18:30:30 = 2008. n. e.
    1995-12-22T09:05:02 = 1995. n. e.
   -0010-09-15T04:44:23 = -10. p. n. e.
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = n. e. 2008-02
+   1995-12-22T09:05:02 = n. e. 1995-12
+  -0010-09-15T04:44:23 = p. n. e. -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = n. e. 2008-02-05, uto
+   1995-12-22T09:05:02 = n. e. 1995-12-22, pet
+  -0010-09-15T04:44:23 = p. n. e. -10-09-15, sub
 
 =head3 GyMMM (MMM y. G)
 
@@ -453,6 +477,12 @@ Serbian Montenegro Latin locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH 'h' v)
+
+   2008-02-05T18:30:30 = 18 h UTC
+   1995-12-22T09:05:02 = 09 h UTC
+  -0010-09-15T04:44:23 = 04 h UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -483,17 +513,17 @@ Serbian Montenegro Latin locale.
    1995-12-22T09:05:02 = pet, 22. decembar
   -0010-09-15T04:44:23 = sub, 15. septembar
 
-=head3 MMMMW-count-few (MMMM: W. 'nedelja')
+=head3 MMMMW-count-few (W. 'sjedmica' 'u' MMMM)
 
-   2008-02-05T18:30:30 = februar: 1. nedelja
-   1995-12-22T09:05:02 = decembar: 3. nedelja
-  -0010-09-15T04:44:23 = septembar: 2. nedelja
+   2008-02-05T18:30:30 = 1. sjedmica u februar
+   1995-12-22T09:05:02 = 3. sjedmica u decembar
+  -0010-09-15T04:44:23 = 2. sjedmica u septembar
 
-=head3 MMMMW-count-one (MMMM: W. 'nedelja')
+=head3 MMMMW-count-one (W. 'sjedmica' 'u' MMMM)
 
-   2008-02-05T18:30:30 = februar: 1. nedelja
-   1995-12-22T09:05:02 = decembar: 3. nedelja
-  -0010-09-15T04:44:23 = septembar: 2. nedelja
+   2008-02-05T18:30:30 = 1. sjedmica u februar
+   1995-12-22T09:05:02 = 3. sjedmica u decembar
+  -0010-09-15T04:44:23 = 2. sjedmica u septembar
 
 =head3 MMMMW-count-other (W. 'sjedmica' 'u' MMMM)
 
@@ -566,6 +596,12 @@ Serbian Montenegro Latin locale.
    2008-02-05T18:30:30 = 6:30 po podne UTC
    1995-12-22T09:05:02 = 9:05 prije podne UTC
   -0010-09-15T04:44:23 = 4:44 prije podne UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 po podne UTC
+   1995-12-22T09:05:02 = 9 prije podne UTC
+  -0010-09-15T04:44:23 = 4 prije podne UTC
 
 =head3 ms (mm:ss)
 
@@ -645,17 +681,17 @@ Serbian Montenegro Latin locale.
    1995-12-22T09:05:02 = četvrti kvartal 1995.
   -0010-09-15T04:44:23 = treći kvartal -10.
 
-=head3 yw-count-few (w. 'nedelja' 'u' Y.)
+=head3 yw-count-few (w. 'sjedmica' 'u' Y.)
 
-   2008-02-05T18:30:30 = 6. nedelja u 2008.
-   1995-12-22T09:05:02 = 51. nedelja u 1995.
-  -0010-09-15T04:44:23 = 37. nedelja u -10.
+   2008-02-05T18:30:30 = 6. sjedmica u 2008.
+   1995-12-22T09:05:02 = 51. sjedmica u 1995.
+  -0010-09-15T04:44:23 = 37. sjedmica u -10.
 
-=head3 yw-count-one (w. 'nedelja' 'u' Y.)
+=head3 yw-count-one (w. 'sjedmica' 'u' Y.)
 
-   2008-02-05T18:30:30 = 6. nedelja u 2008.
-   1995-12-22T09:05:02 = 51. nedelja u 1995.
-  -0010-09-15T04:44:23 = 37. nedelja u -10.
+   2008-02-05T18:30:30 = 6. sjedmica u 2008.
+   1995-12-22T09:05:02 = 51. sjedmica u 1995.
+  -0010-09-15T04:44:23 = 37. sjedmica u -10.
 
 =head3 yw-count-other (w. 'sjedmica' 'u' Y.)
 

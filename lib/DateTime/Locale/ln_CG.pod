@@ -351,6 +351,12 @@ Lingala Congo - Brazzaville locale.
    1995-12-22T09:05:02 = mtn
   -0010-09-15T04:44:23 = mps
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = mbl 6 B
+   1995-12-22T09:05:02 = mtn 9 B
+  -0010-09-15T04:44:23 = mps 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = mbl 6:30 B
@@ -381,6 +387,12 @@ Lingala Congo - Brazzaville locale.
    1995-12-22T09:05:02 = mtn 22
   -0010-09-15T04:44:23 = mps 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = mbl 6 mpókwa
+   1995-12-22T09:05:02 = mtn 9 ntɔ́ngɔ́
+  -0010-09-15T04:44:23 = mps 4 ntɔ́ngɔ́
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = mbl 6:30 mpókwa
@@ -398,6 +410,18 @@ Lingala Congo - Brazzaville locale.
    2008-02-05T18:30:30 = nsima ya Y 2008
    1995-12-22T09:05:02 = nsima ya Y 1995
   -0010-09-15T04:44:23 = libóso ya -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = nsima ya Y 2008-02
+   1995-12-22T09:05:02 = nsima ya Y 1995-12
+  -0010-09-15T04:44:23 = libóso ya -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = nsima ya Y 2008-02-05, mbl
+   1995-12-22T09:05:02 = nsima ya Y 1995-12-22, mtn
+  -0010-09-15T04:44:23 = libóso ya -10-09-15, mps
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Lingala Congo - Brazzaville locale.
    1995-12-22T09:05:02 = nsima ya Y 1995 dsb 22
   -0010-09-15T04:44:23 = libóso ya -10 stb 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = nsima ya Y 2008-02-05
    1995-12-22T09:05:02 = nsima ya Y 1995-12-22
@@ -452,6 +476,12 @@ Lingala Congo - Brazzaville locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -536,6 +566,12 @@ Lingala Congo - Brazzaville locale.
    2008-02-05T18:30:30 = 6:30 mpókwa UTC
    1995-12-22T09:05:02 = 9:05 ntɔ́ngɔ́ UTC
   -0010-09-15T04:44:23 = 4:44 ntɔ́ngɔ́ UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 mpókwa UTC
+   1995-12-22T09:05:02 = 9 ntɔ́ngɔ́ UTC
+  -0010-09-15T04:44:23 = 4 ntɔ́ngɔ́ UTC
 
 =head3 ms (m:ss)
 

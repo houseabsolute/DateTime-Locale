@@ -351,6 +351,12 @@ Mundang Cameroon locale.
    1995-12-22T09:05:02 = Cga
   -0010-09-15T04:44:23 = Cze
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Czi 6 B
+   1995-12-22T09:05:02 = Cga 9 B
+  -0010-09-15T04:44:23 = Cze 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Czi 6:30 B
@@ -381,6 +387,12 @@ Mundang Cameroon locale.
    1995-12-22T09:05:02 = Cga 22
   -0010-09-15T04:44:23 = Cze 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Czi 6 lilli
+   1995-12-22T09:05:02 = Cga 9 comme
+  -0010-09-15T04:44:23 = Cze 4 comme
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Czi 6:30 lilli
@@ -398,6 +410,18 @@ Mundang Cameroon locale.
    2008-02-05T18:30:30 = PK 2008
    1995-12-22T09:05:02 = PK 1995
   -0010-09-15T04:44:23 = KK -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = PK 2008-02
+   1995-12-22T09:05:02 = PK 1995-12
+  -0010-09-15T04:44:23 = KK -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = PK 2008-02-05, Czi
+   1995-12-22T09:05:02 = PK 1995-12-22, Cga
+  -0010-09-15T04:44:23 = KK -10-09-15, Cze
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Mundang Cameroon locale.
    1995-12-22T09:05:02 = PK 1995 FYU 22
   -0010-09-15T04:44:23 = KK -10 FDE 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = PK 2008-02-05
    1995-12-22T09:05:02 = PK 1995-12-22
@@ -452,6 +476,12 @@ Mundang Cameroon locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -536,6 +566,12 @@ Mundang Cameroon locale.
    2008-02-05T18:30:30 = 6:30 lilli UTC
    1995-12-22T09:05:02 = 9:05 comme UTC
   -0010-09-15T04:44:23 = 4:44 comme UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 lilli UTC
+   1995-12-22T09:05:02 = 9 comme UTC
+  -0010-09-15T04:44:23 = 4 comme UTC
 
 =head3 ms (m:ss)
 

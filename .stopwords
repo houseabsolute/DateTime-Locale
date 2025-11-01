@@ -2041,6 +2041,7 @@ arɛ́cika
 arf
 arfininngorneq
 Argentina
+Arim
 Ariŋuu
 ariré
 Ariyo
@@ -2072,6 +2073,7 @@ Asabotsy
 Asamas
 asamas
 asati
+ascii
 Asḍ
 Ase
 Aseer
@@ -2245,6 +2247,7 @@ Bahamas
 Bahrain
 Bäkɛl
 Bäkɛl،
+Bakhtiari
 Bal
 bal
 bal-Arab
@@ -2445,6 +2448,7 @@ Bulgarian
 Bur
 Bureet
 Burī
+Buriat
 Burkina
 Burma
 Burmese
@@ -3920,6 +3924,7 @@ dd/MM
 dd‏/MM
 dd/MM/y
 ddC
+ddE
 De
 de
 Dé
@@ -4176,6 +4181,7 @@ dşm
 dt
 Du
 du
+dû
 du. 6
 du. 6:30
 du. 6:30:30
@@ -4284,11 +4290,13 @@ E2
 E3
 E4
 EA
+Eah
 Eah:mm
 Eah:mm:ss
 Ean
 Eanáir
 Ẹ̀b
+EBh
 EBh:mm
 EBh:mm:ss
 EBhm
@@ -4325,6 +4333,7 @@ EEEEที่
 efter
 eftir
 efute
+EG
 Eg
 Egypt
 EHH:mm
@@ -4507,6 +4516,7 @@ Eprel
 Epreli
 Epreo
 Epril
+eqchi
 Equatorial
 Er
 Èr
@@ -5096,6 +5106,7 @@ Gy
 Gy/M/d
 GyM
 GyMd
+GyMEd
 GyMMM
 GyMMMd
 GyMMMEd
@@ -5142,6 +5153,7 @@ h.mm.ss
 h'ê
 h'h'mm
 h'h'mm:ss
+h'HH
 ha
 ha-Arab
 ha-Arab-NG
@@ -5226,8 +5238,13 @@ hh:mm:ss
 HH:mm:ss;
 HH.mm
 HH.mm.ss
+HH'e
+HH'H
 HH'h
 HH'h'mm
+HH'klst
+HH'u
+HH'v
 HHmm
 HHmmss
 HHmmZ
@@ -5265,6 +5282,7 @@ hm
 Ħm
 hm-alt-ascii
 Hmm
+Hmnp
 Hmong
 Hms
 hms
@@ -5325,6 +5343,8 @@ Hut
 hutala
 Huw
 Huwebes
+Hv
+hv
 Hvse
 HW1
 HW2
@@ -5485,6 +5505,7 @@ ilĩ
 îln
 îlna
 îlnê
+ilo
 îlon
 îlona
 îlonê
@@ -5596,6 +5617,7 @@ Iune
 iunie
 IV
 IV-lea
+iveki
 Iwi
 iwi
 Iwo
@@ -6381,6 +6403,8 @@ Kús
 Kusa
 Kúshîn
 Kuta
+Kutan
+kutan
 kutúan
 Kuuza
 Kuvi
@@ -6547,6 +6571,7 @@ lávvardat
 lávvordat
 Lây
 Lâyenga
+Laz
 lb
 lb-LU
 le
@@ -6730,6 +6755,7 @@ lunesdì
 Lungùdi
 luni
 lunis
+lunnidìa
 luns
 Luo
 luo
@@ -6899,6 +6925,7 @@ maijs
 Maio
 maio
 Máirt
+mais
 Maithili
 Maiu
 maiu
@@ -8192,6 +8219,7 @@ Ojola
 Ọjọ́rú
 Ok
 Òk
+Okanagan
 Ọkara
 OKB
 Oke
@@ -8430,6 +8458,7 @@ pagu
 Pakistan
 Palau
 Palestinian
+Pali
 Palichibuli
 Palichimo
 Palichine
@@ -8543,6 +8572,7 @@ pi 22. decembra 1995, 09:05:02
 piątek
 piatok
 Pidgin
+Piedmontese
 Piektd
 piektd
 Piektdiena
@@ -8905,6 +8935,7 @@ Saddexaad
 Sadorn
 Sadwrn
 Sagaalaad
+sagat
 sah
 sah-RU
 Sahara
@@ -8933,6 +8964,8 @@ Samh
 Samhain
 Sami
 Samoa
+Samogitian
+Samogitian,
 Samschdeg
 Samschtig
 Samsdaach
@@ -9078,6 +9111,7 @@ seld
 selmana
 şem
 semaine
+semajno
 semana
 sẽmãna
 semane
@@ -9504,6 +9538,8 @@ sunnudagur
 sunnuntai
 sunnuntaina
 suno
+Sunu
+Sunuwar
 suoi
 suoidnemánnu
 sup
@@ -9540,6 +9576,7 @@ Swedish
 sẅíŋtè
 Swiss
 Switzerland
+SY
 syeini
 syeinimáánu
 syntymää
@@ -9671,6 +9708,7 @@ Tem
 Temmuz
 Ten
 Teneŋ
+tenpo
 teo
 teo-KE
 teo-UG
@@ -10052,6 +10090,7 @@ v.M
 v('y')'ê
 Va
 va
+vah
 vahkku
 Vai
 vai
@@ -10074,6 +10113,7 @@ vasárnap
 vástuppeeivi
 vástuppeivi
 Vatican
+vaztam
 vC
 ve
 ve-ZA
@@ -10104,6 +10144,7 @@ Venezuela
 vẽnhkãgra-kurã-há
 venres
 Verde
+vH
 VI
 vi
 vi-VN
@@ -10182,8 +10223,12 @@ W-ھەپتە
 w-ھەپتە
 W.'ª
 w.'ª
+W'a
 W'ª
+w'a
 w'ª
+W'an
+w'an
 W'em
 w'em
 w’indwi

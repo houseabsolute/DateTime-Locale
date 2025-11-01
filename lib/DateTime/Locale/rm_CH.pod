@@ -236,13 +236,13 @@ Romansh Switzerland locale.
 
 =head3 Abbreviated (format)
 
-  av. Cr.
-  s. Cr.
+  a.Cr.
+  s.C.
 
 =head3 Narrow (format)
 
-  av. Cr.
-  s. Cr.
+  a.Cr.
+  s.C.
 
 =head2 Date Formats
 
@@ -302,27 +302,27 @@ Romansh Switzerland locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = mardi, ils 5 da favrer 2008 18:30:30 UTC
-   1995-12-22T09:05:02 = venderdi, ils 22 da december 1995 09:05:02 UTC
-  -0010-09-15T04:44:23 = sonda, ils 15 da settember -10 04:44:23 UTC
+   2008-02-05T18:30:30 = mardi, ils 5 da favrer 2008, 18:30:30 UTC
+   1995-12-22T09:05:02 = venderdi, ils 22 da december 1995, 09:05:02 UTC
+  -0010-09-15T04:44:23 = sonda, ils 15 da settember -10, 04:44:23 UTC
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 5 da favrer 2008 18:30:30 UTC
-   1995-12-22T09:05:02 = 22 da december 1995 09:05:02 UTC
-  -0010-09-15T04:44:23 = 15 da settember -10 04:44:23 UTC
+   2008-02-05T18:30:30 = 5 da favrer 2008, 18:30:30 UTC
+   1995-12-22T09:05:02 = 22 da december 1995, 09:05:02 UTC
+  -0010-09-15T04:44:23 = 15 da settember -10, 04:44:23 UTC
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 05-02-2008 18:30:30
-   1995-12-22T09:05:02 = 22-12-1995 09:05:02
-  -0010-09-15T04:44:23 = 15-09--10 04:44:23
+   2008-02-05T18:30:30 = 05-02-2008, 18:30:30
+   1995-12-22T09:05:02 = 22-12-1995, 09:05:02
+  -0010-09-15T04:44:23 = 15-09--10, 04:44:23
 
 =head3 Short
 
-   2008-02-05T18:30:30 = 05-02-08 18:30
-   1995-12-22T09:05:02 = 22-12-95 09:05
-  -0010-09-15T04:44:23 = 15-09--10 04:44
+   2008-02-05T18:30:30 = 05-02-08, 18:30
+   1995-12-22T09:05:02 = 22-12-95, 09:05
+  -0010-09-15T04:44:23 = 15-09--10, 04:44
 
 
 =head2 Available Formats
@@ -351,6 +351,12 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = ve
   -0010-09-15T04:44:23 = so
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = ma 6 B
+   1995-12-22T09:05:02 = ve 9 B
+  -0010-09-15T04:44:23 = so 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = ma 6:30 B
@@ -375,11 +381,17 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = ve 09:05:02
   -0010-09-15T04:44:23 = so 04:44:23
 
-=head3 Ed (E d.)
+=head3 Ed (E d)
 
-   2008-02-05T18:30:30 = ma 5.
-   1995-12-22T09:05:02 = ve 22.
-  -0010-09-15T04:44:23 = so 15.
+   2008-02-05T18:30:30 = ma 5
+   1995-12-22T09:05:02 = ve 22
+  -0010-09-15T04:44:23 = so 15
+
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = ma 6 PM
+   1995-12-22T09:05:02 = ve 9 AM
+  -0010-09-15T04:44:23 = so 4 AM
 
 =head3 Ehm (E h:mm a)
 
@@ -395,45 +407,57 @@ Romansh Switzerland locale.
 
 =head3 Gy (y G)
 
-   2008-02-05T18:30:30 = 2008 s. Cr.
-   1995-12-22T09:05:02 = 1995 s. Cr.
-  -0010-09-15T04:44:23 = -10 av. Cr.
+   2008-02-05T18:30:30 = 2008 s.C.
+   1995-12-22T09:05:02 = 1995 s.C.
+  -0010-09-15T04:44:23 = -10 a.Cr.
+
+=head3 GyM (MM-y G)
+
+   2008-02-05T18:30:30 = 02-2008 s.C.
+   1995-12-22T09:05:02 = 12-1995 s.C.
+  -0010-09-15T04:44:23 = 09--10 a.Cr.
+
+=head3 GyMEd (E, dd-MM-y G)
+
+   2008-02-05T18:30:30 = ma, 05-02-2008 s.C.
+   1995-12-22T09:05:02 = ve, 22-12-1995 s.C.
+  -0010-09-15T04:44:23 = so, 15-09--10 a.Cr.
 
 =head3 GyMMM (LLL y G)
 
-   2008-02-05T18:30:30 = favr. 2008 s. Cr.
-   1995-12-22T09:05:02 = dec. 1995 s. Cr.
-  -0010-09-15T04:44:23 = sett. -10 av. Cr.
+   2008-02-05T18:30:30 = favr. 2008 s.C.
+   1995-12-22T09:05:02 = dec. 1995 s.C.
+  -0010-09-15T04:44:23 = sett. -10 a.Cr.
 
-=head3 GyMMMEd (E, dd-MM-y GGGGG)
+=head3 GyMMMEd (E, d MMM y G)
 
-   2008-02-05T18:30:30 = ma, 05-02-2008 s. Cr.
-   1995-12-22T09:05:02 = ve, 22-12-1995 s. Cr.
-  -0010-09-15T04:44:23 = so, 15-09--10 av. Cr.
+   2008-02-05T18:30:30 = ma, 5 favr. 2008 s.C.
+   1995-12-22T09:05:02 = ve, 22 dec. 1995 s.C.
+  -0010-09-15T04:44:23 = so, 15 sett. -10 a.Cr.
 
 =head3 GyMMMMEd (E, d MMMM y G)
 
-   2008-02-05T18:30:30 = ma, 5 da favrer 2008 s. Cr.
-   1995-12-22T09:05:02 = ve, 22 da december 1995 s. Cr.
-  -0010-09-15T04:44:23 = so, 15 da settember -10 av. Cr.
+   2008-02-05T18:30:30 = ma, 5 da favrer 2008 s.C.
+   1995-12-22T09:05:02 = ve, 22 da december 1995 s.C.
+  -0010-09-15T04:44:23 = so, 15 da settember -10 a.Cr.
 
 =head3 GyMMMMd (d MMMM y G)
 
-   2008-02-05T18:30:30 = 5 da favrer 2008 s. Cr.
-   1995-12-22T09:05:02 = 22 da december 1995 s. Cr.
-  -0010-09-15T04:44:23 = 15 da settember -10 av. Cr.
+   2008-02-05T18:30:30 = 5 da favrer 2008 s.C.
+   1995-12-22T09:05:02 = 22 da december 1995 s.C.
+  -0010-09-15T04:44:23 = 15 da settember -10 a.Cr.
 
-=head3 GyMMMd (dd-MM-y GGGGG)
+=head3 GyMMMd (dd-MM-y G)
 
-   2008-02-05T18:30:30 = 05-02-2008 s. Cr.
-   1995-12-22T09:05:02 = 22-12-1995 s. Cr.
-  -0010-09-15T04:44:23 = 15-09--10 av. Cr.
+   2008-02-05T18:30:30 = 05-02-2008 s.C.
+   1995-12-22T09:05:02 = 22-12-1995 s.C.
+  -0010-09-15T04:44:23 = 15-09--10 a.Cr.
 
-=head3 GyMd (dd-MM-y GGGGG)
+=head3 GyMd (dd-MM-y G)
 
-   2008-02-05T18:30:30 = 05-02-2008 s. Cr.
-   1995-12-22T09:05:02 = 22-12-1995 s. Cr.
-  -0010-09-15T04:44:23 = 15-09--10 av. Cr.
+   2008-02-05T18:30:30 = 05-02-2008 s.C.
+   1995-12-22T09:05:02 = 22-12-1995 s.C.
+  -0010-09-15T04:44:23 = 15-09--10 a.Cr.
 
 =head3 H (HH)
 
@@ -465,6 +489,12 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -483,11 +513,11 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = dec.
   -0010-09-15T04:44:23 = sett.
 
-=head3 MMMEd (E, dd-MM)
+=head3 MMMEd (E, d MMM)
 
-   2008-02-05T18:30:30 = ma, 05-02
-   1995-12-22T09:05:02 = ve, 22-12
-  -0010-09-15T04:44:23 = so, 15-09
+   2008-02-05T18:30:30 = ma, 5 favr.
+   1995-12-22T09:05:02 = ve, 22 dec.
+  -0010-09-15T04:44:23 = so, 15 sett.
 
 =head3 MMMMEd (E, d MMMM)
 
@@ -495,17 +525,17 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = ve, 22 da december
   -0010-09-15T04:44:23 = so, 15 da settember
 
-=head3 MMMMW-count-one (W. 'emna' MMMM)
+=head3 MMMMW-count-one ('emna' W 'dal' 'mais' LLLL)
 
-   2008-02-05T18:30:30 = 1. emna da favrer
-   1995-12-22T09:05:02 = 3. emna da december
-  -0010-09-15T04:44:23 = 2. emna da settember
+   2008-02-05T18:30:30 = emna 1 dal mais favrer
+   1995-12-22T09:05:02 = emna 3 dal mais december
+  -0010-09-15T04:44:23 = emna 2 dal mais settember
 
-=head3 MMMMW-count-other (W. 'emna' MMMM)
+=head3 MMMMW-count-other ('emna' W 'dal' 'mais' LLLL)
 
-   2008-02-05T18:30:30 = 1. emna da favrer
-   1995-12-22T09:05:02 = 3. emna da december
-  -0010-09-15T04:44:23 = 2. emna da settember
+   2008-02-05T18:30:30 = emna 1 dal mais favrer
+   1995-12-22T09:05:02 = emna 3 dal mais december
+  -0010-09-15T04:44:23 = emna 2 dal mais settember
 
 =head3 MMMMd (d MMMM)
 
@@ -513,11 +543,11 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = 22 da december
   -0010-09-15T04:44:23 = 15 da settember
 
-=head3 MMMd (dd-MM)
+=head3 MMMd (d MMM)
 
-   2008-02-05T18:30:30 = 05-02
-   1995-12-22T09:05:02 = 22-12
-  -0010-09-15T04:44:23 = 15-09
+   2008-02-05T18:30:30 = 5 favr.
+   1995-12-22T09:05:02 = 22 dec.
+  -0010-09-15T04:44:23 = 15 sett.
 
 =head3 Md (dd-MM)
 
@@ -561,6 +591,12 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
 
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
+
 =head3 ms (mm:ss)
 
    2008-02-05T18:30:30 = 30:30
@@ -579,23 +615,23 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = 12-1995
   -0010-09-15T04:44:23 = 09--10
 
-=head3 yMEd (E, dd-MM-y)
+=head3 yMEd (E, d-M-y)
 
-   2008-02-05T18:30:30 = ma, 05-02-2008
+   2008-02-05T18:30:30 = ma, 5-2-2008
    1995-12-22T09:05:02 = ve, 22-12-1995
-  -0010-09-15T04:44:23 = so, 15-09--10
+  -0010-09-15T04:44:23 = so, 15-9--10
 
-=head3 yMMM (LLL y)
+=head3 yMMM (MMM y)
 
    2008-02-05T18:30:30 = favr. 2008
    1995-12-22T09:05:02 = dec. 1995
   -0010-09-15T04:44:23 = sett. -10
 
-=head3 yMMMEd (E, dd-MM-y)
+=head3 yMMMEd (E, d MMM y)
 
-   2008-02-05T18:30:30 = ma, 05-02-2008
-   1995-12-22T09:05:02 = ve, 22-12-1995
-  -0010-09-15T04:44:23 = so, 15-09--10
+   2008-02-05T18:30:30 = ma, 5 favr. 2008
+   1995-12-22T09:05:02 = ve, 22 dec. 1995
+  -0010-09-15T04:44:23 = so, 15 sett. -10
 
 =head3 yMMMM (LLLL y)
 
@@ -615,17 +651,17 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = 22 da december 1995
   -0010-09-15T04:44:23 = 15 da settember -10
 
-=head3 yMMMd (dd-MM-y)
+=head3 yMMMd (d MMM y)
 
-   2008-02-05T18:30:30 = 05-02-2008
+   2008-02-05T18:30:30 = 5 favr. 2008
+   1995-12-22T09:05:02 = 22 dec. 1995
+  -0010-09-15T04:44:23 = 15 sett. -10
+
+=head3 yMd (d-M-y)
+
+   2008-02-05T18:30:30 = 5-2-2008
    1995-12-22T09:05:02 = 22-12-1995
-  -0010-09-15T04:44:23 = 15-09--10
-
-=head3 yMd (dd-MM-y)
-
-   2008-02-05T18:30:30 = 05-02-2008
-   1995-12-22T09:05:02 = 22-12-1995
-  -0010-09-15T04:44:23 = 15-09--10
+  -0010-09-15T04:44:23 = 15-9--10
 
 =head3 yQQQ (QQQ y)
 
@@ -639,17 +675,17 @@ Romansh Switzerland locale.
    1995-12-22T09:05:02 = 4. quartal 1995
   -0010-09-15T04:44:23 = 3. quartal -10
 
-=head3 yw-count-one (w. 'dal' Y)
+=head3 yw-count-one ('emna' w 'dal' Y)
 
-   2008-02-05T18:30:30 = 6. dal 2008
-   1995-12-22T09:05:02 = 51. dal 1995
-  -0010-09-15T04:44:23 = 37. dal -10
+   2008-02-05T18:30:30 = emna 6 dal 2008
+   1995-12-22T09:05:02 = emna 51 dal 1995
+  -0010-09-15T04:44:23 = emna 37 dal -10
 
-=head3 yw-count-other (w. 'emna' 'dal' Y)
+=head3 yw-count-other ('emna' w 'dal' Y)
 
-   2008-02-05T18:30:30 = 6. emna dal 2008
-   1995-12-22T09:05:02 = 51. emna dal 1995
-  -0010-09-15T04:44:23 = 37. emna dal -10
+   2008-02-05T18:30:30 = emna 6 dal 2008
+   1995-12-22T09:05:02 = emna 51 dal 1995
+  -0010-09-15T04:44:23 = emna 37 dal -10
 
 
 =head2 Miscellaneous

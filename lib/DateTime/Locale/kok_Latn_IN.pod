@@ -189,7 +189,7 @@ Konkani India Latin locale.
   1lem timhoinallem
   2rem timhoinallem
   3rem timhoinallem
-  4tem timhoinallem
+  4them timhoinallem
 
 =head3 Abbreviated (format)
 
@@ -211,7 +211,7 @@ Konkani India Latin locale.
   1lem timhoinallem
   2rem timhoinallem
   3rem timhoinallem
-  4tem timhoinallem
+  4them timhoinallem
 
 =head3 Abbreviated (stand-alone)
 
@@ -327,11 +327,11 @@ Konkani India Latin locale.
 
 =head2 Available Formats
 
-=head3 Bh (B h)
+=head3 Bh (B h 'vaztam')
 
-   2008-02-05T18:30:30 = B 6
-   1995-12-22T09:05:02 = B 9
-  -0010-09-15T04:44:23 = B 4
+   2008-02-05T18:30:30 = B 6 vaztam
+   1995-12-22T09:05:02 = B 9 vaztam
+  -0010-09-15T04:44:23 = B 4 vaztam
 
 =head3 Bhm (B h:mm)
 
@@ -350,6 +350,12 @@ Konkani India Latin locale.
    2008-02-05T18:30:30 = Mon
    1995-12-22T09:05:02 = Suk
   -0010-09-15T04:44:23 = Son
+
+=head3 EBh (E B h 'vaztam')
+
+   2008-02-05T18:30:30 = Mon B 6 vaztam
+   1995-12-22T09:05:02 = Suk B 9 vaztam
+  -0010-09-15T04:44:23 = Son B 4 vaztam
 
 =head3 EBhm (E B h:mm)
 
@@ -381,6 +387,12 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = 22, Suk
   -0010-09-15T04:44:23 = 15, Son
 
+=head3 Eh (E a h 'vaztam')
+
+   2008-02-05T18:30:30 = Mon PM 6 vaztam
+   1995-12-22T09:05:02 = Suk AM 9 vaztam
+  -0010-09-15T04:44:23 = Son AM 4 vaztam
+
 =head3 Ehm (E a h:mm)
 
    2008-02-05T18:30:30 = Mon PM 6:30
@@ -393,11 +405,23 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = Suk AM 9:05:02
   -0010-09-15T04:44:23 = Son AM 4:44:23
 
-=head3 Gy (y G)
+=head3 Gy (G y)
 
-   2008-02-05T18:30:30 = 2008 AD
-   1995-12-22T09:05:02 = 1995 AD
-  -0010-09-15T04:44:23 = -10 KA
+   2008-02-05T18:30:30 = AD 2008
+   1995-12-22T09:05:02 = AD 1995
+  -0010-09-15T04:44:23 = KA -10
+
+=head3 GyM (M/y G)
+
+   2008-02-05T18:30:30 = 2/2008 AD
+   1995-12-22T09:05:02 = 12/1995 AD
+  -0010-09-15T04:44:23 = 9/-10 KA
+
+=head3 GyMEd (E, d-M-y G)
+
+   2008-02-05T18:30:30 = Mon, 5-2-2008 AD
+   1995-12-22T09:05:02 = Suk, 22-12-1995 AD
+  -0010-09-15T04:44:23 = Son, 15-9--10 KA
 
 =head3 GyMMM (MMM y G)
 
@@ -423,11 +447,11 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = 22-12-1995 AD
   -0010-09-15T04:44:23 = 15-9--10 KA
 
-=head3 H (HH)
+=head3 H (HH'v')
 
-   2008-02-05T18:30:30 = 18
-   1995-12-22T09:05:02 = 09
-  -0010-09-15T04:44:23 = 04
+   2008-02-05T18:30:30 = 18v
+   1995-12-22T09:05:02 = 09v
+  -0010-09-15T04:44:23 = 04v
 
 =head3 Hm (HH:mm)
 
@@ -453,6 +477,12 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'v' v)
+
+   2008-02-05T18:30:30 = 18v UTC
+   1995-12-22T09:05:02 = 09v UTC
+  -0010-09-15T04:44:23 = 04v UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -476,6 +506,12 @@ Konkani India Latin locale.
    2008-02-05T18:30:30 = Mon, 5 Feb
    1995-12-22T09:05:02 = Suk, 22 Dez
   -0010-09-15T04:44:23 = Son, 15 Set
+
+=head3 MMMMW-count-one (MMMM -'acho' 'suman' W)
+
+   2008-02-05T18:30:30 = Febrer -acho suman 1
+   1995-12-22T09:05:02 = Dezembr -acho suman 3
+  -0010-09-15T04:44:23 = Setembr -acho suman 2
 
 =head3 MMMMW-count-other (MMMM -'acho' 'suman' W)
 
@@ -507,11 +543,11 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = 22
   -0010-09-15T04:44:23 = 15
 
-=head3 h (a h)
+=head3 h (a h 'vaztam')
 
-   2008-02-05T18:30:30 = PM 6
-   1995-12-22T09:05:02 = AM 9
-  -0010-09-15T04:44:23 = AM 4
+   2008-02-05T18:30:30 = PM 6 vaztam
+   1995-12-22T09:05:02 = AM 9 vaztam
+  -0010-09-15T04:44:23 = AM 4 vaztam
 
 =head3 hm (a h:mm)
 
@@ -537,6 +573,12 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = AM 9:05 UTC
   -0010-09-15T04:44:23 = AM 4:44 UTC
 
+=head3 hv (a h 'vaztam' v)
+
+   2008-02-05T18:30:30 = PM 6 vaztam UTC
+   1995-12-22T09:05:02 = AM 9 vaztam UTC
+  -0010-09-15T04:44:23 = AM 4 vaztam UTC
+
 =head3 ms (mm:ss)
 
    2008-02-05T18:30:30 = 30:30
@@ -549,11 +591,11 @@ Konkani India Latin locale.
    1995-12-22T09:05:02 = 1995
   -0010-09-15T04:44:23 = -10
 
-=head3 yM (M-y)
+=head3 yM (M/y)
 
-   2008-02-05T18:30:30 = 2-2008
-   1995-12-22T09:05:02 = 12-1995
-  -0010-09-15T04:44:23 = 9--10
+   2008-02-05T18:30:30 = 2/2008
+   1995-12-22T09:05:02 = 12/1995
+  -0010-09-15T04:44:23 = 9/-10
 
 =head3 yMEd (E, d-M-y)
 
@@ -600,8 +642,14 @@ Konkani India Latin locale.
 =head3 yQQQQ (QQQQ y)
 
    2008-02-05T18:30:30 = 1lem timhoinallem 2008
-   1995-12-22T09:05:02 = 4tem timhoinallem 1995
+   1995-12-22T09:05:02 = 4them timhoinallem 1995
   -0010-09-15T04:44:23 = 3rem timhoinallem -10
+
+=head3 yw-count-one (Y -'acho' 'suman' w)
+
+   2008-02-05T18:30:30 = 2008 -acho suman 6
+   1995-12-22T09:05:02 = 1995 -acho suman 51
+  -0010-09-15T04:44:23 = -10 -acho suman 37
 
 =head3 yw-count-other (Y -'acho' 'suman' w)
 

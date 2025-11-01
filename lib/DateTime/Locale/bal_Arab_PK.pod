@@ -351,6 +351,12 @@ Baluchi Pakistan Arabic locale.
    1995-12-22T09:05:02 = Fri
   -0010-09-15T04:44:23 = Sat
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Tue 6 B
+   1995-12-22T09:05:02 = Fri 9 B
+  -0010-09-15T04:44:23 = Sat 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Tue 6:30 B
@@ -381,6 +387,12 @@ Baluchi Pakistan Arabic locale.
    1995-12-22T09:05:02 = 22, Fri
   -0010-09-15T04:44:23 = 15, Sat
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Tue 6 PM
+   1995-12-22T09:05:02 = Fri 9 AM
+  -0010-09-15T04:44:23 = Sat 4 AM
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Tue 6:30 PM
@@ -398,6 +410,18 @@ Baluchi Pakistan Arabic locale.
    2008-02-05T18:30:30 = CE 2008
    1995-12-22T09:05:02 = CE 1995
   -0010-09-15T04:44:23 = BCE -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = CE 2008-02
+   1995-12-22T09:05:02 = CE 1995-12
+  -0010-09-15T04:44:23 = BCE -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = CE 2008-02-05, Tue
+   1995-12-22T09:05:02 = CE 1995-12-22, Fri
+  -0010-09-15T04:44:23 = BCE -10-09-15, Sat
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Baluchi Pakistan Arabic locale.
    1995-12-22T09:05:02 = CE 1995 M12 22
   -0010-09-15T04:44:23 = BCE -10 M09 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = CE 2008-02-05
    1995-12-22T09:05:02 = CE 1995-12-22
@@ -452,6 +476,12 @@ Baluchi Pakistan Arabic locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -536,6 +566,12 @@ Baluchi Pakistan Arabic locale.
    2008-02-05T18:30:30 = 6:30 PM UTC
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
 
 =head3 ms (mm:ss)
 

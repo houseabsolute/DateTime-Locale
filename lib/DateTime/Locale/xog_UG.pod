@@ -351,6 +351,12 @@ Soga Uganda locale.
    1995-12-22T09:05:02 = Kuta
   -0010-09-15T04:44:23 = Muka
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Kubi 6 B
+   1995-12-22T09:05:02 = Kuta 9 B
+  -0010-09-15T04:44:23 = Muka 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Kubi 6:30 B
@@ -381,6 +387,12 @@ Soga Uganda locale.
    1995-12-22T09:05:02 = 22, Kuta
   -0010-09-15T04:44:23 = 15, Muka
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Kubi 6 Eigulo
+   1995-12-22T09:05:02 = Kuta 9 Munkyo
+  -0010-09-15T04:44:23 = Muka 4 Munkyo
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Kubi 6:30 Eigulo
@@ -398,6 +410,18 @@ Soga Uganda locale.
    2008-02-05T18:30:30 = AF 2008
    1995-12-22T09:05:02 = AF 1995
   -0010-09-15T04:44:23 = AZ -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = AF 2008-02
+   1995-12-22T09:05:02 = AF 1995-12
+  -0010-09-15T04:44:23 = AZ -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = AF 2008-02-05, Kubi
+   1995-12-22T09:05:02 = AF 1995-12-22, Kuta
+  -0010-09-15T04:44:23 = AZ -10-09-15, Muka
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Soga Uganda locale.
    1995-12-22T09:05:02 = AF 1995 Des 22
   -0010-09-15T04:44:23 = AZ -10 Seb 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = AF 2008-02-05
    1995-12-22T09:05:02 = AF 1995-12-22
@@ -452,6 +476,12 @@ Soga Uganda locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -542,6 +572,12 @@ Soga Uganda locale.
    2008-02-05T18:30:30 = 6:30 Eigulo UTC
    1995-12-22T09:05:02 = 9:05 Munkyo UTC
   -0010-09-15T04:44:23 = 4:44 Munkyo UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 Eigulo UTC
+   1995-12-22T09:05:02 = 9 Munkyo UTC
+  -0010-09-15T04:44:23 = 4 Munkyo UTC
 
 =head3 ms (mm:ss)
 

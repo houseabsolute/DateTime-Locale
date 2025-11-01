@@ -16,7 +16,9 @@ my %locale_codes = map { $_ => 1 } DateTime::Locale->codes;
 my %is_locale_without_en_data = map { $_ => 1 } qw(
     lld
     mhn
+    mww
     skr
+    suz
 );
 
 # These are locales that are missing native name data in the JSON source
@@ -30,6 +32,8 @@ my %is_locale_without_native_data = map { $_ => 1 } qw(
     bew-ID
     bm-Nkoo
     bm-Nkoo-ML
+    bqi
+    bqi-IR
     byn
     byn-ER
     cad
@@ -54,12 +58,15 @@ my %is_locale_without_native_data = map { $_ => 1 } qw(
     iu-Latn-CA
     kaa-Latn
     kaa-Latn-UZ
-    kk-Arab
-    kk-Arab-CN
+    ku-Arab
+    ku-Arab-IQ
+    ku-Arab-IR
     la
     la-VA
     ltg
     ltg-LV
+    lzz
+    lzz-TR
     mhn
     mhn-IT
     mn-Mong
@@ -67,17 +74,28 @@ my %is_locale_without_native_data = map { $_ => 1 } qw(
     ms-Arab
     ms-Arab-BN
     ms-Arab-MY
+    mww
+    mww-Hmnp
+    mww-Hmnp-US
     nmg
     nr
     nr-ZA
+    pi
+    pi-Latn
+    pi-Latn-GB
+    sgs
+    sgs-LT
     sid
     sid-ET
+    suz
+    suz-Deva
+    suz-Deva-NP
+    suz-Sunu
+    suz-Sunu-NP
     tig
     tig-ER
     ts
     ts-ZA
-    tyv
-    tyv-RU
     ve
     ve-ZA
     vo
@@ -320,23 +338,28 @@ sub check_und {
         Bhm                 => 'h:mm B',
         Bhms                => 'h:mm:ss B',
         E                   => 'ccc',
+        EBh                 => 'E h B',
         EBhm                => 'E h:mm B',
         EBhms               => 'E h:mm:ss B',
         EHm                 => 'E HH:mm',
         EHms                => 'E HH:mm:ss',
         Ed                  => 'd, E',
+        Eh                  => "E h\N{U+202f}a",
         Ehm                 => 'E h:mm a',
         Ehms                => 'E h:mm:ss a',
         Gy                  => 'G y',
+        GyM                 => 'G y-MM',
+        GyMEd               => 'G y-MM-dd, E',
         GyMMM               => 'G y MMM',
         GyMMMEd             => 'G y MMM d, E',
         GyMMMd              => 'G y MMM d',
-        GyMd                => 'GGGGG y-MM-dd',
+        GyMd                => 'G y-MM-dd',
         H                   => 'HH',
         Hm                  => 'HH:mm',
         Hms                 => 'HH:mm:ss',
         Hmsv                => 'HH:mm:ss v',
         Hmv                 => 'HH:mm v',
+        Hv                  => q{HH'h' v},
         M                   => 'L',
         MEd                 => 'MM-dd, E',
         MMM                 => 'LLL',
@@ -346,11 +369,12 @@ sub check_und {
         MMMd                => 'MMM d',
         Md                  => 'MM-dd',
         d                   => 'd',
-        h                   => "h\N{U+202F}a",
+        h                   => "h\N{U+202f}a",
         hm                  => 'h:mm a',
         hms                 => 'h:mm:ss a',
         hmsv                => 'h:mm:ss a v',
         hmv                 => 'h:mm a v',
+        hv                  => "h\N{U+202f}a v",
         ms                  => 'mm:ss',
         y                   => 'y',
         yM                  => 'y-MM',
@@ -414,16 +438,21 @@ sub check_en_GB {
         Bhm                 => 'h:mm B',
         Bhms                => 'h:mm:ss B',
         E                   => 'ccc',
+        EBh                 => 'E h B',
         EBhm                => 'E h:mm B',
         EBhms               => 'E h:mm:ss B',
         EHm                 => 'E HH:mm',
         EHms                => 'E HH:mm:ss',
         Ed                  => 'E d',
+        Eh                  => "E h\N{U+202f}a",
+        'Eh-alt-ascii'      => 'E h a',
         Ehm                 => "E h:mm\N{U+202f}a",
         'Ehm-alt-ascii'     => 'E h:mm a',
         Ehms                => "E h:mm:ss\N{U+202f}a",
         'Ehms-alt-ascii'    => 'E h:mm:ss a',
         Gy                  => 'y G',
+        GyM                 => 'M/y G',
+        GyMEd               => 'E, d/M/y G',
         GyMMM               => 'MMM y G',
         GyMMMEEEEd          => 'EEEE, d MMM y G',
         GyMMMEd             => 'E, d MMM y G',
@@ -434,6 +463,7 @@ sub check_en_GB {
         Hms                 => 'HH:mm:ss',
         Hmsv                => 'HH:mm:ss v',
         Hmv                 => 'HH:mm v',
+        Hv                  => q{HH'h' v},
         M                   => 'L',
         MEd                 => 'E dd/MM',
         MMM                 => 'LLL',
@@ -457,6 +487,8 @@ sub check_en_GB {
         'hmsv-alt-ascii'    => 'h:mm:ss a v',
         hmv                 => "h:mm\N{U+202f}a v",
         'hmv-alt-ascii'     => 'h:mm a v',
+        hv                  => "h\N{U+202f}a v",
+        'hv-alt-ascii'      => 'h a v',
         ms                  => 'mm:ss',
         y                   => 'y',
         yM                  => 'MM/y',

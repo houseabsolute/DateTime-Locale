@@ -327,11 +327,11 @@ Lower Sorbian locale.
 
 =head2 Available Formats
 
-=head3 Bh (h B)
+=head3 Bh ('zeg'. h B)
 
-   2008-02-05T18:30:30 = 6 B
-   1995-12-22T09:05:02 = 9 B
-  -0010-09-15T04:44:23 = 4 B
+   2008-02-05T18:30:30 = zeg. 6 B
+   1995-12-22T09:05:02 = zeg. 9 B
+  -0010-09-15T04:44:23 = zeg. 4 B
 
 =head3 Bhm (h:mm B)
 
@@ -350,6 +350,12 @@ Lower Sorbian locale.
    2008-02-05T18:30:30 = wał
    1995-12-22T09:05:02 = pět
   -0010-09-15T04:44:23 = sob
+
+=head3 EBh (E, 'zeg'. h B)
+
+   2008-02-05T18:30:30 = wał, zeg. 6 B
+   1995-12-22T09:05:02 = pět, zeg. 9 B
+  -0010-09-15T04:44:23 = sob, zeg. 4 B
 
 =head3 EBhm (E h:mm B)
 
@@ -381,6 +387,12 @@ Lower Sorbian locale.
    1995-12-22T09:05:02 = pět, 22.
   -0010-09-15T04:44:23 = sob, 15.
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = wał 6 wótp.
+   1995-12-22T09:05:02 = pět 9 dop.
+  -0010-09-15T04:44:23 = sob 4 dop.
+
 =head3 Ehm (E, h:mm a)
 
    2008-02-05T18:30:30 = wał, 6:30 wótp.
@@ -398,6 +410,18 @@ Lower Sorbian locale.
    2008-02-05T18:30:30 = 2008 pó Chr.n.
    1995-12-22T09:05:02 = 1995 pó Chr.n.
   -0010-09-15T04:44:23 = -10 pś.Chr.n.
+
+=head3 GyM (M/y G)
+
+   2008-02-05T18:30:30 = 2/2008 pó Chr.n.
+   1995-12-22T09:05:02 = 12/1995 pó Chr.n.
+  -0010-09-15T04:44:23 = 9/-10 pś.Chr.n.
+
+=head3 GyMEd (E, d.M.y G)
+
+   2008-02-05T18:30:30 = wał, 5.2.2008 pó Chr.n.
+   1995-12-22T09:05:02 = pět, 22.12.1995 pó Chr.n.
+  -0010-09-15T04:44:23 = sob, 15.9.-10 pś.Chr.n.
 
 =head3 GyMMM (MMM y G)
 
@@ -452,6 +476,12 @@ Lower Sorbian locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 9:05 UTC
   -0010-09-15T04:44:23 = 4:44 UTC
+
+=head3 Hv ('zeg'. H v)
+
+   2008-02-05T18:30:30 = zeg. 18 UTC
+   1995-12-22T09:05:02 = zeg. 9 UTC
+  -0010-09-15T04:44:23 = zeg. 4 UTC
 
 =head3 M (L)
 
@@ -554,6 +584,12 @@ Lower Sorbian locale.
    2008-02-05T18:30:30 = 6:30 wótp. UTC
    1995-12-22T09:05:02 = 9:05 dop. UTC
   -0010-09-15T04:44:23 = 4:44 dop. UTC
+
+=head3 hv ('zeg'. h a v)
+
+   2008-02-05T18:30:30 = zeg. 6 wótp. UTC
+   1995-12-22T09:05:02 = zeg. 9 dop. UTC
+  -0010-09-15T04:44:23 = zeg. 4 dop. UTC
 
 =head3 ms (mm:ss)
 

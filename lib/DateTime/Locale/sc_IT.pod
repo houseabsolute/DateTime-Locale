@@ -351,6 +351,12 @@ Sardinian Italy locale.
    1995-12-22T09:05:02 = che
   -0010-09-15T04:44:23 = sàb
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = mar 6 B
+   1995-12-22T09:05:02 = che 9 B
+  -0010-09-15T04:44:23 = sàb 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = mar 6:30 B
@@ -381,6 +387,12 @@ Sardinian Italy locale.
    1995-12-22T09:05:02 = che 22
   -0010-09-15T04:44:23 = sàb 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = mar 6 PM
+   1995-12-22T09:05:02 = che 9 AM
+  -0010-09-15T04:44:23 = sàb 4 AM
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = mar 6:30 PM
@@ -398,6 +410,18 @@ Sardinian Italy locale.
    2008-02-05T18:30:30 = 2008 p.C.
    1995-12-22T09:05:02 = 1995 p.C.
   -0010-09-15T04:44:23 = -10 a.C.
+
+=head3 GyM (MM/y G)
+
+   2008-02-05T18:30:30 = 02/2008 p.C.
+   1995-12-22T09:05:02 = 12/1995 p.C.
+  -0010-09-15T04:44:23 = 09/-10 a.C.
+
+=head3 GyMEd (E dd/MM/y G)
+
+   2008-02-05T18:30:30 = mar 05/02/2008 p.C.
+   1995-12-22T09:05:02 = che 22/12/1995 p.C.
+  -0010-09-15T04:44:23 = sàb 15/09/-10 a.C.
 
 =head3 GyMMM (MMM y G)
 
@@ -453,6 +477,12 @@ Sardinian Italy locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -477,17 +507,17 @@ Sardinian Italy locale.
    1995-12-22T09:05:02 = che 22 de nad
   -0010-09-15T04:44:23 = sàb 15 de cab
 
-=head3 MMMMW-count-one ('chida' W 'de' MMMM)
+=head3 MMMMW-count-one (W'a' 'chida' 'de' MMMM)
 
-   2008-02-05T18:30:30 = chida 1 de freàrgiu
-   1995-12-22T09:05:02 = chida 3 de nadale
-  -0010-09-15T04:44:23 = chida 2 de cabudanni
+   2008-02-05T18:30:30 = 1a chida de freàrgiu
+   1995-12-22T09:05:02 = 3a chida de nadale
+  -0010-09-15T04:44:23 = 2a chida de cabudanni
 
-=head3 MMMMW-count-other ('chida' W 'de' MMMM)
+=head3 MMMMW-count-other (W'a' 'chida' 'de' MMMM)
 
-   2008-02-05T18:30:30 = chida 1 de freàrgiu
-   1995-12-22T09:05:02 = chida 3 de nadale
-  -0010-09-15T04:44:23 = chida 2 de cabudanni
+   2008-02-05T18:30:30 = 1a chida de freàrgiu
+   1995-12-22T09:05:02 = 3a chida de nadale
+  -0010-09-15T04:44:23 = 2a chida de cabudanni
 
 =head3 MMMMd (d 'de' MMMM)
 
@@ -542,6 +572,12 @@ Sardinian Italy locale.
    2008-02-05T18:30:30 = 6:30 PM UTC
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
 
 =head3 ms (mm:ss)
 
@@ -609,17 +645,17 @@ Sardinian Italy locale.
    1995-12-22T09:05:02 = 4u trimestre de su 1995
   -0010-09-15T04:44:23 = 3u trimestre de su -10
 
-=head3 yw-count-one ('chida' w 'de' 'su' Y)
+=head3 yw-count-one (w'a' 'chida' 'de' 'su' Y)
 
-   2008-02-05T18:30:30 = chida 6 de su 2008
-   1995-12-22T09:05:02 = chida 51 de su 1995
-  -0010-09-15T04:44:23 = chida 37 de su -10
+   2008-02-05T18:30:30 = 6a chida de su 2008
+   1995-12-22T09:05:02 = 51a chida de su 1995
+  -0010-09-15T04:44:23 = 37a chida de su -10
 
-=head3 yw-count-other ('chida' w 'de' 'su' Y)
+=head3 yw-count-other (w'a' 'chida' 'de' 'su' Y)
 
-   2008-02-05T18:30:30 = chida 6 de su 2008
-   1995-12-22T09:05:02 = chida 51 de su 1995
-  -0010-09-15T04:44:23 = chida 37 de su -10
+   2008-02-05T18:30:30 = 6a chida de su 2008
+   1995-12-22T09:05:02 = 51a chida de su 1995
+  -0010-09-15T04:44:23 = 37a chida de su -10
 
 
 =head2 Miscellaneous

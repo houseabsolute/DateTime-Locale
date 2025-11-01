@@ -50,13 +50,13 @@ Toki Pona locale.
 
 =head3 Narrow (format)
 
-  M
-  T
-  W
-  T
-  F
-  S
-  S
+  1
+  2
+  3
+  4
+  5
+  6
+  7
 
 
 =head3 Wide (stand-alone)
@@ -81,45 +81,45 @@ Toki Pona locale.
 
 =head3 Narrow (stand-alone)
 
-  M
-  T
-  W
-  T
-  F
-  S
-  S
+  1
+  2
+  3
+  4
+  5
+  6
+  7
 
 =head2 Months
 
 =head3 Wide (format)
 
-  mun #1
-  mun #2
-  mun #3
-  mun #4
-  mun #5
-  mun #6
-  mun #7
-  mun #8
-  mun #9
-  mun #10
-  mun #11
-  mun #12
+  tenpo mun #1
+  tenpo mun #2
+  tenpo mun #3
+  tenpo mun #4
+  tenpo mun #5
+  tenpo mun #6
+  tenpo mun #7
+  tenpo mun #8
+  tenpo mun #9
+  tenpo mun #10
+  tenpo mun #11
+  tenpo mun #12
 
 =head3 Abbreviated (format)
 
-  mun #1
-  mun #2
-  mun #3
-  mun #4
-  mun #5
-  mun #6
-  mun #7
-  mun #8
-  mun #9
-  mun #10
-  mun #11
-  mun #12
+  tenpo mun #1
+  tenpo mun #2
+  tenpo mun #3
+  tenpo mun #4
+  tenpo mun #5
+  tenpo mun #6
+  tenpo mun #7
+  tenpo mun #8
+  tenpo mun #9
+  tenpo mun #10
+  tenpo mun #11
+  tenpo mun #12
 
 =head3 Narrow (format)
 
@@ -139,33 +139,33 @@ Toki Pona locale.
 
 =head3 Wide (stand-alone)
 
-  mun #1
-  mun #2
-  mun #3
-  mun #4
-  mun #5
-  mun #6
-  mun #7
-  mun #8
-  mun #9
-  mun #10
-  mun #11
-  mun #12
+  tenpo mun #1
+  tenpo mun #2
+  tenpo mun #3
+  tenpo mun #4
+  tenpo mun #5
+  tenpo mun #6
+  tenpo mun #7
+  tenpo mun #8
+  tenpo mun #9
+  tenpo mun #10
+  tenpo mun #11
+  tenpo mun #12
 
 =head3 Abbreviated (stand-alone)
 
-  mun #1
-  mun #2
-  mun #3
-  mun #4
-  mun #5
-  mun #6
-  mun #7
-  mun #8
-  mun #9
-  mun #10
-  mun #11
-  mun #12
+  tenpo mun #1
+  tenpo mun #2
+  tenpo mun #3
+  tenpo mun #4
+  tenpo mun #5
+  tenpo mun #6
+  tenpo mun #7
+  tenpo mun #8
+  tenpo mun #9
+  tenpo mun #10
+  tenpo mun #11
+  tenpo mun #12
 
 =head3 Narrow (stand-alone)
 
@@ -248,21 +248,21 @@ Toki Pona locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 2008 mun #2 5, suno esun #2
-   1995-12-22T09:05:02 = 1995 mun #12 22, suno esun #5
-  -0010-09-15T04:44:23 = -10 mun #9 15, suno esun #6
+   2008-02-05T18:30:30 = sike #2008 la tenpo mun #2 la suno #5
+   1995-12-22T09:05:02 = sike #1995 la tenpo mun #12 la suno #22
+  -0010-09-15T04:44:23 = sike #-10 la tenpo mun #9 la suno #15
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 2008 mun #2 5
-   1995-12-22T09:05:02 = 1995 mun #12 22
-  -0010-09-15T04:44:23 = -10 mun #9 15
+   2008-02-05T18:30:30 = tenpo sike #2008 la tenpo tenpo mun #2 la tenpo suno #5
+   1995-12-22T09:05:02 = tenpo sike #1995 la tenpo tenpo mun #12 la tenpo suno #22
+  -0010-09-15T04:44:23 = tenpo sike #-10 la tenpo tenpo mun #9 la tenpo suno #15
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 2008 mun #2 5
-   1995-12-22T09:05:02 = 1995 mun #12 22
-  -0010-09-15T04:44:23 = -10 mun #9 15
+   2008-02-05T18:30:30 = sike #2008 la tenpo mun #2 la suno #5
+   1995-12-22T09:05:02 = sike #1995 la tenpo mun #12 la suno #22
+  -0010-09-15T04:44:23 = sike #-10 la tenpo mun #9 la suno #15
 
 =head3 Short
 
@@ -275,15 +275,15 @@ Toki Pona locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 18:30:30 UTC
-   1995-12-22T09:05:02 = 09:05:02 UTC
-  -0010-09-15T04:44:23 = 04:44:23 UTC
+   2008-02-05T18:30:30 = UTC la 18:30:30
+   1995-12-22T09:05:02 = UTC la 09:05:02
+  -0010-09-15T04:44:23 = UTC la 04:44:23
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 18:30:30 UTC
-   1995-12-22T09:05:02 = 09:05:02 UTC
-  -0010-09-15T04:44:23 = 04:44:23 UTC
+   2008-02-05T18:30:30 = UTC la 18:30:30
+   1995-12-22T09:05:02 = UTC la 09:05:02
+  -0010-09-15T04:44:23 = UTC la 04:44:23
 
 =head3 Medium
 
@@ -302,21 +302,21 @@ Toki Pona locale.
 
 =head3 Full
 
-   2008-02-05T18:30:30 = 2008 mun #2 5, suno esun #2 18:30:30 UTC
-   1995-12-22T09:05:02 = 1995 mun #12 22, suno esun #5 09:05:02 UTC
-  -0010-09-15T04:44:23 = -10 mun #9 15, suno esun #6 04:44:23 UTC
+   2008-02-05T18:30:30 = sike #2008 la tenpo mun #2 la suno #5 UTC la 18:30:30
+   1995-12-22T09:05:02 = sike #1995 la tenpo mun #12 la suno #22 UTC la 09:05:02
+  -0010-09-15T04:44:23 = sike #-10 la tenpo mun #9 la suno #15 UTC la 04:44:23
 
 =head3 Long
 
-   2008-02-05T18:30:30 = 2008 mun #2 5 18:30:30 UTC
-   1995-12-22T09:05:02 = 1995 mun #12 22 09:05:02 UTC
-  -0010-09-15T04:44:23 = -10 mun #9 15 04:44:23 UTC
+   2008-02-05T18:30:30 = tenpo sike #2008 la tenpo tenpo mun #2 la tenpo suno #5 UTC la 18:30:30
+   1995-12-22T09:05:02 = tenpo sike #1995 la tenpo tenpo mun #12 la tenpo suno #22 UTC la 09:05:02
+  -0010-09-15T04:44:23 = tenpo sike #-10 la tenpo tenpo mun #9 la tenpo suno #15 UTC la 04:44:23
 
 =head3 Medium
 
-   2008-02-05T18:30:30 = 2008 mun #2 5 18:30:30
-   1995-12-22T09:05:02 = 1995 mun #12 22 09:05:02
-  -0010-09-15T04:44:23 = -10 mun #9 15 04:44:23
+   2008-02-05T18:30:30 = sike #2008 la tenpo mun #2 la suno #5 18:30:30
+   1995-12-22T09:05:02 = sike #1995 la tenpo mun #12 la suno #22 09:05:02
+  -0010-09-15T04:44:23 = sike #-10 la tenpo mun #9 la suno #15 04:44:23
 
 =head3 Short
 
@@ -327,11 +327,11 @@ Toki Pona locale.
 
 =head2 Available Formats
 
-=head3 Bh (h B)
+=head3 Bh ('tenpo' 'ilo' #h B)
 
-   2008-02-05T18:30:30 = 6 B
-   1995-12-22T09:05:02 = 9 B
-  -0010-09-15T04:44:23 = 4 B
+   2008-02-05T18:30:30 = tenpo ilo #6 B
+   1995-12-22T09:05:02 = tenpo ilo #9 B
+  -0010-09-15T04:44:23 = tenpo ilo #4 B
 
 =head3 Bhm (h:mm B)
 
@@ -350,6 +350,12 @@ Toki Pona locale.
    2008-02-05T18:30:30 = suno esun #2
    1995-12-22T09:05:02 = suno esun #5
   -0010-09-15T04:44:23 = suno esun #6
+
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = suno esun #2 6 B
+   1995-12-22T09:05:02 = suno esun #5 9 B
+  -0010-09-15T04:44:23 = suno esun #6 4 B
 
 =head3 EBhm (E h:mm B)
 
@@ -381,6 +387,12 @@ Toki Pona locale.
    1995-12-22T09:05:02 = 22, suno esun #5
   -0010-09-15T04:44:23 = 15, suno esun #6
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = suno esun #2 6 PM
+   1995-12-22T09:05:02 = suno esun #5 9 AM
+  -0010-09-15T04:44:23 = suno esun #6 4 AM
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = suno esun #2 6:30 PM
@@ -399,25 +411,37 @@ Toki Pona locale.
    1995-12-22T09:05:02 = CE 1995
   -0010-09-15T04:44:23 = BCE -10
 
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = CE 2008-02
+   1995-12-22T09:05:02 = CE 1995-12
+  -0010-09-15T04:44:23 = BCE -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = CE 2008-02-05, suno esun #2
+   1995-12-22T09:05:02 = CE 1995-12-22, suno esun #5
+  -0010-09-15T04:44:23 = BCE -10-09-15, suno esun #6
+
 =head3 GyMMM (G y MMM)
 
-   2008-02-05T18:30:30 = CE 2008 mun #2
-   1995-12-22T09:05:02 = CE 1995 mun #12
-  -0010-09-15T04:44:23 = BCE -10 mun #9
+   2008-02-05T18:30:30 = CE 2008 tenpo mun #2
+   1995-12-22T09:05:02 = CE 1995 tenpo mun #12
+  -0010-09-15T04:44:23 = BCE -10 tenpo mun #9
 
 =head3 GyMMMEd (G y MMM d, E)
 
-   2008-02-05T18:30:30 = CE 2008 mun #2 5, suno esun #2
-   1995-12-22T09:05:02 = CE 1995 mun #12 22, suno esun #5
-  -0010-09-15T04:44:23 = BCE -10 mun #9 15, suno esun #6
+   2008-02-05T18:30:30 = CE 2008 tenpo mun #2 5, suno esun #2
+   1995-12-22T09:05:02 = CE 1995 tenpo mun #12 22, suno esun #5
+  -0010-09-15T04:44:23 = BCE -10 tenpo mun #9 15, suno esun #6
 
 =head3 GyMMMd (G y MMM d)
 
-   2008-02-05T18:30:30 = CE 2008 mun #2 5
-   1995-12-22T09:05:02 = CE 1995 mun #12 22
-  -0010-09-15T04:44:23 = BCE -10 mun #9 15
+   2008-02-05T18:30:30 = CE 2008 tenpo mun #2 5
+   1995-12-22T09:05:02 = CE 1995 tenpo mun #12 22
+  -0010-09-15T04:44:23 = BCE -10 tenpo mun #9 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = CE 2008-02-05
    1995-12-22T09:05:02 = CE 1995-12-22
@@ -453,6 +477,12 @@ Toki Pona locale.
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
 
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
+
 =head3 M (L)
 
    2008-02-05T18:30:30 = 2
@@ -467,33 +497,33 @@ Toki Pona locale.
 
 =head3 MMM (LLL)
 
-   2008-02-05T18:30:30 = mun #2
-   1995-12-22T09:05:02 = mun #12
-  -0010-09-15T04:44:23 = mun #9
+   2008-02-05T18:30:30 = tenpo mun #2
+   1995-12-22T09:05:02 = tenpo mun #12
+  -0010-09-15T04:44:23 = tenpo mun #9
 
 =head3 MMMEd (MMM d, E)
 
-   2008-02-05T18:30:30 = mun #2 5, suno esun #2
-   1995-12-22T09:05:02 = mun #12 22, suno esun #5
-  -0010-09-15T04:44:23 = mun #9 15, suno esun #6
+   2008-02-05T18:30:30 = tenpo mun #2 5, suno esun #2
+   1995-12-22T09:05:02 = tenpo mun #12 22, suno esun #5
+  -0010-09-15T04:44:23 = tenpo mun #9 15, suno esun #6
 
-=head3 MMMMW-count-other ('week' W 'of' MMMM)
+=head3 MMMMW-count-other (MMMM 'la' 'sike' 'esun' #W)
 
-   2008-02-05T18:30:30 = week 1 of mun #2
-   1995-12-22T09:05:02 = week 3 of mun #12
-  -0010-09-15T04:44:23 = week 2 of mun #9
+   2008-02-05T18:30:30 = tenpo mun #2 la sike esun #1
+   1995-12-22T09:05:02 = tenpo mun #12 la sike esun #3
+  -0010-09-15T04:44:23 = tenpo mun #9 la sike esun #2
 
 =head3 MMMMd (MMMM d)
 
-   2008-02-05T18:30:30 = mun #2 5
-   1995-12-22T09:05:02 = mun #12 22
-  -0010-09-15T04:44:23 = mun #9 15
+   2008-02-05T18:30:30 = tenpo mun #2 5
+   1995-12-22T09:05:02 = tenpo mun #12 22
+  -0010-09-15T04:44:23 = tenpo mun #9 15
 
 =head3 MMMd (MMM d)
 
-   2008-02-05T18:30:30 = mun #2 5
-   1995-12-22T09:05:02 = mun #12 22
-  -0010-09-15T04:44:23 = mun #9 15
+   2008-02-05T18:30:30 = tenpo mun #2 5
+   1995-12-22T09:05:02 = tenpo mun #12 22
+  -0010-09-15T04:44:23 = tenpo mun #9 15
 
 =head3 Md (MM-dd)
 
@@ -501,17 +531,17 @@ Toki Pona locale.
    1995-12-22T09:05:02 = 12-22
   -0010-09-15T04:44:23 = 09-15
 
-=head3 d (d)
+=head3 d (#d)
 
-   2008-02-05T18:30:30 = 5
-   1995-12-22T09:05:02 = 22
-  -0010-09-15T04:44:23 = 15
+   2008-02-05T18:30:30 = #5
+   1995-12-22T09:05:02 = #22
+  -0010-09-15T04:44:23 = #15
 
-=head3 h (h a)
+=head3 h ('tenpo' 'ilo' #h a)
 
-   2008-02-05T18:30:30 = 6 PM
-   1995-12-22T09:05:02 = 9 AM
-  -0010-09-15T04:44:23 = 4 AM
+   2008-02-05T18:30:30 = tenpo ilo #6 PM
+   1995-12-22T09:05:02 = tenpo ilo #9 AM
+  -0010-09-15T04:44:23 = tenpo ilo #4 AM
 
 =head3 hm (#h:mm a)
 
@@ -531,11 +561,17 @@ Toki Pona locale.
    1995-12-22T09:05:02 = #9:05:02 AM lon UTC
   -0010-09-15T04:44:23 = #4:44:23 AM lon UTC
 
-=head3 hmv (h:mm a v)
+=head3 hmv (#h:mm a 'lon' v)
 
-   2008-02-05T18:30:30 = 6:30 PM UTC
-   1995-12-22T09:05:02 = 9:05 AM UTC
-  -0010-09-15T04:44:23 = 4:44 AM UTC
+   2008-02-05T18:30:30 = #6:30 PM lon UTC
+   1995-12-22T09:05:02 = #9:05 AM lon UTC
+  -0010-09-15T04:44:23 = #4:44 AM lon UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
 
 =head3 ms (mm:ss)
 
@@ -543,11 +579,11 @@ Toki Pona locale.
    1995-12-22T09:05:02 = 05:02
   -0010-09-15T04:44:23 = 44:23
 
-=head3 y (y)
+=head3 y (#y)
 
-   2008-02-05T18:30:30 = 2008
-   1995-12-22T09:05:02 = 1995
-  -0010-09-15T04:44:23 = -10
+   2008-02-05T18:30:30 = #2008
+   1995-12-22T09:05:02 = #1995
+  -0010-09-15T04:44:23 = #-10
 
 =head3 yM (y-MM)
 
@@ -563,21 +599,21 @@ Toki Pona locale.
 
 =head3 yMMM (y MMM)
 
-   2008-02-05T18:30:30 = 2008 mun #2
-   1995-12-22T09:05:02 = 1995 mun #12
-  -0010-09-15T04:44:23 = -10 mun #9
+   2008-02-05T18:30:30 = 2008 tenpo mun #2
+   1995-12-22T09:05:02 = 1995 tenpo mun #12
+  -0010-09-15T04:44:23 = -10 tenpo mun #9
 
 =head3 yMMMEd (y MMM d, E)
 
-   2008-02-05T18:30:30 = 2008 mun #2 5, suno esun #2
-   1995-12-22T09:05:02 = 1995 mun #12 22, suno esun #5
-  -0010-09-15T04:44:23 = -10 mun #9 15, suno esun #6
+   2008-02-05T18:30:30 = 2008 tenpo mun #2 5, suno esun #2
+   1995-12-22T09:05:02 = 1995 tenpo mun #12 22, suno esun #5
+  -0010-09-15T04:44:23 = -10 tenpo mun #9 15, suno esun #6
 
-=head3 yMMMM (y MMMM)
+=head3 yMMMM (#y 'la' MMMM)
 
-   2008-02-05T18:30:30 = 2008 mun #2
-   1995-12-22T09:05:02 = 1995 mun #12
-  -0010-09-15T04:44:23 = -10 mun #9
+   2008-02-05T18:30:30 = #2008 la tenpo mun #2
+   1995-12-22T09:05:02 = #1995 la tenpo mun #12
+  -0010-09-15T04:44:23 = #-10 la tenpo mun #9
 
 =head3 yMMMd ('sike' #y ) #M ) #d)
 
@@ -591,23 +627,23 @@ Toki Pona locale.
    1995-12-22T09:05:02 = #1995)#12)#22
   -0010-09-15T04:44:23 = #-10)#9)#15
 
-=head3 yQQQ (y QQQ)
+=head3 yQQQ (#y 'la' QQQ)
 
-   2008-02-05T18:30:30 = 2008 Q1
-   1995-12-22T09:05:02 = 1995 Q4
-  -0010-09-15T04:44:23 = -10 Q3
+   2008-02-05T18:30:30 = #2008 la Q1
+   1995-12-22T09:05:02 = #1995 la Q4
+  -0010-09-15T04:44:23 = #-10 la Q3
 
-=head3 yQQQQ (y QQQQ)
+=head3 yQQQQ (#y 'la' QQQQ)
 
-   2008-02-05T18:30:30 = 2008 Q1
-   1995-12-22T09:05:02 = 1995 Q4
-  -0010-09-15T04:44:23 = -10 Q3
+   2008-02-05T18:30:30 = #2008 la Q1
+   1995-12-22T09:05:02 = #1995 la Q4
+  -0010-09-15T04:44:23 = #-10 la Q3
 
-=head3 yw-count-other ('week' w 'of' Y)
+=head3 yw-count-other (Y 'la' 'sike' 'esun' #w)
 
-   2008-02-05T18:30:30 = week 6 of 2008
-   1995-12-22T09:05:02 = week 51 of 1995
-  -0010-09-15T04:44:23 = week 37 of -10
+   2008-02-05T18:30:30 = 2008 la sike esun #6
+   1995-12-22T09:05:02 = 1995 la sike esun #51
+  -0010-09-15T04:44:23 = -10 la sike esun #37
 
 
 =head2 Miscellaneous
@@ -624,9 +660,9 @@ Yes
 
 =head3 %c (%a %b %e %H:%M:%S %Y) - date time format
 
-   2008-02-05T18:30:30 = suno esun #2 mun #2  5 18:30:30 2008
-   1995-12-22T09:05:02 = suno esun #5 mun #12 22 09:05:02 1995
-  -0010-09-15T04:44:23 = suno esun #6 mun #9 15 04:44:23 -10
+   2008-02-05T18:30:30 = suno esun #2 tenpo mun #2  5 18:30:30 2008
+   1995-12-22T09:05:02 = suno esun #5 tenpo mun #12 22 09:05:02 1995
+  -0010-09-15T04:44:23 = suno esun #6 tenpo mun #9 15 04:44:23 -10
 
 =head3 %x (%m/%d/%y) - date format
 

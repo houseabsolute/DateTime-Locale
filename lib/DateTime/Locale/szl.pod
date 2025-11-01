@@ -351,6 +351,12 @@ Silesian locale.
    1995-12-22T09:05:02 = piōntek
   -0010-09-15T04:44:23 = sobota
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = wtorek 6 B
+   1995-12-22T09:05:02 = piōntek 9 B
+  -0010-09-15T04:44:23 = sobota 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = wtorek 6:30 B
@@ -381,6 +387,12 @@ Silesian locale.
    1995-12-22T09:05:02 = 22, piōntek
   -0010-09-15T04:44:23 = 15, sobota
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = wtorek 6 po połedniu
+   1995-12-22T09:05:02 = piōntek 9 do połedniŏ
+  -0010-09-15T04:44:23 = sobota 4 do połedniŏ
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = wtorek 6:30 po połedniu
@@ -398,6 +410,18 @@ Silesian locale.
    2008-02-05T18:30:30 = CE 2008
    1995-12-22T09:05:02 = CE 1995
   -0010-09-15T04:44:23 = BCE -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = CE 2008-02
+   1995-12-22T09:05:02 = CE 1995-12
+  -0010-09-15T04:44:23 = BCE -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = CE 2008-02-05, wtorek
+   1995-12-22T09:05:02 = CE 1995-12-22, piōntek
+  -0010-09-15T04:44:23 = BCE -10-09-15, sobota
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Silesian locale.
    1995-12-22T09:05:02 = CE 1995 grudnia 22
   -0010-09-15T04:44:23 = BCE -10 września 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = CE 2008-02-05
    1995-12-22T09:05:02 = CE 1995-12-22
@@ -452,6 +476,12 @@ Silesian locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -536,6 +566,12 @@ Silesian locale.
    2008-02-05T18:30:30 = 6:30 po połedniu UTC
    1995-12-22T09:05:02 = 9:05 do połedniŏ UTC
   -0010-09-15T04:44:23 = 4:44 do połedniŏ UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 po połedniu UTC
+   1995-12-22T09:05:02 = 9 do połedniŏ UTC
+  -0010-09-15T04:44:23 = 4 do połedniŏ UTC
 
 =head3 ms (mm:ss)
 

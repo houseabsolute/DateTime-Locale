@@ -351,6 +351,12 @@ Swahili locale.
    1995-12-22T09:05:02 = Ijumaa
   -0010-09-15T04:44:23 = Jumamosi
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Jumanne 6 B
+   1995-12-22T09:05:02 = Ijumaa 9 B
+  -0010-09-15T04:44:23 = Jumamosi 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Jumanne 6:30 B
@@ -381,6 +387,12 @@ Swahili locale.
    1995-12-22T09:05:02 = Ijumaa 22
   -0010-09-15T04:44:23 = Jumamosi 15
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Jumanne 6 PM
+   1995-12-22T09:05:02 = Ijumaa 9 AM
+  -0010-09-15T04:44:23 = Jumamosi 4 AM
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Jumanne 6:30 PM
@@ -398,6 +410,18 @@ Swahili locale.
    2008-02-05T18:30:30 = 2008 BK
    1995-12-22T09:05:02 = 1995 BK
   -0010-09-15T04:44:23 = -10 KK
+
+=head3 GyM (G MM-y)
+
+   2008-02-05T18:30:30 = BK 02-2008
+   1995-12-22T09:05:02 = BK 12-1995
+  -0010-09-15T04:44:23 = KK 09--10
+
+=head3 GyMEd (E, d/M/y G)
+
+   2008-02-05T18:30:30 = Jumanne, 5/2/2008 BK
+   1995-12-22T09:05:02 = Ijumaa, 22/12/1995 BK
+  -0010-09-15T04:44:23 = Jumamosi, 15/9/-10 KK
 
 =head3 GyMMM (MMM y G)
 
@@ -452,6 +476,12 @@ Swahili locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -548,6 +578,12 @@ Swahili locale.
    2008-02-05T18:30:30 = 6:30 PM UTC
    1995-12-22T09:05:02 = 9:05 AM UTC
   -0010-09-15T04:44:23 = 4:44 AM UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 PM UTC
+   1995-12-22T09:05:02 = 9 AM UTC
+  -0010-09-15T04:44:23 = 4 AM UTC
 
 =head3 ms (mm:ss)
 

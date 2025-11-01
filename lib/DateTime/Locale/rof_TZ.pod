@@ -351,6 +351,12 @@ Rombo Tanzania locale.
    1995-12-22T09:05:02 = Iju
   -0010-09-15T04:44:23 = Ijm
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = Ijn 6 B
+   1995-12-22T09:05:02 = Iju 9 B
+  -0010-09-15T04:44:23 = Ijm 4 B
+
 =head3 EBhm (E h:mm B)
 
    2008-02-05T18:30:30 = Ijn 6:30 B
@@ -381,6 +387,12 @@ Rombo Tanzania locale.
    1995-12-22T09:05:02 = 22, Iju
   -0010-09-15T04:44:23 = 15, Ijm
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = Ijn 6 kingoto
+   1995-12-22T09:05:02 = Iju 9 kang’ama
+  -0010-09-15T04:44:23 = Ijm 4 kang’ama
+
 =head3 Ehm (E h:mm a)
 
    2008-02-05T18:30:30 = Ijn 6:30 kingoto
@@ -398,6 +410,18 @@ Rombo Tanzania locale.
    2008-02-05T18:30:30 = BM 2008
    1995-12-22T09:05:02 = BM 1995
   -0010-09-15T04:44:23 = KM -10
+
+=head3 GyM (G y-MM)
+
+   2008-02-05T18:30:30 = BM 2008-02
+   1995-12-22T09:05:02 = BM 1995-12
+  -0010-09-15T04:44:23 = KM -10-09
+
+=head3 GyMEd (G y-MM-dd, E)
+
+   2008-02-05T18:30:30 = BM 2008-02-05, Ijn
+   1995-12-22T09:05:02 = BM 1995-12-22, Iju
+  -0010-09-15T04:44:23 = KM -10-09-15, Ijm
 
 =head3 GyMMM (G y MMM)
 
@@ -417,7 +441,7 @@ Rombo Tanzania locale.
    1995-12-22T09:05:02 = BM 1995 M12 22
   -0010-09-15T04:44:23 = KM -10 M9 15
 
-=head3 GyMd (GGGGG y-MM-dd)
+=head3 GyMd (G y-MM-dd)
 
    2008-02-05T18:30:30 = BM 2008-02-05
    1995-12-22T09:05:02 = BM 1995-12-22
@@ -452,6 +476,12 @@ Rombo Tanzania locale.
    2008-02-05T18:30:30 = 18:30 UTC
    1995-12-22T09:05:02 = 09:05 UTC
   -0010-09-15T04:44:23 = 04:44 UTC
+
+=head3 Hv (HH'h' v)
+
+   2008-02-05T18:30:30 = 18h UTC
+   1995-12-22T09:05:02 = 09h UTC
+  -0010-09-15T04:44:23 = 04h UTC
 
 =head3 M (L)
 
@@ -542,6 +572,12 @@ Rombo Tanzania locale.
    2008-02-05T18:30:30 = 6:30 kingoto UTC
    1995-12-22T09:05:02 = 9:05 kang’ama UTC
   -0010-09-15T04:44:23 = 4:44 kang’ama UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 kingoto UTC
+   1995-12-22T09:05:02 = 9 kang’ama UTC
+  -0010-09-15T04:44:23 = 4 kang’ama UTC
 
 =head3 ms (mm:ss)
 

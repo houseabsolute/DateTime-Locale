@@ -36,7 +36,7 @@ Finnish Finland locale.
   torstaina
   perjantaina
   lauantaina
-  sunnuntai
+  sunnuntaina
 
 =head3 Abbreviated (format)
 
@@ -351,6 +351,12 @@ Finnish Finland locale.
    1995-12-22T09:05:02 = pe
   -0010-09-15T04:44:23 = la
 
+=head3 EBh (E h B)
+
+   2008-02-05T18:30:30 = ti 6 B
+   1995-12-22T09:05:02 = pe 9 B
+  -0010-09-15T04:44:23 = la 4 B
+
 =head3 EBhm (E h.mm B)
 
    2008-02-05T18:30:30 = ti 6.30 B
@@ -381,6 +387,12 @@ Finnish Finland locale.
    1995-12-22T09:05:02 = pe 22.
   -0010-09-15T04:44:23 = la 15.
 
+=head3 Eh (E h a)
+
+   2008-02-05T18:30:30 = ti 6 ip.
+   1995-12-22T09:05:02 = pe 9 ap.
+  -0010-09-15T04:44:23 = la 4 ap.
+
 =head3 Ehm (E h.mm a)
 
    2008-02-05T18:30:30 = ti 6.30 ip.
@@ -398,6 +410,18 @@ Finnish Finland locale.
    2008-02-05T18:30:30 = 2008 jKr.
    1995-12-22T09:05:02 = 1995 jKr.
   -0010-09-15T04:44:23 = -10 eKr.
+
+=head3 GyM (M.y G)
+
+   2008-02-05T18:30:30 = 2.2008 jKr.
+   1995-12-22T09:05:02 = 12.1995 jKr.
+  -0010-09-15T04:44:23 = 9.-10 eKr.
+
+=head3 GyMEd (E d.M.y G)
+
+   2008-02-05T18:30:30 = ti 5.2.2008 jKr.
+   1995-12-22T09:05:02 = pe 22.12.1995 jKr.
+  -0010-09-15T04:44:23 = la 15.9.-10 eKr.
 
 =head3 GyMMM (LLL y G)
 
@@ -464,6 +488,12 @@ Finnish Finland locale.
    2008-02-05T18:30:30 = 18.30 UTC
    1995-12-22T09:05:02 = 9.05 UTC
   -0010-09-15T04:44:23 = 4.44 UTC
+
+=head3 Hv (H 'h' v)
+
+   2008-02-05T18:30:30 = 18 h UTC
+   1995-12-22T09:05:02 = 9 h UTC
+  -0010-09-15T04:44:23 = 4 h UTC
 
 =head3 M (L)
 
@@ -560,6 +590,12 @@ Finnish Finland locale.
    2008-02-05T18:30:30 = 6.30 ip. UTC
    1995-12-22T09:05:02 = 9.05 ap. UTC
   -0010-09-15T04:44:23 = 4.44 ap. UTC
+
+=head3 hv (h a v)
+
+   2008-02-05T18:30:30 = 6 ip. UTC
+   1995-12-22T09:05:02 = 9 ap. UTC
+  -0010-09-15T04:44:23 = 4 ap. UTC
 
 =head3 ms (m.ss)
 
