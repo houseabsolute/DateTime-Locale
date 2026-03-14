@@ -169,7 +169,7 @@
   old custom locale registration system with something much simpler. Instead
   of providing a new class you simply provide a hash of data for the locale
   and it becomes available for use via DateTime::Local->load. Implemented by
-  Ryley Breiddal. PR #21. Addresse GH #19.
+  Ryley Breiddal. PR #21. Addresses GH #19.
 
 
 1.20     2018-05-06

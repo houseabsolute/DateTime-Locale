@@ -152,7 +152,7 @@ sub native_names {
         : [ keys %DateTime::Locale::Data::NativeNames ];
 }
 
-# These are hard-coded for backwards comaptibility with the DateTime::Language
+# These are hard-coded for backwards compatibility with the DateTime::Language
 # code.
 my %DateTimeLanguageAliases = (
 
@@ -167,11 +167,11 @@ my %DateTimeLanguageAliases = (
     'French'    => 'fr-FR',
 
     #      'Gedeo'             => undef, # XXX
-    'German'    => 'de-DE',
-    'Italian'   => 'it-IT',
-    'Norwegian' => 'no-NO',
-    'Oromo'     => 'om-ET',    # Maybe om-KE or plain om ?
-    'Portugese' => 'pt-PT',
+    'German'     => 'de-DE',
+    'Italian'    => 'it-IT',
+    'Norwegian'  => 'no-NO',
+    'Oromo'      => 'om-ET',    # Maybe om-KE or plain om ?
+    'Portuguese' => 'pt-PT',
 
     #    'Sidama'            => 'sid',
     'Somali'  => 'so-SO',
