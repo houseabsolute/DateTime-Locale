@@ -1,0 +1,34 @@
+# Locale codes and language names from the CLDR data. Allowed per file so the
+# rest of the dist stays spell-checked. Globs are matched against the file name,
+# not the directory it lives in, so they are written as bare names or
+# extensions. This file gets its own type because it quotes the words it
+# allows.
+#
+# lib/DateTime/Locale/Data.pm is still excluded outright in precious.toml: it
+# carries dozens of these and the list would churn on every CLDR regeneration.
+[default.extend-words]
+Claus = "Claus"
+
+[type.typos-config]
+extend-glob = [".typos.toml"]
+[type.typos-config.extend-words]
+ba = "ba"
+Beng = "Beng"
+fo = "fo"
+Nam = "Nam"
+nd = "nd"
+pn = "pn"
+seh = "seh"
+vai = "vai"
+
+[type.locale-catalog]
+extend-glob = ["**/Catalog.pm"]
+[type.locale-catalog.extend-words]
+ba = "ba"
+Beng = "Beng"
+fo = "fo"
+Nam = "Nam"
+nd = "nd"
+pn = "pn"
+seh = "seh"
+vai = "vai"
