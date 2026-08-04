@@ -79,7 +79,6 @@ lint_failure_exit_codes = 1
 [commands.oxfmt]
 type = "both"
 include = ["**/*.yml", "**/*.toml"]
-exclude = "META.yml"
 cmd = ["oxfmt"]
 lint-flags = "--check"
 tidy-flags = "--write"
