@@ -68,7 +68,7 @@
   datetime_format_full => "{1} {0}",
   datetime_format_long => "{1} {0}",
   datetime_format_medium => "{1} {0}",
-  datetime_format_short => "{1} {0}",
+  datetime_format_short => "{1}\N{U+2009}{0}",
   day_format_abbreviated => [
     "\N{U+661f}\N{U+671f}\N{U+4e00}",
     "\N{U+661f}\N{U+671f}\N{U+4e8c}",

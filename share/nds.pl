@@ -29,7 +29,7 @@
     Hms => "'Klock' H.mm:ss",
     Hmsv => "'Klock' H.mm:ss\N{U+202f}v",
     Hmv => "HH:mm v",
-    Hv => "HH'h' v",
+    Hv => "HH v",
     M => "L",
     MEd => "MM-dd, E",
     MMM => "LLL",

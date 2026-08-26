@@ -1,7 +1,7 @@
 {
   am_pm_abbreviated => [
-    "AM",
-    "PM",
+    "\N{U+063a}.\N{U+0645}.",
+    "\N{U+063a}.\N{U+0648}.",
   ],
   available_formats => {
     Bh => "h B",
@@ -29,7 +29,7 @@
     Hms => "HH:mm:ss",
     Hmsv => "HH:mm:ss v",
     Hmv => "HH:mm v",
-    Hv => "HH'h' v",
+    Hv => "HH v",
     M => "L",
     MEd => "MM-dd, E",
     MMM => "LLL",

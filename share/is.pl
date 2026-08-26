@@ -29,7 +29,7 @@
     Hms => "HH:mm:ss",
     Hmsv => "v \N{U+2013} HH:mm:ss",
     Hmv => "v \N{U+2013} HH:mm",
-    Hv => "HH'klst'. v",
+    Hv => "HH v",
     M => "L",
     MEd => "E, d.M.",
     MMM => "LLL",

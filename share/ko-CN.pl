@@ -1,7 +1,7 @@
 {
   am_pm_abbreviated => [
-    "AM",
-    "PM",
+    "\N{U+c624}\N{U+c804}",
+    "\N{U+c624}\N{U+d6c4}",
   ],
   available_formats => {
     Bh => "B h\N{U+c2dc}",

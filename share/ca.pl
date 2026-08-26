@@ -34,7 +34,7 @@
     Hmsvvvv => "H:mm:ss (vvvv)",
     Hmv => "H:mm v",
     Hmvvvv => "H:mm (vvvv)",
-    Hv => "H 'h' v",
+    Hv => "H v",
     M => "L",
     MEd => "E d/M",
     MMM => "LLL",

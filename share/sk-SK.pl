@@ -30,7 +30,7 @@
     Hms => "H:mm:ss",
     Hmsv => "H:mm:ss v",
     Hmv => "H:mm v",
-    Hv => "HH'h' v",
+    Hv => "H v",
     M => "L.",
     MEd => "E d. M.",
     MMM => "LLL",

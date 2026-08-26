@@ -29,7 +29,7 @@
     Hms => "H:mm:ss",
     Hmsv => "HH:mm:ss v",
     Hmv => "HH:mm v",
-    Hv => "\N{U+056a}\N{U+2024} HH v",
+    Hv => "H v",
     M => "L",
     MEd => "dd.MM, E",
     MMM => "LLL",
