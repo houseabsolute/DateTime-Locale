@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Fixed a regression in 1.46 that broke DateTime::Locale->load('Portugese').
+  load('Portuguese') returns the "pt" locale again, rather than "pt-PT".
+
 1.46     2026-08-25
 
 - Rebuilt all locale data with the data from CLDR 48.2.0

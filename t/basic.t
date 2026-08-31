@@ -642,7 +642,7 @@ sub check_DT_Lang {
         TigrinyaEthiopian
         TigrinyaEritrean
         Brazilian
-        Portuguese
+        Portugese
     );
 
     foreach my $old (@old_names) {
