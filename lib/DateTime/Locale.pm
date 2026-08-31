@@ -167,11 +167,16 @@ my %DateTimeLanguageAliases = (
     'French'    => 'fr-FR',
 
     #      'Gedeo'             => undef, # XXX
-    'German'     => 'de-DE',
-    'Italian'    => 'it-IT',
-    'Norwegian'  => 'no-NO',
-    'Oromo'      => 'om-ET',    # Maybe om-KE or plain om ?
-    'Portuguese' => 'pt-PT',
+    'German'    => 'de-DE',
+    'Italian'   => 'it-IT',
+    'Norwegian' => 'no-NO',
+    'Oromo'     => 'om-ET',    # Maybe om-KE or plain om ?
+
+    # "Portugese" is misspelled, but that is the name DateTime::Language used,
+    # so it is the spelling this table has to contain. Do not "correct" it.
+    # The correctly spelled "Portuguese" already resolves to "pt" via
+    # %DateTime::Locale::Data::Names.
+    'Portugese' => 'pt-PT',
 
     #    'Sidama'            => 'sid',
     'Somali'  => 'so-SO',
