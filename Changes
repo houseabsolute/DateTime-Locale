@@ -1,5 +1,14 @@
 {{$NEXT}}
 
+- Rebuilt all locale data with the data from CLDR 49.0.0.
+
+- CLDR 49 no longer ships data for locales that are below its "Basic" coverage level. This removes
+  199 locale codes, including aa, ab, an, co, cu, and all of their regional variants. Some languages
+  only lost some of their locales. For example, bal and bal-Arab are gone, but bal-Latn is still
+  available. Loading any of the removed locales will now fail.
+
+- Added the ady (Adyghe) and kbd (Kabardian) locales, along with their regional variants.
+
 1.46     2026-08-25
 
 - Rebuilt all locale data with the data from CLDR 48.2.0

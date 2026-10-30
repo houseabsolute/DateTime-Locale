@@ -14,94 +14,12 @@ my %locale_codes = map { $_ => 1 } DateTime::Locale->codes;
 # These are locales that are missing English name data in the JSON source
 # files.
 my %is_locale_without_en_data = map { $_ => 1 } qw(
-    lld
-    mhn
-    mww
-    skr
-    suz
 );
 
 # These are locales that are missing native name data in the JSON source
 # files.
 my %is_locale_without_native_data = map { $_ => 1 } qw(
-    aa
-    aa-DJ
-    aa-ER
-    aa-ET
-    bew
-    bew-ID
-    bm-Nkoo
-    bm-Nkoo-ML
-    bqi
-    bqi-IR
-    byn
-    byn-ER
-    cad
-    cad-US
-    cop
-    cop-EG
-    cu
-    cu-RU
-    dv
-    dv-MV
-    en-Shaw
-    en-Shaw-GB
-    gez
-    gez-ER
-    gez-ET
-    ha-Arab
-    ha-Arab-NG
-    ha-Arab-SD
-    iu
-    iu-CA
-    iu-Latn
-    iu-Latn-CA
-    kaa-Latn
-    kaa-Latn-UZ
-    ku-Arab
-    ku-Arab-IQ
-    ku-Arab-IR
-    la
-    la-VA
-    ltg
-    ltg-LV
-    lzz
-    lzz-TR
-    mhn
-    mhn-IT
-    mn-Mong
-    mn-Mong-CN
-    ms-Arab
-    ms-Arab-BN
-    ms-Arab-MY
-    mww
-    mww-Hmnp
-    mww-Hmnp-US
     nmg
-    nr
-    nr-ZA
-    pi
-    pi-Latn
-    pi-Latn-GB
-    sgs
-    sgs-LT
-    sid
-    sid-ET
-    suz
-    suz-Deva
-    suz-Deva-NP
-    suz-Sunu
-    suz-Sunu-NP
-    tig
-    tig-ER
-    ts
-    ts-ZA
-    ve
-    ve-ZA
-    vo
-    vo-001
-    wal
-    wal-ET
 );
 
 subtest( 'basic overall tests', \&basic_tests );
@@ -352,6 +270,9 @@ sub check_und {
         GyMEd               => 'G y-MM-dd, E',
         GyMMM               => 'G y MMM',
         GyMMMEd             => 'G y MMM d, E',
+        GyMMMM              => 'G y MMMM',
+        GyMMMMEd            => 'G y MMMM d, E',
+        GyMMMMd             => 'G y MMMM d',
         GyMMMd              => 'G y MMM d',
         GyMd                => 'G y-MM-dd',
         H                   => 'HH',
@@ -364,6 +285,7 @@ sub check_und {
         MEd                 => 'MM-dd, E',
         MMM                 => 'LLL',
         MMMEd               => 'MMM d, E',
+        MMMMEd              => 'MMMM d, E',
         'MMMMW-count-other' => q{'week' W 'of' MMMM},
         MMMMd               => 'MMMM d',
         MMMd                => 'MMM d',
@@ -456,7 +378,14 @@ sub check_en_GB {
         GyMMM               => 'MMM y G',
         GyMMMEEEEd          => 'EEEE, d MMM y G',
         GyMMMEd             => 'E, d MMM y G',
+        GyMMMEddd           => 'E, ddd MMM y G',
+        GyMMMM              => 'MMMM y G',
+        GyMMMMEd            => 'E, d MMMM y G',
+        GyMMMMEddd          => 'E, ddd MMMM y G',
+        GyMMMMd             => 'd MMMM y G',
+        GyMMMMddd           => 'ddd MMMM y G',
         GyMMMd              => 'd MMM y G',
+        GyMMMddd            => 'ddd MMM y G',
         GyMd                => 'dd/MM/y G',
         H                   => 'HH',
         Hm                  => 'HH:mm',
@@ -469,11 +398,16 @@ sub check_en_GB {
         MMM                 => 'LLL',
         MMMEEEEd            => 'EEEE d MMM',
         MMMEd               => 'E d MMM',
+        MMMEddd             => 'E ddd MMM',
         MMMMEEEEd           => 'EEEE d MMMM',
+        MMMMEd              => 'E d MMMM',
+        MMMMEddd            => 'E ddd MMMM',
         'MMMMW-count-one'   => q{'week' W 'of' MMMM},
         'MMMMW-count-other' => q{'week' W 'of' MMMM},
         MMMMd               => 'd MMMM',
+        MMMMddd             => 'ddd MMMM',
         MMMd                => 'd MMM',
+        MMMddd              => 'ddd MMM',
         MMdd                => 'dd/MM',
         Md                  => 'dd/MM',
         d                   => 'd',
@@ -496,14 +430,23 @@ sub check_en_GB {
         yMMM                => 'MMM y',
         yMMMEEEEd           => 'EEEE, d MMM y',
         yMMMEd              => 'E, d MMM y',
+        yMMMEddd            => 'E, ddd MMM y',
         yMMMM               => 'MMMM y',
         yMMMMEEEEd          => 'EEEE, d MMMM y',
+        yMMMMEd             => 'E, d MMMM y',
+        yMMMMEddd           => 'E, MMMM ddd, y',
+        yMMMMd              => 'd MMMM y',
+        yMMMMddd            => 'MMMM ddd, y',
         yMMMd               => 'd MMM y',
+        yMMMddd             => 'ddd MMM y',
         yMd                 => 'dd/MM/y',
         yQQQ                => 'QQQ y',
         yQQQQ               => 'QQQQ y',
         'yw-count-one'      => q{'week' w 'of' Y},
         'yw-count-other'    => q{'week' w 'of' Y},
+        yy                  => "\N{U+2019}yy",
+        yyMMM               => "MMM \N{U+2019}yy",
+        yyMMMd              => "d MMM \N{U+2019}yy",
     );
 
     test_formats( $locale, %formats );

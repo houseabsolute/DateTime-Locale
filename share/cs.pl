@@ -19,9 +19,10 @@
     Ehms => "E h:mm:ss\N{U+202f}a",
     Gy => "y G",
     GyM => "M/y G",
-    GyMEd => "E, d. M. y G",
+    GyMEd => "E d. M. y G",
     GyMMM => "LLLL y G",
     GyMMMEd => "E d. M. y G",
+    GyMMMM => "LLLL y G",
     GyMMMMEd => "E d. MMMM y G",
     GyMMMMd => "d. MMMM y G",
     GyMMMd => "d. M. y G",
@@ -288,5 +289,5 @@
   time_format_medium => "H:mm:ss",
   time_format_short => "H:mm",
   variant => undef,
-  version => 48,
+  version => 49,
 }

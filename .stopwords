@@ -1723,6 +1723,7 @@ Ado
 Adooleessa
 adr
 àdùmbə̀ŋ
+Adyghe
 aɖabaƒoƒo
 aɖɩt
 aɖɩtɛnɛɛ
@@ -2532,6 +2533,7 @@ Cayman
 CC
 ccc
 cccc
+cccccc
 cch
 cch-NG
 ccp
@@ -2740,6 +2742,7 @@ Cum
 Cuma
 Cumartesi
 cümə
+Cunha
 cuo
 cuoŋ
 cuoŋománnu
@@ -3924,6 +3927,7 @@ dd/MM
 dd‏/MM
 dd/MM/y
 ddC
+ddd
 ddE
 De
 de
@@ -5109,11 +5113,15 @@ GyMd
 GyMEd
 GyMMM
 GyMMMd
+GyMMMddd
 GyMMMEd
+GyMMMEddd
 GyMMMEEEEd
 GyMMMM
 GyMMMMd
+GyMMMMddd
 GyMMMMEd
+GyMMMMEddd
 gÿo
 Gy年
 Gy年M月
@@ -5247,6 +5255,7 @@ HH'u
 HH'v
 HHmm
 HHmmss
+HHmmv
 HHmmZ
 hi
 hi-IN
@@ -5461,6 +5470,7 @@ Iiplal
 Iisa
 IJ
 Ij
+ij
 Ijĩrĩ
 Ijm
 Ijn
@@ -5978,6 +5988,7 @@ Kab
 kab
 kab-DZ
 Kabàlàshìpù
+Kabardian
 kabiri
 Kabla
 kabɔkɔɩ
@@ -6522,6 +6533,7 @@ Laboraru
 Labotlhano
 Labr
 Labt
+Ladin
 lag
 lag-TZ
 Lah
@@ -7361,7 +7373,9 @@ MMM'ê
 MMM'ын
 MMMd
 MMMdd
+MMMddd
 MMMEd
+MMMEddd
 MMMEEEEd
 MMMM
 MMMM،
@@ -7373,7 +7387,9 @@ MMMM'ren
 MMMM'ын
 MMMMd
 MMMMdd
+MMMMddd
 MMMMEd
+MMMMEddd
 MMMMEEEEd
 MMMMM
 MMMMM/dd
@@ -7599,6 +7615,7 @@ mw
 mwa
 Mwai
 mwambe
+Mwambĩrĩrio
 mwd
 Mwedi
 mwedzi
@@ -9201,6 +9218,7 @@ Setiembre
 setiembre
 setmana
 sett
+settemaña
 Settembar
 settember
 settembre
@@ -9549,6 +9567,7 @@ Suriname
 Súuyee
 Suw
 Suwe
+suz
 sv
 sv-AX
 sv-FI
@@ -10004,6 +10023,7 @@ Uhr
 uike
 uk
 uk-UA
+Ukab
 uke
 uken
 uKilisito
@@ -10370,6 +10390,7 @@ W번째
 w번째
 X
 x
+xamaan
 xan
 xaneiro
 xh
@@ -10531,12 +10552,16 @@ yMM
 yMMdd
 yMMM
 yMMMd
+yMMMddd
 yMMMEd
+yMMMEddd
 yMMMEEEEd
 yMMMM
 yMMMMccccd
 yMMMMd
+yMMMMddd
 yMMMMEd
+yMMMMEddd
 yMMMMEEEEd
 Yŋ
 yo
@@ -10584,6 +10609,9 @@ yw-count-two
 yw-count-zero
 YY
 yy
+yyMMM
+yyMMMd
+YYYY
 yyyyMM
 Yৰ
 Yలో

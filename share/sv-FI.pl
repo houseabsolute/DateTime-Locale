@@ -1,7 +1,7 @@
 {
   am_pm_abbreviated => [
-    "fm",
-    "em",
+    "fm.",
+    "em.",
   ],
   available_formats => {
     Bh => "h B",
@@ -22,6 +22,9 @@
     GyMEd => "E d.M.y G",
     GyMMM => "MMM y G",
     GyMMMEd => "E d MMM y G",
+    GyMMMM => "MMMM y G",
+    GyMMMMEd => "E d MMMM y G",
+    GyMMMMd => "d MMMM y G",
     GyMMMd => "d MMM y G",
     GyMd => "d.M.y G",
     H => "H",
@@ -57,6 +60,8 @@
     yMMM => "MMM y",
     yMMMEd => "E d MMM y",
     yMMMM => "MMMM y",
+    yMMMMEd => "E d MMMM y",
+    yMMMMd => "d MMMM y",
     yMMMd => "d MMM y",
     yMd => "d.M.y",
     yQQQ => "QQQ y",
@@ -279,5 +284,5 @@
   time_format_medium => "H.mm.ss",
   time_format_short => "H.mm",
   variant => undef,
-  version => 48,
+  version => 49,
 }

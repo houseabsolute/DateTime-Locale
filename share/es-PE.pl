@@ -63,7 +63,7 @@
     yMMM => "MMM y",
     yMMMEd => "E, d MMM y",
     yMMMM => "MMMM 'de' y",
-    yMMMMEd => "EEE, d 'de' MMMM 'de' y",
+    yMMMMEd => "E, d 'de' MMMM 'de' y",
     yMMMMd => "d 'de' MMMM 'de' y",
     yMMMd => "d MMM y",
     yMd => "d/M/y",
@@ -287,5 +287,5 @@
   time_format_medium => "h:mm:ss\N{U+202f}a",
   time_format_short => "h:mm\N{U+202f}a",
   variant => undef,
-  version => 48,
+  version => 49,
 }

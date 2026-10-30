@@ -32,7 +32,7 @@
     Hms => "HH:mm:ss",
     Hmsv => "HH:mm:ss; v",
     Hmv => "HH:mm; v",
-    Hv => "HH v",
+    Hv => "HH; v",
     M => "MM",
     MEd => "MM-dd, E",
     MMM => "MM",
@@ -287,5 +287,5 @@
   time_format_medium => "HH:mm:ss",
   time_format_short => "HH:mm",
   variant => undef,
-  version => 48,
+  version => 49,
 }
