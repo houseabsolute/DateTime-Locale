@@ -455,9 +455,9 @@ English American Samoa locale.
 
 =head3 GyMMMEddd (E, MMM ddd, y G)
 
-   2008-02-05T18:30:30 = Tue, Feb 5, 2008 AD
-   1995-12-22T09:05:02 = Fri, Dec 22, 1995 AD
-  -0010-09-15T04:44:23 = Sat, Sep 15, -10 BC
+   2008-02-05T18:30:30 = Tue, Feb 5th, 2008 AD
+   1995-12-22T09:05:02 = Fri, Dec 22nd, 1995 AD
+  -0010-09-15T04:44:23 = Sat, Sep 15th, -10 BC
 
 =head3 GyMMMM (MMMM y G)
 
@@ -473,9 +473,9 @@ English American Samoa locale.
 
 =head3 GyMMMMEddd (E, MMMM ddd, y G)
 
-   2008-02-05T18:30:30 = Tue, February 5, 2008 AD
-   1995-12-22T09:05:02 = Fri, December 22, 1995 AD
-  -0010-09-15T04:44:23 = Sat, September 15, -10 BC
+   2008-02-05T18:30:30 = Tue, February 5th, 2008 AD
+   1995-12-22T09:05:02 = Fri, December 22nd, 1995 AD
+  -0010-09-15T04:44:23 = Sat, September 15th, -10 BC
 
 =head3 GyMMMMd (MMMM d, y G)
 
@@ -485,9 +485,9 @@ English American Samoa locale.
 
 =head3 GyMMMMddd (MMMM ddd, y G)
 
-   2008-02-05T18:30:30 = February 5, 2008 AD
-   1995-12-22T09:05:02 = December 22, 1995 AD
-  -0010-09-15T04:44:23 = September 15, -10 BC
+   2008-02-05T18:30:30 = February 5th, 2008 AD
+   1995-12-22T09:05:02 = December 22nd, 1995 AD
+  -0010-09-15T04:44:23 = September 15th, -10 BC
 
 =head3 GyMMMd (MMM d, y G)
 
@@ -497,9 +497,9 @@ English American Samoa locale.
 
 =head3 GyMMMddd (MMM ddd, y G)
 
-   2008-02-05T18:30:30 = Feb 5, 2008 AD
-   1995-12-22T09:05:02 = Dec 22, 1995 AD
-  -0010-09-15T04:44:23 = Sep 15, -10 BC
+   2008-02-05T18:30:30 = Feb 5th, 2008 AD
+   1995-12-22T09:05:02 = Dec 22nd, 1995 AD
+  -0010-09-15T04:44:23 = Sep 15th, -10 BC
 
 =head3 GyMd (M/d/y G)
 
@@ -569,9 +569,9 @@ English American Samoa locale.
 
 =head3 MMMEddd (E, MMM ddd)
 
-   2008-02-05T18:30:30 = Tue, Feb 5
-   1995-12-22T09:05:02 = Fri, Dec 22
-  -0010-09-15T04:44:23 = Sat, Sep 15
+   2008-02-05T18:30:30 = Tue, Feb 5th
+   1995-12-22T09:05:02 = Fri, Dec 22nd
+  -0010-09-15T04:44:23 = Sat, Sep 15th
 
 =head3 MMMMEd (E, MMMM d)
 
@@ -581,9 +581,9 @@ English American Samoa locale.
 
 =head3 MMMMEddd (E, MMMM ddd)
 
-   2008-02-05T18:30:30 = Tue, February 5
-   1995-12-22T09:05:02 = Fri, December 22
-  -0010-09-15T04:44:23 = Sat, September 15
+   2008-02-05T18:30:30 = Tue, February 5th
+   1995-12-22T09:05:02 = Fri, December 22nd
+  -0010-09-15T04:44:23 = Sat, September 15th
 
 =head3 MMMMW-count-one ('week' W 'of' MMMM)
 
@@ -605,9 +605,9 @@ English American Samoa locale.
 
 =head3 MMMMddd (MMMM ddd)
 
-   2008-02-05T18:30:30 = February 5
-   1995-12-22T09:05:02 = December 22
-  -0010-09-15T04:44:23 = September 15
+   2008-02-05T18:30:30 = February 5th
+   1995-12-22T09:05:02 = December 22nd
+  -0010-09-15T04:44:23 = September 15th
 
 =head3 MMMd (MMM d)
 
@@ -617,9 +617,9 @@ English American Samoa locale.
 
 =head3 MMMddd (MMM ddd)
 
-   2008-02-05T18:30:30 = Feb 5
-   1995-12-22T09:05:02 = Dec 22
-  -0010-09-15T04:44:23 = Sep 15
+   2008-02-05T18:30:30 = Feb 5th
+   1995-12-22T09:05:02 = Dec 22nd
+  -0010-09-15T04:44:23 = Sep 15th
 
 =head3 Md (M/d)
 
@@ -743,9 +743,9 @@ English American Samoa locale.
 
 =head3 yMMMEddd (E, MMM ddd, y)
 
-   2008-02-05T18:30:30 = Tue, Feb 5, 2008
-   1995-12-22T09:05:02 = Fri, Dec 22, 1995
-  -0010-09-15T04:44:23 = Sat, Sep 15, -10
+   2008-02-05T18:30:30 = Tue, Feb 5th, 2008
+   1995-12-22T09:05:02 = Fri, Dec 22nd, 1995
+  -0010-09-15T04:44:23 = Sat, Sep 15th, -10
 
 =head3 yMMMM (MMMM y)
 
@@ -761,9 +761,9 @@ English American Samoa locale.
 
 =head3 yMMMMEddd (E, MMMM ddd, y)
 
-   2008-02-05T18:30:30 = Tue, February 5, 2008
-   1995-12-22T09:05:02 = Fri, December 22, 1995
-  -0010-09-15T04:44:23 = Sat, September 15, -10
+   2008-02-05T18:30:30 = Tue, February 5th, 2008
+   1995-12-22T09:05:02 = Fri, December 22nd, 1995
+  -0010-09-15T04:44:23 = Sat, September 15th, -10
 
 =head3 yMMMMd (MMMM d, y)
 
@@ -773,9 +773,9 @@ English American Samoa locale.
 
 =head3 yMMMMddd (MMMM ddd, y)
 
-   2008-02-05T18:30:30 = February 5, 2008
-   1995-12-22T09:05:02 = December 22, 1995
-  -0010-09-15T04:44:23 = September 15, -10
+   2008-02-05T18:30:30 = February 5th, 2008
+   1995-12-22T09:05:02 = December 22nd, 1995
+  -0010-09-15T04:44:23 = September 15th, -10
 
 =head3 yMMMd (MMM d, y)
 
@@ -785,9 +785,9 @@ English American Samoa locale.
 
 =head3 yMMMddd (MMM ddd, y)
 
-   2008-02-05T18:30:30 = Feb 5, 2008
-   1995-12-22T09:05:02 = Dec 22, 1995
-  -0010-09-15T04:44:23 = Sep 15, -10
+   2008-02-05T18:30:30 = Feb 5th, 2008
+   1995-12-22T09:05:02 = Dec 22nd, 1995
+  -0010-09-15T04:44:23 = Sep 15th, -10
 
 =head3 yMd (M/d/y)
 

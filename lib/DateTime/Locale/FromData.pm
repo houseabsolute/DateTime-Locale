@@ -41,6 +41,7 @@ BEGIN {
         day_stand_alone_abbreviated
         day_stand_alone_narrow
         day_stand_alone_wide
+        day_of_month_format_abbreviated
         month_format_abbreviated
         month_format_narrow
         month_format_wide
@@ -412,6 +413,23 @@ name should be just one or two characters.
 B<These methods return a reference to the data stored in the locale object. If
 you change this reference's contents, this will affect the data in the locale
 object! You should clone the data first if you want to modify it.>
+
+=head2 $locale->day_of_month_format_abbreviated
+
+This returns an array reference of 31 strings, one for each day of the month,
+starting with the 1st. For locales with ordinal day data, these are strings
+like "1st", "2nd", and "3rd" for English, or "1er" and "2" for French. For all
+other locales, they are just the numbers 1 to 31.
+
+This is used for the C<ddd> pattern in CLDR format strings. Note that CLDR
+still considers this pattern a technical preview, so its data may change in
+future CLDR releases.
+
+This method can return C<undef> for locales created by passing data to C<<
+DateTime::Locale->register_from_data >> when that data has no
+C<day_of_month_format_abbreviated> key.
+
+The same warning about modifying the returned reference applies to this method.
 
 =head2 $locale->date_format_full
 

@@ -461,9 +461,9 @@ English Georgia locale.
 
 =head3 GyMMMEddd (E, ddd MMM y G)
 
-   2008-02-05T18:30:30 = Tue, 5 Feb 2008 AD
-   1995-12-22T09:05:02 = Fri, 22 Dec 1995 AD
-  -0010-09-15T04:44:23 = Sat, 15 Sept -10 BC
+   2008-02-05T18:30:30 = Tue, 5th Feb 2008 AD
+   1995-12-22T09:05:02 = Fri, 22nd Dec 1995 AD
+  -0010-09-15T04:44:23 = Sat, 15th Sept -10 BC
 
 =head3 GyMMMM (MMMM y G)
 
@@ -479,9 +479,9 @@ English Georgia locale.
 
 =head3 GyMMMMEddd (E, ddd MMMM y G)
 
-   2008-02-05T18:30:30 = Tue, 5 February 2008 AD
-   1995-12-22T09:05:02 = Fri, 22 December 1995 AD
-  -0010-09-15T04:44:23 = Sat, 15 September -10 BC
+   2008-02-05T18:30:30 = Tue, 5th February 2008 AD
+   1995-12-22T09:05:02 = Fri, 22nd December 1995 AD
+  -0010-09-15T04:44:23 = Sat, 15th September -10 BC
 
 =head3 GyMMMMd (d MMMM y G)
 
@@ -491,9 +491,9 @@ English Georgia locale.
 
 =head3 GyMMMMddd (ddd MMMM y G)
 
-   2008-02-05T18:30:30 = 5 February 2008 AD
-   1995-12-22T09:05:02 = 22 December 1995 AD
-  -0010-09-15T04:44:23 = 15 September -10 BC
+   2008-02-05T18:30:30 = 5th February 2008 AD
+   1995-12-22T09:05:02 = 22nd December 1995 AD
+  -0010-09-15T04:44:23 = 15th September -10 BC
 
 =head3 GyMMMd (d MMM y G)
 
@@ -503,9 +503,9 @@ English Georgia locale.
 
 =head3 GyMMMddd (MMM ddd, y G)
 
-   2008-02-05T18:30:30 = Feb 5, 2008 AD
-   1995-12-22T09:05:02 = Dec 22, 1995 AD
-  -0010-09-15T04:44:23 = Sept 15, -10 BC
+   2008-02-05T18:30:30 = Feb 5th, 2008 AD
+   1995-12-22T09:05:02 = Dec 22nd, 1995 AD
+  -0010-09-15T04:44:23 = Sept 15th, -10 BC
 
 =head3 GyMd (dd/MM/y G)
 
@@ -581,9 +581,9 @@ English Georgia locale.
 
 =head3 MMMEddd (E ddd MMM)
 
-   2008-02-05T18:30:30 = Tue 5 Feb
-   1995-12-22T09:05:02 = Fri 22 Dec
-  -0010-09-15T04:44:23 = Sat 15 Sept
+   2008-02-05T18:30:30 = Tue 5th Feb
+   1995-12-22T09:05:02 = Fri 22nd Dec
+  -0010-09-15T04:44:23 = Sat 15th Sept
 
 =head3 MMMMEEEEd (EEEE d MMMM)
 
@@ -599,9 +599,9 @@ English Georgia locale.
 
 =head3 MMMMEddd (E ddd MMMM)
 
-   2008-02-05T18:30:30 = Tue 5 February
-   1995-12-22T09:05:02 = Fri 22 December
-  -0010-09-15T04:44:23 = Sat 15 September
+   2008-02-05T18:30:30 = Tue 5th February
+   1995-12-22T09:05:02 = Fri 22nd December
+  -0010-09-15T04:44:23 = Sat 15th September
 
 =head3 MMMMW-count-one ('week' W 'of' MMMM)
 
@@ -623,9 +623,9 @@ English Georgia locale.
 
 =head3 MMMMddd (ddd MMMM)
 
-   2008-02-05T18:30:30 = 5 February
-   1995-12-22T09:05:02 = 22 December
-  -0010-09-15T04:44:23 = 15 September
+   2008-02-05T18:30:30 = 5th February
+   1995-12-22T09:05:02 = 22nd December
+  -0010-09-15T04:44:23 = 15th September
 
 =head3 MMMd (d MMM)
 
@@ -635,9 +635,9 @@ English Georgia locale.
 
 =head3 MMMddd (ddd MMM)
 
-   2008-02-05T18:30:30 = 5 Feb
-   1995-12-22T09:05:02 = 22 Dec
-  -0010-09-15T04:44:23 = 15 Sept
+   2008-02-05T18:30:30 = 5th Feb
+   1995-12-22T09:05:02 = 22nd Dec
+  -0010-09-15T04:44:23 = 15th Sept
 
 =head3 MMdd (dd/MM)
 
@@ -773,9 +773,9 @@ English Georgia locale.
 
 =head3 yMMMEddd (E, ddd MMM y)
 
-   2008-02-05T18:30:30 = Tue, 5 Feb 2008
-   1995-12-22T09:05:02 = Fri, 22 Dec 1995
-  -0010-09-15T04:44:23 = Sat, 15 Sept -10
+   2008-02-05T18:30:30 = Tue, 5th Feb 2008
+   1995-12-22T09:05:02 = Fri, 22nd Dec 1995
+  -0010-09-15T04:44:23 = Sat, 15th Sept -10
 
 =head3 yMMMM (MMMM y)
 
@@ -797,9 +797,9 @@ English Georgia locale.
 
 =head3 yMMMMEddd (E, MMMM ddd, y)
 
-   2008-02-05T18:30:30 = Tue, February 5, 2008
-   1995-12-22T09:05:02 = Fri, December 22, 1995
-  -0010-09-15T04:44:23 = Sat, September 15, -10
+   2008-02-05T18:30:30 = Tue, February 5th, 2008
+   1995-12-22T09:05:02 = Fri, December 22nd, 1995
+  -0010-09-15T04:44:23 = Sat, September 15th, -10
 
 =head3 yMMMMd (d MMMM y)
 
@@ -809,9 +809,9 @@ English Georgia locale.
 
 =head3 yMMMMddd (MMMM ddd, y)
 
-   2008-02-05T18:30:30 = February 5, 2008
-   1995-12-22T09:05:02 = December 22, 1995
-  -0010-09-15T04:44:23 = September 15, -10
+   2008-02-05T18:30:30 = February 5th, 2008
+   1995-12-22T09:05:02 = December 22nd, 1995
+  -0010-09-15T04:44:23 = September 15th, -10
 
 =head3 yMMMd (d MMM y)
 
@@ -821,9 +821,9 @@ English Georgia locale.
 
 =head3 yMMMddd (ddd MMM y)
 
-   2008-02-05T18:30:30 = 5 Feb 2008
-   1995-12-22T09:05:02 = 22 Dec 1995
-  -0010-09-15T04:44:23 = 15 Sept -10
+   2008-02-05T18:30:30 = 5th Feb 2008
+   1995-12-22T09:05:02 = 22nd Dec 1995
+  -0010-09-15T04:44:23 = 15th Sept -10
 
 =head3 yMd (dd/MM/y)
 
