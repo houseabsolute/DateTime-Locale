@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.47     2026-10-29
+
 - Rebuilt all locale data with the data from CLDR 49.0.0.
 
 - CLDR 49 no longer ships data for locales that are below its "Basic" coverage level. This removes
